@@ -1,0 +1,1 @@
+﻿Take advantage of the RadTileView support for differently sized tiles to create flexible and interactive layouts based on your application design requirement.

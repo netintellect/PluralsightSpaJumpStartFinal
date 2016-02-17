@@ -1,0 +1,1 @@
+﻿Here you can find a simple example how to use our gauges to improve your game dashboard.

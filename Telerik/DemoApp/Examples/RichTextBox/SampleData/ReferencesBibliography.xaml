@@ -1,0 +1,731 @@
+﻿<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" xmlns:r="clr-namespace:Telerik.Windows.Documents.Model.Revisions;assembly=Telerik.Windows.Documents" xmlns:n="clr-namespace:Telerik.Windows.Documents.Model.Notes;assembly=Telerik.Windows.Documents" xmlns:th="clr-namespace:Telerik.Windows.Documents.Model.Themes;assembly=Telerik.Windows.Documents" version="1.2" DefaultTabWidth="48" LayoutMode="Paged" LineSpacing="1.14999997615814" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="12" ParagraphDefaultSpacingBefore="0" SectionDefaultPageSize="816,1056" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+    <t:RadDocument.BibliographicSources>
+        <t:BibliographicSource Author="Carroll, Jim &amp;" SourceType="InternetSite" TagName="Carroll" Title="Online Marketing Strategies" URL="http://www.datingsoftware.biz/docs/mkt_guide.pdf" Year="2004" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Chisnall, P" Edition="5" Publisher="McGraw-Hill" SourceType="Misc" TagName="Chisnall" Title="&quot;Marketing research&quot;" Year="1997" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Creswell, J. W" CountryRegion="USA" Publisher="SAGE" SourceType="Misc" TagName="Creswell" Title="&quot;Research Design: Quantitative, Qualitative, and Mixed Methods&quot;" Year="2003" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Dillon, William R." Editor="Times Mirror" Publisher="Mosby College Publishing" SourceType="Misc" TagName="Dillon" Title="&quot;Marketing Research In A Marketing Environment.&quot; (2nd Ed.)" Year="1990" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Granello, D. H" BookTitle="Journal of Counseling &amp; Development" JournalName="Journal of Counseling &amp; Development" Pages="387-393" Publisher="Journal of Counseling &amp; Development" SourceType="JournalArticle" TagName="Granello" Title="Online Data Collection: Strategies for Research" Year="2004" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Greene, J" JournalName="Evaluation Journal of Australasia 2" Pages="23-39" Publisher="Evaluation Journal of Australasia 2," SourceType="JournalArticle" TagName="Greene" Title="Mixed-method evaluation: a way of democratically engaging with difference" Year="2002" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+        <t:BibliographicSource Author="Patton, M" Edition="3" Publisher="Sage Publications" SourceType="Misc" TagName="Patton" Title="&quot;Qualitative research &amp; evaluation methods&quot;" URL="http://www.articlesbase.com/strategic-planningarticles/" Year="2002" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model.BibliographicReferences;assembly=Telerik.Windows.Documents" />
+    </t:RadDocument.BibliographicSources>
+    <t:RadDocument.Captions>
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Figure" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Table" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+    </t:RadDocument.Captions>
+    <t:RadDocument.Lists>
+        <t:ListSerializationData ID="7" StyleID="3" />
+        <t:ListSerializationData ID="8" StyleID="6" />
+        <t:ListSerializationData ID="12" StyleID="1" />
+        <t:ListSerializationData ID="13" StyleID="2" />
+        <t:ListSerializationData ID="14" StyleID="2" />
+        <t:ListSerializationData ID="15" StyleID="4" />
+    </t:RadDocument.Lists>
+    <t:RadDocument.ListStyles>
+        <t:ListStyle ID="3" IsDefault="False">
+            <t:ListLevelStyle HangingIndent="24" Indent="24" LevelText="{}{0}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="28.7999992370605" Indent="52.7999992370605" LevelText="{}{0}.{1}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="33.5999984741211" Indent="81.5999984741211" LevelText="{}{0}.{1}.{2}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="43.2000007629395" Indent="115.199996948242" LevelText="{}{0}.{1}.{2}.{3}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="52.7999992370605" Indent="148.800003051758" LevelText="{}{0}.{1}.{2}.{3}.{4}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="62.4000015258789" Indent="182.399993896484" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="72" Indent="216" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="81.5999984741211" Indent="249.600006103516" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}.{7}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="96" Indent="288" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}.{7}.{8}." NumberingFormat="Decimal" StartingIndex="1" />
+        </t:ListStyle>
+        <t:ListStyle ID="6" IsDefault="False">
+            <t:ListLevelStyle HangingIndent="24" Indent="72" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="120" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="168" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="216" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="264" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="312" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="360" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="408" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="456" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+        </t:ListStyle>
+        <t:ListStyle ID="1" IsDefault="True">
+            <t:ListLevelStyle HangingIndent="24" Indent="48" LevelText="{}{0}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="72" LevelText="{}{0}.{1}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="96" LevelText="{}{0}.{1}.{2}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="120" LevelText="{}{0}.{1}.{2}.{3}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="144" LevelText="{}{0}.{1}.{2}.{3}.{4}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="168" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="192" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="216" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}.{7}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="240" LevelText="{}{0}.{1}.{2}.{3}.{4}.{5}.{6}.{7}.{8}." NumberingFormat="Decimal" StartingIndex="1" />
+        </t:ListStyle>
+        <t:ListStyle ID="2" IsDefault="True">
+            <t:ListLevelStyle HangingIndent="24" Indent="48" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="72" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="96" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="120" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="144" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="168" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="192" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="216" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="240" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" FontWeight="Normal" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+        </t:ListStyle>
+        <t:ListStyle ID="4" IsDefault="True">
+            <t:ListLevelStyle HangingIndent="24" Indent="48" LevelText="{}{0}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="72" LevelText="{}{1}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="96" LevelText="{}{2}." NumberingFormat="LowerRoman" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="120" LevelText="{}{3}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="144" LevelText="{}{4}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="168" LevelText="{}{5}." NumberingFormat="LowerRoman" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="192" LevelText="{}{6}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="216" LevelText="{}{7}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="240" LevelText="{}{8}." NumberingFormat="LowerRoman" StartingIndex="1" />
+        </t:ListStyle>
+    </t:RadDocument.ListStyles>
+    <t:RadDocument.ProtectionSettings>
+        <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+    </t:RadDocument.ProtectionSettings>
+    <t:RadDocument.Styles>
+        <s:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="True" Name="defaultDocumentStyle" Type="Default">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties LineSpacing="1.14999997615814" SpacingAfter="12" />
+            </s:StyleDefinition.ParagraphStyle>
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri" FontSize="16" FontStyle="Normal" FontWeight="Normal" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 1" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading1Char" Name="Heading1" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties KeepLines="True" OutlineLevel="1" SpacingAfter="0" SpacingBefore="32" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 1 Char" IsCustom="False" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading1" Name="Heading1Char" Type="Character">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri" FontSize="24" FontWeight="Bold" ForeColor="#FF000000" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 2" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading2Char" Name="Heading2" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties KeepLines="True" OutlineLevel="2" SpacingAfter="0" SpacingBefore="13.3333330154419" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 2 Char" IsCustom="False" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading2" Name="Heading2Char" Type="Character">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri" FontSize="21.3333339691162" FontWeight="Bold" ForeColor="#FF000000" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 3" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading3Char" Name="Heading3" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties KeepLines="True" OutlineLevel="3" SpacingAfter="0" SpacingBefore="13.3333330154419" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Heading 3 Char" IsCustom="False" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading3" Name="Heading3Char" Type="Character">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri" FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF000000" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Normal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="Normal" Type="Paragraph" UIPriority="0">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri" FontSize="14.6666669845581" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition BasedOnName="TableNormal" DisplayName="TableGrid" IsCustom="False" IsDefault="False" IsPrimary="True" Name="TableGrid" Type="Table" UIPriority="59">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties LineSpacing="1" SpacingAfter="0" />
+            </s:StyleDefinition.ParagraphStyle>
+            <s:StyleDefinition.TableStyle>
+                <s:TableProperties Borders="1,Single,#FF000000,none,,">
+                    <s:TableProperties.TableLook>
+                        <t:TableLook />
+                    </s:TableProperties.TableLook>
+                </s:TableProperties>
+            </s:StyleDefinition.TableStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="TableNormal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="TableNormal" Type="Table" UIPriority="59">
+            <s:StyleDefinition.TableStyle>
+                <s:TableProperties CellPadding="5,0,5,0">
+                    <s:TableProperties.TableLook>
+                        <t:TableLook />
+                    </s:TableProperties.TableLook>
+                </s:TableProperties>
+            </s:StyleDefinition.TableStyle>
+        </s:StyleDefinition>
+    </t:RadDocument.Styles>
+    <t:Section PageMargin="95,95,95,95" PageSize="816,1056">
+        <t:Section.Footers>
+            <t:Footers>
+                <t:Footers.Default>
+                    <t:Footer IsLinkedToPrevious="False">
+                        <t:Footer.Body>
+                            <t:RadDocument LayoutMode="Flow" LineSpacing="1.14999997615814" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="12" ParagraphDefaultSpacingBefore="0" SectionDefaultPageMargin="95,95,95,95" SectionDefaultPageOrientation="Portrait" SectionDefaultPageSize="816,1056" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+                                <t:RadDocument.ProtectionSettings>
+                                    <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+                                </t:RadDocument.ProtectionSettings>
+                                <t:Section FirstPageNumber="1">
+                                    <t:Paragraph TextAlignment="Right">
+                                        <t:FieldRangeStart AnnotationID="1">
+                                            <t:PageField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" />
+                                        </t:FieldRangeStart>
+                                        <t:Span Text="1" />
+                                        <t:FieldRangeEnd AnnotationID="1" />
+                                    </t:Paragraph>
+                                    <t:Paragraph FontSize="10.6666669845581" TextAlignment="Right">
+                                        <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                                            <s:SpanProperties FontFamily="Calibri" FontSize="10.6666669845581" />
+                                        </t:Paragraph.ParagraphSymbolPropertiesStyle>
+                                        <t:Span FontFamily="Calibri" FontSize="10.6666669845581" FontStyle="Italic" Text="source: www.masterthesiswriting.com" />
+                                    </t:Paragraph>
+                                    <t:Paragraph TextAlignment="Right" />
+                                </t:Section>
+                            </t:RadDocument>
+                        </t:Footer.Body>
+                    </t:Footer>
+                </t:Footers.Default>
+            </t:Footers>
+        </t:Section.Footers>
+        <t:Section.Headers>
+            <t:Headers>
+                <t:Headers.Default>
+                    <t:Header IsLinkedToPrevious="False">
+                        <t:Header.WatermarkSettings>
+                            <t:DocumentWatermarkSettings Type="NoWatermark" />
+                        </t:Header.WatermarkSettings>
+                    </t:Header>
+                </t:Headers.Default>
+            </t:Headers>
+        </t:Section.Headers>
+        <t:Paragraph TextAlignment="Center">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Center">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+        </t:Paragraph>
+        <t:Paragraph FontSize="24" StyleName="Heading1" TextAlignment="Center">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="24" FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span Text="The Perspectives of Using Online Marketing Research" />
+        </t:Paragraph>
+        <t:Paragraph StyleName="Heading2" TextAlignment="Center" />
+        <t:Paragraph StyleName="Heading2" TextAlignment="Center">
+            <t:ImageInline Extension="png" Height="50" RawData="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" Width="163" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph FontSize="18.6700000762939" TextAlignment="Right">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="18.6700000762939" FontWeight="Bold" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontSize="18.6700000762939" FontWeight="Bold" Text="Maria Anders" />
+        </t:Paragraph>
+        <t:Paragraph FontSize="18.6700000762939" TextAlignment="Right">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="18.6700000762939" FontStyle="Italic" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontSize="18.6700000762939" FontStyle="Italic" Text="Business Management, BSc" />
+        </t:Paragraph>
+        <t:Paragraph FontSize="18.6700000762939" TextAlignment="Right">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="18.6700000762939" FontStyle="Italic" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontSize="18.6700000762939" FontStyle="Italic" Text="University of Michigan" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Center" />
+        <t:Paragraph StyleName="Heading2" TextAlignment="Center">
+            <t:Span FontWeight="Bold" Text="◊Introduction" />
+        </t:Paragraph>
+        <t:Paragraph FontSize="14.6666669845581" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="14.6666669845581" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span Text="The evolution of the internet is perhaps the most bewildering and comprehensive enhancement of information technologies that has been witnessed in the past decade. The internet has restructured the way people communicate, both on a personal and professional level. For instance, the social web has taken over Advertising, Marketing, promotion, Public Relations, Customer Service and novel conduits and tools. Information obtained from this research will be significant in shaping the success of new online research products and services. Most online research consumers spring from the professional division; as a result, prices of quality online research tend to be a bit on the high side. This attracts the attention of companies to consumers in the personal or normal consumer segment. It is anticipated that online research should target both segments (professional and personal) with the price factor in mind and this research will determine whether this is a veritable fact or not " />
+            <t:FieldRangeStart AnnotationID="1">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Chisnall" />
+            </t:FieldRangeStart>
+            <t:Span FontSize="14.6666669845581" Text="(Chisnall, P, &quot;Marketing research&quot;, 1997)" />
+            <t:FieldRangeEnd AnnotationID="1" />
+            <t:Span Text="." />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span Text="Research objectives" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="The following research objectives have been identified:" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="12" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="To identify the right tools, methods and opportunities of marketing research online;" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="12" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="To explore the internal and external characteristics that online research consumers value when purchasing online research products and services;" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="12" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="To investigate the psychology of online research consumers prior to purchasing the product or service as well as market features such as price;" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="12" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="To determine what features make online research competitors perform well particularly for online services that are provided in various countries." />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span Text="The research question" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="A research question is critical in determining the type of information to be explored in the research. The development of the research question will be significantly guided by competition within the online research industry " />
+            <t:FieldRangeStart AnnotationID="2">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Dillon" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Dillon, William R., Madden, Thomas, J. &amp; Firtle, Neil, H, &quot;Marketing Research In A Marketing Environment.&quot; (2nd Ed.), 1990)" />
+            <t:FieldRangeEnd AnnotationID="2" />
+            <t:Span Text=". As noted, there are a myriad of companies offering online research products and services. Consequently, the nature of marketing online has changed significantly " />
+            <t:FieldRangeStart AnnotationID="3">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Greene" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Greene, J, Mixed-method evaluation: a way of democratically engaging with difference, 2002)" />
+            <t:FieldRangeEnd AnnotationID="3" />
+            <t:Span Text=". Companies are now able to offer different products and services including: " />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Academic research" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Consumer product research" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Advertising Testing and Recall" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Awareness and Usage" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Concept Tests" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Customer Satisfaction and Loyalty surveys" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Longitudinal Tracking" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="8" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="New Product Tests" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="14" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Pricing" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="13" RightIndent="0" SpacingAfter="12" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Web-site Evaluation, etc." />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="Since the Internet is a level playing field that allows everyone to leverage their strategic marketing endeavors in reaching an extensive, targeted audience, this makes online market to be highly competitive. Therefore, the research question will be derived from this perspective " />
+            <t:FieldRangeStart AnnotationID="4">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Carroll" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Carroll, Jim &amp; Broadhead, R, Online Marketing Strategies, 2004)" />
+            <t:FieldRangeEnd AnnotationID="4" />
+            <t:Span Text="." />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontWeight="Bold" Text="Methodology" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="Taken from " />
+            <t:FieldRangeStart AnnotationID="5">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Granello" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Granello, D. H, &amp; Wheaton, Joe E, Online Data Collection: Strategies for Research, 2004)" />
+            <t:FieldRangeEnd AnnotationID="5" />
+            <t:Span Text=". Data collection methods will include:" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="7" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Desk research" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="7" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Online surveys" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FirstLineIndent="0" LeftIndent="48" LineSpacing="1.14999997615814" LineSpacingType="Auto" ListId="7" ListLevel="1" RightIndent="0" SpacingAfter="0" SpacingBefore="0" StyleName="ListParagraph" TextAlignment="Justify">
+            <t:Span Text="Personal interviews with frontline agents" />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontWeight="Bold" Text="Quality levels" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:FieldRangeStart AnnotationID="6">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Patton" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Patton, M, &quot;Qualitative research &amp; evaluation methods&quot;, 2002)" />
+            <t:FieldRangeEnd AnnotationID="6" />
+            <t:Span Text="." />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontWeight="Bold" Text="Research timetable" />
+        </t:Paragraph>
+        <t:Table CellPadding="0,0,0,0" GridColumnWidthsSerializationInfo="Fixed,313;Fixed,313" HasFixedStructure="False" LayoutMode="AutoFit" PreferredWidth="Fixed,626" StyleName="TableGrid" TableIndent="0">
+            <t:Table.TableLook>
+                <t:TableLook />
+            </t:Table.TableLook>
+            <t:TableRow Height="20">
+                <t:TableCell Background="#FF6E8E2C" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph TextAlignment="Center">
+                        <t:Span FontWeight="Bold" ForeColor="#FFFFFFFF" Text="Time" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell Background="#FF6E8E2C" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph TextAlignment="Center">
+                        <t:Span FontWeight="Bold" ForeColor="#FFFFFFFF" Text="Research" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 1" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph FontSize="13.3333330154419">
+                        <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                            <s:SpanProperties FontSize="13.3333330154419" />
+                        </t:Paragraph.ParagraphSymbolPropertiesStyle>
+                        <t:Span FontSize="13.3333330154419" Text="Designing of questionnaires and contacting" />
+                    </t:Paragraph>
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="websites" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 2" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Desk research, questionnaire completion" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 3" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph FontSize="13.3333330154419">
+                        <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                            <s:SpanProperties FontSize="13.3333330154419" />
+                        </t:Paragraph.ParagraphSymbolPropertiesStyle>
+                        <t:Span FontSize="13.3333330154419" Text="Conducting in-depth and personal" />
+                    </t:Paragraph>
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="interviews" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 4" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Primary research on the internet" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 5" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Data collection of competitor information" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 6" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Data analysis and presentation" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Week 7" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Report writing" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+        </t:Table>
+        <t:Paragraph TextAlignment="Justify" />
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontWeight="Bold" Text="Data analysis" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span Text="The research will adopt a systematic approach in ensuring that the data collected is accurate. The process will involve: data collection, data immersion, data reduction, categorization, processing and finally data evaluation " />
+            <t:FieldRangeStart AnnotationID="7">
+                <t:CitationField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" SourceName="Creswell" />
+            </t:FieldRangeStart>
+            <t:Span Text="(Creswell, J. W, &quot;Research Design: Quantitative, Qualitative, and Mixed Methods&quot;, 2003)" />
+            <t:FieldRangeEnd AnnotationID="7" />
+        </t:Paragraph>
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Span FontWeight="Bold" Text="Resources" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="The research needs time and money; these are the most valuable resources for the research and should be budgeted in advance. The following section shows how time and finances can be estimated." />
+        </t:Paragraph>
+        <t:Table CellPadding="0,0,0,0" GridColumnWidthsSerializationInfo="Fixed,313;Fixed,313" HasFixedStructure="False" LayoutMode="AutoFit" PreferredWidth="Fixed,626" StyleName="TableGrid" TableIndent="0">
+            <t:Table.TableLook>
+                <t:TableLook />
+            </t:Table.TableLook>
+            <t:TableRow Height="20">
+                <t:TableCell Background="#FF6E8E2C" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph TextAlignment="Center">
+                        <t:Span FontWeight="Bold" ForeColor="#FFFFFFFF" Text="Task" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell Background="#FF6E8E2C" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph TextAlignment="Center">
+                        <t:Span FontWeight="Bold" ForeColor="#FFFFFFFF" Text="Amount" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Questionnaire &amp; Interview gifts" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="(20 x $9) + (40 x $6) = $420" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Online questionnaire" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="$400" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Accommodation and meals" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="$600" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Staff salary" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="$600" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="19.3999996185303">
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="Printing expenses" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,313" RowSpan="1">
+                    <t:Paragraph>
+                        <t:Span FontSize="13.3333330154419" Text="$75" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+            <t:TableRow Height="22.3999996185303">
+                <t:TableCell Background="#FF9BBB59" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph TextAlignment="Right">
+                        <t:Span Text="TOTAL:" />
+                    </t:Paragraph>
+                </t:TableCell>
+                <t:TableCell Background="#FF9BBB59" ColumnSpan="1" Padding="5,0,5,0" PreferredWidth="Fixed,313" RowSpan="1" ThemeBackground="none">
+                    <t:Paragraph>
+                        <t:Span ForeColor="#FFC00000" Text="$2095" />
+                    </t:Paragraph>
+                </t:TableCell>
+            </t:TableRow>
+        </t:Table>
+        <t:Paragraph TextAlignment="Justify" />
+        <t:Paragraph LeftIndent="19.2000007629395" ListId="15" RightIndent="0" StyleName="Heading3" TextAlignment="Justify">
+            <t:Span FontWeight="Bold" Text="Conclusion" />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="This is where the research will be combined, both qualitative and quantitative, so as to gain an insightful analysis of the relevant facts and figures in explaining market trends." />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify">
+            <t:Span Text="Findings will be summarized and conclusions drawn in accordance with the research questions." />
+        </t:Paragraph>
+        <t:Paragraph TextAlignment="Justify" />
+        <t:Paragraph StyleName="Heading2" TextAlignment="Center">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FF000000" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontWeight="Bold" Text="Bibliography" />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:FieldRangeStart AnnotationID="8">
+                <t:BibliographyField DateTimeFormatting="" DisplayMode="Result" GeneralFormatting="" NumericFormatting="" />
+            </t:FieldRangeStart>
+            <t:Span Text="Carroll, Jim &amp; Broadhead, R. (2004). " />
+            <t:Span FontStyle="Italic" Text="Online Marketing Strategies" />
+            <t:Span Text=". Retrieved from http://www.datingsoftware.biz/docs/mkt_guide.pdf" />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Chisnall, P. (1997). &quot;Marketing research&quot;." />
+            <t:Span FontStyle="Italic" Text=" 5" />
+            <t:Span Text=". McGraw-Hill." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Creswell, J. W. (2003). &quot;Research Design: Quantitative, Qualitative, and Mixed Methods&quot;. USA: SAGE." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Dillon, William R., Madden, Thomas, J. &amp; Firtle, Neil, H. (1990). &quot;Marketing Research In A Marketing Environment.&quot; (2nd Ed.). (Times Mirror, Ed.) Mosby College Publishing." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Granello, D. H, &amp; Wheaton, Joe E. (2004). Online Data Collection: Strategies for Research. " />
+            <t:Span FontStyle="Italic" Text="Journal of Counseling &amp; Development" />
+            <t:Span Text=", 387-393." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Greene, J. (2002). Mixed-method evaluation: a way of democratically engaging with difference. " />
+            <t:Span FontStyle="Italic" Text="Evaluation Journal of Australasia 2" />
+            <t:Span Text=", 23-39." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span Text="Patton, M. (2002). &quot;Qualitative research &amp; evaluation methods&quot;." />
+            <t:Span FontStyle="Italic" Text=" 3" />
+            <t:Span Text=". Sage Publications." />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:FieldRangeEnd AnnotationID="8" />
+        </t:Paragraph>
+    </t:Section>
+</t:RadDocument>

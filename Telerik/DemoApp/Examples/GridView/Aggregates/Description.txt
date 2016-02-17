@@ -1,0 +1,3 @@
+﻿This example illustrates the support of aggregate functions in Telerik GridView. When grouping the aggregate values are calculated taking into account every data item in the group. The GridView data model provides a variety of aggregate functions, such as <b>Sum</b>, <b>Count</b>, <b>Min</b>, <b>Max</b>, <b>Average</b>, custom aggregate functions, etc. which are displayed in the group row.
+
+To configure an aggregate function create an <b>AggregateFunction</b> object and add it to the <b>AggregateFunctions</b> collection of the group description. The group header appearance will automatically pick aggregate results up and display them in a list control.

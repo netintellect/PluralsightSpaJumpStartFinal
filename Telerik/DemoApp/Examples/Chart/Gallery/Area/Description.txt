@@ -1,0 +1,1 @@
+﻿This example shows an Area series. The Definition property of the DataSeries is set to an instance of AreaSeriesDefinition.

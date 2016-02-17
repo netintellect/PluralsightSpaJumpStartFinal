@@ -1,0 +1,46 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 x:Class="Telerik.Windows.Examples.CollectionNavigator.Theming.Example"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:sampleData="clr-namespace:Telerik.Windows.Examples"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<UserControl.Resources>
+		<sampleData:ExamplesDataContext x:Key="northwindDataContext" />
+	</UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Theming" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+		<Grid DataContext="{StaticResource northwindDataContext}">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+            <telerik:RadGridView GroupRenderMode="Flat" ItemsSource="{Binding ElementName=collectionNavigator, Path=CollectionView}"
+								 Margin="2"
+								 Height="500" Width="740"
+								 ShowGroupPanel="False"
+								 CanUserFreezeColumns="False"
+								 AutoGenerateColumns="False">
+				<telerik:RadGridView.Columns>
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}" />
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding LastName}" />
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding Title}" />
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding TitleOfCourtesy}" />
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding Address}" Width="*"/>
+				</telerik:RadGridView.Columns>
+			</telerik:RadGridView>
+			<telerik:RadCollectionNavigator Grid.Row="1"
+											x:Name="collectionNavigator"
+											MinHeight="22"
+											Width="740"
+											Source="{Binding Employees}" />
+		</Grid>
+	</Grid>
+</UserControl>
+

@@ -1,0 +1,71 @@
+<UserControl x:Class="Telerik.Windows.Examples.Book.Performance.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Book;component/Performance/ButtonStyle.xaml" />
+				<ResourceDictionary Source="/Book;component/Performance/PageTemplates.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<Storyboard x:Key="ButtonOut">
+				<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="button"
+						Storyboard.TargetProperty="(UIElement.Visibility)">
+					<DiscreteObjectKeyFrame KeyTime="00:00:00.5000000">
+						<DiscreteObjectKeyFrame.Value>
+							<Visibility>Collapsed</Visibility>
+						</DiscreteObjectKeyFrame.Value>
+					</DiscreteObjectKeyFrame>
+				</ObjectAnimationUsingKeyFrames>
+			</Storyboard>
+			<Storyboard x:Key="LoadingOut">
+				<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000"
+						Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.Visibility)">
+					<DiscreteObjectKeyFrame KeyTime="00:00:00">
+						<DiscreteObjectKeyFrame.Value>
+							<Visibility>Collapsed</Visibility>
+						</DiscreteObjectKeyFrame.Value>
+					</DiscreteObjectKeyFrame>
+				</ObjectAnimationUsingKeyFrames>
+				<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="image"
+						Storyboard.TargetProperty="(UIElement.Visibility)">
+					<DiscreteObjectKeyFrame KeyTime="00:00:00">
+						<DiscreteObjectKeyFrame.Value>
+							<Visibility>Collapsed</Visibility>
+						</DiscreteObjectKeyFrame.Value>
+					</DiscreteObjectKeyFrame>
+				</ObjectAnimationUsingKeyFrames>
+			</Storyboard>
+		</ResourceDictionary>
+	</UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+		<Border CornerRadius="5">
+			<Grid Width="488" Height="398" >
+				<telerik:RadBook x:Name="book1" LeftPageTemplateSelector="{StaticResource PageTemplateSelector}"
+						RightPageTemplateSelector="{StaticResource PageTemplateSelector}"/>
+                <Image x:Name="image" Stretch="None"
+						Source="/Book;component/Images/Book/Performance/BookPerformance.png"  />
+                <telerik:RadButton x:Name="button" Height="30" HorizontalAlignment="Right"
+						VerticalAlignment="Bottom" Width="153" Click="Button_Click"
+						Padding="0" FontSize="16" Foreground="White" Margin="20" Style="{StaticResource ButtonStyle}">
+                        <TextBlock TextWrapping="Wrap" Text="Generate 1 Million Items" FontSize="11" HorizontalAlignment="Center" />
+                </telerik:RadButton>
+			</Grid>
+		</Border>
+    </Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<telerik:RadButton x:Name="btnFirst" IsEnabled="False" Content="First Page" Click="FirstPageButton_Click"
+					Margin="0 10 0 2" />
+			<telerik:RadButton x:Name="btnPrevious" IsEnabled="False" Content="Previous Page"
+					Click="PreviousPageButton_Click" Margin="0 2" />
+			<telerik:RadButton x:Name="btnNext" IsEnabled="False" Content="Next Page" Click="NextPageButton_Click"
+					Margin="0 2" />
+			<telerik:RadButton x:Name="btnLast" IsEnabled="False" Content="Last Page" Click="LastPageButton_Click"
+					Margin="0 2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

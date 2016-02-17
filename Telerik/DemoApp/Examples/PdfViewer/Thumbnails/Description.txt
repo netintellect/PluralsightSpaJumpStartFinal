@@ -1,0 +1,1 @@
+﻿This example shows how customizable <b>RadPdfViewer</b> is. With a few lines of XAML you can easily achieve a different look of the control, showing its pages as thumbnails.

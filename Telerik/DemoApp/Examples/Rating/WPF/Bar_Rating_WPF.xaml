@@ -1,0 +1,968 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Rating.FirstLook.Bar_Rating_WPF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikRating="clr-namespace:Telerik.Windows.Controls.Rating;assembly=Telerik.Windows.Controls.Input">
+
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="RatingItem_Background" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6C6C6C"/>
+            <GradientStop Color="#FF595959" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#3FFFFFFF" Offset="0.796"/>
+            <GradientStop Color="#B2FFFFFF" Offset="0.997"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull" EndPoint="0.641,0.975" StartPoint="0.359,0.025">
+            <GradientStop Color="#FF151580" Offset="0.469"/>
+            <GradientStop Color="#FF07074F" Offset="1"/>
+            <GradientStop Color="#FF8080E4"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BorderBrushFull" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00131A" Offset="1"/>
+            <GradientStop Color="#FF7E7E7E"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver" EndPoint="0.641,0.975" StartPoint="0.359,0.025">
+            <GradientStop Color="#FF1F1F94" Offset="0.469"/>
+            <GradientStop Color="#FF13136E" Offset="1"/>
+            <GradientStop Color="#FF8080E4"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="RatingItem_BorderBrushMouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#3FFFFFFF" Offset="0.796"/>
+            <GradientStop Color="#B2FFFFFF" Offset="0.997"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ControlBackground_Disabled" Color="#FFE0E0E0"/>
+        <SolidColorBrush x:Key="ControlOuterBorder_Disabled" Color="#FF989898"/>
+        <SolidColorBrush x:Key="RatingItem_BackgroundFull_DisabledState" Color="#FFacabab"/>
+
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle1" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,7.5 C10.5,8.6045694 9.6045694,9.5 8.5,9.5 L2.5,9.5 C1.3954304,9.5 0.5,8.6045694 0.5,7.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull}"/>
+                                </telerikRating:LinearClipper>
+
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull2" EndPoint="0.961,0.931" StartPoint="0.039,0.069">
+            <GradientStop Color="#FF2A3BE8" Offset="0.32"/>
+            <GradientStop Color="#FF14149D" Offset="1"/>
+            <GradientStop Color="#FF93AAFA"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver2" EndPoint="0.961,0.931" StartPoint="0.039,0.069">
+            <GradientStop Color="#FF3244F4" Offset="0.32"/>
+            <GradientStop Color="#FF2020BF" Offset="1"/>
+            <GradientStop Color="#FF93AAFA"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle2" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="RatioVisible" Value="0"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull2}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver2}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,17.5 C10.5,18.60457 9.6045694,19.5 8.5,19.5 L2.5,19.5 C1.3954304,19.5 0.5,18.60457 0.5,17.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull2}"/>
+                                </telerikRating:LinearClipper>
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull3" EndPoint="1.267,0.913" StartPoint="-0.267,0.087">
+            <GradientStop Color="#FF1A89E6" Offset="0.3"/>
+            <GradientStop Color="#FF0E60A5" Offset="1"/>
+            <GradientStop Color="#FFD0D7DC"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver3" EndPoint="1.267,0.913" StartPoint="-0.267,0.087">
+            <GradientStop Color="#FF2590EA" Offset="0.3"/>
+            <GradientStop Color="#FF1370BF" Offset="1"/>
+            <GradientStop Color="#FFD0D7DC"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle3" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="RatioVisible" Value="0"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull3}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver3}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,27.5 C10.5,28.60457 9.6045694,29.5 8.5,29.5 L2.5,29.5 C1.3954304,29.5 0.5,28.60457 0.5,27.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull3}"/>
+                                </telerikRating:LinearClipper>
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull4" EndPoint="1.375,0.938" StartPoint="-0.375,0.062">
+            <GradientStop Color="#FF049A30" Offset="0.226"/>
+            <GradientStop Color="#FF03492E" Offset="1"/>
+            <GradientStop Color="#FFA0F8A2"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver4" EndPoint="1.375,0.938" StartPoint="-0.375,0.062">
+            <GradientStop Color="#FF07A736" Offset="0.226"/>
+            <GradientStop Color="#FF056540" Offset="1"/>
+            <GradientStop Color="#FFA0F8A2"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle4" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="RatioVisible" Value="0"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull4}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver4}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,37.5 C10.5,38.604568 9.6045694,39.5 8.5,39.5 L2.5,39.5 C1.3954304,39.5 0.5,38.604568 0.5,37.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull4}"/>
+                                </telerikRating:LinearClipper>
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull5" EndPoint="1.586,0.939" StartPoint="-0.586,0.061">
+            <GradientStop Color="#FFF4C90C" Offset="0.202"/>
+            <GradientStop Color="#FFCB9504" Offset="1"/>
+            <GradientStop Color="#FFFEFEFE"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver5" EndPoint="1.586,0.939" StartPoint="-0.586,0.061">
+            <GradientStop Color="#FFF8CD11" Offset="0.202"/>
+            <GradientStop Color="#FFDCA30B" Offset="1"/>
+            <GradientStop Color="#FFFEFEFE"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle5" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="RatioVisible" Value="0"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull5}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver5}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,47.5 C10.5,48.604568 9.6045694,49.5 8.5,49.5 L2.5,49.5 C1.3954304,49.5 0.5,48.604568 0.5,47.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull5}"/>
+                                </telerikRating:LinearClipper>
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <LinearGradientBrush x:Key="RatingItem_BackgroundFull6" EndPoint="2.269,0.889" StartPoint="-1.269,0.111">
+            <GradientStop Color="#FF9A0505" Offset="1"/>
+            <GradientStop Color="#FFE03131" Offset="0.185"/>
+            <GradientStop Color="#FFFEF7F7"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="RatingItem_BackgroundMouseOver6" EndPoint="2.269,0.889" StartPoint="-1.269,0.111">
+            <GradientStop Color="#FFAB0606" Offset="1"/>
+            <GradientStop Color="#FFEC3535" Offset="0.185"/>
+            <GradientStop Color="#FFFEF7F7"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="telerik:RadRatingItem" x:Key="RadRatingItemStyle6" >
+            <Setter Property="Background" Value="{StaticResource RatingItem_Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RatingItem_BorderBrush}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="1 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadRatingItem">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Border Background="#00FFFFFF" BorderThickness="0"/>
+                            <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                <Path x:Name="NormalRatingItem"  Fill="{TemplateBinding Background}"  Stretch="Fill" Stroke="{TemplateBinding BorderBrush}" 
+                              StrokeLineJoin="Round" StrokeThickness="0.4" VerticalAlignment="Stretch" Opacity="1" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z"/>
+
+                                <telerikRating:LinearClipper  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" >
+                                    <Path x:Name="SelectedRatingItem" Fill="{StaticResource RatingItem_BackgroundFull6}" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" Stretch="Fill"   StrokeLineJoin="Round" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding RatioVisible}"
+                                    ExpandDirection="Right">
+                                    <Path x:Name="MouseOverRatingItem" Fill="{StaticResource RatingItem_BackgroundMouseOver6}"  Stretch="Fill" 
+                              Stroke="{StaticResource RatingItem_BorderBrushMouseOver}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z"/>
+                                </telerikRating:LinearClipper>
+
+                                <Path x:Name="DisabledRatingItemBackground"   Stretch="Fill" Fill="{StaticResource ControlBackground_Disabled}" Opacity="0"
+                              Stroke="{StaticResource ControlOuterBorder_Disabled}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" 
+                              Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z" />
+
+                                <telerikRating:LinearClipper x:Name="DisabledRatingItem"  RatioVisible="{TemplateBinding RatioVisible}" ExpandDirection="Right" Opacity="0">
+                                    <Path  Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="1" 
+                                  Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z" 
+                                  Fill="{StaticResource RatingItem_BackgroundFull_DisabledState}"/>
+                                </telerikRating:LinearClipper>
+
+                                <telerikRating:LinearClipper RatioVisible="{TemplateBinding ValueRatio}"  ExpandDirection="Right">
+                                    <Path x:Name="SelectedUnHoveredRatingItem"  Stretch="Fill" Stroke="{StaticResource RatingItem_BorderBrushFull}" StrokeThickness="0.4" StrokeLineJoin="Round" VerticalAlignment="Stretch" Opacity="0" 
+                                 Data="M0.5,2.5 C0.5,1.3954304 1.3954304,0.5 2.5,0.5 L8.5,0.5 C9.6045694,0.5 10.5,1.3954304 10.5,2.5 L10.5,59.5 C10.5,60.604568 9.6045694,61.5 8.5,61.5 L2.5,61.5 C1.3954304,61.5 0.5,60.604568 0.5,59.5 z" 
+                                 Fill="{StaticResource RatingItem_BackgroundFull6}"/>
+                                </telerikRating:LinearClipper>
+                            </Grid>
+                            <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="DisabledState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="DisabledRatingItemBackground"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="NormalRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="DisabledState" />
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOverItem" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard x:Name="SelectedState">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="1"
+                                                Storyboard.TargetName="MouseOverRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0"
+                                                Storyboard.TargetName="SelectedRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                            <DoubleAnimation Duration="00:00:00.0000000" To="0.6"
+                                                Storyboard.TargetName="SelectedUnHoveredRatingItem"
+                                                Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadRating>
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle1}" ToolTipService.ToolTip="Very Low" />
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle2}" ToolTipService.ToolTip="Low"/>
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle3}" ToolTipService.ToolTip="Medium"/>
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle4}" ToolTipService.ToolTip="Medium-High"/>
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle5}" ToolTipService.ToolTip="High"/>
+            <telerik:RadRatingItem Style="{StaticResource RadRatingItemStyle6}" ToolTipService.ToolTip="Very High"/>
+        </telerik:RadRating>
+    </Grid>
+</UserControl>

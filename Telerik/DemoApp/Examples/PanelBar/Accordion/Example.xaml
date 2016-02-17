@@ -1,0 +1,367 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PanelBar.Accordion.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		VerticalAlignment="Center" HorizontalAlignment="Center">
+    <UserControl.Resources>
+        <Style TargetType="Border" x:Key="BorderStyle">
+            <Setter Property="Background" Value="#FFE7E8E8" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0 0 0 10" />
+        </Style>
+        
+        <Style TargetType="Border" x:Key="InnerBorderStyle">
+            <Setter Property="BorderBrush" Value="#FFFFFFFF" />
+            <Setter Property="Margin" Value="20 10 20 10" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Height" Value="65" />
+            <Setter Property="Width" Value="65" />
+        </Style>
+
+ 
+    </UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Accordion Mode" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid Margin="10">
+		<telerik:RadPanelBar Width="540" Height="292" Background="White" Orientation="Horizontal"
+				VerticalAlignment="Center" HorizontalAlignment="Center" ExpandMode="Single">
+			<telerik:RadPanelBarItem IsExpanded="True">
+				<telerik:RadPanelBarItem.Header>
+					<TextBlock Text="Europe  - Month Productivity" Margin="5 3" />
+				</telerik:RadPanelBarItem.Header>
+				<Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}" >
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+								<Image Source="../Images/PanelBar/CACTU.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image9.png" Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Giovanni Rovelli" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/DUMON.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image10.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Renate Messner" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="0" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/LEHMS.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Fran Wilson" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/BLONP.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Felipe Izquierdo" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</Grid>
+			</telerik:RadPanelBarItem>
+			<telerik:RadPanelBarItem>
+				<telerik:RadPanelBarItem.Header>
+					<TextBlock Text="USA - Month Productivity" Margin="5 3" />
+				</telerik:RadPanelBarItem.Header>
+				<Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/BONAP.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image9.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Philip Cramer" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/KOENE.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image10.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="John Steel" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="0" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/OTTIK.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Helen Bennett" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/FAMIA.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Daniel Tonini" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</Grid>
+			</telerik:RadPanelBarItem>
+			<telerik:RadPanelBarItem>
+				<telerik:RadPanelBarItem.Header>
+					<TextBlock Text="Europe  - Month Productivity" Margin="5 3" />
+				</telerik:RadPanelBarItem.Header>
+				<Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/PRINI.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image9.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Elizabeth Brown" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/VICTE.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image10.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Paula Wilson" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="0" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/SEVES.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Roland Mendel" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/VINET.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Lino Rodriguez" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</Grid>
+			</telerik:RadPanelBarItem>
+			<telerik:RadPanelBarItem>
+				<telerik:RadPanelBarItem.Header>
+					<TextBlock Text="USA - Month Productivity" Margin="5 3" />
+				</telerik:RadPanelBarItem.Header>
+				<Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/QUICK.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image9.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Thomas Hardy" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="0" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/THEBI.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image10.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Maria Larsson" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="0" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/SUPRD.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Hanna Moos" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+                    <Border Grid.Column="1" Grid.Row="1" Margin="10" Style="{StaticResource BorderStyle}">
+						<StackPanel>
+                            <Border Style="{StaticResource InnerBorderStyle}">
+                                <Image Source="../Images/PanelBar/Stock.jpg" Stretch="None" Width="65" Height="65" >
+									<ToolTipService.ToolTip>
+										<ToolTip>
+											<Image Source="../Images/PanelBar/Image11.png"
+													Stretch="None" />
+										</ToolTip>
+									</ToolTipService.ToolTip>
+								</Image>
+							</Border>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="Robert king" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</Grid>
+			</telerik:RadPanelBarItem>
+		</telerik:RadPanelBar>
+	</Grid>
+</UserControl>

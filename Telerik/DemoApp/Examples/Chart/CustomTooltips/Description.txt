@@ -1,0 +1,1 @@
+﻿This example shows how to set a custom content for the series items' tooltips. When you hover one of the bars, a tooltip is opened. Its content is set to a RadChart control.

@@ -1,0 +1,2 @@
+﻿This example demonstrates how you can group the RadScheduleView by time zones.
+In this example the first group is the UTC time zone and the second is your local time zone.

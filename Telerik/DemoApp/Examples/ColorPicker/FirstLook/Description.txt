@@ -1,0 +1,1 @@
+﻿Telerik ColorPicker is a part of the <b>Telerik.Windows.Controls.Input</b> assembly. It allows the users to choose a color from more than 20 pre-defined palettes.</br>In this example several ColorPickers are embedded in a ToolBar control and each one allows you to modify the color settings of the document bellow.

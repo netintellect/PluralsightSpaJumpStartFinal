@@ -1,0 +1,1 @@
+﻿This example illustrates how you can implement a custom appointment, validate it and add additional field to the edit appointment dialog.

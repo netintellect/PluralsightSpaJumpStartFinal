@@ -1,0 +1,48 @@
+<Examples:DomainDataSourceExample x:Class="Telerik.Windows.Examples.DomainDataSource.MasterDetail.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  xmlns:e="clr-namespace:Examples.Web">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<telerik:RadDomainDataSource x:Name="customersDataSource"
+									 AutoLoad="True"
+									 QueryName="GetCustomers"
+									 LoadedData="OnCustomersDataSourceLoadedData">
+			<telerik:RadDomainDataSource.DomainContext>
+				<e:NorthwindDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+		</telerik:RadDomainDataSource>
+		<telerik:RadDomainDataSource x:Name="detailOrdersDataSource"
+									 AutoLoad="False"
+									 QueryName="GetOrdersByCustomerID">
+			<telerik:RadDomainDataSource.DomainContext>
+				<e:NorthwindDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+			<telerik:RadDomainDataSource.QueryParameters>
+				<telerik:QueryParameter ParameterName="customerID"
+										Value="{Binding SelectedItem.CustomerID, ElementName=masterGridView}" />
+			</telerik:RadDomainDataSource.QueryParameters>
+		</telerik:RadDomainDataSource>
+		<telerik:RadGridView x:Name="masterGridView"
+							 Grid.Row="0"
+							 ItemsSource="{Binding DataView, ElementName=customersDataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=customersDataSource}"
+							 AutoGeneratingColumn="OnRadGridViewAutoGeneratingColumn"
+							 SelectionChanged="OnMasterGridViewSelectionChanged"
+							 ShowGroupPanel="False"
+							 IsReadOnly="True" />
+		<telerik:RadGridView x:Name="detailGridView"
+							 Grid.Row="1"
+							 ItemsSource="{Binding DataView, ElementName=detailOrdersDataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=detailOrdersDataSource}"
+							 AutoGeneratingColumn="OnRadGridViewAutoGeneratingColumn"
+							 ShowGroupPanel="False"
+							 IsReadOnly="True" />
+	</Grid>
+</Examples:DomainDataSourceExample>

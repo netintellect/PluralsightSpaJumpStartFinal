@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBDA2651-2DC1-4251-B48A-AC36BE90C205}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Barcode</RootNamespace>
+    <AssemblyName>Barcode</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Barcode.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Barcode.App</SilverlightAppEntry>
+    <TestPageFileName>Barcode.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodeReader\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Coupon\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Code11\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Code128\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Code25\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Code39\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Code93\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Codebar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CodeEAN\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CodeMSI\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CodeUPC\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\GalleryViewModel.cs" />
+    <Compile Include="Gallery\Postnet\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\UPCSupplement\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\VisibilityConverter.cs" />
+    <Compile Include="Pdf417Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pdf417Configurator\PDF417ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRCodeVCard\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BarcodeReader\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Configurator\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Configurator\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Coupon\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Code11\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Code128\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Code25\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Code39\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Code93\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Codebar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CodeEAN\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CodeMSI\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CodeUPC\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Postnet\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\UPCSupplement\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pdf417Configurator\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pdf417Configurator\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pdf417Configurator\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QRCodeVCard\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Code128\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Code39\Description.txt" />
+    <Resource Include="Gallery\CodeEAN\Description.txt" />
+    <Resource Include="Gallery\CodeUPC\Description.txt" />
+    <Resource Include="Configurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Codebar\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Code11\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\CodeMSI\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Postnet\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Code25\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Code93\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\UPCSupplement\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+    <Resource Include="Images\barcode-catalogue-2-3.jpg" />
+    <Resource Include="Images\barcode-catalogue-4-5.jpg" />
+    <Resource Include="Images\barcode-catalogue-6-7.jpg" />
+    <Resource Include="Images\page2.png" />
+    <Resource Include="Images\page3.png" />
+    <Resource Include="Images\page4.png" />
+    <Resource Include="Images\page5.png" />
+    <Resource Include="Images\page6.png" />
+    <Resource Include="Images\page7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bcard_export.png" />
+    <Resource Include="Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="QRCodeVCard\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Coupon\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\coupon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pdf417Configurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BarcodeReader\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml \n "$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

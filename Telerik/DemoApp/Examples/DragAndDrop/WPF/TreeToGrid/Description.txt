@@ -1,0 +1,2 @@
+﻿In this example dragging is enabled between the GridView, TreeView and ListBox. <br/>
+DragDropManager is a part of the <b>Telerik.Windows.Controls</b> assembly.

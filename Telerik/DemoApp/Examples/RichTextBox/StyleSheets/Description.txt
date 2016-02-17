@@ -1,0 +1,1 @@
+This example illustrates the use of predefined style sheets for creating more consistent and remarkable documents. This functionality of the RadRichTextBox control extends the support for predefined styles by saving and loading custom style sheets and using them with the current document. 

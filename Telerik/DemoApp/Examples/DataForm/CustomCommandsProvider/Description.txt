@@ -1,0 +1,1 @@
+﻿RadDataForm provides an easy, MVVM-friendly approach for customization of its default commands' logic.

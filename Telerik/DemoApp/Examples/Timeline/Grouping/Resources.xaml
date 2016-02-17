@@ -1,0 +1,35 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Timeline.Grouping">
+
+    <!--<example:ExampleViewModel x:Key="ExampleViewModel" />-->
+    <example:EventToDateTimeConverter x:Key="eventToDateTimeConverter" />
+
+    <SolidColorBrush x:Key="BasicBrush" Color="#FFD6D4D4" />
+    <SolidColorBrush x:Key="MarkerBrush" Color="#FF000000" />
+    <SolidColorBrush x:Key="MainBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="StrongBrush" Color="#FF767676"/>
+
+    <Style TargetType="telerik:TimelineAnnotation" BasedOn="{StaticResource TimelineAnnotationStyle}">
+        <Setter Property="Margin" Value="0,-20,0,0" />
+        <Setter Property="Canvas.ZIndex" Value="150" />
+    </Style>
+
+    <Style TargetType="TextBlock" >
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="Foreground" Value="{StaticResource StrongBrush}"/>
+    </Style>
+
+    <Style TargetType="telerik:RadListBox" BasedOn="{StaticResource RadListBoxStyle}">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+    </Style>    
+
+    
+</ResourceDictionary>

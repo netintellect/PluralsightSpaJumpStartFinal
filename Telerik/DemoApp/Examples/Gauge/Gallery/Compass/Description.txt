@@ -1,0 +1,1 @@
+﻿This sample demonstrates how to create a 360-degree gauge representing a compass with animated needle. When a new value is generated, the needle moves using the shortest path to its new position.

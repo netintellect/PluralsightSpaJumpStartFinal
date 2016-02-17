@@ -1,0 +1,94 @@
+<UserControl x:Class="Telerik.Windows.Examples.CoverFlow.DataInfo.DetailsPopup"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+		xmlns:telerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation">
+    
+	<UserControl.Resources>
+		<Storyboard x:Key="ShowAnimation" BeginTime="0:0:0.6" Duration="0:0:0.6">
+			<DoubleAnimation Storyboard.TargetName="InfoPanelTransform" Storyboard.TargetProperty="Y" To="-8">
+				<DoubleAnimation.EasingFunction>
+					<CircleEase EasingMode="EaseOut" />
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+		</Storyboard>
+		<Storyboard x:Key="HideAnimation" Duration="0:0:0.6">
+			<DoubleAnimation Storyboard.TargetName="InfoPanelTransform"
+					Storyboard.TargetProperty="Y" To="100">
+				<DoubleAnimation.EasingFunction>
+					<CircleEase EasingMode="EaseOut" />
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+		</Storyboard>
+		<Style TargetType="TextBlock" x:Key="FancyStyle">
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="FontFamily" Value="Comic Sans MS" />
+			<Setter Property="FontSize" Value="20" />
+		</Style>
+		<LinearGradientBrush x:Key="CoverFlowItemBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+			<LinearGradientBrush.GradientStops>
+				<GradientStopCollection>
+					<GradientStop Color="#FFd1d1d1" Offset="0" />
+					<GradientStop Color="#FFd1d1d1" Offset="0.02" />
+					<GradientStop Color="#FF7a7a7a" Offset="0.24" />
+					<GradientStop Color="#FF999999" Offset="0.53" />
+					<GradientStop Color="#FFBABABA" Offset="0.98" />
+					<GradientStop Color="#FFbbbbbb" Offset="0.99" />
+				</GradientStopCollection>
+			</LinearGradientBrush.GradientStops>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="CoverFlowItemBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#CCE0E0E0"/>
+			<GradientStop Color="#CCDEDEDE" Offset="1"/>
+		</LinearGradientBrush>
+
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" Width="316" Height="223">
+		<Grid.Clip>
+			<RectangleGeometry Rect="0,0,316,223" />
+		</Grid.Clip>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Border Grid.RowSpan="2" Background="{StaticResource CoverFlowItemBackground}" BorderBrush="{StaticResource CoverFlowItemBorderBrush}" 
+				BorderThickness="1"  CornerRadius="3" />
+
+		<Button Click="OnContentClicked" Grid.Row="0" Grid.RowSpan="2" Cursor="Hand" Margin="9">
+			<Button.Template>
+				<ControlTemplate TargetType="Button">
+					<Border Background="Transparent">
+						<ContentPresenter Content="{TemplateBinding Content}" />
+					</Border>
+				</ControlTemplate>
+			</Button.Template>
+			<Grid>
+				<Image Source="{Binding Image}" Stretch="UniformToFill" telerikNavigation:RadCoverFlow.EnableLoadNotification="True" />				
+			</Grid>
+		</Button>      
+		<Border x:Name="InfoPanel" CornerRadius="2" Height="48" Width="150" VerticalAlignment="Center" Margin="0 30" Grid.Row="1" IsHitTestVisible="False"
+				BorderBrush="#80D0D0D0" BorderThickness="1">
+			<Border.RenderTransform>
+				<TranslateTransform x:Name="InfoPanelTransform" Y="9" />
+			</Border.RenderTransform>
+
+			<Border.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#38FFFFFF" Offset="0.004"/>
+					<GradientStop Color="#86101010" Offset="1"/>
+				</LinearGradientBrush>
+			</Border.Background>
+
+			<Grid VerticalAlignment="Center">
+				<TextBlock Foreground="#FF000000" Margin="1 2 0 0" Text="Image Details" TextWrapping="Wrap" FontSize="15" 
+						   HorizontalAlignment="Center" FontFamily="Segoe UI"/>
+				<TextBlock Text="Image Details" TextWrapping="Wrap" FontSize="15" HorizontalAlignment="Center"
+						   FontFamily="Segoe UI" Foreground="#FFFFFFFF"/>		
+			</Grid>
+		</Border>
+
+
+	</Grid>
+</UserControl>

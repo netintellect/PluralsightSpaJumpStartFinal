@@ -1,0 +1,1 @@
+﻿With the Telerik BusyIndicator control you can show visual indication while an activity is being processed at the background.

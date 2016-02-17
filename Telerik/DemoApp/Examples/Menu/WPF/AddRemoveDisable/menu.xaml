@@ -1,0 +1,37 @@
+<menuModel:MenuItemsCollection xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:menuModel="clr-namespace:Examples.Menu.Common;assembly=Menu">
+
+    <menuModel:MenuItem Text="Add">
+        <menuModel:MenuItem Text="New" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/11new.png" />
+        <menuModel:MenuItem Text="Open" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/12open.png" />
+        <menuModel:MenuItem Text="Save" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="Save As..." StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/13Save.png" />
+        <menuModel:MenuItem Text="Close" StaysOpenOnClick="True" />
+    </menuModel:MenuItem>
+
+    <menuModel:MenuItem Text="Disable">
+        <menuModel:MenuItem Text="Undo" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/21undo.png" />
+        <menuModel:MenuItem Text="Redo" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="Cut" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/19cut.png" />
+        <menuModel:MenuItem Text="Copy" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/22copy.png" />
+        <menuModel:MenuItem Text="Paste" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/20paste.png" />
+    </menuModel:MenuItem>
+
+    <menuModel:MenuItem Text="Remove">
+        <menuModel:MenuItem Text="Index" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="Search" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="Online Support" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="Send Feedback" StaysOpenOnClick="True" />
+        <menuModel:MenuItem Text="About Us" StaysOpenOnClick="True"
+                ImageUrl="../../Images/Menu/2about.png" />
+    </menuModel:MenuItem>
+
+</menuModel:MenuItemsCollection>

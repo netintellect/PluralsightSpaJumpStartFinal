@@ -1,0 +1,42 @@
+<UserControl x:Class="Telerik.Windows.Examples.CoverFlow.DataInfo.Example"
+		xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common" xmlns:local="clr-namespace:Telerik.Windows.Examples.CoverFlow.DataInfo">
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Data Info" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Grid>
+            <!--Decoration borders-->
+            <Border BorderBrush="#FFCBD8E8" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFF3F3F3" Offset="0.004"/>
+                        <GradientStop Color="White" Offset="0.181"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Rectangle HorizontalAlignment="Stretch" Height="31" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#50CCCCCC" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="0.429"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <telerik:RadCoverFlow x:Name="coverFlow" OffsetY="100" VerticalAlignment="Center"
+								  CameraViewpoint="Center" ItemScale="0.7" RotationY="60" ReflectionHeight="0.2" ReflectionOpacity="2"
+								  DistanceBetweenItems="35" DistanceFromSelectedItem="-30">
+				<telerik:RadCoverFlow.ItemTemplate>
+					<DataTemplate>
+						<local:DetailsPopup />
+					</DataTemplate>
+				</telerik:RadCoverFlow.ItemTemplate>
+			</telerik:RadCoverFlow>
+
+		</Grid>
+</UserControl>

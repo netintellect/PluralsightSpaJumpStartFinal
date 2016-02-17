@@ -1,0 +1,1 @@
+﻿CollectionEditor and CollectionEditorPicker are editor controls that provide UI for editing collections and their items. Currently they are used in the domain of RadPropertyGrid as default editors for IEnumerable type-compatible properties, but they can be successfully used out of this context as standalone editors.

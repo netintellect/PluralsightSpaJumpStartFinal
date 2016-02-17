@@ -1,0 +1,1 @@
+﻿This example demonstrates how RadTimeline supports custom annotations that are associated with specific start date and duration.

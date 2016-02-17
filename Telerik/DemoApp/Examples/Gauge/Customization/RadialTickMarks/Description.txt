@@ -1,0 +1,2 @@
+﻿The <b>Major</b>, <b>Middle</b> and <b>Minor</b> tick marks display value intervals along the gauge scale.<br />
+In this example you can try the available tick marks' properties of our gauge.

@@ -1,0 +1,255 @@
+<UserControl x:Class="Telerik.Windows.Examples.TransitionControl.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TransitionControl.FirstLook"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		mc:Ignorable="d"
+		d:DesignHeight="300" d:DesignWidth="500"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/TransitionControl;component/FirstLook/WPF/Resources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Transition items data -->
+      <local:TransitionItems x:Key="Medalists">
+        <local:TransitionItems.Persons>
+          <local:Person Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/Athletics_front.png" Width="341" Height="145"/>
+          <local:Person Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/medalist_back.png" Width="341" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PerspectiveRotationTransition Direction="Right">
+                <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+              </telerik:PerspectiveRotationTransition>
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="FirstPlace_Men">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/1st_front.png" Width="170" Height="145"/>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/UsainBolt_back.png" Width="170" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PerspectiveRotationTransition Direction="Left" NewPlaneCenterOfRotationX="0" OldPlaneCenterOfRotationX="1">
+                <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+              </telerik:PerspectiveRotationTransition>
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="SecondPlace_Men">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/2nd_front.png" Width="170" Height="145"/>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/YohanBlake_back.png" Width="170" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PerspectiveRotationTransition Direction="Left" NewPlaneCenterOfRotationZ="0.4" OldPlaneCenterOfRotationZ="0.4" RotationLength="90">
+                <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+              </telerik:PerspectiveRotationTransition>
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="ThirdPlace_Men">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/3rd_front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/JustinGatlin_back.png" Width="170" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PerspectiveRotationTransition Direction="Left" NewPlaneCenterOfRotationZ="-0.15" OldPlaneCenterOfRotationZ="-0.15">
+                <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+              </telerik:PerspectiveRotationTransition>
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="Photo_Men">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/Athl_Image_front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/london2012_back.png" Width="170" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PerspectiveRotationTransition Direction="Right" NewPlaneCenterOfRotationZ="-0.25" OldPlaneCenterOfRotationZ="-0.25">
+                <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                  <CubicEase EasingMode="EaseInOut" />
+                </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+              </telerik:PerspectiveRotationTransition>
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="Medalists_Women">
+        <local:TransitionItems.Persons>
+          <local:Person Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/AthleticsWOMEN_front.png" Width="170" Height="291" />
+          <local:Person Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/AthleticsWOMEN_back.png" Width="170" Height="291"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:FlipWarpTransition />
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="FirstPlace_Women">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/1st_wom_front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/Shelly-Ann_back.png" Width="170" Height="145" />
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:MotionBlurredZoomTransition />
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="SecondPlace_Women">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/2nd_wom_front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/CarmelitaJeter_back.png" Width="170" Height="145"/>
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:PixelateTransition />
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="ThirdPlace_Women">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/3rd_wom_front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/VeronicaCampbell_back.png" Width="170" Height="145" />
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:RollTransition />
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+      <local:TransitionItems x:Key="Photo_Women">
+        <local:TransitionItems.Persons>
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/Priz_Front.png" Width="170" Height="145" />
+          <local:Person  Photo="/TransitionControl;component/Images/PerspectiveTransitions/WPF/london2012_back.png" Width="170" Height="145" />
+        </local:TransitionItems.Persons>
+        <local:TransitionItems.Transitions>
+          <local:TransitionSet>
+            <local:TransitionSet.Transition>
+              <telerik:WaveTransition />
+            </local:TransitionSet.Transition>
+          </local:TransitionSet>
+        </local:TransitionItems.Transitions>
+      </local:TransitionItems>
+
+      <DataTemplate x:Key="ItemTemplate">
+        <Image Source="{Binding Photo}" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None"/>
+      </DataTemplate>
+
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <StackPanel x:Name="LayoutRoot">
+    <Grid>
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="146" />
+            <RowDefinition Height="146" />
+            <RowDefinition Height="145" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="171"/>
+            <ColumnDefinition Width="170" />
+          </Grid.ColumnDefinitions>
+
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.ColumnSpan="2" DataContext="{StaticResource Medalists}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Row="1" DataContext="{StaticResource FirstPlace_Men}" HorizontalAlignment="Left">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75"/>
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}"  Grid.Row="1" Grid.Column="1" DataContext="{StaticResource SecondPlace_Men}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Row="2" DataContext="{StaticResource ThirdPlace_Men}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Row="2" Grid.Column="1" DataContext="{StaticResource Photo_Men}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+        </Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1 0 0 0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="146" />
+            <RowDefinition Height="146" />
+            <RowDefinition Height="145" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="171"/>
+            <ColumnDefinition Width="170" />
+          </Grid.ColumnDefinitions>
+
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.RowSpan="2" DataContext="{StaticResource Medalists_Women}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Column="1" DataContext="{StaticResource Photo_Women}" HorizontalAlignment="Left">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}"  Grid.Row="1" Grid.Column="1" DataContext="{StaticResource FirstPlace_Women}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Row="2" DataContext="{StaticResource SecondPlace_Women}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75" />
+          </telerik:RadButton>
+          <telerik:RadButton Style="{StaticResource TransitionButton}" Command="{Binding SelectNext}" Grid.Row="2" Grid.Column="1" DataContext="{StaticResource ThirdPlace_Women}">
+            <telerik:RadTransitionControl Transition="{Binding CurrentTransition}" ContentTemplate="{StaticResource ItemTemplate}" Content="{Binding SelectedPerson}" Duration="0:0:0.75"/>
+          </telerik:RadButton>
+        </Grid>
+      </StackPanel>
+    </Grid>
+    <TextBlock Text="source: wikipedia.org" HorizontalAlignment="Right" Foreground="#FFD4D6D6"
+            FontSize="10" VerticalAlignment="Top" />
+  </StackPanel>
+</UserControl>

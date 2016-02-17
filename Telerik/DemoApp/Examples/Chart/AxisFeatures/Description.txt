@@ -1,0 +1,1 @@
+﻿Telerik Chart control provides a rich API that grants full control over various programmatic operations. The example demonstrates how to modify the behavior of the chart axes using features like  <b>Layout Mode</b>, <b>Label Step</b>, <b>Label Rotation Angle</b>, <b>AutoRange</b> and <b>Extend Direction</b>.

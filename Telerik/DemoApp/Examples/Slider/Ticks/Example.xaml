@@ -1,0 +1,38 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.Slider.Ticks.Example"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Ticks" Margin="8" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot" Width="600" Height="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <telerik:RadSlider x:Name="normalSlider" VerticalAlignment="Center" Maximum="10"
+						Value="5"
+						IsSnapToTickEnabled="{Binding Path=IsChecked, ElementName=chbIsSnapToTickEnabled}"
+						TickFrequency="{Binding Path=Value, ElementName=radNumTickFrequency}"
+						Margin="20 0" TickPlacement="Both" />
+        <telerik:RadSlider x:Name="rangeSlider" IsSelectionRangeEnabled="True" Grid.Row="1"
+						VerticalAlignment="Center" Maximum="10" SelectionStart="4" SelectionEnd="6"
+						IsSnapToTickEnabled="{Binding Path=IsChecked, ElementName=chbIsSnapToTickEnabled}"
+						TickFrequency="{Binding Path=Value, ElementName=radNumTickFrequency}"
+						Margin="20 0" TickPlacement="Both" />
+
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="TickFrequency:" />
+            <telerik:RadNumericUpDown x:Name="radNumTickFrequency" Value="1" Maximum="10"
+					Minimum="1" Margin="0 0 0 2" SmallChange="1" LargeChange="1" />
+            <CheckBox Content="IsSnapToTickEnabled" x:Name="chbIsSnapToTickEnabled" Margin="0 2" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

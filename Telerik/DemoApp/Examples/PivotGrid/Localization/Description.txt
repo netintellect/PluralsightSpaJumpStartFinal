@@ -1,0 +1,3 @@
+﻿The localization mechanism of RadPivotGrid lets you adjust the control to any culture. You can also set the desired culture to the <b>LocalDataSourceProvider</b> in order to parse the data respectively (this would also affect the grouping mechanism when the used culture has different first day of the week).
+</br>
+</br>To see it in action, simply change the culture using the ComboBox in the configuration area on the right.

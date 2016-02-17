@@ -1,0 +1,265 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Buttons.FirstLook.UIControls.PassengersDetailsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Telerik.Windows.Examples.Buttons.FirstLook.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikMaskedInput="clr-namespace:Telerik.Windows.Controls.MaskedInput;assembly=Telerik.Windows.Controls.Input"
+             Width="440"
+             MinHeight="232"
+             Margin="0 15 0 10"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+	<UserControl.Resources>
+		<common:DropDownWidthConverter x:Key="DropDownWidthConverter" />
+		<Style x:Key="PassengerStyle" BasedOn="{StaticResource RadListBoxItemStyle}" TargetType="telerik:RadListBoxItem">
+			<Setter Property="Padding" Value="7 0 0 0" />
+			<Setter Property="HorizontalContentAlignment" Value="Left" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="Margin" Value="1" />
+			<Setter Property="Height" Value="36" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="telerik:RadListBoxItem">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal" />
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="MouseOverPathElement" Storyboard.TargetProperty="Visibility">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="Visibility">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled" />
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Unselected" />
+									<VisualState x:Name="Selected">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Foreground">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="White" />
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="SelectedPathElement" Storyboard.TargetProperty="Visibility">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="SelectedBorder" Storyboard.TargetProperty="Visibility">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused" />
+									<VisualState x:Name="Unfocused" />
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="Border"
+							        Background="Transparent"
+							        BorderBrush="#D6D4D4"
+							        BorderThickness="1" />
+							<Border x:Name="MouseOverBorder"
+							        Background="#EEEEEE"
+							        BorderBrush="#D6D4D4"
+							        BorderThickness="1"
+							        Visibility="Collapsed" />
+							<Border x:Name="SelectedBorder" Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" Visibility="Collapsed" />
+							<ContentControl x:Name="contentPresenter"
+							                Margin="{TemplateBinding Padding}"
+							                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							                Content="{TemplateBinding Content}"
+							                ContentTemplate="{TemplateBinding ContentTemplate}"
+							                Foreground="{TemplateBinding Foreground}"
+							                IsTabStop="False" />
+							<Grid Margin="10 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+								<Path x:Name="MouseOverPathElement"
+								      Data="M0,0L6,0L12,6L6,12L0,12L6,6z"
+								      Fill="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+								      Stretch="None"
+								      Visibility="Collapsed" />
+								<Path x:Name="SelectedPathElement"
+								      Data="M0,0L6,0L12,6L6,12L0,12L6,6z"
+								      Fill="White"
+								      Stretch="None"
+								      Visibility="Collapsed" />
+							</Grid>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="NoBorderStyle" BasedOn="{StaticResource RadListBoxStyle}" TargetType="telerik:RadListBox">
+			<Setter Property="BorderThickness" Value="0" />
+		</Style>
+		<Style x:Key="TextStyle" TargetType="TextBlock">
+			<Setter Property="Foreground" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+			<Setter Property="FontFamily" Value="Segoe UI" />
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+		</Style>
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="192" />
+			<ColumnDefinition Width="134" />
+			<ColumnDefinition Width="114" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<!--  Passengers  -->
+		<telerik:RadListBox x:Name="passengerList"
+		                    Grid.RowSpan="4"
+		                    MinWidth="152"
+		                    MaxHeight="190"
+		                    Margin="0 35 0 0"
+		                    HorizontalAlignment="Left"
+		                    VerticalAlignment="Top"
+		                    BorderThickness="0"
+		                    ItemContainerStyle="{StaticResource PassengerStyle}"
+		                    ItemsSource="{Binding Passengers}"
+		                    Padding="0"
+		                    SelectedIndex="0">
+			<telerik:RadListBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock VerticalAlignment="Center">
+						<Run Text="{Binding PassengerType}" />
+						<Run Text=" " />
+						<Run Text="{Binding PassengerIndex}" />
+					</TextBlock>
+				</DataTemplate>
+			</telerik:RadListBox.ItemTemplate>
+		</telerik:RadListBox>
+		<!--  Name  -->
+		<StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+			<TextBlock Margin="0 0 0 5" Style="{StaticResource TextStyle}" Text="Name" />
+			<telerik:RadWatermarkTextBox MinHeight="{StaticResource MinHeight}"
+			                             HorizontalAlignment="Stretch"
+			                             VerticalAlignment="Bottom"
+			                             Text="{Binding ElementName=passengerList,
+			                                            Path=SelectedItem.Name,
+			                                            Mode=TwoWay}"
+			                             WatermarkContent="Full Name" />
+		</StackPanel>
+		<!--  Birth Date  -->
+		<StackPanel Grid.Row="1"
+		            Grid.Column="1"
+		            Grid.ColumnSpan="2"
+		            VerticalAlignment="Bottom">
+			<TextBlock Margin="0 0 0 5" Style="{StaticResource TextStyle}" Text="Birthday" />
+			<telerik:RadDateTimePicker MinHeight="{StaticResource MinHeight}"
+			                           HorizontalAlignment="Stretch"
+			                           VerticalAlignment="Bottom"
+			                           DateTimeWatermarkContent="DD/MM/YY"
+			                           InputMode="DatePicker"
+			                           SelectedValue="{Binding ElementName=passengerList,
+			                                                   Path=SelectedItem.Birthday,
+			                                                   Mode=TwoWay}" />
+		</StackPanel>
+		<!--  Contact  -->
+		<StackPanel Grid.Row="2"
+		            Grid.Column="1"
+		            Grid.ColumnSpan="2"
+		            VerticalAlignment="Bottom">
+			<TextBlock Margin="0 0 0 5" Style="{StaticResource TextStyle}" Text="Mobile Phone" />
+			<telerik:RadWatermarkTextBox MinHeight="22"
+			                             HorizontalAlignment="Stretch"
+			                             VerticalAlignment="Bottom"
+			                             Text="{Binding ElementName=passengerList,
+			                                            Path=SelectedItem.MobilePhone,
+			                                            Mode=TwoWay}"
+			                             WatermarkContent="(+00) 000 00 00 00" />
+		</StackPanel>
+		<!--  Language  -->
+		<StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom">
+			<TextBlock Margin="0 0 0 5" Style="{StaticResource TextStyle}" Text="Language" />
+			<telerik:RadDropDownButton x:Name="languageButton"
+			                           MinHeight="{StaticResource MinHeight}"
+			                           Margin="0 0 20 0"
+			                           HorizontalAlignment="Stretch"
+			                           HorizontalContentAlignment="Left"
+			                           Content="{Binding PassengersFormModel.LanguageDropDownButtonContent}"
+			                           DropDownContent="{Binding PassengersFormModel.Languages}"
+			                           IsOpen="{Binding PassengersFormModel.IsLanguageDropDownOpen,
+			                                            Mode=TwoWay}">
+				<telerik:RadDropDownButton.DropDownContentTemplate>
+					<DataTemplate>
+						<telerik:RadListBox Width="{Binding ElementName=languageButton,
+						                                    Path=ActualWidth,
+						                                    Converter={StaticResource DropDownWidthConverter}}"
+						                    ItemsSource="{Binding}"
+						                    SelectionChanged="RadListBox_SelectionChanged"
+						                    Style="{StaticResource NoBorderStyle}">
+							<telerik:RadListBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding}" />
+								</DataTemplate>
+							</telerik:RadListBox.ItemTemplate>
+						</telerik:RadListBox>
+					</DataTemplate>
+				</telerik:RadDropDownButton.DropDownContentTemplate>
+			</telerik:RadDropDownButton>
+		</StackPanel>
+		<!--  Meal  -->
+		<StackPanel Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom">
+			<TextBlock Margin="0 0 0 5" Style="{StaticResource TextStyle}" Text="Meal" />
+			<telerik:RadDropDownButton x:Name="mealButton"
+			                           MinHeight="{StaticResource MinHeight}"
+			                           HorizontalAlignment="Stretch"
+			                           VerticalAlignment="Bottom"
+			                           HorizontalContentAlignment="Left"
+			                           Content="{Binding PassengersFormModel.MealDropDownButtonContent}"
+			                           DropDownContent="{Binding PassengersFormModel.Meals}"
+			                           IsOpen="{Binding PassengersFormModel.IsMealDropDownOpen,
+			                                            Mode=TwoWay}">
+				<telerik:RadDropDownButton.DropDownContentTemplate>
+					<DataTemplate>
+						<telerik:RadListBox Width="{Binding ElementName=mealButton,
+						                                    Path=ActualWidth,
+						                                    Converter={StaticResource DropDownWidthConverter}}"
+						                    ItemsSource="{Binding}"
+						                    SelectionChanged="RadListBox_SelectionChanged"
+						                    Style="{StaticResource NoBorderStyle}">
+							<telerik:RadListBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding}" />
+								</DataTemplate>
+							</telerik:RadListBox.ItemTemplate>
+						</telerik:RadListBox>
+					</DataTemplate>
+				</telerik:RadDropDownButton.DropDownContentTemplate>
+			</telerik:RadDropDownButton>
+		</StackPanel>
+	</Grid>
+</UserControl>

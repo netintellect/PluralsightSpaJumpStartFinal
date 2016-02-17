@@ -1,0 +1,1 @@
+﻿MappedLightTransition uses a color multiply and blend effect to swap parts of the old and new image. A predefined grayscale ImageBrush defines which area transitions first, and which one - second. It can be used with various transition patterns.

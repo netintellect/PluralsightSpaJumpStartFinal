@@ -1,0 +1,1 @@
+﻿RadAutoCompleteBox is a control that provides a TextBox for the users input and suggests possible matches based on that input. The control offers different autocomplete, filtering and selection modes as well as built in UI virtualization for working with thousands of items in its ItemsSource.

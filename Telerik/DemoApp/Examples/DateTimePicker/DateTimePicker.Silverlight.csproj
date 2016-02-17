@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ExpressionBlendVersion>4.0.20520.0</ExpressionBlendVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E700568D-87DE-44B8-9540-B1CFCA3D5124}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.DateTimePicker</RootNamespace>
+    <AssemblyName>DateTimePicker</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>DateTimePicker.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Telerik.Windows.Examples.DateTimePicker.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the
+	     MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+	     to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configurator\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clock\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumDataSource.cs" />
+    <Compile Include="FirstLook\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Hall.cs" />
+    <Compile Include="FirstLook\HallCollection.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\ValidationViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Clock\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Configurator\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Validation\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\plane_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Events\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Hall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Clock\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\schema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Validation\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Validation\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

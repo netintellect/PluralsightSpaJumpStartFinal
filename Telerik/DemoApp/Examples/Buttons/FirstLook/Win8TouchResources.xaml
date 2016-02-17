@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:Double x:Key="MinHeight">36</sys:Double>
+	<GridLength x:Key="FlightFormLargestColumnWidth">100</GridLength>
+	<GridLength x:Key="FlightFormMiddleColumnWidth">100</GridLength>
+	<GridLength x:Key="FlightFormSmallColumnWidth">10</GridLength>
+	<sys:Double x:Key="DropDownButtonWidth">100</sys:Double>
+	<sys:Double x:Key="FormWidth">460</sys:Double>
+</ResourceDictionary>

@@ -1,0 +1,4 @@
+﻿RadMap provides support for stunning map overlays through its ability to visualize multiple tile layers (map providers).
+
+This example demonstrates hybrid visualization of two BingMapsProviders -- base aerial layer overlayed with road layer.
+You can use this feature to create custom map provider (e.g. with traffic information) and use it as an overlay for the BingMaps / OpenStreetMap imagery data.

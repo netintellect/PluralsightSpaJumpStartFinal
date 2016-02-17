@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Barcode.Gallery.Code128.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"
+    xmlns:Converters="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"       
+    HorizontalAlignment="Center" VerticalAlignment="Center"             
+    mc:Ignorable="d" >
+
+    <UserControl.DataContext>
+        <vm:GalleryViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Converters:VisibilityConverter x:Key="VisibilityConverter">            
+        </Converters:VisibilityConverter>
+    </UserControl.Resources>
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Code 128" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Grid x:Name="LayoutRoot">
+
+        <telerik:RadBarcode128 Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code128Visibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="CODE 128" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+        <telerik:RadBarcode128A Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code128AVisibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="CODE 128A" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+        <telerik:RadBarcode128B Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code128BVisibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="CODE 128B" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+        <telerik:RadBarcode128C Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code128CVisibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="CODE 128C" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+        
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">          
+            <TextBlock Text="RadBarcode128 type:" Margin="0, 0, 10, 10"></TextBlock>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <RadioButton x:Name="Code128"
+                             Content="Code128"                              
+                             Command="{Binding Code128VisibilityChangedCommand}" 
+                             CommandParameter="Code128" IsChecked="True" 
+                             GroupName="codetype" Margin="0, 2"/>
+                <RadioButton x:Name="Code128A"
+                             Content="Code128A" 
+                             Command="{Binding Code128VisibilityChangedCommand}" 
+                             CommandParameter="Code128A"
+                             GroupName="codetype" Margin="0, 2"/>
+                <RadioButton x:Name="Code128B"
+                             Content="Code128B" 
+                             Command="{Binding Code128VisibilityChangedCommand}" 
+                             CommandParameter="Code128B"
+                             GroupName="codetype" Margin="0, 2"/>
+                <RadioButton x:Name="Code128C"
+                             Content="Code128C" 
+                             Command="{Binding Code128VisibilityChangedCommand}" 
+                             CommandParameter="Code128C"
+                             GroupName="codetype" Margin="0, 2"/>
+            </StackPanel>
+            <CheckBox x:Name="ChecksumBox"
+                      Content="Show Checksum"
+                      Margin="0,2"
+                      IsChecked="{Binding ShowChecksum, Mode=TwoWay}" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

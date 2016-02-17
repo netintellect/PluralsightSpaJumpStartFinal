@@ -1,0 +1,105 @@
+<Examples:DataServiceDataSourceExample x:Class="Telerik.Windows.Examples.DataServiceDataSource.RadDataFilterIntegration.Example"
+									   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+									   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+									   xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+									   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+									   xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+									   xmlns:dataFilter="clr-namespace:Telerik.Windows.Controls.Data.DataFilter;assembly=Telerik.Windows.Controls.Data"
+									   xmlns:odata="clr-namespace:Telerik.Windows.Examples.DataServiceDataSource.OData"
+									   xmlns:local="clr-namespace:Telerik.Windows.Examples.DataServiceDataSource.RadDataFilterIntegration">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="RadDataFilter Integration"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.Resources>
+			<local:Types x:Key="Types" />
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="60*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="40*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<telerik:RadDataServiceDataSource x:Name="dataSource"
+										  PageSize="10"
+										  AutoLoad="True"
+										  QueryName="Customers"
+										  LoadingData="OnDataSourceLoadingData"
+										  LoadedData="OnDataSourceLoadedData">
+			<telerik:RadDataServiceDataSource.DataServiceContext>
+				<odata:NorthwindEntities />
+			</telerik:RadDataServiceDataSource.DataServiceContext>
+		</telerik:RadDataServiceDataSource>
+		<telerik:RadGridView x:Name="radGridView"
+							 Grid.Row="0" Margin="2" GroupRenderMode="Flat"
+							 ColumnWidth="*"
+							 IsFilteringAllowed="False"
+							 ShowGroupPanel="False"
+							 ItemsSource="{Binding DataView, ElementName=dataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=dataSource}"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 CanUserFreezeColumns="False"
+							 AutoGenerateColumns="False">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Customer ID"
+											DataMemberBinding="{Binding CustomerID}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Company Name"
+											DataMemberBinding="{Binding CompanyName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Contact Name"
+											DataMemberBinding="{Binding ContactName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Contact Title"
+											DataMemberBinding="{Binding ContactTitle}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Address"
+											DataMemberBinding="{Binding Address}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="City"
+											DataMemberBinding="{Binding City}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Country"
+											DataMemberBinding="{Binding Country}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+		<telerik:RadDataPager x:Name="radDataPager"
+							  Grid.Row="1"
+							  Margin="2" FontSize="12" 
+							  Source="{Binding DataView, ElementName=dataSource}"
+							  DisplayMode="All"
+							  IsTotalItemCountFixed="True" />
+		<telerik:RadDataFilter x:Name="radDataFilter"
+							   Source="{Binding DataView, ElementName=dataSource}"
+							   AutoGenerateItemPropertyDefinitions="False"
+							   Grid.Row="2"
+							   Margin="2">
+			<telerik:RadDataFilter.ItemPropertyDefinitions>
+				<dataFilter:ItemPropertyDefinition PropertyName="CompanyName"
+												   PropertyType="{Binding String, Source={StaticResource Types}}"
+												   DisplayName="Company" />
+				<dataFilter:ItemPropertyDefinition PropertyName="ContactName"
+												   PropertyType="{Binding String, Source={StaticResource Types}}"
+												   DisplayName="Contact Name" />
+				<dataFilter:ItemPropertyDefinition PropertyName="ContactTitle"
+												   PropertyType="{Binding String, Source={StaticResource Types}}"
+												   DisplayName="Contact Title" />
+				<dataFilter:ItemPropertyDefinition PropertyName="City"
+												   PropertyType="{Binding String, Source={StaticResource Types}}" />
+				<dataFilter:ItemPropertyDefinition PropertyName="Country"
+												   PropertyType="{Binding String, Source={StaticResource Types}}" />
+			</telerik:RadDataFilter.ItemPropertyDefinitions>
+		</telerik:RadDataFilter>
+		<TextBox x:Name="debugTextBox"
+				 Grid.Row="4"
+				 IsReadOnly="True"
+				 VerticalAlignment="Stretch"
+				 FontFamily="Courier New"
+				 Height="65"
+				 VerticalContentAlignment="Top"
+				 HorizontalScrollBarVisibility="Auto" />
+	</Grid>
+</Examples:DataServiceDataSourceExample>

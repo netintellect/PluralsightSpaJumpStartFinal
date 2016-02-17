@@ -1,0 +1,35 @@
+<UserControl
+		xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.Upload.Events.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+    
+    <Border CornerRadius="6" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <telerik:RadUpload Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"
+				Filter="Image Files (*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png|Text Files (*.txt)|*.txt|All Files(*.*)|*.*"
+				FilterIndex="0" IsAutomaticUpload="false" OverwriteExistingFiles="True"
+                           UploadServiceUrl="../../RadUploadHandler.ashx"
+                           TargetFolder="{StaticResource TargetFolder}"
+                FileCountExceeded="RadUpload_FileCountExceeded"
+				FilesSelected="RadUpload_FilesSelected" FileTooLarge="RadUpload_FileTooLarge"
+				FileUploaded="RadUpload_FileUploaded" FileUploadFailed="RadUpload_FileUploadFailed"
+				FileUploadStarting="RadUpload_FileUploadStarting"
+				ProgressChanged="RadUpload_ProgressChanged"
+				UploadCanceled="RadUpload_UploadCanceled" UploadFinished="RadUpload_UploadFinished"
+				UploadPaused="RadUpload_UploadPaused" UploadResumed="RadUpload_UploadResumed"
+				UploadSizeExceeded="RadUpload_UploadSizeExceeded"
+				UploadStarted="RadUpload_UploadStarted"/>
+    </Border>
+
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+            <ScrollViewer Height="404" Margin="0 2" Style="{StaticResource ScrollViewerStyle_ListEvent}" x:Name="ScrollViewer">
+				<TextBlock x:Name="TextOutput"  />
+			</ScrollViewer>
+            <Button x:Name="btnClear" Content="Clear" Click="btnClear_Click" Margin="0 2" />
+		</StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

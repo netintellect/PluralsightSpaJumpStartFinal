@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.CollectionNavigator.FirstLook.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 xmlns:sampleData="clr-namespace:Telerik.Windows.Examples"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 d:DesignHeight="300"
+			 d:DesignWidth="400">
+	<UserControl.Resources>
+		<sampleData:ExamplesDataContext x:Key="northwindDataContext" />
+	</UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Collection Navigator"
+					   Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Background="White"
+		  DataContext="{StaticResource northwindDataContext}">
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<telerik:RadGridView ItemsSource="{Binding ElementName=collectionNavigator, Path=CollectionView}"
+							 Margin="2" IsFilteringAllowed="False" GroupRenderMode="Flat"
+							 ShowGroupPanel="False"
+							 CanUserFreezeColumns="False"
+							 AutoGenerateColumns="False">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding LastName}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Title}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding TitleOfCourtesy}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Address}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding City}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Region}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+		<ListBox Grid.Column="1"
+				 ItemsSource="{Binding ElementName=collectionNavigator, Path=CollectionView}"
+				 Margin="2"
+				 SelectedItem="{Binding ElementName=collectionNavigator, Path=CurrentItem, Mode=TwoWay}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid MinHeight="10">
+						<Grid.Resources>
+							<Style TargetType="TextBlock">
+								<Setter Property="Margin"
+										Value="5,0" />
+								<Setter Property="FontSize"
+										Value="12" />
+							</Style>
+						</Grid.Resources>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="{Binding Mode=TwoWay, Path=FirstName}" />
+						<TextBlock Text="{Binding Mode=TwoWay, Path=LastName}"
+								   Grid.Column="1" />
+						<TextBlock Text="{Binding Mode=TwoWay, Path=Title}"
+								   Grid.Column="2" />
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<telerik:RadCollectionNavigator Grid.Row="1"
+										Height="30"
+										Margin="2"
+										Grid.ColumnSpan="2"
+										x:Name="collectionNavigator"
+										Source="{Binding Employees}" />
+	</Grid>
+</UserControl>

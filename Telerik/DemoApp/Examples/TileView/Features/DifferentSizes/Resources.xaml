@@ -1,0 +1,196 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<Style TargetType="TextBlock" x:Key="Name_Style">
+		<Setter Property="FontSize" Value="17" />
+		<Setter Property="Foreground" Value="#15aca9" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 7" />
+	</Style>
+	<Style TargetType="TextBlock" x:Key="SubTitle_Style">
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="Foreground" Value="#333333" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 7" />
+		<Setter Property="FontWeight" Value="Bold" />
+	</Style>
+	<Style TargetType="TextBlock" x:Key="Info_TextBlockStyle">
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="Foreground" Value="#333333" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="5 2 0 5" />
+	</Style>
+	<DataTemplate x:Key="BusinessCardTemplate">
+		<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Image Source="{Binding LargeImage}" Stretch="None" />
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="itemTemplate">
+		<Image Width="70" Height="70" Source="{Binding SmallImage}" />
+	</DataTemplate>
+	<DataTemplate x:Key="borderedItemTemplate">
+		<Border BorderBrush="Gray" BorderThickness="1">
+			<Image Width="70" Height="70" Source="{Binding SmallImage}" />
+		</Border>
+	</DataTemplate>
+	<Style x:Name="listBoxItemStyle" TargetType="ListBoxItem">
+		<Setter Property="Margin" Value="7" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBoxItem">
+					<Border x:Name="Border" BorderBrush="#FFD8D6D6" BorderThickness="1">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="SelectionStates">
+								<VisualState x:Name="Unselected" />
+								<VisualState x:Name="Selected">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+												Storyboard.TargetProperty="BorderBrush">
+											<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF7FCBE5" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<ContentPresenter Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}" />
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ListBoxStyle" TargetType="ListBox">
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBox">
+					<ScrollViewer BorderThickness="0" HorizontalScrollBarVisibility="Auto"
+							VerticalScrollBarVisibility="Hidden">
+						<ItemsPresenter />
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemContainerStyle" Value="{StaticResource listBoxItemStyle}" />
+		<Setter Property="ItemTemplate" Value="{StaticResource itemTemplate}" />
+	</Style>
+	<Style x:Key="wrapListBoxStyle" TargetType="ListBox">
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<telerik:RadWrapPanel />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBox">
+					<ItemsPresenter />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemContainerStyle" Value="{StaticResource listBoxItemStyle}" />
+		<Setter Property="ItemTemplate" Value="{StaticResource borderedItemTemplate}" />
+	</Style>
+	<Style x:Key="LeftArrowButton" TargetType="telerik:RadButton" BasedOn="{StaticResource RadButtonStyle}">
+		<Setter Property="Background" Value="#FF909090" />
+		<Setter Property="Width" Value="32" />
+		<Setter Property="Height" Value="32" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Margin" Value="8" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+					<Grid x:Name="Root">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Disabled">
+									<Storyboard>
+										<DoubleAnimation Duration="0" Storyboard.TargetName="Ellipse"
+												Storyboard.TargetProperty="Opacity" To="0.5" />
+										<DoubleAnimation Duration="0" Storyboard.TargetName="Arrow"
+												Storyboard.TargetProperty="Opacity" To="0.5" />
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Ellipse"
+												Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FFAFAFAF" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+												Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FFAFAFAF" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Ellipse x:Name="Ellipse" Width="32" Height="32" Fill="Transparent" Stroke="#FF909090"
+								StrokeThickness="2" />
+						<Path x:Name="Arrow" Width="16" Height="16" Data="M1,8 L15,8 M8,1 L1,8 8,15" Stroke="#FF909090"
+								StrokeThickness="2.5" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="RightArrowButton" TargetType="telerik:RadButton" BasedOn="{StaticResource RadButtonStyle}">
+		<Setter Property="Background" Value="#FF909090" />
+		<Setter Property="Width" Value="32" />
+		<Setter Property="Height" Value="32" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Margin" Value="8" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+					<Grid x:Name="Root">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Disabled">
+									<Storyboard>
+										<DoubleAnimation Duration="0" Storyboard.TargetName="Ellipse"
+												Storyboard.TargetProperty="Opacity" To="0.5" />
+										<DoubleAnimation Duration="0" Storyboard.TargetName="Arrow"
+												Storyboard.TargetProperty="Opacity" To="0.5" />
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Ellipse"
+												Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FFAFAFAF" />
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+												Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FFAFAFAF" />
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Ellipse x:Name="Ellipse" Width="32" Height="32" Fill="Transparent" Stroke="#FF909090"
+								StrokeThickness="2" />
+						<Path x:Name="Arrow" Width="16" Height="16" Data="M1,8 L15,8 M8,1 L15,8 8,15" Stroke="#FF909090"
+								StrokeThickness="2.5" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Style TargetType="telerik:RadButton" BasedOn="{StaticResource RadButtonStyle}">
+        <Setter Property="Padding" Value="5 0 0 0"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="Height" Value="34"/>
+    </Style>
+
+    <DataTemplate x:Key="CustomCommandDataTemplate">
+        <Canvas Width="150" Height="38" Margin="0 2 0 2">
+            <Border>
+                <telerik:RadButton Command="{Binding Path=Command}" 
+                                           CommandParameter="{Binding CommandParameter}">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="32" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Path=Command.Text}"
+						                   TextAlignment="Center" 
+						                   HorizontalAlignment="Stretch" />
+
+                        <Image Grid.Column="1" 
+                                       Width="16" Height="16" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+					                   Source="{Binding ImageUri}" />
+                    </Grid>
+                </telerik:RadButton>
+            </Border>
+        </Canvas>
+    </DataTemplate>
+
+    <Style TargetType="telerik:MapCommandBar" BasedOn="{StaticResource MapCommandBarStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:MapCommandBar">
+                    <telerik:RadDropDownButton x:Name="PART_MapCommandDropDown" HoverDelay="0:0:0.01" KeepOpen="True" CloseOnEscape="False" DropDownPlacement="Top"
+                                               Style="{StaticResource MapCommandBarButtonStyle}">
+                        <telerik:RadDropDownButton.DropDownContent>
+                            <Grid x:Name="PART_DropDownPopupWrapper" Background="#01ffffff" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                                <Border Height="114" HorizontalAlignment="Stretch" Margin="10 10 10 30" Background="Transparent">
+                                    <StackPanel x:Name="PART_CommandPanel" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                    <Border.Effect>
+                                        <DropShadowEffect Opacity="0.3" BlurRadius="10" Direction="270" ShadowDepth="3" />
+                                    </Border.Effect>
+                                </Border>
+                            </Grid>
+                        </telerik:RadDropDownButton.DropDownContent>
+                    </telerik:RadDropDownButton>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="telerik:MapZoomBar" BasedOn="{StaticResource MapZoomBarStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:MapZoomBar">
+                    <Grid x:Name="mapNavigation" Background="Transparent">
+                        <telerik:RadDropDownButton x:Name="PART_MapNavigationDropDown" Grid.Column="1" HoverDelay="0:0:0.01" KeepOpen="True" CloseOnEscape="False" DropDownPlacement="Bottom"
+                                                   Style="{StaticResource MapZoomBarButtonStyle}">
+                            <telerik:RadDropDownButton.DropDownContent>
+                                <Grid x:Name="PART_DropDownPopupWrapper">
+                                    <Border Height="114" HorizontalAlignment="Left" Margin="10 10 10 30" VerticalAlignment="Bottom" >
+                                        <Grid x:Name="PART_ZoomPresetsPanel" Grid.Column="1" Grid.ColumnSpan="2" />
+                                        <Border.Effect>
+                                            <DropShadowEffect Opacity="0.3" BlurRadius="10" Direction="270" ShadowDepth="3" />
+                                        </Border.Effect>
+                                    </Border>
+                                </Grid>
+                            </telerik:RadDropDownButton.DropDownContent>
+                            <!-- Magnifier element -->
+                            <Grid>
+                                <Path Stretch="Fill" StrokeThickness="2" Width="{StaticResource MapMagnifierPathSize}" Height="{StaticResource MapMagnifierPathSize}" Data="M13.952573,12.273359 L21.023642,19.588496 19.609426,21.00271 12.53836,13.687573 z M8,1 C11.865993,1.0000001 15,4.1340071 15,8.0000001 15,11.865994 11.865993,15 8,15 4.134007,15 1,11.865994 1,8.0000001 1,4.1340071 4.134007,1.0000001 8,1 z" Stroke="{StaticResource MapMagnifierPathStroke}" Fill="{telerik:Windows8TouchResource ResourceKey=InvertedBrush}">
+                                    <Path.Effect>
+                                        <DropShadowEffect BlurRadius="3" Color="#FFFFFFFF" ShadowDepth="0" Opacity="{StaticResource MapMagnifierShadowOpacity}" />
+                                    </Path.Effect>
+                                </Path>
+                                <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 4 0 0" Width="6" Height="6" Fill="{StaticResource MapMagnifierEllipseFill}" />
+                            </Grid>
+                        </telerik:RadDropDownButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

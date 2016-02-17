@@ -1,0 +1,82 @@
+<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Gallery.Compass.Example"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+					  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                      xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Compass" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Grid Width="740" Height="520">
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+            <telerik:RadRadialGauge Width="250" Height="250" OuterBorderThickness="3" OuterBorderBrush="{StaticResource StrongBrush}">
+                <telerik:RadialScale StartAngle="270"
+								     SweepAngle="360"     
+								     Min="0"  
+								     Max="360"    
+                                     Radius="0.95"
+								     MajorTickStep="90" 
+								     LabelTemplate="{StaticResource TickLabelEmpty}"
+								     LabelRotationMode="None"
+								     MajorTickLocation="Inside"
+                                     MajorTickOffset="0.05*"
+								     MiddleTickLocation="Inside"
+                                     MiddleTickRelativeHeight="0.03*"
+								     MinorTicks="1"
+								     MiddleTicks="6"
+                                     MiddleTickRelativeWidth="0.01*" 
+                                     MiddleTickOffset="0.05*" >
+
+                    <telerik:RadialScale.Indicators>
+                        <telerik:Needle x:Name="needle" Value="0"/>
+                        <telerik:Pinpoint Background="White" BorderBrush="{StaticResource StrongBrush}" BorderThickness="1" />
+                    </telerik:RadialScale.Indicators>
+
+                    <telerik:RadialScale.CustomItems>
+
+                        <Path telerik:ScaleObject.RelativeX="0.5"
+                              telerik:ScaleObject.RelativeY="0.5"
+                              Width="120"
+                              Height="120"
+                              Margin="-60,-60,0,0"
+                              Data="M120.20831,0 L70.358467,56.133026 L110.12349,60.0961 L70.324753,64.107193 L120.20805,120.24709 L64.089218,70.318649 L60.096004,110.12361 L56.146,70.319382 L6.4849854E-05,120.20806 L49.928524,64.089188 L10.123501,60.09597 L49.895714,56.149139 L0,0.038835526 L56.133057,49.888702 L60.096138,10.123616 L64.104004,49.890381 z" 
+                              Fill="{StaticResource BasicBrush}" 
+                              RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                            <Path.RenderTransform>
+                                <RotateTransform Angle="45" />
+                            </Path.RenderTransform>
+                        </Path>
+
+                        <TextBlock Text="N" 
+                                   telerik:ScaleObject.Value="0"
+                                   Style="{StaticResource CustomLabel}" />
+
+                        <TextBlock Text="E" 
+                                   telerik:ScaleObject.Value="90"
+                                   Style="{StaticResource CustomLabel}" />
+
+                        <TextBlock Text="S" 
+						           telerik:ScaleObject.Value="180"
+                                   Style="{StaticResource CustomLabel}" />
+
+                        <TextBlock Text="W" 
+						           telerik:ScaleObject.Value="270"
+                                   Style="{StaticResource CustomLabel}" />
+                        
+                        <Ellipse telerik:ScaleObject.Value="0"
+                                 Style="{StaticResource CustomTick}" />
+                        <Ellipse telerik:ScaleObject.Value="90"
+                                 Style="{StaticResource CustomTick}" />
+                        <Ellipse telerik:ScaleObject.Value="180"
+                                 Style="{StaticResource CustomTick}" />
+                        <Ellipse telerik:ScaleObject.Value="270"
+                                 Style="{StaticResource CustomTick}"  />
+                    </telerik:RadialScale.CustomItems>
+                </telerik:RadialScale>
+            </telerik:RadRadialGauge>
+        </Border>
+    </Grid>
+</demo:DynamicBasePage>

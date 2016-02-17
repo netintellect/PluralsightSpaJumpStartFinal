@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.FirstLook.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.PropertyGrid.FirstLook"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="First Look"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid x:Name="LayoutRoot"
+		  Background="White"
+		  Width="650" Margin="4"
+		  Height="329">
+            <Grid.Resources>
+                <local:ColorToBrushConverter x:Key="colorToBrush" />
+                <local:ThicknessToStringConverter x:Key="thicknessToString" />
+                <DataTemplate x:Key="borderThicknessTemplate">
+                    <TextBox Text="{Binding BorderThickness, Converter={StaticResource thicknessToString}, Mode=TwoWay}" />
+                </DataTemplate>
+                <DataTemplate x:Key="borderBrushTemplate">
+                    <telerik:RadColorPicker SelectedColor="{Binding BorderBrush, Converter={StaticResource colorToBrush}, Mode=TwoWay}" />
+                </DataTemplate>
+                <DataTemplate x:Key="foregroundTemplate">
+                    <telerik:RadColorPicker SelectedColor="{Binding Foreground, Converter={StaticResource colorToBrush}, Mode=TwoWay}" />
+                </DataTemplate>
+                <DataTemplate x:Key="backgroundTemplate">
+                    <telerik:RadColorPicker SelectedColor="{Binding Background, Converter={StaticResource colorToBrush}, Mode=TwoWay}" />
+                </DataTemplate>
+                <Style TargetType="telerik:RadColorPicker" BasedOn="{StaticResource RadColorPickerStyle}">
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle}">
+                    <Setter Property="Margin" Value="0,0,2,0"/>
+                </Style>
+                <Style TargetType="telerik:RadComboBox" BasedOn="{StaticResource RadComboBoxStyle}">
+                    <Setter Property="Margin" Value="0,0,2,0"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <telerik:RadButton Content="Button"
+						   Height="50"
+						   Width="150"
+						   Name="testButton"
+						   HorizontalAlignment="Center" />
+            <telerik:RadPropertyGrid x:Name="propertyGrid1"
+								 Item="{Binding ElementName=testButton}"
+								 Grid.Column="1"
+								 LabelColumnWidth="180"
+								 AutoGeneratePropertyDefinitions="False">
+                <telerik:RadPropertyGrid.PropertyDefinitions>
+                    <telerik:PropertyDefinition Binding="{Binding Height}"
+											GroupName="Layout"
+											DisplayName="Height"
+											Description="Gets or sets the height of a System.Windows.FrameworkElement" />
+                    <telerik:PropertyDefinition Binding="{Binding Width}"
+											GroupName="Layout"
+											DisplayName="Width"
+											Description="Gets or sets the width of a System.Windows.FrameworkElement" />
+                    <telerik:PropertyDefinition Binding="{Binding Foreground}"
+											GroupName="Brushes"
+											DisplayName="Foreground"
+											EditorTemplate="{StaticResource foregroundTemplate}"
+											Description="Gets or sets a brush that describes the foreground color of an element" />
+                    <telerik:PropertyDefinition Binding="{Binding Background}"
+											GroupName="Brushes"
+											DisplayName="Background"
+											EditorTemplate="{StaticResource backgroundTemplate}"
+											Description="Gets or sets a brush that describes the background color of an element" />
+                    <telerik:PropertyDefinition Binding="{Binding BorderBrush}"
+											GroupName="Brushes"
+											DisplayName="BorderBrush"
+											EditorTemplate="{StaticResource borderBrushTemplate}"
+											Description="Gets or sets a brush that describes the border background of an element" />
+                    <telerik:PropertyDefinition Binding="{Binding BorderThickness}"
+											GroupName="Appearance"
+											DisplayName="BorderThickness"
+											EditorTemplate="{StaticResource borderThicknessTemplate}"
+											Description="Gets or sets the border thickness of a control" />
+                    <telerik:PropertyDefinition Binding="{Binding VerticalContentAlignment}"
+											DisplayName="VerticalContentAlignment"
+											GroupName="Layout"
+											Description="Gets or sets the vertical alignment characteristics that are applied to a System.Windows.FrameworkElement when it is composed in a parent object such as a panel or items control" />
+                    <telerik:PropertyDefinition Binding="{Binding HorizontalContentAlignment}"
+											DisplayName="HorizontalContentAlignment"
+											GroupName="Layout"
+											Description="Gets or sets the horizontal alignment characteristics that are applied to a System.Windows.FrameworkElement when it is composed in a parent object such as a panel or items control" />
+                </telerik:RadPropertyGrid.PropertyDefinitions>
+            </telerik:RadPropertyGrid>
+        </Grid>
+</UserControl>

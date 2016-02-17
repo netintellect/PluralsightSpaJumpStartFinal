@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{782820E5-BFD9-4F14-A288-CBE903CA537C}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TimeBar</RootNamespace>
+    <AssemblyName>TimeBar</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TimeBar.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TimeBar.App</SilverlightAppEntry>
+    <TestPageFileName>TimeBar.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\HourInfo.cs" />
+    <Compile Include="FirstLook\HourlyDistribution.cs" />
+    <Compile Include="FirstLook\TrafficInfoItem.cs" />
+    <Compile Include="FirstLook\ServerInfo.cs" />
+    <Compile Include="FirstLook\TrafficInfo.cs" />
+    <Compile Include="FirstLook\WebsiteStatisticsViewModel.cs" />
+    <Compile Include="Gallery\AreaVisualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\ColumnVisualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CombinedVisualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\ExampleViewModel\ExampleViewModel.cs" />
+    <Compile Include="Gallery\LineVisualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmallIntervals\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmallIntervals\ExampleViewModel.cs" />
+    <Compile Include="SmallIntervals\SpeedData.cs" />
+    <Compile Include="SpecialSlots\Converters\LocationsToPathDataConverter.cs" />
+    <Compile Include="SpecialSlots\Converters\NameToImageSourceConverter.cs" />
+    <Compile Include="SpecialSlots\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialSlots\ExampleViewModel.cs" />
+    <Compile Include="SpecialSlots\Models\Airport.cs" />
+    <Compile Include="SpecialSlots\Models\FlightPath.cs" />
+    <Compile Include="SpecialSlots\Models\Ticket.cs" />
+    <Compile Include="SpecialSlots\SparklineUtils.cs" />
+    <Compile Include="SpecialSlots\WeekendsGenerator.cs" />
+    <Compile Include="SpecialSlots\WorkDaysGenerator.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SpecialSlots\Description.txt" />
+    <Resource Include="SmallIntervals\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+    <Resource Include="Gallery\AreaVisualization\Description.txt" />
+    <Resource Include="Gallery\ColumnVisualization\Description.txt" />
+    <Resource Include="Gallery\LineVisualization\Description.txt" />
+    <Resource Include="Gallery\CombinedVisualization\Description.txt" />
+    <None Include="Images\TimeBar\SpecialSlots\departure.jpg" />
+    <None Include="Images\TimeBar\SpecialSlots\return.jpg" />
+    <Content Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\AreaVisualization\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gallery\ColumnVisualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CombinedVisualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\LineVisualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmallIntervals\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmallIntervals\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmallIntervals\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpecialSlots\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

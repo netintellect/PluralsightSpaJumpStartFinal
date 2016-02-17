@@ -1,0 +1,8 @@
+﻿Telerik GanttView  is a control for managing and visualization of project planning data. It supports different types of items:
+
+<ul><li><b>Regular task</b>
+<li><b>Summary task</b> - task with child tasks.
+<li><b>Milestone task</b> -task with duration 0 or IsMilestone property set to True.
+<li><b>Relations</b> between items.</ul>
+
+RadGanttView control is MVVM friendly control developed with performance in mind. It can be easily bound via the TasksSource property. It supports editing of the cell values.

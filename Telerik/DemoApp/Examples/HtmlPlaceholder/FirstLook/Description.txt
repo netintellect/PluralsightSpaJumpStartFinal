@@ -1,0 +1,2 @@
+﻿Telerik RadHtmlPlaceHolder is a part of the <b>Telerik.Windows.Controls</b> assembly. It allows you to host HTML content in your Silverlight application. The HtmlPlaceHolder controls the HTML content size and position and makes it act as if it is part of the Silverlight application's layout. You can display both custom HTML and external web pages. This example shows both approaches.
+

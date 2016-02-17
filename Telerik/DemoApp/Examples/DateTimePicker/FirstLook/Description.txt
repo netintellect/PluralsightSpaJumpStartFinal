@@ -1,0 +1,1 @@
+﻿RadDateTimePicker is a convenient way to get rid of boring date and time parsing and data validation. RadDateTimePicker is easy and simple, but yet essential way to improve end-user experience. You can set InputMode that allows you to use RadDateTimePicker as DatePicker, TimePicker or both.

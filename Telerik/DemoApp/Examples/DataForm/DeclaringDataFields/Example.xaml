@@ -1,0 +1,84 @@
+<UserControl x:Class="Telerik.Windows.Examples.DataForm.DeclaringDataFields.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Employees"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Height="450"
+		  Width="350">
+		<telerik:RadDataForm ItemsSource="{Binding Employees}"
+							 AutoGenerateFields="False">
+			<telerik:RadDataForm.ReadOnlyTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Margin="10"
+								   Text="This is the form ReadOnlyTemplate!"
+								   FontWeight="Bold" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding FirstName,Mode=TwoWay}"
+												   Label="First Name:"
+												   IsEnabled="False" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding LastName,Mode=TwoWay}"
+												   Label="Last Name:"
+												   IsEnabled="False" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding Occupation,Mode=TwoWay}"
+												   Label="Occupation:"
+												   IsEnabled="False" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding StartingDate,Mode=TwoWay}"
+												   Label="Starting Date:"
+												   IsEnabled="False" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding PhoneNumber,Mode=TwoWay}"
+												   Label="Phone Number:"
+												   IsEnabled="False" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding Salary,Mode=TwoWay}"
+												   Label="Salary:"
+												   IsEnabled="False" />
+					</StackPanel>
+				</DataTemplate>
+			</telerik:RadDataForm.ReadOnlyTemplate>
+			<telerik:RadDataForm.EditTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Margin="10"
+								   Text="This is the form EditTemplate!"
+								   FontWeight="Bold" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding FirstName,Mode=TwoWay}"
+												   Label="First Name:">
+							<telerik:DataFormDataField.Content>
+								<TextBox Text="{Binding FirstName, Mode=TwoWay}" />
+							</telerik:DataFormDataField.Content>
+						</telerik:DataFormDataField>
+						<telerik:DataFormDataField DataMemberBinding="{Binding LastName,Mode=TwoWay}"
+												   Label="Last Name:" />
+					</StackPanel>
+				</DataTemplate>
+			</telerik:RadDataForm.EditTemplate>
+			<telerik:RadDataForm.NewItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Margin="10"
+								   Text="This is the form NewItemTemplate!"
+								   FontWeight="Bold" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding FirstName,Mode=TwoWay}"
+												   Label="First Name:" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding LastName,Mode=TwoWay}"
+												   Label="Last Name:" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding Occupation,Mode=TwoWay}"
+												   Label="Occupation:" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding StartingDate,Mode=TwoWay}"
+												   Label="Starting Date:" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding PhoneNumber,Mode=TwoWay}"
+												   Label="Phone Number:" />
+						<telerik:DataFormDataField DataMemberBinding="{Binding Salary,Mode=TwoWay}"
+												   Label="Salary:" />
+					</StackPanel>
+				</DataTemplate>
+			</telerik:RadDataForm.NewItemTemplate>
+		</telerik:RadDataForm>
+	</Grid>
+</UserControl>

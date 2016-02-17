@@ -1,0 +1,1 @@
+﻿This example demonstrates the built-in zooming and scrolling feature as well as UI virtualization that allows users to smoothly navigate through the plot area when there is a dense area of data points that can not be seen clearly at the normal chart scale. Drag the slider to see the scrolling in action.

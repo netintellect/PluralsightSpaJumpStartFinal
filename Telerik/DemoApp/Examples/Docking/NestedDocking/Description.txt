@@ -1,0 +1,1 @@
+﻿Even though the layout of RadDocking is very agile and could be used to easily achieve many different layouts, sometimes a more complex one is desired. In such scenarios it is possible to use nested RadDocking instances which provide multiple DocumentHosts, multiple level of docking compass restriction and inner Tabs inside RadPanes.

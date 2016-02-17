@@ -1,0 +1,7 @@
+﻿The control is part from the Telerik.Windows.Control.GridView assembly. The main features of the RadTreeListView are:<br/>
+ - Multiple columns <br/>
+ - Hierarchical Sorting/Multiple columns sorting <br/>
+ - UI virtualization - can handle thousands of records <br/>
+ - Editing <br/>
+ - Collapse/expand of rows <br/>
+

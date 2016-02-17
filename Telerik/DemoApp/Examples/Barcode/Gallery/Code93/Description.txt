@@ -1,0 +1,1 @@
+﻿Code 93 was designed to complement and improve upon Code 39. Code 93 is a continuous symbology and produces denser code.

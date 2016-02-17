@@ -1,0 +1,1584 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Gallery.WeatherStation.Example"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikGauge="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Gauge"
+    xmlns:telerikGauges="clr-namespace:Telerik.Windows.Controls.Gauges;assembly=Telerik.Windows.Controls.Gauge"
+    xmlns:demo="clr-namespace:Telerik.Examples.Gauge">
+    <demo:DynamicBasePage.Resources>
+        <ResourceDictionary>
+            <Storyboard x:Key="Anim">
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="41.585"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="64.451"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="31.148"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0.878"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.019"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="0.835"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.901"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0.878"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.019"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="0.835"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.901"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:04" Value="#FFFDBD31"/>
+                    <SplineColorKeyFrame KeyTime="00:00:08" Value="#FFFDD931"/>
+                </ColorAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:04" Value="#FFFFC600"/>
+                    <SplineColorKeyFrame KeyTime="00:00:08" Value="#FFFDFF00"/>
+                </ColorAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Offset)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.135"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:04" Value="#FFFFDFA7"/>
+                    <SplineColorKeyFrame KeyTime="00:00:08" Value="#FFFFF8A7"/>
+                </ColorAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.63099998235702515"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.635"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="path1" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:03" Value="#33FFFFFF"/>
+                    <SplineColorKeyFrame KeyTime="00:00:06" Value="#B2FFFFFF"/>
+                    <SplineColorKeyFrame KeyTime="00:00:08" Value="#66FFFFFF"/>
+                </ColorAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-6.666"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="3.333"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-6.666"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="9.999"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="13.332"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-6.666"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="6.666"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="13.332"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="3.333"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-3.333"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="6.666"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="13.332"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-9.999"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-6.666"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-10.54"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-3.873"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.794"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-2.542"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-3.876"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="0.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-2.542"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="2.296"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="2.296"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="8.668"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="12.67"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="19.337"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="16.002"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="19.337"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse11" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="13.334"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.998"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-1.337"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-2.671"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.998"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="5.333"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse12" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-26.668"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-26.668"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-24.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-20.665"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-13.998"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-17.333"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-20.001"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse11" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-2.668"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-6.003"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-7.337"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-8.671"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-12.006"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-6.667"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-6.667"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse12" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="14.001"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="14.001"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="14.001"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="14.001"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="14.001"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="14.001"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="8"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-1.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="3"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-11.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-2"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-7"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-2"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse11_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="6"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="9"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="9"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="4"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.117"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.341"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="1.924"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.487"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="1.276"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.07"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.285"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="1.844"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.425"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="1.223"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-0.25"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-0.64"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-2.888"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-1.202"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-0.388"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-0.75"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-3.021"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="2.537"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-1.631"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-3.643"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.026"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.189"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="1.005"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.113"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.051"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.218"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="1.03"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.14"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-0.25"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0.987"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.39"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-0.427"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.276"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-2.566"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-0.435"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.786"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0.998"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.665"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="0.85"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="1.089"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.786"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0.998"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.665"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="0.85"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="1.089"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-1.283"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-0.013"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-0.438"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-0.202"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-1.635"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.715"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-1.325"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-5.973"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-3.392"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-0.36"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse12_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-16.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-11.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse11_Copy" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-11"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-6"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-6"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-12"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-12"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-1.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse12_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="5.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-4.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13_Copy3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="20.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse11_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="10"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="10.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse9_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse10_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-4"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-7.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-5"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse13_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-5.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="2.816"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="2.816"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.816"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="2.816"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="2.816"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="2.816"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-5.326"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-7.326"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-4.326"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-6.326"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-4.326"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-5.326"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.97"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.97"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.97"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.47"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="0.47"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="0.47"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.47"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-3.293"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="-6.293"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="-7.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-3.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-1.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-2.793"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="-3.793"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path7" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.382"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.382"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="-0.118"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-0.118"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-0.118"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path7" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="-1.178"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-3.678"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.322"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="2.322"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.322"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path8" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.539"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.539"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.539"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="1.539"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path8" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="5.282"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="3.282"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.282"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:08" Value="0.282"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path9" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1.852"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1.852"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.852"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="0.352"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path9" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.569"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="3.569"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.069"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:05" Value="6.069"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path10" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="2.713"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.713"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="2.713"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="2.713"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="2.713"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path10" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:02" Value="4.123"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="7.123"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="4.623"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="2.623"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.623"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path11" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="1.435"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="1.435"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="1.435"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="1.435"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path11" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" BeginTime="00:00:00">
+                    <SplineDoubleKeyFrame KeyTime="00:00:03" Value="2.312"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:04" Value="-2.188"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:06" Value="-4.188"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:07" Value="-5.188"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+
+
+            <Style x:Key="CustomNumberPosition" TargetType="telerikGauges:NumberPosition">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+            </Style>
+
+            <ControlTemplate x:Key="SunnyWeather">
+                <Border Loaded="Weather_Loaded" Height="90" HorizontalAlignment="Left" Margin="66,-28,0,0" VerticalAlignment="Top" Width="90">
+                    <Grid>
+                        <Path Height="106.019" 
+                              HorizontalAlignment="Stretch" 
+                              Margin="-4.25,-8.5,-4.22700023651123,-7.51900005340576" 
+                              x:Name="path" 
+                              VerticalAlignment="Stretch" 
+                              Width="98.477" 
+                              RenderTransformOrigin="0.5,0.5" 
+                              Stretch="Fill" 
+                              StrokeThickness="1" 
+                              Fill="#FFFFFFFF"
+                              Data="M49.854671,0.5 L49.854671,105.519 M47.94062,6.5391932 L51.768726,99.979805 M51.409492,12.580738 L46.29985,93.346268 M54.356918,3.8114283 L43.352402,100.71258 M56.261551,7.0906124 L41.447777,99.390396 M57.857258,10.452726 L39.852081,94.568291 M63.701931,7.4606357 L35.936108,99.20266 M60.259777,11.84125 L39.245743,94.376236 M62.001068,18.490969 L35.732716,87.800285 M67.161896,11.692624 L30.94322,93.698883 M68.128548,14.292724 L29.458502,91.363014 M68.775024,17.89666 L29.198357,87.04615 M72.87664,11.499219 L26.725418,95.508766 M68.602333,15.072473 L30.962173,91.471642 M68.929863,21.938686 L28.886265,84.311096 M75.385941,16.355532 L22.979731,89.090729 M75.793449,19.099401 L22.010473,86.498161 M75.680191,22.759182 L22.649469,82.221001 M79.070091,21.487991 L19.554001,83.596352 M85.615051,22.013048 L13.787069,85.481789 M80.384567,23.931547 L19.138895,83.114166 M86.335167,27.432156 L12.430609,78.175972 M85.791649,30.152176 L12.394857,75.408257 M85.784958,31.064276 L13.61706,76.290466 M65.58078,94.005669 L34.885403,13.647674 M62.308777,99.696472 L35.648151,7.6272049 M62.810741,94.148277 L35.49971,13.477825 M57.102463,98.030289 L42.832729,9.5249538 M54.874756,96.376938 L45.348667,10.677139 M54.053726,95.980949 L44.02916,11.40481 M22.25293,16.471468 L74.314499,89.453735 M24.981932,16.965406 L71.547539,89.538445 M28.411777,18.247776 L67.702042,87.560402 M25.000912,11.456942 L73.7192,94.004311 M25.895113,16.955961 L72.408798,88.300842 M30.458731,11.775827 L66.289101,93.952484 M33.02655,12.824931 L63.56464,93.463799 M93.323524,30.49111 L5.2763667,72.427109 M91.549042,33.842579 L5.3906965,70.111542 M89.540443,36.975616 L8.6380444,66.205994 M95.171967,40.351955 L2.6335275,65.33548 M89.633621,39.748528 L8.4803009,65.589439 M93.411919,45.526672 L4.6619506,58.186104 M91.717613,47.722839 L5.8588963,55.690384 M96.599564,50.273895 L0.89407575,55.565189 M97.976891,53.227692 L0.5,50.19672 M94.864929,55.395027 L1.6619431,48.190727 M91.644844,57.260471 L6.3372011,46.205158 M95.105316,62.840824 L1.3974061,42.682293 M90.457893,59.768719 L6.4790778,45.585209 M91.171272,66.635429 L6.4740882,37.255066 M88.659569,67.812057 L8.6810064,35.584267 M91.831825,72.315407 L4.3245773,33.199928 M91.019287,77.857986 L8.5169191,25.855206 M87.238281,78.149788 L10.53514,24.714529 M83.517143,78.126335 L15.572075,25.371426 M83.672798,84.690773 L13.09798,19.831423 M81.222824,79.686996 L16.008369,24.908457 M78.358589,85.968956 L20.224771,17.724703 M75.597046,85.7108 L22.974022,17.402533 M76.050186,91.200264 L20.426298,13.139239">
+                            <Path.Stroke>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#00FFAF00" Offset="1"/>
+                                    <GradientStop Color="#FFFFAF00" Offset="0"/>
+                                </RadialGradientBrush>
+                            </Path.Stroke>
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Ellipse Margin="13,13,13,13" x:Name="ellipse" StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.361,0.98" StartPoint="0.639,0.02">
+                                    <GradientStop Color="#FFFDFF00" Offset="1"/>
+                                    <GradientStop Color="#FFFFE3A7" Offset="0.14235086125597038"/>
+                                    <GradientStop Color="#FFFDD931" Offset="0.63099998235702515"/>
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Path Height="33.775" Margin="13,13,13,43.2249984741211" Stretch="Fill" Data="M64,32 C64,40.744873 58.995987,13.254043 32.497993,13.254043 C6,13.254043 0,40.928238 0,32 C0,14.326888 14.326888,0 32,0 C49.673111,0 64,14.326888 64,32 z">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.358,0.922" StartPoint="0.642,0.078">
+                                    <GradientStop Color="#99F59E04" Offset="0.139"/>
+                                    <GradientStop Color="#9AFFBB00" Offset="1"/>
+                                    <GradientStop Color="#72FDE754" Offset="0.619"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Ellipse StrokeThickness="1" Margin="13,13,13,13" Stroke="#FFF0930C" />
+                        <Path Height="33.275" Margin="23.5,15.5,23.5,41.2249984741211" x:Name="path1" Stretch="Fill" Data="M64,32 C64,49.673111 49.673111,64 32,64 C14.326888,64 0,49.673111 0,32 C0,14.326888 14.326888,0 32,0 C49.673111,0 64,14.326888 64,32 z">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.0410000011324883,0.48199999332428" StartPoint="0.737669477531728,0.73460301933606">
+                                    <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#7FFFFFFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Border Height="27.334" HorizontalAlignment="Stretch" Margin="0,40.6689987182617,-13,21.9969997406006" VerticalAlignment="Stretch">
+                            <Grid>
+                                <Ellipse Margin="20.3330001831055,4.66699981689453,0,8.33300018310547" Width="82.667" StrokeThickness="1" RenderTransformOrigin="0.5,0.5" x:Name="ellipse1">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="1"/>
+                                            <GradientStop Color="#FFD9D9EA" Offset="0.238"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse Width="59.333" StrokeThickness="1" Margin="20.6669998168945,0,23,13" RenderTransformOrigin="0.5,0.5" x:Name="ellipse2">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                            <GradientStop Color="#FFDEDEE6" Offset="0.221"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse Width="82.667" StrokeThickness="1" Margin="0,9,20.3330001831055,4" RenderTransformOrigin="0.5,0.5" x:Name="ellipse3">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                            <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse StrokeThickness="1" Margin="26.6669998168945,13.3339996337891,10.3330001831055,-0.333999991416931" RenderTransformOrigin="0.5,0.5" x:Name="ellipse4">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                            <GradientStop Color="#FFDEDEE6" Offset="0.168"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse Width="82.667" StrokeThickness="1" Margin="-9.99899959564209,5.66699981689453,30.3320007324219,7.33300018310547" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" x:Name="ellipse5">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                            <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse StrokeThickness="1" Margin="3.33100008964539,12.3330001831055,30.3339996337891,0.666999995708466" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" x:Name="ellipse6">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                            <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="PartlyCloudyWeather">
+                <Grid Loaded="Weather_Loaded" Margin="0,-10,-38,0">
+                    <Ellipse Width="74.758" StrokeThickness="1" Margin="0,0,18,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse9" Height="23.155" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.221"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,29,6,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse10" Height="30.841" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,13,36,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse11" Height="19.813" HorizontalAlignment="Right" VerticalAlignment="Top" Width="107.664">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.168"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse12" Height="25.234" HorizontalAlignment="Right">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,21,18,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13" Height="23.925" HorizontalAlignment="Right" Width="111.404">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,16,13,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13_Copy" Height="21.333" HorizontalAlignment="Right" Width="99.335">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="ThunderstormWeather">
+                <Grid Loaded="Weather_Loaded" Margin="0,-10,-38,0">
+                    <Ellipse Width="74.758" StrokeThickness="1" Margin="0,0,18,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse9_Copy" Height="23.155" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.221"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,29,6,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse10_Copy" Height="30.841" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,13,36,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse11_Copy" Height="19.813" HorizontalAlignment="Right" VerticalAlignment="Top" Width="107.664">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.168"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse12_Copy" Height="25.234" HorizontalAlignment="Right">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,21,18,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13_Copy1" Height="23.925" HorizontalAlignment="Right" Width="111.404">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,16,13,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13_Copy2" Height="21.333" HorizontalAlignment="Right" Width="99.335">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Path Height="20.642" HorizontalAlignment="Right" Margin="0,36,84,0" VerticalAlignment="Top" Width="5.629" Stretch="Fill" StrokeThickness="1" Data="M-0.88460547,0.5 L4.75,0.5 L-1.1666666,16 L2.75,16.166666 L-3.1665609,33.416523 L0,18.25 L-3.5,18.5 z" RenderTransformOrigin="0.5,0.5" x:Name="path2">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="6.139"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#7FFFFFFF"/>
+                                <GradientStop Color="#FF32F7FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="39.953" HorizontalAlignment="Right" Margin="0,28,70,0" VerticalAlignment="Top" Width="10.896" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="1" Data="M-0.88460547,0.5 L4.75,0.5 L-1.1666666,16 L2.75,16.166666 L-3.1665609,33.416523 L0,18.25 L-3.5,18.5 z" x:Name="path3">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="6.08"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#7FFFFFFF"/>
+                                <GradientStop Color="#FF32F7FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.043" HorizontalAlignment="Right" Margin="0,36,57,0" VerticalAlignment="Top" Width="7.375" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="1" Data="M-0.88460547,0.5 L4.75,0.5 L-1.1666666,16 L2.75,16.166666 L-3.1665609,33.416523 L0,18.25 L-3.5,18.5 z" x:Name="path4">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="10.035"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#7FFFFFFF"/>
+                                <GradientStop Color="#FF32F7FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="RainyWeather">
+                <Grid Loaded="Weather_Loaded" Margin="0,-10,-38,0">
+                    <Ellipse Width="74.758" StrokeThickness="1" Margin="0,0,18,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse9_Copy1" Height="23.155" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.221"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,29,6,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse10_Copy1" Height="30.841" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,13,36,0" RenderTransformOrigin="0.5,0.5" x:Name="ellipse11_Copy1" Height="19.813" HorizontalAlignment="Right" VerticalAlignment="Top" Width="107.664">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.168"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Width="92.711" StrokeThickness="1" Margin="0,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse12_Copy1" Height="25.234" HorizontalAlignment="Right">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,21,18,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13_Copy3" Height="23.925" HorizontalAlignment="Right" Width="111.404">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse StrokeThickness="1" Margin="0,16,13,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" x:Name="ellipse13_Copy4" Height="21.333" HorizontalAlignment="Right" Width="99.335">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#00F6F6F7" Offset="0.959"/>
+                                <GradientStop Color="#FFDEDEE6" Offset="0.127"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Path Height="27.781" HorizontalAlignment="Left" Margin="93,38,0,0" VerticalAlignment="Top" Width="2.84" RenderTransformOrigin="0.500002063902636,0.0861416984620918" Stretch="Fill" Data="M1.5600064,2.1854999 C1.5600064,3.3925183 1.2107885,4.3709998 0.78000641,4.3709998 C0.34922433,4.3709998 6.4394026E-06,3.3925183 6.4394026E-06,2.1854999 C6.4394026E-06,0.97848165 0.34922433,0 0.78000641,0 C1.2107885,0 1.5600064,0.97848165 1.5600064,2.1854999 z M1.560002,9.1854868 C1.560002,10.392505 1.2107841,11.370987 0.780002,11.370987 C0.34921992,11.370987 2.0370853E-06,10.392505 2.0370853E-06,9.1854868 C2.0370853E-06,7.9784684 0.34921992,6.9999866 0.780002,6.9999866 C1.2107841,6.9999866 1.560002,7.9784684 1.560002,9.1854868 z M1.5600041,16.185501 C1.5600041,17.392519 1.2107862,18.371 0.78000414,18.371 C0.34922206,18.371 4.1832081E-06,17.392519 4.1832081E-06,16.185501 C4.1832081E-06,14.978482 0.34922206,14.000001 0.78000414,14.000001 C1.2107862,14.000001 1.5600041,14.978482 1.5600041,16.185501 z M1.5599999,23.185486 C1.5599999,24.392506 1.2107821,25.370987 0.77999997,25.370987 C0.34921789,25.370987 0,24.392506 0,23.185486 C0,21.978468 0.34921789,20.999987 0.77999997,20.999987 C1.2107821,20.999987 1.5599999,21.978468 1.5599999,23.185486 z" x:Name="path5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="1.8164203434736947" Y="-2.3257165326088849"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="29.08" HorizontalAlignment="Left" Margin="102,33,0,0" VerticalAlignment="Top" Width="4.246" RenderTransformOrigin="0.665359624605812,0.0822958088462484" Stretch="Fill" Data="M2.3308604,2.1854999 C2.3308604,3.3925183 1.9816425,4.3709998 1.5508604,4.3709998 C1.1200783,4.3709998 0.77086037,3.3925183 0.77086037,2.1854999 C0.77086037,0.97848165 1.1200783,0 1.5508604,0 C1.9816425,0 2.3308604,0.97848165 2.3308604,2.1854999 z M1.5599999,10.371141 C1.5599999,11.578159 1.2107821,12.556641 0.77999997,12.556641 C0.34921789,12.556641 0,11.578159 0,10.371141 C0,9.1641226 0.34921789,8.1856413 0.77999997,8.1856413 C1.2107821,8.1856413 1.5599999,9.1641226 1.5599999,10.371141 z M1.5600021,17.371155 C1.5600021,18.578175 1.2107842,19.556656 0.78000212,19.556656 C0.34922004,19.556656 2.1457672E-06,18.578175 2.1457672E-06,17.371155 C2.1457672E-06,16.164137 0.34922004,15.185656 0.78000212,15.185656 C1.2107842,15.185656 1.5600021,16.164137 1.5600021,17.371155 z M1.5600128,24.371136 C1.5600128,25.578156 1.2107949,26.556637 0.78001285,26.556637 C0.34923077,26.556637 1.2874603E-05,25.578156 1.2874603E-05,24.371136 C1.2874603E-05,23.164118 0.34923077,22.185637 0.78001285,22.185637 C1.2107949,22.185637 1.5600128,23.164118 1.5600128,24.371136 z" x:Name="path9">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="2.3516441756515079" Y="-1.4308874976486337"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.782" HorizontalAlignment="Left" Margin="109,42,0,0" VerticalAlignment="Top" Width="2.841" RenderTransformOrigin="0.500000754689382,0.086141607798331" Stretch="Fill" Data="M1.5600033,2.1854999 C1.5600033,3.3925183 1.2107854,4.3709998 0.78000331,4.3709998 C0.3492212,4.3709998 3.3083115E-06,3.3925183 3.3083115E-06,2.1854999 C3.3083115E-06,0.97848165 0.3492212,0 0.78000331,0 C1.2107854,0 1.5600033,0.97848165 1.5600033,2.1854999 z M1.5599999,9.1854849 C1.5599999,10.392504 1.2107821,11.370985 0.77999997,11.370985 C0.34921789,11.370985 0,10.392504 0,9.1854849 C0,7.978467 0.34921789,6.9999852 0.77999997,6.9999852 C1.2107821,6.9999852 1.5599999,7.978467 1.5599999,9.1854849 z M1.5600021,16.185499 C1.5600021,17.392519 1.2107842,18.371 0.78000212,18.371 C0.34922004,18.371 2.1461228E-06,17.392519 2.1461228E-06,16.185499 C2.1461228E-06,14.978481 0.34922004,14 0.78000212,14 C1.2107842,14 1.5600021,14.978481 1.5600021,16.185499 z M1.5600042,23.185513 C1.5600042,24.392532 1.2107863,25.371014 0.78000426,25.371014 C0.34922218,25.371014 4.2922456E-06,24.392532 4.2922456E-06,23.185513 C4.2922456E-06,21.978495 0.34922218,21.000013 0.78000426,21.000013 C1.2107863,21.000013 1.5600042,21.978495 1.5600042,23.185513 z" x:Name="path11">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="1.4350714696444764" Y="-0.68826416001584168"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.782" HorizontalAlignment="Left" Margin="116,38,0,0" VerticalAlignment="Top" Width="2.84" RenderTransformOrigin="0.500000279476484,0.086141704938082" Stretch="Fill" Data="M1.5600024,2.1854999 C1.5600024,3.3925183 1.2107846,4.3709998 0.78000253,4.3709998 C0.34922042,4.3709998 2.540899E-06,3.3925183 2.540899E-06,2.1854999 C2.540899E-06,0.97848165 0.34922042,0 0.78000253,0 C1.2107846,0 1.5600024,0.97848165 1.5600024,2.1854999 z M1.560002,9.1854858 C1.560002,10.392505 1.2107841,11.370986 0.780002,11.370986 C0.34921992,11.370986 2.0370853E-06,10.392505 2.0370853E-06,9.1854858 C2.0370853E-06,7.9784679 0.34921992,6.9999862 0.780002,6.9999862 C1.2107841,6.9999862 1.560002,7.9784679 1.560002,9.1854858 z M1.5600041,16.185501 C1.5600041,17.392519 1.2107862,18.371 0.78000414,18.371 C0.34922206,18.371 4.1832081E-06,17.392519 4.1832081E-06,16.185501 C4.1832081E-06,14.978482 0.34922206,14.000001 0.78000414,14.000001 C1.2107862,14.000001 1.5600041,14.978482 1.5600041,16.185501 z M1.5599999,23.185484 C1.5599999,24.392504 1.2107821,25.370985 0.77999997,25.370985 C0.34921789,25.370985 0,24.392504 0,23.185484 C0,21.978466 0.34921789,20.999985 0.77999997,20.999985 C1.2107821,20.999985 1.5599999,21.978466 1.5599999,23.185484 z" x:Name="path6">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="1.97029530182229" Y="0.20656487494441045"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.782" HorizontalAlignment="Left" Margin="122,35,0,0" VerticalAlignment="Top" Width="2.84" RenderTransformOrigin="0.500000676217111,0.086141607798331" Stretch="Fill" Data="M1.5600032,2.1854999 C1.5600032,3.3925183 1.2107853,4.3709998 0.78000313,4.3709998 C0.34922108,4.3709998 3.1826867E-06,3.3925183 3.1826867E-06,2.1854999 C3.1826867E-06,0.97848165 0.34922108,0 0.78000313,0 C1.2107853,0 1.5600032,0.97848165 1.5600032,2.1854999 z M1.5599999,9.1854849 C1.5599999,10.392503 1.2107821,11.370985 0.77999997,11.370985 C0.34921789,11.370985 0,10.392503 0,9.1854849 C0,7.9784665 0.34921789,6.9999847 0.77999997,6.9999847 C1.2107821,6.9999847 1.5599999,7.9784665 1.5599999,9.1854849 z M1.5600021,16.185499 C1.5600021,17.392517 1.2107842,18.370998 0.78000212,18.370998 C0.34922004,18.370998 2.1461228E-06,17.392517 2.1461228E-06,16.185499 C2.1461228E-06,14.97848 0.34922004,13.999999 0.78000212,13.999999 C1.2107842,13.999999 1.5600021,14.97848 1.5600021,16.185499 z M1.5600042,23.185513 C1.5600042,24.392532 1.2107863,25.371014 0.78000426,25.371014 C0.34922218,25.371014 4.2922456E-06,24.392532 4.2922456E-06,23.185513 C4.2922456E-06,21.978495 0.34922218,21.000013 0.78000426,21.000013 C1.2107863,21.000013 1.5600042,21.978495 1.5600042,23.185513 z" x:Name="path10">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="2.712918639455081" Y="1.1231375809514415"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.782" HorizontalAlignment="Left" Margin="130,42,0,0" VerticalAlignment="Top" Width="2.841" RenderTransformOrigin="0.49999816601759,0.086141607798331" Stretch="Fill" Data="M1.5599999,2.1854999 C1.5599999,3.3925183 1.2107821,4.3709998 0.77999997,4.3709998 C0.34921789,4.3709998 0,3.3925183 0,2.1854999 C0,0.97848165 0.34921789,0 0.77999997,0 C1.2107821,0 1.5599999,0.97848165 1.5599999,2.1854999 z M1.5600057,9.1855145 C1.5600057,10.392532 1.2107878,11.371014 0.78000569,11.371014 C0.34922364,11.371014 5.741781E-06,10.392532 5.741781E-06,9.1855145 C5.741781E-06,7.9784961 0.34922364,7.0000143 0.78000569,7.0000143 C1.2107878,7.0000143 1.5600057,7.9784961 1.5600057,9.1855145 z M1.5600015,16.185499 C1.5600015,17.392517 1.2107836,18.370998 0.78000152,18.370998 C0.34921944,18.370998 1.5585729E-06,17.392517 1.5585729E-06,16.185499 C1.5585729E-06,14.97848 0.34921944,13.999999 0.78000152,13.999999 C1.2107836,13.999999 1.5600015,14.97848 1.5600015,16.185499 z M1.5600036,23.185513 C1.5600036,24.392532 1.2107857,25.371014 0.78000367,25.371014 C0.34922159,25.371014 3.7046957E-06,24.392532 3.7046957E-06,23.185513 C3.7046957E-06,21.978495 0.34922159,21.000013 0.78000367,21.000013 C1.2107857,21.000013 1.5600036,21.978495 1.5600036,23.185513 z" x:Name="path7">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="1.3815469225380941" Y="1.822273576490673"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Height="27.782" HorizontalAlignment="Left" Margin="138,38,0,0" VerticalAlignment="Top" Width="2.84" RenderTransformOrigin="0.500003390175482,0.0861417114140732" Stretch="Fill" Data="M1.5600106,2.1854999 C1.5600106,3.3925183 1.2107927,4.3709998 0.78001052,4.3709998 C0.34922847,4.3709998 1.0577419E-05,3.3925183 1.0577419E-05,2.1854999 C1.0577419E-05,0.97848165 0.34922847,0 0.78001052,0 C1.2107927,0 1.5600106,0.97848165 1.5600106,2.1854999 z M1.560002,9.185483 C1.560002,10.392502 1.2107841,11.370983 0.780002,11.370983 C0.34921992,11.370983 2.0370853E-06,10.392502 2.0370853E-06,9.185483 C2.0370853E-06,7.9784651 0.34921992,6.9999833 0.780002,6.9999833 C1.2107841,6.9999833 1.560002,7.9784651 1.560002,9.185483 z M1.5600041,16.185497 C1.5600041,17.392517 1.2107862,18.370998 0.78000414,18.370998 C0.34922206,18.370998 4.1832081E-06,17.392517 4.1832081E-06,16.185497 C4.1832081E-06,14.978479 0.34922206,13.999998 0.78000414,13.999998 C1.2107862,13.999998 1.5600041,14.978479 1.5600041,16.185497 z M1.5599999,23.185482 C1.5599999,24.392502 1.2107821,25.370983 0.77999997,25.370983 C0.34921789,25.370983 0,24.392502 0,23.185482 C0,21.978464 0.34921789,20.999983 0.77999997,20.999983 C1.2107821,20.999983 1.5599999,21.978464 1.5599999,23.185482 z" x:Name="path8">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="11.97"/>
+                                <TranslateTransform X="2.5389692710808411" Y="2.7823336245912635"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF65B9E0" Offset="1"/>
+                                <GradientStop Color="#99FFFFFF" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="WetherElementBackground">
+                <Grid>
+                    <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="10" RadiusY="10" Stroke="#CCFFFFFF">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF383839" Offset="1"/>
+                                <GradientStop Color="#FF000000" Offset="0.66"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#FF000000" Height="12" HorizontalAlignment="Left" Margin="5,66,0,0" VerticalAlignment="Top" Width="145.665" RadiusX="6" RadiusY="6">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF5B5B5B" Offset="0.996"/>
+                                <GradientStop Color="#FF2B2B2B" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Foreground="#FFFFFFFF" Height="11.667" FontFamily="Arial" FontSize="9" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top" Width="134.001" TextWrapping="Wrap" Text="Next 24 Hours" />
+                    <TextBlock Foreground="#FFFFFFFF" Height="11.667" FontFamily="Arial" FontSize="9" HorizontalAlignment="Left" Margin="96,66,0,0" VerticalAlignment="Top" Width="134.001" TextWrapping="Wrap" Text="24-48" />
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="WetherElementWave">
+                <Path Height="33.867" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="156" Data="M0.5,10.5 C0.5,4.9771523 4.9771523,0.5 10.5,0.5 L145.5,0.5 C151.02284,0.5 155.5,4.9771523 155.5,10.5 L155.5,24.422945 C155.5,24.422945 118.66666,10.422306 75.666664,26.75597 C32.666668,43.08963 0.5,24.422945 0.5,24.422945 z" Stretch="Fill">
+                    <Path.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#3FFFFFFF" Offset="0.996"/>
+                            <GradientStop Color="#0CFFFFFF" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="TransparentLinearGaugeTemplate" TargetType="{x:Type telerikGauges:LinearGauge}">
+                <Grid>
+                    <ItemsPresenter />
+                </Grid>
+            </ControlTemplate>
+
+        </ResourceDictionary>
+    </demo:DynamicBasePage.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130" />
+                <RowDefinition Height="130" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="220" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Height="97" Width="156">
+                <ContentControl Template="{StaticResource WetherElementBackground}"/>
+                <TextBlock FontFamily="Arial" FontSize="14" Foreground="White"
+						   Margin="10,10,0,0"
+						   Text="Sofia"/>
+                <ContentControl x:Name="sofiaWeather" Template="{StaticResource SunnyWeather}"/>
+                <ContentControl Template="{StaticResource WetherElementWave}"/>
+                <telerikGauge:RadGauge>
+                    <telerikGauges:LinearGauge Template="{StaticResource TransparentLinearGaugeTemplate}">
+                        <telerikGauges:NumericScale Background="Transparent" BorderThickness="0">
+                            <telerikGauges:IndicatorList>
+                                <telerikGauges:NumericIndicator x:Name="sofiaCurrent"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="22"
+														  FontWeight="Bold"
+														  Left="0.1"
+														  Top="0.35"
+														  RelativeHeight="0.31"
+														  RelativeWidth="0.24"
+														  Format="{}{0:F0}°"
+														  Value="26"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}"  RelativeWidth="0.8" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="sofiaNext241"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.14"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="24"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="sofiaNext242"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.25"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°C"
+														  Value="18"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="sofiaNext481"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.7"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="20"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="sofiaNext482"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.77"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°"
+														  Value="14"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                            </telerikGauges:IndicatorList>
+                        </telerikGauges:NumericScale>
+                    </telerikGauges:LinearGauge>
+                </telerikGauge:RadGauge>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1" Height="97" Width="156">
+                <ContentControl Template="{StaticResource WetherElementBackground}"/>
+                <TextBlock FontFamily="Arial" FontSize="14" Foreground="White"
+						   Margin="10,10,0,0"
+						   Text="Paris"/>
+                <ContentControl x:Name="parisWeather" Template="{StaticResource PartlyCloudyWeather}"/>
+                <ContentControl Template="{StaticResource WetherElementWave}"/>
+                <telerikGauge:RadGauge>
+                    <telerikGauges:LinearGauge Template="{StaticResource TransparentLinearGaugeTemplate}">
+                        <telerikGauges:NumericScale Background="Transparent" BorderThickness="0">
+                            <telerikGauges:IndicatorList>
+                                <telerikGauges:NumericIndicator x:Name="parisCurrent"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="22"
+														  FontWeight="Bold"
+														  Left="0.1"
+														  Top="0.35"
+														  RelativeHeight="0.31"
+														  RelativeWidth="0.24"
+														  Format="{}{0:F0}°"
+														  Value="26"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}"  RelativeWidth="0.8" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="parisNext241"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.14"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="24"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="parisNext242"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.25"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°C"
+														  Value="18"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="parisNext481"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.7"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="20"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="parisNext482"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.77"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°"
+														  Value="14"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                            </telerikGauges:IndicatorList>
+                        </telerikGauges:NumericScale>
+                    </telerikGauges:LinearGauge>
+                </telerikGauge:RadGauge>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" Height="97" Width="156">
+                <ContentControl Template="{StaticResource WetherElementBackground}"/>
+                <TextBlock FontFamily="Arial" FontSize="14" Foreground="White"
+						   Margin="10,10,0,0"
+						   Text="London"/>
+                <ContentControl x:Name="londonWeather" Template="{StaticResource RainyWeather}"/>
+                <ContentControl Template="{StaticResource WetherElementWave}"/>
+                <telerikGauge:RadGauge>
+                    <telerikGauges:LinearGauge Template="{StaticResource TransparentLinearGaugeTemplate}">
+                        <telerikGauges:NumericScale Background="Transparent" BorderThickness="0">
+                            <telerikGauges:IndicatorList>
+                                <telerikGauges:NumericIndicator x:Name="londonCurrent"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="22"
+														  FontWeight="Bold"
+														  Left="0.1"
+														  Top="0.35"
+														  RelativeHeight="0.31"
+														  RelativeWidth="0.24"
+														  Format="{}{0:F0}°"
+														  Value="26"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}"  RelativeWidth="0.8" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="londonNext241"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.14"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="24"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="londonNext242"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.25"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°C"
+														  Value="18"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="londonNext481"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.7"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="20"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="londonNext482"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.77"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°"
+														  Value="14"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                            </telerikGauges:IndicatorList>
+                        </telerikGauges:NumericScale>
+                    </telerikGauges:LinearGauge>
+                </telerikGauge:RadGauge>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1" Height="97" Width="156">
+                <ContentControl Template="{StaticResource WetherElementBackground}"/>
+                <TextBlock FontFamily="Arial" FontSize="14" Foreground="White"
+						   Margin="10,10,0,0"
+						   Text="New-York"/>
+                <ContentControl x:Name="newYorkWeather" Template="{StaticResource ThunderstormWeather}"/>
+                <ContentControl Template="{StaticResource WetherElementWave}"/>
+                <telerikGauge:RadGauge>
+                    <telerikGauges:LinearGauge Template="{StaticResource TransparentLinearGaugeTemplate}">
+                        <telerikGauges:NumericScale Background="Transparent" BorderThickness="0">
+                            <telerikGauges:IndicatorList>
+                                <telerikGauges:NumericIndicator x:Name="newYorkCurrent"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="22"
+														  FontWeight="Bold"
+														  Left="0.1"
+														  Top="0.35"
+														  RelativeHeight="0.31"
+														  RelativeWidth="0.24"
+														  Format="{}{0:F0}°"
+														  Value="26"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}"  RelativeWidth="0.8" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="newYorkNext241"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.14"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="24"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="newYorkNext242"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.25"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°C"
+														  Value="18"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="newYorkNext481"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.7"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.12"
+														  Format="{}{0:F0}/"
+														  Value="20"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                                <telerikGauges:NumericIndicator x:Name="newYorkNext482"
+														  Foreground="White"
+														  FontFamily="Arial"
+														  FontSize="8"
+														  Left="0.77"
+														  Top="0.83"
+														  RelativeHeight="0.1"
+														  RelativeWidth="0.15"
+														  Format="{}{0:F0}°"
+														  Value="14"
+                                                          Background="Transparent" 
+                                                          BorderThickness="0">
+                                    <telerik:StyleManager.Theme>
+                                        <telerik:Office_BlackTheme />
+                                    </telerik:StyleManager.Theme>
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                    <telerikGauges:NumberPosition Style="{StaticResource CustomNumberPosition}" />
+                                </telerikGauges:NumericIndicator>
+                            </telerikGauges:IndicatorList>
+                        </telerikGauges:NumericScale>
+                    </telerikGauges:LinearGauge>
+                </telerikGauge:RadGauge>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</demo:DynamicBasePage>

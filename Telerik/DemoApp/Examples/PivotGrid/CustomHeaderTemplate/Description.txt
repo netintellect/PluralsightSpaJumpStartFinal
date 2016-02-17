@@ -1,0 +1,1 @@
+﻿You can use custom header templates with RadPivotGrid to show additional data, for example images for the products.

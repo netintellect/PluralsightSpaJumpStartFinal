@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView">
+
+	<Style TargetType="telerik:DurationPicker" BasedOn="{StaticResource RadComboBoxStyle}" />
+	<Style TargetType="telerik:SchedulerWindow" BasedOn="{StaticResource RadWindowStyle}" />
+
+</ResourceDictionary>

@@ -1,0 +1,79 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		x:Class="Telerik.Windows.Examples.Calendar.DatePicker.Example"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Calendar.DatePicker"
+		HorizontalAlignment="Center" VerticalAlignment="Center"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+	<UserControl.DataContext>
+		<local:ViewModel/>
+	</UserControl.DataContext>
+	<UserControl.Resources>
+		<ResourceDictionary>
+            <telerik:Windows8Colors x:Key="Windows8Colors" />
+            <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+            <SolidColorBrush x:Key="MainBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+            <SolidColorBrush x:Key="BasicBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.BasicColor}" />
+
+            <ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Calendar;component/DatePicker/Resources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+	</UserControl.Resources>
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Date Picker" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+    <Border BorderThickness="1" BorderBrush="{StaticResource BasicBrush}">
+        <Grid Width="750" Height="485">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Background="{StaticResource LightGrayTransparentBrush}">
+                <StackPanel Margin="7">
+                    <TextBlock Text="Choose a Date" Style="{StaticResource dateLabelStyle}" />
+                    <telerik:RadDatePicker x:Name="calendar"  Width="202"
+						    Culture="en-US" CalendarStyle="{StaticResource CalendarStyle}"
+						    SelectedDate="{Binding SelectedDate, Mode=TwoWay}" Validation.ErrorTemplate="{x:Null}"
+						    HorizontalAlignment="Left"
+						    DateSelectionMode="Day"/>
+
+                    <TextBlock Text="All New Cources" Foreground="{StaticResource AccentBrush}" Margin="0 20 0 0" 
+						       FontWeight="Bold" Style="{StaticResource baseLabelStyle}"/>
+                    <telerik:RadListBox x:Name="names" ItemsSource="{Binding Names}" MaxHeight="350" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+									    Margin="0 5 0 0" BorderThickness="0" IsHitTestVisible="False" 
+									    Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+									    ItemContainerStyle="{StaticResource courcesListBoxItemStyle}"
+									    ItemTemplate="{StaticResource coursesListBoxItemTemplate}"/>
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="10 0 0 0">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="WHAT'S HAPPENING AT ACADEMY TODAY" Style="{StaticResource eventsLabelStyle}" />
+                    <TextBlock x:Name="EmptyContent" Margin="20" HorizontalAlignment="Center" 
+					       VerticalAlignment="Center" Text="There are no upcoming events for this date." 
+					       FontStyle="Italic" FontSize="12" Foreground="{StaticResource GrayBrush}"
+					       Visibility="{Binding Cources.View.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                    <telerik:RadListBox x:Name="myEventsList" BorderThickness="0" BorderBrush="Transparent"
+									    Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource eventsListBoxItemStyle}"
+									    ItemsSource="{Binding Cources.View}" />
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>
+
+	

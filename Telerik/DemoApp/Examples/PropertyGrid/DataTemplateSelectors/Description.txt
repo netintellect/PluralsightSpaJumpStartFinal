@@ -1,0 +1,1 @@
+﻿This example illustrates how to customize RadPropertyGrid by conditionally chosing custom DataTemplates. The AutoBind behavior provides an option for reusing a DataTemplate for multiple PropertyDefinitions.

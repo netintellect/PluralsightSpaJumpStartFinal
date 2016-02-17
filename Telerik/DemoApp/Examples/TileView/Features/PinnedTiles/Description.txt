@@ -1,0 +1,1 @@
+﻿You can easily pin any tile in the RadTileView by handling the <b>PreviewTilePositionChanged</b> routed event. This will disable the dynamic position change of a tile thus pinning it.

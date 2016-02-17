@@ -1,0 +1,1 @@
+﻿This examples demonstrates how RadCarouselPanel can be configured to look like a coverflow control.

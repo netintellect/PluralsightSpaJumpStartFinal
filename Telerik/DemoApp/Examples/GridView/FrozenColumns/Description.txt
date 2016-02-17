@@ -1,0 +1,1 @@
+﻿This example demonstrates frozen columns feature of RadGridView. You can freeze desired number of columns by setting FrozenColumnCount property.

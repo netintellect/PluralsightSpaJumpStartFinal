@@ -1,0 +1,1 @@
+﻿This example integrates RadMap, RadChart, and RadGridView which are customized to show all metrics relevant to a real-life sales dashboard.

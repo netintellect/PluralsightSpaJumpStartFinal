@@ -1,0 +1,1 @@
+﻿RadComboBox supports data validation. You can see the visual feedback that is displayed when the underlying view model notifies for errors or throws exceptions.

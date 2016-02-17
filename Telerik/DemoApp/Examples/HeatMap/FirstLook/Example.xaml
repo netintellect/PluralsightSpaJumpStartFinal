@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.HeatMap.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.HeatMap.FirstLook.ViewModels"
+    xmlns:converters="clr-namespace:Telerik.Windows.Examples.HeatMap.FirstLook.Converters"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <system:Double x:Key="RangeMinimum">0.45</system:Double>
+        <system:Double x:Key="RangeMaximum">0.95</system:Double>
+        <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <Color x:Key="LightGrayColor">#FFEFEFEF</Color>
+        <SolidColorBrush x:Key="LightGrayBrush" Color="{StaticResource LightGrayColor}" />
+        <Style TargetType="telerik:HeatMapRowHeaderDecorator" BasedOn="{StaticResource HeatMapRowHeaderDecoratorStyle}">
+            <Setter Property="BorderBrush" Value="{StaticResource LightGrayBrush}" />
+            <Setter Property="BorderThickness" Value="0 0 0 1" />
+        </Style>
+        <Style TargetType="telerik:HeatMapRowLabel" BasedOn="{StaticResource HeatMapRowLabelStyle}">
+            <Setter Property="Margin" Value="0, 0, 0, 0" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:HeatMapRowLabel">
+                        <Border BorderThickness="1 1 0 0" BorderBrush="{StaticResource LightGrayBrush}">
+                            <TextBlock Text="{Binding LabelText}" Style="{TemplateBinding AppliedLabelStyle}" Margin="2, -2, 5, 0" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ColumnLabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <DataTemplate x:Key="ToolTipTemplate">
+            <Border Visibility="{Binding DataItem, Converter={StaticResource NullToVisibilityConverter}}" Margin="0 0 5 5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="6" ShadowDepth="1" Color="#FF999999" Direction="345"/>
+                </Border.Effect>
+                <Grid Background="White">
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Segoe UI" />
+                            <Setter Property="FontSize" Value="11" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7" />
+                        <ColumnDefinition Width="85" />
+                    </Grid.ColumnDefinitions>
+                    <Border Margin="1 1 2 1">
+                        <Border.Background>
+                            <SolidColorBrush Color="{Binding Color}" />
+                        </Border.Background>
+                    </Border>
+                    <Border Grid.Column="1" Padding="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{Binding DataItem.CountryName}" TextWrapping="Wrap" />
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock Text="Year: " />
+                                <TextBlock Text="{Binding DataItem.Year}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                <TextBlock Text="HDI: " />
+                                <TextBlock Text="{Binding DataItem.HDI}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </DataTemplate>
+        <Color x:Key="LowColor">#FFF8696B</Color>
+        <Color x:Key="MidColor">#FFFFEB84</Color>
+        <Color x:Key="HighColor">#FF63BE7B</Color>
+        <telerik:HeatMapValueGradientColorizer x:Key="HDIColorizer" 
+                                               IsAbsolute="False" 
+                                               RangeMinimum="{StaticResource RangeMinimum}" 
+                                               RangeMaximum="{StaticResource RangeMaximum}" >
+            <GradientStop Offset="0.0" Color="{StaticResource LowColor}" />
+            <GradientStop Offset="0.5" Color="{StaticResource MidColor}" />
+            <GradientStop Offset="1.0" Color="{StaticResource HighColor}" />
+        </telerik:HeatMapValueGradientColorizer>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <vm:MainViewModel />
+    </UserControl.DataContext>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Human Development Index in Europe" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot">        
+        <telerik:RadHeatMap ShowToolTips="True" 
+                            CellBorderThickness="1" 
+                            CellBorderColor="{StaticResource LightGrayColor}" 
+                            HoveredCellBorderThickness="1"
+                            HoveredCellBorderColor="#FF959595"
+                            Margin="7 2 7 27">
+            <telerik:RadHeatMap.DescriptionContent>
+                <TextBlock Text="Country" Style="{StaticResource ColumnLabelStyle}" HorizontalAlignment="Left" />
+            </telerik:RadHeatMap.DescriptionContent>
+            <telerik:RadHeatMap.Definition>
+                <telerik:CategoricalDefinition 
+                    ItemsSource="{Binding Data}" 
+                    RowGroupMemberPath="CountryName" 
+                    ColumnGroupMemberPath="Year"
+                    ValuePath="HDI"
+                    Colorizer="{StaticResource HDIColorizer}"/>
+            </telerik:RadHeatMap.Definition>
+            <telerik:RadHeatMap.ColumnHeaderSettings>
+                <telerik:HeatMapColumnHeaderSettings LabelHorizontalAlignment="Stretch" LabelStyle="{StaticResource ColumnLabelStyle}" />
+            </telerik:RadHeatMap.ColumnHeaderSettings>
+            <telerik:RadHeatMap.RowHeaderSettings>
+                <telerik:HeatMapRowHeaderSettings LabelClipToBounds="True">
+                    <telerik:HeatMapRowHeaderSettings.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Segoe UI" />
+                            <Setter Property="FontSize" Value="11" />
+                        </Style>
+                    </telerik:HeatMapRowHeaderSettings.LabelStyle>
+                </telerik:HeatMapRowHeaderSettings>
+            </telerik:RadHeatMap.RowHeaderSettings>
+            <telerik:RadHeatMap.ToolTipSettings>
+                <telerik:HeatMapToolTipSettings ToolTipTemplate="{StaticResource ToolTipTemplate}" />
+            </telerik:RadHeatMap.ToolTipSettings>
+        </telerik:RadHeatMap>        
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,5" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontFamily" Value="Segoe UI" />
+                </Style>
+            </StackPanel.Resources>
+            <Grid Width="250" Margin="0 0 20 0" >
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="11" />
+                        <Setter Property="FontFamily" Value="Segoe UI" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Source={StaticResource RangeMinimum}, StringFormat=N2}" />
+                <TextBlock Grid.Column="2" Text="{Binding Source={StaticResource RangeMaximum}, StringFormat=N2}" />
+                <Border Grid.Column="1" Margin="4">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.0" Color="{StaticResource LowColor}" />
+                            <GradientStop Offset="0.5" Color="{StaticResource MidColor}" />
+                            <GradientStop Offset="1.0" Color="{StaticResource HighColor}" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Grid>
+            <TextBlock Text="source: hdr.undp.org" Foreground="#FFD6D4D4"  />
+        </StackPanel>
+    </Grid>
+</UserControl>

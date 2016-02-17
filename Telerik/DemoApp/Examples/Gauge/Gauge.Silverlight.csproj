@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DD7A761-6810-47F2-BFE6-9B4A428B97B9}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Gauge</RootNamespace>
+    <AssemblyName>Gauge</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Gauge.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Gauge.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>Gauge.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2012.2.516.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Customization\RadialScaleInteractivity\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\RadialTickMarks\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\Tooltips\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\DataBinding\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedRacer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedRacer\Silverlight\ExampleData.cs" />
+    <Compile Include="SpeedRacer\TrackWaypoint.cs" />
+    <Compile Include="Weather\Data.cs" />
+    <Compile Include="Weather\ExampleViewModel.cs" />
+    <Compile Include="Customization\Animation\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\CustomLabels\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\HalfCircleGauges\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\LinearBarRangesBackground\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\LinearScaleIndicators\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\LinearScaleInteractivity\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\LinearTickMarks\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\QuarterCircleGauges\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\RadialBarRangesBackground\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\RadialScaleIndicators\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\Range\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\RefreshRate\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleHelpers\ColorStringConverter\ColorStringConverter.cs" />
+    <Compile Include="ExampleHelpers\ColorStringConverter\ForegroundColorConverter.cs" />
+    <Compile Include="ExampleHelpers\ColorStringConverter\ForegroundBrushItemsSource.cs" />
+    <Compile Include="ExampleHelpers\ColorStringConverter\SolidBrushItemsSource.cs" />
+    <Compile Include="ExampleHelpers\CustomLabelsHelpers\DoubleStringConverter.cs" />
+    <Compile Include="ExampleHelpers\CustomLabelsHelpers\NumberFormatItemSource.cs" />
+    <Compile Include="ExampleHelpers\CustomLabelsHelpers\ScaleLabelRotationModeItemsSource.cs" />
+    <Compile Include="ExampleHelpers\DataTemplateItemsSource\DataTemplateItemsSource.cs" />
+    <Compile Include="ExampleHelpers\EnumItemsSource\EnumItemsSource.cs" />
+    <Compile Include="ExampleHelpers\FontFamilyItemsSource\FontFamilyItemsSource.cs" />
+    <Compile Include="ExampleHelpers\RangeColorGradientOrientationItemsSource\RangeColorGradientOrientationItemsSource.cs" />
+    <Compile Include="ExampleHelpers\RangeColorModeItemsSource.cs\RangeColorModeItemsSource.cs" />
+    <Compile Include="ExampleHelpers\RealDataEmulator\RealDataEmulator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExampleHelpers\RefreshModeItemsSource\RefreshModeItemsSource.cs" />
+    <Compile Include="ExampleHelpers\ScaleObjectLocationItemsSource\ScaleObjectLocationItemsSource.cs" />
+    <Compile Include="ExampleHelpers\StringListItemsSource\StringListItemsSource.cs" />
+    <Compile Include="ExampleHelpers\URIHelper\URIHelper.cs" />
+    <Compile Include="Gallery\CarDashboard\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Compass\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\FrequencyIndicator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gallery\NumericScale\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\TimeMonitoring\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Silverlight\BindingHelper.cs" />
+    <Compile Include="Silverlight\DynamicBasePage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gallery\Thermometer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Weather\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <Resource Include="Gallery\FrequencyIndicator\Description.txt" />
+    <Resource Include="Images\Gauge\Game\racing-car.jpg" />
+    <Resource Include="Images\Gauge\Icons\Custom.png" />
+    <Resource Include="Images\Gauge\Icons\Linear_properties.png" />
+    <Resource Include="Images\Gauge\Icons\Major.png" />
+    <Resource Include="Images\Gauge\Icons\Middle.png" />
+    <Resource Include="Images\Gauge\Icons\Minor.png" />
+    <Resource Include="Images\Gauge\Icons\Radial_scale_interactivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Customization\Animation\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\Animation\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\CustomLabels\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\CustomLabels\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearScaleInteractivity\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearScaleInteractivity\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearTickMarks\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearTickMarks\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialScaleInteractivity\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialScaleInteractivity\Silverlight\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialScaleInteractivity\Silverlight\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialTickMarks\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialTickMarks\Silverlight\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialTickMarks\Silverlight\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\Tooltips\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\DataBinding\Silverlight\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\DataBinding\Silverlight\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Thermometer\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Thermometer\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpeedRacer\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpeedRacer\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Weather\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Weather\SnowyWeatherTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Weather\PartlyCloudyWeatherTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Weather\RainyWeatherTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Weather\ThunderstormWeatherTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="FirstLook\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Compass\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Compass\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Compass\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\DataBinding\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\FrequencyIndicator\Win8Resource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\FrequencyIndicator\Win8TouchResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SpeedRacer\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\CustomLabels\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearBarRangesBackground\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearScaleIndicators\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearScaleInteractivity\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\LinearTickMarks\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialBarRangesBackground\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RadialScaleIndicators\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\Range\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\RefreshRate\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CarDashboard\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\Animation\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\HalfCircleGauges\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customization\QuarterCircleGauges\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Compass\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\FrequencyIndicator\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gallery\NumericScale\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\TimeMonitoring\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadGaugeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Thermometer\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Weather\SunnyWeatherTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gauge\Icons\Bar_indicator.png" />
+    <Resource Include="Images\Gauge\Icons\Label.png" />
+    <Resource Include="Images\Gauge\Icons\Marker.png" />
+    <Resource Include="Images\Gauge\Icons\Needle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Customization\CustomLabels\Description.txt" />
+    <Resource Include="Customization\LinearTickMarks\Description.txt" />
+    <Resource Include="Customization\RadialTickMarks\Description.txt" />
+    <Resource Include="Customization\RadialScaleIndicators\Description.txt" />
+    <Resource Include="Customization\Tooltips\Description.txt" />
+    <Resource Include="Gallery\CarDashboard\Description.txt" />
+    <Resource Include="Customization\Animation\Description.txt" />
+    <Resource Include="Customization\HalfCircleGauges\Description.txt" />
+    <Resource Include="Customization\QuarterCircleGauges\Description.txt" />
+    <Resource Include="Gallery\Compass\Description.txt" />
+    <Resource Include="Gallery\NumericScale\Description.txt" />
+    <Resource Include="Gallery\TimeMonitoring\Description.txt" />
+    <Resource Include="Gallery\Thermometer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gauge\CustomLabels\Weather.png" />
+    <Resource Include="SpeedRacer\Description.txt" />
+    <Resource Include="Gallery\DataBinding\Description.txt" />
+    <Resource Include="Customization\RadialBarRangesBackground\Description.txt" />
+    <Resource Include="Customization\LinearBarRangesBackground\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+    <Resource Include="Weather\Description.txt" />
+    <Content Include="Customization\LinearScaleIndicators\Description.txt" />
+    <Resource Include="Customization\RefreshRate\Description.txt" />
+    <Resource Include="Customization\LinearScaleInteractivity\Description.txt" />
+    <Resource Include="Customization\RadialScaleInteractivity\Description.txt" />
+    <Resource Include="Customization\Range\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

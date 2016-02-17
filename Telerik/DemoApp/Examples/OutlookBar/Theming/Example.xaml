@@ -1,0 +1,42 @@
+<UserControl
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.OutlookBar.Theming.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <telerik:RadOutlookBar x:Name="outlookBar" Width="250" Height="500" MaxWidth="380" Padding="8">
+            
+            <telerik:RadOutlookBarItem Header="Mail" Icon="../Images/OutlookBar/mailBig.png"
+					SmallIcon="../Images/OutlookBar/mailSmall.png" Content="Mail" />
+           
+            <telerik:RadOutlookBarItem Header="Calendar"
+					Icon="../Images/OutlookBar/calendarBig.png"
+					SmallIcon="../Images/OutlookBar/calendarSmall.png" Content="Calendar" />
+           
+            <telerik:RadOutlookBarItem Header="Contacts"
+					Icon="../Images/OutlookBar/contactsBig.png"
+					SmallIcon="../Images/OutlookBar/contactsSmall.png" Content="Contacts" />
+            
+            <telerik:RadOutlookBarItem Header="Tasks"
+					Icon="../Images/OutlookBar/tasksBig.png"
+					SmallIcon="../Images/OutlookBar/tasksSmall.png" Content="Tasks" />
+            
+            <telerik:RadOutlookBarItem Header="Notes"
+					Icon="../Images/OutlookBar/notesBig.png"
+					SmallIcon="../Images/OutlookBar/notesSmall.png" Content="Notes" />
+            
+            <telerik:RadOutlookBarItem Header="Folder List"
+					Icon="../Images/OutlookBar/foldersBig.png"
+					SmallIcon="../Images/OutlookBar/foldersSmall.png" Content="Folder List" />
+        </telerik:RadOutlookBar>
+    </Grid>
+
+</UserControl>
+

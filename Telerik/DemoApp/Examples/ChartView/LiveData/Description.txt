@@ -1,0 +1,1 @@
+﻿This example demonstrates how the ChartView can handle real-life scenarios where running processes monitoring is required. To illustrate this, the chart is refreshed every 10 milliseconds with new data.

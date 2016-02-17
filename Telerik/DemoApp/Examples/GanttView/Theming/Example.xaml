@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Theming.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.GanttView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.Theming" mc:Ignorable="d">
+	<UserControl.Resources>
+
+		<local:ViewModel x:Key="ViewModel" />
+	</UserControl.Resources>
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Theming" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+            <telerik:RadGanttView TasksSource="{Binding Tasks}" PixelLength="00:30:00" Margin="0 10 0 0">
+			<telerik:RadGanttView.Columns>
+				<telerik:TreeColumnDefinition Header="Title" MemberBinding="{Binding Title}" Width="130">
+					<telerik:TreeColumnDefinition.CellEditTemplate>
+						<DataTemplate>
+							<TextBox Text="{Binding Title, Mode=TwoWay}"/>
+						</DataTemplate>
+					</telerik:TreeColumnDefinition.CellEditTemplate>
+				</telerik:TreeColumnDefinition>
+				<telerik:ColumnDefinition MemberBinding="{Binding Start}" Header="Start" Width="190">
+					<telerik:ColumnDefinition.CellEditTemplate>
+						<DataTemplate>
+							<telerik:RadDateTimePicker SelectedValue="{Binding Start,Mode=TwoWay}" />
+						</DataTemplate>
+					</telerik:ColumnDefinition.CellEditTemplate>
+				</telerik:ColumnDefinition>
+				<telerik:ColumnDefinition MemberBinding="{Binding End}" Header="End" Width="190">
+					<telerik:ColumnDefinition.CellEditTemplate>
+						<DataTemplate>
+							<telerik:RadDateTimePicker SelectedValue="{Binding End,Mode=TwoWay}" />
+						</DataTemplate>
+					</telerik:ColumnDefinition.CellEditTemplate>
+				</telerik:ColumnDefinition>
+				<telerik:ColumnDefinition MemberBinding="{Binding Progress}" Header="Progress" Width="110">
+					<telerik:ColumnDefinition.CellEditTemplate>
+						<DataTemplate>
+							<telerik:RadNumericUpDown Value="{Binding Progress, Mode=TwoWay}" CustomUnit="%" Minimum="0"
+									Maximum="100" />
+						</DataTemplate>
+					</telerik:ColumnDefinition.CellEditTemplate>
+				</telerik:ColumnDefinition>
+				<telerik:ColumnDefinition MemberBinding="{Binding IsMilestone}" Header="IsMilestone" Width="110" />
+			</telerik:RadGanttView.Columns>
+			<telerik:RadGanttView.VisibleRange>
+				<common:CurrentYearVisibleRange />
+			</telerik:RadGanttView.VisibleRange>
+			<telerik:RadGanttView.TimeRulerLines>
+				<telerik:GroupTickLine>
+					<telerik:TickInterval Interval="OneWeek" FormatString="{}{0:MMM dd, yyyy}"/>
+				</telerik:GroupTickLine>
+				<telerik:MajorTickLine>
+					<telerik:TickInterval Interval="OneDay" FormatString="{}{0:ddd}"/>
+				</telerik:MajorTickLine>
+			</telerik:RadGanttView.TimeRulerLines>
+		</telerik:RadGanttView>
+    </Grid>
+</UserControl>

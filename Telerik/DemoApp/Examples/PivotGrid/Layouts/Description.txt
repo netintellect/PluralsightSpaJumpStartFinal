@@ -1,0 +1,1 @@
+﻿RadPivotGrid supports various Layouts for the two header trees at the top and left. Please use the configurator to see the options.

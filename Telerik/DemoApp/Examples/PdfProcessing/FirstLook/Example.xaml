@@ -1,0 +1,16 @@
+<UserControl x:Class="Telerik.Windows.Examples.PdfProcessing.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:example="clr-namespace:Telerik.Windows.Examples.PdfProcessing"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="PdfProcessing" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Grid>
+        <example:FirstLookExample />
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿RadDataForm offers full RIA services support. This exaple demostrates a CRUD scenario, utilizing RadDomainDataSource. When displaying foreign key properties the AutogeneratingFields event might be handled, in order to map the key values to a collection of more appropriate ones. 

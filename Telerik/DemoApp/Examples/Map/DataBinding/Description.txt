@@ -1,0 +1,5 @@
+﻿RadMap supports databinding per InformationLayer through its InformationLayer.ItemsSource / ItemTemplate properties. You can bind the map control to any data source that contains geo location data.<br /><br />
+This example demonstrates RadMap databinding in 3 separate information layers with different POI data:<br />
+- Collection of locations for all French regional capitals colored depending on their longtitude<br />
+- Collection of  locations representing notable French palaces<br />
+- When you click on the map a new item with resizable template is added to the third information layer. It is visible unless you ZoomIn or ZoomOut more than once.

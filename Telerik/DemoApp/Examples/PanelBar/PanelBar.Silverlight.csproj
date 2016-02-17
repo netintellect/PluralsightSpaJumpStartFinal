@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49353513-D6FC-4B03-A546-C5617863C19D}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.PanelBar</RootNamespace>
+    <AssemblyName>PanelBar</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>PanelBar.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>PanelBar.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>PanelBar.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accordion\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\FirstLook\Employee.cs" />
+    <Compile Include="Common\FirstLook\Lecture.cs" />
+    <Compile Include="Common\FirstLook\MainPageViewModel.cs" />
+    <Compile Include="Common\FirstLook\Publication.cs" />
+    <Compile Include="Common\FirstLook\PublicationPeriod.cs" />
+    <Compile Include="Common\FirstLook\ViewModelBase.cs" />
+    <Compile Include="Common\FirstLook\WeekDay.cs" />
+    <Compile Include="Common\League.cs" />
+    <Compile Include="Common\LinqToXml\LinqToXml.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBinding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Accordion\Description.txt" />
+    <Resource Include="Common\LinqToXml\Data.xml" />
+    <Resource Include="DataBinding\Description.txt" />
+    <Resource Include="Event\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+    <None Include="Images\PanelBar\BMW.png" />
+    <None Include="Images\PanelBar\BMW1.png" />
+    <None Include="Images\PanelBar\car_small.jpg" />
+    <None Include="Images\PanelBar\car_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Accordion\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataBinding\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Event\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FirstLook\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanelBar\Image1.png" />
+    <Resource Include="Images\PanelBar\Image2.png" />
+    <Resource Include="Images\PanelBar\Image3.png" />
+    <Resource Include="Images\PanelBar\Image4.png" />
+    <Resource Include="Images\PanelBar\Image5.png" />
+    <Resource Include="Images\PanelBar\Image6.png" />
+    <Resource Include="Images\PanelBar\Image7.png" />
+    <Resource Include="Images\PanelBar\Printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanelBar\BLONP.jpg" />
+    <Resource Include="Images\PanelBar\BONAP.jpg" />
+    <Resource Include="Images\PanelBar\CACTU.jpg" />
+    <Resource Include="Images\PanelBar\DUMON.jpg" />
+    <Resource Include="Images\PanelBar\FAMIA.jpg" />
+    <Resource Include="Images\PanelBar\KOENE.jpg" />
+    <Resource Include="Images\PanelBar\LEHMS.jpg" />
+    <Resource Include="Images\PanelBar\OTTIK.jpg" />
+    <Resource Include="Images\PanelBar\PRINI.jpg" />
+    <Resource Include="Images\PanelBar\QUICK.jpg" />
+    <Resource Include="Images\PanelBar\SEVES.jpg" />
+    <Resource Include="Images\PanelBar\SUPRD.jpg" />
+    <Resource Include="Images\PanelBar\THEBI.jpg" />
+    <Resource Include="Images\PanelBar\VICTE.jpg" />
+    <Resource Include="Images\PanelBar\VINET.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanelBar\Image10.png" />
+    <Resource Include="Images\PanelBar\Image11.png" />
+    <Resource Include="Images\PanelBar\Image12.png" />
+    <Resource Include="Images\PanelBar\Image9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanelBar\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanelBar\Stock.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

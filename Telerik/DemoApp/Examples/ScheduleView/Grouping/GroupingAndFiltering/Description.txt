@@ -1,0 +1,5 @@
+﻿This example demonstrates how you can group RadScheduleView and filter its group headers.
+
+Use the GroupDescriptions collection to specify how RadScheduleView will group its appointments. You have DateGroupDescription that allows you to group by date and ResourceGroupDescription that groups by resource type.
+
+The GroupFilter predicate can be used to specify which group headers will be visible.

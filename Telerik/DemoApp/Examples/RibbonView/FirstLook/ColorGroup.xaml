@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.RibbonView.FirstLook.ColorGroup"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<Grid x:Name="LayoutRoot">
+
+		<Grid.Resources>
+			<Style TargetType="telerik:RadColorPaletteViewItem" x:Key="DefaultItemTemplate" BasedOn="{StaticResource RadColorPaletteViewItemStyle}">              
+                <Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="telerik:RadColorPaletteViewItem">
+							<Grid x:Name="RootElement" Margin="0" Background="Transparent">
+
+								<Border Height="18" Width="18" BorderBrush="#FFA0A0A0" BorderThickness="1" Margin="1"
+										x:Name="borderContent" VerticalAlignment="Stretch">
+
+									<ContentPresenter Height="16" Width="16" 
+											VerticalAlignment="Center" HorizontalAlignment="Center"
+											ToolTipService.ToolTip="{Binding }" />
+								</Border>
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Grid.Resources>
+
+		<StackPanel Orientation="Horizontal">
+			<telerik:RadRibbonRadioButton GroupName="ColorSelector" IsChecked="True" Size="Large"
+					telerik:ScreenTip.Title="Color1 (foreground color)"
+					telerik:ScreenTip.Description="Click here and then select a color from the color palette. This color is used with the pencil and with brushes, as well as for shape outline.">
+				<telerik:RadRibbonRadioButton.Content>
+					<StackPanel>
+						<Border BorderBrush="#808080" BorderThickness="1" Padding="1" VerticalAlignment="Center"
+								HorizontalAlignment="Center">
+							<Rectangle Height="28" Width="28" Fill="Black" />
+						</Border>
+						<TextBlock Text="Color" HorizontalAlignment="Center" />
+						<TextBlock Text="1" HorizontalAlignment="Center" />
+					</StackPanel>
+				</telerik:RadRibbonRadioButton.Content>
+			</telerik:RadRibbonRadioButton>
+			<telerik:RadRibbonRadioButton GroupName="ColorSelector" Size="Large"
+					telerik:ScreenTip.Title="Color2 (background color)"
+					telerik:ScreenTip.Description="Click here and then select a color from the color palette.This color is used with the eraser and for shape fills.">
+				<telerik:RadRibbonRadioButton.Content>
+					<StackPanel>
+						<Border Margin="0 4" BorderBrush="#808080" BorderThickness="1" Padding="1"
+								VerticalAlignment="Center" HorizontalAlignment="Center">
+							<Rectangle Height="20" Width="20" Fill="White" />
+						</Border>
+						<TextBlock Text="Color" HorizontalAlignment="Center" />
+						<TextBlock Text="2" HorizontalAlignment="Center" />
+					</StackPanel>
+				</telerik:RadRibbonRadioButton.Content>
+			</telerik:RadRibbonRadioButton>
+
+			<telerik:RadColorPaletteView x:Name="customPaletteView"
+					ItemContainerStyle="{StaticResource DefaultItemTemplate}" BorderThickness="0"
+					Background="Transparent" Padding="0" />
+
+			<telerik:RadRibbonButton Size="Large" telerik:ScreenTip.Title="Edit colors"
+					telerik:ScreenTip.Description="Select a color from the color palette.">
+				<telerik:RadRibbonButton.Content>
+					<StackPanel>
+						<Border BorderBrush="#808080" Height="29" Width="29" BorderThickness="1" Padding="1"
+								VerticalAlignment="Center" HorizontalAlignment="Center">
+							<Image Source="{Binding EditColor}" />
+						</Border>
+						<TextBlock Text="Edit" HorizontalAlignment="Center" />
+						<TextBlock Text="colors" HorizontalAlignment="Center" />
+					</StackPanel>
+				</telerik:RadRibbonButton.Content>
+			</telerik:RadRibbonButton>
+		</StackPanel>
+	</Grid>
+</UserControl>

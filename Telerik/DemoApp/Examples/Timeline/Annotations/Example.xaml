@@ -1,0 +1,327 @@
+<UserControl x:Class="Telerik.Windows.Examples.Timeline.Annotations.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Timeline.Annotations"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:animation="clr-namespace:Telerik.Windows.Controls.Animation;assembly=Telerik.Windows.Controls"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800" xml:lang="en-US">
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Style TargetType="telerik:TimelineItemGroupControl" BasedOn="{StaticResource TimelineItemGroupControlStyle}">
+            <Setter Property="IsExpanded" Value="True" />
+            <Setter Property="ExpandMode" Value="{Binding GroupExpandMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTimeline}}" />
+            <Setter Property="animation:AnimationManager.AnimationSelector">
+                <Setter.Value>
+                    <animation:AnimationSelector>
+                        <animation:ExpanderExpandCollapseAnimation AnimationName="Expand" Direction="In"
+							TargetElementName="Content" />
+                        <animation:ExpanderExpandCollapseAnimation AnimationName="Collapse" Direction="Out"
+							TargetElementName="Content" />
+                        <telerik:TimelineResizeAnimation AnimationName="Resize" TargetElementName="Content" />
+                    </animation:AnimationSelector>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="HatchedBrush" StartPoint="0,0" EndPoint="3,3" MappingMode="Absolute" SpreadMethod="Repeat">
+            <GradientStop Color="#FF767676" Offset="0"/>
+            <GradientStop Color="#FF767676" Offset="0.15"/>
+            <GradientStop Color="White" Offset="0.15"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+
+        
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Border BorderThickness="1,0,1,1" BorderBrush="{StaticResource BasicBrush}" Margin="10,16,10,10" Padding="0,15,0,0">
+            <telerik:RadTimeline PeriodStart="2014/6/12" 
+                                 PeriodEnd="2014/7/14"
+                                 VisiblePeriodStart="2014/6/22"
+                                 VisiblePeriodEnd="2014/7/3"
+                                 StartPath="MatchDate"
+                                 GroupPath="Venue"
+                                 GroupExpandMode="Multiple"
+                                 ItemsSource="{Binding Data}"
+                                 ScrollMode="ScrollOnly"
+                                 BorderThickness="0"
+                                 VerticalScrollBarVisibility="{StaticResource TimelineVerticalScrollbarVisibility}">
+
+                <telerik:RadTimeline.Intervals>
+                    <telerik:DayInterval />
+                </telerik:RadTimeline.Intervals>
+
+                <telerik:RadTimeline.TimelineInstantItemTemplate>
+                    <DataTemplate>
+                        <Border Height="18"
+                                Background="White"
+                                BorderBrush="{Binding DataItem.GroupBrush}" 
+                                BorderThickness="1,4,1,1" Margin="0,1,0,0">
+                            <TextBlock Text="{Binding DataItem.MatchHeader}" 
+                                   FontFamily="Segoe UI" 
+                                   FontSize="10" 
+                                   Height="14" MinWidth="54" 
+                                   TextAlignment="Center" 
+                                   Margin="2,-1,2,1" />
+                        </Border>
+                    </DataTemplate>
+                </telerik:RadTimeline.TimelineInstantItemTemplate>
+
+                <telerik:RadTimeline.ToolTipTemplate>
+                    <DataTemplate>
+                        <Grid MinWidth="170" MinHeight="60">
+                            <Border HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch" 
+                                    Background="{Binding GroupBrush}" Opacity="0.6" />
+                            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                    Margin="3" Background="White" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding ToolTipHeader}" FontFamily="Segoe UI" />
+                                    <TextBlock Text="{Binding Venue}" FontFamily="Segoe UI" />
+                                    <TextBlock Text="{Binding MatchDate, StringFormat=yyyy/MM/dd}" FontFamily="Segoe UI" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </telerik:RadTimeline.ToolTipTemplate>
+
+                <telerik:RadTimeline.Annotations>
+                    <telerik:TimelineAnnotation StartDate="2014/6/12" Duration="15" Margin="0,-15,0,0">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,0,0,4" BorderBrush="{StaticResource StrongBrush}" Height="19" VerticalAlignment="Top">
+                                    <TextBlock Text="Group Stage" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource MarkerBrush}" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/6/27" Duration="1" Margin="0,-15,0,0" Canvas.ZIndex="150">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border BorderThickness="1,0,1,4" BorderBrush="{StaticResource BasicBrush}" Height="19">
+                                        <TextBlock Text="Rest Day" TextAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI" Foreground="{StaticResource StrongBrush}" />
+                                    </Border>
+                                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Background="{StaticResource HatchedBrush}" Grid.Row="1" />
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/6/28" Duration="4" Margin="0,-15,0,0">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,0,0,4" BorderBrush="{StaticResource StrongBrush}" Height="19" VerticalAlignment="Top">
+                                    <TextBlock Text="Round of 16" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource MarkerBrush}" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/2" Duration="2" Margin="0,-15,0,0" Canvas.ZIndex="150">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border BorderThickness="1,0,1,4" BorderBrush="{StaticResource BasicBrush}" Height="19">
+                                        <TextBlock Text="Rest Days" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource StrongBrush}" />
+                                    </Border>
+                                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Background="{StaticResource HatchedBrush}" Grid.Row="1" />
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/4" Duration="2" Margin="0,-15,0,0">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,0,0,4" BorderBrush="{StaticResource StrongBrush}" Height="19" VerticalAlignment="Top">
+                                    <TextBlock Text="Quarter-finals" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource MarkerBrush}" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/6" Duration="2" Margin="0,-15,0,0" Canvas.ZIndex="150">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border BorderThickness="1,0,1,4" BorderBrush="{StaticResource BasicBrush}" Height="19">
+                                        <TextBlock Text="Rest Days" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource StrongBrush}" />
+                                    </Border>
+                                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Background="{StaticResource HatchedBrush}" Grid.Row="1" />
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/8" Duration="2" Margin="0,-15,0,0">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,0,0,4" BorderBrush="{StaticResource StrongBrush}" Height="19" VerticalAlignment="Top">
+                                    <TextBlock Text="Semi-finals" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource MarkerBrush}" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/10" Duration="2" Margin="0,-15,0,0" Canvas.ZIndex="150">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border BorderThickness="1,0,1,4" BorderBrush="{StaticResource BasicBrush}" Height="19">
+                                        <TextBlock Text="Rest Days" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource StrongBrush}" />
+                                    </Border>
+                                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Background="{StaticResource HatchedBrush}" Grid.Row="1" />
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                    <telerik:TimelineAnnotation StartDate="2014/7/12" Duration="2" Margin="0,-15,0,0">
+                        <telerik:TimelineAnnotation.ContentTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="0,0,0,4" BorderBrush="{StaticResource StrongBrush}" Height="19" VerticalAlignment="Top">
+                                    <TextBlock Text="Finals" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{StaticResource MarkerBrush}" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:TimelineAnnotation.ContentTemplate>
+                    </telerik:TimelineAnnotation>
+                </telerik:RadTimeline.Annotations>
+
+            </telerik:RadTimeline>
+        </Border>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <StackPanel Margin="0,2">
+                <TextBlock Text="Color customization:" FontFamily="Segoe UI" />
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,6">
+                    <TextBlock Text="Group A:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56" 
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupA, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FF8EC441" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group B:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupB, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FF25A0DA" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group C:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupC, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FFF59700" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group D:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupD, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FFD4DF32" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group E:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupE, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FF339933" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group F:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupF, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FF00ABA9" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <TextBlock Text="Group G:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupG, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FFDC5B20" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Group H:" 
+                               Foreground="{StaticResource MarkerBrush}" 
+                               FontFamily="Segoe UI" 
+                               MinWidth="56"
+                               VerticalAlignment="Center" />
+                    <telerik:RadColorPicker SelectedColor="{Binding SelectedColorGroupH, Mode=TwoWay}" MainPalette="Metro"
+                                            AutomaticColor="#FFE8BC34" VerticalAlignment="Center" MinHeight="24"
+                                            RecentColorsVisibility="Collapsed" 
+                                            StandardPaletteVisibility="Collapsed" 
+                                            HeaderPaletteVisibility="Collapsed" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="FIFA World Cup - Brazil 2014" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+</UserControl>

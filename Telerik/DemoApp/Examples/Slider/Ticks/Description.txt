@@ -1,0 +1,1 @@
+﻿The Slider's ticks allow you to place marks along the track in a uniform manner. There is a variety of properties letting you set the ticks' behavior. You can define the tick's <b>frequency</b>, <b>position</b>, <b>custom ticks</b> as well as enable <b>snap to tick</b>. You can use the configuration options below to customize the slider's ticks.

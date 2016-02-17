@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.CloudUpload.Theming.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"			
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:common="clr-namespace:Telerik.Windows.Examples.CloudUpload.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+			 Loaded="userControl_Loaded" Unloaded="userControl_Unloaded"
+			 HorizontalAlignment="Center" VerticalAlignment="Center">
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="hearedForeground" Color="White" />
+		<SolidColorBrush x:Key="hearedBackground" Color="#FF79256B" />
+	</UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Theming example" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid  Width="355" Height="445">		
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<telerik:RadCloudUpload x:Name="cloudUpload" 
+										Buttons="Browse,Upload,Cancel,Clear" 
+										Margin="10" 
+										BorderThickness="1" 
+										Unloaded="cloudUpload_Unloaded">
+					<telerik:RadCloudUpload.Provider>
+						<common:DummyProvider />
+					</telerik:RadCloudUpload.Provider>
+				</telerik:RadCloudUpload>
+				<Border Grid.Row="1" Margin="10 0 10 10">
+					<Border.Style>
+						<Style TargetType="Border">
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding Items.Count, ElementName=cloudUpload}" Value="0">
+									<Setter Property="Visibility" Value="Collapsed" />
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</Border.Style>
+					<ScrollViewer VerticalScrollBarVisibility="Auto" 
+									HorizontalScrollBarVisibility="Disabled" 
+									BorderBrush="{Binding BorderBrush, ElementName=cloudUploadItems}"
+									BorderThickness="1">
+						<telerik:RadCloudUploadList x:Name="cloudUploadItems" ItemsSource="{Binding Items, ElementName=cloudUpload}" BorderThickness="0" />
+					</ScrollViewer>
+				</Border>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PivotGrid.CustomGrouping.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:pivot="http://schemas.telerik.com/2008/xaml/presentation/pivot"
+        xmlns:data="clr-namespace:Telerik.Windows.Examples.PivotGrid.SampleData"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:local="clr-namespace:Telerik.Windows.Examples.PivotGrid.CustomGrouping"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="400"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.Resources>
+
+        <pivot:LocalDataSourceProvider x:Key="dataProvider" 
+                                       PrepareDescriptionForField="LocalDataSourceProvider_PrepareDescriptionForField">
+
+            <pivot:LocalDataSourceProvider.ItemsSource>
+                <data:SampleOrders />
+            </pivot:LocalDataSourceProvider.ItemsSource>
+
+            <pivot:LocalDataSourceProvider.RowGroupDescriptions>
+                <local:FirstLetterGroupDescription PropertyName="Product"/>
+            </pivot:LocalDataSourceProvider.RowGroupDescriptions>
+            <pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+                <pivot:PropertyGroupDescription  PropertyName="Promotion"/>
+            </pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+            <pivot:LocalDataSourceProvider.AggregateDescriptions>
+                <pivot:PropertyAggregateDescription PropertyName="Quantity"/>
+            </pivot:LocalDataSourceProvider.AggregateDescriptions>
+
+        </pivot:LocalDataSourceProvider>
+
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Margin="8" Text="Custom Grouping" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Height="420">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+
+        <pivot:RadPivotGrid x:Name="Pivot" Grid.Column="0" Grid.Row="1" DataProvider="{StaticResource dataProvider}" />
+        <pivot:RadPivotFieldList x:Name="FieldList" Grid.Column="1" Margin="4 0 0 0" DataProvider="{StaticResource dataProvider}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,28 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.LoadOnDemand.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.LoadOnDemand">
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Load on Demand" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" />
+	</UserControl.Resources>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<telerik:RadScheduleView AppointmentsSource="{Binding Appointments}"
+				VisibleRangeChangedCommand="{Binding VisibleRangeChanged}"
+				VisibleRangeChangedCommandParameter="{Binding VisibleRange, RelativeSource={RelativeSource Self}}">
+			<telerik:RadScheduleView.ViewDefinitions>
+				<telerik:DayViewDefinition />
+				<telerik:WeekViewDefinition />
+				<telerik:MonthViewDefinition />
+				<telerik:TimelineViewDefinition />
+			</telerik:RadScheduleView.ViewDefinitions>
+		</telerik:RadScheduleView>
+	</Grid>
+</UserControl>

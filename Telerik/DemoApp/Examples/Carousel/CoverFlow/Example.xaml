@@ -1,0 +1,147 @@
+<UserControl x:Class="Telerik.Windows.Examples.Carousel.CoverFlow.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="CoverFlow"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid ClipToBounds="True">
+		<ScrollViewer VerticalScrollBarVisibility="Hidden"
+					  HorizontalScrollBarVisibility="Visible"
+					  CanContentScroll="True">
+			<telerik:RadCarouselPanel x:Name="Panel"
+									  ItemsMovementAnimationDuration="0:0:0.5"
+									  ItemsPerPage="11"
+									  PathPadding="70,50,70,50"
+									  IsOpacityEnabled="True"
+									  IsScalingEnabled="True"
+									  IsSkewAngleYEnabled="True">
+				<telerik:RadCarouselPanel.Path>
+					<Path HorizontalAlignment="Center"
+						  VerticalAlignment="Center"
+						  Stretch="Fill"
+						  Data="M 0,300 C0,300 500,300 500,300 " />
+				</telerik:RadCarouselPanel.Path>
+				<telerik:RadCarouselPanel.SkewAngleYStops>
+					<telerik:PathStopCollection>
+						<telerik:PathStop PathFraction="0.15"
+										  Value="-15" />
+						<telerik:PathStop PathFraction="0.45"
+										  Value="-15" />
+						<telerik:PathStop PathFraction="0.5"
+										  Value="0" />
+						<telerik:PathStop PathFraction="0.55"
+										  Value="15" />
+						<telerik:PathStop PathFraction="0.85"
+										  Value="15" />
+					</telerik:PathStopCollection>
+				</telerik:RadCarouselPanel.SkewAngleYStops>
+				<telerik:RadCarouselPanel.ScaleStops>
+					<telerik:PathStopCollection>
+						<telerik:PathStop PathFraction="0.4"
+										  Value="1.0" />
+						<telerik:PathStop PathFraction="0.5"
+										  Value="1.5" />
+						<telerik:PathStop PathFraction="0.6"
+										  Value="1.0" />
+					</telerik:PathStopCollection>
+				</telerik:RadCarouselPanel.ScaleStops>
+				<telerik:RadCarouselPanel.OpacityStops>
+					<telerik:PathStopCollection>
+						<telerik:PathStop PathFraction="0.0"
+										  Value="0.0" />
+						<telerik:PathStop PathFraction="0.1"
+										  Value="1.0" />
+						<telerik:PathStop PathFraction="0.9"
+										  Value="1.0" />
+						<telerik:PathStop PathFraction="1.0"
+										  Value="0.0" />
+					</telerik:PathStopCollection>
+				</telerik:RadCarouselPanel.OpacityStops>
+				<Image Source="/Carousel;component/Images/nature1.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature2.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature3.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature4.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature5.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature6.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature7.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature8.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature9.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature10.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature11.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature12.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature13.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature14.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature15.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature16.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature17.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature18.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature19.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature20.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature21.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature22.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature23.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature24.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature25.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature26.jpg"
+					   Width="180"
+					   Height="160" />
+				<Image Source="/Carousel;component/Images/nature27.jpg"
+					   Width="180"
+					   Height="160" />
+			</telerik:RadCarouselPanel>
+		</ScrollViewer>
+	</Grid>
+</UserControl>

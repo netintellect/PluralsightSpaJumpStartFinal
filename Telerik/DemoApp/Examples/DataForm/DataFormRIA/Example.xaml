@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.DataForm.DataFormRIA.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices"
+			 mc:Ignorable="d"
+			 xmlns:server="clr-namespace:Examples.Web"
+			 d:DesignHeight="300"
+			 d:DesignWidth="400">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Employees"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Background="White">
+		<telerik:RadDomainDataSource Name="MyRadDomainDataSource"
+									 QueryName="GetEmployee_Set"
+									 AutoLoad="True"
+									 LoadedData="MyRadDomainDataSource_LoadedData"
+									 SubmittedChanges="MyRadDomainDataSource_SubmittedChanges">
+			<telerik:RadDomainDataSource.DomainContext>
+				<server:EmployeesDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+		</telerik:RadDomainDataSource>
+		<telerik:RadBusyIndicator IsBusy="{Binding IsBusy, ElementName=MyRadDomainDataSource}">
+			<telerik:RadDataForm ItemsSource="{Binding DataView, ElementName=MyRadDomainDataSource}"
+								 x:Name="MyRadDataForm"
+								 AutoGeneratingField="MyRadDataForm_AutoGeneratingField"
+								 EditEnding="MyRadDataForm_EditEnding"
+								 DeletedItem="MyRadDataForm_DeletedItem" />
+		</telerik:RadBusyIndicator>
+	</Grid>
+</UserControl>

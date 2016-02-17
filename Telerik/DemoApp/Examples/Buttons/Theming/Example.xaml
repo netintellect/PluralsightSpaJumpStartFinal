@@ -1,0 +1,99 @@
+<UserControl x:Class="Telerik.Windows.Examples.Buttons.Theming.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../CommonTemplates.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Margin="8" Text="Feedback" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+		<StackPanel Width="290" Margin="25 10">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Path Button" />
+                <telerik:RadPathButton Width="30"
+					                   Height="30"
+					                   HorizontalAlignment="Left" Padding="0"
+		                               PathGeometry="M14,7C10.134,7 7,10.134 7,14C7,17.866 10.134,21 14,21C17.866,21 21,17.866 21,14C21,10.134 17.866,7 14,7zM11.4806,0L16.4196,0.019114L16.9111,3.39015L17.0114,3.41729C17.8152,3.64558 18.5815,3.96297 19.299,4.35812L19.4634,4.45217L22.4767,2.08528L25.9556,5.59122L23.6393,8.6982L23.6718,8.75572C24.063,9.47566 24.3761,10.2442 24.5999,11.0499L24.606,11.0728L28,11.4806L27.9809,16.4196L24.6098,16.9111L24.5827,17.0114C24.3544,17.8152 24.037,18.5815 23.6419,19.299L23.6298,19.32L25.9556,22.4398L22.4767,25.9457L19.4407,23.561L19.2443,23.6718C18.5243,24.063 17.7558,24.3761 16.9501,24.5999L16.911,24.6103L16.4196,27.9809L11.4806,28L11.0727,24.6055L10.9886,24.5827C10.1848,24.3544 9.4185,24.037 8.70102,23.6419L8.57792,23.5715L5.55529,25.9457L2.07639,22.4398L4.38441,19.3439L4.3282,19.2443C3.937,18.5243 3.62385,17.7558 3.40009,16.9501L3.38966,16.911L0.019114,16.4196L0,11.4806L3.39397,11.0728L3.40009,11.0499C3.62385,10.2442 3.937,9.47566 4.3282,8.75572L4.37445,8.67375L2.07639,5.59122L5.55529,2.08528L8.55507,4.44157L8.70102,4.35812C9.4185,3.96297 10.1848,3.64558 10.9886,3.41729L11.0727,3.39453z">
+                </telerik:RadPathButton>
+            </StackPanel>
+            <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Button" />
+			<telerik:RadButton Width="150"
+			                   Margin="0 0 0 10"
+			                   HorizontalAlignment="Left"
+			                   Content="Button" />
+			<TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Toggle Button" />
+			<telerik:RadToggleButton Width="150"
+			                         Margin="0 0 0 10"
+			                         HorizontalAlignment="Left"
+			                         Content="Toggle Button" />
+			<Grid>
+				<StackPanel>
+					<TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Radio Button" />
+					<telerik:RadRadioButton Width="94"
+					                        Margin="0 0 0 5"
+					                        HorizontalAlignment="Left"
+					                        Content="Option 1" />
+					<telerik:RadRadioButton Width="94"
+					                        Margin="0 0 0 5"
+					                        HorizontalAlignment="Left"
+					                        Content="Option 2" />
+					<telerik:RadRadioButton Width="94"
+					                        Margin="0 0 0 10"
+					                        HorizontalAlignment="Left"
+					                        Content="Option 3" />
+				</StackPanel>
+			</Grid>
+			<TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="DropDown Button" />
+			<telerik:RadDropDownButton x:Name="DropDownOption"
+			                           Width="290"
+			                           Margin="0 0 0 10"
+			                           HorizontalAlignment="Left"
+			                           HorizontalContentAlignment="Left"
+			                           Content="DropDown Button">
+				<telerik:RadDropDownButton.DropDownContent>
+					<telerik:RadListBox x:Name="option"
+					                    Width="288"
+					                    Height="Auto"
+					                    BorderThickness="0"
+					                    MouseLeftButtonUp="OnOptionChange"
+					                    SelectedIndex="0">
+						<telerik:RadListBoxItem Content="Option 1" />
+						<telerik:RadListBoxItem Content="Option 2" />
+						<telerik:RadListBoxItem Content="Option 3" />
+					</telerik:RadListBox>
+				</telerik:RadDropDownButton.DropDownContent>
+			</telerik:RadDropDownButton>
+			<TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Split Button" />
+			<telerik:RadSplitButton x:Name="SplitButtonOption"
+			                        Width="288"
+			                        Margin="0 0 0 10"
+			                        HorizontalAlignment="Left"
+			                        HorizontalContentAlignment="Left"
+			                        Content="Split Button">
+				<telerik:RadSplitButton.DropDownContent>
+					<telerik:RadListBox Width="286"
+					                    Height="Auto"
+					                    BorderThickness="0"
+					                    MouseLeftButtonUp="OnOptionChange"
+					                    SelectedIndex="0">
+						<telerik:RadListBoxItem Content="Option 1" />
+						<telerik:RadListBoxItem Content="Option 2" />
+						<telerik:RadListBoxItem Content="Option 3" />
+					</telerik:RadListBox>
+				</telerik:RadSplitButton.DropDownContent>
+			</telerik:RadSplitButton>
+		</StackPanel>
+	</Grid>
+</UserControl>

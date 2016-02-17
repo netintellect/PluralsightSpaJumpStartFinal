@@ -1,0 +1,1 @@
+﻿The <b>ItemSource</b> property of the CoverFlow control allows you to bind the control to collections of items, including custom collections. This example demonstrates how to populate the CoverFlow's items from different collections. Additionally, you can programmatically set the source of the items by using the Programming API exposed by the CoverFlow control.

@@ -1,0 +1,1 @@
+﻿The BarcodeReader control scans images and analyzes them for presence of a known one-dimensional or two-dimensional symbology, such as Code128, Code11 or QR code.

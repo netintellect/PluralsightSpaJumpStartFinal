@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Configuration.Columns.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<Grid>
+		<TextBlock Text="TODO" />
+	</Grid>
+</UserControl>

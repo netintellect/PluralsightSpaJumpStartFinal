@@ -1,0 +1,1 @@
+﻿RadChart offers Multple Y Axes support. It may be required when series of different scale should be presented on the same graph. In this example three different series are shown and each of them has its own Y axis with auto scaled range for readable and comprehensive representation.

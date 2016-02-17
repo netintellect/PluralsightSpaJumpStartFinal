@@ -1,0 +1,1 @@
+﻿The RadMap provides colorizer which sets filling to the map shapes using coloring of graph approach when any 2 shapes which have common border are colored to the different colors (if it is possible).

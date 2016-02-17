@@ -1,0 +1,3 @@
+﻿This example illustrates document protection.
+
+Different editing restrictions can be defined and enforced on parts of the document. Import and export are supported in XAML and docx formats.

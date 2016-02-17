@@ -1,0 +1,218 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PivotGrid.Layouts.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:pivot="http://schemas.telerik.com/2008/xaml/presentation/pivot"
+        xmlns:data="clr-namespace:Telerik.Windows.Examples.PivotGrid.SampleData"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:example="clr-namespace:Telerik.Windows.Examples.PivotGrid.Layouts"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        d:DesignWidth="700" d:DesignHeight="400">
+    
+    <UserControl.Resources>
+        <example:LayoutTemplateSelector x:Key="RowLayoutTemplates">
+            <example:LayoutTemplateSelector.Compact>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsCompact.png" />
+                        </Border>
+                        <TextBlock Text="Compact" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Compact>
+            <example:LayoutTemplateSelector.Outline>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsOutline.png" />
+                        </Border>
+                        <TextBlock Text="Outline" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Outline>
+            <example:LayoutTemplateSelector.Tabular>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsTabular.png" />
+                        </Border>
+                        <TextBlock Text="Tabular" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Tabular>
+        </example:LayoutTemplateSelector>
+        <example:LayoutTemplateSelector x:Key="ColumnsLayoutTemplates">
+            <example:LayoutTemplateSelector.Compact>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsCompact.png" RenderTransformOrigin="0.5 0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-90" />
+                                        <ScaleTransform ScaleY="-1" />
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Compact" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Compact>
+            <example:LayoutTemplateSelector.Outline>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsOutline.png" RenderTransformOrigin="0.5 0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-90" />
+                                        <ScaleTransform ScaleY="-1" />
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Outline" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Outline>
+            <example:LayoutTemplateSelector.Tabular>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2 4">
+                        <Border Background="White" Padding="2" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Stretch="None" Source="/PivotGrid;component/Icons/RowsTabular.png" RenderTransformOrigin="0.5 0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-90" />
+                                        <ScaleTransform ScaleY="-1" />
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Tabular" Margin="6 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </example:LayoutTemplateSelector.Tabular>
+        </example:LayoutTemplateSelector>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Margin="8" Text="Layouts" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="4">
+
+            <TextBlock Text="Pivot layouts" Margin="0 8 0 4" />
+
+            <TextBlock Text="VerticalLayout:" Margin="0 4 0 0" />
+            <telerik:RadComboBox x:Name="VerticalLayout" Margin="0 2 2 0" Height="Auto" SelectedIndex="0" ItemTemplateSelector="{StaticResource RowLayoutTemplates}">
+                <pivot:PivotLayoutType>Compact</pivot:PivotLayoutType>
+                <pivot:PivotLayoutType>Outline</pivot:PivotLayoutType>
+                <pivot:PivotLayoutType>Tabular</pivot:PivotLayoutType>
+            </telerik:RadComboBox>
+
+            <TextBlock Text="HorizontalLayout:" Margin="0 4 0 0" Grid.Column="1" />
+            <telerik:RadComboBox x:Name="HorizontalLayout" Margin="2 2 0 2" Height="Auto" SelectedIndex="2" ItemTemplateSelector="{StaticResource ColumnsLayoutTemplates}">
+                <pivot:PivotLayoutType>Compact</pivot:PivotLayoutType>
+                <pivot:PivotLayoutType>Outline</pivot:PivotLayoutType>
+                <pivot:PivotLayoutType>Tabular</pivot:PivotLayoutType>
+            </telerik:RadComboBox>
+
+            <TextBlock Text="Row totals positioning" Margin="0 16 0 8" />
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Subtotals:" />
+                <telerik:RadComboBox x:Name="RowSubTotalsPosition" SelectedIndex="2" Margin="0 2 2 2" Grid.Row="1" ToolTipService.ToolTip="RowSubTotalsPosition">
+                    <pivot:RowTotalsPosition>Top</pivot:RowTotalsPosition>
+                    <pivot:RowTotalsPosition>None</pivot:RowTotalsPosition>
+                    <pivot:RowTotalsPosition>Bottom</pivot:RowTotalsPosition>
+                </telerik:RadComboBox>
+
+                <TextBlock Text="Grandtotals:" Grid.Column="1" Margin="2 0 0 0" />
+                <telerik:RadComboBox x:Name="RowGrandTotalsPosition" SelectedIndex="2" Margin="2 2 0 2" Grid.Row="1" Grid.Column="1" ToolTipService.ToolTip="RowGrandTotalsPosition">
+                    <pivot:RowTotalsPosition>Top</pivot:RowTotalsPosition>
+                    <pivot:RowTotalsPosition>None</pivot:RowTotalsPosition>
+                    <pivot:RowTotalsPosition>Bottom</pivot:RowTotalsPosition>
+                </telerik:RadComboBox>
+            </Grid>
+
+            <TextBlock Text="Column totals positioning" Margin="0 16 0 8" />
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Subtotals:" />
+                <telerik:RadComboBox x:Name="ColumnSubTotalsPosition" SelectedIndex="2" Margin="0 2 2 2" Grid.Row="1" ToolTipService.ToolTip="ColumnSubTotalsPosition">
+                    <pivot:ColumnTotalsPosition>Left</pivot:ColumnTotalsPosition>
+                    <pivot:ColumnTotalsPosition>None</pivot:ColumnTotalsPosition>
+                    <pivot:ColumnTotalsPosition>Right</pivot:ColumnTotalsPosition>
+                </telerik:RadComboBox>
+
+                <TextBlock Text="Grandtotals:" Grid.Column="1" Margin="2 0 0 0" />
+                <telerik:RadComboBox x:Name="ColumnGrandTotalsPosition" SelectedIndex="2" Margin="2 2 0 2" Grid.Row="1" Grid.Column="1" ToolTipService.ToolTip="ColumnGrandTotalsPosition">
+                    <pivot:ColumnTotalsPosition>Left</pivot:ColumnTotalsPosition>
+                    <pivot:ColumnTotalsPosition>None</pivot:ColumnTotalsPosition>
+                    <pivot:ColumnTotalsPosition>Right</pivot:ColumnTotalsPosition>
+                </telerik:RadComboBox>
+            </Grid>
+
+            <CheckBox x:Name="ShowAggregateValuesInline" Content="ShowAggregateValues Inline" Margin="0 16 0 4" />
+            
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Grid>
+        <pivot:RadPivotGrid x:Name="Pivot"
+                HorizontalLayout="{Binding ElementName=HorizontalLayout, Path=SelectedItem}"
+                VerticalLayout="{Binding ElementName=VerticalLayout, Path=SelectedItem}"
+                RowSubTotalsPosition="{Binding ElementName=RowSubTotalsPosition, Path=SelectedItem}"
+                RowGrandTotalsPosition="{Binding ElementName=RowGrandTotalsPosition, Path=SelectedItem}"
+                ColumnSubTotalsPosition="{Binding ElementName=ColumnSubTotalsPosition, Path=SelectedItem}"
+                ColumnGrandTotalsPosition="{Binding ElementName=ColumnGrandTotalsPosition, Path=SelectedItem}"
+                ShowAggregateValuesInline="{Binding ElementName=ShowAggregateValuesInline, Path=IsChecked}">
+
+            <pivot:RadPivotGrid.DataProvider>
+                <pivot:LocalDataSourceProvider AggregatesLevel="1">
+                    <pivot:LocalDataSourceProvider.ItemsSource>
+                        <data:SampleOrders />
+                    </pivot:LocalDataSourceProvider.ItemsSource>
+                    <pivot:LocalDataSourceProvider.RowGroupDescriptions>
+                        <pivot:PropertyGroupDescription PropertyName="Advertisement" />
+                        <pivot:PropertyGroupDescription PropertyName="Promotion" />
+                    </pivot:LocalDataSourceProvider.RowGroupDescriptions>
+                    <pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+                        <pivot:DateTimeGroupDescription PropertyName="Date" Step="Month" />
+                        <pivot:PropertyGroupDescription PropertyName="Product" />
+                    </pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+                    <pivot:LocalDataSourceProvider.AggregateDescriptions>
+                        <pivot:PropertyAggregateDescription PropertyName="Quantity" />
+                        <pivot:PropertyAggregateDescription PropertyName="Net" />
+                    </pivot:LocalDataSourceProvider.AggregateDescriptions>
+                </pivot:LocalDataSourceProvider>
+            </pivot:RadPivotGrid.DataProvider>
+        </pivot:RadPivotGrid>
+    </Grid>
+
+</UserControl>

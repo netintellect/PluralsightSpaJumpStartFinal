@@ -1,0 +1,1 @@
+﻿This example demonstrates how to bind RadTabControl to a collection of business objects and add/remove tabs using commands. The add/remove commanding logic is implemented through customized buttons displayed inside the TabItems' header.

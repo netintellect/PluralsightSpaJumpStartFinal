@@ -1,0 +1,128 @@
+<UserControl x:Class="Telerik.Windows.Examples.TransitionControl.MappedLightTransitions.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TransitionControl.MappedLightTransitions"
+		mc:Ignorable="d"
+		d:DesignHeight="400" d:DesignWidth="1600"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.DataContext>
+        <local:MappedLightTransitionsViewModel>
+            <local:MappedLightTransitionsViewModel.NavigationItems>
+                <local:NavigationItem DisplayName="CONTACT" ColorBrush="#FF8EBC00" Image="/TransitionControl;component/Images/TransitionControl/user_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/Contact_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0.1">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BloxyPattern.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="MAIL" ColorBrush="#FF1B9DDE" Image="/TransitionControl;component/Images/TransitionControl/folder_icon.png"  BigImage="/TransitionControl;component/Images/TransitionControl/Mail_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BrushReveal.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="PHOTOS" ColorBrush="#FFF59700" Image="/TransitionControl;component/Images/TransitionControl/photo_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/MyPhotos_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.5" OverBurn="0.25">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/SplitScreen.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="MUSIC BOX" ColorBrush="#FFC9D425" Image="/TransitionControl;component/Images/TransitionControl/musik_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/MusicBox_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0.1">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BloxyPattern.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="THINGS TO DO" ColorBrush="#FFED1691" Image="/TransitionControl;component/Images/TransitionControl/message_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/ThingsToDo_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BrushReveal.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="EVENTS" ColorBrush="#FF7E51A1" Image="/TransitionControl;component/Images/TransitionControl/check_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/Events_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.5" OverBurn="0.25">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/SplitScreen.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="INSPIRATION" ColorBrush="#FF16ABA9" Image="/TransitionControl;component/Images/TransitionControl/inspiration_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/Inspirations_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0.1">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BloxyPattern.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+                <local:NavigationItem DisplayName="LIBRARY" ColorBrush="#FFFF6900" Image="/TransitionControl;component/Images/TransitionControl/book_icon.png" BigImage="/TransitionControl;component/Images/TransitionControl/Library_screen.png">
+                    <local:NavigationItem.Transition>
+                        <telerik:MappedLightTransition WaveLength="0.2" OverBurn="0">
+                            <telerik:MappedLightTransition.ProgressMap>
+                                <ImageBrush ImageSource="/TransitionControl;component/Images/TransitionControl/ProgressMaps/BrushReveal.jpg" />
+                            </telerik:MappedLightTransition.ProgressMap>
+                        </telerik:MappedLightTransition>
+                    </local:NavigationItem.Transition>
+                </local:NavigationItem>
+            </local:MappedLightTransitionsViewModel.NavigationItems>
+
+        </local:MappedLightTransitionsViewModel>
+
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/TransitionControl;component/MappedLightTransitions/WPF/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate x:Key="NavigationItemsTemplate">
+                <StackPanel>
+                    <Image Source="{Binding Image}" Margin="0 8" Width="36" Height="36" Stretch="UniformToFill" />
+                    <TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border x:Name="LayoutRoot" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <telerik:RadTransitionControl VerticalAlignment="Top" Transition="{Binding SelectedItem.Transition}" Content="{Binding SelectedItem.BigImage}">
+                <telerik:RadTransitionControl.ContentTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding }" Stretch="UniformToFill" Width="683" Height="300"/>
+                    </DataTemplate>
+                </telerik:RadTransitionControl.ContentTemplate>
+            </telerik:RadTransitionControl>
+
+            <telerik:RadListBox Grid.Row="1" ItemsSource="{Binding NavigationItems}" ItemTemplate="{StaticResource NavigationItemsTemplate}" ItemsPanel="{StaticResource RadListBoxItemsPanel}"
+                                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+								x:Name="listBox" />
+
+        </Grid>
+    </Border>
+</UserControl>

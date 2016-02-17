@@ -1,0 +1,3 @@
+﻿RadMap provides support for Wkt data reading through its Sql Geospatial DataReader feature. 
+
+This example loads the data from collection of Wkt based data.

@@ -1,0 +1,70 @@
+<UserControl x:Class="Telerik.Windows.Examples.Sparklines.WinLossChart.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Sparklines.WinLossChart"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <Style TargetType="telerik:GridViewHeaderCell" BasedOn="{StaticResource GridViewHeaderCellStyle}">
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1"/>
+        </Style>
+        <Style TargetType="telerik:GridViewHeaderRow" BasedOn="{StaticResource GridViewHeaderRowStyle}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <ControlTemplate x:Key="GridViewCellTemplate" TargetType="telerik:GridViewCell">
+            <ContentPresenter x:Name="PART_ContentPresenter"
+						Margin="{TemplateBinding Padding}"
+						Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </ControlTemplate>
+        <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+            <Setter Property="Padding" Value="5 0 3 0" />
+            <Setter Property="Template" Value="{StaticResource GridViewCellTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Formula 1 Season 2009 Driver standings" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadGridView Name="driversGrid"
+                             AutoGenerateColumns="False" 
+                             IsReadOnly="True" 
+                             ShowGroupPanel="False"  
+                             RowIndicatorVisibility="Collapsed" 
+                             CanUserFreezeColumns="False" 
+                             CanUserResizeColumns="False" 
+                             ItemsSource="{Binding Data}"
+                             GroupRenderMode="Flat">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Data.Name}" Header="Driver" Width="*" TextWrapping="Wrap"  />
+                <telerik:GridViewDataColumn Width="6*">
+                    <telerik:GridViewColumn.Header>
+                        <TextBlock Text="Races" TextAlignment="Center" />
+                    </telerik:GridViewColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadWinLossSparkline ItemsSource="{Binding PointsView}" 
+                                                         YValuePath="Points" 
+                                                         EmptyPointBehavior="ShowAsZero" 
+                                                         Height="30" 
+                                                         AutoRange="False" MinYValue="-1" MaxYValue="1" 
+                                                         Margin="10,5,10,5" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding PointsSum}" Header="Points" Width="*" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

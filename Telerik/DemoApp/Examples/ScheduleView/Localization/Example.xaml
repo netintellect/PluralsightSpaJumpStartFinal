@@ -1,0 +1,36 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.Localization.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.Localization"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		Unloaded="Example_Unloaded">
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Localization" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" />
+	</UserControl.Resources>
+
+	<qsf:QuickStart.ConfigurationPanel>
+		<StackPanel>
+			<TextBlock Text="Choose culture: " VerticalAlignment="Center" Margin="8" />
+			<telerik:RadComboBox x:Name="Cultures" Margin="8 0" DisplayMemberPath="DisplayName" SelectedIndex="0"
+					SelectionChanged="Cultures_SelectionChanged" />
+		</StackPanel>
+	</qsf:QuickStart.ConfigurationPanel>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<telerik:RadScheduleView x:Name="ScheduleView" AppointmentsSource="{Binding Appointments}">
+			<telerik:RadScheduleView.ViewDefinitions>
+				<telerik:DayViewDefinition />
+				<telerik:WeekViewDefinition />
+				<telerik:MonthViewDefinition />
+				<telerik:TimelineViewDefinition />
+			</telerik:RadScheduleView.ViewDefinitions>
+		</telerik:RadScheduleView>
+	</Grid>
+
+</UserControl>

@@ -1,0 +1,2 @@
+﻿Telerik ProgressBar visualizes the progress of various tasks and can turn a simpler functionality into a visual experience. The ProgressBar control supports <b>ControlTemplates</b> that can be used to customize the look and feel of the control in your very custom way. This example shows how an animated template can be used to customize the appearance and the behavior of the control.
+<br/></br>RadProgressBar is a part of the <b>Telerik.Windows.Controls</b> assembly.

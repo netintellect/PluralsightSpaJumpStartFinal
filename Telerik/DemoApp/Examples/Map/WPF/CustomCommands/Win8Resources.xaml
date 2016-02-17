@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Style TargetType="telerik:RadButton" BasedOn="{StaticResource RadButtonStyle}">
+        <Setter Property="Padding" Value="5 3"/>
+        <Setter Property="Margin" Value="0 3"/>
+        <Setter Property="Height" Value="24"/>
+    </Style>
+
+    <DataTemplate x:Key="CustomCommandDataTemplate">
+        <Border Width="150" Height="28" Margin="0 2 0 2">
+            <Border>
+                <telerik:RadButton Command="{Binding Path=Command}" 
+                                           CommandParameter="{Binding CommandParameter}">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="32" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Path=Command.Text}"
+						                   TextAlignment="Center" 
+						                   HorizontalAlignment="Stretch" />
+
+                        <Image Grid.Column="1" 
+                                       Width="16" Height="16" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+					                   Source="{Binding ImageUri}" />
+                    </Grid>
+                </telerik:RadButton>
+            </Border>
+        </Border>
+    </DataTemplate>
+
+</ResourceDictionary>

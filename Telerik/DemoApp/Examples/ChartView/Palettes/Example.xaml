@@ -1,0 +1,335 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Palettes.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.Palettes"
+			 mc:Ignorable="d"
+			 d:DesignHeight="300"
+			 d:DesignWidth="400">
+    <UserControl.DataContext>
+        <vm:ThemingViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Style TargetType="telerik:RadLegend" BasedOn="{StaticResource RadLegendStyle}">
+            <Setter Property="Margin" Value="10,6,10,0" />
+            <Setter Property="Foreground" Value="#FF767676" />
+            <Setter Property="MinWidth" Value="75" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="11" />
+        </Style>
+
+        <Style x:Key="titleStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#FF767676" />
+            <Setter Property="Margin" Value="0,7" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="ItemStyle" TargetType="ListBoxItem" BasedOn="{StaticResource ListBoxItemStyle}">
+            <Setter Property="Padding" Value="3,2,4,2"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+
+        <vm:ShortPaletteNameConverter x:Key="ShortPaletteNameConverter" />
+    </UserControl.Resources>
+
+    <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Browser Usage"
+						   Style="{StaticResource titleStyle}" />
+
+                <telerik:RadCartesianChart x:Name="BarChart"
+										   Palette="{Binding Palette}"
+										   Grid.Row="1">
+
+                    <telerik:BarSeries ValueBinding="Value" CategoryBinding="TimeStamp" ItemsSource="{Binding BarData[0]}">
+                        <telerik:BarSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Firefox" />
+                        </telerik:BarSeries.LegendSettings>
+                    </telerik:BarSeries>
+                    <telerik:BarSeries ValueBinding="Value" CategoryBinding="TimeStamp" ItemsSource="{Binding BarData[1]}">
+                        <telerik:BarSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Chrome" />
+                        </telerik:BarSeries.LegendSettings>
+                    </telerik:BarSeries>
+                    <telerik:BarSeries ValueBinding="Value" CategoryBinding="TimeStamp" ItemsSource="{Binding BarData[2]}">
+                        <telerik:BarSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="IE" />
+                        </telerik:BarSeries.LegendSettings>
+                    </telerik:BarSeries>
+                    <telerik:BarSeries ValueBinding="Value" CategoryBinding="TimeStamp" ItemsSource="{Binding BarData[3]}">
+                        <telerik:BarSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Safari" />
+                        </telerik:BarSeries.LegendSettings>
+                    </telerik:BarSeries>
+                    <telerik:BarSeries ValueBinding="Value" CategoryBinding="TimeStamp" ItemsSource="{Binding BarData[4]}">
+                        <telerik:BarSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Opera" />
+                        </telerik:BarSeries.LegendSettings>
+                    </telerik:BarSeries>
+
+                    <telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:DateTimeCategoricalAxis DateTimeComponent="Year"
+														 LabelFormat="yyyy" />
+                    </telerik:RadCartesianChart.HorizontalAxis>
+                    <telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:LinearAxis LabelFormat="p0" />
+                    </telerik:RadCartesianChart.VerticalAxis>
+
+                    <telerik:RadCartesianChart.Grid>
+                        <telerik:CartesianChartGrid MajorLinesVisibility="Y" />
+                    </telerik:RadCartesianChart.Grid>
+
+                </telerik:RadCartesianChart>
+
+                <telerik:RadLegend Items="{Binding LegendItems, ElementName=BarChart}"
+								   Grid.Row="1"
+								   Grid.Column="1"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="OS"
+						   Style="{StaticResource titleStyle}" />
+
+                <telerik:RadCartesianChart x:Name="LineChart"
+										   Palette="{Binding Palette}"
+										   Grid.Row="1">
+                    <telerik:LineSeries ValueBinding="Value" CategoryBinding="Category" ItemsSource="{Binding LineData[0]}">
+                        <telerik:LineSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="WinXP" />
+                        </telerik:LineSeries.LegendSettings>
+                    </telerik:LineSeries>
+                    <telerik:LineSeries ValueBinding="Value" CategoryBinding="Category" ItemsSource="{Binding LineData[1]}">
+                        <telerik:LineSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Win7" />
+                        </telerik:LineSeries.LegendSettings>
+                    </telerik:LineSeries>
+                    <telerik:LineSeries ValueBinding="Value" CategoryBinding="Category" ItemsSource="{Binding LineData[2]}">
+                        <telerik:LineSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Vista" />
+                        </telerik:LineSeries.LegendSettings>
+                    </telerik:LineSeries>
+                    <telerik:LineSeries ValueBinding="Value" CategoryBinding="Category" ItemsSource="{Binding LineData[3]}">
+                        <telerik:LineSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="MacOSX" />
+                        </telerik:LineSeries.LegendSettings>
+                    </telerik:LineSeries>
+                    <telerik:LineSeries ValueBinding="Value" CategoryBinding="Category" ItemsSource="{Binding LineData[4]}">
+                        <telerik:LineSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Linux" />
+                        </telerik:LineSeries.LegendSettings>
+                    </telerik:LineSeries>
+
+                    <telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:CategoricalAxis />
+                    </telerik:RadCartesianChart.HorizontalAxis>
+
+                    <telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:LinearAxis LabelFormat="p0" />
+                    </telerik:RadCartesianChart.VerticalAxis>
+
+                    <telerik:RadCartesianChart.Grid>
+                        <telerik:CartesianChartGrid MajorLinesVisibility="Y"
+													StripLinesVisibility="Y">
+                            <telerik:CartesianChartGrid.YStripeBrushes>
+                                <SolidColorBrush Color="#FFD7D7D7"
+												 Opacity="0.3" />
+                                <SolidColorBrush Color="Transparent" />
+                            </telerik:CartesianChartGrid.YStripeBrushes>
+                        </telerik:CartesianChartGrid>
+                    </telerik:RadCartesianChart.Grid>
+                </telerik:RadCartesianChart>
+
+                <telerik:RadLegend x:Name="LineLegend"
+								   Items="{Binding LegendItems, ElementName=LineChart}"
+								   Grid.Row="1"
+								   Grid.Column="1"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Search Market Share, September 2011"
+						   Style="{StaticResource titleStyle}" />
+
+                <telerik:RadPieChart x:Name="PieChart"
+									 Palette="{Binding Palette}"
+									 Grid.Row="1">
+                    <telerik:PieSeries ValueBinding="Value"
+									   ItemsSource="{Binding Data}"
+									   RadiusFactor="0.77">
+                        <telerik:PieSeries.LabelDefinitions>
+                            <telerik:ChartSeriesLabelDefinition Margin="-8,0,0,0" />
+                        </telerik:PieSeries.LabelDefinitions>
+                        <telerik:PieSeries.LegendSettings>
+                            <telerik:DataPointLegendSettings TitleBinding="Category" />
+                        </telerik:PieSeries.LegendSettings>
+                        <telerik:PieSeries.AngleRange>
+                            <telerik:AngleRange StartAngle="270"
+												SweepAngle="360" />
+                        </telerik:PieSeries.AngleRange>
+                    </telerik:PieSeries>
+                </telerik:RadPieChart>
+
+                <telerik:RadLegend x:Name="PieLegend"
+								   Items="{Binding LegendItems, ElementName=PieChart}"
+								   Grid.Row="1"
+								   Grid.Column="1"/>
+            </Grid>
+
+            <Grid Grid.Row="1"
+				  Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="User Distribution"
+						   Style="{StaticResource titleStyle}" />
+
+                <telerik:RadPolarChart x:Name="PolarChart"
+									   Palette="{Binding Palette}"
+									   Grid.Row="1">
+                    <telerik:PolarAreaSeries AngleBinding="Angle" ValueBinding="Value" ItemsSource="{Binding PolarData[0]}">
+                        <telerik:PolarAreaSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Yearly" />
+                        </telerik:PolarAreaSeries.LegendSettings>
+                    </telerik:PolarAreaSeries>
+                    <telerik:PolarAreaSeries AngleBinding="Angle" ValueBinding="Value" ItemsSource="{Binding PolarData[1]}">
+                        <telerik:PolarAreaSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Monthly" />
+                        </telerik:PolarAreaSeries.LegendSettings>
+                    </telerik:PolarAreaSeries>
+                    <telerik:PolarAreaSeries AngleBinding="Angle" ValueBinding="Value" ItemsSource="{Binding PolarData[2]}">
+                        <telerik:PolarAreaSeries.LegendSettings>
+                            <telerik:SeriesLegendSettings Title="Daily" />
+                        </telerik:PolarAreaSeries.LegendSettings>
+                    </telerik:PolarAreaSeries>
+
+                    <telerik:RadPolarChart.RadialAxis>
+                        <telerik:NumericRadialAxis />
+                    </telerik:RadPolarChart.RadialAxis>
+
+                    <telerik:RadPolarChart.PolarAxis>
+                        <telerik:PolarAxis />
+                    </telerik:RadPolarChart.PolarAxis>
+
+                    <telerik:RadPolarChart.Grid>
+                        <telerik:PolarChartGrid GridLineVisibility="Both"
+												StripesVisibility="Both">
+                            <telerik:PolarChartGrid.PolarStripeBrushes>
+                                <SolidColorBrush Color="#FFD7D7D7"
+												 Opacity="0.3" />
+                                <SolidColorBrush Color="Transparent" />
+                            </telerik:PolarChartGrid.PolarStripeBrushes>
+
+                            <telerik:PolarChartGrid.RadialStripeBrushes>
+                                <SolidColorBrush Color="#FFD7D7D7" Opacity="0.3" />
+                                <SolidColorBrush Color="Transparent" />
+                            </telerik:PolarChartGrid.RadialStripeBrushes>
+                        </telerik:PolarChartGrid>
+                    </telerik:RadPolarChart.Grid>
+                </telerik:RadPolarChart>
+
+                <telerik:RadLegend x:Name="PolarLegend"
+								   Items="{Binding LegendItems, ElementName=PolarChart}"
+								   Grid.Row="1"
+								   Grid.Column="1">
+                    <telerik:RadLegend.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Path Fill="{Binding MarkerStroke}" Width="12" Height="12" Data="M 1,1 L 1,11 L 11,11 L 11,1 z" />
+                                <TextBlock Margin="2" Text="{Binding Title}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:RadLegend.ItemTemplate>
+                </telerik:RadLegend>
+            </Grid>
+        </Grid>
+    </Border>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Choose palette:"
+					   Margin="0,0,0,2" />
+
+            <ListBox Width="Auto" ItemContainerStyle="{StaticResource ItemStyle}"
+					 ItemsSource="{Binding Palettes}"
+					 SelectedValue="{Binding Palette, Mode=TwoWay}"
+					 HorizontalAlignment="Left"
+					 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+					 Margin="0,4" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"
+									Margin="0,2" >
+                            <TextBlock Text="{Binding Name, Converter={StaticResource ShortPaletteNameConverter}}"
+									   MinWidth="75" />
+                            <Border Padding="1,0,0,0" Height="14">
+                                <StackPanel Orientation="Horizontal" Background="White" >
+                                    <Rectangle Width="12" Height="12" Margin="1,0,1,0" Fill="{Binding GlobalEntries[0].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[1].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[2].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[3].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[4].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[5].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[6].Fill}" />
+                                    <Rectangle Width="12" Height="12" Margin="0,0,1,0" Fill="{Binding GlobalEntries[7].Fill}" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

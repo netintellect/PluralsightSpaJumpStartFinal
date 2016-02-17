@@ -1,0 +1,58 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		x:Class="Telerik.Windows.Examples.TabControl.Theming.Example"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Stretch" Value="None" />
+        </Style>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+        <Grid  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-5">
+            <telerik:RadTabControl Grid.Row="1" VerticalAlignment="Top"
+				DisplayMemberPath="Content" DropDownDisplayMode="Visible" ScrollMode="Viewport" BorderThickness="0">
+                <telerik:RadTabItem DropDownContent="A - D" Header="A - D" >
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/AD.png" />
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem DropDownContent="E - I" Header="E - I">
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/EI.png" />
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem DropDownContent="J - M" Header="J - M">
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/JM.png"/>
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem DropDownContent="N - Q" Header="N - Q">
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/NQ.png" />
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem DropDownContent="R - U" Header="R - U">
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/RU.png" />
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem DropDownContent="V - Z" Header="V - Z">
+                    <telerik:RadTabItem.Content>
+                        <Image Source="../Images/TabControl/FirstLook/VZ.png" />
+                    </telerik:RadTabItem.Content>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </Grid>
+
+    </Grid>
+    
+</UserControl>

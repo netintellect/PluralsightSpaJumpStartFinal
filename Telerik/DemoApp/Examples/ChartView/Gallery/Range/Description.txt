@@ -1,0 +1,1 @@
+﻿This example demonstrates RadChartView's Range Bar and Range series. Both series types bind to two properties of the business object they work with: a LowBinding and a HighBinding for the starting and ending points of each range bar or range area.

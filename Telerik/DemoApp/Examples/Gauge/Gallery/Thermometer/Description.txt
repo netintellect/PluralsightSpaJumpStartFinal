@@ -1,0 +1,3 @@
+﻿This thermometer is built using two linear scales in a RadVerticalLinearGauge. Once the temperature goes below the indicator which is over the scales, the green indicator turns red. <br />
+The Celsius scale has its minimum and maximum values set to -30 and 40 respectively. 
+The Fahrenheit scale's range is from -22 to 104 and two properties are used for better alignment - the <b>StartTickOffset</b> and the <b>EndTickOffset</b>.

@@ -1,0 +1,3 @@
+﻿Telerik RibbonView is an easy-to-use implementation of the Microsoft Office 2010 "ribbon" UI, which allows you to codelessly organize the navigation functionality of your application into a single compact toolbar control. Its popup engine, dynamic resizing, built-in galleries and powerful customization capabilities, make the Silverlight/WPF RibbonView your shortcut to creating powerful navigation systems.
+You can experiment with the Contextual Groups, Key Tips (press CTRL + Q (Silverlight) or Left-ALT (WPF)) and all amazing RibbonView features.
+<br/><br/>RadRibbonView is a part of the <b>Telerik.Windows.Controls.RibbonView</b> assembly.

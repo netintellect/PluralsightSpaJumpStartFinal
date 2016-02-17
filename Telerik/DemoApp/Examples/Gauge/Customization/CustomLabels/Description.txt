@@ -1,0 +1,1 @@
+﻿Tick labels are displayed for major tick marks only. You can set label location around scale bar, font properties (like family, size and foreground), format of the label, or even change the whole label control template.

@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Highlighting.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		     xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.Highlighting"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<local:ViewModel x:Key="ViewModel" />
+            <telerik:Windows8Colors x:Key="Windows8Colors" />
+            <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+            
+            <Style TargetType="telerik:RadButton" x:Key="DemoButton" BasedOn="{StaticResource RadButtonStyle}">
+				<Setter Property="BorderThickness" Value="0 0 0 0"/>
+			</Style>
+			<Style TargetType="telerik:RadButton" x:Key="BigDemoButton" BasedOn="{StaticResource DemoButton}">
+				<Setter Property="MinHeight" Value="70" />
+				<Setter Property="Width" Value="80" />
+				<Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+				<Setter Property="Margin" Value="0 2 0 2" />
+			</Style>
+			<Style TargetType="TextBlock" x:Key="DemoButtonFooterTextBlock">
+				<Setter Property="Width" Value="75"/>
+				<Setter Property="Margin" Value="0 5 0 0"/>
+				<Setter Property="FontWeight" Value="Bold"/>
+				<Setter Property="VerticalAlignment" Value="Stretch"/>
+				<Setter Property="TextAlignment" Value="Center"/>
+				<Setter Property="TextWrapping" Value="Wrap"/>
+				<Setter Property="Opacity" Value="0.9"/>
+				<Setter Property="Foreground" Value="#FF373737"/>
+			</Style>
+		</ResourceDictionary>
+
+
+	</UserControl.Resources>
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Highlighting" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+	<Grid DataContext="{StaticResource ViewModel}" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<Border BorderBrush="#FFD6D4D4" Grid.Row="0" BorderThickness="1" Margin="6">
+			<StackPanel Orientation="Horizontal">
+				<telerik:RadButton Style="{StaticResource BigDemoButton}" Command="{Binding HighlightCommand}"  CommandParameter="None" >
+					<StackPanel Orientation="Vertical">
+						<Grid HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="40">
+							<Path Data="M12.000004,19.343151 L17.656858,25.000006 L12.000004,30.65686 L6.3431497,25.000006 z M7.30967,15.999998 L7.30967,17.999998 L23.977962,17.999998 L23.977962,15.999998 z M6.2393517,12 L29.886755,12 L29.900532,12.112606 C29.966305,12.717712 30,13.33168 30,13.953001 C30,15.661631 29.745192,17.314659 29.269144,18.880722 L29.231165,19 L6.2393517,19 z M1.0398909,8.9999981 L2.0797832,8.9999981 L29.601252,8.9999981 L29.601252,9.999999 L2.0797832,9.999999 L2.0797832,15.019997 L3.1196737,15.019997 L3.1196737,14.019994 L4.159565,14.019994 L4.159565,15.019997 L5.1994576,15.019997 L5.1994576,16.019999 L4.159565,16.019999 L4.159565,17.019999 L3.1196737,17.019999 L3.1196737,16.019999 L1.0398909,16.015633 z M0,0 L23.655327,0 L23.897741,0.19433928 C25.505194,1.5145293 26.876396,3.0864234 27.943155,4.845367 L28.034327,5 L4.8614998,5 L2.9581087,6.999999 L1.0547171,5 L0,5 z" Fill="{StaticResource AccentBrush}" Margin="11,6,0,3.343" Stretch="Fill" Stroke="{x:Null}" />
+							<Ellipse Stroke="{StaticResource AccentBrush}"/>
+						</Grid>
+						<TextBlock Text="none"  Style="{StaticResource DemoButtonFooterTextBlock}"/>
+					</StackPanel>
+				</telerik:RadButton>
+				<telerik:RadButton Style="{StaticResource BigDemoButton}" Command="{Binding HighlightCommand}"  CommandParameter="All" >
+					<StackPanel Orientation="Vertical">
+						<Grid  Opacity="0.75"  HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="40">
+							<Path Data="M12.000004,19.343151 L17.656858,25.000006 L12.000004,30.65686 L6.3431497,25.000006 z M7.30967,15.999998 L7.30967,17.999998 L23.977962,17.999998 L23.977962,15.999998 z M6.2393517,12 L29.886755,12 L29.900532,12.112606 C29.966305,12.717712 30,13.33168 30,13.953001 C30,15.661631 29.745192,17.314659 29.269144,18.880722 L29.231165,19 L6.2393517,19 z M1.0398909,8.9999981 L2.0797832,8.9999981 L29.601252,8.9999981 L29.601252,9.999999 L2.0797832,9.999999 L2.0797832,15.019997 L3.1196737,15.019997 L3.1196737,14.019994 L4.159565,14.019994 L4.159565,15.019997 L5.1994576,15.019997 L5.1994576,16.019999 L4.159565,16.019999 L4.159565,17.019999 L3.1196737,17.019999 L3.1196737,16.019999 L1.0398909,16.015633 z M0,0 L23.655327,0 L23.897741,0.19433928 C25.505194,1.5145293 26.876396,3.0864234 27.943155,4.845367 L28.034327,5 L4.8614998,5 L2.9581087,6.999999 L1.0547171,5 L0,5 z" Fill="{StaticResource AccentBrush}" Margin="11,6,0,3.343" Stretch="Fill" Stroke="{x:Null}" />
+							<Ellipse Stroke="{StaticResource AccentBrush}"/>
+						</Grid>
+						<TextBlock Text="all" Style="{StaticResource DemoButtonFooterTextBlock}"/>
+					</StackPanel>
+				</telerik:RadButton>
+				<telerik:RadButton Style="{StaticResource BigDemoButton}" Command="{Binding HighlightCommand}"  CommandParameter="Critical" >
+					<StackPanel Orientation="Vertical" >
+						<Grid HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="40">
+							<Path Data="M7.0292606,16 L7.0292606,18 L23.058134,18 L23.058134,16 z M6.0000014,12.000002 L28.740257,12.000002 L28.753506,12.112608 C28.816755,12.717714 28.849157,13.331682 28.849157,13.953003 C28.849157,15.661633 28.604124,17.314661 28.146338,18.880724 L28.109816,19.000002 L6.0000014,19.000002 z M0.99999923,8.999999 L1.9999996,8.999999 L28.465706,8.999999 L28.465706,10 L1.9999996,10 L1.9999996,15.019999 L2.9999981,15.019999 L2.9999981,14.019996 L3.9999981,14.019996 L3.9999981,15.019999 L4.999999,15.019999 L4.999999,16.02 L3.9999981,16.02 L3.9999981,17.02 L2.9999981,17.02 L2.9999981,16.02 L0.99999923,16.015635 z" Margin="11,15,1,15" Stretch="Fill" Stroke="{x:Null}"  Fill="{StaticResource AccentBrush}" Opacity="0.75"/>
+							<Path Data="M22.186983,22.0186 L30.186983,22.0186 L30.186983,30.0186 L22.186983,30.0186 z M18.97657,0.00035476685 C20.398182,0.0091400146 21.811085,0.18137741 23.184755,0.51787949 L23.358564,0.56275368 L6.973093,16.948225 L7.0414219,19.708324 L4.2813225,19.639996 L3.5355339,20.385784 L0,16.85025 L16.726646,0.12360382 L17.035475,0.089612961 C17.682396,0.026140213 18.330381,-0.0036373138 18.97657,0.00035476685 z" Fill="{StaticResource AccentBrush}" Margin="-4.187,4.981,14,5" RenderTransformOrigin="0.867492555131454,0.866749284170835" Stretch="Fill" StrokeThickness="2" >
+								<Path.RenderTransform>
+									<RotateTransform Angle="45"/>
+								</Path.RenderTransform>
+							</Path>
+							<Ellipse Stroke="{StaticResource AccentBrush}"/>
+						</Grid>
+						<TextBlock Text="critical path" Style="{StaticResource DemoButtonFooterTextBlock}"/>
+					</StackPanel>
+				</telerik:RadButton>
+				<telerik:RadButton Style="{StaticResource BigDemoButton}" Command="{Binding HighlightCommand}"  CommandParameter="Late" >
+					<StackPanel Orientation="Vertical" >
+						<Grid HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="40">
+							<Ellipse Stroke="{StaticResource AccentBrush}"/>
+							<Path Data="M12,18.000002 L12,20.000002 L15,20.000002 L15,18.000002 z M11.019011,14.000001 L26.019012,14.000001 L26.019012,21 L11.019011,21 z M1.0000035,3.9999976 L1.0000035,5.9999976 L4.0000033,5.9999976 L4.0000033,3.9999976 z M0,0 L16,0 L16,2.9999981 L21,2.9999981 L22,2.9999981 L22,10.999998 L21,10.999998 L5.999999,10.999998 L5.999999,16.999998 L8.999999,16.999998 L8.999999,15.999999 L9.999999,15.999999 L9.999999,16.999998 L10.999999,16.999998 L10.999999,17.999998 L9.999999,17.999998 L9.999999,18.999998 L8.999999,18.999998 L8.999999,17.999998 L5.999999,17.999998 L4.999999,17.999998 L4.999999,16.999998 L4.999999,10.999998 L4.999999,9.9999981 L5.999999,9.9999981 L21,9.9999981 L21,3.9999979 L16,3.9999979 L16,7 L0,7 z" Fill="{StaticResource AccentBrush}" Margin="8,9,5.981,10" Stretch="Fill" />
+						</Grid>
+						<TextBlock Text="late" Style="{StaticResource DemoButtonFooterTextBlock}"/>
+					</StackPanel>
+				</telerik:RadButton>
+			</StackPanel>
+		</Border>
+
+		<telerik:RadGanttView Grid.Row="1" VisibleRange="{Binding VisibleRange}" TasksSource="{Binding Tasks}"
+				PixelLength="00:30:00"
+				HighlightedItemsSource="{Binding HighlightedItems}">
+			<telerik:RadGanttView.Columns>
+				<telerik:TreeColumnDefinition MemberBinding="{Binding Title}" Header="Title" Width="120" IsFrozenColumn="True"/>
+				<telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="120">
+					<telerik:ColumnDefinition.CellEditTemplate>
+						<DataTemplate>
+							<telerik:RadDateTimePicker SelectedValue="{Binding Start, Mode=TwoWay}" />
+						</DataTemplate>
+					</telerik:ColumnDefinition.CellEditTemplate>
+				</telerik:ColumnDefinition>
+                <telerik:ColumnDefinition Header="End" MemberBinding="{Binding End}" Width="120">
+                    <telerik:ColumnDefinition.CellEditTemplate>
+                        <DataTemplate>
+                            <telerik:RadDateTimePicker SelectedValue="{Binding End, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </telerik:ColumnDefinition.CellEditTemplate>
+                </telerik:ColumnDefinition>
+                <telerik:ColumnDefinition Header="Duration" MemberBinding="{Binding Duration}" Width="120" />
+			</telerik:RadGanttView.Columns>
+		</telerik:RadGanttView>
+	</Grid>
+</UserControl>

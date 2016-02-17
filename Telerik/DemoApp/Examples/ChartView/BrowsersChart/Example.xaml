@@ -1,0 +1,101 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.BrowsersChart.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.BrowsersChart"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.BrowsersChart.ViewModels"
+    xmlns:converters="clr-namespace:Telerik.Windows.Examples.ChartView.BrowsersChart.Converters"
+    xmlns:utilities="clr-namespace:Telerik.Windows.Examples.ChartView.BrowsersChart.Utilities"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <converters:BrowserNameToImageSourceConverter x:Key="BrowserNameToImageSourceConverter" />
+        <converters:BrowserNameToLegendSettingsConverter x:Key="BrowserNameToLegendSettingsConverter" />
+        <converters:BrowserNameToBrushConverter x:Key="BrowserNameToBrushConverter" />
+        <DataTemplate x:Key="ImageLabelTemplate">
+            <StackPanel>
+                <Image Width="24" 
+                       Height="24" 
+                       Source="{Binding DataItem.BrowserName, Converter={StaticResource BrowserNameToImageSourceConverter}}" />
+                <TextBlock HorizontalAlignment="Center" 
+                           Text="{Binding DataItem.PopularityPercent, StringFormat='{}{0:#%}'}" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="LegendItemTemplate">
+            <Grid>
+                <Image Source="{Binding Title, Converter={StaticResource BrowserNameToImageSourceConverter}, ConverterParameter=32}"
+                       HorizontalAlignment="Left"
+                       Width="32"
+                       Height="32" />
+                <TextBlock Text="{Binding Title}"
+                           FontFamily="Segoe UI Light"
+                           FontSize="12"
+                           VerticalAlignment="Center"
+                           Margin="46 0 0 0" />
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="BarStyle" TargetType="Border">
+            <Setter Property="Background" Value="{Binding DataItem.BrowserName, Converter={StaticResource BrowserNameToBrushConverter}}" />
+        </Style>
+    </UserControl.Resources>
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Browsers Usage Statistics Per Year" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.DataContext>
+        <vm:BrowsersViewModel />
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <telerik:RadCartesianChart x:Name="browsersChart" FontFamily="Segoe UI Light" FontSize="11" Margin="0 0 30 0">
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:CategoricalAxis GapLength="0.14" />
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis LabelFormat="P0" Maximum="0.55" />
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorLinesVisibility="Y" />
+            </telerik:RadCartesianChart.Grid>
+            <telerik:RadCartesianChart.SeriesProvider>
+                <telerik:ChartSeriesProvider Source="{Binding Data}">
+                    <telerik:ChartSeriesProvider.SeriesDescriptors>
+                        <telerik:CategoricalSeriesDescriptor ItemsSourcePath="Data" CategoryPath="Year" ValuePath="PopularityPercent">
+                            <telerik:CategoricalSeriesDescriptor.Style>
+                                <Style TargetType="telerik:BarSeries" BasedOn="{StaticResource BarSeriesStyle}">
+                                    <Setter Property="LegendSettings" Value="{Binding Name, Converter={StaticResource BrowserNameToLegendSettingsConverter}}" />
+                                    <Setter Property="DefaultVisualStyle" Value="{StaticResource BarStyle}" />
+                                    <Setter Property="ShowLabels" Value="True" />
+                                    <Setter Property="utilities:ChartSeriesLabelDefinitionUtilities.Template" Value="{StaticResource ImageLabelTemplate}" />
+                                </Style>
+                            </telerik:CategoricalSeriesDescriptor.Style>
+                        </telerik:CategoricalSeriesDescriptor>
+                    </telerik:ChartSeriesProvider.SeriesDescriptors>
+                </telerik:ChartSeriesProvider>
+            </telerik:RadCartesianChart.SeriesProvider>
+        </telerik:RadCartesianChart>
+        
+        <telerik:RadLegend Grid.Column="1" 
+                           Margin="0 0 10 0" 
+                           Items="{Binding LegendItems, ElementName=browsersChart}"
+                           ItemTemplate="{StaticResource LegendItemTemplate}" />
+        
+        <TextBlock Grid.Column="0" 
+                   Grid.ColumnSpan="2" 
+                   VerticalAlignment="Bottom" 
+                   HorizontalAlignment="Right" 
+                   Margin="10,0,0,5" 
+                   Text="source: w3schools.com/browsers" 
+                   Foreground="#FFD6D4D4" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿This example demonstrates how to achieve filter-like behavior with RadChart using custom style for the Legend items.

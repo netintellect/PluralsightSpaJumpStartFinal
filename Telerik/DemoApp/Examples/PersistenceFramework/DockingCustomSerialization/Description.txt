@@ -1,0 +1,2 @@
+﻿This example demonstrates a custom serialization of properties for the RadDocking control.
+The layout of the RadDocking control as well as the state of the controls in each RadPane's content will be serialized.

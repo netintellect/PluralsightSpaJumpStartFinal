@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.SpellChecker.DataGrid.Example" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikXaml="clr-namespace:Telerik.Windows.Documents.FormatProviders.Xaml;assembly=Telerik.Windows.Documents.FormatProviders.Xaml"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d"
+    d:DesignWidth="700" d:DesignHeight="400">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Margin="8" Text="Spell Checking SDK's DataGrid" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="This column demonstrates the approach of manual triggering of spell checking - perfect when there are complex cell edit templates." Margin="10" />
+        <TextBlock TextWrapping="Wrap" Text="This column demonstrates automatic spell checking when cell edit template contains single control that supports it." Margin="10" Grid.Column="1" />
+        <DataGrid telerik:DataGridSpellCheckHelper.IsSpellCheckingEnabled="True" x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" Grid.Row="1" Grid.ColumnSpan="2" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Manual triggering of spell checking" Width="*" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <telerik:RadRichTextBox x:Name="radRichTextBox1" Background="Transparent" VerticalScrollBarVisibility="Hidden" Height="100" BorderThickness="0"
+                                                    IsReadOnly="True" IsSpellCheckingEnabled="False" IsSelectionMiniToolBarEnabled="False"
+                                                    IsSelectionEnabled="False" IsContextMenuEnabled="False" IsHitTestVisible="False"
+                                                    telerik:XamlDataProvider.Source="{Binding JobDescription, Mode=OneWay}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <telerik:RadRichTextBox x:Name="radRichTextBox2" Height="100" 
+                                                             IsSpellCheckingEnabled="False" 
+                                                             IsSelectionMiniToolBarEnabled="False" IsContextMenuEnabled="False"
+                                                             telerik:XamlDataProvider.Source="{Binding JobDescription, Mode=TwoWay}"/>
+                                <telerik:RadButton Grid.Row="1" Content="Check Spelling" Name="spellcheckRTBButton" Click="spellcheckRTBButton_Click" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Automatic spell checking" Width="*" telerik:DataGridSpellCheckHelper.IsSpellCheckingEnabled="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding EmployeeDescription, UpdateSourceTrigger=PropertyChanged}" Height="100" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding EmployeeDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

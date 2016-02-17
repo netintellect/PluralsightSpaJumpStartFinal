@@ -1,0 +1,45 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Financial.DetailViewDay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/Financial/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Border Style="{StaticResource borderStyle}" >
+            <telerik:RadCartesianChart BorderThickness="1" Palette="Windows8" Margin="4,4,13,4">
+                <telerik:RadCartesianChart.Series>
+                    <telerik:AreaSeries ItemsSource="{Binding Data}"
+                                    ValueBinding="Close"
+                                    CategoryBinding="Date"
+                                    >
+                    </telerik:AreaSeries>
+                </telerik:RadCartesianChart.Series>
+                <telerik:RadCartesianChart.HorizontalAxis>
+                    <telerik:DateTimeContinuousAxis LabelFormat="HH:mm"  
+                                                MajorStep="8"
+                                                MajorStepUnit="Hour"
+                                                MajorTickStyle="{StaticResource MajorTickStyle}"
+                                                LabelStyle="{StaticResource axisTextStyleDetail}"
+                                                PlotMode="OnTicks" />
+                </telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:RadCartesianChart.VerticalAxis>
+                    <telerik:LinearAxis 
+                        Minimum="156" 
+                        Maximum="160" 
+                        MajorStep="2" 
+                        LabelStyle="{StaticResource verticalAxisLabelStyleDetail}" />
+                </telerik:RadCartesianChart.VerticalAxis>
+            </telerik:RadCartesianChart>
+        </Border>
+        <TextBlock Text="1D - Sep, 30" Style="{StaticResource textBlockStyleDetail}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,15 @@
+<OutOfBrowserSettings ShortName="RibbonWindowExample Application" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>RibbonWindowExample Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="RibbonWindowExample Application" WindowStyle="BorderlessRoundCornersWindow" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">telerik.png</Icon>
+    <Icon Size="32,32">telerik.png</Icon>
+    <Icon Size="48,48">telerik.png</Icon>
+    <Icon Size="128,128">telerik.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

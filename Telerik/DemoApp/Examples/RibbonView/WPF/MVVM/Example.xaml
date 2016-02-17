@@ -1,0 +1,88 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.RibbonView.MVVM.Example"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.RibbonView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:mvvm="clr-namespace:Telerik.Windows.Examples.RibbonView.MVVM"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<Grid>
+		<Grid.Resources>
+			<DataTemplate x:Key="ButtonTemplate">
+				<telerik:RadRibbonButton Text="{Binding Text}" Size="{Binding Size}" CollapseToSmall="WhenGroupIsSmall"
+						SmallImage="{Binding SmallImage}" LargeImage="{Binding LargeImage}" />
+			</DataTemplate>
+
+			<DataTemplate x:Key="SmallButtonTemplate">
+				<telerik:RadRibbonButton Size="Small" SmallImage="{Binding SmallImage}" Margin="2" />
+			</DataTemplate>
+
+			<DataTemplate x:Key="SplitButtonTemplate">
+				<telerik:RadRibbonSplitButton Text="{Binding Text}" Size="{Binding Size}"
+						SmallImage="{Binding SmallImage}" LargeImage="{Binding LargeImage}" />
+			</DataTemplate>
+
+			<DataTemplate x:Key="SmallButtonGroup">
+				<ItemsControl ItemsSource="{Binding Buttons}" ItemTemplate="{StaticResource SmallButtonTemplate}"
+						VerticalAlignment="Center">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<telerik:RadWrapPanel MaxWidth="80" />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+			</DataTemplate>
+
+			<DataTemplate x:Key="ButtonsGroup">
+				<ItemsControl ItemsSource="{Binding Buttons}" ItemTemplate="{StaticResource ButtonTemplate}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<telerik:RadCollapsiblePanel />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+			</DataTemplate>
+
+			<mvvm:ButtonsTemplateSelector x:Key="groupsSelector" Button="{StaticResource ButtonTemplate}"
+					SplitButton="{StaticResource SplitButtonTemplate}" ButtonsGroup="{StaticResource ButtonsGroup}"
+					SmallButtonGroup="{StaticResource SmallButtonGroup}" />
+
+			<HierarchicalDataTemplate x:Key="GroupHeaderTemplate" ItemsSource="{Binding Buttons}"
+					ItemTemplateSelector="{StaticResource groupsSelector}">
+				<TextBlock Text="{Binding Text}" />
+			</HierarchicalDataTemplate>
+
+			<HierarchicalDataTemplate x:Key="TabTemplate" ItemsSource="{Binding Groups}"
+					ItemTemplate="{StaticResource GroupHeaderTemplate}">
+				<TextBlock Text="{Binding Text}" />
+			</HierarchicalDataTemplate>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<telerik:RadRibbonView x:Name="ribbonView" ApplicationButtonVisibility="Collapsed"
+				ApplicationName="{Binding AppName}" ItemsSource="{Binding Tabs}" Title="{Binding Title}"
+				ItemTemplate="{StaticResource TabTemplate}" SelectedItem="{Binding SelectedTab, Mode=TwoWay}">
+			<telerik:RadRibbonView.QuickAccessToolBar>
+				<telerik:QuickAccessToolBar ItemsSource="{Binding QuickAccessItems}"
+						ItemTemplate="{StaticResource ButtonTemplate}" />
+			</telerik:RadRibbonView.QuickAccessToolBar>
+		</telerik:RadRibbonView>
+
+		<Grid Grid.Row="1" Background="#FFFFFF">
+			<Image Source="../../Images/RibbonView/wpf_image_RB.png" Stretch="None" VerticalAlignment="Top"
+					HorizontalAlignment="Left" />
+		</Grid>
+	</Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3" x:Name="configurationPanel">
+			<telerik:RadButton Content="Add Tab" Command="{Binding AddTab}" Margin="0 2" />
+			<telerik:RadButton Content="Remove Tab" Command="{Binding RemoveTab}" Margin="0 2" />
+			<telerik:RadButton Content="Add Group" Command="{Binding AddGroup}" Margin="0 2" />
+			<telerik:RadButton Content="Add Button" Command="{Binding AddButton}" Margin="0 2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+
+</UserControl>

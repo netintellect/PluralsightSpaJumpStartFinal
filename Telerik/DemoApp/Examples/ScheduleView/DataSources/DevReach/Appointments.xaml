@@ -1,0 +1,327 @@
+<schedule:ObservableAppointmentCollection xml:lang="EN-US"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.ScheduleView.Common"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<!-- 1st day-->
+	<schedule:Appointment Subject="Introduction to WCF RIA Services for Silverlight 4 Developers"
+			Start="11/14/2010 13:00PM" End="11/14/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="What's New in WCF 4" Start="11/14/2010 14:30PM" End="11/14/2010 15:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Building RESTful Applications with the Open Data Protocol "
+			Start="11/14/2010 17:30PM" End="11/14/2010 18:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="BI for Developers with Analysis Services " Start="11/14/2010 13:00PM"
+			End="11/14/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Introducing SQL Server Compact Edition 4 " Start="11/14/2010 14:30PM"
+			End="11/14/2010 15:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Adopting the Rich Standard: HTML5 in ASP.NET" Start="11/14/2010 13:00PM"
+			End="11/14/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Easing into Windows Phone 7 Development " Start="11/14/2010 14:30PM"
+			End="11/14/2010 15:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Multimedia in Silverlight 4.0 " Start="11/14/2010 16:00PM" End="11/14/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Pragmatic .NET Tips, Tricks and Tools" Start="11/14/2010 13:00PM"
+			End="11/14/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject=".NET Rocks at DevReach! " Start="11/14/2010 14:30PM" End="11/14/2010 15:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Anti-Corruption Layers " Start="11/14/2010 13:00PM" End="11/14/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="How to Partition and Layer a Software Application " Start="11/14/2010 14:30PM"
+			End="11/14/2010 15:45PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Designing Applications in the era of Many-core Computing" Start="11/14/2010 16:00PM"
+			End="11/14/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="What's new in Q3 2010 - Special Event" Start="11/15/2010 2:00PM"
+			End="11/15/2010 3:00PM">
+		<schedule:Appointment.Resources>			
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<!--2nd day-->
+	<schedule:Appointment Subject="Building Office Productivity Solutions with Visual Studio" Start="11/15/2010 9:15AM"
+			End="11/15/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Dynamic State Storage Using the ASP.NET Provider Model" Start="11/15/2010 10:45AM"
+			End="11/15/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Authoring custom WCF services in SharePoint" Start="11/15/2010 13:00PM"
+			End="11/15/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Silverlight/WPF Databinding Essentials Part 1" Start="11/15/2010 9:15AM"
+			End="11/15/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="High Performance Functions" Start="11/15/2010 10:45AM"
+			End="11/15/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="How to Build Composite Application with Prism for Silverlight"
+			Start="11/15/2010 9:15AM" End="11/15/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="The Fun Side of Developing on Windows Phone 7 Series" Start="11/15/2010 10:45AM"
+			End="11/15/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="HTML5 and CSS3 Techniques You Can Use Today" Start="11/15/2010 16:00PM"
+			End="11/15/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Things Every ASP.NET Developer Should Know" Start="11/15/2010 9:15AM"
+			End="11/15/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Team Development with Microsoft Scrum 1.0" Start="11/15/2010 10:45AM"
+			End="11/15/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Mocks, Stubs, and Dependency Injection, Oh My!" Start="11/15/2010 9:15AM"
+			End="11/15/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Refactoring to Logical Layers " Start="11/15/2010 10:45AM" End="11/15/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Real World N-tier Solutions with Silverlight, RIA and Entity Framework "
+			Start="11/15/2010 16:00PM" End="11/15/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+
+	<!--3rd day-->
+	<schedule:Appointment Subject="Tightening Web Form Screws" Start="11/16/2010 9:15AM" End="11/16/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Improving Your ASP.NET Application Performance " Start="11/16/2010 10:45AM"
+			End="11/16/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Workflow in SharePoint 2010" Start="11/16/2010 13:00PM" End="11/16/2010 14:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Business Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="When and how to use CLR in Microsoft SQL Server" Start="11/16/2010 9:15AM"
+			End="11/16/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject=".NET Rocks Panel: Data Access Strategies for Silverlight" Start="11/16/2010 10:45AM"
+			End="11/16/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Building the DevReach Viewer, a Deep Dive into Windows phone 7, MVVM and OData "
+			Start="11/16/2010 9:15AM" End="11/16/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Internet Explorer 9 For Designers and Developers" Start="11/16/2010 10:45AM"
+			End="11/16/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Leveraging Client Capabilities with jQuery in Visual Studio"
+			Start="11/16/2010 16:00PM" End="11/16/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Presentation Layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Customizing TFS to Your Needs" Start="11/16/2010 9:15AM" End="11/16/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Back to the Feature! Solution Deployment in SharePoint 2010"
+			Start="11/16/2010 10:45AM" End="11/16/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Deep dive into Load Testing features in Visual Studio 2010" Start="11/16/2010 9:15AM"
+			End="11/16/2010 10:30AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Bringing it altogether! SL4, WCF, RIA, Blend4, Windows Phone 7"
+			Start="11/16/2010 10:45AM" End="11/16/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Automated Testing in the Agile Environment " Start="11/16/2010 16:00PM"
+			End="11/16/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Storage Tables in the Cloud?" Start="11/17/2010 11:45AM" End="11/17/2010 13:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Data layer" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Test Driving ASP.NET MVC" Start="11/17/2010 11:45AM" End="11/17/2010 13:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Kanban and Scrumban Part 1" Start="11/17/2010 08:00AM" End="11/17/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Kanban and Scrumban Part 2" Start="11/18/2010 08:00AM" End="11/18/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Best Practices" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="200" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Introduction to WCF services"
+			Start="11/19/2010 10:45AM" End="11/19/2010 12:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="250" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Scalability and Performance of SharePoint 2010" Start="11/19/2010 12:00PM"
+			End="11/19/2010 14:00PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+   <schedule:Appointment Subject="Silverlight Testing" Start="11/20/2010 16:00PM"
+			End="11/20/2010 17:15PM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Architecture" ResourceType="Category" />
+			<scheduleView:Resource ResourceName="300" ResourceType="Level" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+</schedule:ObservableAppointmentCollection>

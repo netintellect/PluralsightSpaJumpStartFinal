@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<Country Name="Egypt">
+		<POI Name="The Pyramids of Giza" ImgName="ThePyramidsOfGiza.jpg" Location="29.9798288,31.1343737"
+			Description="The Pyramids of Giza represent one of the greatest architectural feats by man. The last surviving member of the Seven Wonders of the World, the Great Pyramid of Giza is one of the world's oldest tourist attractions and the reason most people visit Egypt today." />
+		
+		<POI Name="Abu Simbel" ImgName="AbuSimbel.jpg" Location="22.337232,31.625799"
+			Description="The monumental sun temple of Ramses II is the most spectacular of the Nubian antiquities that were relocated to higher ground on the shores of Lake Nasser." /> 
+			
+		<POI Name="Temples of Karnak" ImgName="TemplesOfKarnak.jpg" Location="25.718835,32.65727"
+			Description="Dedicated to the ancient Theban Triad of Amun, Mut and Khonsu, this vast complex reached its zenith during the New Kingdom." /> 
+			
+		<POI Name="Siwa Oasis" ImgName="SiwaOasis.jpg" Location="29.2058135,25.5268378"
+			Description="The Siwa Oasis is situated in the Western Desert close to the Libyan border. It is Egypt's most remote oasis town and the Siwans have developed their own distinct Berber culture." /> 
+			
+		<POI Name="Valley of the Kings" ImgName="ValleyOfTheKings.jpg" Location= "25.740164,32.601411"
+			Description="The Valley of the Kings (Biban El Moluk) situated on the ancient site of Thebes is where the pharaoh's were buried and hoped to meet their Gods in the afterlife." /> 
+			
+		<POI Name="Luxor Temple" ImgName="LuxorTemple.jpg" Location="25.699502,32.639051"
+			Description="The Temple of Luxor was built largely by Amenhotep III and Ramesses II around 1400BC. Its main purpose was to celebrate the festival of Opet." /> 
+			
+		<POI Name="The Egyptian Museum in Cairo" ImgName="TheEgyptianMuseumInCario.jpg" Location="30.047652,31.233615"
+			Description="With over 120,000 artifacts, the museum houses an incredible display depicting ancient Egypt's glorious reign. You can enjoy mummies, sarcophagi, pottery, jewelry and of course King Tutankhamen's treasures. " /> 
+	
+		<POI Name="Catacombs of Kom Es-Shoqafa" ImgName="CatacombsOfKomEs-Shoqafa.jpg" Location="31.178558,29.892954"
+			Description="Beneath the Karmous quarter of Alexandria are the spookiest tombs in Egypt, with a bizarre fusion of pharaonic, Greek and Roman funerary motifs reflecting the city’s ancient diversity." /> 
+			
+		<POI Name="Abydos" ImgName="Abydos.jpg" Location="26.182257,31.911896"
+			Description="One of the most ancient cult-centres in Egypt, Abydos’ mortuary temple of Seti I contains magnificent bas-reliefs, the finest to have survived from the New Kingdom." /> 
+			
+		<POI Name="The Pyramids of Dahshur" ImgName="ThePyramidsOfDashur.jpg" Location="29.977296,31.132495"
+			Description="Less famous than the Giza trio but no less fascinating – and far less crowded. The Bent Pyramid, resting place of Snofru, has a distinctive angled top" /> 
+	</Country>
+    
+	<Country Name="Peru">		
+		<POI Name="Machu Picchu" ImgName="MachuPicchu.jpg" Location="-13.163141,-72.544963"
+			Description="With mysterious temples and palaces nestling among hundreds of terraces, this fabulous Inca citadel is awe-inspiring." /> 
+		<POI Name="Nasca Lines" ImgName="NascaLines.jpg" Location="-14.739027,-75.130005"
+			Description="Take a helicopter tour to get the full impact of these intricate symbols, etched into the deserts of southern Peru." /> 
+		<POI Name="Kuelap" ImgName="Kuelap.jpg" Location="-6.417024,-77.923887"
+			Description="The ruined citadel of Kuelap is one of the most fascinating archeological sites in the Andes." /> 
+		<POI Name="Sacsayhuaman" ImgName="Sacsayhuaman.jpg" Location="-13.509844,-71.981681"
+			Description="The zigzag megalithic defensive walls of this Inca temple-fortress are home to the annual Inti Raymi Festival of the Sun." /> 
+		<POI Name="Chavin de Huantar" ImgName="ChavinDeHuantar.jpg" Location="-9.5924032,-77.1770239"
+			Description="Dating back over 2500 years, this large temple has many striking stone carvings and gargoyles, both externally and within its subterranean chambers." /> 
+		<POI Name="Valley of the Pyramids" ImgName="ValleyOfThePyramids.jpg" Location="-5.7955906,-79.5790468"
+			Description="Over twenty adobe pyramids built by a pre-Inca civilization surround a sacred mountain at Túcume in the northern deserts." /> 
+		<POI Name="Andean Terraces" ImgName="AndeanTerraces.jpg" Location="-14.7477515,-72.6042137"
+			Description="These mountainside terraces in the magnificent Cotahuasi and Colca canyons give evidence of the impressive organization of pre-Conquest native societies." /> 
+		<POI Name="Lagunas de Llanganuco" ImgName="LagunasDeLlanganuco.jpg" Location="-9.0747002,-77.6457452"
+			Description="The deep blue of these lakes in the Cordillera Blanca changes with the weather." /> 
+		<POI Name="Colca Canyon" ImgName="ColcaCanyon.jpg" Location="-15.7429827,-71.3383405"
+			Description="Twice the size of the Grand Canyon, the enormous Colca, one of the deepest canyons in the world, is also one of Peru’s biggest destinations." /> 
+		<POI Name="Cordillera Blanca" ImgName="CordilleraBlanca.jpg" Location="-9.0690837,-77.5761376"
+			Description="The glacial scenery of the Cordillera Blanca mountain range is among the finest and most accessible on the planet." /> 
+	</Country>
+	
+	<Country Name="China">
+		<POI Name="The Terracotta Army" ImgName="TheTerracottaArmy.jpg" Location="34.384115,109.278492"
+			Description="Near the old capital of Xi’an, these 2200-year-old, life-size soldiers guard the tomb of China’s first emperor." />
+		<POI Name="The Hanging Temple" ImgName="TheHangingTemple.jpg" Location="39.658174,113.712312"
+			Description="Not for the faint-hearted: this rickety wooden temple, housing shrines to China’s three main faiths, is suspended on a cliff-face by flimsy-looking scaffolding." />
+		<POI Name="The Forbidden City" ImgName="TheForbiddenCity.jpg" Location="39.916345,116.397155"
+			Description="Once the centre of the Chinese imperial universe and off limits to the hoi polloi, the emperor’s impressive palace complex in Beijing is now open to all." />
+		<POI Name="Mogao Caves" ImgName="MogaoCaves.jpg" Location="40.041476,94.809133"
+			Description="These thousand-year-old man-made caves on the old Silk Road contain China’s most impressive Buddhist heritage." /> 
+		<POI Name="Chengde" ImgName="Chengde.jpg" Location="40.9867212,117.9454422"
+			Description="The emperors’ former retreat from the heat of summer holds a string of pretty temples." />
+		<POI Name="The Great Wall" ImgName="TheGreatWall.jpg" Location="40.431908,116.57037"
+			Description="Once the division between civilizations, this monumental barrier is still awe-inspiring." />
+		<POI Name="Confucius Temple" ImgName="ConfuciusTemple.jpg" Location="39.947031,116.414008"
+			Description="This lavish complex in Confucius’s home town of Qufu shows the esteem in which China’s great sage was held." />
+		<POI Name="Labrang Monastery" ImgName="LabrangMonastery.jpg" Location="35.193337,102.506433"
+			Description="One of the most important Tibetan Buddhist monasteries, a riot of lavishly decorated halls, butter sculptures and ragged pilgrims." />
+		<POI Name="The Jokhang" ImgName="TheGokhang.jpg" Location="29.650237,91.133861"
+			Description="Stuffed with gorgeous statuary and perpetually wreathed in juniper smoke and incense, this is the holiest temple in Tibet." /> 
+		<POI Name="The Great Buddha" ImgName="TheGreatBuddha.jpg" Location="29.544131,103.771537"
+			Description="You’ll feel a mere speck as you gaze up at the world’s largest carved Buddha." />   			
+	</Country>
+	
+	<Country Name="Jordan">
+		<POI Name="Petra" ImgName="Petra.jpg" Location="30.325173,35.442581"
+			Description="Magnificent ancient city hidden away in the craggy mountains of the south – one of the world’s must-see attractions." />
+		<POI Name="Wadi Mujib" ImgName="WadiMujib.jpg" Location="31.419020,35.618290"
+			Description="Jordan’s “Grand Canyon”, now protected as a nature reserve, with gorge-walking and canyoning amid the rugged valleys." />
+		<POI Name="Jerash" ImgName="Jerash.jpg" Location="32.279400,35.896301"
+			Description="A spectacularly well-preserved Roman city, complete with colonnaded streets, grand temples, intimate marketplaces and mosaic-floored churches." />
+		<POI Name="The “Desert Castles”" ImgName="TheDesertCastles.jpg" Location="31.9809794,35.975135"
+			Description="Venture east of Amman to explore a string of early-Islamic forts, palaces, hunting lodges and caravanserais, dotted across the stony desert plains." /> 
+		<POI Name="Umm Qais" ImgName="UmmQais.jpg" Location="32.653500,35.685398"
+			Description="Atmospheric Roman and Ottoman site in the far north of Jordan, offering spectacular views over the Sea of Galilee – and relatively few tourists." />
+		<POI Name="Ancient Amman" ImgName="AncientAmman.jpg" Location="31.951799,35.940418"
+			Description="Roman columns and the ruins of an Islamic-era palace tower over Amman, gazing down on a huge Roman theatre in the heart of the city." />
+		<POI Name="Madaba" ImgName="Madaba.jpg" Location="31.719009,35.792751"
+			Description="This easygoing Christian market town near Amman was a centre for mosaic art in the Byzantine period. Roam its souks and take in the splendour of ancient mosaics." />
+		<POI Name="The Dead Sea" ImgName="TheDeadSea.jpg" Location="31.423546,35.487846"
+			Description="Enjoy spectacular sunsets at the lowest point on earth, floating effortlessly on this inland lake supported only by the density of the salty water." />
+		<POI Name="Dana" ImgName="Dana.jpg" Location="30.675699,35.610802"
+			Description="Jordan’s flagship nature reserve, covering a sweep of territory from highland cliffs to the sandy desert floor. Whether you come for the hiking, the natural environment or the silence, you won’t want to leave." /> 
+		<POI Name="Wadi Rum" ImgName="WadiRum.jpg" Location="29.639290,35.433849"
+			Description="Experience the atmosphere of the open desert in the stunning company of sheer mountains, red dunes and vast, silent panoramas." /> 
+	</Country>
+	
+	<Country Name="England">
+		<POI Name="Avebury Stone Circle" ImgName="AveburyStoneCircle.jpg" Location="51.428612,-1.854167"
+			Description="Stonehenge might get all the publicity, but the stones at nearby Avebury have a raw appeal and are far more accessible." />
+		<POI Name="The Royal Pavilion" ImgName="TheRoyalPavilion.jpg" Location="50.821541,-0.137280"
+			Description="George IV’s pleasure dome, designed by Nash, is the supreme example of Oriental-Gothic architecture." />
+		<POI Name="Canterbury Cathedral" ImgName="Canterbury Cathedral.jpg" Location="51.278776, 1.083442"
+			Description="Mother Church of the Church of England, this cathedral is famous for its shrine to the murdered Archbishop, Thomas à Becket, and the tales that Chaucer weaved round a fictitious pilgrimage to the martyr’s tomb." />
+		<POI Name="York Minster" ImgName="YorkMinster.jpg" Location="53.962329,-1.08192"
+			Description="Soaring above York’s medieval streets, Britain’s biggest Gothic church has a thousand-year history and treasures to match." /> 
+		<POI Name="Durham Cathedral" ImgName="DurhamCathedral.jpg" Location="54.773233,-1.576392"
+			Description="Arguably the greatest Norman building in England, Durham’s imposing cathedral perches on a peninsula overlooking the city’s quaint, cobbled old town." />
+		<POI Name="Stately Homes" ImgName="StatelyHomes.jpg" Location="51.844582,-1.366185"
+			Description="Blenheim Palace (pictured) near Oxford is one of England’s most majestic stately homes, but dozens more up and down the country offer cultured days out." />
+		<POI Name="Oxford" ImgName="Oxford.jpg" Location="51.7504163,-1.2475878"
+			Description="The Radcliffe Camera (pictured) stands at the centre of this old university town, famed for its sublime architecture and lively restaurants." />
+		<POI Name="Northumbrian Castles" ImgName="NorthumbrianCastles.jpg" Location="55.345244,-1.611788"
+			Description="Symbols of a turbulent past, Northumberland’s many fortresses are worth a visit, especially mighty Alnwick Castle (pictured), with its stunning medieval gardens" />
+		<POI Name="Hadrian’s Wall Path" ImgName="HadriansWallPath.jpg" Location="54.949059,-2.115527"
+			Description="Walk or cycle the length of this atmospheric Roman monument, which snakes its way for 84 miles over rough, sheep-strewn countryside." /> 
+		<POI Name="Eden Project" ImgName="EdenProject.jpg" Location="50.360134,-4.744718"
+			Description="With its strong ecological thrust, the West Country’s most spectacular attraction presents a refreshing alternative to the hard sell of most of the region’s crowd-pullers. " /> 
+	</Country>
+	
+</Root>

@@ -1,0 +1,2 @@
+﻿RadPivotGrid allows you to connect to OLAP data sources like Microsoft® SQL Server® Analysis Services.<br/><br/>
+RadPivotGrid supports connection to Microsoft® SQL Server® Analysis Services in Tabular Mode.<br/><br/>

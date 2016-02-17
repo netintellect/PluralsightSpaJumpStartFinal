@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadDiagram Type="Telerik.Windows.Diagrams.Core.IGraphInternal" Version="2012.3">
+	<Metadata Type="Telerik.Windows.Controls.RadDiagram" Id="1fb586f0-a3c7-438e-95ee-ece9ade207dc">
+		<Title>News</Title>
+		<Description>
+		</Description>
+	</Metadata>
+	<Groups />
+	<Shapes QNs="Diagrams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;">
+    <NewsShape Type="Telerik.Windows.Examples.Diagrams.Dashboard.NewsShape" Id="cc8de27e-9b74-43d3-babe-a19a12b1c4fa" ZIndex="1" Position="7;7" IsDraggingEnabled="true" IsRotationEnabled="true" IsResizingEnabled="true" IsConnectorsManipulationEnabled="false" IsManipulationAdornerVisible="true" AllowDelete="true" AllowCut="true" AllowCopy="true" AllowPaste="true" Content="System.Collections.Generic.List`1[Telerik.Windows.Examples.Diagrams.Dashboard.RssItem]" Stroke="#00FFFFFF" StrokeThickness="1" StrokeDashArray="1 0 " Background="#00FFFFFF" Foreground="#FF333333" BorderBrush="#00FFFFFF" Thickness="0;0;0;0" FontSize="13" FontWeight="400" FontFamily="Segoe UI" Size="1070;580" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" Connectors="Auto:0.5;0.5,Left:0;0.5,Top:0.5;0,Right:1;0.5,Bottom:0.5;1," UseGlidingConnector="False" UseDefaultConnectors="True" GlidingStyle="Rectangle" Geometry="M0,0L60,0 60,40 0,40z" Address="http://finance.yahoo.com/rss/headline?s=yhoo,msft,tivo " QN="0" />
+  </Shapes>
+	<Connections />
+</RadDiagram>

@@ -1,0 +1,22 @@
+<UserControl x:Class="Telerik.Windows.Examples.TransitionControl.Rotator.Example" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:local="clr-namespace:Examples.TransitionControl.Common" mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
+	<telerik:RadTransitionControl x:Name="TheRotator" local:RotatorExtensions.ItemChangeDelay="0:0:4" local:RotatorExtensions.CurrentSelectedIndex="0" Duration="0:0:0.33" VerticalAlignment="Center" HorizontalAlignment="Center">
+		<telerik:RadTransitionControl.ContentTemplate>
+			<DataTemplate>
+				<Grid>
+					<Frame Source="{Binding}" />
+					<Rectangle StrokeThickness="1" Stroke="LightGray" />
+				</Grid>
+			</DataTemplate>
+		</telerik:RadTransitionControl.ContentTemplate>
+		<telerik:RadTransitionControl.Transition>
+			<telerik:MotionBlurredZoomTransition />
+		</telerik:RadTransitionControl.Transition>
+		<local:RotatorExtensions.ItemsSource>
+			<local:RotatorItemsCollection>
+				<sys:String>/TransitionControl;component/Common/WPF/SilverlightPage.xaml</sys:String>
+				<sys:String>/TransitionControl;component/Common/WPF/WindowsPhone7Page.xaml</sys:String>
+				<sys:String>/TransitionControl;component/Common/WPF/WPFPage.xaml</sys:String>
+			</local:RotatorItemsCollection>
+		</local:RotatorExtensions.ItemsSource>
+	</telerik:RadTransitionControl>
+</UserControl>

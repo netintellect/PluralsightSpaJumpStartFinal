@@ -1,0 +1,2 @@
+﻿You can enrich the user input capabilities with the Telerik Slider control. With its extended configuration capabilities the Slider control can fit in any complicated application or design. This example shows how configurable the control really is. You can entirely be in control of the Slider's behavior - from setting the minimum value to defining the ticks' placement.
+<br/><br/>RadSlider is a part of the <b>Telerik.Windows.Controls</b> assembly.

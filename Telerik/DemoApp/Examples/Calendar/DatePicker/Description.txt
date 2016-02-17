@@ -1,0 +1,6 @@
+﻿Telerik DatePicker control is a fully featured data-input control providing the ability to select dates from a calendar displaying different views, 
+like months, years, decades, centuries, multiple months view etc. Additionally, the DatePicker control provides an advanced mechanism that can parse
+numbers and strings to dates. Entering "Monday" or "mon" will select Monday of the current week for an "English" cultured DatePicker, whereas 
+upon entering 3, the DatePicker will choose the 3rd day of the current month.
+
+RadDatePicker is a part of the <b>Telerik.Windows.Controls.Input</b> assembly.

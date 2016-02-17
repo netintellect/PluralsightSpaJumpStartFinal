@@ -1,0 +1,10 @@
+<UserControl x:Class="Telerik.Windows.Examples.Window.Theming.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+	<Border qsf:ThemeAwareBackgroundBehavior.IsEnabled="True">
+		<TextBlock x:Name="reopen" Text="Reopening..." Visibility="Collapsed" VerticalAlignment="Center"
+				HorizontalAlignment="Center" />
+	</Border>
+</UserControl>

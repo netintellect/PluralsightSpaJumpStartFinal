@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F925C0A3-1FD1-40B7-8AF3-90538C07A813}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.ChartView</RootNamespace>
+    <AssemblyName>ChartView</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\SharpDX\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\SharpDX\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D10">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\SharpDX\SharpDX.Direct3D10.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\SharpDX\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\SharpDX\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Pivot.Core">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Pivot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart.Direct2D">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Chart.Direct2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Annotations\AxisLabelConverter.cs" />
+    <Compile Include="Annotations\DataPointEventArgs.cs" />
+    <Compile Include="Annotations\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\Model\Company.cs" />
+    <Compile Include="Annotations\Model\CompanyData.cs" />
+    <Compile Include="Annotations\Model\CompanyEvent.cs" />
+    <Compile Include="Annotations\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="Annotations\Views\AdobeChart.xaml.cs">
+      <DependentUpon>AdobeChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\Views\AppleChart.xaml.cs">
+      <DependentUpon>AppleChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\Views\GoogleChart.xaml.cs">
+      <DependentUpon>GoogleChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\Views\MicrosoftChart.xaml.cs">
+      <DependentUpon>MicrosoftChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\VisibilityConverter.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AxisSmartLabels\ChartViewUtilities.cs" />
+    <Compile Include="AxisSmartLabels\AirlineMonthlyData.cs" />
+    <Compile Include="AxisSmartLabels\AirlineDataViewModel.cs" />
+    <Compile Include="AxisSmartLabels\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BrowsersChart\Converters\BrowserNameToImageSourceConverter.cs" />
+    <Compile Include="BrowsersChart\Converters\BrowserNameToLegendSettingsConverter.cs" />
+    <Compile Include="BrowsersChart\Converters\BrowserNameToBrushConverter.cs" />
+    <Compile Include="BrowsersChart\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BrowsersChart\Models\BrowserStatistics.cs" />
+    <Compile Include="BrowsersChart\Utilities\ChartSeriesLabelDefinitionUtilities.cs" />
+    <Compile Include="BrowsersChart\ViewModels\BrowserData.cs" />
+    <Compile Include="BrowsersChart\ViewModels\BrowsersViewModel.cs" />
+    <Compile Include="BrowsersChart\ViewModels\BrowserYearlySummary.cs" />
+    <Compile Include="Common\Animations\CartesianAnimation.cs" />
+    <Compile Include="Common\Animations\ChartAnimationUtilities.cs" />
+    <Compile Include="Common\Animations\PieAnimation.cs" />
+    <Compile Include="DataSourceViewModelBase.cs" />
+    <Compile Include="Direct2D\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="FinancialDataProvider\FinancialDataProvider.cs" />
+    <Compile Include="FinancialDataProvider\OfflineStockDataProvider.cs" />
+    <Compile Include="FinancialDataProvider\StockDataProvider.cs" />
+    <Compile Include="FinancialDataProvider\YahooStockDataProvider.cs" />
+    <Compile Include="FinancialDataProvider\StockData.cs" />
+    <Compile Include="Direct2D\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyValues\ChartSeriesTypeSwitch.cs" />
+    <Compile Include="EmptyValues\ExampleViewModel.cs" />
+    <Compile Include="EmptyValues\FootballTeamStats.cs" />
+    <Compile Include="EmptyValues\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exporting\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exporting\Model\OlympicStatistics.cs" />
+    <Compile Include="Exporting\Model\OlympicStatisticsReport.cs" />
+    <Compile Include="Exporting\ViewModel\OlympicMedalStatisticsViewModel.cs" />
+    <Compile Include="Exporting\WPF\Example_WPF.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\AxisLabelConverter.cs" />
+    <Compile Include="Financial\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\FinancialInfo.cs" />
+    <Compile Include="Financial\FinancialSeriesTypeSwitch.cs" />
+    <Compile Include="Financial\ViewModels\DetailViewModelDay.cs" />
+    <Compile Include="Financial\ViewModels\DetailViewModelMonth.cs" />
+    <Compile Include="Financial\ViewModels\DetailViewModelWeek.cs" />
+    <Compile Include="Financial\ViewModels\DetailViewModelYear.cs" />
+    <Compile Include="Financial\ViewModels\ExampleViewModel.cs" />
+    <Compile Include="Financial\ViewModels\FinancialViewModel.cs" />
+    <Compile Include="Financial\ViewModels\MainViewModel.cs" />
+    <Compile Include="Financial\ViewModels\VolumeViewModel.cs" />
+    <Compile Include="Financial\Views\DetailViewDay.xaml.cs">
+      <DependentUpon>DetailViewDay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Views\DetailViewMonth.xaml.cs">
+      <DependentUpon>DetailViewMonth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Views\DetailViewWeek.xaml.cs">
+      <DependentUpon>DetailViewWeek.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Views\DetailViewYear.xaml.cs">
+      <DependentUpon>DetailViewYear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Views\VolumeView.xaml.cs">
+      <DependentUpon>VolumeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Converters\DetailedInfoToBrushConverter.cs" />
+    <Compile Include="FirstLook\Others\LinePointTemplateSelector.cs" />
+    <Compile Include="FirstLook\Others\DetailsStyleSelector.cs" />
+    <Compile Include="FirstLook\Others\RightAlignedLabelStrategy.cs" />
+    <Compile Include="FirstLook\ViewModels\DetailedInfoViewModel.cs" />
+    <Compile Include="FirstLook\ViewModels\RevenueActualvsTargetByCountryViewModel.cs" />
+    <Compile Include="FirstLook\ViewModels\RevenueActualvsTargetViewModel.cs" />
+    <Compile Include="FirstLook\ViewModels\SalesDataByProductTypeViewModel.cs" />
+    <Compile Include="FirstLook\Views\DetailedInfoView.xaml.cs">
+      <DependentUpon>DetailedInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Views\RevenueActualvsTarget.xaml.cs">
+      <DependentUpon>RevenueActualvsTarget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Views\RevenueActualvsTargetByCountry.xaml.cs">
+      <DependentUpon>RevenueActualvsTargetByCountry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Views\SalesDataByProductType.xaml.cs">
+      <DependentUpon>SalesDataByProductType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Bar\PerformanceData.cs" />
+    <Compile Include="Gallery\Bar\PerformanceViewModel.cs" />
+    <Compile Include="Gallery\Bubble\CustomBubbleSizeSelector.cs" />
+    <Compile Include="Gallery\Bubble\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Bubble\LegendItemInfo.cs" />
+    <Compile Include="Gallery\Bubble\MovieInfo.cs" />
+    <Compile Include="Gallery\Bubble\MoviesViewModel.cs" />
+    <Compile Include="Gallery\CandlestickOhlc\CandleDataInfo.cs" />
+    <Compile Include="Gallery\CandlestickOhlc\CandlestickViewModel.cs" />
+    <Compile Include="Gallery\CandlestickOhlc\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CandlestickOhlc\FinancialIndicatorSwitch.cs" />
+    <Compile Include="Gallery\CandlestickOhlc\FinancialSeriesTypeSwitch.cs" />
+    <Compile Include="Gallery\Point\AxisLabelConverter.cs" />
+    <Compile Include="Gallery\Point\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Linear\CombineModeToVisibilityConverter.cs" />
+    <Compile Include="Gallery\Linear\SalesRevenue.cs" />
+    <Compile Include="Gallery\Pie\ChartSeriesSelector.cs" />
+    <Compile Include="Gallery\Point\ExampleViewModel.cs" />
+    <Compile Include="Gallery\Point\PointSeriesData.cs" />
+    <Compile Include="Gallery\PolarLineArea\AxisLabelConverter.cs" />
+    <Compile Include="Gallery\PolarLineArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Radar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\Models\LowHighMeasurementWeatherData.cs" />
+    <Compile Include="Gallery\Range\Models\SingleMeasurementWeatherData.cs" />
+    <Compile Include="Gallery\ScatterPoint\CustomEllipse.cs" />
+    <Compile Include="Gallery\ScatterPoint\ExampleViewModel.cs" />
+    <Compile Include="Gallery\ScatterPoint\HourlyEarnings.cs" />
+    <Compile Include="Gallery\ScatterPoint\LegendFigureSwitch.cs" />
+    <Compile Include="Gallery\ScatterPoint\PaletteExtractorConverter.cs" />
+    <Compile Include="Gallery\ScatterPoint\RealEstateData.cs" />
+    <Compile Include="Gallery\ScatterPoint\SeriesTypeSwitch.cs" />
+    <Compile Include="Gallery\ScatterPoint\SeriesTypeToLegendGeometryConverter.cs" />
+    <Compile Include="Gallery\ViewModel\PolarLineArea\MicrophoneViewModel.cs" />
+    <Compile Include="Gallery\PolarLineArea\SeriesTypeSwitch.cs" />
+    <Compile Include="Gallery\Linear\ChartSeriesTypeSwitch.cs" />
+    <Compile Include="Gallery\Linear\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Linear\ExampleViewModel.cs" />
+    <Compile Include="InverseAxis\Converters\BoolToParameterConditionalConverter.cs" />
+    <Compile Include="InverseAxis\Converters\ToUpperCaseConverter.cs" />
+    <Compile Include="InverseAxis\Converters\ResourceTypeToBrushConverter.cs" />
+    <Compile Include="InverseAxis\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InverseAxis\Models\ResourceTypeData.cs" />
+    <Compile Include="InverseAxis\Models\WellDrillData.cs" />
+    <Compile Include="InverseAxis\ViewModels\DrillDataViewModel.cs" />
+    <Compile Include="InverseAxis\Views\AverageVSMaximumDepthDrilled.xaml.cs">
+      <DependentUpon>AverageVSMaximumDepthDrilled.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InverseAxis\Views\DepthsByResourceType.xaml.cs">
+      <DependentUpon>DepthsByResourceType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InverseAxis\Views\ResourcesDrillData.xaml.cs">
+      <DependentUpon>ResourcesDrillData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LargeData\Converters\SeriesTypeToTitleConverter.cs" />
+    <Compile Include="LargeData\Converters\SeriesTypeToExampleConverter.cs" />
+    <Compile Include="LargeData\Converters\YearToInitialVisibilityConverter.cs" />
+    <Compile Include="LargeData\Converters\YearToLegendSettingsConverter.cs" />
+    <Compile Include="LargeData\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LargeData\Models\DowJonesData.cs" />
+    <Compile Include="LargeData\Models\PermitData.cs" />
+    <Compile Include="LargeData\ViewModels\DowJonesViewModel.cs" />
+    <Compile Include="LargeData\ViewModels\ExampleViewModel.cs" />
+    <Compile Include="LargeData\ViewModels\PermitsViewModel.cs" />
+    <Compile Include="LargeData\Views\DowJonesView.xaml.cs">
+      <DependentUpon>DowJonesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LargeData\Views\PermitsView.xaml.cs">
+      <DependentUpon>PermitsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiveData\ChartBusinessObject.cs" />
+    <Compile Include="LiveData\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiveData\LiveDataViewModel.cs" />
+    <Compile Include="MultipleAxes\EmptyValueToVisibilityConverter.cs" />
+    <Compile Include="MultipleAxes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleAxes\ExampleViewModel.cs" />
+    <Compile Include="MultipleAxes\GdpDetailsInfo.cs" />
+    <Compile Include="MultipleAxes\GdpInfo.cs" />
+    <Compile Include="MultipleAxes\ShortenerConverter.cs" />
+    <Compile Include="MultipleAxes\UpperCaseConverter.cs" />
+    <Compile Include="Gallery\Range\Behaviors\SeriesTypeSwitch.cs" />
+    <Compile Include="Gallery\Range\Converters\SeriesTypeConverter.cs" />
+    <Compile Include="Gallery\Range\Converters\TileStateToBoolConverter.cs" />
+    <Compile Include="Gallery\Range\Converters\TileStateToOpacityConverter.cs" />
+    <Compile Include="Gallery\Range\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\ViewModels\ClimateDataViewModel.cs" />
+    <Compile Include="Gallery\Range\Views\DewPointsChart.xaml.cs">
+      <DependentUpon>DewPointsChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\Views\PrecipitationChart.xaml.cs">
+      <DependentUpon>PrecipitationChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\Views\TempRangesChart.xaml.cs">
+      <DependentUpon>TempRangesChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\Views\WindSpeedChart.xaml.cs">
+      <DependentUpon>WindSpeedChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Palettes\ShortPaletteNameConverter.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\BorderRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\EllipseRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\FrameworkElementRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\ImageRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\LineRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\PanelRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\RectangleRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\ShapeRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\TextBlockRenderer.cs" />
+    <Compile Include="Exporting\PdfExport\ConcreteRenderers\UIElementRendererBase.cs" />
+    <Compile Include="Exporting\PdfExport\ExportHelper.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\CompositeDisposableObject.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\DisposableOpacity.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\MathHelper.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\PdfColorHelper.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\PdfGeometryHelper.cs" />
+    <Compile Include="Exporting\PdfExport\Miscellaneous\PdfRenderContext.cs" />
+    <Compile Include="Exporting\PdfExport\PdfRenderer.cs" />
+    <Compile Include="PieSmartLabels\Misc\ChartSeriesLabelDefinitionUtilities.cs" />
+    <Compile Include="PieSmartLabels\Misc\RegionBrushUtils.cs" />
+    <Compile Include="PieSmartLabels\Misc\StackLabelStrategy.cs" />
+    <Compile Include="PieSmartLabels\Misc\SubregionToConnectorBrushConverter.cs" />
+    <Compile Include="PieSmartLabels\Misc\RegionLabelTemplateSelector.cs" />
+    <Compile Include="PieSmartLabels\Misc\RegionNameToBrushConverter.cs" />
+    <Compile Include="PieSmartLabels\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PieSmartLabels\Model\RegionBase.cs" />
+    <Compile Include="PieSmartLabels\Model\Revenue.cs" />
+    <Compile Include="PieSmartLabels\Model\Subregion.cs" />
+    <Compile Include="PieSmartLabels\Model\Region.cs" />
+    <Compile Include="PieSmartLabels\Misc\CustomSpiderLabelsStrategy.cs" />
+    <Compile Include="PieSmartLabels\Regions.xaml.cs">
+      <DependentUpon>Regions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PieSmartLabels\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="RadarAnnotations\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RadarAnnotations\Models\AnnotationsData.cs" />
+    <Compile Include="RadarAnnotations\Models\RadarSeriesData.cs" />
+    <Compile Include="RadarAnnotations\Models\SeasonsData.cs" />
+    <Compile Include="RadarAnnotations\Models\SolsticesAndEquinoxesData.cs" />
+    <Compile Include="RadarAnnotations\ViewModels\RadarAnnotationsViewModel.cs" />
+    <Compile Include="Selection\Converters\CountryNameToBrushConverter.cs" />
+    <Compile Include="Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\Models\CountryData.cs" />
+    <Compile Include="Selection\Utilities\CountryUtilities.cs" />
+    <Compile Include="Selection\Utilities\MapInteractivity.cs" />
+    <Compile Include="Selection\ViewModels\ExampleViewModel.cs" />
+    <Compile Include="SmartLabels\Converter\AxisLabelConverter.cs" />
+    <Compile Include="SmartLabels\Converter\ToUpperCaseConverter.cs" />
+    <Compile Include="SmartLabels\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLabels\Model\FuelChart.cs" />
+    <Compile Include="SmartLabels\Model\FuelChartData.cs" />
+    <Compile Include="SmartLabels\TwoLineSeriesLabelsStrategy.cs" />
+    <Compile Include="SmartLabels\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="SmoothScrolling\FinancialData.cs" />
+    <Compile Include="SmoothScrolling\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmoothScrolling\ExampleViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleData.cs" />
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Bar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gallery\Pie\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gallery\PolarPoint\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\ScatterPoint\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\ViewModel\Financial\FinancialViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Polar\PolarViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Radial\RadialViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Scatter\ScatterViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\UserData\UserDataViewModel.cs" />
+    <Compile Include="OrientationBehavior.cs" />
+    <Compile Include="Palettes\Data.cs" />
+    <Compile Include="Palettes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Palettes\PolarData.cs" />
+    <Compile Include="Palettes\ThemingViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Resource Include="Resources\europe.shp" />
+    <Resource Include="DataSources\RevenueActualvsTarget.csv" />
+    <Resource Include="DataSources\RevenueActualvsTargetByCountry.csv" />
+    <Resource Include="DataSources\SalesDashboardDataByProductType.csv" />
+    <Resource Include="DataSources\SalesDashboardDetailedInfo.csv" />
+    <Resource Include="DataSources\RealEstateAgency.csv" />
+    <Resource Include="DataSources\Financial\SPDRGoldSharesDailyLastMonth.csv" />
+    <Resource Include="DataSources\Financial\SPDRGoldSharesDailyLastWeek.csv" />
+    <Resource Include="DataSources\Financial\SPDRGoldSharesHourly.csv" />
+    <Resource Include="DataSources\Financial\SPDRGoldSharesMonthly.csv" />
+    <Resource Include="DataSources\Financial\SPDRGoldSharesMonthlyLastYear.csv" />
+    <Resource Include="DataSources\CandlestickOhlc\CandleData.csv" />
+    <Resource Include="DataSources\chartdata.csv" />
+    <Resource Include="DataSources\GDPDetails.csv" />
+    <Resource Include="DataSources\Premierleaguedata.csv" />
+    <Resource Include="DataSources\EarningsPublicvsPrivateByAge.csv" />
+    <Resource Include="DataSources\USRecessionCompanyData.csv" />
+    <Resource Include="DataSources\BrowsersStatistics.csv" />
+    <Resource Include="DataSources\London201OlympicMedalRankings.csv" />
+    <Resource Include="DataSources\europe.dbf" />
+    <Resource Include="DataSources\europe.shp" />
+    <Resource Include="DataSources\DowJonesData.csv" />
+    <Resource Include="DataSources\RadarAnnotations.csv" />
+    <Resource Include="DataSources\Earthquakes.csv" />
+    <Resource Include="DataSources\AirlineFuelCostAndConsumptionData.csv" />
+    <Resource Include="DataSources\Direct2D\ibm.csv" />
+    <Resource Include="DataSources\Direct2D\hpq.csv" />
+    <Resource Include="DataSources\Direct2D\msft.csv" />
+    <Resource Include="DataSources\MoviesData.csv" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+    <Resource Include="Gallery\Bar\Description.txt" />
+    <Resource Include="Gallery\Pie\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Annotations\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Views\AdobeChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Views\AppleChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Views\GoogleChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Views\MicrosoftChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AxisSmartLabels\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AxisSmartLabels\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BrowsersChart\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Direct2D\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmptyValues\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmptyValues\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Exporting\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\DetailViewDay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\DetailViewMonth.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\DetailViewWeek.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\DetailViewYear.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Financial\Views\VolumeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Views\DetailedInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Views\RevenueActualvsTarget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Views\RevenueActualvsTargetByCountry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Views\SalesDataByProductType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Bar\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gallery\Bubble\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gallery\CandlestickOhlc\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CandlestickOhlc\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Point\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Pie\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gallery\PolarLineArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\PolarPoint\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Radar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\ScatterPoint\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Linear\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Views\AverageVSMaximumDepthDrilled.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Views\DepthsByResourceType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Views\ResourcesDrillData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LargeData\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LargeData\Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LargeData\Views\DowJonesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LargeData\Views\PermitsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LiveData\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultipleAxes\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Palettes\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Views\DewPointsChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Views\PrecipitationChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Views\TempRangesChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Views\WindSpeedChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PieSmartLabels\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PieSmartLabels\Regions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PieSmartLabels\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadarAnnotations\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RadarAnnotations\Resources\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmartLabels\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmartLabels\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmoothScrolling\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmoothScrolling\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmoothScrolling\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\PolarPoint\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\ScatterPoint\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LiveData\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\PolarLineArea\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Financial\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Linear\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Palettes\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\CandlestickOhlc\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SmoothScrolling\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Radar\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MultipleAxes\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="EmptyValues\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Annotations\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChartView\EmptyValues\arsenal.png" />
+    <Resource Include="Images\ChartView\EmptyValues\aston_villa.png" />
+    <Resource Include="Images\ChartView\EmptyValues\blackburn_rovers.png" />
+    <Resource Include="Images\ChartView\EmptyValues\bolton_wanderers.png" />
+    <Resource Include="Images\ChartView\EmptyValues\chelsea.png" />
+    <Resource Include="Images\ChartView\EmptyValues\everton.png" />
+    <Resource Include="Images\ChartView\EmptyValues\football_player.png" />
+    <Resource Include="Images\ChartView\EmptyValues\fulham.png" />
+    <Resource Include="Images\ChartView\EmptyValues\leeds_united.png" />
+    <Resource Include="Images\ChartView\EmptyValues\liverpool.png" />
+    <Resource Include="Images\ChartView\EmptyValues\man_city.png" />
+    <Resource Include="Images\ChartView\EmptyValues\man_u.png" />
+    <Resource Include="Images\ChartView\EmptyValues\middlesbrough.png" />
+    <Resource Include="Images\ChartView\EmptyValues\newcastle.png" />
+    <Resource Include="Images\ChartView\EmptyValues\southampton.png" />
+    <Resource Include="Images\ChartView\EmptyValues\sunderland.png" />
+    <Resource Include="Images\ChartView\EmptyValues\tottenham.png" />
+    <Resource Include="Images\ChartView\EmptyValues\west_ham.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BrowsersChart\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChartView\BrowsersChart\firefox_24x24.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\firefox_32x32.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\google_chrome_24x24.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\google_chrome_32x32.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\internet_explorer_24x24.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\internet_explorer_32x32.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\opera_24x24.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\opera_32x32.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\safari_24x24.png" />
+    <Resource Include="Images\ChartView\BrowsersChart\safari_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exporting\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Selection\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LargeData\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Range\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="InverseAxis\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RadarAnnotations\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FirstLook\Selectors\" />
+    <Folder Include="RadarAnnotations\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Point\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SmartLabels\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Direct2D\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PieSmartLabels\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChartView\PieSmartLabels\EurasiaMap.png" />
+    <Resource Include="Images\ChartView\PieSmartLabels\EuropeMap.png" />
+    <Resource Include="Images\ChartView\PieSmartLabels\LatinAmericaMap.png" />
+    <Resource Include="Images\ChartView\PieSmartLabels\NorthAmerica.png" />
+    <Resource Include="Images\ChartView\PieSmartLabels\PacificMap.png" />
+    <Resource Include="Images\ChartView\PieSmartLabels\WorldMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gallery\Bubble\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChartView\Gallery\Bubble\1.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\10.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\11.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\12.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\13.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\14.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\15.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\16.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\17.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\18.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\19.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\2.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\20.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\3.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\4.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\5.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\6.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\7.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\8.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ChartView\Gallery\Bubble\21.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\22.png" />
+    <Resource Include="Images\ChartView\Gallery\Bubble\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AxisSmartLabels\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

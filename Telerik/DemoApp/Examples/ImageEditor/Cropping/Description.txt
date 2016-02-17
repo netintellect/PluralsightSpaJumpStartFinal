@@ -1,0 +1,1 @@
+﻿RadImageEditor’s CropTool provides <b>out-of-the-box all settings you need</b> when cropping an image. You can easily specify the initial size of the crop rectangle, lock the aspect ratio or forbid resizing of the crop rectangle altogether.

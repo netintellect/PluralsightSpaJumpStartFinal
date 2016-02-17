@@ -1,0 +1,1 @@
+﻿Setting RadPropertyGrid's PropertySetMode property enables RadPropertyGrid to extract Union/Intersection property sets of specified range ot items. A requirement for this feature is to set a collection of objects as RadPropertyGrid's Item.

@@ -1,0 +1,347 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Gallery.Thermometer.Example"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+	  xmlns:telerikGauge="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Gauge"
+      xmlns:telerikGauges="clr-namespace:Telerik.Windows.Controls.Gauges;assembly=Telerik.Windows.Controls.Gauge"
+	  xmlns:demo="clr-namespace:Telerik.Examples.Gauge">
+	<Grid>
+        <Grid.Resources>
+            
+            <DataTemplate x:Key="DefaultTickShape">
+                <Rectangle Fill="{Binding Path=Properties.Background}"
+							Stroke="{Binding Path=Properties.BorderBrush}"
+							StrokeThickness="{Binding Path=Properties.BorderThickness.Left}"
+							Stretch="Fill" />
+            </DataTemplate>
+            
+            <Style x:Key="ThermometerMajorPropertiesStyle" TargetType="{x:Type telerikGauges:MajorTickProperties}">
+                <Setter Property="Length" Value="0.05" />
+                <Setter Property="TickWidth" Value="0.17" />
+                <Setter Property="Location" Value="OverCenter" />
+                <Setter Property="Offset" Value="0" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="ItemTemplate" Value="{StaticResource DefaultTickShape}" />
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+
+            <Style x:Key="ThermometerMinorPropertiesStyle" TargetType="{x:Type telerikGauges:MinorTickProperties}">
+                <Setter Property="Length" Value="0.05" />
+                <Setter Property="TickWidth" Value="0.039" />
+                <Setter Property="Location" Value="OverCenter" />
+                <Setter Property="Offset" Value="0" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="ItemTemplate" Value="{StaticResource DefaultTickShape}" />
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            </Style>
+
+            <DataTemplate x:Key="TickLabelEmpty">
+                <Canvas />
+            </DataTemplate>
+
+            <Style x:Key="CustomTickMarkCelsiusStyle" TargetType="{x:Type telerikGauges:CustomTickMark}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <ContentPresenter>
+                                <ContentPresenter.Content>
+                                    <Canvas>
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   FontSize="12"
+                                                   Foreground="White"
+                                                   Margin="6,6,0,0"
+                                                   Text="C" />
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   FontSize="10"
+                                                   Foreground="White"
+                                                   Margin="0,1,0,0"
+                                                   Text="o" />
+                                    </Canvas>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemTemplate" Value="{StaticResource TickLabelEmpty}" />
+                <Setter Property="Length" Value="0.05" />
+                <Setter Property="Offset" Value="0.02" />
+                <Setter Property="TickWidth" Value="1" />
+                <Setter Property="Location" Value="Outside" />
+                <Setter Property="Format" Value="{}{0:F0}" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#FFCB576E" Offset="1"/>
+                            <GradientStop Color="#FFFF8D8D"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="CustomTickMarkFahrenheitStyle" TargetType="{x:Type telerikGauges:CustomTickMark}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <ContentPresenter>
+                                <ContentPresenter.Content>
+                                    <Canvas>
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   FontSize="12"
+                                                   Foreground="White"
+                                                   Margin="6,6,0,0"
+                                                   Text="F" />
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   FontSize="10"
+                                                   Foreground="White"
+                                                   Margin="0,1,0,0"
+                                                   Text="o" />
+                                    </Canvas>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemTemplate" Value="{StaticResource TickLabelEmpty}" />
+                <Setter Property="Length" Value="0.05" />
+                <Setter Property="Offset" Value="0.02" />
+                <Setter Property="TickWidth" Value="1" />
+                <Setter Property="Location" Value="Inside" />
+                <Setter Property="Format" Value="{}{0:F0}" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#FFCB576E" Offset="1"/>
+                            <GradientStop Color="#FFFF8D8D"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="BulbOfThermometerBarStyle" TargetType="{x:Type telerikGauges:CustomTickMark}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <ContentPresenter>
+                                <ContentPresenter.Content>
+                                    <Grid Margin="-5,23,-5,24" Width="100">
+                                        <Grid Margin="39.5,1,39.5,0">
+                                            <Ellipse Stretch="Fill" Height="21" Fill="#FF720700" Margin="0" VerticalAlignment="Bottom" Opacity="0.5"/>
+                                            <Border CornerRadius="6" BorderBrush="#FF720700" BorderThickness="2" Margin="3,0,3,2" Width="12" Opacity="0.5">
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0.5,0.955317" EndPoint="0.5,0">
+                                                        <GradientStop Color="#FF5A0400" Offset="0" />
+                                                        <GradientStop Color="#FF900C00" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                            </Border>
+                                            <Border Margin="6.5,1,6.5,3" CornerRadius="5" BorderBrush="#FFFF6D00" BorderThickness="1" VerticalAlignment="Stretch" />
+                                            <Ellipse x:Name="redEllipse" Fill="#FF720700" Stretch="Fill" Height="17" VerticalAlignment="Bottom" Stroke="#FFFF6D00" Margin="2,0,2,2" />
+                                            <Border Margin="7.5,2,7.5,4" CornerRadius="4" BorderBrush="#FF720700" BorderThickness="1">
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0.5,0.955317" EndPoint="0.5,0.00861141">
+                                                        <GradientStop Color="#FF5A0400" Offset="0" />
+                                                        <GradientStop Color="#FF900C00" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                            </Border>
+                                            <Border Margin="8.5,220,8.5,9" CornerRadius="3">
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                                        <GradientStop Color="#FFFEFFFE" Offset="0" />
+                                                        <GradientStop Color="#FFFEFFFE" Offset="0.5" />
+                                                        <GradientStop Color="#FFD8DADB" Offset="0.501" />
+                                                        <GradientStop Color="#FFB2B5B7" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                            </Border>
+                                            <Ellipse Stretch="Fill" Height="13" Margin="4,0,4,4" VerticalAlignment="Bottom">
+                                                <Ellipse.Fill>
+                                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                                        <GradientStop Color="#FFFEFFFE" Offset="0" />
+                                                        <GradientStop Color="#FFFEFFFE" Offset="0.50" />
+                                                        <GradientStop Color="#FFD8DADB" Offset="0.501" />
+                                                        <GradientStop Color="#FFB2B5B7" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </Grid>
+                                    </Grid>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemTemplate" Value="{StaticResource TickLabelEmpty}" />
+                <Setter Property="Length" Value="1" />
+                <Setter Property="Offset" Value="0" />
+                <Setter Property="TickWidth" Value="1" />
+                <Setter Property="Type" Value="Custom" />
+                <Setter Property="Format" Value="{}{0:F0}" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#FFCB576E" Offset="1"/>
+                            <GradientStop Color="#FFFF8D8D"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <ControlTemplate x:Key="LinearBarTemplate" TargetType="telerikGauges:LinearBar">
+                <Grid>
+                    <Path x:Name="PART_BarPath" 
+                          Fill="{TemplateBinding Background}"
+						  Stroke="{TemplateBinding BorderBrush}"
+                          StrokeThickness="{TemplateBinding StrokeThickness}" />
+                    <Path x:Name="PART_EmptyPath" 
+                          Fill="{TemplateBinding EmptyFill}"
+                          Stroke="{TemplateBinding BorderBrush}"
+                          StrokeThickness="{TemplateBinding StrokeThickness}" />
+                </Grid>
+            </ControlTemplate>
+            
+            <Style x:Key="ThermometerBarStyle" TargetType="{x:Type telerikGauges:LinearBar}">
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="IsAnimated" Value="True" />
+                <Setter Property="EmptyFill" Value="Transparent" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="#FFFEFFFE" Offset="0" />
+                            <GradientStop Color="#FFFEFFFE" Offset="0.5" />
+                            <GradientStop Color="#FFD8DADB" Offset="0.501" />
+                            <GradientStop Color="#FFB2B5B7" Offset="1" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="StartWidth" Value="0.013" />
+                <Setter Property="EndWidth" Value="0.013" />
+                <Setter Property="Template" Value="{StaticResource LinearBarTemplate}" />
+            </Style>
+
+            <Style x:Key="ThermometerStyle" TargetType="{x:Type telerikGauges:LinearScale}">
+                <Setter Property="MiddleTicks" Value="1" />
+                <Setter Property="MinorTicks" Value="5" />
+                <Setter Property="Left" Value="0.5" />
+                <Setter Property="Top" Value="0.17" />
+                <Setter Property="RelativeHeight" Value="0.65" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="StartWidth" Value="0.09" />
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+
+        </Grid.Resources>
+
+        <telerikGauge:RadGauge x:Name="radGauge" Width="150" Height="300" telerik:StyleManager.Theme="Summer">
+					<telerikGauges:LinearGauge>
+						<telerikGauges:LinearScale Name="linearScaleF"
+                                             Style="{StaticResource ThermometerStyle}"
+                                             MajorTicks="6"
+                                             Min="-22"
+                                             Max="104"
+                                             StartTickOffset="2"
+                                             EndTickOffset="-4">
+							<telerikGauges:LinearScale.MajorTick>
+								<telerikGauges:MajorTickProperties Location="CenterInside"
+                                                             Style="{StaticResource ThermometerMajorPropertiesStyle}" />
+							</telerikGauges:LinearScale.MajorTick>
+							<telerikGauges:LinearScale.MinorTick>
+								<telerikGauges:MinorTickProperties Location="CenterInside"
+                                                             Style="{StaticResource ThermometerMinorPropertiesStyle}" />
+							</telerikGauges:LinearScale.MinorTick>
+							<telerikGauges:LinearScale.Label>
+								<telerikGauges:LabelProperties Offset="0.02" Location="Inside" />
+							</telerikGauges:LinearScale.Label>
+						</telerikGauges:LinearScale>
+						<telerikGauges:LinearScale Name="linearScaleC"
+                                             Style="{StaticResource ThermometerStyle}"
+                                             MajorTicks="7"
+                                             Min="-30"
+                                             Max="40">
+							<telerikGauges:LinearScale.MajorTick>
+								<telerikGauges:MajorTickProperties Location="CenterOutside"
+                                                             Style="{StaticResource ThermometerMajorPropertiesStyle}" />
+							</telerikGauges:LinearScale.MajorTick>
+							<telerikGauges:LinearScale.MinorTick>
+								<telerikGauges:MinorTickProperties Location="CenterOutside"
+                                                             Style="{StaticResource ThermometerMinorPropertiesStyle}" />
+							</telerikGauges:LinearScale.MinorTick>
+							<telerikGauges:LinearScale.Label>
+								<telerikGauges:LabelProperties Offset="0.02" Location="Outside" />
+							</telerikGauges:LinearScale.Label>
+							<telerikGauges:TickList>
+								<telerikGauges:CustomTickMark Value="-37"
+                                                        Style="{StaticResource CustomTickMarkCelsiusStyle}" />
+								<telerikGauges:CustomTickMark Value="-37.3"
+                                                        Style="{StaticResource CustomTickMarkFahrenheitStyle}" />
+								<telerikGauges:CustomTickMark Value="5"
+                                                        Style="{StaticResource BulbOfThermometerBarStyle}"
+                                                        Location="OverCenter" />
+							</telerikGauges:TickList>
+							<telerikGauges:IndicatorList>
+								<telerikGauges:LinearBar Name="linearBar"
+                                                   Value="0"
+                                                   Style="{StaticResource ThermometerBarStyle}"
+                                                   Location="OverCenter" />
+							</telerikGauges:IndicatorList>
+						</telerikGauges:LinearScale>
+
+						<telerikGauges:LinearScale Left="0.5"
+                                             Top="0.17"
+                                             RelativeHeight="0.65"
+                                             StrokeThickness="0"
+                                             Min="-30"
+                                             Max="40"
+                                             Foreground="Transparent"
+                                             MajorTicks="-1"
+                                             IsInteractive="True"
+                                             Background="Transparent">
+							<telerikGauges:RangeList>
+								<telerikGauges:LinearRange Name="coldRange"
+													 Min="-30"
+													 Max="{Binding ElementName=threshold, Path=Value}" 
+													 StartWidth="0"
+													 EndWidth="0"
+													 BorderBrush="Transparent">
+									<telerikGauges:LinearRange.Background>
+										<RadialGradientBrush>
+											<GradientStop Offset="0" Color="LightGreen" />
+											<GradientStop Offset="1" Color="DarkGreen" />
+										</RadialGradientBrush>
+									</telerikGauges:LinearRange.Background>
+								</telerikGauges:LinearRange>
+								<telerikGauges:LinearRange Name="overheatRange"
+													 Min="{Binding ElementName=threshold, Path=Value}" 
+													 Max="40"
+													 StartWidth="0"
+													 EndWidth="0"
+													 BorderBrush="Transparent">
+									<telerikGauges:LinearRange.Background>
+										<RadialGradientBrush>
+											<GradientStop Offset="0" Color="Orange" />
+											<GradientStop Offset="1" Color="Red" />
+										</RadialGradientBrush>
+									</telerikGauges:LinearRange.Background>
+								</telerikGauges:LinearRange>
+							</telerikGauges:RangeList>
+							<telerikGauges:IndicatorList>
+								<telerikGauges:Marker Name="threshold"
+												RelativeHeight="0.06"
+												RelativeWidth="0.08"
+												Value="30"
+												Location="OverCenter"/>
+								<telerikGauges:StateIndicator Name="overheatState"
+														Left="0.65"
+														Top="0.04"
+														RelativeHeight="0.08"
+														RelativeWidth="0.08"
+														Value="{Binding ElementName=linearBar, Path=Value}"/>
+							</telerikGauges:IndicatorList>
+						</telerikGauges:LinearScale>
+					</telerikGauges:LinearGauge>
+		</telerikGauge:RadGauge>
+	</Grid>
+</demo:DynamicBasePage>

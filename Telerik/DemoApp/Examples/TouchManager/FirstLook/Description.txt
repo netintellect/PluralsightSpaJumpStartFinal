@@ -1,0 +1,1 @@
+﻿The FirstLook example of TouchManager shows how you can use the Pinch, Tap, Swipe events in order to create touch enabled picture library.

@@ -1,0 +1,61 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.GraphColoriser.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.Shapefile"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 HorizontalAlignment="Center" 
+			 VerticalAlignment="Center">
+    <UserControl.Resources>
+        <example:ShapefileViewModel x:Key="DataContext" Region="world" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Graph Colorizer" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Width="784" Height="484">
+        <Grid.Resources>
+            <telerik:ExtendedDataConverter x:Key="ExtendedDataConverter" />
+
+            <DataTemplate x:Key="CustomToolTipDataTemplate">
+                <StackPanel Margin="10,5">
+					<TextBlock FontWeight="Bold" Text="{Binding Path=Data[CNTRY_NAME]}" />
+					<TextBlock Text="{Binding Path=Data[SQKM], StringFormat='Area: {0:#,#.0} sq.km.'}" />
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <telerik:RadMap x:Name="RadMap1"
+						Background="#D9E1FF"
+						BorderBrush="Black"
+						BorderThickness="1"                        
+						UseDefaultLayout="False"
+						MouseClickMode="None" 
+						MouseDoubleClickMode="None"
+						MouseDragMode="None"
+						IsMouseWheelZoomEnabled="False"
+                        telerik:TouchManager.IsTouchHitTestVisible="False">
+            <telerik:RadMap.Provider>
+                <telerik:EmptyProvider />
+            </telerik:RadMap.Provider>
+			<telerik:VisualizationLayer x:Name="InformationLayer">
+				<telerik:VisualizationLayer.Reader>
+					<telerik:AsyncShapeFileReader Source="{Binding Source={StaticResource DataContext}, Path=ShapefileSourceUri}" 
+												  DataSource="{Binding Source={StaticResource DataContext}, Path=ShapefileDataSourceUri}"
+												  ToolTipTemplate="{StaticResource CustomToolTipDataTemplate}"/>
+				</telerik:VisualizationLayer.Reader>
+				<telerik:VisualizationLayer.Colorizer>
+					<telerik:GraphColoriser>
+                        <telerik:MapShapeFill Fill="#1F78B4" Stroke="#666666" StrokeThickness="1" />
+                        <telerik:MapShapeFill Fill="#EB4730" Stroke="#666666" StrokeThickness="1" />
+                        <telerik:MapShapeFill Fill="#33A02C" Stroke="#666666" StrokeThickness="1" />
+                        <telerik:MapShapeFill Fill="#F2C50D" Stroke="#666666" StrokeThickness="1" />
+                        <telerik:MapShapeFill Fill="#B2DF8A" Stroke="#666666" StrokeThickness="1" />
+                        <telerik:MapShapeFill Fill="#89BFE0" Stroke="#666666" StrokeThickness="1" />
+					</telerik:GraphColoriser>
+				</telerik:VisualizationLayer.Colorizer>
+			</telerik:VisualizationLayer>
+        </telerik:RadMap>
+    </Grid>
+</UserControl>

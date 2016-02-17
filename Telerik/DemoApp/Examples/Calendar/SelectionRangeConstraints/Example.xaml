@@ -1,0 +1,49 @@
+<UserControl
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Calendar.SelectionRangeConstraints"
+		x:Class="Telerik.Windows.Examples.Calendar.SelectionRangeConstraints.Example"
+		Loaded="OnSelectionRangeLoaded"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="First Calendar" />
+            <CheckBox x:Name="cbxEnabledRangeCalendar" Content="IsEnabled" IsChecked="true" Click="OnEnabledRangeCalendar" Margin="0 2" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Border CornerRadius="6" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBlock Text="Select Range:" Margin="0 4" />
+            <telerik:RadCalendar x:Name="calendarRange"
+                    Columns="3" SelectionMode="Extended" ViewsHeaderVisibility="Visible"
+                    Culture="en-US" />
+
+            <TextBlock Text="Preset Constraints:" Margin="0 10 0 4" />
+            <telerik:RadCalendar x:Name="calendarConstraints"
+                    Columns="3" SelectionMode="Extended" IsTodayHighlighted="False"
+                    DayTemplate="{x:Null}" ViewsHeaderVisibility="Visible"
+                    Culture="en-US">
+
+                <telerik:RadCalendar.DayTemplateSelector>
+                    <!--Custom Template selector, sill actually choose just one template-->
+                <local:DisableWeekendsSelection>
+                    <local:DisableWeekendsSelection.DefaultTemplate>
+                            <!--A custom template-->
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}" />
+                            </DataTemplate>
+                    </local:DisableWeekendsSelection.DefaultTemplate>
+                </local:DisableWeekendsSelection>
+                </telerik:RadCalendar.DayTemplateSelector>
+            </telerik:RadCalendar>
+
+        </StackPanel>
+
+    </Border>
+</UserControl>

@@ -1,0 +1,2 @@
+﻿Custom calculation is a formula that you define yourself to produce values that would not otherwise appear in RadPivotGrid if you used only the source data fields. Custom calculations enable you to extend your data analysis to include results that are specific to your needs. <br/><br/>
+A calculated item is a new item in a row or column field in which the values are the result of a custom calculation. In this case, the calculated item’s formula references one or more items in the same field.

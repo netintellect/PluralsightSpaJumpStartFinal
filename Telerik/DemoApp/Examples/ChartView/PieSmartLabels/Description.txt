@@ -1,0 +1,1 @@
+﻿This is an example that demonstrates the smart-label capabilities of the RadPieChart. You can choose from a few built-in display modes and even create a brand new smart labels strategy.

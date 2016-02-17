@@ -1,0 +1,1 @@
+﻿RadCalculator provides a user interface for rapid execution of arithmetical operations over numeric data.

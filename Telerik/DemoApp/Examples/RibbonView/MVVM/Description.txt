@@ -1,0 +1,1 @@
+﻿Telerik RibbonView fully supports Data-Binding and Model-View-ViewModel based scenarios. This example demonstrates how to organize a collection of business objects in a RadRibbonView to create a sample Painting application.

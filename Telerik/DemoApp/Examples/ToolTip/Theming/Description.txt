@@ -1,0 +1,2 @@
+The example shows how RadToolTip can be styled using the built-in themes.
+Please note that in order use the telerik themes you need to use RadToolTipContentView in the ToolTipContentTemplate of the RadToolTipService.

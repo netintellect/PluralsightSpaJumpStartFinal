@@ -1,0 +1,94 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.Financial">
+
+    <Style x:Key="MajorTickStyle" TargetType="Rectangle">
+        <Setter Property="Visibility" Value="Collapsed" />
+    </Style>
+    <Style x:Key="verticalAxisTickStyle" TargetType="Rectangle">
+        <Setter Property="Margin" Value="4,0,0,0" />
+    </Style>
+    <Style x:Key="borderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#FFE0E0E0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="4" />
+    </Style>
+    <Style TargetType="TextBlock" x:Key="axisTextStyleMain">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style TargetType="TextBlock" x:Key="axisTextStyleDetail">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+    <Style x:Key="textBlockStyleDetail" TargetType="TextBlock" BasedOn="{StaticResource axisTextStyleDetail}" >
+        <Setter Property="Margin" Value="12,8" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <Style x:Key="verticalAxisLabelStyleMain" TargetType="TextBlock" BasedOn="{StaticResource axisTextStyleMain}">
+        <Setter Property="Margin" Value="0,0,4,0" />
+    </Style>
+    <Style x:Key="verticalAxisLabelStyleDetail" TargetType="TextBlock" BasedOn="{StaticResource axisTextStyleDetail}">
+        <Setter Property="Margin" Value="0,0,4,0" />
+    </Style>
+    <Style TargetType="telerik:RadCartesianChart" BasedOn="{StaticResource RadChartBaseStyle}">
+        <Setter Property="MinHeight" Value="76" />
+    </Style>
+    <SolidColorBrush x:Key="infoBorderBrush" Color="#FFB2B2B2" />
+    <Style TargetType="telerik:TrackBallInfoControl" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:TrackBallInfoControl">
+                    <Border BorderThickness="1" BorderBrush="{StaticResource infoBorderBrush}" >
+                        <StackPanel>
+                            <StackPanel x:Name="panel" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <sys:String x:Key="dateTimeBindingFormat">MMMM, yyyy</sys:String>
+    <Thickness x:Key="trackballItemMargin">4,0,4,2</Thickness>
+    <Thickness x:Key="trackballHeaderMargin">4,2,4,4</Thickness>
+
+    <Style TargetType="TextBlock" x:Key="trackballItemStyle">
+        <Setter Property="Margin" Value="{StaticResource trackballItemMargin}" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <Style TargetType="TextBlock" x:Key="trackballHeaderStyle">
+        <Setter Property="Margin" Value="{StaticResource trackballHeaderMargin}" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <sys:String x:Key="openFormat">GLD Open: {0}</sys:String>
+    <sys:String x:Key="highFormat">GLD High: {0}</sys:String>
+    <sys:String x:Key="lowFormat">GLD Low: {0}</sys:String>
+    <sys:String x:Key="closeFormat">GLD Close: {0}</sys:String>
+    <sys:String x:Key="maFormat">GLD MA: {0:.####}</sys:String>
+    <SolidColorBrush x:Key="infoBackground" Color="#FFEBEBEB" />
+    <DataTemplate x:Key="trackBallInfoTemplate">
+        <StackPanel Background="White">
+            <Border Background="{StaticResource infoBackground}">
+                <TextBlock Text="{Binding Path=DataPoint.Category, StringFormat={StaticResource dateTimeBindingFormat}}" Style="{StaticResource trackballHeaderStyle}"/>
+            </Border>
+            <TextBlock Text="{Binding Path=DataPoint.Open, StringFormat={StaticResource openFormat}}"  Style="{StaticResource trackballItemStyle}"/>
+            <TextBlock Text="{Binding Path=DataPoint.High, StringFormat={StaticResource highFormat}}"   Style="{StaticResource trackballItemStyle}"/>
+            <TextBlock Text="{Binding Path=DataPoint.Low, StringFormat={StaticResource lowFormat}}"   Style="{StaticResource trackballItemStyle}"/>
+            <TextBlock Text="{Binding Path=DataPoint.Close, StringFormat={StaticResource closeFormat}}"   Style="{StaticResource trackballItemStyle}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <example:AxisLabelConverter x:Key="axisLabelConverter" />
+    <DataTemplate x:Key="axisLabelTemplate">
+        <TextBlock Text="{Binding Converter={StaticResource axisLabelConverter}}" 
+                       TextAlignment="Center"
+                       Style="{StaticResource axisTextStyleMain}" />
+    </DataTemplate>
+</ResourceDictionary>

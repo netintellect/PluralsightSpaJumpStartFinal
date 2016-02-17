@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.AutoCompleteBox.Boxes.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:local="clr-namespace:Telerik.Windows.Examples.AutoCompleteBox.Boxes"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Margin="6">
+
+    <qsf:QuickStart.ExampleHeader>
+        <TextBlock Text="Multiple selection" Margin="8" />
+    </qsf:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        
+        <Style x:Key="AutoCompleteStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="13.333" />
+            <Setter Property="Foreground" Value="#FF0A0A0A" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        
+        <local:ViewModel x:Key="ViewModel"/>
+        
+        <DataTemplate x:Key="ContactSearchTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding FirstName}" Style="{StaticResource AutoCompleteStyle}" />
+                <TextBlock Text="{Binding LastName}" Style="{StaticResource AutoCompleteStyle}" Margin="4 0 0 0" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Center" Width="430" DataContext="{StaticResource ViewModel}">
+        <StackPanel>
+            <Grid x:Name="Header" Background="{StaticResource AccentBrush}" Height="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition Width="110"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="18.667" Foreground="White" Height="28" VerticalAlignment="Center" Text="Join the member to the Cycling Tour" Margin="16 12 0 12" />
+               
+                <Path Grid.Column="1" Data="M96.999489,38.063381 L96.434868,38.507088 C91.323181,42.725624 88.065002,49.109821 88.065002,56.255005 C88.065002,56.651958 88.075058,57.046566 88.094933,57.43858 L88.111862,57.66127 L109.08093,53.920811 L109.09143,53.852047 L109.12717,53.71302 z M111.065,33.255001 C107.09546,33.255001 103.36079,34.260612 100.10184,36.030979 L99.49173,36.381786 L110.89372,51.094986 L110.98401,51.02747 C111.70221,50.542259 112.56802,50.258938 113.5,50.258938 C115.98529,50.258938 118,52.273663 118,54.758953 C118,57.244247 115.98529,59.258976 113.5,59.258976 C111.79137,59.258976 110.30516,58.306702 109.54313,56.903931 L109.53505,56.887169 L88.487862,60.641567 L88.53228,60.890308 C90.676949,71.371025 99.950272,79.255005 111.065,79.255005 C123.76755,79.255005 134.065,68.957558 134.065,56.255005 C134.065,43.552456 123.76755,33.255005 111.065,33.255001 z M26,33.255001 C13.297451,33.255005 3,43.552456 3,56.255005 C3,68.957558 13.297451,79.255005 26,79.255005 C38.702549,79.255005 49,68.957558 49,56.255005 C49,49.109821 45.741821,42.725624 40.630135,38.507088 L40.290115,38.239883 L40.11528,38.771988 L39.135201,41.766678 L30.183624,52.17897 L30.231472,52.24295 C30.716679,52.961159 31,53.826973 31,54.758953 C31,57.244247 28.985283,59.258976 26.5,59.258976 C24.014717,59.258976 22,57.244247 22,54.758953 C22,52.273663 24.014717,50.258938 26.5,50.258938 C26.810661,50.258938 27.113968,50.290417 27.406906,50.350361 L27.726618,50.432568 L36.42807,40.427235 L36.415035,40.422955 L37.715897,36.463791 L36.963165,36.030979 C33.70422,34.260612 29.969547,33.255001 26,33.255001 z M86.894447,25.023767 L76.529671,56.170677 L76.575096,56.198273 C77.599205,56.890152 78.377762,57.917889 78.752724,59.123444 L78.803696,59.321663 L85.144279,58.190628 L85.098831,57.592964 C85.07637,57.149815 85.065002,56.703739 85.065002,56.255009 C85.065002,48.177841 88.748161,40.960926 94.526588,36.192142 L95.162254,35.692604 z M45.212425,23.258829 L44.304214,26.022972 L70.66391,56.053066 L70.878372,55.922779 C71.657684,55.499428 72.550751,55.258957 73.5,55.258957 L73.669891,55.263252 L84.320023,23.258829 z M53.738014,0 L53.443325,2.799192 L45.487022,3.3884509 L45.243057,4.201611 L49.81422,9.4577408 L49.720161,9.5395441 L46.198139,20.258816 L85.318344,20.258816 L86.054375,18.046988 L85.724991,17.998518 C81.513596,17.324459 72.061127,12.551742 72.061127,12.551741 L71.850044,9.8923998 C71.850044,9.8924007 98.356689,9.1566019 98.349915,9.2165565 C98.090782,11.511375 95.484383,15.856891 92.225334,17.457901 C91.451889,17.837906 90.559784,18.132383 89.326508,18.221176 L89.15522,18.229986 L88.034622,21.597466 L97.636818,33.988197 L98.67186,33.393066 C102.35588,31.391783 106.57769,30.255005 111.065,30.255005 C125.42441,30.255005 137.065,41.895603 137.065,56.255009 C137.065,70.61441 125.42441,82.255005 111.065,82.255005 C98.500519,82.255005 88.017632,73.342674 85.593231,61.494915 L85.534904,61.168316 L78.757141,62.377331 L78.752724,62.39452 C78.056366,64.633408 75.968018,66.259003 73.5,66.259003 C70.462433,66.259003 68,63.796562 68,60.758984 C68,59.999588 68.1539,59.276138 68.432213,58.618122 L68.606354,58.256638 L43.21698,29.331972 L41.28088,35.224491 L41.556213,35.420284 C47.896233,40.161701 52,47.729111 52,56.255009 C52,70.61441 40.359402,82.255005 26,82.255005 C11.640596,82.255005 0,70.61441 0,56.255009 C0,41.895603 11.640596,30.255005 26,30.255005 C30.487312,30.255005 34.709118,31.391783 38.393143,33.393066 L38.672134,33.553482 L46.383362,10.084366 L42.210297,4.9082336 C41.649029,4.1465111 39.804863,1.0194427 42.245468,0.73611546 C44.300583,0.49753955 53.738014,1.1424095E-07 53.738014,0 z" 
+                      Fill="White" Margin="19 0 12 7" Stretch="Fill" UseLayoutRounding="False" Height="46" Width="77" VerticalAlignment="Bottom"/>
+
+            </Grid>
+            <Border BorderBrush="#FFD6D4D4" BorderThickness="1" Margin="0 3 0 0">
+                <Grid x:Name="Container">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.ColumnSpan="2" Margin="14 5 0 0" TextWrapping="Wrap" Text="Send message:" FontFamily="Segoe UI Light" FontSize="21.333" Foreground="Black" Height="34" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Row="1" Height="20" Margin="53 5 0 0" TextWrapping="Wrap" Text="To:" VerticalAlignment="Top" FontFamily="Segoe UI" TextAlignment="Right" FontSize="12" HorizontalAlignment="Left" Width="17"/>
+                    <TextBlock Grid.Row="2" Margin="18 2 0 0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Message:" FontFamily="Segoe UI" TextAlignment="Right" FontSize="12" HorizontalAlignment="Left" Width="52"/>
+                    
+                    <telerik:RadAutoCompleteBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="10 0 10 0"
+                                                SelectionMode="Multiple"
+                                                WatermarkContent="Type a name"
+												TextSearchMode="Contains"
+                                                TextSearchPath="FirstName"
+                                                AutoCompleteMode="Suggest"
+                                                ItemsSource="{Binding ContactsList}"
+                                                DropDownItemTemplate="{StaticResource ContactSearchTemplate}"/>
+					<StackPanel Grid.Row="2" Grid.Column="1">
+						<TextBox  Margin="10 3 10 10" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" Height="145" VerticalContentAlignment="Top" />
+						<telerik:RadButton Content="Send message" Margin="10 0 10 10" HorizontalAlignment="Right"/>
+					</StackPanel>
+				</Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,33 @@
+<UserControl
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Telerik.Windows.Examples.Upload.Theming.Example"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Border CornerRadius="6" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" Margin="40">
+        <Grid>
+            <telerik:RadUpload x:Name="RadUpload1"  Width="340"
+			            Filter="Image Files (*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png|Text Files (*.txt)|*.txt|All Files(*.*)|*.*"
+			            FilterIndex="0" MaxFileCount="5" AllowDrop="true"
+			            IsAutomaticUpload="false"
+			            OverwriteExistingFiles="True"
+                               UploadServiceUrl="../../RadUploadHandler.ashx"
+			            TargetFolder="{StaticResource TargetFolder}"
+			            HorizontalAlignment="Left"
+                        IsAppendFilesEnabled="True"
+			            FileUploadStarting="RadUpload1_FileUploadStarting"
+			            FileUploaded="RadUpload1_FileUploaded"
+                        UploadStarted="RadUpload1_UploadStarted"
+                        MaxFileSize="3000000" MaxUploadSize="10000000"   />
+        </Grid>
+    </Border>
+
+</UserControl>

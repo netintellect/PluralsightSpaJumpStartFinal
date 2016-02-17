@@ -1,0 +1,1 @@
+﻿This example shows a ScatterBubbleSeries with a custom bubble size selector based on the RelativeBubbleSizeSelector.

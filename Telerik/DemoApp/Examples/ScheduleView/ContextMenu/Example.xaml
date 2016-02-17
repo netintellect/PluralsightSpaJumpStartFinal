@@ -1,0 +1,104 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.ContextMenu.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.ContextMenu"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Context Menu Integration" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" AppointmentsSource="/ScheduleView;component/DataSources/DevReach/Appointments.xaml" />
+		<schedule:ResourceTypeCollection x:Key="ResourceTypes">
+			<schedule:ResourceType Name="Category">
+				<schedule:Resource ResourceName="Business Layer" />
+				<schedule:Resource ResourceName="Data layer" />
+				<schedule:Resource ResourceName="Presentation Layer" />
+				<schedule:Resource ResourceName="Best Practices" />
+				<schedule:Resource ResourceName="Architecture" />
+			</schedule:ResourceType>
+			<schedule:ResourceType Name="Level">
+				<schedule:Resource ResourceName="200" />
+				<schedule:Resource ResourceName="250" />
+				<schedule:Resource ResourceName="300" />
+				<schedule:Resource ResourceName="400" />
+			</schedule:ResourceType>
+		</schedule:ResourceTypeCollection>
+	</UserControl.Resources>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+		<schedule:RadScheduleView ActiveViewDefinitionIndex="1" AppointmentsSource="{Binding Appointments}" CurrentDate="{Binding CurrentDate, Mode=TwoWay}" 
+								 GroupDescriptionsSource="{Binding GroupDescriptions}"
+								 ResourceTypesSource="{StaticResource ResourceTypes}"
+								  FirstVisibleTime="8:00">
+			<schedule:RadScheduleView.ViewDefinitions>
+				<schedule:DayViewDefinition />
+				<schedule:WeekViewDefinition />
+				<schedule:MonthViewDefinition />
+				<schedule:TimelineViewDefinition />
+			</schedule:RadScheduleView.ViewDefinitions>
+
+			<schedule:RadScheduleView.TimeMarkersSource>
+				<schedule:DefaultTimeMarkerCollection />
+			</schedule:RadScheduleView.TimeMarkersSource>
+
+			<telerik:RadContextMenu.ContextMenu>
+				<telerik:RadContextMenu  IsOpen="{Binding IsContextMenuOpen, Source={StaticResource ViewModel},Mode=TwoWay}" >
+					<telerik:RadMenuItem Header="New Appointment..." CommandTarget="{Binding Menu.UIElement, RelativeSource={RelativeSource Self}}"
+							Command="schedule:RadScheduleViewCommands.CreateAppointment"  />
+					<telerik:RadMenuItem Header="Open..." CommandTarget="{Binding Menu.UIElement, RelativeSource={RelativeSource Self}}"
+							Command="schedule:RadScheduleViewCommands.EditAppointment" />
+					<telerik:RadMenuItem Header="Delete" CommandTarget="{Binding Menu.UIElement, RelativeSource={RelativeSource Self}}"
+							Command="schedule:RadScheduleViewCommands.DeleteAppointment" />
+
+					<telerik:RadMenuItem IsSeparator="True" />
+
+					<telerik:RadMenuItem Header="Next"
+							Command="{Binding NextDateCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.ActiveViewDefinition.LargeChangeInterval, RelativeSource={RelativeSource Self} }" />
+					<telerik:RadMenuItem Header="Today"
+							Command="{Binding GotoTodayCommand, Source={StaticResource ViewModel}}" />
+					<telerik:RadMenuItem Header="Previous"
+							Command="{Binding PrevDateCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.ActiveViewDefinition.LargeChangeInterval, RelativeSource={RelativeSource Self} }" />
+
+					<telerik:RadMenuItem IsSeparator="True" />
+
+					<telerik:RadMenuItem Header="Show Time as Free"
+							Command="{Binding SetFreeCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.SelectedAppointments, RelativeSource={RelativeSource Self}}" />
+					<telerik:RadMenuItem Header="Show Time as Busy"
+							Command="{Binding SetBusyCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.SelectedAppointments, RelativeSource={RelativeSource Self}}" />
+					<telerik:RadMenuItem Header="Show Time as Out of Office"
+							Command="{Binding SetOutOfOfficeCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.SelectedAppointments, RelativeSource={RelativeSource Self}}" />
+					<telerik:RadMenuItem Header="Show Time as Tentative"
+							Command="{Binding SetTentativeCommand, Source={StaticResource ViewModel}}"
+							CommandParameter="{Binding Menu.UIElement.SelectedAppointments, RelativeSource={RelativeSource Self}}" />
+
+					<telerik:RadMenuItem IsSeparator="True" />
+
+					<telerik:RadMenuItem Header="DayView" Command="schedule:RadScheduleViewCommands.SetDayViewMode"
+							CommandParameter="{Binding CurrentDate}"/>
+					<telerik:RadMenuItem Header="WeekView"
+							Command="schedule:RadScheduleViewCommands.SetWeekViewMode" />
+					<telerik:RadMenuItem Header="MonthView"
+							Command="schedule:RadScheduleViewCommands.SetMonthViewMode" />
+					<telerik:RadMenuItem Header="TimelineView"
+							Command="schedule:RadScheduleViewCommands.SetTimelineViewMode" />
+
+					<telerik:RadMenuItem IsSeparator="True" />
+
+					<telerik:RadMenuItem Header="Group By Category" IsCheckable="True"
+							IsChecked="{Binding IsGroupedByCategory, Source={StaticResource ViewModel}, Mode=TwoWay}" />
+				</telerik:RadContextMenu>
+			</telerik:RadContextMenu.ContextMenu>
+		</schedule:RadScheduleView>
+	</Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿This example shows a 2D Bar and Horizontal Bar charts. It demonstrates the chart axes, legend, title and bar labels.

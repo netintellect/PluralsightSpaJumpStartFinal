@@ -1,0 +1,4 @@
+﻿This example demonstrates how to customize the drag and resize functionality of the GanttView control using the its <b>ResizeBehavior</b>, <b>DragDropBehavior</b> and <b>DragDependenciesBehavior</b> properties.
+<br />
+<br />
+The example locks the tasks for one or more functionalities. The example also demonstrates how to implement custom GanttTask in order to add additional properties to the built-in properties of the GanttTask class.

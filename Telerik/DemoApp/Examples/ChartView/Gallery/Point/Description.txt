@@ -1,0 +1,1 @@
+﻿This example shows a Point series chart in combination with MarkedZone annotations.

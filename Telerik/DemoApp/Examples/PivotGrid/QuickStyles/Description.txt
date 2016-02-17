@@ -1,0 +1,1 @@
+﻿RadPivotGrid's colors could be easily customized through the QuickStyles.<br/><br/>The QuickStyle defines properties for specific areas. The Header area, GroupHeaders, SubTotals, GrandTotals and Alternation patterns are semantically separated so you can selectively adjust their settings.

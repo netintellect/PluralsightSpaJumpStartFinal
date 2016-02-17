@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.Annotations.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"   
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.Annotations"
+    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel x:Name="exampleViewModel"/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/Annotations/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <example:VisibilityConverter x:Key="converter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Top companies in the market" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock Text="{Binding Path=SelectedCompany.Name}"
+                           FontFamily="Segoe UI Light" 
+                           FontSize="23"
+                           Foreground="#FF26A0DA"/>
+                <TextBlock Text="SINCE 2007"
+                           FontFamily="Segoe UI" 
+                           FontSize="11"
+                           Foreground="#FF26A0DA"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <TextBlock>
+                    <Run Text="DATE:" FontFamily="Segoe UI" FontSize="10" Foreground="Gray" />
+                    <Run x:Name="date" Text="Mar 18, 2012" FontFamily="Segoe UI Semibold" FontSize="13" Foreground="Black" />
+                </TextBlock>
+                <TextBlock Margin="10,0,0,0">
+                    <Run Text="PRICE:" FontFamily="Segoe UI" FontSize="10" Foreground="Gray" />
+                    <Run x:Name="price" Text="600.40" FontFamily="Segoe UI Semibold" FontSize="13" Foreground="Black" />
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <telerik:RadListBox x:Name="radListBox" Grid.Row="0" HorizontalAlignment="Right"
+                            ItemsSource="{Binding Companies}"
+                            SelectedItem="{Binding SelectedCompany, Mode=TwoWay}"
+                            Background="Transparent" BorderBrush="Transparent">
+            <telerik:RadListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </telerik:RadListBox.ItemsPanel>
+        </telerik:RadListBox>
+
+        <example:GoogleChart x:Name="chartView1" Grid.Row="1" Margin="0,30,0,16" ClosestDataPointChanged="ClosestDataPointChanged" DataContext="{Binding Companies[0]}"
+                             Visibility="{Binding ElementName=radListBox, Path=SelectedIndex, Converter={StaticResource converter}, ConverterParameter=0}" />
+        <example:MicrosoftChart x:Name="chartView2" Grid.Row="1" Margin="0,30,0,16" ClosestDataPointChanged="ClosestDataPointChanged" DataContext="{Binding Companies[1]}"
+                             Visibility="{Binding ElementName=radListBox, Path=SelectedIndex, Converter={StaticResource converter}, ConverterParameter=1}" />
+        <example:AppleChart x:Name="chartView3" Grid.Row="1" Margin="0,30,0,16" ClosestDataPointChanged="ClosestDataPointChanged" DataContext="{Binding Companies[2]}"
+                            Visibility="{Binding ElementName=radListBox, Path=SelectedIndex, Converter={StaticResource converter}, ConverterParameter=2}" />
+        <example:AdobeChart x:Name="chartView4" Grid.Row="1" Margin="0,30,0,16" ClosestDataPointChanged="ClosestDataPointChanged" DataContext="{Binding Companies[3]}"
+                            Visibility="{Binding ElementName=radListBox, Path=SelectedIndex, Converter={StaticResource converter}, ConverterParameter=3}" />
+
+        <TextBlock Margin="0,0,0,-7" Grid.Row="1"
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   FontFamily="Segoe UI" FontSize="10"
+                   Text="source: Google Finance" Foreground="Gray"/>
+    </Grid>
+</UserControl>

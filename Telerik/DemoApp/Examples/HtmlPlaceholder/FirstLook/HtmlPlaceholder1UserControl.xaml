@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.HtmlPlaceholder.FirstLook.HtmlPlaceholder1UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Background="#0f9bf2"
+                BorderBrush="White"
+                BorderThickness="0 0 0 1">
+            <TextBlock Margin="20 0 0 0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="12"
+                       Foreground="White"
+                       Text="Display external url as a frame in Silverlight page:" />
+        </Border>
+        <telerik:RadHtmlPlaceholder x:Name="htmlPlaceholder1"
+                                    Grid.Row="1"
+                                    SourceUrl="http://bing.com" />
+    </Grid>
+</UserControl>

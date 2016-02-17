@@ -1,0 +1,5 @@
+﻿Telerik Sparklines are characterized by their small size and high data density.
+
+This example demonstrates the different kinds of Telerik sparklines in a RadGridView.
+
+RadSparklines are a part of the <b>Telerik.Windows.Controls.DataVisualization</b> assembly.

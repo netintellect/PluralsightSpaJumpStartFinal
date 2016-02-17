@@ -1,0 +1,54 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.Projection.MercatorMeter.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.Shapefile"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.Resources>
+        <example:ShapefileViewModel x:Key="DataContext" Region="world_continents_epsg900913" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="World Continents" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Width="784" Height="484">
+
+        <telerik:RadMap x:Name="RadMap1"
+                        Center="296247.258782387,426130.145788193"
+                        ZoomLevel="1"
+                        Background="#D9E1FF"
+                        BorderBrush="Black"
+                        BorderThickness="1"                        
+                        UseDefaultLayout="False"
+                        MouseClickMode="None" 
+                        MouseDoubleClickMode="None"
+                        IsMouseWheelZoomEnabled="False">
+
+            <telerik:RadMap.Providers>
+                <telerik:EmptyProvider>
+                    <telerik:EmptyProvider.Projection>
+                        <telerik:EPSG900913Projection />
+                    </telerik:EmptyProvider.Projection>
+                </telerik:EmptyProvider>
+            </telerik:RadMap.Providers>
+
+            <telerik:InformationLayer x:Name="InformationLayer">
+                <telerik:InformationLayer.Reader>
+                    <telerik:MapShapeReader Source="{Binding Source={StaticResource DataContext}, Path=ShapefileSourceUri}" 
+                                            DataSource="{Binding Source={StaticResource DataContext}, Path=ShapefileDataSourceUri}"
+                                            ToolTipFormat="CONTINENT" />
+                </telerik:InformationLayer.Reader>
+                <telerik:InformationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#FFF7DE" Stroke="#5A636B" StrokeThickness="1" />
+                </telerik:InformationLayer.ShapeFill>
+                <telerik:InformationLayer.HighlightFill>
+                    <telerik:MapShapeFill Fill="#F7E7BD" Stroke="#5A636B" StrokeThickness="1" />
+                </telerik:InformationLayer.HighlightFill>
+            </telerik:InformationLayer>
+        </telerik:RadMap>
+
+    </Grid>
+</UserControl>

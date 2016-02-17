@@ -1,0 +1,1 @@
+﻿You can select a transition from the configuration panel and check how it looks like applied in the example.

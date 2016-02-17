@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF60E211-E162-4971-A9EF-17B7EBB11E40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Treemap</RootNamespace>
+    <AssemblyName>Treemap</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AbsoluteValueBrushColorizer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AbsoluteValueBrushColorizer\ExampleViewModel.cs" />
+    <Compile Include="AbsoluteValueBrushColorizer\StockInfo.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMapping\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMapping\ExampleViewModel.cs" />
+    <Compile Include="CustomMapping\File.cs" />
+    <Compile Include="CustomMapping\FileCustomMapping.cs" />
+    <Compile Include="CustomMapping\Folder.cs" />
+    <Compile Include="CustomMapping\IDiskItem.cs" />
+    <Compile Include="DataSourceViewModelBase.cs" />
+    <Compile Include="FirstLookTreeMap\Category.cs" />
+    <Compile Include="FirstLookTreeMap\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLookTreeMap\ExampleViewModel.cs" />
+    <Compile Include="FirstLookTreeMap\Product.cs" />
+    <Compile Include="FirstLook\DefinitionConverter.cs" />
+    <Compile Include="FirstLook\ExampleViewModel.cs" />
+    <Compile Include="FirstLook\MovieInfo.cs" />
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\ExampleViewModel.cs" />
+    <Compile Include="Selection\OilProducingInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GradientColorizer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GradientColorizer\ExampleViewModel.cs" />
+    <Compile Include="GradientColorizer\GdpInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Resource Include="DataSources\OilProducingCountries.csv" />
+    <Resource Include="DataSources\GDP.csv" />
+    <Resource Include="DataSources\Stocks.csv" />
+    <Resource Include="DataSources\nwind.csv" />
+    <Resource Include="DataSources\Movies_trimmed.csv" />
+    <Resource Include="DataSources\PopulationPyramiddata.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+<Resource Include="ReferencesList.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AbsoluteValueBrushColorizer\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomMapping\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLookTreeMap\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GradientColorizer\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Selection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLookTreeMap\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AbsoluteValueBrushColorizer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomMapping\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GradientColorizer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Treemap\CustomMapping\img.png" />
+    <Resource Include="Images\Treemap\CustomMapping\music.png" />
+    <Resource Include="Images\Treemap\CustomMapping\text.png" />
+    <Resource Include="Images\Treemap\CustomMapping\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pivotmap\FirstLook\a nightmare on elm street.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\alice in wonderland.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\avatar.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\clash of the titans.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\date night.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\despicable me.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\diary of a wimpy kid.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\dinner for schmucks.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\due date.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\easy a.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\get him to the greek.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\grown ups.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\how did i get married too.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\how to train your dragon.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\inception.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\iron man 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\jackass 3d.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\knight and day.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\little fockers.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\megamind.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\paranormal activity 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\red.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\robin hood.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\salt.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\secretariat.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\sex and the city 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\sherlock holmes.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\shreck forever after.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\shutter island.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\tangled.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the a team.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the book of eli.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the bounty hunter.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the expendables.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the karate kid.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the last airbender.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the last song.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the other guys.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the social network.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the sorcerers apprentice.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the tooth fairy.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the town.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the twilight saga eclipse.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the wolf man.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\toy story 3.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\tron the legacy.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\true grit.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\unstoppable.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\valentines day.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\yogi bear 3d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Selection\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Treemap\Selection\algeria.jpg" />
+    <Resource Include="Images\Treemap\Selection\angola.jpg" />
+    <Resource Include="Images\Treemap\Selection\argentina.jpg" />
+    <Resource Include="Images\Treemap\Selection\arrow.png" />
+    <Resource Include="Images\Treemap\Selection\australia.jpg" />
+    <Resource Include="Images\Treemap\Selection\azerbaijan.jpg" />
+    <Resource Include="Images\Treemap\Selection\brazil.jpg" />
+    <Resource Include="Images\Treemap\Selection\canada.jpg" />
+    <Resource Include="Images\Treemap\Selection\china.jpg" />
+    <Resource Include="Images\Treemap\Selection\colombia.jpg" />
+    <Resource Include="Images\Treemap\Selection\egypt.jpg" />
+    <Resource Include="Images\Treemap\Selection\india.jpg" />
+    <Resource Include="Images\Treemap\Selection\indonesia.jpg" />
+    <Resource Include="Images\Treemap\Selection\iran.jpg" />
+    <Resource Include="Images\Treemap\Selection\iraq.jpg" />
+    <Resource Include="Images\Treemap\Selection\kazakhstan.jpg" />
+    <Resource Include="Images\Treemap\Selection\kuwait.jpg" />
+    <Resource Include="Images\Treemap\Selection\libya.jpg" />
+    <Resource Include="Images\Treemap\Selection\malaysia.jpg" />
+    <Resource Include="Images\Treemap\Selection\mexico.jpg" />
+    <Resource Include="Images\Treemap\Selection\nigeria.jpg" />
+    <Resource Include="Images\Treemap\Selection\norway.jpg" />
+    <Resource Include="Images\Treemap\Selection\oman.jpg" />
+    <Resource Include="Images\Treemap\Selection\qatar.jpg" />
+    <Resource Include="Images\Treemap\Selection\russia.jpg" />
+    <Resource Include="Images\Treemap\Selection\saudi arabia.jpg" />
+    <Resource Include="Images\Treemap\Selection\sudan.jpg" />
+    <Resource Include="Images\Treemap\Selection\uae.jpg" />
+    <Resource Include="Images\Treemap\Selection\uk.jpg" />
+    <Resource Include="Images\Treemap\Selection\usa.jpg" />
+    <Resource Include="Images\Treemap\Selection\venezuela.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

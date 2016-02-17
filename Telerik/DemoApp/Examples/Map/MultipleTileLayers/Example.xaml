@@ -1,0 +1,17 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.MultipleTileLayers.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.Shapefile"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <Grid x:Name="LayoutRoot" Width="784" Height="484">
+
+        <telerik:RadMap x:Name="RadMap1" Width="784" Height="484"
+                        Center="38.8763793426777, -77.0368488348389"
+                        ZoomLevel="14"
+                        MiniMapExpanderVisibility="Collapsed" />
+
+    </Grid>
+</UserControl>

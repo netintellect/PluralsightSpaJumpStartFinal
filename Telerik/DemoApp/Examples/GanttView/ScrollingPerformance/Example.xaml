@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.ScrollingPerformance.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.ScrollingPerformance" mc:Ignorable="d"
+		d:DesignHeight="300" d:DesignWidth="400">
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" />
+        <controls:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource ViewModel}}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" MinHeight="50" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<telerik:RadToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" Content="Load GanttTasks"
+				IsChecked="{Binding IsBusy, Mode=TwoWay}" IsThreeState="False"
+				IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBooleanConverter}}" />
+		<telerik:RadBusyIndicator Grid.Row="1" IsBusy="{Binding IsBusy}">
+			<telerik:RadGanttView x:Name="RadGanttView" PixelLength="{Binding PixelLength}"
+					TasksSource="{Binding GanttTasks}" VisibleRange="{Binding VisibleRange}">
+				<telerik:RadGanttView.TimeRulerLines>
+					<telerik:GroupTickLine>
+						<telerik:TickInterval Interval="OneMonth" />
+					</telerik:GroupTickLine>
+				</telerik:RadGanttView.TimeRulerLines>
+				<telerik:RadGanttView.Columns>
+					<telerik:TreeColumnDefinition MemberBinding="{Binding Title}" Header="Title" Width="140" IsFrozenColumn="True"/>
+					<telerik:ColumnDefinition MemberBinding="{Binding Duration}" Header="Duration" Width="140" />
+					<telerik:ColumnDefinition MemberBinding="{Binding Start}" Header="Start" Width="140" />
+					<telerik:ColumnDefinition MemberBinding="{Binding End}" Header="End" Width="140" />
+				</telerik:RadGanttView.Columns>
+			</telerik:RadGanttView>
+		</telerik:RadBusyIndicator>
+
+		<Border Grid.RowSpan="2" BorderBrush="#FFD6D4D4" BorderThickness="1" />
+	</Grid>
+</UserControl>

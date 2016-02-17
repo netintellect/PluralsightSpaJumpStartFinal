@@ -1,0 +1,1 @@
+﻿This example demonstrates an integration between RadBarcode and RadBook, in a sample catalogue design.

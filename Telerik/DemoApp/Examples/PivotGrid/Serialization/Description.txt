@@ -1,0 +1,1 @@
+﻿With RadPivotGrid you are able to serialize/save current RadPivotGrid state in various formats and load/deserialize it at a later point.<br/><br/>This example demonstrates how to save the LocalDataSourceProvider state into IsolatedStorage and load it.

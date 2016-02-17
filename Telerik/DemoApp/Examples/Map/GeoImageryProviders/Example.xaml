@@ -1,0 +1,39 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.GeoImageryProviders.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common" >
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadMap x:Name="RadMap1" ZoomLevel="7" />
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <StackPanel>
+                <TextBlock Text="Select Provider:" />
+                <ListBox x:Name="ProviderBox" 
+                         SelectionChanged="ProviderBox_SelectionChanged"
+                         Margin="0,2">
+                    <ListBoxItem Content="BingMapProvider"/>
+                    <ListBoxItem Content="OpenStreetMapProvider"/>
+                </ListBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Select Location:" />
+                <ListBox x:Name="LocationBox"                         
+                         SelectionChanged="LocationBox_SelectionChanged"
+                         Margin="0,2" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    
+                    <telerik:Location Description="Sofia, Bulgaria"  Latitude="42.697872" Longitude="23.321583" />
+                    <telerik:Location Description="Munich, Germany" Latitude="48.139126" Longitude="11.580186" />
+                    <telerik:Location Description="Boston, Massachusetts" Latitude="42.358431" Longitude="-71.059773" />
+                    <telerik:Location Description="Houston, Texas" Latitude="29.763284" Longitude="-95.363272" />
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

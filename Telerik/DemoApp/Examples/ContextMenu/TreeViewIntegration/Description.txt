@@ -1,0 +1,3 @@
+﻿Telerik ContextMenu provides the power to boost the existing navigation of your application. RadContextMenu allows you create right-click context  and pop-up menus. With its advanced features, like CheckBox/RadioButton items, rich Programming and Events model, the ContextMenu gives you the entire control over its behavior.
+
+RadContextMenu is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

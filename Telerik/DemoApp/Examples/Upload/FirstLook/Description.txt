@@ -1,0 +1,3 @@
+﻿Telerik Upload control is a dedicated file-upload component. It allocates a minimum amount of server memory, while enabling optimized and fully configurable single and multi-file uploads. With the configuration options bellow you can fully configure the Upload control's behavior as per your very custom needs.
+
+RadUpload is a part of the <b>Telerik.Windows.Controls.Input</b> assembly.

@@ -1,0 +1,1 @@
+﻿The built-in Drag And Drop mechanism used in the TabControl is derived from the Telerik Drag And Drop framework. To enable it simply set the TabControl's <b>AllowDragOverTab</b> property to <b>true</b>.  In the above example, you can drag the active tabs and drop them to change their position.

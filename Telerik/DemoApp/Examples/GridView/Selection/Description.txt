@@ -1,0 +1,11 @@
+﻿This example demonstrates the selection mechanism of the Telerik GridView control. Users can choose between three types of selection:
+
+1) Single - The user can select only one row/cell at a time.
+2) Multiple - The user can select or deselect multiple rows/cells without using modifier keys (CONTROL, SHIFT).
+3) Extended - The user can select multiple consecutive rows/cells while holding down the SHIFT key. Additionally the user can use the CONTROL key to mark individual rows as selected or unselected.
+
+And three units of selection:
+
+1) FullRow - The selection is performed on both UI and data layer, meaning an item is actualy selected.
+2) Cell - The selection is performed on UI level, and no Item is selected in the data layer.
+3) Mixed - A combination of the above. The item selection is performed on click on the row header. 

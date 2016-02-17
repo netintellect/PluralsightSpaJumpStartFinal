@@ -1,0 +1,18 @@
+<UserControl
+        xmlns="http://schemas.microsoft.com/client/2007"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Telerik.Windows.Examples.HtmlPlaceholder.WindowIntegration.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+		<StackPanel x:Name="previewPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="../Images/HtmlPlaceholder/FirstLookPlaceHolder.png" Stretch="None"
+					MouseLeftButtonDown="WindowlessMode_Click" Cursor="Hand" />
+			<telerik:RadButton Content='Load "Windowless" mode' Click="WindowlessMode_Click"
+					HorizontalAlignment="Center" 
+					Margin="0 25" Height="25" Padding="5 0" />
+			<TextBlock
+					Text='RadHtmlPlaceholder requires the "Windowless" parameter of the Silverlight plugin to be True'
+					HorizontalAlignment="Center" />
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,1127 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Menu.Customization.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.Menu.Customization"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+
+    <UserControl.Resources>
+        <local:ViewModel x:Key="PopularControlsViewModel" />
+        <local:SDKViewModel x:Key="SDKViewModel" />
+        <SolidColorBrush x:Key="HeaderBackground" Color="#FF2E2E2E" />
+        <SolidColorBrush x:Key="HeaderTitle" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="WhiteForeground" Color="#FFFFFFFF" />
+
+        <SolidColorBrush x:Key="MenuBackground" Color="#FFDCDCDC" />
+        <SolidColorBrush x:Key="TopLevelItemForeground" Color="Black" />
+        <SolidColorBrush x:Key="TopLevelItemMouseOver" Color="#FFF3F3F3" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#FF2DB200" />
+        <SolidColorBrush x:Key="SettingsPopupBorder" Color="#FFCBCBCB" />
+        <SolidColorBrush x:Key="Title" Color="#FF2DB200" />
+        <SolidColorBrush x:Key="ImageBorder" Color="#FFEAEAEA" />
+        <SolidColorBrush x:Key="DarkImageBorder" Color="#FFCFCFCF" />
+
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="4 3" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="{StaticResource Title}" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <SolidColorBrush x:Key="TopLevelPopupBackground" Color="#FFF3F3F3" />
+        <SolidColorBrush x:Key="SubmenuDarkBackground" Color="#FFECECEC" />
+        <SolidColorBrush x:Key="Paragraph" Color="#FF444444" />
+
+        <SolidColorBrush x:Key="MoreLink" Color="#FF0C89C3" />
+        <SolidColorBrush x:Key="MoreLinkMouseOver" Color="#FF036C9C" />
+
+        <SolidColorBrush x:Key="MenuItemSeparatorDark" Color="#FFE4E4E4" />
+        <SolidColorBrush x:Key="MenuItemSeparatorLight" Color="White" />
+        <SolidColorBrush x:Key="ArrowFill" Color="#FF717171" />
+        <SolidColorBrush x:Key="MenuItemForeground" Color="#FF1D1D1D" />
+
+        <Style x:Key="SubHeader" TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0 2" />
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+        </Style>
+
+        <Style x:Key="ParagraphStyle" TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="MaxWidth" Value="170" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Foreground" Value="{StaticResource Paragraph}" />
+        </Style>
+
+        <Style x:Key="LeftArrowButton" TargetType="telerik:RadButton">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0 0 12 0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadButton">
+                        <Grid x:Name="Root" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled" />
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource AccentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Path x:Name="Arrow" Width="11" Height="13" Data="M0,4.5L5,0L5,9z" Stretch="Fill" Fill="{StaticResource ArrowFill}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RightArrowButton" TargetType="telerik:RadButton">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="12 0 0 0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadButton">
+                        <Grid x:Name="Root" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled" />
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow" Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource AccentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Path x:Name="Arrow" Width="11" Height="13" Data="M0,0L4,3L0,6z" Stretch="Fill" Fill="{StaticResource ArrowFill}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LinkListBoxItemStyle" TargetType="telerik:RadListBoxItem">
+            <Setter Property="Margin" Value="0 3 4 4" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadListBoxItem">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElement" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElementHighlighted" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected"/>
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElementSelected" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <TextBlock x:Name="TextElement" Text="{Binding DisplayName}" TextDecorations="None" Foreground="#FF2C2C2C" FontSize="12" />
+                            <TextBlock x:Name="TextElementHighlighted" Visibility="Collapsed" Text="{Binding DisplayName}" TextDecorations="Underline" Foreground="#FF0066CC" FontSize="12" />
+                            <TextBlock x:Name="TextElementSelected" Visibility="Collapsed" Text="{Binding DisplayName}" TextDecorations="Underline" Foreground="#FF0066CC" FontSize="12" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PagerItemStyle" TargetType="telerik:RadListBoxItem">
+            <Setter Property="Width" Value="18" />
+            <Setter Property="Height" Value="18" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadListBoxItem">
+                        <Grid x:Name="Border" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TextPresenter" Storyboard.TargetProperty="Opacity">
+                                                <LinearDoubleKeyFrame KeyTime="00:00:00.1" Value="0.5" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource AccentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SelectedTextPresenter" Storyboard.TargetProperty="Opacity">
+                                                <LinearDoubleKeyFrame KeyTime="00:00:00.1" Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <TextBlock x:Name="TextPresenter" Text="{Binding DisplayPage}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontSize="12" FontFamily="Segoe UI Semibold" />
+                            <TextBlock x:Name="SelectedTextPresenter" Text="{Binding DisplayPage}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="12" FontFamily="Segoe UI Semibold" Opacity="0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LinkItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Margin" Value="0 3 4 4" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElement" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElementHighlighted" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <TextBlock x:Name="TextElement" Text="{TemplateBinding Header}" TextDecorations="None" Foreground="#FF2C2C2C" FontSize="12" />
+                            <TextBlock x:Name="TextElementHighlighted" Visibility="Collapsed" Text="{TemplateBinding Header}" TextDecorations="Underline" Foreground="#FF0066CC" FontSize="12" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MoreLinkItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Margin" Value="0 3 0 12" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <StackPanel Orientation="Horizontal" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElement" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElementHighlighted" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <TextBlock x:Name="TextElement" Text="{TemplateBinding Header}" TextDecorations="None" Foreground="{StaticResource MoreLink}" />
+                            <TextBlock x:Name="TextElementHighlighted" Visibility="Collapsed" TextDecorations="Underline" Text="{TemplateBinding Header}" Foreground="{StaticResource MoreLinkMouseOver}" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuGroupItemStyle" TargetType="telerik:RadMenuGroupItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuGroupItem">
+                        <Grid Background="{TemplateBinding Background}">
+                            <StackPanel Margin="13 4 13 15">
+                                <TextBlock Text="{TemplateBinding Header}" Style="{StaticResource HeaderStyle}" TextWrapping="Wrap" Margin="0 10 0 9"/>
+                                <ItemsPresenter />
+                            </StackPanel>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PopularItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid Background="Transparent">
+                            <Image x:Name="IconPresenter" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}" Width="120" Height="60" RenderTransformOrigin="0.5 0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <ContentPresenter x:Name="HeaderPresenter" Margin="0 10 0 0" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SettingsSubItemsStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <StackPanel Orientation="Horizontal" Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HeaderPresenter" Storyboard.TargetProperty="Opacity">
+                                                <LinearDoubleKeyFrame KeyTime="00:00:00.1" Value="0.7" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IconPresenter" Storyboard.TargetProperty="Opacity">
+                                                <LinearDoubleKeyFrame KeyTime="00:00:00.1" Value="0.7" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image x:Name="IconPresenter" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}" Width="16" Height="26" RenderTransformOrigin="0.5 0.5" Margin="0 0 8 0" />
+
+                            <ContentPresenter x:Name="HeaderPresenter" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuButtonItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Width" Value="66" />
+            <Setter Property="Height" Value="76" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Top" />
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid x:Name="Border" Background="{TemplateBinding Background}" >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="Highlighted" To="Normal" GeneratedDuration="0:0:0.3">
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Background.Color" From="#FF2E2E2E" To="#FF2DB200" Duration="0:0:0.3" AutoReverse="False"/>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Background.Color" From="#FF2DB200" To="#FF2E2E2E" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Image x:Name="IconPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}" RenderTransformOrigin="0.5 0.5" Stretch="None" Margin="0 7 0 5"/>
+
+                            <TextBlock x:Name="HeaderPresente" Grid.Row="1" Text="{TemplateBinding Header}" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="3 0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="IconItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="{StaticResource MenuItemForeground}" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="HeaderStates">
+                                    <VisualState x:Name="EmptyHeader">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderPresenter" Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="VisibleHeader" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="Highlighted" To="Normal" GeneratedDuration="0:0:0.2" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <DoubleAnimation To="1.2" Duration="0:0:0.3" Storyboard.TargetName="IconPresenter" Storyboard.TargetProperty="(Image.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" />
+                                            <DoubleAnimation To="1.2" Duration="0:0:0.3" Storyboard.TargetName="IconPresenter" Storyboard.TargetProperty="(Image.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <ContentPresenter x:Name="HeaderPresenter" Margin="0 0 0 5" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" />
+
+                            <Border Grid.Row="1" Width="162" Height="102" BorderThickness="1" BorderBrush="{StaticResource ImageBorder}">
+                                <Border>
+                                    <Border.Clip>
+                                        <RectangleGeometry Rect="0 0 160 100" />
+                                    </Border.Clip>
+                                    <Image x:Name="IconPresenter" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" Source="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}" RenderTransformOrigin="0.5 0.5">
+                                        <Image.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Image.RenderTransform>
+                                    </Image>
+                                </Border>
+                            </Border>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TopLevelItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Height" Value="40" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Highlighted">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HighlightVisual" Storyboard.TargetProperty="Opacity">
+                                                <LinearDoubleKeyFrame KeyTime="00:00:00.1" Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="HighlightVisual" Fill="{StaticResource TopLevelItemMouseOver}" Opacity="0" />
+                            <TextBlock x:Name="Text" Text="{TemplateBinding Header}" TextDecorations="None" Foreground="{StaticResource TopLevelItemForeground}" Margin="14 0 35 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold"/>
+                            <Path x:Name="DropDownArrow" Fill="{StaticResource TopLevelItemForeground}" Data="M0,0 L6,0 L3,4 z" Stretch="Fill" Width="7" Height="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="8 0 20 0" />
+
+                            <Popup x:Name="PART_Popup" HorizontalOffset="-1" VerticalOffset="-1" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True">
+                                <Grid Width="{TemplateBinding DropDownWidth}" Height="{TemplateBinding DropDownHeight}">
+                                    <Grid x:Name="PopupContentElement">
+                                        <Border x:Name="PopupContent" Background="{StaticResource TopLevelPopupBackground}" Margin="1 1 0 0">
+                                            <Grid>
+                                                <ScrollViewer x:Name="PART_ScrollViewer" telerik:SharedSizeScope.IsSharedSizeScope="True" Background="{StaticResource TopLevelPopupBackground}" BorderThickness="0">
+                                                    <Grid>
+                                                        <ItemsPresenter />
+                                                    </Grid>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TopLevelSettingsItemStyle" TargetType="telerik:RadMenuItem">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenuItem">
+                        <Grid HorizontalAlignment="Right" Background="Transparent">
+                            <StackPanel Orientation="Horizontal">
+                                <Grid Margin="0 1 0 0" VerticalAlignment="Center">
+                                    <Path Data="F1M511.6665,467.2715C509.6575,468.2995,507.1905,467.5095,506.1635,465.5005C505.1325,463.4915,505.9265,461.0325,507.9355,460.0005C509.9445,458.9745,512.4095,459.7695,513.4375,461.7745C514.4695,463.7825,513.6775,466.2405,511.6665,467.2715 M518.5605,462.8565L517.8825,460.0155L515.3935,460.2825C515.1415,459.8585,514.8505,459.4725,514.5225,459.1275L515.4435,456.8975L512.9515,455.3645L511.3965,457.2925C510.8575,457.1515,510.3025,457.0815,509.7415,457.0775L508.7675,454.9135L505.9375,455.6715L506.2705,458.0665C505.8795,458.3075,505.5215,458.5835,505.2025,458.8835L503.0535,458.0005L501.5175,460.4875L503.3665,461.9795C503.2315,462.4865,503.1515,463.0135,503.1415,463.5435L501.0335,464.4175L501.7125,467.2605L504.0635,467.0085C504.3355,467.4795,504.6545,467.9065,505.0235,468.2815L504.1575,470.3765L506.6475,471.9095L508.1425,470.0605C508.6495,470.1855,509.1655,470.2555,509.6925,470.2615L510.5785,472.3905L513.4255,471.7135L513.1675,469.2965C513.6075,469.0285,514.0145,468.7215,514.3635,468.3765L516.5455,469.2745L518.0815,466.7855L516.1495,465.2305C516.2665,464.7565,516.3315,464.2705,516.3385,463.7805z" Fill="White" Height="17" Stretch="Fill" Width="17" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top"/>
+                                    <Path Data="F1M511.1318,462.9678C511.5098,463.7018,511.2198,464.6068,510.4848,464.9818C509.7488,465.3598,508.8438,465.0688,508.4658,464.3338C508.0888,463.5948,508.3798,462.6978,509.1148,462.3178C509.8548,461.9418,510.7598,462.2318,511.1318,462.9678" Fill="White" Height="3" Stretch="Fill" Width="3" HorizontalAlignment="Right" Margin="0 7 7 0" VerticalAlignment="Top"/>
+                                </Grid>
+
+                                <TextBlock x:Name="Text" Text="{TemplateBinding Header}" TextDecorations="None" Foreground="White" Margin="11 0 16 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold"/>
+                            </StackPanel>
+
+                            <Popup x:Name="PART_Popup" HorizontalOffset="-66" VerticalOffset="-1" IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True">
+                                <Grid Width="{TemplateBinding DropDownWidth}" Height="{TemplateBinding DropDownHeight}">
+                                    <Grid x:Name="PopupContentElement">
+
+                                        <Border x:Name="PopupContent"  Margin="1 20 0 0" BorderBrush="{StaticResource SettingsPopupBorder}" BorderThickness="1">
+                                            <Grid>
+
+                                                <ScrollViewer x:Name="PART_ScrollViewer" telerik:SharedSizeScope.IsSharedSizeScope="True" BorderThickness="0">
+                                                    <Grid>
+                                                        <ItemsPresenter Margin="{TemplateBinding Padding}" />
+                                                    </Grid>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Border>
+
+                                        <Path Data="M722.8,57.2 L715.4,46.5 L708,57.2" Width="14" Height="10" StrokeThickness="1" Stroke="{StaticResource SettingsPopupBorder}" Fill="White" Stretch="Fill" VerticalAlignment="Top" Margin="0 12 0 0"/>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SeparatorStyle" TargetType="telerik:RadMenuSeparatorItem">
+            <Setter Property="Margin" Value="5 50 5 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid Width="2">
+                            <Border BorderThickness="1 0 0 0" HorizontalAlignment="Left" BorderBrush="{StaticResource MenuItemSeparatorDark}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SettingsMenuStyle" TargetType="telerik:RadMenu">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource TopLevelSettingsItemStyle}" />
+            <Setter Property="ClickToOpen" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenu">
+                        <ItemsPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuStyle" TargetType="telerik:RadMenu">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource TopLevelItemStyle}" />
+            <Setter Property="ClickToOpen" Value="False" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadMenu">
+                        <Border Background="{StaticResource MenuBackground}">
+                            <ItemsPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonStyle" TargetType="telerik:RadButton">
+            <Setter Property="Background" Value="#FF2DB200" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="25 0" />
+            <Setter Property="MinHeight" Value="40" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadButton">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.3">
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Background.Color" From="#FF2E2E2E" To="#FF2DB200" Duration="0:0:0.3" AutoReverse="False"/>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Background.Color" From="#FF2DB200" To="#FF2E2E2E" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <TextBlock x:Name="TextElement" Text="{TemplateBinding Content}" TextDecorations="None" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Width="780" Margin="0 50 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border x:Name="Border" Grid.RowSpan="3" Background="White" />
+        <Grid x:Name="Header" Background="{StaticResource HeaderBackground}" Height="56">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Margin="12 3 0 12" TextOptions.TextHintingMode="Animated" Text="UI for Silverlight &amp; WPF" Foreground="{StaticResource HeaderTitle}" FontSize="18" FontFamily="Metric Bold" VerticalAlignment="Bottom" />
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                <telerik:RadMenu HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SettingsMenuStyle}">
+                    <telerik:RadMenuItem Header="Settings">
+                        <telerik:RadMenuItem.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </telerik:RadMenuItem.ItemsPanel>
+                        <telerik:RadMenuGroupItem>
+                            <telerik:RadMenuItem Header="Edit Article" Icon="/Menu;component/Images/Customization/Icon1.png" Style="{StaticResource MenuButtonItemStyle}" />
+                        </telerik:RadMenuGroupItem>
+                        <telerik:RadMenuGroupItem Grid.Column="1">
+                            <telerik:RadMenuItem Header="Video Tutorials" Icon="/Menu;component/Images/Customization/Icon2.png" Style="{StaticResource MenuButtonItemStyle}" />
+                        </telerik:RadMenuGroupItem>
+
+                        <telerik:RadMenuGroupItem Grid.Column="2" Margin="0 1 0 0">
+                            <telerik:RadMenuItem Header="Support" Icon="/Menu;component/Images/Customization/Icon3.png" Style="{StaticResource MenuButtonItemStyle}" />
+                        </telerik:RadMenuGroupItem>
+
+                        <telerik:RadMenuGroupItem Grid.Row="1" Grid.ColumnSpan="3" Margin="0 1 0 0">
+                            <telerik:RadMenuItem Header="Upload Photos" Icon="/Menu;component/Images/Customization/Icon4.png" Style="{StaticResource SettingsSubItemsStyle}" Margin="0 16" />
+
+                        </telerik:RadMenuGroupItem>
+                        <telerik:RadMenuGroupItem Grid.Row="2" Grid.ColumnSpan="3" BorderThickness="0">
+                            <telerik:RadMenuItem Header="Review Articles" Style="{StaticResource SettingsSubItemsStyle}" Margin="0 16"/>
+                        </telerik:RadMenuGroupItem>
+                    </telerik:RadMenuItem>
+                </telerik:RadMenu>
+            </StackPanel>
+        </Grid>
+        <!--
+            This is the Styled RadMenu at the top.
+            The ItemClick event allows click on all menu items to be handled at a single point.
+        -->
+        <telerik:RadMenu x:Name="Menu" Grid.Row="1" Style="{StaticResource MenuStyle}" ItemClick="Menu_ItemClick">
+            <!-- The first button in the menu. -->
+            <telerik:RadMenuItem Header="CONTROLS">
+                <telerik:RadMenuItem.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="180" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </telerik:RadMenuItem.ItemsPanel>
+
+                <telerik:RadMenuGroupItem Header="DATA MANAGEMENT" Style="{StaticResource MenuGroupItemStyle}" Grid.RowSpan="2">
+                    <telerik:RadMenuItem Header="CollectionNavigator" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Data Virtualization" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DataFilter" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DataForm" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Data Pager" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DataServiceDataSource" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DomainDataSource" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ExpressionEditor" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Grid View" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="List Box" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="PivotGrid" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="TreeListView" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+                <telerik:RadMenuGroupItem Header="DATA VISUALIZATION" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="1" Grid.Row="0">
+                    <telerik:RadMenuItem Header="Barcode" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="BulletGraph" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Chart" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ChartView" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DataBar" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Diagrams" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="GanttView" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="HeatMap" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Gauge" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Map" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="SCHEDULING" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="1" Grid.Row="1" Margin="0 14 0 0">
+                    <telerik:RadMenuItem Header="Calendar" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DateTimePicker" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ScheduleView" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="EDITORS" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="2" Grid.RowSpan="2" >
+                    <telerik:RadMenuItem Header="AutoCompleteBox" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Calculator" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ColorEditor" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ComboBox" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="MaskedInput" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Numeric UpDown" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Rating" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="RichTextBox" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Slider" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="SpellChecker" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Spreadsheet" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="WatermarkTextBox" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="NAVIGATION" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="3" Grid.Row="0">
+                    <telerik:RadMenuItem Header="Barcode" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="BulletGraph" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Chart" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ChartView" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DataBar" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Diagrams" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="GanttView" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="HeatMap" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Gauge" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Map" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="MEDIA" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="3" Grid.Row="1" Margin="0 14 0 0">
+                    <telerik:RadMenuItem Header="ImageEditor" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="MediaPlayer" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="LAYOUT" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="4" Grid.RowSpan="2">
+                    <telerik:RadMenuItem Header="Docking" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="HTML Placeholder" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="TileList" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="TileView" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="TransitionControl" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="VirtualizingWrapPanel" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Expander" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="Window" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuGroupItem Header="INTERACTIVITY &amp; UX" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="4" Grid.RowSpan="2" VerticalAlignment="Bottom" Margin="0 0 0 10">
+                    <telerik:RadMenuItem Header="BusyIndicator" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="DragAndDrop" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="PersistenceFramework" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ProgressBar" Style="{StaticResource LinkItemStyle}" />
+                    <telerik:RadMenuItem Header="ToolTip" Style="{StaticResource LinkItemStyle}" />
+                </telerik:RadMenuGroupItem>
+            </telerik:RadMenuItem>
+
+            <telerik:RadMenuItem Header="MOST POPULAR">
+                <telerik:RadMenuItem.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </telerik:RadMenuItem.ItemsPanel>
+
+                <telerik:RadMenuGroupItem Header="MOST POPULAR CONTROLS" Style="{StaticResource MenuGroupItemStyle}" >
+
+                    <telerik:RadListBox x:Name="ControlsListBox" BorderThickness="0" Background="Transparent" ItemContainerStyle="{StaticResource LinkListBoxItemStyle}" DataContext="{StaticResource PopularControlsViewModel}"
+                                        ItemsSource="{Binding PopularControls}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SnapsToDevicePixels="True">
+                    </telerik:RadListBox>
+
+                    <telerik:RadButton Content="View All Controls" Style="{StaticResource CustomButtonStyle}" Margin="0 16 0 0" CommandParameter="http://demos.telerik.com/wpf/" Command="{Binding NavigateCommand}" />
+                </telerik:RadMenuGroupItem>
+
+
+                <telerik:RadMenuGroupItem Header="" Style="{StaticResource MenuGroupItemStyle}" Grid.Column="1" Background="{StaticResource SubmenuDarkBackground}" VerticalAlignment="Top" DataContext="{StaticResource PopularControlsViewModel}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="80"/>
+                        </Grid.RowDefinitions>
+
+                        <telerik:RadButton Style="{StaticResource LeftArrowButton}" Command="{Binding SelectPrevControlCommand}"/>
+                        <telerik:RadTransitionControl x:Name="MenuPresenter" Content="{Binding SelectedItem, ElementName=ControlsListBox}" Grid.Column="1"
+                                                      Duration="0:0:0.9" Margin="0 -28 0 0" UseLayoutRounding="False">
+                            <telerik:RadTransitionControl.Transition>
+                                <local:TransitionSet>
+                                    <local:TransitionSet.BackTransition>
+                                        <telerik:SlideAndZoomTransition SlideDirection="LeftToRight" />
+                                    </local:TransitionSet.BackTransition>
+                                    <local:TransitionSet.ForwardTransition>
+                                        <telerik:SlideAndZoomTransition SlideDirection="RightToLeft" />
+                                    </local:TransitionSet.ForwardTransition>
+                                </local:TransitionSet>
+                            </telerik:RadTransitionControl.Transition>
+                            <telerik:RadTransitionControl.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <TextBlock Text="{Binding DisplayName}" Margin="0 0 0 18" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="14" />
+                                        <Border BorderThickness="1" BorderBrush="{StaticResource DarkImageBorder}">
+                                            <Image Source="{Binding DisplayImage}" VerticalAlignment="Top" />
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadTransitionControl.ContentTemplate>
+                        </telerik:RadTransitionControl>
+
+                        <telerik:RadListBox x:Name="ListboxPager" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding PopularControls}" Background="Transparent" Margin="0 10 0 0" ItemContainerStyle="{StaticResource PagerItemStyle}"
+                                            SelectedItem="{Binding SelectedItem, ElementName=ControlsListBox, Mode=TwoWay}" HorizontalAlignment="Center" BorderThickness="0">
+
+                            <telerik:RadListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <telerik:RadWrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </telerik:RadListBox.ItemsPanel>
+                        </telerik:RadListBox>
+
+                        <telerik:RadButton Style="{StaticResource RightArrowButton}" Grid.Column="2" Command="{Binding SelectNextControlCommand}" />
+                    </Grid>
+                </telerik:RadMenuGroupItem>
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="NEW FEATURES">
+                <!-- The custom Grid in the ItemsPanel allows us to arrange the child items by rows and columns. -->
+                <telerik:RadMenuItem.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </telerik:RadMenuItem.ItemsPanel>
+                <!--
+                    The RadMenuGroupItem present group of items.
+                    They do not open their children in Popups so they are useful for arrangement.
+                    These particular groups form the columns in the first menu item.
+                -->
+                <telerik:RadMenuGroupItem Header="NEW CONTROLS" Style="{StaticResource MenuGroupItemStyle}">
+                    <telerik:RadMenuGroupItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid Height="415">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </telerik:RadMenuGroupItem.ItemsPanel>
+
+                    <telerik:RadMenuItem Grid.Row="0" Icon="/Menu;component/Images/Customization/Menu_RadialMenu.png" Style="{StaticResource IconItemStyle}" Header="Radial Menu" Tag="Radial Menu" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/products/wpf/radialmenu.aspx" />
+                    <telerik:RadMenuItem Grid.Row="0" Grid.Column="1" Icon="/Menu;component/Images/Customization/Menu_WordsProcessing.png" Style="{StaticResource IconItemStyle}" Header="WordsProcessing" Tag="WordsProcessing" Margin="23 0 0 0" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/products/wpf/words-processing.aspx" />
+                    <TextBlock Grid.Row="1" Text="RadRadialMenu for Silverlight is a touch-friendly circular ..." Style="{StaticResource ParagraphStyle}" Margin="0 4 0 0" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="With the official release of RadWordsProcessing, Telerik..." Style="{StaticResource ParagraphStyle}" Margin="23 4 0 0" />
+                    <telerik:RadMenuItem Grid.Row="2" Icon="/Menu;component/Images/Customization/Menu_ToolTip.png" Style="{StaticResource IconItemStyle}" Header="ToolTip" Tag="ToolTip" Margin="0 7 0 0" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/products/wpf/tooltip.aspx" />
+                    <telerik:RadButton Grid.Row="2" Grid.Column="1" Content="Launch demos" Style="{StaticResource CustomButtonStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 31 0 0" CommandParameter="http://demos.telerik.com/wpf/" Command="{Binding NavigateCommand}"/>
+                    <TextBlock Grid.Row="3" Text="RadToolTip for Silverlight enables you to easily set up... " Style="{StaticResource ParagraphStyle}" Margin="0 4 0 0"/>
+                </telerik:RadMenuGroupItem>
+                <telerik:RadMenuSeparatorItem Grid.Column="1" Style="{StaticResource SeparatorStyle}" />
+
+                <!--
+                    RadMenuGroupItems also can host non menu items such as TextBlocks or other controls.
+                    They do not wrap them in additional containers like the RadMenuItems does.
+                -->
+                <telerik:RadMenuGroupItem Header="NEW FEATURES" Grid.Column="2" Style="{StaticResource MenuGroupItemStyle}" Margin="2 0 8 15">
+                    <telerik:RadMenuGroupItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </telerik:RadMenuGroupItem.ItemsPanel>
+
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Text="PivotGrid" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="Use new Ragged Hierarchy support for RadPivotGrid..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="24 0 0 0" MaxWidth="158">
+                        <TextBlock Text="PdfProcessing" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="We have enhanced the document processing ..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <telerik:RadMenuItem Grid.Row="1" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radpivotgrid/overview.html" />
+                    <telerik:RadMenuItem Grid.Row="1" Grid.Column="1" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Margin="24 3 0 12" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radpdfprocessing/overview"/>
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Text="ChartView" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="The new series type RangeSplineSeries..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="24 0 0 0" MaxWidth="158">
+                        <TextBlock Text="TileList" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="Easily manipulate the look and feel of the groups ..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <telerik:RadMenuItem Grid.Row="3" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radchartview/overview"/>
+                    <telerik:RadMenuItem Grid.Row="3" Grid.Column="1" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Margin="24 3 0 12" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radtilelist/overview"/>
+
+
+                    <StackPanel Grid.Row="4">
+                        <TextBlock Text="Spreadsheet" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="The new series type RangeSplineSeries..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.Column="1" Margin="24 0 0 0" MaxWidth="158">
+                        <TextBlock Text="ToolBar" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="RadToolBar comes with a new API that enables..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <telerik:RadMenuItem Grid.Row="5" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radspreadsheet/overview" />
+                    <telerik:RadMenuItem Grid.Row="5" Grid.Column="1" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Margin="24 3 0 12" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radtoolbar/overview"/>
+
+                    <StackPanel Grid.Row="6">
+                        <TextBlock Text="RichTextBox" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="Enable users of your application to implement ..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Grid.Column="1" Margin="24 0 0 0" MaxWidth="158">
+                        <TextBlock Text="PropertyGrid" Style="{StaticResource SubHeader}" />
+                        <TextBlock Text="New capabilities in RadPropertyGrid include..." Style="{StaticResource ParagraphStyle}" />
+                    </StackPanel>
+
+                    <telerik:RadMenuItem Grid.Row="7" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radrichtextbox/overview.html" />
+                    <telerik:RadMenuItem Grid.Row="7" Grid.Column="1" Header="Read More" Style="{StaticResource MoreLinkItemStyle}" Margin="24 3 0 12" Command="{Binding NavigateCommand}" CommandParameter="http://docs.telerik.com/devtools/wpf/controls/radpropertygrid/overview.html" />
+
+                </telerik:RadMenuGroupItem>
+            </telerik:RadMenuItem>
+
+            <telerik:RadMenuItem Header="DEMOS">
+                <telerik:RadMenuItem.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </telerik:RadMenuItem.ItemsPanel>
+                <telerik:RadMenuGroupItem Header="DEMOS" Style="{StaticResource MenuGroupItemStyle}">
+                    <telerik:RadMenuItem Header="UI for Silverlight" Icon="/Menu;component/Images/Customization/Image4.png" Style="{StaticResource IconItemStyle}" />
+                    <telerik:RadMenuItem Header="UI for WPF" Icon="/Menu;component/Images/Customization/Image5.png" Style="{StaticResource IconItemStyle}" Margin="0 19 0 0" />
+                </telerik:RadMenuGroupItem>
+
+                <telerik:RadMenuSeparatorItem Grid.Column="1" Style="{StaticResource SeparatorStyle}" />
+
+                <telerik:RadMenuGroupItem Header="SAMPLE APPLICATIONS" Grid.Column="2" Style="{StaticResource MenuGroupItemStyle}">
+                    <telerik:RadMenuItem Header="SDK Sample Browser" Style="{StaticResource LinkItemStyle}" CommandParameter="http://demos.telerik.com/xaml-sdkbrowser/" Command="{Binding NavigateCommand}" />
+                    <telerik:RadMenuItem Header="Sales Dashboard" Style="{StaticResource LinkItemStyle}" CommandParameter="http://demos.telerik.com/wpf/salesmanagerdashboard/" Command="{Binding NavigateCommand}" />
+                    <telerik:RadMenuItem Header="Executive Dashboard" Style="{StaticResource LinkItemStyle}" CommandParameter="http://demos.telerik.com/wpf/executivedashboard/" Command="{Binding NavigateCommand}" />
+                    <telerik:RadMenuItem Header="CRM" Style="{StaticResource LinkItemStyle}" CommandParameter="http://demos.telerik.com/wpf/crm/" Command="{Binding NavigateCommand}" />
+                    <telerik:RadMenuItem Header="Themes Generator" Style="{StaticResource LinkItemStyle}" CommandParameter="http://demos.telerik.com/silverlight/Themesgenerator/" Command="{Binding NavigateCommand}" />
+                </telerik:RadMenuGroupItem>
+
+
+                <telerik:RadMenuGroupItem Header="" Grid.Column="3" Style="{StaticResource MenuGroupItemStyle}" Background="{StaticResource SubmenuDarkBackground}">
+                    <StackPanel Margin="5 -29 5 0">
+                        <TextBlock Text="SDK Sample Browser" Foreground="{StaticResource MenuItemForeground}" FontSize="14" FontFamily="Segoe UI Semibold"/>
+
+                        <telerik:RadTransitionControl x:Name="SDKPresenter" Content="{Binding SelectedItem, ElementName=SDKListboxPager}"
+                                                      Duration="0:0:1" Margin="0 10 0 0">
+                            <telerik:RadTransitionControl.Transition>
+                                <local:TransitionSet>
+                                    <local:TransitionSet.BackTransition>
+                                        <telerik:SlideAndZoomTransition SlideDirection="LeftToRight" />
+                                    </local:TransitionSet.BackTransition>
+                                    <local:TransitionSet.ForwardTransition>
+                                        <telerik:SlideAndZoomTransition SlideDirection="RightToLeft" />
+                                    </local:TransitionSet.ForwardTransition>
+                                </local:TransitionSet>
+                            </telerik:RadTransitionControl.Transition>
+                            <telerik:RadTransitionControl.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <Border BorderThickness="1" BorderBrush="{StaticResource DarkImageBorder}">
+                                            <Image Source="{Binding DisplayImage}" VerticalAlignment="Top" />
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadTransitionControl.ContentTemplate>
+                        </telerik:RadTransitionControl>
+
+                        <telerik:RadListBox x:Name="SDKListboxPager" ItemsSource="{Binding SDKControls}" Background="Transparent" Margin="0 10 0 0" ItemContainerStyle="{StaticResource PagerItemStyle}" DataContext="{StaticResource SDKViewModel}"
+                                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HorizontalAlignment="Center" BorderThickness="0">
+                            <telerik:RadListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <telerik:RadWrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </telerik:RadListBox.ItemsPanel>
+                        </telerik:RadListBox>
+
+                    </StackPanel>
+                </telerik:RadMenuGroupItem>
+            </telerik:RadMenuItem>
+
+        </telerik:RadMenu>
+        <!--
+            You would normally display a custom UserControl in this area.
+            The Content of the RadTransitionControl is changed in the Menu_ItemClick handler.
+
+            Please note that if you set the Content of the RadTransitionControl to an UserControl or UIElement
+            you will have to remove the ContentTemplate set below.
+        -->
+        <telerik:RadTransitionControl x:Name="PagePresenter" Grid.Row="2" Content="Customization example" Duration="0:0:0.5">
+            <telerik:RadTransitionControl.Transition>
+                <telerik:FadeTransition />
+            </telerik:RadTransitionControl.Transition>
+            <telerik:RadTransitionControl.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="20" Text="{Binding}" Style="{StaticResource HeaderStyle}" FontWeight="Normal" />
+                </DataTemplate>
+            </telerik:RadTransitionControl.ContentTemplate>
+        </telerik:RadTransitionControl>
+
+    </Grid>
+</UserControl>

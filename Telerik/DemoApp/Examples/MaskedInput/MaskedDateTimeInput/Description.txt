@@ -1,0 +1,1 @@
+﻿RadMaskedDateTimeInput allows you to display formatted DateTime values. There are variety of options available to format and display a part or the full DateTime value.

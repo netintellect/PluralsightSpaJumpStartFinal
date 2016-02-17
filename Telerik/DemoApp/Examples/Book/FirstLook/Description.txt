@@ -1,0 +1,2 @@
+﻿RadBook allows you to create a book-like experience while browsing through various types of content - media, images, custom controls and documents. The control is part of the Telerik.Windows.Navigation assembly. <br/>
+This example demonstrates the main RadBook features - built-in animations and shadows, keyboard navigation, navigation commands (FirstPage, PreviousPage, NextPage and LastPage) and hard pages.

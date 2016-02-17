@@ -1,0 +1,493 @@
+<UserControl x:Class="Telerik.Windows.Examples.Sparklines.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:example="clr-namespace:Telerik.Windows.Examples.Sparklines.Configurator"
+		xmlns:system="clr-namespace:System;assembly=System" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		xmlns:primitives="clr-namespace:Telerik.Windows.Controls.RibbonView.Primitives;assembly=Telerik.Windows.Controls.RibbonView"
+		mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center" d:DesignHeight="500"
+		d:DesignWidth="800">
+    <UserControl.Resources>
+        <ItemsControl x:Key="previewArray">
+            <sys:Int32>-30</sys:Int32>
+            <sys:Int32>-20</sys:Int32>
+            <sys:Int32>-10</sys:Int32>
+            <sys:Int32>0</sys:Int32>
+            <sys:Int32>10</sys:Int32>
+            <sys:Int32>20</sys:Int32>
+            <sys:Int32>30</sys:Int32>
+        </ItemsControl >
+
+        <example:ExampleViewModel x:Key="dataContext" Rows="10" Columns="4" NumberOfItemsPerSparkline="12" />
+        <ControlTemplate x:Key="Presenter" TargetType="telerik:RadMenuItem">
+            <ContentPresenter Content="{TemplateBinding Header}" />
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Width="784" Height="484" ShowGridLines="True">
+        <Grid x:Name="allSparklinesGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <telerik:RadRibbonView Grid.Row="0" ApplicationButtonVisibility="Collapsed" SelectedIndex="1"
+						ApplicationName="Telerik Sparklines">
+                <telerik:RadRibbonView.WindowTitleStyle>
+                    <Style TargetType="primitives:WindowTitle">
+                        <Setter Property="FontSize" Value="12" />
+                    </Style>
+                </telerik:RadRibbonView.WindowTitleStyle>
+                <telerik:RadRibbonTab Header="Home" IsEnabled="False" />
+                <telerik:RadRibbonTab Header="Design" IsSelected="True">
+                    <telerik:RadRibbonGroup Header="Show">
+                        <Grid x:Name="checkboxGrid" Margin="0,3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="3" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="3" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="3" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Content="High Point"
+										IsChecked="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline High Points"
+										telerik:ScreenTip.Description="Highlight the highest points of data."
+										Grid.Row="0" Grid.Column="0" />
+                            <CheckBox Content="Low Point"
+										IsChecked="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline Low Points"
+										telerik:ScreenTip.Description="Highlight the lowest points of data."
+										Grid.Row="1" Grid.Column="0" />
+                            <CheckBox Content="Negative Points"
+										IsChecked="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline Negative Points"
+										telerik:ScreenTip.Description="Highlight the negative points of data."
+										Grid.Row="2" Grid.Column="0" />
+
+                            <CheckBox Content="First Point"
+										IsChecked="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline First Point"
+										telerik:ScreenTip.Description="Highlight the first point of data." Grid.Row="0"
+										Grid.Column="2" />
+                            <CheckBox Content="Last Point"
+										IsChecked="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline Last Point"
+										telerik:ScreenTip.Description="Highlight the last point of data." Grid.Row="1"
+										Grid.Column="2" />
+                            <CheckBox Content="Markers"
+										IsChecked="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Sparkline Markers"
+										telerik:ScreenTip.Description="Highlight each point in each line sparkline."
+										Grid.Row="2" Grid.Column="2" />
+
+                            <CheckBox Content="Normal Range"
+										IsChecked="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle the normal range"
+										telerik:ScreenTip.Description="Highlight the normal range." Grid.Row="0"
+										Grid.Column="4" />
+                            <CheckBox Content="Axis"
+										IsChecked="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+										telerik:ScreenTip.Title="Toggle Axis"
+										telerik:ScreenTip.Description="Highlight the axis." Grid.Row="1" Grid.Column="4" />
+                            <CheckBox Content="Show All" Click="CheckBox_Click"
+										telerik:ScreenTip.Title="Toggle All additional elements"
+										telerik:ScreenTip.Description="Highlight all" Grid.Row="2" Grid.Column="4" />
+                        </Grid>
+                    </telerik:RadRibbonGroup>
+                    <telerik:RadRibbonGroup Header="Custom Colors">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <telerik:RadRibbonSplitButton Text="Sparkline Color"
+										telerik:ScreenTip.Title="Sparkline Color"
+										telerik:ScreenTip.Description="Specify the color of the sparklines."
+										Grid.Row="0">
+                                <telerik:RadRibbonSplitButton.DropDownContent>
+                                    <telerik:RadColorSelector SelectedColorChanged="SparklineColorChanged" />
+                                </telerik:RadRibbonSplitButton.DropDownContent>
+                            </telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton Text="Marker Color"
+										telerik:ScreenTip.Title="Sparkline Color"
+										telerik:ScreenTip.Description="Specify the color of the sparklines."
+										Grid.Row="1">
+                                <telerik:RadRibbonSplitButton.DropDownContent>
+
+                                    <telerik:RadContextMenu>
+                                        <telerik:RadMenuItem Header="Negative Points">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="NegativeColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Header="Markers">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="MarkerColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem IsSeparator="True" />
+                                        <telerik:RadMenuItem Header="High Point">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="HighPointColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Header="Low Point">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="LowPointColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Header="First Point">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="FirstPointColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Header="Last Point">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="LastPointColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                    </telerik:RadContextMenu>
+                                </telerik:RadRibbonSplitButton.DropDownContent>
+                            </telerik:RadRibbonSplitButton>
+                            <telerik:RadRibbonSplitButton Text="Axis &amp; Range Color"
+										telerik:ScreenTip.Title="Sparkline Axis"
+										telerik:ScreenTip.Description="Changes the visibility and the stroke of each sparkline axis."
+										Grid.Row="2">
+                                <telerik:RadRibbonSplitButton.DropDownContent>
+                                    <telerik:RadContextMenu>
+                                        <telerik:RadMenuItem Header="Axis Stroke">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="AxisColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Header="Normal Range Color">
+                                            <telerik:RadMenuItem Template="{StaticResource Presenter}"
+														SubmenuHeaderTemplateKey="{StaticResource Presenter}"
+														SubmenuItemTemplateKey="{StaticResource Presenter}">
+                                                <telerik:RadMenuItem.Header>
+                                                    <telerik:RadColorSelector
+																SelectedColorChanged="NormalRangeColorChanged" />
+                                                </telerik:RadMenuItem.Header>
+                                            </telerik:RadMenuItem>
+                                        </telerik:RadMenuItem>
+                                    </telerik:RadContextMenu>
+                                </telerik:RadRibbonSplitButton.DropDownContent>
+                            </telerik:RadRibbonSplitButton>
+                        </Grid>
+                    </telerik:RadRibbonGroup>
+
+                    <telerik:RadRibbonGroup Header="Styles" telerik:ScreenTip.Title="Styles"
+								telerik:ScreenTip.Description="Show the Styles window.">
+                        <telerik:RadRibbonGallery PopupLaunchButtonVisibility="Collapsed" ItemWidth="62"
+									ItemHeight="62" ViewportWidth="310" ViewportHeight="70">
+
+                            <telerik:RadGalleryItem>
+                                <telerik:RadLinearSparkline
+											ItemsSource="{Binding Items, Source={StaticResource previewArray}}"
+											ShowAxis="True" ShowFirstPointIndicator="True" ShowLastPointIndicator="True"
+											ShowLowPointIndicators="True" ShowHighPointIndicators="True"
+											ShowNegativePointIndicators="True" ShowMarkers="True" AutoRange="False"
+											MaxYValue="60" MinYValue="-60" Width="58" Height="52" Margin="0,2" />
+                            </telerik:RadGalleryItem>
+                            <telerik:RadGalleryItem>
+                                <telerik:RadAreaSparkline
+											ItemsSource="{Binding Items, Source={StaticResource previewArray}}"
+											ShowAxis="True" ShowFirstPointIndicator="True" ShowLastPointIndicator="True"
+											ShowLowPointIndicators="True" ShowHighPointIndicators="True"
+											ShowNegativePointIndicators="True" ShowMarkers="True" AutoRange="False"
+											MaxYValue="60" MinYValue="-60" Width="58" Height="52" Margin="0,2" />
+                            </telerik:RadGalleryItem>
+                            <telerik:RadGalleryItem>
+                                <telerik:RadScatterSparkline
+											ItemsSource="{Binding Items, Source={StaticResource previewArray}}"
+											ShowAxis="True" ShowFirstPointIndicator="True" ShowLastPointIndicator="True"
+											ShowLowPointIndicators="True" ShowHighPointIndicators="True"
+											ShowNegativePointIndicators="True" AutoRange="False" MaxYValue="60"
+											MinYValue="-60" Width="58" Height="52" Margin="0,2" />
+                            </telerik:RadGalleryItem>
+                            <telerik:RadGalleryItem>
+                                <telerik:RadColumnSparkline
+											ItemsSource="{Binding Items, Source={StaticResource previewArray}}"
+											ShowAxis="True" ShowFirstPointIndicator="True" ShowLastPointIndicator="True"
+											ShowLowPointIndicators="True" ShowHighPointIndicators="True"
+											ShowNegativePointIndicators="True" AutoRange="False" MaxYValue="60"
+											MinYValue="-60" Width="58" Height="52" Margin="0,2" />
+                            </telerik:RadGalleryItem>
+                            <telerik:RadGalleryItem>
+                                <telerik:RadWinLossSparkline
+											ItemsSource="{Binding Items, Source={StaticResource previewArray}}"
+											ShowAxis="True" ShowFirstPointIndicator="True" ShowLastPointIndicator="True"
+											ShowLowPointIndicators="True" ShowHighPointIndicators="True"
+											ShowNegativePointIndicators="True" AutoRange="False" MaxYValue="60"
+											MinYValue="-60" Width="58" Height="52" Margin="0,2" />
+                            </telerik:RadGalleryItem>
+                        </telerik:RadRibbonGallery>
+                    </telerik:RadRibbonGroup>
+                </telerik:RadRibbonTab>
+            </telerik:RadRibbonView>
+            <Grid x:Name="sparklinesGrid" Grid.Row="1" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <telerik:RadLinearSparkline Grid.Row="0" Grid.Column="0"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadLinearSparkline Grid.Row="0" Grid.Column="1"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadLinearSparkline Grid.Row="0" Grid.Column="2"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadLinearSparkline Grid.Row="0" Grid.Column="3"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadAreaSparkline Grid.Row="1" Grid.Column="0"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadAreaSparkline Grid.Row="1" Grid.Column="1"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadAreaSparkline Grid.Row="1" Grid.Column="2"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadAreaSparkline Grid.Row="1" Grid.Column="3"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowMarkers="{Binding Path=ShowMarkers, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadScatterSparkline Grid.Row="2" Grid.Column="0"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadScatterSparkline Grid.Row="2" Grid.Column="1"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadScatterSparkline Grid.Row="2" Grid.Column="2"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadScatterSparkline Grid.Row="2" Grid.Column="3"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNormalRange="{Binding Path=ShowNormalRange, Source={StaticResource dataContext}, Mode=TwoWay}"
+							NormalRangeBottom="-20" NormalRangeTop="20"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadColumnSparkline Grid.Row="3" Grid.Column="0"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadColumnSparkline Grid.Row="3" Grid.Column="1"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadColumnSparkline Grid.Row="3" Grid.Column="2"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadColumnSparkline Grid.Row="3" Grid.Column="3"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadWinLossSparkline Grid.Row="4" Grid.Column="0"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadWinLossSparkline Grid.Row="4" Grid.Column="1"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadWinLossSparkline Grid.Row="4" Grid.Column="2"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+                <telerik:RadWinLossSparkline Grid.Row="4" Grid.Column="3"
+							ItemsSource="{Binding Path=Data, Source={StaticResource dataContext}}"
+							ShowAxis="{Binding Path=ShowAxis, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowFirstPointIndicator="{Binding Path=ShowFirstPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLastPointIndicator="{Binding Path=ShowLastPointIndicator, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowLowPointIndicators="{Binding Path=ShowLowPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowHighPointIndicators="{Binding Path=ShowHighPointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							ShowNegativePointIndicators="{Binding Path=ShowNegativePointIndicators, Source={StaticResource dataContext}, Mode=TwoWay}"
+							Margin="5" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

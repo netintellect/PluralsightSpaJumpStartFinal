@@ -1,0 +1,1 @@
+﻿The example demonstrates the Chart Selection API and the successful integration of RadChart and RadMap controls. Select a Pie Slice to highlight a country in the Map and vice versa.

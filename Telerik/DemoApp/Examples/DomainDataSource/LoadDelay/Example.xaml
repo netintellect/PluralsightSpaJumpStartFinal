@@ -1,0 +1,89 @@
+<Examples:DomainDataSourceExample x:Class="Telerik.Windows.Examples.DomainDataSource.LoadDelay.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:my="clr-namespace:Telerik.Windows.Examples.DomainDataSource.LoadDelay"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  xmlns:e="clr-namespace:Examples.Web"
+								  VerticalAlignment="Center"
+								  HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Corporate Address Book"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.Resources>
+			<my:MillisecondsToTimeSpanConverter x:Key="LoadDelayConverter" />
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Grid Width="700"
+			  Margin="0,0,0,5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="330" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Find Contact Name"
+						   VerticalAlignment="Center"
+						   Margin="2,0,0,0"
+						   HorizontalAlignment="Left" />
+				<TextBox x:Name="searchTextBox"
+						 Width="90"
+						 TextChanged="OnSearchTextBoxTextChanged"
+						 Margin="2,5"
+						 HorizontalAlignment="Center"
+						 VerticalAlignment="Center" />
+				<TextBlock Text="Load Delay (ms)"
+						   VerticalAlignment="Center"
+						   Margin="2,5" />
+				<telerik:RadNumericUpDown Value="1000"
+										  Margin="2,5"
+										  VerticalAlignment="Center"
+										  IsEditable="False"
+										  Name="loadDelayUpDown"
+										  IsInteger="True"
+										  NumberDecimalDigits="0"
+										  ValueFormat="Numeric"
+										  Minimum="0"
+										  Maximum="2000"
+										  SmallChange="100"
+										  LargeChange="1000" />
+			</StackPanel>
+			<telerik:RadProgressBar Name="progressBar"
+									Grid.Column="1"
+									Margin="5" />
+		</Grid>
+		<telerik:RadDomainDataSource x:Name="customersDataSource"
+									 LoadDelay="{Binding Value, ElementName=loadDelayUpDown, Converter={StaticResource LoadDelayConverter}}"
+									 AutoLoad="True"
+									 QueryName="GetCustomersWithContactNameContaining"
+									 LoadingData="OnCustomersDataSourceLoadingData">
+			<telerik:RadDomainDataSource.DomainContext>
+				<e:NorthwindDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+			<telerik:RadDomainDataSource.QueryParameters>
+				<telerik:QueryParameter ParameterName="searchString"
+										Value="{Binding Text, ElementName=searchTextBox}" />
+			</telerik:RadDomainDataSource.QueryParameters>
+		</telerik:RadDomainDataSource>
+		<telerik:RadGridView x:Name="radGridView"
+							 Grid.Row="1"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 MinHeight="386"
+							 MaxHeight="500"
+							 Width="700"
+							 ItemsSource="{Binding DataView, ElementName=customersDataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=customersDataSource}"
+							 AutoGeneratingColumn="OnRadGridViewAutoGeneratingColumn"
+							 ShowGroupPanel="False"
+							 IsFilteringAllowed="False"
+							 CanUserSortColumns="False"
+							 IsReadOnly="True" />
+	</Grid>
+</Examples:DomainDataSourceExample>

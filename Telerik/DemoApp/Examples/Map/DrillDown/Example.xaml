@@ -1,0 +1,69 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.DrillDown.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.DrillDown"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+    <UserControl.Resources>
+        <example:ExampleViewModel x:Key="DataContext" Region="USA/usa_states" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="United States of America" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadMap x:Name="RadMap1"
+                    Background="#D9E1FF"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    UseDefaultLayout="False"
+                    MouseClickMode="None" 
+                    MouseDoubleClickMode="None"
+                    MouseDragMode="None"
+                    ZoomLevel="{Binding Source={StaticResource DataContext}, Path=MapZoomLevel, Mode=TwoWay}"
+                    Center="{Binding Source={StaticResource DataContext}, Path=MapCenter, Mode=TwoWay}"
+                    MinZoomLevel="4" 
+                    MaxZoomLevel="8">
+            <telerik:RadMap.Provider>
+                <telerik:EmptyProvider />
+            </telerik:RadMap.Provider>
+            <telerik:InformationLayer x:Name="StateLayer">
+                <telerik:InformationLayer.Reader>
+                    <telerik:MapShapeReader Source="{Binding Source={StaticResource DataContext}, Path=ShapefileSourceUri}" 
+                                            DataSource="{Binding Source={StaticResource DataContext}, Path=ShapefileDataSourceUri}"
+                                            ToolTipFormat="STATE_NAME"
+                                            ReadCompleted="StateLayerReaderReadCompleted" />
+                </telerik:InformationLayer.Reader>
+                <telerik:InformationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#FFF0D9" Stroke="#B1946D" StrokeThickness="1" />
+                </telerik:InformationLayer.ShapeFill>
+                <telerik:InformationLayer.HighlightFill>
+                    <telerik:MapShapeFill Fill="#FFEEA6" Stroke="#B1946D" StrokeThickness="1" />
+                </telerik:InformationLayer.HighlightFill>
+            </telerik:InformationLayer>
+            <telerik:InformationLayer x:Name="CountyLayer">
+                <telerik:InformationLayer.Reader>
+                    <telerik:MapShapeReader Source="{Binding Source={StaticResource DataContext}, Path=CountyShapefileSourceUri}" 
+                                            DataSource="{Binding Source={StaticResource DataContext}, Path=CountyShapefileDataSourceUri}"
+                                            ReadCompleted="CountyLayerReaderReadCompleted" ToolTipFormat="{}{NAME} County" />
+                </telerik:InformationLayer.Reader>
+                <telerik:InformationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#FFDBA3" Stroke="#B1946D" StrokeThickness="1" />
+                </telerik:InformationLayer.ShapeFill>
+                <telerik:InformationLayer.HighlightFill>
+                    <telerik:MapShapeFill Fill="#FFEEA6" Stroke="#B1946D" StrokeThickness="1" />
+                </telerik:InformationLayer.HighlightFill>
+            </telerik:InformationLayer>
+        </telerik:RadMap>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel x:Name="ConfigPanel" Margin="3">
+            <CheckBox x:Name="LoadCountyDataCheckBox" Content="Load Data on Click" Margin="0,5" IsChecked="True" Checked="LoadCountyDataCheckBoxChecked" Unchecked="LoadCountyDataCheckBoxChecked" />
+            <CheckBox x:Name="ZoomInCheckBox" Content="Zoom-in on Loading Data" Margin="0,5" IsChecked="{Binding Source={StaticResource DataContext}, Path=ZoomEnabled, Mode=TwoWay}" />
+            <telerik:RadButton Content="Default View" Margin="0,5" Command="{Binding Source={StaticResource DataContext}, Path=ResetMapViewCommand}" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

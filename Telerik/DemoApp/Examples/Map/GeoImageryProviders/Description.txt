@@ -1,0 +1,1 @@
+﻿RadMap allows you to display rich geographical information from various sources. This example demonstrates the built-in Bing and OpenStreetMap providers but the control architecture supports the creation of custom imagery providers as well.

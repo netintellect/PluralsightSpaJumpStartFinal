@@ -1,0 +1,1 @@
+﻿RadPropertyGrid enables the user to edit properties of other controls. This example illustrates how users can control the Reflection property of RadCarousel.

@@ -1,0 +1,1 @@
+﻿Telerik PanelBar provides a rich Event Handling Model. You can click on the Panelbar items and see the events being fired and logged in the event log on the right. 

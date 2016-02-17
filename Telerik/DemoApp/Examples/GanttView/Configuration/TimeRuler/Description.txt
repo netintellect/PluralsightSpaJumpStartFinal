@@ -1,0 +1,1 @@
+﻿Using the TimeRulerLines property you could customize the count, the type and the intervals of the time ruler lines in RadGanttView. There are three types of lines: Group, Major and Minor, each having different styling and default properties.

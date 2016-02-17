@@ -1,0 +1,40 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.Integration.MapPieChart.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="City Demographics" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="CustomDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Height="10" Width="10"
+                           Fill="{Binding Fill}"
+                           VerticalAlignment="Center" Margin="0,0,5,0" />
+                <TextBlock Text="{Binding LegendLabel}"
+                           VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadMap x:Name="RadMap1" 
+                        UseDefaultLayout="False" 
+                        UseSpringAnimations="True"
+                        IsMouseWheelZoomEnabled="False"
+                        telerik:TouchManager.IsTouchHitTestVisible="False"
+                        MouseClickMode="None"
+                        MouseDoubleClickMode="None"
+                        MouseDragMode="None">            
+            <telerik:VisualizationLayer x:Name="VisualizationLayer" UseBitmapCache="False">
+                <telerik:VisualizationLayer.Reader>
+                    <telerik:AsyncKmlReader Source="/Map;component/Resources/Bulgaria.kml" 
+                                            ReadShapeDataCompleted="AsyncKmlReader_ReadShapeDataCompleted"/>
+                </telerik:VisualizationLayer.Reader>
+            </telerik:VisualizationLayer>
+        </telerik:RadMap>
+    </Grid>
+</UserControl>

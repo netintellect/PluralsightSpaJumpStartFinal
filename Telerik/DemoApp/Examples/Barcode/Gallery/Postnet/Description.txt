@@ -1,0 +1,1 @@
+﻿RadBarcodePostnet is a control which encodes numbers into a series of bars. It is of variable length and accepts numbers only. It includes a checksum.

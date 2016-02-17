@@ -1,0 +1,1 @@
+﻿RadColorEditor supports a number of color models which you can use to create colors in real-time and get an instant visual feedback. The supported color models are RGB (Red, Green & Blue), HSV (Hue, Saturation & Value), HLS (Hue, Saturation & Luminance), CMYK (Cyan, Magenta, Yellow and Black) and HEX. 

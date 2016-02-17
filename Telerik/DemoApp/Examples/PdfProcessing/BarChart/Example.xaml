@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PdfProcessing.BarChart.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.PdfProcessing.BarChart"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center">
+    <UserControl.Resources>
+        <local:ExampleViewModel x:Key="viewModel" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Bar Chart" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel DataContext="{StaticResource viewModel}">
+            <TextBlock Text="Quarters:" TextWrapping="Wrap" Margin="0 5"/>
+            <telerik:RadWrapPanel ItemWidth="100">
+                <CheckBox Content="Q1" IsChecked="{Binding Q1, Mode=TwoWay}" Margin="0 2"/>
+                <CheckBox Content="Q2" IsChecked="{Binding Q2, Mode=TwoWay}" Margin="0 2"/>
+                <CheckBox Content="Q3" IsChecked="{Binding Q3, Mode=TwoWay}" Margin="0 2"/>
+                <CheckBox Content="Q4" IsChecked="{Binding Q4, Mode=TwoWay}" Margin="0 2"/>
+            </telerik:RadWrapPanel>
+
+            <TextBlock Text="Number of Products" TextWrapping="Wrap" Margin="0 5"/>
+            <telerik:RadComboBox ItemsSource="{Binding Products}" SelectedItem="{Binding ExportedProductsCount, Mode=TwoWay}" MinWidth="95" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Char Value Step:" TextWrapping="Wrap" Margin="0 5"/>
+            <telerik:RadNumericUpDown Minimum="5000" Maximum="10000" LargeChange="500" SmallChange="500" IsEditable="False" MinWidth="95"
+                                      Value="{Binding StepValue, Mode=TwoWay}" ValueFormat="Currency" HorizontalAlignment="Left"/>
+
+            <telerik:RadButton Grid.Row="1" Content="Save Document" Command="{Binding Save}" 
+                           Margin="0 20 0 0"
+                           MinWidth="75" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Grid>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/PdfProcessing;component/SampleData/barChart.PNG" Stretch="None" Margin="15 0"/>
+    </Grid>
+</UserControl>

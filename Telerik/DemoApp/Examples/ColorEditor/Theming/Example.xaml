@@ -1,0 +1,21 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.ColorEditor.Theming.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+        <Grid Width="500" Height="305">
+            <telerik:RadColorEditor InitialColor="DeepSkyBlue"/>
+        </Grid>
+    </Grid>
+</UserControl>
+

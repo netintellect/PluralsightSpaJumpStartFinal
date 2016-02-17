@@ -1,0 +1,1 @@
+﻿This example combines the approach demonstrated in the "MVVM Support" example with re-templating of the default series item labels (the labels are replaced by weather images) to achieve the look of a Meteo Chart Application.

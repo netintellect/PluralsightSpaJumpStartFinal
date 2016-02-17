@@ -1,0 +1,1 @@
+﻿You can apply complex filters on all groups at a specified level.<br/><br/>You can select:<br/>  - <b>Top</b> or <b>Bottom</b><br/>of the groups to a specified:<br/>  - <b>Count</b>, <b>Sum</b> or <b>Percent</b><br/> 

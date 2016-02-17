@@ -1,0 +1,1 @@
+﻿This example demonstrates how you can filter the visible appointments with the MVVM pattern using the AppointmentFilter property of the ViewDefinition.

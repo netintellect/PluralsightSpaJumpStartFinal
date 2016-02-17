@@ -1,0 +1,6 @@
+﻿The indicator can display value at the regular intervals. The interval can be specified using the <b>RefreshRate</b> property of an indicator. If it is non zero, then the value is calculated using values which are assigned during the specified interval. The <b>RefreshMode</b> property of indicator specifies the method of calculating. It may take the following values:
+1. <b>Average</b> (default) - value will be calculated as average from values within the specified interval.
+2. <b>Last</b> - indicator will display last value.
+3. <b>Max</b> - indicator will display maximum from values within the specified interval.
+4. <b>Min</b> - indicator will display minimum.
+

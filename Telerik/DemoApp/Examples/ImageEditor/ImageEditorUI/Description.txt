@@ -1,0 +1,1 @@
+﻿Telerik <b>RadImageEditor</b> is used to process images in a Silverlight or WPF client applications with no dependencies on external APIs. It supports various image processing tools and effects like resize, contrast, brightness, hue and saturation adjustments. Silverlight effects are used to execute heavy operations on the GPU for best performance.

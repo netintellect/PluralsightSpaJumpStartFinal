@@ -1,0 +1,7 @@
+﻿<b>RadDesktopAlert</b> is a control that allows you to display notifications on the desktop when a specific event in the application has occurred (new e-mail message, meeting request or task request is received). 
+The alert can be shown for a specified amount of time and will automatically close after that time has elapsed.
+<br />
+<br />
+Using <b>RadDesktopAlertManager</b> you can easily specify the exact location on the screen where the alerts will appear and manage them afterwards. 
+The manager supports multiple alerts at the same time and provides option for setting the needed distance between them. 
+Through <b>RadDesktopAlertManager</b> you can also change the animations used when showing/closing alerts in order to achieve unique look and feel.

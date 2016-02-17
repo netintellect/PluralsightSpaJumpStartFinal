@@ -1,0 +1,1 @@
+﻿Beginning with Q1 2011 RadChart now features multiple data source support. In the example here you can see how to use the new ItemsSource property of the SeriesMapping.

@@ -1,0 +1,1 @@
+﻿RadTileView can be used in various integration scenarios. In this particular case, the example simulates a live Formula 1 race.

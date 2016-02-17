@@ -1,0 +1,3 @@
+﻿This example demonstrates classic Master-Detail scenario with RadGridView and RadDomainDataSource.
+The example uses two RadDomainDataSource controls for master and detail data respectively. The details domain
+data source loads only orders created by selected customer using QueryParameters support of RadDomainDataSource control.

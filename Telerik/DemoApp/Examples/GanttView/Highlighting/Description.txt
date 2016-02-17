@@ -1,0 +1,1 @@
+﻿Using the HighlightedItemsSource property of the RadGanttView control you can easily highlight different sets of tasks like late tasks, or tasks, participating in the critical path.

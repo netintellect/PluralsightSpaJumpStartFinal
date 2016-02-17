@@ -1,0 +1,229 @@
+<UserControl x:Class="Telerik.Windows.Examples.RichTextBox.DocumentProtection.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikRibbonView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.RibbonView"             
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"             
+    mc:Ignorable="d"
+    d:DesignWidth="700" d:DesignHeight="400"
+    VerticalAlignment="Stretch" 
+    HorizontalAlignment="Stretch"
+    Loaded="Example_Loaded">
+
+    <UserControl.Resources>
+        <telerik:IconSources x:Key="IconSources" 
+                             LightBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/" 
+                             DarkBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/Dark/"
+                             ModernBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/Modern/" />
+    </UserControl.Resources>
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Document Protection" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadRichTextBoxRibbonUI UseLayoutRounding="True" ApplicationButtonImageSource="/RichTextBox;component/Images/RichTextBox/MSOffice/AppIcon-telerik.png" ApplicationName="Document Protection" DataContext="{Binding Path=Commands, ElementName=richTextBox}">
+            <telerik:RadRichTextBoxRibbonUI.Resources>
+                <telerik:FontFamiliesProvider x:Key="FontFamiliesProvider" />
+            </telerik:RadRichTextBoxRibbonUI.Resources>
+            <telerik:RadRichTextBoxRibbonUI.ApplicationMenu>
+                <telerikRibbonView:ApplicationMenu Height="350">
+                    <telerikRibbonView:ApplicationMenu.Content>
+                        <StackPanel Width="320"/>
+                    </telerikRibbonView:ApplicationMenu.Content>
+                    <telerikRibbonView:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/new.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=NewDocumentCommand}" Size="Large" Text="New" />
+                    <telerikRibbonView:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/open.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=OpenDocumentCommand}" Size="Large" Text="Open" />
+                    <telerikRibbonView:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/save.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Size="Large" Text="Save" />
+                    <telerikRibbonView:RadRibbonSplitButton LargeImage="{telerik:IconResource IconRelativePath=32/saveas.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Size="Large" Text="Save As">
+                        <telerikRibbonView:RadRibbonSplitButton.DropDownContent>
+                            <StackPanel HorizontalAlignment="Stretch">
+                                <telerik:RadGroupHeader Content="Save as" />
+                                <telerikRibbonView:RadRibbonButton CommandParameter="docx" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/worddoc.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Word Document" />
+                                            <TextBlock Text="Save the file as a Word document." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                                <telerikRibbonView:RadRibbonButton CommandParameter="pdf" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Pdf.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="PDF Document" />
+                                            <TextBlock Text="Save document as a PDF file." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                                <telerikRibbonView:RadRibbonButton CommandParameter="html" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/html.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Html Document" />
+                                            <TextBlock Text="Save the file as a Html document." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                                <telerikRibbonView:RadRibbonButton CommandParameter="rtf" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Rtf.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Rich Text Format" />
+                                            <TextBlock Text="Save document in Rich Text Format." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                                <telerikRibbonView:RadRibbonButton CommandParameter="txt" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/PlainText.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Plain text" />
+                                            <TextBlock Text="Save document in plain text format." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                                <telerikRibbonView:RadRibbonButton CommandParameter="xaml" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="292" Margin="0 4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Xaml.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold" Text="Xaml Document" />
+                                            <TextBlock Text="Save document as a xaml file." TextWrapping="Wrap" Width="220" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonButton>
+                            </StackPanel>
+                        </telerikRibbonView:RadRibbonSplitButton.DropDownContent>
+                    </telerikRibbonView:RadRibbonSplitButton>
+                    <telerikRibbonView:RadRibbonButton CommandParameter="Native" LargeImage="{telerik:IconResource IconRelativePath=ApplicationMenu/print.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PrintCommand}" Size="Large" Text="Print" />
+                </telerikRibbonView:ApplicationMenu>
+            </telerik:RadRichTextBoxRibbonUI.ApplicationMenu>
+            <telerik:RadRichTextBoxRibbonUI.QuickAccessToolBar>
+                <telerikRibbonView:QuickAccessToolBar>
+                    <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/save.png, IconSources={StaticResource IconSources}}" Text="Save" />
+                    <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=UndoCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/undo.png, IconSources={StaticResource IconSources}}" Text="Undo" />
+                    <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=RedoCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/redo.png, IconSources={StaticResource IconSources}}" Text="Redo" />
+                </telerikRibbonView:QuickAccessToolBar>
+            </telerik:RadRichTextBoxRibbonUI.QuickAccessToolBar>
+            <telerikRibbonView:RadRibbonTab Header="Home">
+                <telerikRibbonView:RadRibbonGroup DialogLauncherVisibility="Visible" Header="Font" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ShowFontPropertiesDialogCommand}">
+                    <telerikRibbonView:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="4" Variant="Medium" />
+                        <telerik:GroupVariant Priority="6" Variant="Small" />
+                        <telerik:GroupVariant Priority="7" Variant="Collapsed" />
+                    </telerikRibbonView:RadRibbonGroup.Variants>
+                    <telerik:RadOrderedWrapPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <telerikRibbonView:RadRibbonComboBox CanAutocompleteSelectItems="False" CanKeyboardNavigationSelectItems="False" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedValue}" IsReadOnly="True" ItemsSource="{Binding Source={StaticResource FontFamiliesProvider}, Path=RegisteredFonts}" MaxDropDownHeight="400" OpenDropDownOnFocus="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeFontFamilyCommand}" Width="132" />
+                            <telerikRibbonView:RadRibbonComboBox CanAutocompleteSelectItems="False" CanKeyboardNavigationSelectItems="False" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem.Tag}" IsEditable="True" IsReadOnly="True" IsTextSearchEnabled="False" MaxDropDownHeight="400" OpenDropDownOnFocus="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeFontSizeCommand}" Width="45" x:Name="fontSizeComboBox">
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="8" Tag="10.67" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="9" Tag="12" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="10" Tag="13.34" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="11" Tag="14.67" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="12" Tag="16" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="14" Tag="18.67" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="16" Tag="21.33" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="18" Tag="24" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="20" Tag="26.67" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="22" Tag="29.33" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="24" Tag="32" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="26" Tag="34.67" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="28" Tag="37.33" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="36" Tag="48" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="48" Tag="64" />
+                                <telerikRibbonView:RadRibbonComboBoxItem Content="72" Tag="96" />
+                            </telerikRibbonView:RadRibbonComboBox>
+                        </StackPanel>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=IncrementFontSizeCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/font-increasesize.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=DecrementFontSizeCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/font-decreasesize.png, IconSources={StaticResource IconSources}}" />
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ClearAllFormattingCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/ClearFormatting16.png, IconSources={StaticResource IconSources}}" />
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleBoldCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/bold.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleItalicCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/italic.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonSplitButton IsToggle="True" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleUnderlineCommand}" SmallImage="{telerik:IconResource IconRelativePath=16/underline.png, IconSources={StaticResource IconSources}}">
+                                <telerikRibbonView:RadRibbonSplitButton.DropDownContent>
+                                    <telerik:RadGallery ItemHeight="26" ItemWidth="156" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeUnderlineDecorationCommand}" ViewportHeight="210" ViewportWidth="157">
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline1.png, IconSources={StaticResource IconSources}}" Tag="Line" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline2.png, IconSources={StaticResource IconSources}}" Tag="DoubleLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline3.png, IconSources={StaticResource IconSources}}" Tag="ThickLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline4.png, IconSources={StaticResource IconSources}}" Tag="DottedLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline5.png, IconSources={StaticResource IconSources}}" Tag="DashedLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline6.png, IconSources={StaticResource IconSources}}" Tag="DotDashedLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline7.png, IconSources={StaticResource IconSources}}" Tag="DotDotDashedLine" />
+                                        <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=underline8.png, IconSources={StaticResource IconSources}}" Tag="Wave" />
+                                    </telerik:RadGallery>
+                                </telerikRibbonView:RadRibbonSplitButton.DropDownContent>
+                            </telerikRibbonView:RadRibbonSplitButton>
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleStrikethroughCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/Strikethrough16.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleSubscriptCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/subscript.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleSuperscriptCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/superscript.png, IconSources={StaticResource IconSources}}" />
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerik:FormattingColorPicker AutomaticColor="Transparent" BorderThickness="0" Height="Auto" Image="{telerik:IconResource IconRelativePath=16/highlight.png, IconSources={StaticResource IconSources}}" NoColorText="No color" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeFontHighlightColorCommand}" ActiveColor="Yellow" />
+                            <telerik:FormattingColorPicker BorderThickness="0" Height="Auto" Image="{telerik:IconResource IconRelativePath=16/FontForeColor.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeFontForeColorCommand}" ActiveColor="Red" />
+                        </telerik:RadButtonGroup>
+                    </telerik:RadOrderedWrapPanel>
+                </telerikRibbonView:RadRibbonGroup>
+                <telerikRibbonView:RadRibbonGroup DialogLauncherVisibility="Visible" Header="Paragraph" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ShowParagraphPropertiesDialogCommand}">
+                    <telerikRibbonView:RadRibbonGroup.Variants>
+                        <telerik:GroupVariant Priority="3" Variant="Medium" />
+                        <telerik:GroupVariant Priority="5" Variant="Collapsed" />
+                    </telerikRibbonView:RadRibbonGroup.Variants>
+                    <telerik:RadOrderedWrapPanel>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleBulletsCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/list-bullets.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleNumberedCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/list-numbered.png, IconSources={StaticResource IconSources}}" />
+                            <telerikRibbonView:RadRibbonDropDownButton Size="Small" Command="{Binding ChangeListStyleCommand}" SmallImage="{telerik:IconResource IconRelativePath=16/MultilevelList.png, IconSources={StaticResource IconSources}}">
+                                <telerikRibbonView:RadRibbonDropDownButton.DropDownContent>
+                                    <StackPanel>
+                                        <telerik:RadGroupHeader Content="List Library" />
+                                        <telerik:RadGallery ItemHeight="88" ItemWidth="88" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeListStyleCommand}" ViewportHeight="176" ViewportWidth="266">
+                                            <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=MultilevelListNone.png, IconSources={StaticResource IconSources}}" Tag="None" />
+                                            <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=MultilevelListBulleted.png, IconSources={StaticResource IconSources}}" Tag="Bulleted" />
+                                            <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=MultilevelListNumbered.png, IconSources={StaticResource IconSources}}" Tag="Numbered" />
+                                            <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=MultilevelListNumberedParenthesis.png, IconSources={StaticResource IconSources}}" Tag="NumberedParenthesis" />
+                                            <telerik:RadGalleryItem Image="{telerik:IconResource IconRelativePath=MultilevelListNumberedHierarchical.png, IconSources={StaticResource IconSources}}" Tag="NumberedHierarchical" />
+                                        </telerik:RadGallery>
+                                    </StackPanel>
+                                </telerikRibbonView:RadRibbonDropDownButton.DropDownContent>
+                            </telerikRibbonView:RadRibbonDropDownButton>
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonToggleButton telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleFormattingSymbolsCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/formatting-symbols.png, IconSources={StaticResource IconSources}}" />
+                        </telerik:RadButtonGroup>
+                        <telerik:RadButtonGroup>
+                            <telerikRibbonView:RadRibbonToggleButton CommandParameter="Left" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeTextAlignmentCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/alignleft.png, IconSources={StaticResource IconSources}}" Text="Align Left" />
+                            <telerikRibbonView:RadRibbonToggleButton CommandParameter="Center" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeTextAlignmentCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/aligncenter.png, IconSources={StaticResource IconSources}}" Text="Center" />
+                            <telerikRibbonView:RadRibbonToggleButton CommandParameter="Right" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeTextAlignmentCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/alignright.png, IconSources={StaticResource IconSources}}" Text="Align Right" />
+                            <telerikRibbonView:RadRibbonToggleButton CommandParameter="Justify" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeTextAlignmentCommand}" Size="Small" SmallImage="{telerik:IconResource IconRelativePath=16/alignjustify.png, IconSources={StaticResource IconSources}}" Text="Justify" />
+                        </telerik:RadButtonGroup>
+                    </telerik:RadOrderedWrapPanel>
+                </telerikRibbonView:RadRibbonGroup>
+            </telerikRibbonView:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Review" IsSelected="True">
+                <telerik:RadRibbonGroup Header="Protect">
+                    <telerik:RadRibbonToggleButton LargeImage="{telerik:IconResource IconRelativePath=32/ProtectDocument.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleDocumentProtectionCommand}" Size="Large" Text="Protect Document" telerik:ScreenTip.Title="Toggle Document Protection" telerik:ScreenTip.Description="Restrict how people edit specific parts of the document." />
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/ChangeEditingPermissions.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ShowChangeEditingPermissionsDialogCommand}" Size="Large" Text="Editing Restrictions" telerik:ScreenTip.Title="Change Editing Restrictions" telerik:ScreenTip.Description="Shows the dialog for setting editing restrictions to users/groups." />
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Current user:"  Margin="0 0 0 3" />
+                        <telerik:RadRibbonComboBox x:Name="comboBoxLoggedUser" Width="150" DisplayMemberPath="RealName" SelectionChanged="comboBoxLoggedUser_SelectionChanged" />
+                    </StackPanel>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            
+        </telerik:RadRichTextBoxRibbonUI>
+        <telerik:RadRichTextBox Grid.Row="1" x:Name="richTextBox" IsSpellCheckingEnabled="False" />
+
+    </Grid>
+
+</UserControl>

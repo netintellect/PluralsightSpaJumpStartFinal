@@ -1,0 +1,1 @@
+﻿This example illustrates the high capabilities of RadScheduleView to customize appointments. Also it presents how to add additional field to the edit appointment dialog.

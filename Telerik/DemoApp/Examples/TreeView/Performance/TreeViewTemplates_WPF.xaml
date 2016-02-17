@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TreeView.Performance"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<SolidColorBrush Color="#FF79256B" x:Key="TreeView_Performance_ButtonBackground"/>
+
+	<local:HierarchyTemplateSelector x:Key="ItemTemplateSelector">
+		<local:HierarchyTemplateSelector.FolderTemplate>
+			<HierarchicalDataTemplate ItemsSource="{Binding Children}">
+				<StackPanel Orientation="Horizontal">
+					<Image Stretch="None" Source="../Images/TreeView/Folder.png"
+									VerticalAlignment="Center" Margin="2" />
+					<TextBlock Text="{Binding Name}"
+									VerticalAlignment="Center" Margin="2" />
+					<TextBlock Text="{Binding Id}" 
+									VerticalAlignment="Center" Margin="2" Opacity=".5" />
+				</StackPanel>
+			</HierarchicalDataTemplate>
+		</local:HierarchyTemplateSelector.FolderTemplate>
+
+		<local:HierarchyTemplateSelector.FileTemplate>
+			<DataTemplate>
+				<StackPanel Orientation="Horizontal">
+					<Image Stretch="None" Source="../Images/TreeView/File.png"
+									VerticalAlignment="Center" Margin="2" />
+					<TextBlock Text="{Binding Name}"
+									VerticalAlignment="Center" Margin="2" />
+				</StackPanel>
+			</DataTemplate>
+		</local:HierarchyTemplateSelector.FileTemplate>
+	</local:HierarchyTemplateSelector>
+
+</ResourceDictionary>

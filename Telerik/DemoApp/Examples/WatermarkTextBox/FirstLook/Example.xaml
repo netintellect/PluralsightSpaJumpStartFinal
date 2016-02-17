@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.WatermarkTextBox.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.WatermarkTextBox.FirstLook"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+		VerticalAlignment="Center" HorizontalAlignment="Center">
+
+	<UserControl.DataContext>
+		<local:ExampleViewModel />
+	</UserControl.DataContext>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="WaterMarkTextBox" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>   
+   
+
+    <Grid x:Name="LayoutRoot">
+        <Image Source="../Images/WatermarkTextBox/FirstLook/Image2.png" Stretch="Fill"
+							Width="328" Height="237" VerticalAlignment="Top" HorizontalAlignment="Center"
+							Margin="20" />
+        <Grid Margin="30 50 30 0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <telerik:RadWatermarkTextBox HorizontalAlignment="Stretch" WatermarkContent="Search"/>            
+            <telerik:RadButton Grid.Column="1" Margin="5 0 0 0" MinWidth="30">
+                <Path Grid.Column="1" Data="M8.4939966,1.9999999 C6.5610008,1.9999999 4.9939971,3.5670033 4.9939971,5.5 C4.9939971,7.4329967 6.5610008,9 8.4939966,9 C10.426993,9 11.993997,7.4329967 11.993997,5.5 C11.993997,3.5670033 10.426993,1.9999999 8.4939966,1.9999999 z M8.4939976,0 C11.531564,-8.7786177E-08 13.993998,2.4624338 13.993998,5.5 C13.993998,8.5375662 11.531564,11 8.4939976,11 C7.3549109,11 6.2967014,10.65372 5.4188957,10.060686 L5.3678761,10.025319 L1.4142134,13.978982 L0,12.564768 L3.9563832,8.6083851 L3.9333115,8.5751028 C3.3402777,7.6972966 2.9939978,6.6390872 2.9939978,5.5 C2.9939978,2.4624338 5.4564314,-8.7786177E-08 8.4939976,0 z" 
+                          Fill="#FF767676" Stretch="None" StrokeThickness="2" Width="14" Height="14"/>
+            </telerik:RadButton>
+            
+        </Grid>
+            
+        
+    </Grid>
+</UserControl>

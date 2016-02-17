@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8TouchColors}}" />
+    <system:Double x:Key="imageWidth">28</system:Double>
+    <system:Double x:Key="imageHeight">32</system:Double>
+    <system:Double x:Key="fontSize">16</system:Double>
+</ResourceDictionary>

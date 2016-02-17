@@ -1,0 +1,3 @@
+﻿This example demonstrates the selection / hover interactivity effects supported by RadChart. <br />
+The functionality is disabled by default and can be enabled through the SeriesDefinition.InteractivitySettings complex property - you need to indicate the desired interactivity scope for either selection, or hover interactivity, or both. Note that the scope properties (HoverScope and SelectionScope) control whether the respective action should be processed on series level, or on series item level e.g. selection can select the whole series, or the single item that was clicked.<br /><br />
+Note that the interactivity functionality is available for WPF4 / Silverlight4 projects only.

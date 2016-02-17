@@ -1,0 +1,57 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.WktReader.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.WktReader"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <UserControl.Resources>
+        <example:WktDataViewModel x:Key="DataContext" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Atlanta Grocery Stores" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadMap x:Name="RadMap1"
+                        Center="33.7861647934865, -84.371616833534"
+                        ZoomLevel="10"
+                        MinZoomLevel="4" 
+                        MiniMapExpanderVisibility="Collapsed">
+            <telerik:InformationLayer x:Name="InformationLayer">
+                <telerik:InformationLayer.Reader>
+                    <telerik:SqlGeospatialDataReader Source="{Binding Source={StaticResource DataContext}, Path=WktDataCollection}"
+                                                     GeospatialPropertyName="Geometry"
+                                                     ToolTipFormat="Name">
+                        <telerik:SqlGeospatialDataReader.PointTemplate>
+                            <DataTemplate>
+                                <Border Background="Transparent" BorderThickness="1" Padding="2,2,2,2">
+                                    <telerik:MapLayer.HotSpot>
+                                        <telerik:HotSpot X="0.5" Y="0.5" ElementName="PART_Image" />
+                                    </telerik:MapLayer.HotSpot>
+                                    <Grid Name="PART_Panel">
+                                        <Path Fill="{Binding Source={StaticResource DataContext}, Path=PointBrush}" Name="PART_Image">
+                                            <Path.Data>
+                                                <GeometryGroup>
+                                                    <EllipseGeometry Center="7,7" RadiusX="4" RadiusY="4" />
+                                                    <EllipseGeometry Center="7,7" RadiusX="6" RadiusY="6" />
+                                                </GeometryGroup>
+                                            </Path.Data>
+                                        </Path>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </telerik:SqlGeospatialDataReader.PointTemplate>
+                    </telerik:SqlGeospatialDataReader>
+                </telerik:InformationLayer.Reader>
+                <telerik:InformationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#7FFFFFFF" Stroke="#5A636B" StrokeThickness="3" />
+                </telerik:InformationLayer.ShapeFill>
+                <telerik:InformationLayer.HighlightFill>
+                    <telerik:MapShapeFill Fill="#B2FFFFFF" Stroke="#5A636B" StrokeThickness="3" />
+                </telerik:InformationLayer.HighlightFill>
+            </telerik:InformationLayer>
+        </telerik:RadMap>
+    </Grid>
+</UserControl>

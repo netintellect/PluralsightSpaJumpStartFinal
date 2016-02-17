@@ -1,0 +1,38 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart">
+    
+    <telerik:Windows8Colors x:Key="Windows8Colors" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+    <SolidColorBrush x:Key="MainBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+    
+    <Style x:Key="QuickStartHeaderedContentControlStyle" TargetType="telerikQuickStart:HeaderedContentControl">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerikQuickStart:HeaderedContentControl">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="30" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<Border Background="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+							<ContentControl FontWeight="Bold" Foreground="{telerik:Windows8Resource ResourceKey=MainBrush}"
+											VerticalAlignment="Center" Margin="8 0 0 0" Content="{TemplateBinding Header}"
+											ContentTemplate="{TemplateBinding HeaderTemplate}" />
+						</Border>
+						<Border Grid.Row="1" BorderThickness="1 0 1 1" BorderBrush="#FFD6D4D4"
+								Background="{telerik:Windows8Resource ResourceKey=MainBrush}">
+							<ContentPresenter Margin="{TemplateBinding Padding}" Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}" />
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style BasedOn="{StaticResource QuickStartHeaderedContentControlStyle}"
+		   TargetType="telerikQuickStart:HeaderedContentControl" />
+</ResourceDictionary>

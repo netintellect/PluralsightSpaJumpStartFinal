@@ -1,0 +1,208 @@
+<schedule:ObservableAppointmentCollection xml:lang="EN-US"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.ScheduleView.Common"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<schedule:Appointment Subject="Appointment0" Start="12/13/2010 12:00:00 AM" End="12/13/2010 1:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment1" Start="12/13/2010 1:00:00 AM" End="12/13/2010 2:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment2" Start="12/13/2010 2:00:00 AM" End="12/13/2010 3:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment3" Start="12/13/2010 3:00:00 AM" End="12/13/2010 4:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment4" Start="12/13/2010 4:00:00 AM" End="12/13/2010 5:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment5" Start="12/13/2010 5:00:00 AM" End="12/13/2010 6:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment6" Start="12/13/2010 6:00:00 AM" End="12/13/2010 7:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment7" Start="12/13/2010 7:00:00 AM" End="12/13/2010 8:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment8" Start="12/13/2010 8:00:00 AM" End="12/13/2010 9:00:00 AM"    />
+	<schedule:Appointment Subject="Appointment9" Start="12/13/2010 9:00:00 AM" End="12/13/2010 10:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment10" Start="12/13/2010 10:00:00 AM" End="12/13/2010 11:00:00 AM" />
+	<schedule:Appointment Subject="Appointment11" Start="12/13/2010 11:00:00 AM" End="12/13/2010 12:00:00 PM" />
+	<schedule:Appointment Subject="Appointment12" Start="12/13/2010 12:00:00 PM" End="12/13/2010 1:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment13" Start="12/13/2010 1:00:00 PM" End="12/13/2010 2:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment14" Start="12/13/2010 2:00:00 PM" End="12/13/2010 3:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment15" Start="12/13/2010 3:00:00 PM" End="12/13/2010 4:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment16" Start="12/13/2010 4:00:00 PM" End="12/13/2010 5:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment17" Start="12/13/2010 5:00:00 PM" End="12/13/2010 6:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment18" Start="12/13/2010 6:00:00 PM" End="12/13/2010 7:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment19" Start="12/13/2010 7:00:00 PM" End="12/13/2010 8:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment20" Start="12/13/2010 8:00:00 PM" End="12/13/2010 9:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment21" Start="12/13/2010 9:00:00 PM" End="12/13/2010 10:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment22" Start="12/13/2010 10:00:00 PM" End="12/13/2010 11:00:00 PM" />
+	<schedule:Appointment Subject="Appointment23" Start="12/13/2010 11:00:00 PM" End="12/14/2010 12:00:00 AM" />
+	<schedule:Appointment Subject="Appointment24" Start="12/14/2010 12:00:00 AM" End="12/14/2010 1:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment25" Start="12/14/2010 1:00:00 AM" End="12/14/2010 2:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment26" Start="12/14/2010 2:00:00 AM" End="12/14/2010 3:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment27" Start="12/14/2010 3:00:00 AM" End="12/14/2010 4:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment28" Start="12/14/2010 4:00:00 AM" End="12/14/2010 5:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment29" Start="12/14/2010 5:00:00 AM" End="12/14/2010 6:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment30" Start="12/14/2010 6:00:00 AM" End="12/14/2010 7:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment31" Start="12/14/2010 7:00:00 AM" End="12/14/2010 8:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment32" Start="12/14/2010 8:00:00 AM" End="12/14/2010 9:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment33" Start="12/14/2010 9:00:00 AM" End="12/14/2010 10:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment34" Start="12/14/2010 10:00:00 AM" End="12/14/2010 11:00:00 AM" />
+	<schedule:Appointment Subject="Appointment35" Start="12/14/2010 11:00:00 AM" End="12/14/2010 12:00:00 PM" />
+	<schedule:Appointment Subject="Appointment36" Start="12/14/2010 12:00:00 PM" End="12/14/2010 1:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment37" Start="12/14/2010 1:00:00 PM" End="12/14/2010 2:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment38" Start="12/14/2010 2:00:00 PM" End="12/14/2010 3:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment39" Start="12/14/2010 3:00:00 PM" End="12/14/2010 4:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment40" Start="12/14/2010 4:00:00 PM" End="12/14/2010 5:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment41" Start="12/14/2010 5:00:00 PM" End="12/14/2010 6:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment42" Start="12/14/2010 6:00:00 PM" End="12/14/2010 7:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment43" Start="12/14/2010 7:00:00 PM" End="12/14/2010 8:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment44" Start="12/14/2010 8:00:00 PM" End="12/14/2010 9:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment45" Start="12/14/2010 9:00:00 PM" End="12/14/2010 10:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment46" Start="12/14/2010 10:00:00 PM" End="12/14/2010 11:00:00 PM" />
+	<schedule:Appointment Subject="Appointment47" Start="12/14/2010 11:00:00 PM" End="12/15/2010 12:00:00 AM" />
+	<schedule:Appointment Subject="Appointment48" Start="12/15/2010 12:00:00 AM" End="12/15/2010 1:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment49" Start="12/15/2010 1:00:00 AM" End="12/15/2010 2:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment50" Start="12/15/2010 2:00:00 AM" End="12/15/2010 3:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment51" Start="12/15/2010 3:00:00 AM" End="12/15/2010 4:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment52" Start="12/15/2010 4:00:00 AM" End="12/15/2010 5:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment53" Start="12/15/2010 5:00:00 AM" End="12/15/2010 6:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment54" Start="12/15/2010 6:00:00 AM" End="12/15/2010 7:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment55" Start="12/15/2010 7:00:00 AM" End="12/15/2010 8:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment56" Start="12/15/2010 8:00:00 AM" End="12/15/2010 9:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment57" Start="12/15/2010 9:00:00 AM" End="12/15/2010 10:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment58" Start="12/15/2010 10:00:00 AM" End="12/15/2010 11:00:00 AM" />
+	<schedule:Appointment Subject="Appointment59" Start="12/15/2010 11:00:00 AM" End="12/15/2010 12:00:00 PM" />
+	<schedule:Appointment Subject="Appointment60" Start="12/15/2010 12:00:00 PM" End="12/15/2010 1:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment61" Start="12/15/2010 1:00:00 PM" End="12/15/2010 2:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment62" Start="12/15/2010 2:00:00 PM" End="12/15/2010 3:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment63" Start="12/15/2010 3:00:00 PM" End="12/15/2010 4:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment64" Start="12/15/2010 4:00:00 PM" End="12/15/2010 5:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment65" Start="12/15/2010 5:00:00 PM" End="12/15/2010 6:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment66" Start="12/15/2010 6:00:00 PM" End="12/15/2010 7:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment67" Start="12/15/2010 7:00:00 PM" End="12/15/2010 8:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment68" Start="12/15/2010 8:00:00 PM" End="12/15/2010 9:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment69" Start="12/15/2010 9:00:00 PM" End="12/15/2010 10:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment70" Start="12/15/2010 10:00:00 PM" End="12/15/2010 11:00:00 PM" />
+	<schedule:Appointment Subject="Appointment71" Start="12/15/2010 11:00:00 PM" End="12/16/2010 12:00:00 AM" />
+	<schedule:Appointment Subject="Appointment72" Start="12/16/2010 12:00:00 AM" End="12/16/2010 1:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment73" Start="12/16/2010 1:00:00 AM" End="12/16/2010 2:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment74" Start="12/16/2010 2:00:00 AM" End="12/16/2010 3:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment75" Start="12/16/2010 3:00:00 AM" End="12/16/2010 4:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment76" Start="12/16/2010 4:00:00 AM" End="12/16/2010 5:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment77" Start="12/16/2010 5:00:00 AM" End="12/16/2010 6:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment78" Start="12/16/2010 6:00:00 AM" End="12/16/2010 7:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment79" Start="12/16/2010 7:00:00 AM" End="12/16/2010 8:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment80" Start="12/16/2010 8:00:00 AM" End="12/16/2010 9:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment81" Start="12/16/2010 9:00:00 AM" End="12/16/2010 10:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment82" Start="12/16/2010 10:00:00 AM" End="12/16/2010 11:00:00 AM" />
+	<schedule:Appointment Subject="Appointment83" Start="12/16/2010 11:00:00 AM" End="12/16/2010 12:00:00 PM" />
+	<schedule:Appointment Subject="Appointment84" Start="12/16/2010 12:00:00 PM" End="12/16/2010 1:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment85" Start="12/16/2010 1:00:00 PM" End="12/16/2010 2:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment86" Start="12/16/2010 2:00:00 PM" End="12/16/2010 3:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment87" Start="12/16/2010 3:00:00 PM" End="12/16/2010 4:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment88" Start="12/16/2010 4:00:00 PM" End="12/16/2010 5:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment89" Start="12/16/2010 5:00:00 PM" End="12/16/2010 6:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment90" Start="12/16/2010 6:00:00 PM" End="12/16/2010 7:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment91" Start="12/16/2010 7:00:00 PM" End="12/16/2010 8:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment92" Start="12/16/2010 8:00:00 PM" End="12/16/2010 9:00:00 PM"   />
+	<schedule:Appointment Subject="Appointment93" Start="12/16/2010 9:00:00 PM" End="12/16/2010 10:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment94" Start="12/16/2010 10:00:00 PM" End="12/16/2010 11:00:00 PM" />
+	<schedule:Appointment Subject="Appointment95" Start="12/16/2010 11:00:00 PM" End="12/17/2010 12:00:00 AM" />
+	<schedule:Appointment Subject="Appointment96" Start="12/17/2010 12:00:00 AM" End="12/17/2010 1:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment97" Start="12/17/2010 1:00:00 AM" End="12/17/2010 2:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment98" Start="12/17/2010 2:00:00 AM" End="12/17/2010 3:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment99" Start="12/17/2010 3:00:00 AM" End="12/17/2010 4:00:00 AM"   />
+	<schedule:Appointment Subject="Appointment100" Start="12/17/2010 4:00:00 AM" End="12/17/2010 5:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment101" Start="12/17/2010 5:00:00 AM" End="12/17/2010 6:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment102" Start="12/17/2010 6:00:00 AM" End="12/17/2010 7:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment103" Start="12/17/2010 7:00:00 AM" End="12/17/2010 8:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment104" Start="12/17/2010 8:00:00 AM" End="12/17/2010 9:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment105" Start="12/17/2010 9:00:00 AM" End="12/17/2010 10:00:00 AM" />
+	<schedule:Appointment Subject="Appointment106" Start="12/17/2010 10:00:00 AM" End="12/17/2010 11:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment107" Start="12/17/2010 11:00:00 AM" End="12/17/2010 12:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment108" Start="12/17/2010 12:00:00 PM" End="12/17/2010 1:00:00 PM" />
+	<schedule:Appointment Subject="Appointment109" Start="12/17/2010 1:00:00 PM" End="12/17/2010 2:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment110" Start="12/17/2010 2:00:00 PM" End="12/17/2010 3:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment111" Start="12/17/2010 3:00:00 PM" End="12/17/2010 4:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment112" Start="12/17/2010 4:00:00 PM" End="12/17/2010 5:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment113" Start="12/17/2010 5:00:00 PM" End="12/17/2010 6:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment114" Start="12/17/2010 6:00:00 PM" End="12/17/2010 7:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment115" Start="12/17/2010 7:00:00 PM" End="12/17/2010 8:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment116" Start="12/17/2010 8:00:00 PM" End="12/17/2010 9:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment117" Start="12/17/2010 9:00:00 PM" End="12/17/2010 10:00:00 PM" />
+	<schedule:Appointment Subject="Appointment118" Start="12/17/2010 10:00:00 PM" End="12/17/2010 11:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment119" Start="12/17/2010 11:00:00 PM" End="12/18/2010 12:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment120" Start="12/18/2010 12:00:00 AM" End="12/18/2010 1:00:00 AM" />
+	<schedule:Appointment Subject="Appointment121" Start="12/18/2010 1:00:00 AM" End="12/18/2010 2:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment122" Start="12/18/2010 2:00:00 AM" End="12/18/2010 3:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment123" Start="12/18/2010 3:00:00 AM" End="12/18/2010 4:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment124" Start="12/18/2010 4:00:00 AM" End="12/18/2010 5:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment125" Start="12/18/2010 5:00:00 AM" End="12/18/2010 6:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment126" Start="12/18/2010 6:00:00 AM" End="12/18/2010 7:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment127" Start="12/18/2010 7:00:00 AM" End="12/18/2010 8:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment128" Start="12/18/2010 8:00:00 AM" End="12/18/2010 9:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment129" Start="12/18/2010 9:00:00 AM" End="12/18/2010 10:00:00 AM" />
+	<schedule:Appointment Subject="Appointment130" Start="12/18/2010 10:00:00 AM" End="12/18/2010 11:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment131" Start="12/18/2010 11:00:00 AM" End="12/18/2010 12:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment132" Start="12/18/2010 12:00:00 PM" End="12/18/2010 1:00:00 PM" />
+	<schedule:Appointment Subject="Appointment133" Start="12/18/2010 1:00:00 PM" End="12/18/2010 2:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment134" Start="12/18/2010 2:00:00 PM" End="12/18/2010 3:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment135" Start="12/18/2010 3:00:00 PM" End="12/18/2010 4:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment136" Start="12/18/2010 4:00:00 PM" End="12/18/2010 5:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment137" Start="12/18/2010 5:00:00 PM" End="12/18/2010 6:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment138" Start="12/18/2010 6:00:00 PM" End="12/18/2010 7:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment139" Start="12/18/2010 7:00:00 PM" End="12/18/2010 8:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment140" Start="12/18/2010 8:00:00 PM" End="12/18/2010 9:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment141" Start="12/18/2010 9:00:00 PM" End="12/18/2010 10:00:00 PM" />
+	<schedule:Appointment Subject="Appointment142" Start="12/18/2010 10:00:00 PM" End="12/18/2010 11:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment143" Start="12/18/2010 11:00:00 PM" End="12/19/2010 12:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment144" Start="12/19/2010 12:00:00 AM" End="12/19/2010 1:00:00 AM" />
+	<schedule:Appointment Subject="Appointment145" Start="12/19/2010 1:00:00 AM" End="12/19/2010 2:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment146" Start="12/19/2010 2:00:00 AM" End="12/19/2010 3:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment147" Start="12/19/2010 3:00:00 AM" End="12/19/2010 4:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment148" Start="12/19/2010 4:00:00 AM" End="12/19/2010 5:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment149" Start="12/19/2010 5:00:00 AM" End="12/19/2010 6:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment150" Start="12/19/2010 6:00:00 AM" End="12/19/2010 7:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment151" Start="12/19/2010 7:00:00 AM" End="12/19/2010 8:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment152" Start="12/19/2010 8:00:00 AM" End="12/19/2010 9:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment153" Start="12/19/2010 9:00:00 AM" End="12/19/2010 10:00:00 AM" />
+	<schedule:Appointment Subject="Appointment154" Start="12/19/2010 10:00:00 AM" End="12/19/2010 11:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment155" Start="12/19/2010 11:00:00 AM" End="12/19/2010 12:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment156" Start="12/19/2010 12:00:00 PM" End="12/19/2010 1:00:00 PM" />
+	<schedule:Appointment Subject="Appointment157" Start="12/19/2010 1:00:00 PM" End="12/19/2010 2:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment158" Start="12/19/2010 2:00:00 PM" End="12/19/2010 3:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment159" Start="12/19/2010 3:00:00 PM" End="12/19/2010 4:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment160" Start="12/19/2010 4:00:00 PM" End="12/19/2010 5:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment161" Start="12/19/2010 5:00:00 PM" End="12/19/2010 6:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment162" Start="12/19/2010 6:00:00 PM" End="12/19/2010 7:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment163" Start="12/19/2010 7:00:00 PM" End="12/19/2010 8:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment164" Start="12/19/2010 8:00:00 PM" End="12/19/2010 9:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment165" Start="12/19/2010 9:00:00 PM" End="12/19/2010 10:00:00 PM" />
+	<schedule:Appointment Subject="Appointment166" Start="12/19/2010 10:00:00 PM" End="12/19/2010 11:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment167" Start="12/19/2010 11:00:00 PM" End="12/20/2010 12:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment168" Start="12/20/2010 12:00:00 AM" End="12/20/2010 1:00:00 AM" />
+	<schedule:Appointment Subject="Appointment169" Start="12/20/2010 1:00:00 AM" End="12/20/2010 2:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment170" Start="12/20/2010 2:00:00 AM" End="12/20/2010 3:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment171" Start="12/20/2010 3:00:00 AM" End="12/20/2010 4:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment172" Start="12/20/2010 4:00:00 AM" End="12/20/2010 5:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment173" Start="12/20/2010 5:00:00 AM" End="12/20/2010 6:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment174" Start="12/20/2010 6:00:00 AM" End="12/20/2010 7:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment175" Start="12/20/2010 7:00:00 AM" End="12/20/2010 8:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment176" Start="12/20/2010 8:00:00 AM" End="12/20/2010 9:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment177" Start="12/20/2010 9:00:00 AM" End="12/20/2010 10:00:00 AM" />
+	<schedule:Appointment Subject="Appointment178" Start="12/20/2010 10:00:00 AM" End="12/20/2010 11:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment179" Start="12/20/2010 11:00:00 AM" End="12/20/2010 12:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment180" Start="12/20/2010 12:00:00 PM" End="12/20/2010 1:00:00 PM" />
+	<schedule:Appointment Subject="Appointment181" Start="12/20/2010 1:00:00 PM" End="12/20/2010 2:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment182" Start="12/20/2010 2:00:00 PM" End="12/20/2010 3:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment183" Start="12/20/2010 3:00:00 PM" End="12/20/2010 4:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment184" Start="12/20/2010 4:00:00 PM" End="12/20/2010 5:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment185" Start="12/20/2010 5:00:00 PM" End="12/20/2010 6:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment186" Start="12/20/2010 6:00:00 PM" End="12/20/2010 7:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment187" Start="12/20/2010 7:00:00 PM" End="12/20/2010 8:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment188" Start="12/20/2010 8:00:00 PM" End="12/20/2010 9:00:00 PM"  />
+	<schedule:Appointment Subject="Appointment189" Start="12/20/2010 9:00:00 PM" End="12/20/2010 10:00:00 PM" />
+	<schedule:Appointment Subject="Appointment190" Start="12/20/2010 10:00:00 PM" End="12/20/2010 11:00:00 PM"/>
+	<schedule:Appointment Subject="Appointment191" Start="12/20/2010 11:00:00 PM" End="12/21/2010 12:00:00 AM"/>
+	<schedule:Appointment Subject="Appointment192" Start="12/21/2010 12:00:00 AM" End="12/21/2010 1:00:00 AM" />
+	<schedule:Appointment Subject="Appointment193" Start="12/21/2010 1:00:00 AM" End="12/21/2010 2:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment194" Start="12/21/2010 2:00:00 AM" End="12/21/2010 3:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment195" Start="12/21/2010 3:00:00 AM" End="12/21/2010 4:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment196" Start="12/21/2010 4:00:00 AM" End="12/21/2010 5:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment197" Start="12/21/2010 5:00:00 AM" End="12/21/2010 6:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment198" Start="12/21/2010 6:00:00 AM" End="12/21/2010 7:00:00 AM"  />
+	<schedule:Appointment Subject="Appointment199" Start="12/21/2010 7:00:00 AM" End="12/21/2010 8:00:00 AM"  />
+
+</schedule:ObservableAppointmentCollection>

@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Configuration.TimeRuler.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.Configuration.TimeRuler"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.GanttView">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<local:ViewModel x:Key="ViewModel" />
+			<common:TicksToTimeSpanConverter x:Key="TicksToTimeSpanConverter" />
+
+            <Style TargetType="telerik:MinorTickContainer" BasedOn="{StaticResource MinorTickContainerStyle}">
+                <Setter Property="BorderThickness" Value="1 0 0 1" />
+            </Style>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<qsf:HeaderedContentControl Grid.Row="0" Margin="0 30"
+				Header="Default - two timeruler lines, the control will automatically choose the most appropriate tick interval.">
+			<telerik:RadGanttView TasksSource="{Binding Tasks}"
+					PixelLength="{Binding Value, ElementName=PixelLength, Converter={StaticResource TicksToTimeSpanConverter}}"
+					ShowCurrentHourIndicator="{Binding IsChecked, ElementName=ShowCurrentHourIndicator}">
+				<telerik:RadGanttView.VisibleRange>
+					<common:CurrentMonthVisibleRange />
+				</telerik:RadGanttView.VisibleRange>
+				<telerik:RadGanttView.Columns>
+                    <telerik:TreeColumnDefinition Header="Title" MemberBinding="{Binding Title}" Width="160" />
+                    <telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="160" />
+                    <telerik:ColumnDefinition Header="End" MemberBinding="{Binding End}" Width="160" />
+				</telerik:RadGanttView.Columns>
+			</telerik:RadGanttView>
+		</qsf:HeaderedContentControl>
+
+		<qsf:HeaderedContentControl Grid.Row="1" Margin="0 30"
+				Header="Two timeruler lines, fixed tick intervals - the tick interval remains the same regardless of the zoom level.">
+			<telerik:RadGanttView TasksSource="{Binding Tasks}"
+					PixelLength="{Binding Value, ElementName=PixelLength, Converter={StaticResource TicksToTimeSpanConverter}}"
+					FirstDayOfWeek="{Binding SelectedItem, ElementName=FirstDayOfWeek}"
+					ShowCurrentHourIndicator="{Binding IsChecked, ElementName=ShowCurrentHourIndicator}">
+				<telerik:RadGanttView.VisibleRange>
+					<common:CurrentMonthVisibleRange />
+				</telerik:RadGanttView.VisibleRange>
+				<telerik:RadGanttView.TimeRulerLines>
+					<telerik:MajorTickLine>
+						<telerik:TickInterval Interval="OneWeek" FormatString="Week #{1}, {0:yyyy}" />
+					</telerik:MajorTickLine>
+					<telerik:MajorTickLine>
+						<telerik:TickInterval Interval="OneDay" FormatString="{}{0:ddd}" />
+						<telerik:TickInterval Interval="OneDay" MinLength="80" FormatString="{}{0:dddd}" />
+					</telerik:MajorTickLine>
+				</telerik:RadGanttView.TimeRulerLines>
+				<telerik:RadGanttView.Columns>
+                    <telerik:TreeColumnDefinition Header="Title" MemberBinding="{Binding Title}" Width="160" />
+                    <telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="160" />
+                    <telerik:ColumnDefinition Header="End" MemberBinding="{Binding End}" Width="160" />
+				</telerik:RadGanttView.Columns>
+			</telerik:RadGanttView>
+		</qsf:HeaderedContentControl>
+
+		<qsf:HeaderedContentControl Grid.Row="2" Margin="0 30"
+				Header="Three timeruler lines, variable tick intervals, custom format strings - the GanttView control chooses the most appropriate tick interval.">
+			<telerik:RadGanttView TasksSource="{Binding Tasks}"
+					PixelLength="{Binding Value, ElementName=PixelLength, Converter={StaticResource TicksToTimeSpanConverter}}"
+					ShowCurrentHourIndicator="{Binding IsChecked, ElementName=ShowCurrentHourIndicator}">
+				<telerik:RadGanttView.VisibleRange>
+					<common:CurrentMonthVisibleRange />
+				</telerik:RadGanttView.VisibleRange>
+				<telerik:RadGanttView.TimeRulerLines>
+					<telerik:GroupTickLine MinTickLength="300">
+						<telerik:TickInterval Interval="OneYear" FormatString="{}{0:yyyy}" />
+						<telerik:TickInterval Interval="OneMonth" FormatString="{}{0:MMMM, yyyy}" />
+						<telerik:TickInterval Interval="OneDay" FormatString="{}{0:dd MMMM, yyyy}" />
+					</telerik:GroupTickLine>
+					<telerik:MajorTickLine MinTickLength="45">
+						<telerik:TickInterval Interval="OneDay" FormatString="{}{0:dd}" />
+						<telerik:TickInterval Interval="OneHour" FormatString="{}{0:hh:mm}" />
+					</telerik:MajorTickLine>
+					<telerik:MinorTickLine MinTickLength="5" Height="8">
+						<telerik:TickInterval Interval="OneHour" />
+						<telerik:TickInterval Interval="FifteenMinutes" />
+						<telerik:TickInterval Interval="FiveMinutes" />
+						<telerik:TickInterval Interval="OneMinute" />
+					</telerik:MinorTickLine>
+				</telerik:RadGanttView.TimeRulerLines>
+				<telerik:RadGanttView.Columns>
+                    <telerik:TreeColumnDefinition Header="Title" MemberBinding="{Binding Title}" Width="160" />
+                    <telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="160" />
+                    <telerik:ColumnDefinition Header="End" MemberBinding="{Binding End}" Width="160" />
+				</telerik:RadGanttView.Columns>
+			</telerik:RadGanttView>
+		</qsf:HeaderedContentControl>
+	</Grid>
+
+	<qsf:QuickStart.ConfigurationPanel>
+		<StackPanel Orientation="Vertical" DataContext="{StaticResource ViewModel}">
+			<TextBlock Text="PixelLength - the TimeSpan that will be rendered as one pixel." TextWrapping="Wrap" Margin="0 50 0 0" />
+			<telerik:RadSlider x:Name="PixelLength" Minimum="10000000" Maximum="30000000000" Value="18000000000" Style="{StaticResource RadSliderStyle}" />
+
+			<TextBlock Text="FirstDayOfWeek" Margin="0 50 0 0" />
+			<telerik:RadComboBox x:Name="FirstDayOfWeek" SelectedIndex="0" ItemsSource="{Binding WeekDays}" />
+
+			<CheckBox x:Name="ShowCurrentHourIndicator" Margin="0 50 0 0" Content="ShowCurrentHourIndicator"
+					IsThreeState="False" IsChecked="True" />
+		</StackPanel>
+	</qsf:QuickStart.ConfigurationPanel>
+
+</UserControl>

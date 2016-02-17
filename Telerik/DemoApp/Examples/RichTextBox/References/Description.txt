@@ -1,0 +1,5 @@
+﻿Using <b>References</b> you can create a more structured and easy to navigate document. In this way you not only enrich its content, but also improve its readability. 
+
+<br /><b>Footnotes</b> and <b>endnotes</b> are particularly useful when remarks have to be added to the document, but inserting them inline would interrupt the natural flow of thought.
+
+<br />The <b>Citations and Bibliography</b> functionality is also used in a similar manner in scenarios such as when creating a thesis, a dissertation or another document that requires the sources of information to be quoted. The feature is enhanced by the presence of predefined styles, which are designed especially for this purpose: APA, ISO 690 and Harvard-Anglia.

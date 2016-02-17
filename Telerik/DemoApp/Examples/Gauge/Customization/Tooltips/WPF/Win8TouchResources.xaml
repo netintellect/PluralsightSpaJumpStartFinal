@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <telerik:GaugeMeasure x:Key="markerOffset">-0.13*</telerik:GaugeMeasure>
+    <telerik:GaugeMeasure x:Key="ticksOffset">0.1*</telerik:GaugeMeasure>
+    <telerik:GaugeMeasure x:Key="labelOffset">0.12*</telerik:GaugeMeasure>
+</ResourceDictionary>

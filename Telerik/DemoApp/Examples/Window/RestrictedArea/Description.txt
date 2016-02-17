@@ -1,0 +1,1 @@
+﻿This example shows how to restrict the area in which the RadWindow can be dragged. IsRestricted property enables or disables this functionality. 

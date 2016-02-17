@@ -1,0 +1,9 @@
+﻿Numeric Indicator displays its Value property as digital indicator device. It is a set of character cells having common properties for layout, appearance and character templating. Any character cell can be configured separately through style. 
+
+The Numeric Indicator appearance supports the following features:
+
+1. The standard Telerik provided Numeric Indicator templates allow the use of <b>BorderBrush</b> and <b>BorderThickness</b>.
+2. <b>Foreground</b> property of Numeric Indicator is used for each cell as foreground, if it is not explicitly specified for the cell.
+3. The Numeric Indicator could have its own template to setup desirable appearance.
+4. The Numeric Indicator could have templates for each character cell to setup desirable appearance.
+5. The Numeric Indicator could have templates for each character that is displayed to setup its desirable appearance.

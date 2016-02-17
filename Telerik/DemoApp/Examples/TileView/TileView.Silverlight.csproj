@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2638123-C307-441C-9E98-2D091FF97603}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TileView</RootNamespace>
+    <AssemblyName>TileView</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TileView.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TileView.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>TileView.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls, Version=2011.1.207.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.MediaPlayer">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.MediaPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Common\SimpleItem.cs" />
+    <Compile Include="Common\DifferentSizes\DateTimeToStringConverter.cs" />
+    <Compile Include="Common\DifferentSizes\ImagePair.cs" />
+    <Compile Include="Common\DifferentSizes\MainViewModel.cs" />
+    <Compile Include="Common\FirstLook\MainViewModel.cs" />
+    <Compile Include="Common\FirstLook\Trip.cs" />
+    <Compile Include="Common\Integration\NationalityToImageConverter.cs" />
+    <Compile Include="Common\Integration\Car.cs" />
+    <Compile Include="Common\Integration\MainViewModel.cs" />
+    <Compile Include="Common\Integration\MainViewModel.Teams.cs" />
+    <Compile Include="Common\Integration\Team.cs" />
+    <Compile Include="Common\ItemSizing\MainViewModel.cs" />
+    <Compile Include="Common\ItemSizing\Person.cs" />
+    <Compile Include="Common\Integration\Pilot.cs" />
+    <Compile Include="Common\Integration\PositionConverter.cs" />
+    <Compile Include="Features\Animations\EasingItem.cs" />
+    <Compile Include="Features\DifferentSizes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AutomaticScrolling\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Animations\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\PinnedTiles\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Docking\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Countries.cs" />
+    <Compile Include="Common\Country.cs" />
+    <Compile Include="Integration\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Virtualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemSizing\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Common\CommonTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\Integration\DynamicPositionTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\DifferentSizes\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\DifferentSizes\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\AutomaticScrolling\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\Animations\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\PinnedTiles\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\Docking\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Integration\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Virtualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemSizing\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Integration\Description.txt" />
+    <Resource Include="ItemSizing\Description.txt" />
+    <Resource Include="Virtualization\Description.txt" />
+    <Resource Include="Features\AutomaticScrolling\Description.txt" />
+    <Resource Include="Features\Docking\Description.txt" />
+    <Resource Include="Features\Animations\Description.txt" />
+    <Resource Include="Features\PinnedTiles\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\Integration\CarPics\BMW Sauber F1 Team.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Force India F1 Team.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\HRT F1 Team.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Lotus Racing.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Mercedes GP Petronas F1 Team.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Red Bull Racing.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Renault F1 Team.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Scuderia Ferrari Marlboro.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Scuderia Toro Rosso.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Virgin Racing.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Vodafone McLaren Mercedes.jpg" />
+    <None Include="Images\TileView\Integration\CarPics\Williams.jpg" />
+    <None Include="Images\TileView\Integration\CountryFlags\Brazil.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Finland.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Germany.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Great Britain.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\India.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Italy.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Poland.png" />
+    <None Include="Images\TileView\Integration\CountryFlags\Spain.png" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Fernando Alonso.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Heikki Kovalainen.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Jaime Alguersuari.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Jenson Button.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Karun Chandhok.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Lucas di Grassi.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Nick Heidfeld.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Nico Rosberg.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Robert Kubica.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Rubens Barrichello.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Sebastian Vettel.jpg" />
+    <None Include="Images\TileView\Integration\PilotProfilePics\Tonio Liuzzi.jpg" />
+    <Resource Include="Images\TileView\Products\Big\TileView.png" />
+    <Resource Include="Images\TileView\small_title.png" />
+    <Resource Include="Images\TileView\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\TileView\Products\Products\Big\" />
+    <Folder Include="Integration\ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\People\pic1.png" />
+    <None Include="Images\TileView\People\pic10.png" />
+    <None Include="Images\TileView\People\pic11.png" />
+    <None Include="Images\TileView\People\pic12.png" />
+    <None Include="Images\TileView\People\pic2.png" />
+    <None Include="Images\TileView\People\pic3.png" />
+    <None Include="Images\TileView\People\pic4.png" />
+    <None Include="Images\TileView\People\pic5.png" />
+    <None Include="Images\TileView\People\pic6.png" />
+    <None Include="Images\TileView\People\pic7.png" />
+    <None Include="Images\TileView\People\pic8.png" />
+    <None Include="Images\TileView\People\pic9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\FirstLook\Amsterdam.png" />
+    <None Include="Images\TileView\FirstLook\Athens.png" />
+    <None Include="Images\TileView\FirstLook\Barcelona.png" />
+    <None Include="Images\TileView\FirstLook\Berlin.png" />
+    <None Include="Images\TileView\FirstLook\Budapest.png" />
+    <None Include="Images\TileView\FirstLook\London.png" />
+    <None Include="Images\TileView\FirstLook\Paris.png" />
+    <None Include="Images\TileView\FirstLook\Prague.png" />
+    <None Include="Images\TileView\FirstLook\Roma.png" />
+    <None Include="Images\TileView\FirstLook\Stockholm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\DifferentSizes\Large\1.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\2.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\3.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\4.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\5.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\6.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\7.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\8.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\BG1.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\BG2.png" />
+    <None Include="Images\TileView\DifferentSizes\Large\BG3.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\1.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\2.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\3.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\4.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\5.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\6.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\7.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\8.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\BG0.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\BG1.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\BG2.png" />
+    <None Include="Images\TileView\DifferentSizes\Small\BG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Features\DifferentSizes\Description.txt" />
+    <Resource Include="Images\TileView\call.png" />
+    <Resource Include="Images\TileView\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\FirstLook\topprice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\FirstLook\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TileView\FirstLook\Vienna.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

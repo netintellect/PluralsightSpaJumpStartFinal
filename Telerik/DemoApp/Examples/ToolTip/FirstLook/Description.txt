@@ -1,0 +1,2 @@
+﻿RadToolTip enables you to specify tooltips on various controls.
+The examples demonstrates how you can use RadToolTipService to set up RadToolTips on RadMap's items (points of interest).

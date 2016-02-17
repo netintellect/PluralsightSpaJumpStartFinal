@@ -1,0 +1,223 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Customization.RadialScaleIndicators.Example"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                      xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+                      xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
+    <demo:DynamicBasePage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Gauge;component/RadGaugeResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+			<demo:ScaleObjectLocationItemsSource x:Key="ScaleObjectLocationItemsSource" />
+			<demo:SolidBrushItemsSource x:Key="SolidBrushSource" />
+
+		</ResourceDictionary>
+    </demo:DynamicBasePage.Resources>
+
+    <Grid Width="784" Height="484"> 
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+			<telerik:RadRadialGauge Width="240" Height="240">
+				<telerik:RadialScale x:Name="radialScale"
+									 Min="0" Max="100"
+									 MajorTicks="10"
+									 MiddleTicks="2"
+									 MinorTicks="2"
+									 RangeLocation="Inside">
+
+					<telerik:RadialScale.Ranges>
+						<telerik:GaugeRange Min="0" Max="60" 
+											StartWidth="0.02" 
+											EndWidth="0.1"
+											Background="#FFFF9B00"
+											Stroke="#7FFFFFFF" />
+						<telerik:GaugeRange Min="60" Max="80" 
+											StartWidth="0.1" EndWidth="0.12"
+											Background="#FFFF6900"
+											Stroke="#7FFFFFFF" />
+						<telerik:GaugeRange Min="80" Max="100"
+											StartWidth="0.12" EndWidth="0.14"
+											Background="#FFFF3700"
+											Stroke="#7FFFFFFF" />
+						<telerik:GaugeRangeGroup x:Name="stateRanges">
+							<telerik:GaugeRange Min="0" Max="50"
+												StartWidth="0" EndWidth="0"
+												Stroke="Transparent">
+								<telerik:GaugeRange.IndicatorBackground>
+									<RadialGradientBrush>
+										<GradientStop Offset="0" Color="#FFFFCD00" />
+										<GradientStop Offset="1" Color="#FFFF8200" />
+									</RadialGradientBrush>
+								</telerik:GaugeRange.IndicatorBackground>
+							</telerik:GaugeRange>
+							<telerik:GaugeRange Min="50.1" Max="100"
+												StartWidth="0" EndWidth="0"
+												Stroke="Transparent">
+								<telerik:GaugeRange.IndicatorBackground>
+									<RadialGradientBrush>
+										<GradientStop Offset="0" Color="#FFFF5000" />
+										<GradientStop Offset="1" Color="#FFFF1400" />
+									</RadialGradientBrush>
+								</telerik:GaugeRange.IndicatorBackground>
+							</telerik:GaugeRange>
+						</telerik:GaugeRangeGroup>
+					</telerik:RadialScale.Ranges>
+					<telerik:RadialScale.Indicators>
+						<telerik:BarIndicator Name="radialBar" 
+											  IsAnimated="True"
+											  Value="{Binding ElementName=needle, Path=Value}"
+											  StartWidth="{Binding ElementName=barStartWidth, Path=Value}"
+											  EndWidth="{Binding ElementName=barEndWidth, Path=Value}"
+											  telerik:ScaleObject.Location="{Binding ElementName=barLocation,Path=SelectedItem,Converter={StaticResource ScaleObjectLocationItemsSource}}"
+											  StrokeThickness="{Binding ElementName=barStrokeThickness, Path=Value}"
+											  BorderBrush="{Binding ElementName=barStroke, Path=SelectedItem}"
+											  EmptyFill="{Binding ElementName=barEmptyFill, Path=SelectedItem}"
+											  Background="{Binding ElementName=barBackground, Path=SelectedItem}" />
+
+						<telerik:Marker Name="marker"
+										IsAnimated="{Binding ElementName=markerAnimated, Path=IsChecked}"
+										Value="{Binding ElementName=markerValue, Path=Value}"
+										telerik:ScaleObject.RelativeWidth="{Binding ElementName=markerWidth, Path=Value}"
+										telerik:ScaleObject.RelativeHeight="{Binding ElementName=markerHeight, Path=Value}"
+										telerik:ScaleObject.Location="{Binding ElementName=markerLocation,Path=SelectedItem,Converter={StaticResource ScaleObjectLocationItemsSource}}" />
+						<telerik:NumericIndicator Name="numericIndicator"
+												  Value="{Binding ElementName=needle, Path=Value}"
+												  Format="{}{0:F0}"
+												  FontFamily="Arial"
+												  telerik:ScaleObject.RelativeX="0.3" 
+												  telerik:ScaleObject.RelativeY="0.8"
+												  telerik:ScaleObject.RelativeWidth="0.55"
+												  telerik:ScaleObject.RelativeHeight="0.16"
+												  Background="Transparent"
+												  BorderThickness="0"
+												  FontSize="16">
+							<telerik:NumericIndicator.Positions>
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+								<telerik:FontNumberPosition Background="Transparent" BorderThickness="0" />
+							</telerik:NumericIndicator.Positions>
+						</telerik:NumericIndicator>
+
+						<telerik:Needle x:Name="needle" IsAnimated="True" />
+						<telerik:Pinpoint />
+
+						<telerik:IndicatorGroup Ranges="{Binding ElementName=stateRanges}">
+							<telerik:StateIndicator Name="stateIndicator"
+													Value="{Binding ElementName=needle, Path=Value}"
+													UseRangeColor="True"
+													StrokeThickness="0"
+													HorizontalAlignment="Center"
+													telerik:ScaleObject.RelativeX="0.5"
+													telerik:ScaleObject.RelativeY="0.25"
+													telerik:ScaleObject.RelativeWidth="0.2"
+													telerik:ScaleObject.RelativeHeight="0.2" />
+						</telerik:IndicatorGroup>
+
+					</telerik:RadialScale.Indicators>
+				</telerik:RadialScale>
+			</telerik:RadRadialGauge>
+        </Border>
+    </Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+            
+            <TextBlock Text="Indicator properties:" />
+
+			<!-- Marker properties -->
+			<StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../Images/Gauge/Icons/Marker.png" />
+				<TextBlock VerticalAlignment="Center">Marker</TextBlock>
+			</StackPanel>
+
+            <TextBlock Text="Value" />
+            <telerik:RadNumericUpDown Name="markerValue" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="100"
+                                      Value="65"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+            <TextBlock Text="Relative Width" />
+            <telerik:RadNumericUpDown Name="markerWidth" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.1"
+                                      SmallChange="0.05" 
+                                      Margin="0,2" />
+
+            <TextBlock Text="Relative Height" />
+            <telerik:RadNumericUpDown Name="markerHeight" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.1"
+                                      SmallChange="0.05"
+                                      Margin="0,2" />
+
+			<TextBlock Text="Location:" />
+            <telerik:RadComboBox Name="markerLocation"
+                                 ItemsSource="{StaticResource ScaleObjectLocationItemsSource}"
+                                 SelectedIndex="0"
+                                 Margin="0,2" />
+
+            <CheckBox x:Name="markerAnimated" 
+                      Content="Animated" 
+                      IsChecked="True"
+                      Margin="0,2" />
+			
+            <!-- bar properties -->
+			<StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+				<Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../Images/Gauge/Icons/Bar_indicator.png" />
+				<TextBlock VerticalAlignment="Center">Bar Indicator</TextBlock>
+			</StackPanel>
+            
+            <TextBlock Text="Start Width" />
+            <telerik:RadNumericUpDown Name="barStartWidth" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.08"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+            <TextBlock Text="EndWidth" />
+            <telerik:RadNumericUpDown Name="barEndWidth" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.08"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+            <TextBlock Text="Location:" />
+            <telerik:RadComboBox Name="barLocation"
+                                 ItemsSource="{StaticResource ScaleObjectLocationItemsSource}" 
+                                 SelectedIndex="2"
+                                 Margin="0,2" />
+
+            <TextBlock Text="Thickness:" />
+            <telerik:RadNumericUpDown Name="barStrokeThickness" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="5"
+                                      Value="1"
+                                      SmallChange="1" 
+                                      Margin="0,2" />
+
+            <TextBlock Text="Stroke:" />
+            <telerik:RadComboBox Name="barStroke"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+                                 SelectedItem="Transparent"
+                                 Margin="0,2" />
+
+            <TextBlock Text="Empty Fill:" />
+            <telerik:RadComboBox Name="barEmptyFill"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+                                 SelectedItem="Transparent"
+                                 Margin="0,2" />
+
+            <TextBlock Text="Background:" />
+            <telerik:RadComboBox Name="barBackground"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+                                 SelectedItem="Blue"
+                                 Margin="0,2" />
+        </StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

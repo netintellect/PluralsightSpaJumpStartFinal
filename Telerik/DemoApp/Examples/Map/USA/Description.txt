@@ -1,0 +1,3 @@
+﻿RadMap provides support for stunning map overlays through its KML-import feature.  Once you have the desired set of features (placemarks, images, polygons, textual descriptions, etc.) encoded in KML, you can easily import the data and visualize it through the RadMap control.
+
+This example loads USA states borders from the KML file and shows them using Empty Provider. If you put mouse over the state abbreviation you will see tooltip create using built in support for BalloonStyle and ExtendedData KML elements.

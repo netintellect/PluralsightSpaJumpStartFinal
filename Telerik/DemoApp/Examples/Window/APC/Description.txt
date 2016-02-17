@@ -1,0 +1,1 @@
+﻿Telerik Window exposes <b>Alert</b>, <b>Prompt</b> and <b>Confirm</b> methods allowing you to replace the standard dialog boxes provided by the browser.

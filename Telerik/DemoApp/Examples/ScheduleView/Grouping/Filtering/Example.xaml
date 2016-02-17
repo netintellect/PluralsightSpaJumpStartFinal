@@ -1,0 +1,25 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.Grouping.Filtering.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.Grouping.Filtering"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Filtering - Show Weekends" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" />
+	</UserControl.Resources>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<scheduleView:RadScheduleView Grid.Row="1" Grid.Column="1" AppointmentsSource="{Binding Appointments}">
+			<scheduleView:RadScheduleView.ViewDefinitions>
+				<scheduleView:WeekViewDefinition VisibleDays="30" GroupFilter="{Binding GroupFilter}" />
+			</scheduleView:RadScheduleView.ViewDefinitions>
+		</scheduleView:RadScheduleView>
+	</Grid>
+</UserControl>

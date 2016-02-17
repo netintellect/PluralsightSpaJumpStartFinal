@@ -1,0 +1,3 @@
+﻿<p>Building hierarchical navigation systems has never been easier before. By being an <b>ItemsControl</b> Telerik TreeView allows you to model the information by creating parent-child relations between the nodes. Moreover, RadTreeView allows multiple items selection, nodes editing, drag and drop, UI and data virtualization and many other features.</p>
+
+<p>RadTreeView is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.</p>

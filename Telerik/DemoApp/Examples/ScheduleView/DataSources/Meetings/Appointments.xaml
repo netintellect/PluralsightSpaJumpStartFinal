@@ -1,0 +1,66 @@
+<schedule:ObservableAppointmentCollection xml:lang="EN-US"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.ScheduleView.Common"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<!-- 1st day-->
+	<schedule:Appointment Subject="Interview for Software Developer Position" Body="Software Developer - C#, VB.NET / JavaScript" 
+			Start="11/14/2010 8:00AM" End="11/14/2010 9:15AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="John" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Interview for ASP.NET Support Officer job position" Body="ASP.NET Support Officer - Microsot SQL Server 2005 /2008" 
+						  Start="11/14/2010 8:30AM" End="11/14/2010 9:45AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Meeting with Earick Danstin" Body="Software Developer - experience with C# and ASP.NET, experience with MS SQL Server"
+			Start="11/14/2010 10:30AM" End="11/14/2010 11:45AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Meeting with Nathela Warnal" Start="11/14/2010 9:00AM"
+			End="11/14/2010 10:15AM" Body="Meeting with Nathela Warnal">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Coach - mentor meeting" Start="11/17/2010 9:30AM"
+			End="11/17/2010 10:45AM" Body="This is a review meeting, its purpose is to give the new employee feedback on his performance ">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="John" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Conference meeting"  Body="" 
+						  Start="11/14/2010 11:00AM"
+			End="11/14/2010 11:15AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+
+	<schedule:Appointment Subject="Weekly meeting- Silverligth and WPF teams" 
+			Start="11/15/2010 8:00AM" End="11/15/2010 9:15AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="John" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+
+	<schedule:Appointment Subject="Review meeting" Start="11/16/2010 9:30AM"
+			End="11/16/2010 10:45AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+	<schedule:Appointment Subject="Phone Call with Adria Zander"  Body="Remote User" 
+						  Start="11/17/2010 10:00AM"
+			End="11/17/2010 11:15AM">
+		<schedule:Appointment.Resources>
+			<scheduleView:Resource ResourceName="Team" ResourceType="Calendar" />
+		</schedule:Appointment.Resources>
+	</schedule:Appointment>
+</schedule:ObservableAppointmentCollection>

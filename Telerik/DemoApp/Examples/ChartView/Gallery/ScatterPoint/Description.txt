@@ -1,0 +1,1 @@
+﻿This example shows a Scatter (Point) chart. The Shapes of the Points are created by assigning different interface (UI) elements to the PointTemplate property.

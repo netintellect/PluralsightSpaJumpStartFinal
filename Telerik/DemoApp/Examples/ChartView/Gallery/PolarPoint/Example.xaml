@@ -1,0 +1,56 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Gallery.PolarPoint.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.DataContext>
+        <vm:PolarViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate x:Key="PointTemplate1">
+            <Ellipse Height="10" Width="10" Fill="#FF8EC441" />
+        </DataTemplate>
+        <DataTemplate x:Key="PointTemplate2">
+            <Rectangle Height="10" Width="10" Fill="#FF1B9DDE" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <telerik:RadPolarChart Palette="Windows8">
+            <telerik:PolarPointSeries ItemsSource="{Binding PolarPointData[0]}"
+                                      AngleBinding="Angle"
+                                      ValueBinding="Value"
+                                      PointTemplate="{StaticResource PointTemplate1}" />
+            <telerik:PolarPointSeries ItemsSource="{Binding PolarPointData[1]}"
+                                      AngleBinding="Angle"
+                                      ValueBinding="Value"
+                                      PointTemplate="{StaticResource PointTemplate2}" />
+
+            <telerik:RadPolarChart.PolarAxis>
+                <telerik:PolarAxis />
+            </telerik:RadPolarChart.PolarAxis>
+
+            <telerik:RadPolarChart.RadialAxis>
+                <telerik:NumericRadialAxis/>
+            </telerik:RadPolarChart.RadialAxis>
+
+            <telerik:RadPolarChart.Grid>
+                <telerik:PolarChartGrid GridLineVisibility="Both" StripesVisibility="Both">
+                    <telerik:PolarChartGrid.PolarStripeBrushes>
+                        <SolidColorBrush Color="#FFD7D7D7" Opacity="0.3" />
+                        <SolidColorBrush Color="Transparent" />
+                    </telerik:PolarChartGrid.PolarStripeBrushes>
+                    <telerik:PolarChartGrid.RadialStripeBrushes>
+                        <SolidColorBrush Color="#FFD7D7D7" Opacity="0.3" />
+                        <SolidColorBrush Color="Transparent" />
+                    </telerik:PolarChartGrid.RadialStripeBrushes>
+                </telerik:PolarChartGrid>
+            </telerik:RadPolarChart.Grid>
+        </telerik:RadPolarChart>
+    </Grid>
+</UserControl>

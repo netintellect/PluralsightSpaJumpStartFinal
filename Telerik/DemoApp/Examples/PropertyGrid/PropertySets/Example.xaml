@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.PropertySets.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 mc:Ignorable="d"
+			 xmlns:example="clr-namespace:Telerik.Windows.Examples.PropertyGrid.PropertySets"
+			 xmlns:collections="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+			 xmlns:expressionShapes="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Using property sets"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<UserControl.Resources>
+		<example:MyViewModel x:Key="vm">
+			<example:MyViewModel.EditedElements>
+				<expressionShapes:RegularPolygon InnerRadius="50"
+												 PointCount="5"
+												 Height="120"
+												 Width="120"
+												 Stroke="Black"
+												 Margin="20" />
+				<expressionShapes:Arc Height="120"
+									  Width="120"
+									  Stroke="Black"
+									  Margin="20" />
+				<expressionShapes:BlockArrow Height="120"
+											 Width="120"
+											 Stroke="Black"
+											 Margin="20" />
+			</example:MyViewModel.EditedElements>
+		</example:MyViewModel>
+		<example:ColorToBrushConverter x:Key="brushConverter" />
+		<DataTemplate x:Key="strokeTemplate">
+			<telerik:RadColorEditor SelectedColor="{Binding CurrentPropertySet[Stroke], Converter={StaticResource brushConverter}, Mode=TwoWay}" />
+		</DataTemplate>
+		<DataTemplate x:Key="fillTemplate">
+			<telerik:RadColorEditor SelectedColor="{Binding CurrentPropertySet[Fill], Converter={StaticResource brushConverter}, Mode=TwoWay}" />
+		</DataTemplate>
+	</UserControl.Resources>
+	<Grid Height="500"
+		  DataContext="{StaticResource vm}"
+		  x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<ListBox SelectionMode="Multiple"
+				 x:Name="shapesListBox"
+				 HorizontalAlignment="Center"
+				 BorderThickness="0"
+				 ItemsSource="{Binding EditedElements}">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+		</ListBox>
+		<telerik:RadPropertyGrid Grid.Column="1"
+								 Item="{Binding ElementName=shapesListBox, Path=SelectedItems}"
+								 PropertySetMode="{Binding ElementName=radComboBox, Path=SelectedValue}"
+								 x:Name="radPropertyGrid"
+								 AutoGeneratingPropertyDefinition="OnAutoGeneratingPropertyDefinition" />
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<TextBlock Text="PropertySet mode:"/>
+			<telerik:RadComboBox x:Name="radComboBox"
+								 SelectedValuePath="Value"
+								 SelectedIndex="0"/>
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

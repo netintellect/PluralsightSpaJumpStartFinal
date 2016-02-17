@@ -1,0 +1,1 @@
+﻿This example demonstrates the Windows7-like docking options for Maximizing tiles. Just drag an item close to an edge and drop it when you see the docking overlay.

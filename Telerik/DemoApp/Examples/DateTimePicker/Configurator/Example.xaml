@@ -1,0 +1,85 @@
+<UserControl x:Class="Telerik.Windows.Examples.DateTimePicker.Configurator.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+        d:DesignHeight="300" d:DesignWidth="800"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+    <UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="StrongBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.StrongColor}" />
+        <SolidColorBrush x:Key="MainBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+        <SolidColorBrush x:Key="BasicBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.BasicColor}" />
+
+
+        <DataTemplate x:Key="ToolTipTemplateStyle">
+            <Border Background="White" BorderBrush="{StaticResource BasicBrush}" BorderThickness="1" Margin="0 0 0 2">
+                <TextBlock TextWrapping="Wrap" MaxWidth="350" Text="{Binding}" Margin="2 1" Foreground="{StaticResource StrongBrush}" />
+            </Border>
+        </DataTemplate>
+        <telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Configurator" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel>
+
+            <CheckBox x:Name="IsReadOnly" IsThreeState="False" Margin="2 0 2 5" Content="IsReadOnly" MinHeight="22" />
+
+            <CheckBox x:Name="IsTooltipEnabled" IsThreeState="False" Margin="2 0 2 5" Content="IsTooltipEnabled" MinHeight="22" IsChecked="True" />
+
+            <CheckBox x:Name="IsNoSeparatorParsingEnabled" IsThreeState="False" Margin="2 0 2 5" Content="AllowParsingWithoutSeparator" MinHeight="22" />
+
+            <CheckBox x:Name="IsTodayButtonVisible" IsThreeState="False" Margin="2 0 2 5" Content="ShowTodayButton" MinHeight="22" />
+
+            <TextBlock Text="DisplayFormat" Margin="2 0"/>
+            <telerik:RadComboBox x:Name="DisplayFormat" Margin="2 0 2 5" SelectedIndex="1" MinHeight="22" />
+
+            <TextBlock Text="InputMode" Margin="2 0"/>
+            <telerik:RadComboBox x:Name="InputMode" Margin="2 0 2 5" SelectedIndex="0" MinHeight="22" />
+
+            <TextBlock Text="DateSelectionMode" Margin="2 0"/>
+            <telerik:RadComboBox x:Name="DateSelectionMode" Margin="2 0 2 5" SelectedIndex="0" MinHeight="22" />
+
+            <TextBlock Text="DateTimeWatermarkContent" Margin="2 10 0 0" TextTrimming="WordEllipsis"/>
+            <TextBox x:Name="DateTimeWatermarkContent" Margin="2 0 2 0" Text="Enter Date/Time here..."/>
+
+            <TextBlock Text="ErrorTooltipContent" Margin="2 10 0 0" TextTrimming="WordEllipsis"/>
+            <TextBox x:Name="ErrorTooltipContent" Margin="2 0 2 0" Text="Current text cannot be parsed correctly"/>
+
+            <TextBlock Text="TodayButtonContent" Margin="2 10 0 0" TextTrimming="WordEllipsis" />
+            <TextBox x:Name="TodayButtonContent" Margin="2 0 2 0" Text="Today" />
+
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Grid Width="500" Height="120">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="0 5" Text="SelectedValue:"  />
+            <TextBlock Text="{Binding SelectedValue, ElementName=dateTimePicker}" Foreground="#FF3575A0" Margin="0 0 0 5" />
+
+            <telerik:RadDateTimePicker x:Name="dateTimePicker" Margin="0 5 0 0" Width="260" 
+									   DateTimeWatermarkContent="{Binding Text, ElementName=DateTimeWatermarkContent}"
+									   DisplayFormat="{Binding SelectedValue, ElementName=DisplayFormat}"
+									   InputMode="{Binding SelectedValue, ElementName=InputMode}"
+									   IsReadOnly="{Binding IsChecked, ElementName=IsReadOnly}"
+									   DateSelectionMode="{Binding SelectedValue, ElementName=DateSelectionMode}"
+									   ErrorTooltipContent="{Binding Text, ElementName=ErrorTooltipContent}"
+                                       TooltipTemplate="{StaticResource ToolTipTemplateStyle}"
+									   IsTooltipEnabled="{Binding IsChecked, ElementName=IsTooltipEnabled}"
+                                       AllowParsingWithoutSeparator="{Binding IsChecked, ElementName=IsNoSeparatorParsingEnabled}"
+                                       TodayButtonVisibility="{Binding IsChecked, ElementName=IsTodayButtonVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                       TodayButtonContent="{Binding Text, ElementName=TodayButtonContent}" />
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

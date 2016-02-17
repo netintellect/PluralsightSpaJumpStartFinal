@@ -1,0 +1,1 @@
+﻿This sample demonstrates the use of QueryParameters. QueryParameters are often requied when you need to call a stored procedure. In case the client and server types of the QueryParameters differ, an automatic type conversion will be attempted. In case you need to add custom type conversion logic you can do that by handling the PreparedQueryParameter event.

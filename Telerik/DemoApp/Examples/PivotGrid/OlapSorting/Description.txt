@@ -1,0 +1,3 @@
+﻿The new OlapGroupComparer allows the data to be sorted by the SortKey instead of the default sorting which is by string.<br/><br/>
+For example when the months are sorted with the OlapGroupComparer they appear in the correct date order and the customers appear ordered by their
+rating.<br/><br/>

@@ -1,0 +1,2 @@
+﻿RadMap allows you to display rich geographical information from various sources, including Bing and OpenStreetMap, as well as overlay the map with your custom information from ESRI shapefiles, KML, and SQL geospatial data.<br /><br />
+RadMap is part of the <b>Telerik.Windows.Controls.DataVisualization</b> assembly.

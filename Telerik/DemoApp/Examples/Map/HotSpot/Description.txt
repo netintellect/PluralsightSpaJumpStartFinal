@@ -1,0 +1,5 @@
+﻿The RadMap control allows you to display any elements inside the Information Layer. 
+The Hot Spot's position can be defined in different units: <br/>
+1.	Fractions of the element's size.<br/>
+2.	The distance in pixels between the hot spot location and the element.<br/>
+3.	Offset in pixels from the upper right corner of the element.<br/>

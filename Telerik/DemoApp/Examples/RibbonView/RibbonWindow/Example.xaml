@@ -1,0 +1,13 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Telerik.Windows.Examples.RibbonView.RibbonWindow.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="0 -10 0 0">
+            <TextBlock Text="This example is running only out-of-browser, so you need to first " FontSize="13" />
+            <HyperlinkButton Content="install" Click="Button_Click" FontSize="13" FontWeight="Bold"/>
+            <TextBlock Text=" it." FontSize="13"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

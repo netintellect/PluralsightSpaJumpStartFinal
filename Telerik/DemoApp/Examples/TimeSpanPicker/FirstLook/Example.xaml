@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.TimeSpanPicker.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.TimeSpanPicker.FirstLook"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="First Look" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.DataContext>
+        <local:ViewModel/>
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        
+        <SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}"/>
+        <SolidColorBrush x:Key="GreyBrush" Color="#FF767676"/>
+        <SolidColorBrush x:Key="LightGreyBrush" Color="#FFD6D4D4"/>
+        <telerik:NullToVisibilityConverter x:Key="NullToVisibilityConverterInstance" />
+        <DataTemplate x:Key="MovieItemTemplate">
+            <Grid Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="{StaticResource LightGreyBrush}" BorderThickness="1" Grid.ColumnSpan="2" />
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8 9 0 0" Width="40" Height="40">
+                    <Path Stroke="{Binding GenreIconColor}" 
+                              Data="M23.5,12 C23.5,18.351274 18.351274,23.5 12,23.5 C5.6487255,23.5 0.5,18.351274 0.5,12 C0.5,5.6487255 5.6487255,0.5 12,0.5 C18.351274,0.5 23.5,5.6487255 23.5,12 z" 
+                              Stretch="Fill" StrokeThickness="1" />
+                    <Path Data="{Binding GenreIcon}" Fill="{Binding GenreIconColor}" RenderTransformOrigin="0.5 0.5" Stretch="Fill" 
+                              Width="{Binding GenreIconWidth}" 
+                              Height="{Binding GenreIconHeight}">
+                        <Path.RenderTransform>
+                            <RotateTransform Angle="{Binding GenreIconRotation}" />
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+
+                <StackPanel Grid.Column="1" Margin="8 10 12 0" HorizontalAlignment="Left" Width="600">
+                    <TextBlock Text="{Binding Title}" FontSize="23" FontFamily="Segoe UI Light" Foreground="{StaticResource AccentBrush}"/>
+                    <TextBlock Text="{Binding Genre}" FontSize="13" Margin="0 2" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource GreyBrush}" />
+                    <TextBlock Text="{Binding Description}" HorizontalAlignment="Left" FontSize="12" TextWrapping="Wrap" FontFamily="Segoe UI" Foreground="{StaticResource GreyBrush}" />
+                    <StackPanel Orientation="Horizontal" Margin="0 3 0 10">
+                        <TextBlock Text="Start Time - " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}"/>
+                        <TextBlock Text="{Binding StartTime, StringFormat=t}" FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}" />
+                        <TextBlock Text="Duration - " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}" Margin="150 0 0 0 "/>
+                        <TextBlock Text="{Binding Duration, StringFormat=t}" FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="550" MinWidth="955">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="10 16 0 16" VerticalAlignment="Center">
+            <Path Data="F1 M96.6884,459.55569 C98.428398,459.55569 99.839401,458.14569 99.839401,456.4097 C99.839401,454.66971 98.428398,453.26071 96.6884,453.26071 C94.946404,453.26071 93.537399,454.66971 93.537399,456.4097 C93.537399,458.14569 94.946404,459.55569 96.6884,459.55569 M103.4444,459.55569 C105.1874,459.55569 106.5984,458.14569 106.5984,456.4097 C106.5984,454.66971 105.1874,453.26071 103.4444,453.26071 C101.7064,453.26071 100.2964,454.66971 100.2964,456.4097 C100.2964,458.14569 101.7064,459.55569 103.4444,459.55569 M90.997375,460.32071 C90.582375,460.32071 90.124352,460.65671 90.124352,461.07169 L90.124352,464.12869 C90.124352,464.54071 90.582375,464.87769 90.997375,464.87769 C91.410378,464.87769 91.870399,464.54071 91.870399,464.12869 L91.870399,461.07169 C91.870399,460.65671 91.410378,460.32071 90.997375,460.32071 z M112.0544,459.8237 L112.0414,469.36169 C112.0414,469.8287 111.7474,469.96371 111.3924,469.6597 L109.2034,467.7887 C109.0514,467.65869 108.9174,467.4657 108.8054,467.2547 L107.8354,467.2547 L107.8354,469.27271 C107.8354,469.7847 107.4154,470.20071 106.9024,470.19669 L93.544403,470.08771 C93.030403,470.08569 92.608398,469.66171 92.608398,469.14969 L92.608398,460.85172 C92.608398,460.33569 93.030403,459.91669 93.544403,459.91669 L106.9024,459.91669 C107.4154,459.91669 107.8354,460.33569 107.8354,460.85172 L107.8354,461.9267 L108.8254,461.9267 C108.9334,461.73169 109.0554,461.54871 109.2014,461.42371 L111.4064,459.52771 C111.7634,459.2197 112.0544,459.3537 112.0544,459.8237"
+                  RenderTransformOrigin="0.5,0.5" Stretch="Fill" Fill="{StaticResource AccentBrush}" Width="27" Height="21" />
+            <TextBlock Text="{Binding Source={x:Static sys:DateTime.Today}, StringFormat=Cinema program for {0:d}}" FontSize="22" FontFamily="Segoe UI" Foreground="#FF444444" Margin="8 0 0 0" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <telerikQuickStart:HeaderedContentControl Grid.Column="0" Grid.Row="1" Header="Search Movie" Margin="2 0 2 1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Margin="8 15 8 0">
+                    <TextBlock Text="Movies playing after:" FontFamily="Segoe UI" FontSize="12"/>
+                    <telerik:RadTimeSpanPicker x:Name="StartNext" Value="{Binding SelectedMinStartTime, Mode=TwoWay}"
+                                               StringFormat="hh\:mm' hours'"
+                                               TimeSpanWatermarkContent="Select time...">
+                        <telerik:RadTimeSpanPicker.TimeSpanComponents>
+                            <telerik:HourTimeSpanComponent Minimum="0" Maximum="23"/>
+                            <telerik:MinuteTimeSpanComponent/>
+                        </telerik:RadTimeSpanPicker.TimeSpanComponents>
+                    </telerik:RadTimeSpanPicker>
+                    <TextBlock Text="Minimum movie duration:" Margin="0 10 0 0" FontFamily="Segoe UI" FontSize="12"/>
+                    <telerik:RadTimeSpanPicker x:Name="Duration"  Value="{Binding SelectedDuration, Mode=TwoWay}"
+                                               StringFormat="hh\:mm' hours'"
+                                               TimeSpanWatermarkContent="Select duration...">
+                        <telerik:RadTimeSpanPicker.TimeSpanComponents>
+                            <local:DurationTimeSpanComponent ItemsSource="{Binding Durations}" Header="Minutes"/>
+                        </telerik:RadTimeSpanPicker.TimeSpanComponents>
+                    </telerik:RadTimeSpanPicker>
+                </StackPanel>
+            </Grid>
+        </telerikQuickStart:HeaderedContentControl>
+        <telerikQuickStart:HeaderedContentControl Grid.Column="1" Grid.Row="1" Margin="4 0 2 1" Header="{Binding CinemaProgramHeader}">
+            <Grid>
+                <telerik:RadListBox ItemsSource="{Binding FilteredMovies.View}" ItemTemplate="{StaticResource MovieItemTemplate}" BorderThickness="0" />
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding EmptyScreenVisibility, Mode=TwoWay}">
+                    <Path Data="F1 M96.6,459.5 C98.4,459.5 99.8,458.1 99.8,456.4 C99.8,454.6 98.4,453.2 96.6,453.2 C94.9,453.2 93.5,454.6 93.5,456.4 C93.5,458.1 94.9,459.5 96.6,459.5 M103.4,459.5 C105.1,459.5 106.5,458.1 106.5,456.4 C106.5,454.6 105.1,453.2 103.4,453.2 C101.7,453.2 100.2,454.6 100.2,456.4 C100.2,458.1 101.7,459.5 103.4,459.5 M90.9,460.3 C90.5,460.3 90.1,460.6 90.1,461.0 L90.1,464.1 C90.1,464.5 90.5,464.8 90.9,464.8 C91.4,464.8 91.8,464.5 91.8,464.1 L91.8,461.0 C91.8,460.6 91.4,460.3 90.9,460.3 z M112.0,459.8 L112.0,469.3 C112.0,469.8 111.7,469.9 111.3,469.6 L109.2,467.7 C109.0,467.6 108.9,467.4 108.8,467.2 L107.8,467.2 L107.8,469.2 C107.8,469.7 107.4,470.2 106.9,470.1 L93.5,470.0 C93.0,470.0 92.6,469.6 92.6,469.1 L92.6,460.8 C92.6,460.3 93.0,459.9 93.5,459.9 L106.9,459.9 C107.4,459.9 107.8,460.3 107.8,460.8 L107.8,461.9 L108.8,461.9 C108.9,461.7 109.0,461.5 109.2,461.4 L111.4,459.5 C111.7,459.2 112.0,459.3 112.0,459.8"
+                           RenderTransformOrigin="0.5,0.5" Stretch="Fill" Fill="#CCB6B6B6" Width="180" Height="140" UseLayoutRounding="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-4,0,0,10" />
+                    <Path Fill="#FFB6B6B6" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" Data="M7.1,133.3 L7.1,133.8 C8.5,162.8 20.2,191.4 42.4,213.5 C89.6,260.8 166.3,260.8 213.5,213.5 C235.7,191.4 247.4,162.8 248.8,133.8 L248.8,133.3 z M128,7.0 C97.0,6.9 66.0,18.8 42.4,42.4 C20.2,64.5 8.5,93.1 7.1,122.1 L7.0,123.3 L248.9,123.3 L248.8,122.1 C247.4,93.1 235.7,64.5 213.5,42.4 C189.9,18.8 158.9,7.0 128,7.0 z M128,0 C160.7,3.1E-05 193.5,12.4 218.5,37.4 C268.4,87.4 268.4,168.5 218.5,218.5 C168.5,268.4 87.4,268.4 37.4,218.5 C-12.4,168.5 -12.4,87.4 37.4,37.4 C62.4,12.4 95.2,-3.1E-05 128,0 z" Height="255.999" RenderTransformOrigin="0.498618,0.501381" Stretch="Fill" Width="256">
+                        <Path.RenderTransform>
+                            <RotateTransform Angle="-135"/>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+            </Grid>
+        </telerikQuickStart:HeaderedContentControl>
+    </Grid>
+</UserControl>

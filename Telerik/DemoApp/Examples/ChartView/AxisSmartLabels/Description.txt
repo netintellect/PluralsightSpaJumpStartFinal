@@ -1,0 +1,1 @@
+﻿Here you can see the Axis Smart Labels Mode in action. With this feature enabled the axes automatically calculate a step that will avoid label overlapping. All axes support a Smart Step mechanism and the numeric axes also support a Smart Range mechanism, where the range is adjusted in order to get a more readable chart.

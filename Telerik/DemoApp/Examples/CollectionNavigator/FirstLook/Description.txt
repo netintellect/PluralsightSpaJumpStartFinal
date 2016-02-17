@@ -1,0 +1,1 @@
+﻿RadCollectionNavigator provides UI for editing and navigation over an IEnumerable data source. RadCollectionNavigator relies on its Source's ICollectionView or IEditableCollectionView implementation. In case that the Source does not implement them, a QueryableCollectionView is generated.

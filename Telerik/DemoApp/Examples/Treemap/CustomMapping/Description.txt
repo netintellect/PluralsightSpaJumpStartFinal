@@ -1,0 +1,1 @@
+﻿This example demonstrates a custom mapping used to choose colors and icons based on item file type.

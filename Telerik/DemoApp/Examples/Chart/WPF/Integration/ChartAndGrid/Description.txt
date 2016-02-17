@@ -1,0 +1,3 @@
+﻿This example demonstrates integration between the RadGridView and RadChart controls. You can select a single row to see how a bar chart is generated, or select several for a line chart.
+    <br/>
+

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6C8252B-009F-4197-A2AE-132039DE1B2D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TileView</RootNamespace>
+    <AssemblyName>TileView</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls, Version=2010.3.1108.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.1.514.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Common\SimpleItem.cs" />
+    <Compile Include="Common\Countries.cs" />
+    <Compile Include="Common\Country.cs" />
+    <Compile Include="Common\DifferentSizes\DateTimeToStringConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DifferentSizes\ImagePair.cs" />
+    <Compile Include="Common\DifferentSizes\MainViewModel.cs" />
+    <Compile Include="Common\FirstLook\MainViewModel.cs" />
+    <Compile Include="Common\FirstLook\Trip.cs" />
+    <Compile Include="Common\Integration\Car.cs" />
+    <Compile Include="Common\Integration\MainViewModel.cs" />
+    <Compile Include="Common\Integration\MainViewModel.Teams.cs" />
+    <Compile Include="Common\Integration\NationalityToImageConverter.cs" />
+    <Compile Include="Common\Integration\Pilot.cs" />
+    <Compile Include="Common\Integration\PositionConverter.cs" />
+    <Compile Include="Common\Integration\Team.cs" />
+    <Compile Include="Common\ItemSizing\MainViewModel.cs" />
+    <Compile Include="Common\ItemSizing\Person.cs" />
+    <Compile Include="Features\AutomaticScrolling\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DifferentSizes\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Docking\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\PinnedTiles\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemSizing\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Virtualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Common\CommonTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Integration\DynamicPositionTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\AutomaticScrolling\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\DifferentSizes\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\DifferentSizes\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\Docking\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Features\PinnedTiles\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Integration\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemSizing\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Virtualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TileView\call.png" />
+    <Resource Include="Images\TileView\mail.png" />
+    <Resource Include="Images\TileView\Products\Big\TileView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\ViewModels\" />
+    <Folder Include="Images\TileView\Products\Products\Big\" />
+    <Folder Include="Integration\ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TileView\Integration\CarPics\BMW Sauber F1 Team.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Force India F1 Team.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\HRT F1 Team.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Lotus Racing.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Mercedes GP Petronas F1 Team.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Red Bull Racing.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Renault F1 Team.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Scuderia Ferrari Marlboro.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Scuderia Toro Rosso.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Virgin Racing.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Vodafone McLaren Mercedes.jpg" />
+    <Resource Include="Images\TileView\Integration\CarPics\Williams.jpg" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Brazil.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Finland.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Germany.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Great Britain.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\India.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Italy.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Poland.png" />
+    <Resource Include="Images\TileView\Integration\CountryFlags\Spain.png" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Fernando Alonso.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Heikki Kovalainen.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Jaime Alguersuari.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Jenson Button.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Karun Chandhok.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Lucas di Grassi.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Nick Heidfeld.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Nico Rosberg.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Robert Kubica.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Rubens Barrichello.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Sebastian Vettel.jpg" />
+    <Resource Include="Images\TileView\Integration\PilotProfilePics\Tonio Liuzzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TileView\small_title.png" />
+    <Resource Include="Images\TileView\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Virtualization\Description.txt" />
+    <Resource Include="ItemSizing\Description.txt" />
+    <Resource Include="Features\AutomaticScrolling\Description.txt" />
+    <Resource Include="Features\Docking\Description.txt" />
+    <Resource Include="Features\PinnedTiles\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Features\DifferentSizes\WPF\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TileView\People\pic1.png" />
+    <Resource Include="Images\TileView\People\pic10.png" />
+    <Resource Include="Images\TileView\People\pic11.png" />
+    <Resource Include="Images\TileView\People\pic12.png" />
+    <Resource Include="Images\TileView\People\pic2.png" />
+    <Resource Include="Images\TileView\People\pic3.png" />
+    <Resource Include="Images\TileView\People\pic4.png" />
+    <Resource Include="Images\TileView\People\pic5.png" />
+    <Resource Include="Images\TileView\People\pic6.png" />
+    <Resource Include="Images\TileView\People\pic7.png" />
+    <Resource Include="Images\TileView\People\pic8.png" />
+    <Resource Include="Images\TileView\People\pic9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TileView\DifferentSizes\Large\1.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\2.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\3.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\4.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\5.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\6.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\7.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\8.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\BG1.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\BG2.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Large\BG3.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\1.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\2.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\3.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\4.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\5.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\6.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\7.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\8.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\BG0.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\BG1.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\BG2.png" />
+    <Resource Include="Images\TileView\DifferentSizes\Small\BG3.png" />
+    <Resource Include="Images\TileView\FirstLook\Amsterdam.png" />
+    <Resource Include="Images\TileView\FirstLook\Athens.png" />
+    <Resource Include="Images\TileView\FirstLook\Barcelona.png" />
+    <Resource Include="Images\TileView\FirstLook\Berlin.png" />
+    <Resource Include="Images\TileView\FirstLook\Budapest.png" />
+    <Resource Include="Images\TileView\FirstLook\London.png" />
+    <Resource Include="Images\TileView\FirstLook\new.png" />
+    <Resource Include="Images\TileView\FirstLook\Paris.png" />
+    <Resource Include="Images\TileView\FirstLook\Prague.png" />
+    <Resource Include="Images\TileView\FirstLook\Roma.png" />
+    <Resource Include="Images\TileView\FirstLook\Stockholm.png" />
+    <Resource Include="Images\TileView\FirstLook\topprice.png" />
+    <Resource Include="Images\TileView\FirstLook\Vienna.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Integration\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,48 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.Diagrams.OrgChart.Example"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:converters="clr-namespace:Telerik.Windows.Examples.Diagrams.OrgChart.Converters"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Diagrams.OrgChart" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+	<UserControl.Resources>
+		<converters:LayoutTypeToVisibilityConverter x:Key="LayoutTypeToVisibilityConverter" />
+	</UserControl.Resources>
+	<local:OrgChartExample x:Name="orgChart"></local:OrgChartExample>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<Grid HorizontalAlignment="Center">
+			<StackPanel x:Name="configStackPanel">
+				<StackPanel>
+					<TextBlock Text="Horizontal Separation" HorizontalAlignment="Left" Margin="4 0 0 0" />
+					<telerik:RadSlider x:Name="HorizontalSeparationSlider" Width="180" Height="25" Margin="0 5"
+							HorizontalAlignment="Left" VerticalAlignment="Center" IsDeferredDraggingEnabled="True"
+							IsSnapToTickEnabled="True" LargeChange="10" Maximum="150" SmallChange="1" TickFrequency="10"
+							Value="{Binding Path=ChildTreeLayoutViewModel.HorizontalSeparation, Mode=TwoWay}" />
+				</StackPanel>
+				<StackPanel>
+					<TextBlock Text="Vertical Separation" HorizontalAlignment="Left" Margin="4 0 0 0" />
+					<telerik:RadSlider x:Name="VerticalSeparationSlider" Width="180" Height="25" Margin="0 5"
+							HorizontalAlignment="Left" VerticalAlignment="Center" IsDeferredDraggingEnabled="True"
+							IsSnapToTickEnabled="True" LargeChange="10" Maximum="150" SmallChange="1" TickFrequency="10"
+							Value="{Binding Path=ChildTreeLayoutViewModel.VerticalSeparation, Mode=TwoWay}" />
+				</StackPanel>
+				<StackPanel
+						Visibility="{Binding Path=CurrentTreeLayoutType, Converter={StaticResource LayoutTypeToVisibilityConverter}}">
+					<TextBlock Text="Horizontal Indent" HorizontalAlignment="Left" Margin="4 0 0 0" />
+					<telerik:RadSlider x:Name="UnderneathHorizontalOffsetSlider" Width="180" Height="25" Margin="0 5"
+							IsDeferredDraggingEnabled="True" IsSnapToTickEnabled="True" LargeChange="10" Maximum="150"
+							SmallChange="1" TickFrequency="10" HorizontalAlignment="Left"
+							Value="{Binding Path=ChildTreeLayoutViewModel.UnderneathHorizontalOffset, Mode=TwoWay}" />
+					<TextBlock Text="Vertical Indent" HorizontalAlignment="Left" Margin="4 0 0 0" />
+					<telerik:RadSlider x:Name="UnderneathVerticalTopOffsetSlider" Width="180" Height="25" Margin="0 5"
+							IsDeferredDraggingEnabled="True" IsSnapToTickEnabled="True" LargeChange="10" Maximum="150"
+							SmallChange="1" TickFrequency="10" HorizontalAlignment="Left"
+							Value="{Binding Path=ChildTreeLayoutViewModel.UnderneathVerticalTopOffset, Mode=TwoWay}" />
+				</StackPanel>
+
+				<CheckBox Content="Layout After Expand/Collapse" IsChecked="{Binding ShouldLayoutAfterExpandCollapse, Mode=TwoWay}" Margin="4"/>
+			</StackPanel>
+		</Grid>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

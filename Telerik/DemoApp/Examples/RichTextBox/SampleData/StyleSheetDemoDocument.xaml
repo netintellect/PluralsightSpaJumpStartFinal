@@ -1,0 +1,391 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" xmlns:r="clr-namespace:Telerik.Windows.Documents.Model.Revisions;assembly=Telerik.Windows.Documents" xmlns:n="clr-namespace:Telerik.Windows.Documents.Model.Notes;assembly=Telerik.Windows.Documents" xmlns:th="clr-namespace:Telerik.Windows.Documents.Model.Themes;assembly=Telerik.Windows.Documents" version="1.3" DefaultTabWidth="48" LayoutMode="Paged" LineSpacing="1.07916665077209" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="10.6666669845581" ParagraphDefaultSpacingBefore="0" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+  <t:RadDocument.Captions>
+    <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Figure" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+    <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Table" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+  </t:RadDocument.Captions>
+  <t:RadDocument.ProtectionSettings>
+    <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+  </t:RadDocument.ProtectionSettings>
+  <t:RadDocument.Styles>
+    <s:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="True" Name="defaultDocumentStyle" Type="Default">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties FirstLineIndent="0" LeftIndent="0" LineSpacing="1.07916665077209" LineSpacingType="Auto" RightIndent="0" SpacingAfter="10.6666669845581" SpacingBefore="0" TextAlignment="Left" />
+      </s:StyleDefinition.ParagraphStyle>
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FlowDirection="LeftToRight" FontFamily="Calibri" FontSize="14.6666669845581" ForeColor="#FF000000" ThemeFontFamily="minor" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="Default Paragraph Font" IsCustom="False" IsDefault="True" IsPrimary="False" Name="DefaultParagraphFont" Type="Character" UIPriority="1" />
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Emphasis" IsCustom="False" IsDefault="False" IsPrimary="True" Name="Emphasis" Type="Character" UIPriority="20">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontStyle="Italic" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="TableNormal" DisplayName="Grid Table 4 Accent 5" IsCustom="False" IsDefault="False" IsPrimary="False" Name="GridTable4-Accent5" Type="Table" UIPriority="49">
+      <s:StyleDefinition.ConditionalTableStylesList>
+        <s:ConditionalTableStyleInfo Type="FirstRow">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontWeight="Bold" ForeColor="#FFFFFFFF" ThemeForeColor="background1" />
+              </s:StyleDefinition.SpanStyle>
+              <s:StyleDefinition.TableCellStyle>
+                <s:TableCellProperties Background="#FF4472C4" Borders="0.6666667,Single,#FF4472C4,accent5,," ThemeBackground="accent5" />
+              </s:StyleDefinition.TableCellStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+        <s:ConditionalTableStyleInfo Type="LastRow">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontWeight="Bold" />
+              </s:StyleDefinition.SpanStyle>
+              <s:StyleDefinition.TableCellStyle>
+                <s:TableCellProperties Borders="0,Inherit,#FF000000,none,,;0.6666667,Double,#FF4472C4,accent5,,;0,Inherit,#FF000000,none,,;0,Inherit,#FF000000,none,," />
+              </s:StyleDefinition.TableCellStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+        <s:ConditionalTableStyleInfo Type="FirstColumn">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontWeight="Bold" />
+              </s:StyleDefinition.SpanStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+        <s:ConditionalTableStyleInfo Type="LastColumn">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontWeight="Bold" />
+              </s:StyleDefinition.SpanStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+        <s:ConditionalTableStyleInfo Type="OddColumnBanding">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.TableCellStyle>
+                <s:TableCellProperties Background="#FFDAE3F3" ThemeBackground="accent5" ThemeFillTint="33" />
+              </s:StyleDefinition.TableCellStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+        <s:ConditionalTableStyleInfo Type="OddRowBanding">
+          <s:ConditionalTableStyleInfo.Style>
+            <s:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <s:StyleDefinition.TableCellStyle>
+                <s:TableCellProperties Background="#FFDAE3F3" ThemeBackground="accent5" ThemeFillTint="33" />
+              </s:StyleDefinition.TableCellStyle>
+            </s:StyleDefinition>
+          </s:ConditionalTableStyleInfo.Style>
+        </s:ConditionalTableStyleInfo>
+      </s:StyleDefinition.ConditionalTableStylesList>
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" />
+      </s:StyleDefinition.ParagraphStyle>
+      <s:StyleDefinition.TableStyle>
+        <s:TableProperties Borders="0.6666667,Single,#FF8FAADC,accent5,,99" CellPadding="7,0,7,0" ColumnBandSize="1" RowBandSize="1" TableIndent="0">
+          <s:TableProperties.TableLook>
+            <t:TableLook />
+          </s:TableProperties.TableLook>
+        </s:TableProperties>
+      </s:StyleDefinition.TableStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="Normal" DisplayName="heading 1" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading1Char" Name="Heading1" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties KeepLines="True" OutlineLevel="1" SpacingAfter="0" SpacingBefore="16" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 1 Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading1" Name="Heading1Char" Type="Character" UIPriority="9">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontFamily="Calibri Light" FontSize="21.3333339691162" ForeColor="#FF2E75B5" ThemeFontFamily="major" ThemeForeColor="accent1" ThemeForeColorShade="BF" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="Normal" DisplayName="heading 2" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading2Char" Name="Heading2" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties KeepLines="True" OutlineLevel="2" SpacingAfter="0" SpacingBefore="2.66666674613953" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 2 Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading2" Name="Heading2Char" Type="Character" UIPriority="9">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontFamily="Calibri Light" FontSize="17.3333339691162" ForeColor="#FF2E75B5" ThemeFontFamily="major" ThemeForeColor="accent1" ThemeForeColorShade="BF" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Hyperlink" IsCustom="False" IsDefault="False" IsPrimary="False" Name="Hyperlink" Type="Character" UIPriority="99">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties ForeColor="#FF0563C1" ThemeForeColor="hyperlink" UnderlineDecoration="Line" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="No List" IsCustom="False" IsDefault="True" IsPrimary="False" Name="NoList" Type="Numbering" UIPriority="99" />
+    <s:StyleDefinition DisplayName="Normal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="Normal" Type="Paragraph" UIPriority="0" />
+    <s:StyleDefinition DisplayName="No Spacing" IsCustom="False" IsDefault="False" IsPrimary="True" Name="NoSpacing" Type="Paragraph" UIPriority="1">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Strong" IsCustom="False" IsDefault="False" IsPrimary="True" Name="Strong" Type="Character" UIPriority="22">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontWeight="Bold" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Subtle Emphasis" IsCustom="False" IsDefault="False" IsPrimary="True" Name="SubtleEmphasis" Type="Character" UIPriority="19">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontStyle="Italic" ForeColor="#FF404040" ThemeForeColor="text1" ThemeForeColorTint="BF" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="TableNormal" DisplayName="Table Grid" IsCustom="False" IsDefault="False" IsPrimary="False" Name="TableGrid" Type="Table" UIPriority="39">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" />
+      </s:StyleDefinition.ParagraphStyle>
+      <s:StyleDefinition.TableStyle>
+        <s:TableProperties Borders="0.6666667,Single,#FF000000,none,," CellPadding="7,0,7,0" TableIndent="0">
+          <s:TableProperties.TableLook>
+            <t:TableLook />
+          </s:TableProperties.TableLook>
+        </s:TableProperties>
+      </s:StyleDefinition.TableStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="Normal Table" IsCustom="False" IsDefault="True" IsPrimary="False" Name="TableNormal" Type="Table" UIPriority="99">
+      <s:StyleDefinition.TableStyle>
+        <s:TableProperties CellPadding="7,0,7,0" TableIndent="0">
+          <s:TableProperties.TableLook>
+            <t:TableLook />
+          </s:TableProperties.TableLook>
+        </s:TableProperties>
+      </s:StyleDefinition.TableStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="Normal" DisplayName="Title" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="TitleChar" Name="Title" NextStyleName="Normal" Type="Paragraph" UIPriority="10">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="20" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Title Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Title" Name="TitleChar" Type="Character" UIPriority="10">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontFamily="Calibri Light" FontSize="34.6666679382324" ForeColor="#FF333F4F" ThemeFontFamily="major" ThemeForeColor="text2" ThemeForeColorShade="BF" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+  </t:RadDocument.Styles>
+  <t:RadDocument.Theme>
+    <th:Theme>
+      <th:Theme.ThemeColorMapping>
+        <th:ThemeColorMapping Background2="light2" />
+      </th:Theme.ThemeColorMapping>
+      <th:Theme.ThemeColors>
+        <th:ThemeColors Accent1="#FF5B9BD5" Accent2="#FFED7D31" Accent3="#FFA5A5A5" Accent4="#FFFFC000" Accent5="#FF4472C4" Accent6="#FF70AD47" Dark1="#FF000000" Dark2="#FF44546A" FollowedHyperlink="#FF954F72" Hyperlink="#FF0563C1" Light1="#FFFFFFFF" Light2="#FFE7E6E6" />
+      </th:Theme.ThemeColors>
+      <th:Theme.ThemeFonts>
+        <th:ThemeFonts Major="Calibri Light" Minor="Calibri" />
+      </th:Theme.ThemeFonts>
+    </th:Theme>
+  </t:RadDocument.Theme>
+  <t:Section PageMargin="96,96,96,96" PageSize="816,1056">
+    <t:Section.Footers>
+      <t:Footers>
+        <t:Footers.Default>
+          <t:Footer IsLinkedToPrevious="False">
+            <t:Footer.Body>
+              <t:RadDocument LayoutMode="Flow" LineSpacing="1.15" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="12" ParagraphDefaultSpacingBefore="0" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+                <t:RadDocument.ProtectionSettings>
+                  <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+                </t:RadDocument.ProtectionSettings>
+                <t:Section FirstPageNumber="1">
+                  <t:Paragraph TextAlignment="Right">
+                    <t:Span FontSize="12" Text="sources: " />
+                    <t:HyperlinkRangeStart AnnotationID="1">
+                      <t:HyperlinkInfo NavigateUri="http://www.jgrisham.com/" />
+                    </t:HyperlinkRangeStart>
+                    <t:Span FontSize="12" StyleName="Hyperlink" Text="http://www.jgrisham.com/" />
+                    <t:HyperlinkRangeEnd AnnotationID="1" />
+                    <t:Break BreakType="LineBreak" Text="¬" />
+                    <t:HyperlinkRangeStart AnnotationID="2">
+                      <t:HyperlinkInfo NavigateUri="http://en.wikipedia.org/wiki/John_Grisham" />
+                    </t:HyperlinkRangeStart>
+                    <t:Span FontSize="12" StyleName="Hyperlink" Text="http://en.wikipedia.org/wiki/John_Grisham" />
+                    <t:HyperlinkRangeEnd AnnotationID="2" />
+                  </t:Paragraph>
+                </t:Section>
+              </t:RadDocument>
+            </t:Footer.Body>
+          </t:Footer>
+        </t:Footers.Default>
+      </t:Footers>
+    </t:Section.Footers>
+    <t:Paragraph StyleName="Title" TextAlignment="Center">
+      <t:BookmarkRangeStart AnnotationID="1" Name="_top" />
+      <t:BookmarkRangeEnd AnnotationID="1" />
+      <t:Span Text="Few words about John Grisham" />
+    </t:Paragraph>
+    <t:Paragraph>
+      <t:Span StyleName="Strong" Text="John Ray Grisham, Jr. " />
+      <t:Span Text="is an American lawyer, politician, and " />
+      <t:HyperlinkRangeStart AnnotationID="2">
+        <t:HyperlinkInfo IsAnchor="True" NavigateUri="_top" />
+      </t:HyperlinkRangeStart>
+      <t:Span StyleName="Hyperlink" Text="author" />
+      <t:HyperlinkRangeEnd AnnotationID="2" />
+      <t:Span Text=", best known for his popular legal thrillers. His books have been translated into forty-two different languages. He began writing his first novel “A Time to Kill” in 1984, and it was published in June 1989. As of 2012, his books had sold over 275 million copies worldwide." />
+    </t:Paragraph>
+    <t:Paragraph StyleName="Heading1">
+      <t:Span Text="Last Book" />
+    </t:Paragraph>
+    <t:Paragraph>
+      <t:Paragraph.ParagraphSymbolPropertiesStyle>
+        <s:SpanProperties ParagraphSymbolStyleName="Strong" />
+      </t:Paragraph.ParagraphSymbolPropertiesStyle>
+      <t:Span StyleName="Strong" Text="Gray Mountain " />
+    </t:Paragraph>
+    <t:Paragraph>
+      <t:Paragraph.ParagraphSymbolPropertiesStyle>
+        <s:SpanProperties ParagraphSymbolStyleName="Emphasis" />
+      </t:Paragraph.ParagraphSymbolPropertiesStyle>
+      <t:Span StyleName="Emphasis" Text="John Grisham has a new hero…" />
+    </t:Paragraph>
+    <t:Paragraph>
+      <t:Paragraph.ParagraphSymbolPropertiesStyle>
+        <s:SpanProperties ParagraphSymbolStyleName="SubtleEmphasis" />
+      </t:Paragraph.ParagraphSymbolPropertiesStyle>
+      <t:Span StyleName="SubtleEmphasis" Text="The year is 2008 and Samantha Kofer’s career at a huge Wall Street law firm is on the fast track—until the recession hits and she gets downsized, furloughed, escorted out of the building. Samantha, though, is one of the “lucky” associates. She’s offered an opportunity to work at a legal aid clinic for one year without pay, after which there would be a slim chance that she’d get her old job back…" />
+    </t:Paragraph>
+    <t:Paragraph StyleName="Heading2">
+      <t:Span Text="Some good words for the book" />
+    </t:Paragraph>
+    <t:Paragraph>
+      <t:Span Text="“An important new novel… Grisham’s work—always superior entertainment—is evolving into something more serious, more powerful, more worthy of his exceptional talent.” " />
+    </t:Paragraph>
+    <t:Paragraph StyleName="NoSpacing">
+      <t:Span Text="Patrick Anderson, The Washington Post" />
+    </t:Paragraph>
+    <t:Paragraph StyleName="Heading1">
+      <t:Span Text="Most Popular Books in Thriller" />
+    </t:Paragraph>
+    <t:Table GridColumnWidthsSerializationInfo="Fixed,207.733337402344;Fixed,207.800003051758;Fixed,207.800003051758" HasFixedStructure="False" PreferredWidth="Auto" StyleName="GridTable4-Accent5">
+      <t:Table.TableLook>
+        <t:TableLook />
+      </t:Table.TableLook>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Book name" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Year" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Genre" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Gray Mountain" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2014" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Sycamore Row" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2013" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="The Racketeer" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2012" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Calico Joe" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2012" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="The Litigators" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2010" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+      <t:TableRow>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.733337402344" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="The Confession" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="2010" />
+          </t:Paragraph>
+        </t:TableCell>
+        <t:TableCell ColumnSpan="1" PreferredWidth="Fixed,207.800003051758" RowSpan="1">
+          <t:Paragraph>
+            <t:Span Text="Novel" />
+          </t:Paragraph>
+        </t:TableCell>
+      </t:TableRow>
+    </t:Table>
+    <t:Paragraph />
+  </t:Section>
+</t:RadDocument>

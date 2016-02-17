@@ -1,0 +1,1 @@
+﻿RadDataForm saves development time by taking care of building the UI based on the properties of the source object. Sometimes a small adjustments need to be made to the auto generated fields. Auto generated fields may be customized within the AutoGeneratingField event.

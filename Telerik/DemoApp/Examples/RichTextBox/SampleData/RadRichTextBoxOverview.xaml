@@ -1,0 +1,268 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" version="1.1" DefaultPageLayoutSettings="793,1123" LayoutMode="Flow" PageViewMargin="10,10" ParagraphDefaultSpacingAfter="10" SectionDefaultPageMargin="95,95,95,95">
+  <t:RadDocument.Lists>
+    <t:ListSerializationData ID="31" StyleID="2" />
+    <t:ListSerializationData ID="32" StyleID="2" />
+    <t:ListSerializationData ID="33" StyleID="2" />
+  </t:RadDocument.Lists>
+  <t:RadDocument.ListStyles>
+    <t:ListStyle ID="2">
+      <t:ListLevelStyle FontFamily="Symbol" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Courier New" LevelText="o" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Wingdings" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Symbol" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Courier New" LevelText="o" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Wingdings" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Symbol" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Courier New" LevelText="o" NumberingFormat="Bullet" StartingIndex="1" />
+      <t:ListLevelStyle FontFamily="Wingdings" LevelText="" NumberingFormat="Bullet" StartingIndex="1" />
+    </t:ListStyle>
+  </t:RadDocument.ListStyles>
+  <t:Section PageMargin="96,96,96,96">
+    <t:Paragraph FontSize="34.6666679382324" LineSpacing="1" SpacingAfter="20">
+      <t:Span FontFamily="Calibri" FontSize="34.6666679382324" ForeColor="#FF17365D" Text="RadRichTextBox for Silverlight and WPF" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph SpacingAfter="13.3333330154419" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="16" Text="RadRichTextBox was initially developed in " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:HyperlinkRangeStart AnnotationID="1">
+        <t:HyperlinkInfo NavigateUri="http://silverlight.net" />
+      </t:HyperlinkRangeStart>
+      <t:Span FontFamily="Calibri" FontSize="16" ForeColor="#FF0000FF" Text="Silverlight" UnderlineColor="#FF0000FF" UnderlineDecoration="Line" />
+      <t:HyperlinkRangeEnd AnnotationID="1" />
+      <t:Span FontFamily="Calibri" FontSize="16" Text=", but following the tradition of keeping our WPF and Silverlight suites in sync, we implemented a version of the control for WPF. The RichTextBox offers broad editing and formatting capabilities with unmatched performance and true Word-like experience. The control allows importof documents in different formats - XAML, RTF, HTML, Docx and plain text and export to all of the above and PDF." UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph FontSize="26.6666660308838" SpacingAfter="13.3333330154419">
+      <t:Span FontFamily="Calibri" FontSize="26.6666660308838" FontWeight="Bold" ForeColor="#FF365F91" Text="Features" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Text Formatting Options" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multi-Region Selection and Editing" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Table Support - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="EXTENDED" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multi-Level Undo/Redo" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multiple Views" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Hyperlinks, Annotations and Comments - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="NEW" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multilevel Lists - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="NEW" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Internal Format Similar to the One of Microsoft WPF Documents" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Printing" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Spell Checking" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="UI Virtualization" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Control API" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Key Bindings - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="NEW" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Built-in UI to Back up All Formatting Options in the Control" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="1" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="RadRichTextBoxRibbonUI" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="1" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="ContextMenu" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="1" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="FloatingMenu" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="1" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Ruler to Control Section Margins" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="1" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Dialogs - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="EXTENDED" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="31" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Customizations and Extensibility - " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" HighlightColor="#FFFFFF00" Text="EXTENDED" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph LeftIndent="20" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify" />
+    <t:Paragraph FontSize="18.6666660308838" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF365F91" Text="Text Formatting Options" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph SpacingAfter="13.3333330154419" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="16" Text="The RichTextBox supports a vast scope of formatting options. You can see a list of some of them bellow:" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Bold, italic, underlines, strike-through, superscript and subscript" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Different fonts and sizes" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Text color, highlighting and paragraph color" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Paragraph alignment and indentation" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multilevel bulleted and numbered lists" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Nested tables with different row and column span, cell alignment and border styles" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Inserting symbols and inline images" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Line and page-breaks support" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Clear formatting" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Show/hide formatting symbols" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph Background="#FFFFFFFF" LeftIndent="25" LineSpacing="18" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="32" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Multi-level undo/redo" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph FontSize="18.6666660308838" SpacingAfter="0" SpacingBefore="32" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF365F91" Text="Multi-Region Selection and Editing" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph SpacingAfter="13.3333330154419" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="16" Text="The built-in multi-region selection support enables you to perform various operations for more than one selection simultaneously:" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="33" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Apply/remove formatting" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="33" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Delete text" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+        <t:Paragraph LeftIndent="25" LineSpacing="18.6666660308838" LineSpacingType="AtLeast" SpacingAfter="0" TextAlignment="Justify">
+      <t:Paragraph.ListItemSerializationData>
+        <t:ListItemSerializationData ListID="33" ListLevel="0" />
+      </t:Paragraph.ListItemSerializationData>
+      <t:Span FontFamily="Calibri" FontSize="16" Text="Copy/paste " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Arial" FontSize="14.6666669845581" ForeColor="#FF333333" Text="–" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+      <t:Span FontFamily="Calibri" FontSize="16" Text=" allows copy/paste from Word, OpenOffice etc." UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph FontSize="18.6666660308838" SpacingAfter="0" SpacingBefore="32" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF365F91" Text="Table Support" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+    <t:Paragraph SpacingAfter="13.3333330154419" TextAlignment="Justify">
+      <t:Span FontFamily="Calibri" FontSize="16" Text="The table support of RichTextBox includes inserting of tables, defining the number of rows and columns, inserting additional rows and columns or deleting them. These operations can be triggered through the context menu or the ribbon bar. Other supported functions are copy/paste of tables, row and column span, dynamic resize and various border settings." UnderlineColor="#FF000000" UnderlineDecoration="None" />
+    </t:Paragraph>
+  </t:Section>
+</t:RadDocument>

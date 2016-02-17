@@ -1,0 +1,5 @@
+﻿The Gauge themes provide predefined styles for the RadialGauge and RadialScale elements that make it look as semicircle gauge.<br /><br />
+For the north oriented semicircle gauge you need to use the following styles:
+	RadialGaugeHalfCircle<B>N</B>Style for RadialGauge and
+	RadialScaleHalfCircle<B>N</B>Style for RadialScale.<br /><br />
+You can change <B>N</B> character (North) to <B>S</B>, <B>E</B> or <B>W</B> to specify South, East or West Gauge orientation.

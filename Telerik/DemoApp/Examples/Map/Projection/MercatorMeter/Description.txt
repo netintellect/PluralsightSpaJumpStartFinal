@@ -1,0 +1,3 @@
+﻿RadMap provides support for stunning map overlays through its ESRI Shapefile Import feature. 
+
+This example loads the EPSG:900913 (Google Mercator) projected data for all world continents.

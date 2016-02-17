@@ -1,0 +1,1 @@
+﻿This example shows a 2D Candlestick chart. Used for monitoring stock prices, stick charts' items have four values: Open price, Close price, High and Low prices. The empty rectangle represents negative tendencies (Open > Close).

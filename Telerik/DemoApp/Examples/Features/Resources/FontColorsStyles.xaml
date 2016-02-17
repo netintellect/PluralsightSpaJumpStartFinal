@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:Telerik.Windows.Diagrams.Features">
+
+	<local:ColorStyle x:Key="1"  OrderId="1"  Fill="#FFFFFFFF" />
+	<local:ColorStyle x:Key="2"  OrderId="2"  Fill="#FFF2F2F2" />
+	<local:ColorStyle x:Key="3"  OrderId="3"  Fill="#FFD8D8D8" />
+	<local:ColorStyle x:Key="4"  OrderId="4"  Fill="#FFBFBFBF" />
+	<local:ColorStyle x:Key="5"  OrderId="5"  Fill="#FFA5A5A5" />
+	<local:ColorStyle x:Key="6"  OrderId="6"  Fill="#FF7F7F7F" />
+	<local:ColorStyle x:Key="7"  OrderId="7"  Fill="#FF595959" />
+	<local:ColorStyle x:Key="8"  OrderId="8"  Fill="#FF3F3F3F" />
+	<local:ColorStyle x:Key="9"  OrderId="9"  Fill="#FF262626" />
+	<local:ColorStyle x:Key="10" OrderId="10" Fill="#FF000000" />
+	<local:ColorStyle x:Key="11" OrderId="11" Fill="#FFC00000" />
+	<local:ColorStyle x:Key="12" OrderId="12" Fill="#FFFF0000" />
+	<local:ColorStyle x:Key="13" OrderId="13" Fill="#FFFFC000" />
+	<local:ColorStyle x:Key="14" OrderId="14" Fill="#FFFFFF00" />
+	<local:ColorStyle x:Key="15" OrderId="15" Fill="#FF92D050" />
+	<local:ColorStyle x:Key="16" OrderId="16" Fill="#FF00B050" />
+	<local:ColorStyle x:Key="17" OrderId="17" Fill="#FF00B0F0" />
+	<local:ColorStyle x:Key="18" OrderId="18" Fill="#FF0070C0" />
+	<local:ColorStyle x:Key="19" OrderId="19" Fill="#FF002060" />
+	<local:ColorStyle x:Key="20" OrderId="20" Fill="#FF7030A0" />
+	<local:ColorStyle x:Key="21" OrderId="21" Fill="#FF773600" />
+	<local:ColorStyle x:Key="22" OrderId="22" Fill="#FFC0504D" />
+	<local:ColorStyle x:Key="23" OrderId="23" Fill="#FFF79646" />
+	<local:ColorStyle x:Key="24" OrderId="24" Fill="#FFC2C271" />
+	<local:ColorStyle x:Key="25" OrderId="25" Fill="#FF9BBB59" />
+	<local:ColorStyle x:Key="26" OrderId="26" Fill="#FF539370" />
+	<local:ColorStyle x:Key="27" OrderId="27" Fill="#FF4BACC6" />
+	<local:ColorStyle x:Key="28" OrderId="28" Fill="#FF1F497D" />
+	<local:ColorStyle x:Key="29" OrderId="29" Fill="#FF373E59" />
+	<local:ColorStyle x:Key="30" OrderId="30" Fill="#FF6A5A7E" />
+	<local:ColorStyle x:Key="31" OrderId="31" Fill="#FF76384D" />
+	<local:ColorStyle x:Key="32" OrderId="32" Fill="#FFEA157A" />
+	<local:ColorStyle x:Key="33" OrderId="33" Fill="#FFFEB80A" />
+	<local:ColorStyle x:Key="34" OrderId="34" Fill="#FFFFDE00" />
+	<local:ColorStyle x:Key="35" OrderId="35" Fill="#FF7FD13B" />
+	<local:ColorStyle x:Key="36" OrderId="36" Fill="#FF008672" />
+	<local:ColorStyle x:Key="37" OrderId="37" Fill="#FF00ADDC" />
+	<local:ColorStyle x:Key="38" OrderId="38" Fill="#FF0097C6" />
+	<local:ColorStyle x:Key="39" OrderId="39" Fill="#FF465D9B" />
+	<local:ColorStyle x:Key="40" OrderId="40" Fill="#FF5326B8" />
+	
+</ResourceDictionary>

@@ -1,0 +1,6 @@
+﻿RadMaskedNumericInput is used when you need to display numeric values, exposing a strongly-typed Double value.<br/>
+The value can be formatted as:<br/>
+- Percent values<br/>
+- Decimal values<br/>
+- Currency (culture-aware)<br/>
+- Fixed point values

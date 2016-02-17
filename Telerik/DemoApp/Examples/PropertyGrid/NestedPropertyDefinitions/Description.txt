@@ -1,0 +1,1 @@
+﻿RadPropertyGrid provides an approach to processing nested properties hierarchies in a tree-like visual structure. By setting the SearchInNestedProperties property, one can enable nested properties filtering.

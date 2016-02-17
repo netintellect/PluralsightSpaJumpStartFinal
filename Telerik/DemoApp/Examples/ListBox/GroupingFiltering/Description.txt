@@ -1,0 +1,4 @@
+﻿This example demonstrates how to group and filter the RadListBox items based on their properties with the use of <b>CollectionViewSource</b> and <b>GroupStyle</b>.
+<br />
+<br />
+In the example you can group the ListBox items by team, office, position or don't use grouping at all.

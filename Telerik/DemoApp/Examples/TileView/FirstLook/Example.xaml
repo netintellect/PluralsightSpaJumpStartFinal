@@ -1,0 +1,185 @@
+<UserControl x:Class="Telerik.Windows.Examples.TileView.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:tileview="clr-namespace:Telerik.Windows.Controls.TileView;assembly=Telerik.Windows.Controls.Navigation">
+    <UserControl.Resources>
+        <tileview:TileToFluideStateConverter x:Key="tileConverter" />
+	
+		<Style x:Key="TileItemHeaderStyle" TargetType="tileview:TileViewItemHeader"
+				BasedOn="{StaticResource TileViewItemHeaderStyle}">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+        </Style>
+		<Style TargetType="telerik:RadTileViewItem" BasedOn="{StaticResource RadTileViewItemStyle}">
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+			<Setter Property="HeaderStyle" Value="{StaticResource TileItemHeaderStyle}" />
+        </Style>
+		<Style TargetType="telerik:RadTileView" BasedOn="{StaticResource RadTileViewStyle}">
+            <Setter Property="PreservePositionWhenMaximized" Value="True" />
+            <Setter Property="telerik:TileViewPanel.IsVirtualized" Value="True" />
+            <Setter Property="IsAutoScrollingEnabled" Value="True" />
+            <Setter Property="TileStateChangeTrigger" Value="SingleClick" />
+            <Setter Property="MinimizedColumnWidth" Value="308" />
+            <Setter Property="MinimizedRowHeight" Value="193" />
+            <Setter Property="RowHeight" Value="187" />
+            <Setter Property="ColumnWidth" Value="277" />
+            <Setter Property="ColumnsCount" Value="4" />
+        </Style>
+        <DataTemplate x:Key="contentTemplate">
+            <telerik:RadFluidContentControl ContentChangeMode="Manual"
+			                                State="Normal"
+			                                TransitionDuration="0:0:.5">
+                <telerik:RadFluidContentControl.Content>
+					<Border Background="Black">
+                        <Grid Margin="20 10">
+                            <StackPanel>
+                                <TextBlock Margin="0 0 0 5"
+								           FontFamily="Segoe UI"
+								           FontSize="24"
+								           FontWeight="Light"
+								           Foreground="#fff"
+								           Text="Duration" />
+                                <TextBlock FontSize="14" 
+										   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+								           Text="{Binding Duration}" />
+                                <Border Height="2"
+								        Margin="0 5" 
+										Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+                                <TextBlock Margin="0 0 0 5"
+								           FontFamily="Segoe UI"
+								           FontSize="24"
+								           FontWeight="Light"
+								           Foreground="#fff"
+								           Text="Price" />
+                                <TextBlock FontSize="14" 
+										   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+								           Text="{Binding Price}" />
+                            </StackPanel>
+                            <Border HorizontalAlignment="Right"
+							        VerticalAlignment="Bottom">
+                                <Image Width="53"
+                                       Height="53"
+							           Source="{Binding Icon}"
+							           Stretch="None" />
+                            </Border>
+                        </Grid>
+                    </Border>
+                </telerik:RadFluidContentControl.Content>
+                <telerik:RadFluidContentControl.LargeContent>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="360" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.ColumnSpan="3"
+						       Source="{Binding Image}"
+						       Stretch="None" />
+                        <StackPanel Margin="35 205 0 0" Orientation="Horizontal">
+                            <TextBlock FontSize="30"
+							           Foreground="#FFFFFF"
+							           Text="{Binding Destination}" />
+                            <TextBlock FontSize="30"
+							           Foreground="#FFFFFF"
+							           Text=" Trip" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1"
+						            Margin="15 155 0 0"
+						            Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe UI"
+							           FontSize="14"
+							           Foreground="#FFFFFF"
+							           Text="{Binding Destination}" />
+                            <TextBlock FontFamily="Segoe UI"
+							           FontSize="14"
+							           Foreground="#FFFFFF"
+							           Text="@trips.com" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="70 50 0 0">
+                            <TextBlock Margin="0 0 0 5"
+							           FontFamily="Segoe UI"
+							           FontSize="14"
+									   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+							           Text="2011 Oct 28th, 2011 Nov 3th" />
+                            <TextBlock FontFamily="Segoe UI"
+							           FontSize="14" 
+									   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+							           Text="1011 Nov 11th, 2011 Dec 2nd" />
+                            <TextBlock Margin="0 72 0 0"
+							           FontFamily="Segoe UI"
+							           FontSize="14"
+									   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+							           Text="{Binding Duration}" />
+                            <TextBlock Margin="0 74 0 0"
+							           FontFamily="Segoe UI"
+							           FontSize="14"
+									   Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+							           Text="{Binding Price}" />
+                            <telerik:RadRating Margin="-22 210 0 0"
+							                   NumberOfItemsToGenerate="8"
+							                   Precision="Exact"
+							                   Value="{Binding Rating}" />
+                        </StackPanel>
+                    </Grid>
+                </telerik:RadFluidContentControl.LargeContent>
+            </telerik:RadFluidContentControl>
+        </DataTemplate>
+        <DataTemplate x:Key="headerTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Destination}" />
+                <TextBlock Text=" Trip" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <telerik:RadTileView Width="1123" 
+		                    Height="579"
+		                    ContentTemplate="{StaticResource contentTemplate}"
+		                    IsItemDraggingEnabled="{Binding ElementName=IsItemDraggingEnabledOption,
+		                                                    Path=IsChecked}"
+		                    ItemsSource="{Binding Items}"
+		                    ItemTemplate="{StaticResource headerTemplate}"
+		                    MaximizeMode="{Binding ElementName=MaximizeModeOption,
+		                                        Path=SelectedItem}"
+		                    PreservePositionWhenMaximized="{Binding ElementName=PreservePositionWhenMaximizedOption,
+		                                                            Path=IsChecked}"
+		                    TileStateChanged="tileView1_TileStateChanged"
+		                    TileStateChangeTrigger="{Binding ElementName=StateChangeOption,
+		                                                    Path=SelectedItem}" />
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="TileStateChangeTrigger" />
+            <telerik:RadComboBox x:Name="StateChangeOption"
+			                     Margin="0 2"
+			                     SelectedIndex="2">
+                <telerik:TileStateChangeTrigger>None</telerik:TileStateChangeTrigger>
+                <telerik:TileStateChangeTrigger>SingleClick</telerik:TileStateChangeTrigger>
+                <telerik:TileStateChangeTrigger>DoubleClick</telerik:TileStateChangeTrigger>
+            </telerik:RadComboBox>
+            <TextBlock Margin="0 5 0 0" Text="MaximizeMode" />
+            <telerik:RadComboBox x:Name="MaximizeModeOption"
+			                     Margin="0 2"
+			                     SelectedIndex="1">
+                <telerik:TileViewMaximizeMode>Zero</telerik:TileViewMaximizeMode>
+                <telerik:TileViewMaximizeMode>ZeroOrOne</telerik:TileViewMaximizeMode>
+                <telerik:TileViewMaximizeMode>One</telerik:TileViewMaximizeMode>
+            </telerik:RadComboBox>
+            <CheckBox x:Name="IsItemDraggingEnabledOption"
+			          Margin="0 2"
+			          Content="IsItemDraggingEnabled"
+			          IsChecked="True" />
+            <CheckBox x:Name="PreservePositionWhenMaximizedOption"
+			          Margin="0 2"
+			          Content="PreservePositionWhenMaximized"
+			          IsChecked="True" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

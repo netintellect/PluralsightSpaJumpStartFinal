@@ -1,0 +1,95 @@
+<Examples:DataServiceDataSourceExample x:Class="Telerik.Windows.Examples.DataServiceDataSource.MVVM.Example"
+									   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+									   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+									   xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+									   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+									   xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+									   xmlns:local="clr-namespace:Telerik.Windows.Examples.DataServiceDataSource.MVVM">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Orders &amp; Order Details"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Examples:DataServiceDataSourceExample.Resources>
+		<local:MyViewModel x:Key="MyViewModel" />
+	</Examples:DataServiceDataSourceExample.Resources>
+	<Grid DataContext="{StaticResource MyViewModel}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="70*" />
+			<RowDefinition Height="30*" />
+		</Grid.RowDefinitions>
+		<telerik:RadDataPager FontSize="12"
+							  Source="{Binding Orders}"
+							  Margin="2" />
+        <telerik:RadGridView Name="ordersGrid" GroupRenderMode="Flat"
+							 Grid.Row="1"
+							 ItemsSource="{Binding Orders}"
+							 IsBusy="{Binding AreOrdersBusy}"
+							 CanUserSelect="{Binding CanUserSelectOrders}"
+							 SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+							 ShowGroupPanel="False"
+							 RowIndicatorVisibility="Collapsed"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 IsReadOnly="True"
+							 Margin="2">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Order ID"
+											DataMemberBinding="{Binding OrderID}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Order Date"
+											DataMemberBinding="{Binding OrderDate, StringFormat=d}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Required Date"
+											DataMemberBinding="{Binding RequiredDate, StringFormat=d}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Shipped Date"
+											DataMemberBinding="{Binding ShippedDate, StringFormat=d}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Freight"
+											DataMemberBinding="{Binding Freight, StringFormat=C}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Ship Name"
+											DataMemberBinding="{Binding ShipName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Ship Address"
+											DataMemberBinding="{Binding ShipAddress}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Ship City"
+											DataMemberBinding="{Binding ShipCity}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Ship Postal Code"
+											DataMemberBinding="{Binding ShipPostalCode}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Ship Country"
+											DataMemberBinding="{Binding ShipCountry}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+        <telerik:RadGridView Name="orderDetailsGrid" GroupRenderMode="Flat"
+							 Grid.Row="2"
+							 ItemsSource="{Binding OrderDetails}"
+							 IsBusy="{Binding AreOrderDetailsBusy}"
+							 ShowGroupPanel="False"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 CanUserFreezeColumns="False"
+							 AutoGenerateColumns="False"
+							 Margin="2">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Product"
+											DataMemberBinding="{Binding Product.ProductName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="UnitPrice"
+											DataMemberBinding="{Binding UnitPrice, StringFormat=C}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Quantity"
+											DataMemberBinding="{Binding Quantity}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Discount"
+											DataMemberBinding="{Binding Discount}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+	</Grid>
+</Examples:DataServiceDataSourceExample>

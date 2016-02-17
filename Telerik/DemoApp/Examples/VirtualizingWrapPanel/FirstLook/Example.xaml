@@ -1,0 +1,97 @@
+<Examples:VirtualizingWrapPanelExample x:Class="Telerik.Windows.Examples.VirtualizingWrapPanel.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.VirtualizingWrapPanel.FirstLook"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"                                   
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Product Orders" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Grid>
+        <Grid.Resources>
+            <local:MyVisibilityConverter x:Key="converter" />
+            <DataTemplate x:Key="dataTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock FontWeight="Bold" Text="ID:" />
+                    <TextBlock Text="{Binding ID}" Grid.Column="1" />
+
+                    <TextBlock FontWeight="Bold" Text="Name:" Grid.Row="1"/>
+                    <TextBlock Text="{Binding Name}" Grid.Row="1" Grid.Column="1" />
+
+                    <TextBlock FontWeight="Bold" Text="Unit price:" Grid.Row="2"/>
+                    <TextBlock Text="{Binding UnitPrice, StringFormat=c}" Grid.Row="2" Grid.Column="1" />
+
+                    <TextBlock FontWeight="Bold" Text="Date:" Grid.Row="3"/>
+                    <TextBlock Text="{Binding Date, StringFormat=d}" Grid.Row="3" Grid.Column="1" />
+
+                    <TextBlock FontWeight="Bold" Text="Discontinued:" Grid.Row="4"/>
+                    <TextBlock Text="{Binding Discontinued}" Grid.Row="4" Grid.Column="1" />
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Sort by:" />
+            <telerik:RadComboBox ItemsSource="{Binding Properties}"
+                      SelectedItem="{Binding SelectedProperty, Mode=TwoWay}" Width="100" />
+            <TextBlock Margin="20,0,0,0" Text="Filter Name by:" />
+            <TextBox Text="{Binding SearchValue, Mode=TwoWay}" Width="200" telerik:StyleManager.Theme="Metro"
+                     telerik:TextBoxBehavior.UpdateTextOnTextChanged="True" />
+
+            <TextBlock Margin="20,0,0,0" Text="View mode:" />
+            <telerik:RadComboBox x:Name="ModeComboBox" Width="100" SelectedIndex="0" telerik:StyleManager.Theme="Metro">
+                <sys:String>Tiles</sys:String>
+                <sys:String>List</sys:String>
+                <sys:String>Grid</sys:String>
+            </telerik:RadComboBox>
+
+        </StackPanel>
+
+        <ListBox ItemsSource="{Binding View}" ItemTemplate="{StaticResource dataTemplate}"
+                 Visibility="{Binding SelectedValue, ElementName=ModeComboBox, Converter={StaticResource converter}, ConverterParameter='Tiles'}"
+                 telerik:StyleManager.Theme="Metro" Grid.Row="1">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <telerik:VirtualizingWrapPanel ScrollStep="{Binding Value, ElementName=ScrollStepNumericUpDown}" ItemWidth="250" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <ListBox ItemsSource="{Binding View}" ItemTemplate="{StaticResource dataTemplate}"
+                 Visibility="{Binding SelectedValue, ElementName=ModeComboBox, Converter={StaticResource converter}, ConverterParameter='List'}"
+                 telerik:StyleManager.Theme="Metro" Grid.Row="1">
+        </ListBox>
+
+        <telerik:RadGridView ItemsSource="{Binding View}" telerik:StyleManager.Theme="Metro" Grid.Row="1" GroupRenderMode="Flat"
+                             IsFilteringAllowed="False" CanUserFreezeColumns="False"
+                             Visibility="{Binding SelectedValue, ElementName=ModeComboBox, Converter={StaticResource converter}, ConverterParameter='Grid'}"/>
+        
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Mouse wheel scroll step:" /> <telerik:RadNumericUpDown x:Name="ScrollStepNumericUpDown" Value="10" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</Examples:VirtualizingWrapPanelExample>

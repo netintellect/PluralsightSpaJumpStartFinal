@@ -1,0 +1,499 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:classDiagram="clr-namespace:Telerik.Windows.Examples.Diagrams.ClassDiagram"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.Diagrams.Common"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+	<DataTemplate x:Key="PropertyTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Height="13" Margin="0 0 5 0" Width="16">
+				<Rectangle Fill="White" Margin="0,0,6,0" />
+				<Path
+						Data="M8,7.6205708E-13 L10,7.6205708E-13 C10.034517,-2.980156E-08 10.068627,0.00087441405 10.102244,0.0025814176 L10.10292,0.0026024878 C11.159659,0.056168556 12,0.92994821 12,1.9999999 L14,1.9999999 L14,7 L11.73177,7 L11.710453,7.0370727 C11.359678,7.6143703 10.724874,8 10,8 L8,8 L4,8 C3.4477153,8 3,7.7761426 3,7.5 C3,7.2238574 3.4477153,7 4,7 L6.2682304,7 L6.2413893,6.9533186 C6.0874443,6.6699324 6,6.3451781 6,6 L3,6 C2.4477153,6 2,5.7761426 2,5.5 C2,5.2238574 2.4477153,5 3,5 L6,5 L6,4 L3,4 C2.4477153,4 2,3.7761424 2,3.5 C2,3.2238576 2.4477153,3 3,3 L6,3 C6,2.6548219 6.0874443,2.3300676 6.2413893,2.0466812 L6.2682304,1.9999999 L1,1.9999999 C0.44771528,2 0,1.7761424 0,1.4999999 C0,1.2238575 0.44771528,0.99999994 1,0.99999976 L7.9999914,0.99999976 L7.8977556,0.99741852 C7.3934999,0.97181356 7,0.75888348 7,0.49999997 C7,0.2238576 7.4477153,-2.980156E-08 8,7.6205708E-13 z"
+						Fill="#FF986827" Margin="2,2,0,3" Stretch="Fill" UseLayoutRounding="False" />
+				<Path
+						Data="M2,10 L5,10 L5,11 L2,11 z M2,8 L3,8 L3,9 L2,9 z M2,6 L3,6 L3,7 L2,7 z M0,0 L10,0 L10,1 L8,1 L8,2 L1,2 L1,12 L9,12 L9,11 L10,11 L10,13 L9,13 L0,13 L0,12 L0,2 L0,1 z"
+						Fill="#FF15ACA9" Margin="0,0,6,0" Stretch="Fill" UseLayoutRounding="False" />
+			</Grid>
+			<TextBlock Text="{Binding Name}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="MethodTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Height="11" Margin="0,0,5,0" Width="8">
+				<Path Data="M-0.044893634,-3.6064188 L5,0 L5,3 L-0.044893634,-0.60641938 z" Fill="#FFC2538F"
+						Margin="0,3.584,2.98,0.851" Stretch="Fill" UseLayoutRounding="False" />
+				<Path Data="M0,0 L3,-3.6064188 L3,-0.60641938 L0,3 z" Fill="#FF4B072B" HorizontalAlignment="Right"
+						Margin="0,3.584,-0.02,0.851" Stretch="Fill" Width="3" UseLayoutRounding="False" />
+				<Path Data="M2.9699805,-4.1939116 L8.0148745,-0.58749235 L5,3 L-0.044893634,-0.60641938 z"
+						Fill="#FFF594C8" Margin="0,0,-0.02,3.851" Stretch="Fill" UseLayoutRounding="False" />
+			</Grid>
+			<TextBlock Text="{Binding Name}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="EventTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Path
+					Data="M87.74894,176.51134 L119.70626,104.60722 L67.694443,104.9836 L101.06092,29.856691 L141.7377,29.761328 L104.81496,86.621521 L160.16574,86.596786"
+					Fill="#FFF19720" Margin="0,0,5,0" Stretch="Fill" UseLayoutRounding="False" Width="9.587" Height="16" />
+			<TextBlock Text="{Binding Name}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="FieldTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Width="8" Height="11" Margin="0,0,5,0">
+				<Path Data="M-0.044893634,-3.6064188 L5,0 L5,3 L-0.044893634,-0.60641938 z" Fill="#FF207632"
+						Margin="0,3.584,2.98,0.851" Stretch="Fill" UseLayoutRounding="False" />
+				<Path Data="M0,0 L3,-3.6064188 L3,-0.60641938 L0,3 z" Fill="#FF002708" HorizontalAlignment="Right"
+						Margin="0,3.584,-0.02,0.851" Stretch="Fill" Width="3" UseLayoutRounding="False" />
+				<Path Data="M2.9699805,-4.1939116 L8.0148745,-0.58749235 L5,3 L-0.044893634,-0.60641938 z"
+						Fill="#FF63D87C" Margin="0,0,-0.02,3.851" Stretch="Fill" UseLayoutRounding="False" />
+			</Grid>
+			<TextBlock Text="{Binding Name}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="PublicClassTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Height="16" Margin="0,0,5,0" Width="16">
+				<Path
+						Data="M0,0 L0.99999994,0 L1.9999999,0 L5,0 L5,1 L1.9999999,1 L1.9999999,6 L5,6 L5,7 L0.99999994,7 L0.99999994,6 L0.99999994,1 L0,1 z"
+						Fill="#FF767676" Margin="7,6,4,3" Stretch="Fill" UseLayoutRounding="False" />
+				<Path Data="M-2.000767,2.3874679 L2.8365026,-4.2175107 L7.6466541,-0.92841721 L2.9020197,5.6310091 z"
+						Fill="#FFC2538F" HorizontalAlignment="Right" Margin="0,3.736,0,6.132" Stretch="Fill"
+						Width="5.908" UseLayoutRounding="False" />
+				<Path Data="M-2.000767,2.3874679 L2.8365026,-4.2175107 L7.6466541,-0.92841721 L2.9020197,5.6310091 z"
+						Fill="#FFF19720" Margin="0,0,6.408,6.044" Stretch="Fill" UseLayoutRounding="False" />
+				<Path Data="M-2.000767,2.3874679 L2.8365026,-4.2175107 L7.6466541,-0.92841721 L2.9020197,5.6310091 z"
+						Fill="#FF15ACA9" HorizontalAlignment="Right" Stretch="Fill" Width="5.908"
+						UseLayoutRounding="False" Height="6.132" VerticalAlignment="Bottom" />
+			</Grid>
+			<TextBlock Text="{Binding Header}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="PublicInterfaceTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Path
+					Data="M11,1.9999999 C10.447716,1.9999998 10,2.447715 10,2.9999998 C10,3.5522845 10.447716,3.9999998 11,3.9999998 C11.552284,3.9999998 12,3.5522845 12,2.9999998 C12,2.447715 11.552284,1.9999998 11,1.9999999 z M11,0 C12.656855,4.4703484E-08 14,1.3431457 14,3 C14,4.6568542 12.656855,6 11,6 C9.7055826,6 8.6026373,5.1802087 8.1820393,4.0315003 L8.17138,3.9999998 L3.7317696,3.9999998 L3.7104535,4.0370727 C3.3596787,4.6143703 2.7248735,5 2,5 C0.89543056,5 0,4.1045694 0,2.9999998 C0,1.8954302 0.89543056,0.99999982 2,0.99999976 C2.7248735,0.99999982 3.3596787,1.3856294 3.7104535,1.9629271 L3.7317696,1.9999999 L8.171381,1.9999999 L8.1820393,1.9684994 C8.6026373,0.81979114 9.7055826,3.8184226E-08 11,0 z"
+					Height="6" Stretch="Fill" UseLayoutRounding="False" Margin="0 0 5 0">
+				<Path.Fill>
+					<SolidColorBrush Color="#FF333333">
+						<SolidColorBrush.RelativeTransform>
+							<MatrixTransform Matrix="Identity" />
+						</SolidColorBrush.RelativeTransform>
+						<SolidColorBrush.Transform>
+							<MatrixTransform Matrix="Identity" />
+						</SolidColorBrush.Transform>
+					</SolidColorBrush>
+				</Path.Fill>
+			</Path>
+			<TextBlock Text="{Binding Header}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="PublicEnumTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Height="15" Margin="0,0,5,0" Width="14">
+				<Path
+						Data="M2,7 L2,8 L5.9999995,8 L5.9999995,7 z M1.9999995,5 L1.9999995,6 L5.999999,6 L5.999999,5 z M0.99999994,4 L7,4 C7.5522847,4 8,4.4477153 8,5 L8,8 C8,8.5522842 7.5522847,9 7,9 L0.99999994,9 C0.44771525,9 0,8.5522842 0,8 L0,5 C0,4.4477153 0.44771525,4 0.99999994,4 z M7.0000005,7.1054274E-15 L13,7.1054274E-15 C13.552285,-5.9604638E-08 14,0.44771522 14,0.99999994 L14,4 C14,4.5522847 13.552285,5 13,5 L9.000001,5 C9.000001,3.8954306 8.1045704,3 7.000001,3 L6.0000005,3 L6.0000005,0.99999994 C6.0000005,0.44771522 6.4477158,-5.9604638E-08 7.0000005,7.1054274E-15 z"
+						Fill="#FF333333" Stretch="Fill" UseLayoutRounding="False" />
+			</Grid>
+			<TextBlock Text="{Binding Header}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="PublicStructTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Grid Height="14" Margin="0,0,5,0" Width="16">
+				<Path Data="M-2.0969334,2.5279021 L1.3181119,-2.2757058 L9.420723,3.0598094 L6.1663489,7.9684477 z"
+						Fill="#FFC2538F" HorizontalAlignment="Right" Margin="0,3.908,0.532,3.715" Stretch="Fill"
+						Width="7.053" UseLayoutRounding="False" />
+				<Path Data="M-2.000767,2.3050342 L2.8365026,-4.2175107 L7.6466541,-0.92841721 L2.8182051,5.6310091 z"
+						Fill="#FFF19720" Margin="0,0,6.408,4.044" Stretch="Fill" UseLayoutRounding="False" />
+				<Path Data="M-2.000767,2.3874679 L3.0066257,-4.3513513 L7.983006,-0.99349213 L3.0172257,5.7499647 z"
+						Fill="#FF15ACA9" Margin="4.684,0,5.202,-0.03" Stretch="Fill" UseLayoutRounding="False"
+						Height="6.29" VerticalAlignment="Bottom" />
+			</Grid>
+			<TextBlock Text="{Binding Header}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<classDiagram:NamespaceItemTemplateSelector x:Key="NamespaceItemTemplateSelector"
+			PublicClassTemplate="{StaticResource PublicClassTemplate}"
+			PublicEnumTemplate="{StaticResource PublicEnumTemplate}"
+			PublicInterfaceTemplate="{StaticResource PublicInterfaceTemplate}"
+			PublicStructTemplate="{StaticResource PublicStructTemplate}" />
+	<classDiagram:TreeViewItemTemplateSelector x:Key="TemplateSelector"
+			PropertyTemplate="{StaticResource PropertyTemplate}" MethodTemplate="{StaticResource MethodTemplate}"
+			EventTemplate="{StaticResource EventTemplate}" FieldTemplate="{StaticResource FieldTemplate}" />
+	<common:HierarchicalDataTemplate x:Key="TreeViewItemTemplate" ItemsSource="{Binding Types}"
+			ItemTemplateSelector="{StaticResource NamespaceItemTemplateSelector}">
+		<StackPanel Orientation="Horizontal">
+			<Path
+					Data="M3.9582343,5.0499678 L3.9582343,6.0590563 C3.2681475,6.0764179 2.923104,6.4909039 2.923104,7.302515 L2.923104,9.1384068 C2.923104,10.015121 2.4912572,10.555472 1.6275634,10.75946 L1.6275634,10.778991 C2.4912572,10.969958 2.923104,11.50597 2.923104,12.387024 L2.923104,14.203384 C2.923104,14.667783 3.0001421,14.99872 3.154218,15.196198 C3.3082938,15.393676 3.5762994,15.496755 3.9582343,15.505435 L3.9582343,16.508015 C2.4131341,16.490654 1.640584,15.830948 1.6405841,14.528897 L1.6405841,12.608373 C1.640584,11.749019 1.3020507,11.297642 0.62498438,11.25424 L0.62498438,10.303742 C1.3020507,10.260341 1.640584,9.8002834 1.6405841,8.9235687 L1.6405841,7.0551257 C1.640584,5.7357149 2.4131341,5.0673294 3.9582343,5.0499678 z M8.5750923,5.0499678 C10.111512,5.0673294 10.879722,5.7357149 10.879722,7.0551257 L10.879722,8.9235687 C10.879722,9.8002834 11.216085,10.260341 11.888811,10.303742 L11.888811,11.25424 C11.216085,11.297642 10.879722,11.749019 10.879722,12.608373 L10.879722,14.528897 C10.879722,15.830948 10.111512,16.490654 8.5750923,16.508015 L8.5750923,15.505435 C8.9526863,15.496755 9.2206917,15.392591 9.3791084,15.192944 C9.5375242,14.993296 9.6167326,14.663443 9.6167326,14.203384 L9.6167326,12.387024 C9.6167326,11.50597 10.044239,10.969958 10.899253,10.778991 L10.899253,10.75946 C10.044239,10.555472 9.6167326,10.015121 9.6167326,9.1384068 L9.6167326,7.302515 C9.6167326,6.4909039 9.2695189,6.0764179 8.5750923,6.0590563 z"
+					Height="11.458" Margin="0,0,5,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill"
+					UseLayoutRounding="False" Width="11.264">
+				<Path.Fill>
+					<SolidColorBrush Color="#FF333333">
+						<SolidColorBrush.RelativeTransform>
+							<MatrixTransform Matrix="Identity" />
+						</SolidColorBrush.RelativeTransform>
+						<SolidColorBrush.Transform>
+							<MatrixTransform Matrix="Identity" />
+						</SolidColorBrush.Transform>
+					</SolidColorBrush>
+				</Path.Fill>
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform />
+						<SkewTransform />
+						<RotateTransform />
+						<TranslateTransform />
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+			<TextBlock Text="{Binding Header}" />
+		</StackPanel>
+	</common:HierarchicalDataTemplate>
+	<common:HierarchicalDataTemplate x:Key="TreeViewTemplate" ItemsSource="{Binding Items}"
+			ItemTemplateSelector="{StaticResource TemplateSelector}">
+		<TextBlock Text="{Binding Name}" />
+	</common:HierarchicalDataTemplate>
+
+	<Style TargetType="telerik:RadButton" x:Key="CloseButtonStyle">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+					<Grid Background="Transparent" Cursor="Hand">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonPath"
+												Storyboard.TargetProperty="Fill">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="#59000000" />
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonPath"
+												Storyboard.TargetProperty="Fill">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="#59000000" />
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Path x:Name="ButtonPath"
+								Data="F1M12.488,5.1L10.967,3.579L8,6.545L5.034,3.579L3.512,5.1L6.479,8.066L3.512,11.033L5.034,12.555L8,9.588L10.967,12.554L12.488,11.033L9.521,8.066z"
+								Stretch="Fill" UseLayoutRounding="False" Fill="#FF333333" Width="10" Height="10"
+								VerticalAlignment="Top" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="ExpanderStyle" TargetType="ToggleButton">
+		<Setter Property="IsEnabled" Value="True" />
+		<Setter Property="IsTabStop" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ToggleButton">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Button"
+												Storyboard.TargetProperty="Background">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="#59000000" />
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="CheckStates">
+								<VisualState x:Name="Checked">
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.05" Storyboard.TargetName="CollapsedVisual"
+												Storyboard.TargetProperty="Opacity" To="0" />
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Unchecked">
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.05" Storyboard.TargetName="CollapsedVisual"
+												Storyboard.TargetProperty="Opacity" To="1" />
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border x:Name="Button" Background="#FF333333" CornerRadius="2" Margin="0,7,4,0"
+								HorizontalAlignment="Right" VerticalAlignment="Top" Width="11" Height="11">
+							<Grid>
+								<Rectangle x:Name="CollapsedVisual" Fill="#FFF" HorizontalAlignment="Left"
+										VerticalAlignment="Top" Width="1" Height="5" Margin="5,3,0,0" />
+								<Rectangle Fill="#FFF" VerticalAlignment="Top" HorizontalAlignment="Left" Height="1"
+										Width="5" Margin="3,5,0,0" />
+							</Grid>
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<DataTemplate x:Key="HeaderTemplate">
+		<Grid Width="184" Height="60">
+			<StackPanel Margin="5,2,0,0" HorizontalAlignment="Left">
+				<TextBlock x:Name="PART_Header" Text="{Binding Header}" Foreground="#FF000000"
+						TextTrimming="WordEllipsis" TextWrapping="NoWrap" Width="Auto" MaxWidth="160" Height="20"
+						FontFamily="Segoe UI Semibold" FontSize="12" />
+				<TextBlock x:Name="PART_SubHeader" Text="{Binding ClassType}" Width="Auto" Height="Auto"
+						TextWrapping="Wrap" FontSize="12" Foreground="#FF000000" FontFamily="Segoe UI" />
+			</StackPanel>
+		</Grid>
+	</DataTemplate>
+
+	<Style x:Key="TreeViewItemStyle" TargetType="telerik:RadTreeViewItem"
+			BasedOn="{StaticResource RadTreeViewItemStyle}">
+		<Setter Property="IsExpanded" Value="{Binding IsExpanded}" />
+		<Setter Property="telerik:DragDropManager.AllowDrag" Value="True" />
+	</Style>
+
+	<Style TargetType="telerik:RadToggleButton" x:Key="expandCollapseButtonClassDiagramItemStyle">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadToggleButton">
+					<Grid Background="Transparent" Cursor="Hand">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="rect"
+												Storyboard.TargetProperty="Fill">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="#59000000" />
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed" />
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="CheckStates">
+								<VisualState x:Name="Checked">
+									<Storyboard>
+										<DoubleAnimation Storyboard.TargetName="arrow"
+												Storyboard.TargetProperty="(FrameworkElement.RenderTransform).Angle"
+												To="180" Duration="0:0:0.2" />
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Unchecked">
+									<Storyboard>
+										<DoubleAnimation Storyboard.TargetName="arrow"
+												Storyboard.TargetProperty="(FrameworkElement.RenderTransform).Angle"
+												To="0" Duration="0:0:0.2" />
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Rectangle x:Name="rect" RadiusY="2" RadiusX="2" StrokeThickness="2" Width="14" Height="14"
+								Fill="#FF333333" />
+						<Grid Width="14" Height="14" x:Name="arrow" RenderTransformOrigin="0.5,0.5">
+							<Path x:Name="path1"
+									Data="M8,0 L8,1.999831 L4,4.2555118 L0,1.9998311 L0,1.1920929E-07 L4,2.255681 z"
+									Fill="White" HorizontalAlignment="Center" Margin="0,0,0,4" Stretch="Fill"
+									VerticalAlignment="Center" StrokeThickness="2" UseLayoutRounding="False" Width="6"
+									Height="4" />
+							<Path x:Name="path2"
+									Data="M8,0 L8,1.999831 L4,4.2555118 L0,1.9998311 L0,1.1920929E-07 L4,2.255681 z"
+									Fill="White" HorizontalAlignment="Center" Margin="0,0,0,3" Stretch="Fill"
+									StrokeThickness="2" UseLayoutRounding="False" Width="6" Height="4"
+									VerticalAlignment="Bottom" />
+							<Grid.RenderTransform>
+								<RotateTransform Angle="0" />
+							</Grid.RenderTransform>
+						</Grid>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<DataTemplate x:Key="ClassTemplate">
+		<Border BorderBrush="#FF87ACBE" BorderThickness="2" VerticalAlignment="Top" Grid.RowSpan="2" CornerRadius="5"
+				Background="#FFF1FAFF">
+			<Grid x:Name="PART_maingrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="#FF87ACBE" BorderThickness="0,0,0,1" VerticalAlignment="Top" CornerRadius="5,5,0,0"
+						Background="#FFF1FAFF" Cursor="Hand" x:Name="PART_HeaderBorder">
+					<ContentPresenter x:Name="Header" HorizontalAlignment="Left" Content="{Binding}" Margin="0 4"
+							ContentTemplate="{StaticResource HeaderTemplate}" />
+				</Border>
+				<telerik:RadToggleButton Style="{StaticResource expandCollapseButtonClassDiagramItemStyle}" Width="15"
+						Height="17" IsChecked="True" x:Name="ShowHideButton" VerticalAlignment="Top"
+						HorizontalAlignment="Right" Margin="0 6 6 0" />
+				<Border Background="White" Padding="0" BorderBrush="Transparent" Grid.Row="1" BorderThickness="1"
+						CornerRadius="0" VerticalAlignment="Top"
+						Visibility="{Binding IsChecked, ElementName=ShowHideButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<telerik:RadTreeView ItemTemplate="{StaticResource TreeViewTemplate}"
+							ItemsSource="{Binding GroupedItems.Groups}" SelectionMode="Extended" BorderThickness="0"
+							telerik:AnimationManager.IsAnimationEnabled="False" Margin="0,0,0,6"
+							ExpanderStyle="{StaticResource ExpanderStyle}" x:Name="TreeView" />
+				</Border>
+			</Grid>
+		</Border>
+	</DataTemplate>
+
+	<DataTemplate x:Key="EnumTemplate">
+		<Border BorderBrush="#FFB19AC2" BorderThickness="2" VerticalAlignment="Top" Grid.RowSpan="2" CornerRadius="0"
+				Background="#FFF4ECFF">
+			<Grid x:Name="PART_maingrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="#FFB19AC2" BorderThickness="0,0,0,1" VerticalAlignment="Top" CornerRadius="0"
+						Background="#FFF4ECFF" Cursor="Hand" x:Name="PART_HeaderBorder">
+					<ContentPresenter x:Name="Header" HorizontalAlignment="Left" Content="{Binding}" Margin="0 4"
+							ContentTemplate="{StaticResource HeaderTemplate}" />
+				</Border>
+				<telerik:RadToggleButton Style="{StaticResource expandCollapseButtonClassDiagramItemStyle}" Width="15"
+						Height="17" IsChecked="True" x:Name="ShowHideButton" VerticalAlignment="Top"
+						HorizontalAlignment="Right" Margin="0 6 6 0" />
+				<Border Background="White" Padding="0" BorderBrush="Transparent" Grid.Row="1" BorderThickness="1"
+						CornerRadius="0" VerticalAlignment="Top"
+						Visibility="{Binding IsChecked, ElementName=ShowHideButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<telerik:RadTreeView DisplayMemberPath="Name"
+							ItemsSource="{Binding Path=GroupedItems.SourceCollection}" SelectionMode="Extended"
+							BorderThickness="0" telerik:AnimationManager.IsAnimationEnabled="False" Margin="0,0,0,6"
+							ExpanderStyle="{StaticResource ExpanderStyle}" x:Name="TreeView" />
+				</Border>
+			</Grid>
+		</Border>
+	</DataTemplate>
+
+	<DataTemplate x:Key="InterfaceTemplate">
+		<Border BorderBrush="#FFA5CA91" BorderThickness="2" VerticalAlignment="Top" Grid.RowSpan="2" CornerRadius="5"
+				Background="#FFF0FFE4">
+			<Grid x:Name="PART_maingrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="#FFA5CA91" BorderThickness="0,0,0,1" VerticalAlignment="Top" CornerRadius="5,5,0,0"
+						Background="#FFF0FFE4" Cursor="Hand" x:Name="PART_HeaderBorder">
+					<ContentPresenter x:Name="Header" HorizontalAlignment="Left" Content="{Binding}" Margin="0 4"
+							ContentTemplate="{StaticResource HeaderTemplate}" />
+				</Border>
+				<telerik:RadToggleButton Style="{StaticResource expandCollapseButtonClassDiagramItemStyle}" Width="15"
+						Height="17" IsChecked="True" x:Name="ShowHideButton" VerticalAlignment="Top"
+						HorizontalAlignment="Right" Margin="0 6 6 0" />
+				<Border Background="White" Padding="0" BorderBrush="Transparent" Grid.Row="1" BorderThickness="1"
+						CornerRadius="0" VerticalAlignment="Top"
+						Visibility="{Binding IsChecked, ElementName=ShowHideButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<telerik:RadTreeView ItemTemplate="{StaticResource TreeViewTemplate}"
+							ItemsSource="{Binding GroupedItems.Groups}" SelectionMode="Extended" BorderThickness="0"
+							telerik:AnimationManager.IsAnimationEnabled="False" Margin="0,0,0,6"
+							ExpanderStyle="{StaticResource ExpanderStyle}" x:Name="TreeView" />
+				</Border>
+			</Grid>
+		</Border>
+	</DataTemplate>
+
+	<DataTemplate x:Key="StructTemplate">
+		<Border BorderBrush="#FF87ACBE" BorderThickness="2" VerticalAlignment="Top" Grid.RowSpan="2" CornerRadius="0"
+				Background="#FFF1FAFF">
+			<Grid x:Name="PART_maingrid">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="#FF87ACBE" BorderThickness="0,0,0,1" VerticalAlignment="Top" CornerRadius="0"
+						Background="#FFF1FAFF" Cursor="Hand" x:Name="PART_HeaderBorder">
+					<ContentPresenter x:Name="Header" HorizontalAlignment="Left" Content="{Binding}" Margin="0 4"
+							ContentTemplate="{StaticResource HeaderTemplate}" />
+				</Border>
+				<telerik:RadToggleButton Style="{StaticResource expandCollapseButtonClassDiagramItemStyle}" Width="15"
+						Height="17" IsChecked="True" x:Name="ShowHideButton" VerticalAlignment="Top"
+						HorizontalAlignment="Right" Margin="0 6 6 0" />
+				<Border Background="White" Padding="0" BorderBrush="Transparent" Grid.Row="1" BorderThickness="1"
+						CornerRadius="0" VerticalAlignment="Top"
+						Visibility="{Binding IsChecked, ElementName=ShowHideButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<telerik:RadTreeView ItemTemplate="{StaticResource TreeViewTemplate}"
+							ItemsSource="{Binding GroupedItems.Groups}" SelectionMode="Extended" BorderThickness="0"
+							telerik:AnimationManager.IsAnimationEnabled="False" Margin="0,0,0,6"
+							ExpanderStyle="{StaticResource ExpanderStyle}" x:Name="TreeView" />
+				</Border>
+			</Grid>
+		</Border>
+	</DataTemplate>
+
+	<DataTemplate x:Key="ConnectionTemplate" />
+
+	<classDiagram:ClassTemplateSelector x:Key="ClassTemplateSelector" ClassTemplate="{StaticResource ClassTemplate}"
+			EnumTemplate="{StaticResource EnumTemplate}" InterfaceTemplate="{StaticResource InterfaceTemplate}"
+			StructTemplate="{StaticResource StructTemplate}" />
+
+	<Style TargetType="telerik:RadDiagramShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Position" Value="{Binding Position, Mode=TwoWay}" />
+		<Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="IsResizingEnabled" Value="False" />
+		<Setter Property="IsRotationEnabled" Value="False" />
+		<Setter Property="Foreground" Value="Black" />
+		<Setter Property="UseGlidingConnector" Value="True" />
+
+	</Style>
+
+	<Style TargetType="telerik:RadDiagramConnection" BasedOn="{StaticResource RadDiagramConnectionStyle}">
+		<Setter Property="ContentTemplate" Value="{StaticResource ConnectionTemplate}" />
+		<Setter Property="SourceConnectorPosition" Value="Gliding" />
+		<Setter Property="TargetConnectorPosition" Value="Gliding" />
+		<Setter Property="ConnectionType" Value="Polyline" />
+		<Setter Property="TargetCapType" Value="{Binding TargetCapType}" />
+		<Setter Property="SourceCapType" Value="{Binding SourceCapType}" />
+	</Style>
+
+	<Style x:Key="ClassDiagramStyle" TargetType="telerik:RadDiagram" BasedOn="{StaticResource RadDiagramStyle}">
+		<Setter Property="AllowCopy" Value="False" />
+		<Setter Property="AllowCut" Value="False" />
+		<Setter Property="AllowDelete" Value="False" />
+		<Setter Property="AllowPaste" Value="False" />
+		<Setter Property="IsConnectorsManipulationEnabled" Value="False" />
+		<Setter Property="IsEditable" Value="False" />
+		<Setter Property="IsBackgroundSurfaceVisible" Value="False" />
+		<Setter Property="IsSnapToGridEnabled" Value="False" />
+		<Setter Property="ShapeTemplateSelector" Value="{StaticResource ClassTemplateSelector}" />
+		<Setter Property="GraphSource" Value="{Binding ClassDiagramGraphSource}" />
+		<Setter Property="Position" Value="-40, -40" />
+	</Style>
+
+</ResourceDictionary>

@@ -1,0 +1,1 @@
+﻿Telerik CoverFlow is easy to integrate with other controls. This example demonstrates one of the most common scenarios for integrated use of RadCoverFlow - binding the SelectedIndex.

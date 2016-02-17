@@ -1,0 +1,2 @@
+﻿This example illustrates how to style conditionally PropertyGrid group rows using 
+GroupStyleSelector property.

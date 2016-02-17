@@ -1,0 +1,264 @@
+<UserControl x:Class="Telerik.Windows.Examples.DateTimePicker.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:Telerik.Windows.Examples.DateTimePicker.FirstLook"
+    mc:Ignorable="d"
+    d:DesignHeight="400" d:DesignWidth="670">
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="First Look" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" />
+		<Storyboard x:Key="ShowTransitionAnimation">		
+			<DoubleAnimation
+                 Storyboard.TargetName="bookedHallTransition"
+                 Storyboard.TargetProperty="Opacity"
+                 From="0" To="1" Duration="0:0:0.4" />
+		</Storyboard>
+		<Storyboard x:Key="ShowInfoAnimation">
+			<DoubleAnimation
+                 Storyboard.TargetName="NoSelectionText"
+                 Storyboard.TargetProperty="Opacity"
+                 From="0" To="1" Duration="0:0:0.4" />
+		</Storyboard>
+		<Storyboard x:Key="ShowDefaultAnimation">
+			<DoubleAnimation
+                 Storyboard.TargetName="DefaultText"
+                 Storyboard.TargetProperty="Opacity"
+                 From="0" To="1" Duration="0:0:0.4" />
+		</Storyboard>
+
+		<Storyboard x:Key="HideTransitionAnimation">
+			<DoubleAnimation
+                 Storyboard.TargetName="bookedHallTransition"
+                 Storyboard.TargetProperty="Opacity"
+                 From="1" To="0" Duration="0:0:0.4" />
+		</Storyboard>
+		<Storyboard x:Key="HideInfoAnimation">
+			<DoubleAnimation
+                 Storyboard.TargetName="NoSelectionText"
+                 Storyboard.TargetProperty="Opacity"
+                 From="1" To="0" Duration="0:0:0.4" />
+		</Storyboard>		
+		<Storyboard x:Key="HideDefaultAnimation">
+			<DoubleAnimation
+                 Storyboard.TargetName="DefaultText"
+                 Storyboard.TargetProperty="Opacity"
+                 From="1" To="0" Duration="0:0:0.4" />
+		</Storyboard>
+
+        <SolidColorBrush x:Key="TableText" Color="#FF4C607A" />
+        <SolidColorBrush x:Key="GeneralText" Color="#FF353535" />
+        <SolidColorBrush x:Key="BookingTextForeground" Color="#FF4C607A" />
+        <SolidColorBrush x:Key="StressedForeground" Color="#FF6685AE" />
+        <SolidColorBrush x:Key="BaseForeground" Color="#FF353535" />
+
+		<DataTemplate x:Key="HallsItemTemplate">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="{Binding HallName}" />
+				<TextBlock Text="Theater style" Margin="2 0" />
+				<TextBlock Text="{Binding Capacity}" />
+				<TextBlock Text="ppl" />
+			</StackPanel>
+		</DataTemplate>
+
+        <local:HallCollection x:Key="HallsCollection">
+			<local:Hall HallName="Athena Hall" Area="210" Capacity="110" DoorDimensionsX="2.3m" DoorDimensionsY="2.2m" Floor="2" HallDimensionsX="17.5m" HallDimensionsY="13m" />
+			<local:Hall HallName="Epona Hall" Area="83" Capacity="30" DoorDimensionsX="1.4m" DoorDimensionsY="2m" Floor="1" HallDimensionsX="9m" HallDimensionsY="9.2m" />
+			<local:Hall HallName="Mithras Hall" Area="102" Capacity="60" DoorDimensionsX="1.7m" DoorDimensionsY="2m" Floor="1" HallDimensionsX="9.3m" HallDimensionsY="11m" />
+			<local:Hall HallName="Helios Hall" Area="256" Capacity="75" DoorDimensionsX="2m" DoorDimensionsY="2.2m" Floor="2" HallDimensionsX="17m" HallDimensionsY="15.6m" />
+			<local:Hall HallName="Selene Hall" Area="168" Capacity="80" DoorDimensionsX="1.6m" DoorDimensionsY="2.2m" Floor="2" HallDimensionsX="14m" HallDimensionsY="12m" />
+			<local:Hall HallName="Zeus Hall" Area="147" Capacity="50" DoorDimensionsX="2m" DoorDimensionsY="2.5m" Floor="3" HallDimensionsX="10.5m" HallDimensionsY="14m" />
+			<local:Hall HallName="Venus Hall" Area="126" Capacity="40" DoorDimensionsX="2.1m" DoorDimensionsY="2.5m" Floor="3" HallDimensionsX="10.5m" HallDimensionsY="12m" />
+		</local:HallCollection>
+		
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <telerikQuickStart:HeaderedContentControl Header="Book a Conference Hall">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+
+                <Border VerticalAlignment="Top" Height="4" BorderThickness="0">
+                    <Border.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.OpacityMask>
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FFA0AFC3" Offset="0.502"/>
+                            <GradientStop Color="#00A0AFC3" Offset="1"/>
+                            <GradientStop Color="#00A0AFC3"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+
+                <Border>
+                    <StackPanel Orientation="Vertical" Margin="10 15 10 10">
+                        <TextBlock Text="Check in" Foreground="#FF000000" />
+						<telerik:RadDateTimePicker x:Name="CheckInDate"
+												   SelectedValue="{Binding CheckInDate, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                        <TextBlock Text="Check out" Margin="0 10 0 0" Foreground="#FF000000" />
+						<telerik:RadDateTimePicker x:Name="CheckOutDate"
+												   SelectedValue="{Binding CheckOutDate, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                        <TextBlock Text="Hall" Margin="0 10 0 0" Foreground="#FF000000" />
+                        <telerik:RadComboBox x:Name="HallsCombo" IsEditable="True" ItemsSource="{Binding Source={StaticResource HallsCollection}}"
+											 telerik:TextSearch.TextPath="HallName" ItemTemplate="{StaticResource HallsItemTemplate}"
+											 EmptyText="Choose a conference hall" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="Clear"/>
+                        <telerik:RadButton Content="Book Now" HorizontalAlignment="Right" Margin="0 10 0 0" Click="BookHall_Click"/>
+                    </StackPanel>
+                </Border>
+                <Image Grid.Row="1" Source="../Images/schema.png" Width="216" Height="144" Margin="0 19 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" />
+            </Grid>
+        </telerikQuickStart:HeaderedContentControl>
+        <telerikQuickStart:HeaderedContentControl Grid.Column="1" Margin="-1 0 0 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+                <Border VerticalAlignment="Top" Height="4" BorderThickness="0">
+                    <Border.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.OpacityMask>
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FFA0AFC3" Offset="0.502"/>
+                            <GradientStop Color="#00A0AFC3" Offset="1"/>
+                            <GradientStop Color="#00A0AFC3"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Row="0" Background="#33D9E3F0">
+                    <telerik:RadTransitionControl x:Name="bookedHallTransition" Opacity="0" Margin="0 10 0 0">
+                        <telerik:RadTransitionControl.Transition>
+                            <telerik:SlideAndZoomTransition/>
+                        </telerik:RadTransitionControl.Transition>
+                        <telerik:RadTransitionControl.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="30 10">
+                                    <TextBlock Text="You booked:" FontSize="11" FontWeight="Bold" Foreground="{StaticResource GeneralText}" />
+                                    <TextBlock Text="{Binding HallName}" Foreground="{StaticResource BookingTextForeground}" FontFamily="Segoe UI Light" FontSize="21" TextWrapping="Wrap" Margin="0 5 0 8" />
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Check in: "  Foreground="{StaticResource StressedForeground}" FontSize="11" FontWeight="Bold" />
+										<TextBlock Text="{Binding SelectedValue, ElementName=CheckInDate, StringFormat=\{0:ddd\}}" 
+														Foreground="{StaticResource GeneralText}" FontSize="11" />
+                                        <TextBlock Text="," Foreground="{StaticResource GeneralText}" FontSize="11"/>
+										<TextBlock Text="{Binding SelectedValue, ElementName=CheckInDate, StringFormat=\{0:dd MMM hh:mm tt\}}" 
+													   Margin="3 0 10 0" Foreground="{StaticResource GeneralText}" FontSize="11" />
+
+                                        <TextBlock Text="Check out: "  Foreground="{StaticResource StressedForeground}" FontSize="11" FontWeight="Bold" />
+										<TextBlock Text="{Binding SelectedValue, ElementName=CheckOutDate, StringFormat=\{0:ddd\}}" 
+													   Foreground="{StaticResource GeneralText}" FontSize="11" />
+                                        <TextBlock Text="," Foreground="{StaticResource GeneralText}" FontSize="11"/>
+										<TextBlock Text="{Binding SelectedValue, ElementName=CheckOutDate, StringFormat=\{0:dd MMM hh:mm tt\}}" 
+													   Margin="3 0 10 0" Foreground="{StaticResource GeneralText}" FontSize="11" />
+                                    </StackPanel>
+
+                                    <Grid Margin="0 20 0 0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Border Background="#FFFFFFFF" BorderBrush="#FFA0AFC3" BorderThickness="1 1 1 0" Grid.ColumnSpan="4" />
+                                        <Border Background="#FFFFFFFF" BorderBrush="#FFA0AFC3" BorderThickness="1 1 1 1" Grid.Row="1" Grid.ColumnSpan="4" />
+
+                                        <TextBlock Text="Hall Dimensions" Foreground="{StaticResource TableText}" Margin="5" />
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding HallDimensionsX}" Foreground="{StaticResource GeneralText}" Margin="5 5 2 5"/>
+                                            <TextBlock Text=" x " Foreground="{StaticResource GeneralText}" Margin="2 5" />
+                                            <TextBlock Text="{Binding HallDimensionsY}" Foreground="{StaticResource GeneralText}" Margin="2 5 5 5" />
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="1" Text="Area" Foreground="{StaticResource TableText}" Margin="5" />
+                                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Area}" Foreground="{StaticResource GeneralText}" Margin="5 5 2 5" />
+                                            <TextBlock Text="m2" Foreground="{StaticResource GeneralText}" Margin="2 5 5 5" />
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="2" Text="Door Dimensions" Foreground="{StaticResource TableText}" Margin="5" />
+                                        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding DoorDimensionsX}" Foreground="{StaticResource GeneralText}" Margin="5 5 2 5" />
+                                            <TextBlock Text=" x " Foreground="{StaticResource GeneralText}" Margin="2 5" />
+                                            <TextBlock Text="{Binding DoorDimensionsY}" Foreground="{StaticResource GeneralText}" Margin="2 5 5 5" />
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="3" Text="Floor" Foreground="{StaticResource TableText}" Margin="5" />
+                                        <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding Floor}" Foreground="{StaticResource GeneralText}" Margin="5" />
+                                    </Grid>
+                                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                                        <TextBlock Text="Capacity: " Foreground="{StaticResource GeneralText}" />
+                                        <TextBlock Text="{Binding Capacity}" Foreground="{StaticResource GeneralText}" Margin="3 0" />
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:RadTransitionControl.ContentTemplate>
+                        <ListBox x:Name="HallsList" ItemsSource="{StaticResource HallsCollection}" />
+                    </telerik:RadTransitionControl>
+                    <StackPanel x:Name="DefaultText" Orientation="Vertical" Margin="30 10">
+                        <TextBlock Text="Meeting and Event Facilities" FontFamily="Segoe UI Light" FontSize="21" TextWrapping="Wrap" Foreground="{StaticResource BookingTextForeground}" />
+                        <TextBlock Text="The hotel offers 7 halls" Foreground="{StaticResource StressedForeground}" FontSize="12" FontWeight="Bold" TextWrapping="Wrap" Margin="0 10 0 0" />
+                        <TextBlock Text="Our vast array of meeting spaces includes the latest audio/visual equipment, High Speed Internet access, flawless service and a thoughtful environment for ideas to flourish." TextWrapping="Wrap"
+									   Foreground="{StaticResource BaseForeground}" Margin="0 8 0 0" />
+                        <TextBlock Text="A new dimension for your meetings!" Foreground="{StaticResource BaseForeground}" FontSize="13" Margin="0 14 0 0" />
+                    </StackPanel>
+                    <TextBlock x:Name="NoSelectionText" Text="Please, enter check in and check out dates, and choose a hall to reserve it. The check in date should be before check out dates and it should not be in the past." Foreground="{StaticResource BaseForeground}"
+								   Opacity="0" Margin="30 20" TextWrapping="Wrap"/>
+                </Grid>
+
+                <StackPanel x:Name="Equipment" Grid.Row="1" Orientation="Vertical" Margin="30 10">
+                    <TextBlock Text="Equipment" FontFamily="Segoe UI Light" FontSize="18" Foreground="{StaticResource BookingTextForeground}" Margin="0 5" />
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="38mm Slide projector" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Digital Projector" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Overhead Projector" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="LCD Projector" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Flip Chart and markers" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="40 0 0 0">
+                            <TextBlock Text="Laser Disc" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Lectern" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Modem Lines" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Cable Modem" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="DVD Player" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="40 0 0 0">
+                            <TextBlock Text="Stage Lights" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="VCR" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="White Board" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Event Packages" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                            <TextBlock Text="Microphone" FontSize="12" FontFamily="Segoe UI" Foreground="{StaticResource BaseForeground}"  />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </telerikQuickStart:HeaderedContentControl>
+	</Grid>
+</UserControl>

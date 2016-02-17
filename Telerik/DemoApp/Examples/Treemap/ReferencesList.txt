@@ -1,0 +1,14 @@
+System.XAML
+System
+System.Data
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls
+Telerik.Windows.Controls.Input
+Telerik.Windows.Data
+Telerik.Windows.Controls.DataVisualization
+WindowsBase
+PresentationCore
+PresentationFramework

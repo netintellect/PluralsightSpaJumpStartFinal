@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PersistenceFramework.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:interactions="http://schemas.microsoft.com/expression/2010/interactions"
+		xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.PersistenceFramework.FirstLook"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common" >
+
+    <Grid MinWidth="700" MinHeight="500" telerik:PersistenceManager.StorageId="PersistenceRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <telerik:RadRibbonView Grid.Row="0" ApplicationButtonContent="File" Grid.Column="0" Grid.ColumnSpan="3">
+            <telerik:RadRibbonTab Header="Home">
+                <telerik:RadRibbonGroup Header="New">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/New_Email_1.png"
+                                Size="Large" Text="New E-mail"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/NewItem.png"
+                                Size="Large" Text="New Items"  />
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Delete">
+                    <StackPanel>
+                        <telerik:RadRibbonButton Text="Ignore"
+                                SmallImage="../Images/PersistenceFramework/Ignore.png"
+                                CollapseToSmall="WhenGroupIsMedium"/>
+                        <telerik:RadRibbonButton Text="Clear Up"
+                                SmallImage="../Images/PersistenceFramework/ClearUp.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                        <telerik:RadRibbonButton Text="Junk"
+                                SmallImage="../Images/PersistenceFramework/junk.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                    </StackPanel>
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/Delete1.png"
+                                Size="Large" Text="Delete"  />
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Respond">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/reply.png"
+                                Size="Large" Text="Reply"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/reply_all.png"
+                                Size="Large" Text="Reply All"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/forward.png"
+                                Size="Large" Text="Forward"  />
+                    <StackPanel>
+                        <telerik:RadRibbonButton Text="Meeting"
+                                SmallImage="../Images/PersistenceFramework/meeting.png"
+                                CollapseToSmall="WhenGroupIsMedium"/>
+                        <telerik:RadRibbonButton Text="IM"
+                                SmallImage="../Images/PersistenceFramework/IM.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                        <telerik:RadRibbonButton Text="More"
+                                SmallImage="../Images/PersistenceFramework/more.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                    </StackPanel>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Send / Receive">
+                <telerik:RadRibbonGroup Header="Send / Receive">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/SendReceive.png"
+                                Size="Large" Text="Send/Receive All Folders"  />
+                    <StackPanel>
+                        <telerik:RadRibbonButton Text="Update Folder"
+                                SmallImage="../Images/PersistenceFramework/Update_folder.png"
+                                CollapseToSmall="WhenGroupIsMedium"/>
+                        <telerik:RadRibbonButton Text="Send All"
+                                SmallImage="../Images/PersistenceFramework/SendAll.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                        <telerik:RadRibbonButton Text="Send/Receive Groups"
+                                SmallImage="../Images/PersistenceFramework/cancel_all.png"
+                                CollapseToSmall="WhenGroupIsMedium" />
+                    </StackPanel>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Download">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/ShowProgress.png"
+                                Size="Large" Text="Show Progress"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/SendReceive.png"
+                                Size="Large" Text="Cancel All"  />
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Folder">
+                <telerik:RadRibbonGroup Header="New">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/NewFolder.png"
+                                Size="Large" Text="New Folder"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/NewSearchFolder.png"
+                                Size="Large" Text="New Search Folder"  />
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="View">
+                <telerik:RadRibbonGroup Header="Current View">
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/ChangeView.png"
+                                Size="Large" Text="Change View"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/ViewSetting.png"
+                                Size="Large" Text="View Settings"  />
+                    <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium"
+                                LargeImage="../Images/PersistenceFramework/ResetView.png"
+                                Size="Large" Text="Reset View"  />
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+        </telerik:RadRibbonView>
+
+        <telerik:RadOutlookBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Width="200">
+            <telerik:RadOutlookBarItem Header="Mail" FontWeight="Bold"
+								Icon="../Images/PersistenceFramework/mailBig.png"
+								SmallIcon="../Images/PersistenceFramework/mailSmall.png"
+								Tag="Mail">
+                <telerik:RadTreeView IsLineEnabled="True">
+                    <telerik:PersistenceManager.SerializationOptions>
+                        <telerik:SerializationMetadataCollection>
+                            <telerik:PropertyNameMetadata Expression="IsExpanded" Condition="Only" SearchType="PropertyName"/>
+                            <telerik:PropertyNameMetadata Expression="IsSelected" Condition="Only" SearchType="PropertyName"/>
+                        </telerik:SerializationMetadataCollection>
+                    </telerik:PersistenceManager.SerializationOptions>
+                    <telerik:RadTreeViewItem Header="Personal Folders"
+										DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/1PersonalFolders.png"
+										IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="Deleted Items"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/2DeletedItems.png" />
+                        <telerik:RadTreeViewItem Header="Drafts"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/3Drafts.png" />
+                        <telerik:RadTreeViewItem x:Name="MessagesTreeView" Header="Inbox(3)"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/4Inbox.png"
+											IsExpanded="True">
+                            <telerik:RadTreeViewItem.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../Images/PersistenceFramework/letter.png" />
+                                        <TextBlock Text="{Binding From}"
+															Margin="9 0 0 0" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </telerik:RadTreeViewItem.ItemTemplate>
+                        </telerik:RadTreeViewItem>
+                        <telerik:RadTreeViewItem Header="Junk E-mails"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/junk.png" />
+                        <telerik:RadTreeViewItem Header="Outbox"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/outbox.png" />
+                        <telerik:RadTreeViewItem Header="Sent Items"
+											DefaultImageSrc="/PersistenceFramework;component/Images/PersistenceFramework/sent.png" />
+                    </telerik:RadTreeViewItem>
+                </telerik:RadTreeView>
+            </telerik:RadOutlookBarItem>
+            <telerik:RadOutlookBarItem Header="Contacts" FontWeight="Bold"
+								Icon="../Images/PersistenceFramework/contactsBig.png"
+								SmallIcon="../Images/PersistenceFramework/contactsSmall.png"
+								Tag="Contacts">
+                <ListBox x:Name="ContactsListBox" BorderThickness="0">
+                    <ListBoxItem Content="Nancy Davolio" Margin="0 5"/>
+                    <ListBoxItem Content="Andrew Fuller" Margin="0 5"/>
+                    <ListBoxItem Content="Janet Leverling" Margin="0 5"/>
+                    <ListBoxItem Content="Margaret Peacock" Margin="0 5"/>
+                    <ListBoxItem Content="Steven Buchanan" Margin="0 5"/>
+                </ListBox>
+            </telerik:RadOutlookBarItem>
+            <telerik:RadOutlookBarItem Header="Tasks" FontWeight="Bold"
+								Icon="../Images/PersistenceFramework/tasksBig.png"
+								SmallIcon="../Images/PersistenceFramework/tasksSmall.png">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"
+									Margin="15 5">
+                    <RadioButton Content="To-Do List" IsChecked="True" Margin="0 5" />
+                    <RadioButton Content="Simple List" Margin="0 5" />
+                    <RadioButton Content="Detailed List" Margin="0 5" />
+                    <RadioButton Content="Active Tasks" Margin="0 5" />
+                    <RadioButton Content="Next Seven Days" Margin="0 5" />
+                    <RadioButton Content="Overdue Tasks" Margin="0 5" />
+                </StackPanel>
+            </telerik:RadOutlookBarItem>
+        </telerik:RadOutlookBar>
+
+        <Image Grid.Row="1" Grid.Column="1" Source="../Images/PersistenceFramework/letter2.png" Stretch="None" />
+
+        <telerik:RadOutlookBar Grid.Row="1" Grid.Column="2" Width="250" VerticalResizerAlignment="Left">
+            <telerik:RadOutlookBarItem Header="Calendar" FontWeight="Bold"
+								Icon="../Images/PersistenceFramework/calendarBig.png"
+								SmallIcon="../Images/PersistenceFramework/calendarSmall.png">
+                <telerik:RadCalendar VerticalAlignment="Top" Margin="3" />
+            </telerik:RadOutlookBarItem>
+        </telerik:RadOutlookBar>
+
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <telerik:RadRadioButton Content="Use Stream" Margin="0 5" IsChecked="True" Checked="OnUseStreamChecked"/>
+            <telerik:RadRadioButton x:Name="useIsolatedStorage" Content="Use IsolatedStorage" Margin="0 0 0 20" Checked="OnUseIsolatedStorageChecked"/>
+            <telerik:RadButton x:Name="buttonSave" Content="Save"  Click="OnSave" Margin="0 2"/>
+            <telerik:RadButton x:Name="buttonLoad" Content="Load" Click="OnLoad" Margin="0 2"/>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

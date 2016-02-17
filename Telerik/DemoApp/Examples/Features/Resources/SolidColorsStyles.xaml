@@ -1,0 +1,88 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:Telerik.Windows.Diagrams.Features">
+
+	<local:ColorStyle x:Key="1"  OrderId="1"  Fill="#FFFFFFFF" Stroke="#FFCCCCCC" />
+	<local:ColorStyle x:Key="2"  OrderId="2"  Fill="#FFF7F7F7" Stroke="#FFD4D4D4" />
+	<local:ColorStyle x:Key="3"  OrderId="3"  Fill="#FFE9E9E9" Stroke="#FFBEBEBE" />
+	<local:ColorStyle x:Key="4"  OrderId="4"  Fill="#FFD4D4D4" Stroke="#FFABABAB" />
+	<local:ColorStyle x:Key="5"  OrderId="5"  Fill="#FFBEBEBE" Stroke="#FF838383" />
+	<local:ColorStyle x:Key="6"  OrderId="6"  Fill="#FFABABAB" Stroke="#FF6C6C6C" />
+	<local:ColorStyle x:Key="7"  OrderId="7"  Fill="#FF979797" Stroke="#FF5C5C5C" />
+	<local:ColorStyle x:Key="8"  OrderId="8"  Fill="#FF878787" Stroke="#FF5E5E5E" />
+	<local:ColorStyle x:Key="9"  OrderId="9"  Fill="#FF747474" Stroke="#FF2B2B2B" />
+	<local:ColorStyle x:Key="10" OrderId="10" Fill="#FF5E5E5E" Stroke="#FF1F1F1F" />
+	<local:ColorStyle x:Key="11" OrderId="11" Fill="#FF474747" Stroke="#FF121212" />
+	<local:ColorStyle x:Key="12" OrderId="12" Fill="#FF333333" Stroke="#FF000000" />
+	<local:ColorStyle x:Key="13" OrderId="13" Fill="#FF1F1F1F" Stroke="#FF000000" />
+	<local:ColorStyle x:Key="14" OrderId="14" Fill="#FF000000" Stroke="#FF000000" />
+
+
+
+	<local:ColorStyle x:Key="15" OrderId="15" Fill="#FFFFFFFF" Stroke="#FFF1C700" />
+	<local:ColorStyle x:Key="16" OrderId="16" Fill="#FFFFFFFF" Stroke="#FFF19720" />
+	<local:ColorStyle x:Key="17" OrderId="17" Fill="#FFFFFFFF" Stroke="#FF8BC03F" />
+	<local:ColorStyle x:Key="18" OrderId="18" Fill="#FFFFFFFF" Stroke="#FF319B47" />
+	<local:ColorStyle x:Key="19" OrderId="19" Fill="#FFFFFFFF" Stroke="#FF15ACA9" />
+	<local:ColorStyle x:Key="20" OrderId="20" Fill="#FFFFFFFF" Stroke="#FF23A0DA" />
+	<local:ColorStyle x:Key="21" OrderId="21" Fill="#FFFFFFFF" Stroke="#FF456BE2" />
+	<local:ColorStyle x:Key="22" OrderId="22" Fill="#FFFFFFFF" Stroke="#FF7F51A1" />
+	<local:ColorStyle x:Key="23" OrderId="23" Fill="#FFFFFFFF" Stroke="#FFDF73AD" />
+	<local:ColorStyle x:Key="24" OrderId="24" Fill="#FFFFFFFF" Stroke="#FFED1690" />
+	<local:ColorStyle x:Key="25" OrderId="25" Fill="#FFFFFFFF" Stroke="#FFE51E25" />
+	<local:ColorStyle x:Key="26" OrderId="26" Fill="#FFFFFFFF" Stroke="#FF986827" />
+	<local:ColorStyle x:Key="27" OrderId="27" Fill="#FFFFFFFF" Stroke="#FF838383" />
+	<local:ColorStyle x:Key="28" OrderId="28" Fill="#FFFFFFFF" Stroke="#FF232323" />
+
+
+
+	<local:ColorStyle x:Key="29" OrderId="29" Fill="#FFFFF2B7" Stroke="#FFC8AA22" />
+	<local:ColorStyle x:Key="30" OrderId="30" Fill="#FFFFDDA1" Stroke="#FFCE9648" />
+	<local:ColorStyle x:Key="31" OrderId="31" Fill="#FFD4F5A3" Stroke="#FF86B243" />
+	<local:ColorStyle x:Key="32" OrderId="32" Fill="#FFB2EFBE" Stroke="#FF56A164" />
+	<local:ColorStyle x:Key="33" OrderId="33" Fill="#FF94F1F0" Stroke="#FF2CA3A2" />
+	<local:ColorStyle x:Key="34" OrderId="34" Fill="#FF9DDFFB" Stroke="#FF278EB8" />
+	<local:ColorStyle x:Key="35" OrderId="35" Fill="#FFACC0FF" Stroke="#FF5165A7" />
+	<local:ColorStyle x:Key="36" OrderId="36" Fill="#FFDDBFF3" Stroke="#FF905FB4" />
+	<local:ColorStyle x:Key="37" OrderId="37" Fill="#FFFDC9E5" Stroke="#FFCE659E" />
+	<local:ColorStyle x:Key="38" OrderId="38" Fill="#FFFFBBD1" Stroke="#FFC85C7E" />
+	<local:ColorStyle x:Key="39" OrderId="39" Fill="#FFFDBABA" Stroke="#FFBE5A5A" />
+	<local:ColorStyle x:Key="40" OrderId="40" Fill="#FFEBCDA5" Stroke="#FF9D7A4A" />
+	<local:ColorStyle x:Key="41" OrderId="41" Fill="#FFEFEFEF" Stroke="#FFB1B1B1" />
+	<local:ColorStyle x:Key="42" OrderId="42" Fill="#FF878787" Stroke="#FF292929" />
+	
+	
+	
+	<local:ColorStyle x:Key="43" OrderId="43" Fill="#FFF1C700" Stroke="#FFAB8D00" />
+	<local:ColorStyle x:Key="44" OrderId="44" Fill="#FFF19720" Stroke="#FFAB6200" />
+	<local:ColorStyle x:Key="45" OrderId="45" Fill="#FF8BC03F" Stroke="#FF487A00" />
+	<local:ColorStyle x:Key="46" OrderId="46" Fill="#FF319B47" Stroke="#FF005011" />
+	<local:ColorStyle x:Key="47" OrderId="47" Fill="#FF15ACA9" Stroke="#FF005857" />
+	<local:ColorStyle x:Key="48" OrderId="48" Fill="#FF23A0DA" Stroke="#FF00537A" />
+	<local:ColorStyle x:Key="49" OrderId="49" Fill="#FF456BE2" Stroke="#FF001866" />
+	<local:ColorStyle x:Key="50" OrderId="50" Fill="#FF7F51A1" Stroke="#FF370060" />
+	<local:ColorStyle x:Key="51" OrderId="51" Fill="#FFDF73AD" Stroke="#FF853B63" />
+	<local:ColorStyle x:Key="52" OrderId="52" Fill="#FFED1690" Stroke="#FF830167" />
+	<local:ColorStyle x:Key="53" OrderId="53" Fill="#FFE51E25" Stroke="#FF8F0005" />
+	<local:ColorStyle x:Key="54" OrderId="54" Fill="#FF986827" Stroke="#FF351F00" />
+	<local:ColorStyle x:Key="55" OrderId="55" Fill="#FFD6D4D4" Stroke="#FF838383" />
+	<local:ColorStyle x:Key="56" OrderId="56" Fill="#FF6A6A6A" Stroke="#FF000000" />
+
+
+
+	<local:ColorStyle x:Key="57" OrderId="57" Fill="#FFE5DBA6" Stroke="#FF9F9978" />
+	<local:ColorStyle x:Key="58" OrderId="58" Fill="#FFE0BBA2" Stroke="#FF958479" />
+	<local:ColorStyle x:Key="59" OrderId="59" Fill="#FFBFD699" Stroke="#FF89996E" />
+	<local:ColorStyle x:Key="60" OrderId="60" Fill="#FF84BAA2" Stroke="#FF517464" />
+	<local:ColorStyle x:Key="61" OrderId="61" Fill="#FF88BDBE" Stroke="#FF597A7A" />
+	<local:ColorStyle x:Key="62" OrderId="62" Fill="#FFA0C2E7" Stroke="#FF677C93" />
+	<local:ColorStyle x:Key="63" OrderId="63" Fill="#FF7D95BE" Stroke="#FF51617C" />
+	<local:ColorStyle x:Key="64" OrderId="64" Fill="#FFBAB7C6" Stroke="#FF787680" />
+	<local:ColorStyle x:Key="65" OrderId="65" Fill="#FFE4CBD8" Stroke="#FFA996A0" />
+	<local:ColorStyle x:Key="66" OrderId="66" Fill="#FFCC99A9" Stroke="#FF81616C" />
+	<local:ColorStyle x:Key="67" OrderId="67" Fill="#FFAF9494" Stroke="#FF5A4B4B" />
+	<local:ColorStyle x:Key="68" OrderId="68" Fill="#FFBAAEA6" Stroke="#FF66605D" />
+	<local:ColorStyle x:Key="69" OrderId="69" Fill="#FFD0CAAA" Stroke="#FF747162" />
+	<local:ColorStyle x:Key="70" OrderId="70" Fill="#FF978F84" Stroke="#FF5E5A53" />
+	
+</ResourceDictionary>

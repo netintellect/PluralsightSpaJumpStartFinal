@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{891E231A-AFBF-4A35-BA7E-AEEA41B2B2FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TransitionControl</RootNamespace>
+    <AssemblyName>TransitionControl</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>TransitionControl.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2010.1.401.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurator\ConfiguratorViewModel.cs" />
+    <Compile Include="Configurator\Person.cs" />
+    <Compile Include="Configurator\TransitionItem.cs" />
+    <Compile Include="Configurator\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Person.cs" />
+    <Compile Include="FirstLook\TransitionItems.cs" />
+    <Compile Include="FirstLook\TransitionSet.cs" />
+    <Compile Include="FirstLook\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MappedLightTransitions\MappedLightTransitionsViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MappedLightTransitions\NavigationItem.cs" />
+    <Compile Include="MappedLightTransitions\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rotator\RotatorExtensions.cs" />
+    <Compile Include="Rotator\RotatorItemsCollection.cs" />
+    <Compile Include="Rotator\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SlideAndZoomTransition\SiteMap.cs" />
+    <Compile Include="SlideAndZoomTransition\SitePage.cs" />
+    <Compile Include="SlideAndZoomTransition\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Products\Big\TransitionControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Common\WPF\FridayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\MondayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\SaturdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\SilverlightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\WPF\SundayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\ThursdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\TuesdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\WednesdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\WindowsPhone7Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\WPF\WPFPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Configurator\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Configurator\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MappedLightTransitions\WPF\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MappedLightTransitions\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Rotator\WPF\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SlideAndZoomTransition\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SlideAndZoomTransition\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MappedLightTransitions\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Interior\Furnishing.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall1.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall2.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall3.png" />
+    <Resource Include="Images\TransitionControl\ProgressMaps\BloxyPattern.jpg" />
+    <Resource Include="Images\TransitionControl\ProgressMaps\BrushReveal.jpg" />
+    <Resource Include="Images\TransitionControl\ProgressMaps\SplitScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\CardPerson01.png" />
+    <Resource Include="Images\TransitionControl\CardPerson02.png" />
+    <Resource Include="Images\TransitionControl\CardPerson03.png" />
+    <Resource Include="Images\TransitionControl\CardPerson04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\FrameNavigation\WP7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\FrameNavigation\Silverlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\FrameNavigation\WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rotator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Configurator\item1.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item2.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item3.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item4.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item5.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\book_icon.png" />
+    <Resource Include="Images\TransitionControl\check_icon.png" />
+    <Resource Include="Images\TransitionControl\Contact_screen.png" />
+    <Resource Include="Images\TransitionControl\Events_screen.png" />
+    <Resource Include="Images\TransitionControl\folder_icon.png" />
+    <Resource Include="Images\TransitionControl\Library_screen.png" />
+    <Resource Include="Images\TransitionControl\Mail_screen.png" />
+    <Resource Include="Images\TransitionControl\message_icon.png" />
+    <Resource Include="Images\TransitionControl\musik_icon.png" />
+    <Resource Include="Images\TransitionControl\MyDestinations_screen.png" />
+    <Resource Include="Images\TransitionControl\photo_icon.png" />
+    <Resource Include="Images\TransitionControl\user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\inspiration_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Inspirations_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\ThingsToDo_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\MyPhotos_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\MusicBox_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Silverlight\" />
+    <Folder Include="PerspectiveTransitions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Friday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Monday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Saturday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Sunday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Thursday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Tuesday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\WPF\Wednesday_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SlideAndZoomTransition\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\1st_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\1st_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\2nd_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\2nd_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\3rd_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\3rd_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\Athl_Image_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\Athletics_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\AthleticsWOMEN_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\Inspiration_icon36x36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\Priz_Front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\Shelly-Ann_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\WPF\UsainBolt_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\WPF\VeronicaCampbell_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\WPF\YohanBlake_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\JustinGatlin_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\WPF\london2012_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\WPF\medalist_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\CarmelitaJeter_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\AthleticsWOMEN_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\WPF\3rd_back.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

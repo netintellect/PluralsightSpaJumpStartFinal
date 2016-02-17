@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.ManuallySetDefinitions.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 d:DesignHeight="300"
+			 d:DesignWidth="400"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.PropertyGrid.ManuallySetDefinitions"
+			 xmlns:server="clr-namespace:Examples.Web">
+	<UserControl.Resources>
+		<Style TargetType="telerik:PropertyGridPresenter">
+			<Setter Property="Width"
+					Value="200" />
+		</Style>
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot"
+		  Background="White">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<telerik:RadDomainDataSource AutoLoad="True"
+									 QueryName="GetCustomers"
+									 x:Name="exampleRadDomainDataSource">
+			<telerik:RadDomainDataSource.DomainContext>
+				<server:NorthwindDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+		</telerik:RadDomainDataSource>
+		<telerik:RadPropertyGrid Grid.Column="1"
+								 DescriptionPanelVisibility="Collapsed"
+								 x:Name="exampleRadPropertyGrid"
+								 LabelColumnWidth="140" Margin="2,3"
+								 Item="{Binding SelectedItem, ElementName=exampleRadGridView}"
+								 AutoGeneratePropertyDefinitions="False">
+			<telerik:RadPropertyGrid.PropertyDefinitions>
+				<telerik:PropertyDefinition DisplayName="Contact Name"
+											GroupName="Personal Info"
+											Binding="{Binding ContactName}" />
+				<telerik:PropertyDefinition DisplayName="Address"
+											GroupName="Personal Info"
+											Binding="{Binding Address}">
+					<telerik:PropertyDefinition.EditorTemplate>
+						<DataTemplate>
+							<TextBox TextWrapping="Wrap"
+									 Text="{Binding Address, Mode=TwoWay}" />
+						</DataTemplate>
+					</telerik:PropertyDefinition.EditorTemplate>
+				</telerik:PropertyDefinition>
+				<telerik:PropertyDefinition DisplayName="Phone"
+											GroupName="Personal Info"
+											Binding="{Binding Phone}" />
+				<telerik:PropertyDefinition DisplayName="Fax"
+											Binding="{Binding Fax}"
+											GroupName="Additional Info" />
+				<telerik:PropertyDefinition DisplayName="Company Name"
+											Binding="{Binding CompanyName}"
+											GroupName="Additional Info" />
+			</telerik:RadPropertyGrid.PropertyDefinitions>
+		</telerik:RadPropertyGrid>
+		<telerik:RadGridView Grid.Column="0"
+							 x:Name="exampleRadGridView" Margin="2,2,0,2"
+							 IsBusy="{Binding IsBusy, ElementName=exampleRadDomainDataSource}"
+							 ItemsSource="{Binding DataView, ElementName=exampleRadDomainDataSource}"
+							 CanUserFreezeColumns="False"
+							 AutoGenerateColumns="False"
+							 IsReadOnly="True">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding ContactName}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Address}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Phone}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Fax}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding CompanyName}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+	</Grid>
+</UserControl>

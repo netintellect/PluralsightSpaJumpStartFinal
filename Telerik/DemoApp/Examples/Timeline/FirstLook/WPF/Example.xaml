@@ -1,0 +1,255 @@
+<UserControl x:Class="Telerik.Windows.Examples.Timeline.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Timeline.FirstLook"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800" xml:lang="en-US">
+
+    <UserControl.Resources>
+        <Style x:Key="PresidentsStyle" TargetType="example:CustomTimelineControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="example:CustomTimelineControl">
+                        <Border Height="30" Background="#01FFFFFF" Margin="0,0,0,10">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="presidentItem" Storyboard.TargetProperty="Background" Duration="0.00:00:00.05">
+                                                <DiscreteObjectKeyFrame KeyTime="0.00:00:00.0" Value="{StaticResource PresidentItem_Background_MouseOver}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="dataBarBackground" Storyboard.TargetProperty="Background" Duration="0.00:00:00.05">
+                                                <DiscreteObjectKeyFrame KeyTime="0.00:00:00.0" Value="{StaticResource AccentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="presidentItem_Text" Storyboard.TargetProperty="Foreground" Duration="0.00:00:00.05">
+                                                <DiscreteObjectKeyFrame KeyTime="0.00:00:00.0" Value="{StaticResource AccentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="presidentItem"
+                                Height="30"
+                                Cursor="Hand"
+                                VerticalAlignment="Center"
+                                Background="{StaticResource PresidentItem_Background}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="7" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0" Height="8" Margin="0,-1,0,0">
+                                        <Border x:Name="dataBarBackground"
+                                            Background="{StaticResource StrongBrush}"
+                                            BorderThickness="0,1,0,1"
+                                            BorderBrush="White">
+                                        </Border>
+                                        <telerik:RadDataBar Minimum="0"
+                                                        Maximum="1"
+                                                        OriginValue="{Binding DataItem, Converter={StaticResource PresidentDataToPercentConverter}, ConverterParameter=PresidentFrom}"
+                                                        Value="{Binding DataItem, Converter={StaticResource PresidentDataToPercentConverter}, ConverterParameter=PresidentUntil}"
+                                                        BarHeightPercent="1"
+                                                        ValueBorderBrush="White"
+                                                        BarBorderThickness="1"
+                                                        LabelVisibility="Collapsed">
+                                            <telerik:RadDataBar.ValueBrush>
+                                                <SolidColorBrush Color="{Binding DataItem.Party, Converter={StaticResource PartyToColorConverter}}" />
+                                            </telerik:RadDataBar.ValueBrush>
+                                        </telerik:RadDataBar>
+                                    </Grid>
+
+                                    <TextBlock Grid.Row="1"
+                                           x:Name="presidentItem_Text"
+                                           Height="17"
+                                           Margin="5,0,5,0"
+                                           TextWrapping="Wrap"
+                                           Text="{Binding DataItem.Name}"
+                                           VerticalAlignment="Top"
+                                           FontFamily="Segoe UI"
+                                           FontSize="12"
+                                           Foreground="Black"/>
+                                </Grid>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="presidentItem" Property="Cursor" Value="Arrow" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Key="PresidentsTemplate">
+            <example:CustomTimelineControl Style="{StaticResource PresidentsStyle}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="PartyTemplate">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Border Height="12" Width="12" VerticalAlignment="Center" Background="{StaticResource StrongBrush}">
+                    <Rectangle Margin="1" Stroke="White">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{Binding Converter={StaticResource PartyToColorConverter}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Border>
+                <TextBlock TextWrapping="Wrap" Text="{Binding}" FontFamily="Segoe UI" FontSize="12" Margin="7,0,9,0" VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="LifeLegendTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="16" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Width="260" Height="4" Grid.Row="0" Grid.Column="0" Fill="{StaticResource StrongBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <TextBlock Height="16" Grid.Row="0" Grid.Column="1" Text="Lifetime" FontSize="12" TextWrapping="Wrap" FontFamily="Segoe UI" Margin="14,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <Rectangle Width="44" Height="4" Grid.Row="1" Grid.Column="0" Fill="{StaticResource AccentBrush}" Margin="190,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <TextBlock Height="16" Grid.Row="1" Grid.Column="1" Text="President term" FontSize="12" TextWrapping="Wrap" FontFamily="Segoe UI" Margin="14,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PresidentDetailsTemplate">
+            <Grid>
+                <Grid.Background>
+                    <SolidColorBrush Color="{Binding Converter={StaticResource PresidentDataToDetailsBackgroundConverter}}" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Fill="{StaticResource AccentBrush}" />
+                <Image Grid.Row="1" Source="{Binding ImagePath}" />
+                <TextBlock Grid.Row="2" Text="{Binding Name}" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="26" Foreground="Black" />
+                <TextBlock Grid.Row="3" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="Black">
+                    <TextBlock.Text>
+                        <Binding Converter="{StaticResource PresidentDataToDetailsConverter}"
+                                 ConverterParameter="LifeTime"/>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock Grid.Row="5" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="16" Foreground="{StaticResource AccentBrush}">
+                    <TextBlock.Text>
+                        <Binding Converter="{StaticResource PresidentDataToDetailsConverter}"
+                                 ConverterParameter="Term"/>
+                    </TextBlock.Text>
+                </TextBlock>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="NoSelectionTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Fill="{StaticResource AccentBrush}" />
+                <Image Grid.Row="1" Source="/Timeline;component/Images/Timeline/FirstLook/no_selection.jpg" />
+                <TextBlock Grid.Row="3" TextWrapping="Wrap" FontFamily="Segoe UI" Margin="0,2,0,0" FontSize="12" Foreground="{StaticResource AccentBrush}" Text="Please select a president" />
+
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+
+    <Grid x:Name="LayoutRoot" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="254" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,15,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <telerik:RadButton x:Name="PreviousPageButton"
+                                    Style="{StaticResource LeftArrowButton}"
+                                    Content="Previous page"
+                                    Command="{Binding PreviousPageCommand}" />
+                <telerik:RadButton x:Name="NextPageButton"
+                                    Style="{StaticResource RightArrowButton}"
+                                    Content="Next page"
+                                    Command="{Binding NextPageCommand}" />
+            </StackPanel>
+
+            <telerik:RadTimeline x:Name="AmericanPresidentsTimeline"
+                                 Grid.Row="0"
+                                 Margin="0,0,0,29"
+                                 AutoSort="False"
+                                 TimelineItemTemplate="{StaticResource PresidentsTemplate}"
+                                 PeriodStart="{Binding StartDate, Mode=TwoWay}"
+                                 PeriodEnd="{Binding EndDate, Mode=TwoWay}"
+                                 VisiblePeriodStart="{Binding VisibleStartDate, Mode=TwoWay}"
+                                 VisiblePeriodEnd="{Binding VisibleEndDate, Mode=TwoWay}"
+                                 ScrollMode="None"
+                                 StartPath="BirthDate"
+                                 DurationPath="LifeTime"
+                                 ItemsSource="{Binding VisibleData}"
+                                 IsSelectionEnabled="True"
+                                 SelectionMode="Single"
+                                 SelectedItem="{Binding SelectedPresident, Mode=TwoWay}">
+                <telerik:RadTimeline.Intervals>
+                    <telerik:DecadeInterval />
+                </telerik:RadTimeline.Intervals>
+            </telerik:RadTimeline>
+        </Grid>
+
+        <ContentPresenter Grid.Column="1" Grid.Row="0" ContentTemplate="{StaticResource NoSelectionTemplate}" />
+
+        <telerik:RadTransitionControl Grid.Column="1" Grid.Row="0"
+                                    Content="{Binding SelectedPresident}"
+                                    ContentTemplate="{StaticResource PresidentDetailsTemplate}"
+                                    Transition="Fade" />
+
+        <Grid Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <example:LegendPanel Grid.Row="0" ItemsSource="{Binding PartyLegendData}" ItemTemplate="{StaticResource PartyTemplate}">
+                <example:LegendPanel.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </example:LegendPanel.ItemsPanel>
+            </example:LegendPanel>
+            <ContentPresenter Grid.Row="1" ContentTemplate="{StaticResource LifeLegendTemplate}" />
+        </Grid>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="US Presidents - lifetime and years in the office" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+</UserControl>

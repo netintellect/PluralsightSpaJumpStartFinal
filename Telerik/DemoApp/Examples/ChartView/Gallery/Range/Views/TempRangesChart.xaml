@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.Gallery.Range.Views.TempRangesChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:behaviors="clr-namespace:Telerik.Windows.Examples.ChartView.Gallery.Range.Behaviors"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300"
+			 d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Resources.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<telerik:RadCartesianChart Palette="Windows8"
+							   behaviors:SeriesTypeSwitch.ItemsSource="{Binding TempRangesData}"
+							   behaviors:SeriesTypeSwitch.SeriesType="{Binding SeriesType}">
+		<telerik:RadCartesianChart.HorizontalAxis>
+			<telerik:DateTimeCategoricalAxis x:Name="tempRangesDateAxis"
+											 LabelFormat="MMM">
+				<telerik:DateTimeCategoricalAxis.ShowLabels>
+					<Binding Path="TileState"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToBoolConverter}"/>
+				</telerik:DateTimeCategoricalAxis.ShowLabels>
+			</telerik:DateTimeCategoricalAxis>
+		</telerik:RadCartesianChart.HorizontalAxis>
+		<telerik:RadCartesianChart.VerticalAxis>
+			<telerik:LinearAxis LabelFormat="0°C"
+								Minimum="-14"
+								Maximum="42"
+								MajorStep="7"/>
+		</telerik:RadCartesianChart.VerticalAxis>
+		<telerik:RadCartesianChart.Annotations>
+			<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=tempRangesDateAxis}"
+												 Value="{Binding Year2012Start}"
+												 Label="{Binding Year2012Start, StringFormat=yyyy}"
+												 Style="{StaticResource DashedGridLineStyle}"
+												 Stroke="{StaticResource GridLineAnnotationStroke}"
+												 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+												 ZIndex="-230">
+				<telerik:CartesianGridLineAnnotation.Opacity>
+					<Binding Path="TileState"
+							 Mode="TwoWay"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToOpacityConverter}" />
+				</telerik:CartesianGridLineAnnotation.Opacity>
+			</telerik:CartesianGridLineAnnotation>
+			<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=tempRangesDateAxis}"
+												 Value="{Binding Year2011Start}"
+												 Label="{Binding Year2011Start, StringFormat=yyyy}"
+												 Style="{StaticResource DashedGridLineStyle}"
+												 Stroke="{StaticResource GridLineAnnotationStroke}"
+												 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+												 ZIndex="-230">
+				<telerik:CartesianGridLineAnnotation.Opacity>
+					<Binding Path="TileState"
+							 Mode="TwoWay"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToOpacityConverter}" />
+				</telerik:CartesianGridLineAnnotation.Opacity>
+			</telerik:CartesianGridLineAnnotation>
+		</telerik:RadCartesianChart.Annotations>
+		<telerik:RadCartesianChart.Grid>
+			<telerik:CartesianChartGrid StripLinesVisibility="Y"/>
+		</telerik:RadCartesianChart.Grid>
+	</telerik:RadCartesianChart>
+</UserControl>

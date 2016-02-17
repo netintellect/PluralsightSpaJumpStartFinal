@@ -1,0 +1,3 @@
+﻿The Gauge themes provide predefined styles for the RadialGauge and RadialScale elements that make it look as quadrant-style radial gauge.<br /><br />
+For the north-west oriented gauge you need to use the following styles: RadialGaugeQuarterCircle<B>NW</B>Style for RadialGauge and RadialScaleQuarterCircle<B>NW</B>Style for RadialScale.<br /><br />
+You can change <B>NW</B> (North-West) to <B>NE</B>, <B>SW</B> or <B>SE</B> to specify North-East, South-West or South-East Gauge orientation.

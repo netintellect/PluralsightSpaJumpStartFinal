@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BasicBrush" Color="{Binding Path=Palette.BasicColor, Source={StaticResource Windows8Colors}}" />
+    <SolidColorBrush x:Key="MarkerBrush" Color="{Binding Path=Palette.MarkerColor, Source={StaticResource Windows8Colors}}" />
+    <SolidColorBrush x:Key="StrongBrush" Color="{Binding Path=Palette.StrongColor, Source={StaticResource Windows8Colors}}" />
+    <ScrollBarVisibility x:Key="TimelineVerticalScrollbarVisibility">Disabled</ScrollBarVisibility>
+</ResourceDictionary>

@@ -1,0 +1,3 @@
+﻿This example demonstrates how you can load appointments depending on the visible range of RadScheduleView.
+The RadScheduleView control will notify you that the VisibleRange has changed through the <b>VisibleRangeChangedCommand</b>. Furthermore, you can get the visible range by data binding the <b>VisibleRangeChangedCommandParameter</b> to the VisibleRange property. 
+This is effective if you wish to load only the visible appointments using the MVVM pattern.

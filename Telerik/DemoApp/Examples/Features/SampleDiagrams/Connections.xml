@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadDiagram Type="Telerik.Windows.Diagrams.Core.Models.IGraphInternal" Version="2012.1">
+  <Metadata Zoom="1" PositionX="0" PositionY="0" IsRotationEnabled="true" IsResizingEnabled="true" SelectionMode="Extended" IsSnapEnabled="true" SnapValue="20" IsGridVisible="false">
+    <Title><![CDATA[Connection caps]]]></Title>
+    <Description><![CDATA[An overview of the connection caps.]]></Description>
+    <Background>#FFFFFFFF</Background>
+  </Metadata>
+  <Shapes />
+  <Connections QNs="Telerik.Windows.Controls.Diagrams;">
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="613fb0ac-6b57-4964-b74a-3832f9d177a6" Label="" ZIndex="0" Position="193;123" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow1" TargetCapType="Arrow1Filled" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="193;123" EndPoint="520;124" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="04f4d10e-ed79-40d3-8be3-a39bccf95106" Label="" ZIndex="0" Position="215;277" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow3" TargetCapType="Arrow4" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="215;277" EndPoint="528;278" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="0734bf3e-7fbc-480b-852b-b03cb0c583a8" Label="" ZIndex="0" Position="197;195" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow2" TargetCapType="Arrow2Filled" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="197;196" EndPoint="520;195" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="1d31d147-bfbf-49c4-9a6b-8de6b1c69a47" Label="" ZIndex="0" Position="211;339" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow4Filled" TargetCapType="Arrow5" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="211;341" EndPoint="551;339" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="454926c1-55c8-48f1-b873-729125fceb2e" Label="" ZIndex="0" Position="216;413" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow5Filled" TargetCapType="Arrow6" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="565;413" EndPoint="216;414" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+    <Connection Type="Telerik.Windows.Controls.Diagrams.Connection" Id="6a12773f-0db2-4c9a-bce7-57f2f4c5118c" Label="" ZIndex="0" Position="249;507" IsVisible="true" IsEditable="true" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="Arrow6Filled" SourceCapSize="9;9" TargetCapSize="9;9" StartPoint="249;507" EndPoint="518;511" LineThickness="1" Background="#FF333333" BorderBrush="#FF3F3F3F" QN="0" />
+  </Connections>
+</RadDiagram>

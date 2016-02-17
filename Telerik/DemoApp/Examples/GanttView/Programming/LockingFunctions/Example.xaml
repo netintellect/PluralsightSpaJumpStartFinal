@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Programming.LockingFunctions.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.Programming.LockingFunctions"
+			 xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/GanttView;component/Programming/LockingFunctions/Resources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Locking Functions" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<telerik:RadGanttView x:Name="radGanttView" TasksSource="{Binding GanttTasks}" VisibleRange="{Binding VisibleRange}" Height="450">
+			<telerik:RadGanttView.Columns>
+				<telerik:ColumnDefinition Header="Id" Width="25" CellTemplate="{StaticResource CellIdTemplate}" />
+				<telerik:ColumnDefinition Header="Lock" Width="45" CellTemplate="{StaticResource CellTemplate}" />				
+				<telerik:TreeColumnDefinition MemberBinding="{Binding Title}" Header="Title" Width="140"/>
+				<telerik:ColumnDefinition MemberBinding="{Binding Start}" Header="Start" Width="140"/>
+				<telerik:ColumnDefinition MemberBinding="{Binding End}" Header="End" Width="140" />
+			</telerik:RadGanttView.Columns>
+			<telerik:RadGanttView.ResizeBehavior>
+				<local:CustomResizeBehavior/>
+			</telerik:RadGanttView.ResizeBehavior>
+			<telerik:RadGanttView.DragDropBehavior>
+				<local:CustomDragDropBehavior/>
+			</telerik:RadGanttView.DragDropBehavior>
+			<telerik:RadGanttView.DragDependenciesBehavior>
+				<local:CustomDragDependenciesBehavior/>
+			</telerik:RadGanttView.DragDependenciesBehavior>
+		</telerik:RadGanttView>
+	</Grid>
+</UserControl>

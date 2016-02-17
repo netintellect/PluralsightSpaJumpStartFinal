@@ -1,0 +1,1 @@
+﻿This examples demonstrates how custom editors can be intergrated into RadDataFilter. If you want to specify a custom filter editor, you can do that by using the EditorTemplateSelector of the control. Once the editor (custom or default) has been created you can add the final touch to it by attaching to the EditorCreated event.

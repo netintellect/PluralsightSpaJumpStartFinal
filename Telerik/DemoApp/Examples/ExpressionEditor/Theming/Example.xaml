@@ -1,0 +1,19 @@
+<Examples:ExpressionEditorExample x:Class="Telerik.Windows.Examples.ExpressionEditor.Theming.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  VerticalAlignment="Center"
+								  HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Theming"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid UseLayoutRounding="True">
+		<telerik:RadExpressionEditor x:Name="ExpressionEditor"
+                                     UseLayoutRounding="True"
+									 Height="430"
+									 Width="605"/>
+	</Grid>
+</Examples:ExpressionEditorExample>

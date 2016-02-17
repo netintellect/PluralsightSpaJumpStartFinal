@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Book.Performance">
+	<!--Page Template-->
+	<DataTemplate x:Key="PageTemplate1">
+        <Grid>
+			<Image Source="/Book;component/Images/Book/Performance/page1.png" Stretch="None" />
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="11"
+					Foreground="#1ba1e2" Margin="20,0,0,15" Text="{Binding }" />
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="PageTemplate2">
+        <Grid>
+            <Image Source="/Book;component/Images/Book/Performance/page2.png" Stretch="None" />
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="11"
+					Foreground="#1ba1e2" Margin="0,0,20,15" Text="{Binding }" />
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="PageTemplate3">
+        <Grid>
+            <Image Source="/Book;component/Images/Book/Performance/page3.png" Stretch="None" />
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="11"
+					Foreground="#1ba1e2" Margin="20,0,0,15" Text="{Binding }" />
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="PageTemplate4">
+		<Grid>
+            <Image Source="/Book;component/Images/Book/Performance/page4.png" Stretch="None" />
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="11"
+					Foreground="#1ba1e2" Margin="0,0,20,15" Text="{Binding }" />
+		</Grid>
+	</DataTemplate>
+	<local:PageTemplateSelector x:Key="PageTemplateSelector"
+			PageTemplate1="{StaticResource PageTemplate1}"
+			PageTemplate2="{StaticResource PageTemplate2}"
+			PageTemplate3="{StaticResource PageTemplate3}"
+			PageTemplate4="{StaticResource PageTemplate4}" />
+</ResourceDictionary>

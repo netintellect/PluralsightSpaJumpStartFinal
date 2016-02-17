@@ -1,0 +1,2 @@
+﻿This example shows a single bar series with custom style. The style is defined as a resource in XAML. It is then set to ItemStyle property of the BarSeriesDefinition through the code-behind.<br/>
+

@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8TouchColors}}"/>
+    <SolidColorBrush x:Key="MainBrush" Color="{Binding Path=Palette.MainColor, Source={StaticResource Windows8TouchColors}}" />
+    <SolidColorBrush Color="#FFD6D4D4" x:Key="BasicBrush"/>
+
+    <sys:Double x:Key="CategoryTileWidth">64</sys:Double>
+    <sys:Double x:Key="CategoryTileHeight">64</sys:Double>
+
+    <sys:Double x:Key="CategoryTileMouseOverScaleXY">1.1</sys:Double>
+
+    <GridLength x:Key="TimelineHeight">280</GridLength>
+    <GridLength x:Key="DetailsHeight">*</GridLength>
+
+    <GridLength x:Key="SelectedItemsColumnWidth">2*</GridLength> 
+    <sys:Double x:Key="TextBlockFontSize">12</sys:Double>
+
+    <Thickness x:Key="CategoriesSelectorMargin">0 15 0 10</Thickness>
+
+    <Thickness x:Key="SelectedItemsMargin">0 20 0 10</Thickness>
+
+    <Style TargetType="telerik:TimelineItemGroupControl" BasedOn="{StaticResource TimelineItemGroupControlStyle}">
+        <Setter Property="IsExpanded" Value="True" />
+        <Setter Property="ExpandMode" Value="{Binding GroupExpandMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTimeline}}" />
+    </Style>
+
+    <DataTemplate x:Key="ToolTipTemplate">
+        <Grid MaxWidth="400">
+            <Rectangle Margin="0,0,0,0" RadiusY="2" RadiusX="2" Fill="{StaticResource BasicBrush}" Opacity="0.6"/>
+            <Rectangle Margin="3,3,3,3" RadiusY="2" RadiusX="2" Fill="{StaticResource MainBrush}"/>
+            <TextBlock Margin="8,8,8,8" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe UI"
+                       Text="{Binding Details}">
+            </TextBlock>
+        </Grid>
+    </DataTemplate>
+
+    <ScrollBarVisibility x:Key="TimelineVerticalScrollbarVisibility">Auto</ScrollBarVisibility>
+</ResourceDictionary>

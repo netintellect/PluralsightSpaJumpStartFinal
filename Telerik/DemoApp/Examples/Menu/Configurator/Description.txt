@@ -1,0 +1,4 @@
+﻿This example demonstrates how to set various properties of RadMenu.
+
+<b>Orientation</b> - specifies the orientation of the control.
+<b>ClickToOpen</b> - specifies whether the top level submenus should be opened when the user clicks on them, or not.

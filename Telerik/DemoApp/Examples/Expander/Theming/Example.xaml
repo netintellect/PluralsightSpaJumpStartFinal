@@ -1,0 +1,97 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.Expander.Theming.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+        <Grid Margin="10" Width="620" Height="340" >
+            <telerik:RadExpander x:Name="radExpander" VerticalAlignment="Top"
+					ExpandDirection="{Binding ElementName=directionCombo, Path=SelectedItem}" IsExpanded="True"
+					telerik:AnimationManager.IsAnimationEnabled="{Binding ElementName=AnimationEnableCheckBox, Path=IsChecked}">
+                <telerik:RadExpander.Header>
+                    <TextBlock x:Name="expanderCaption" Text="Header" />
+                </telerik:RadExpander.Header>
+                <telerik:RadExpander.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="#FFDADADA" BorderThickness="0,0,1,1" Height="131" CornerRadius="3" Margin="5">
+                            <Border BorderBrush="#B2ADBDD1" BorderThickness="1" CornerRadius="2" Background="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderBrush="#FFE0E0E0" BorderThickness="1" Margin="10 0 0 0" Width="108" Height="108">
+                                        <Image Source="../Images/Expander/item1.png"  Stretch="None"  />
+                                    </Border>
+                                    <StackPanel Margin="10 25 10 0">
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="#FF0099CC" FontSize="16" Text="Bob Smiil" />
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="Black"  FontSize="11" Text="BobSmiil@mail.com" />
+										<TextBlock FontFamily="Segoe UI" FontSize="10.667" Foreground="Black" Text="Phone: 333 2334" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+
+                        <Border Grid.Row="1" BorderBrush="#FFDADADA" BorderThickness="0,0,1,1" Height="131" CornerRadius="3" Margin="5">
+                            <Border BorderBrush="#B2ADBDD1" BorderThickness="1" CornerRadius="2" Background="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderBrush="#FFE0E0E0" BorderThickness="1" Margin="10 0 0 0" Width="108" Height="108" >
+                                        <Image Source="../Images/Expander/item2.png"  Stretch="None" />
+                                    </Border>
+                                    <StackPanel Margin="10 25 15 0">
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="#FF0099CC" FontSize="16" Text="Anne Dodsworth" />
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="Black" FontSize="11" Text="Anne Dodsworth@mail.com" />
+										<TextBlock FontFamily="Segoe UI" FontSize="10.667" Foreground="Black" Text="Phone: 333 2334" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+
+                        <Border Grid.Column="1" BorderBrush="#FFDADADA" BorderThickness="0,0,1,1" Height="131" CornerRadius="3" Margin="5">
+                            <Border BorderBrush="#B2ADBDD1" BorderThickness="1" CornerRadius="2" Background="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderBrush="#FFE0E0E0" BorderThickness="1"  Margin="10 0 0 0" Width="108" Height="108" >
+                                        <Image Source="../Images/Expander/item3.png"  Stretch="None" />
+                                    </Border>
+                                    <StackPanel  Margin="10 25 10 0">
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="#FF0099CC" FontSize="16" Text="Andrew Fuller" />
+										<TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="Black" FontSize="11" Text="AndrewFuller@mail.com" />
+										<TextBlock FontFamily="Segoe UI" Foreground="Black" FontSize="10.667" Text="Phone: 333 2334" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+
+                        <Border Grid.Column="1" Grid.Row="1" BorderBrush="#FFDADADA" BorderThickness="0,0,1,1" Height="131" CornerRadius="3" Margin="5">
+                            <Border BorderBrush="#B2ADBDD1" BorderThickness="1" CornerRadius="2" Background="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderBrush="#FFE0E0E0" BorderThickness="1"  Margin="10 0 0 0" Width="108" Height="108">
+                                        <Image Source="../Images/Expander/item4.png"  Stretch="None"/>
+                                    </Border>
+                                    <StackPanel Margin="10 25 15 0">
+                                        <TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="#FF0099CC" FontSize="16" Text="Emily Smile" />
+										<TextBlock FontFamily="Segoe UI" Margin="0 0 0 5" Foreground="Black" FontSize="11" Text="EmilySmile@mail.com" />
+										<TextBlock FontFamily="Segoe UI" FontSize="10.667" Foreground="Black" Text="Phone: 333 2334" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+
+                    </Grid>
+                </telerik:RadExpander.Content>
+            </telerik:RadExpander>
+        </Grid>
+    </Grid>
+</UserControl>

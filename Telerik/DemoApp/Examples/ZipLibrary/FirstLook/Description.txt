@@ -1,0 +1,1 @@
+﻿Telerik ZipLibrary allows you to open, extract from, create and add to Zip files from within your applications.

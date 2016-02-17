@@ -1,0 +1,11 @@
+﻿The <b>Time monitoring</b> tool demonstrates the use of <b>radial scale</b>, <b>linear scale</b> and <b>numeric indicator</b>.
+
+The <b>radial scale</b> shows current time.
+
+The <b>custom tick marks</b> are used to show the start and end of the working day.
+The example uses <b>StartTickOffset</b> feature to show tick mark labels from 1 to 12.
+
+Primary linear scale shows labels and bar as container for colored linear scales.
+Each scale contains <b>linear bar indicator</b> to display the working hours progress.
+
+The <b>numeric indicator</b> is used for displaying the accomplished working time.

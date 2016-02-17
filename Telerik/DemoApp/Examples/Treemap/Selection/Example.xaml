@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Treemap.Selection.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Treemap.Selection"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style TargetType="telerik:RadTreeMapItem" BasedOn="{StaticResource RadTreeMapItemStyle}">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+        <DataTemplate x:Key="TransitionControlContentTemplate">
+                <Border Background="#CCCCCC" BorderThickness="2" BorderBrush="#CCCCCC">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="General Information" FontFamily="Segoe UI Light" 
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                   FontSize="18" Margin="10,0,0,0"/>
+                        <Grid Grid.Row="1" Background="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding ImagePath}" 
+                                   Stretch="Fill" 
+                                   Width="200" Height="200"
+                                   Margin="5,20" />
+                            <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="#CCCCCC" Margin="10" Padding="0,0,0,5">
+                                <TextBlock FontSize="20" FontFamily="Segoe UI" VerticalAlignment="Center" Text="{Binding Country}"/>
+                            </Border>
+                            <TextBlock Grid.Row="2" Margin="7,0,10,0" Text="{Binding Text}" FontFamily="Segoe UI" FontSize="13" Width="218" TextWrapping="Wrap"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Top Oil Producing Countries 2011" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4.7*" />
+            <ColumnDefinition Width="1.3*" />
+        </Grid.ColumnDefinitions>
+        <telerik:RadTreeMap Name="RadTreeMap" Grid.Column="0" ItemsSource="{Binding Data}"
+                            IsSelectionEnabled="True" Loaded="RadTreeMap_Loaded"
+                            LayoutStrategy="Squarified"
+                            PreviewSelectionChanged="RadTreeMap_PreviewSelectionChanged" SelectionChanged="RadTreeMap_SelectionChanged">
+            <telerik:RadTreeMap.TypeDefinitions>
+                <telerik:TreeMapTypeDefinition TargetTypeName="OilProducingInfo"                                      
+                                        ValuePath="Oil" 
+                                        LabelPath="Country" 
+                                        ToolTipPath="Oil" 
+                                        ToolTipFormat="{}{0:N0} bbl/day" >
+                    <telerik:TreeMapTypeDefinition.Mappings>
+                        <telerik:ValueGradientColorizer RangeMinimum="1011000" RangeMaximum="10120000">
+                            <GradientStop Offset="0" Color="#C6E5A2" />
+                            <GradientStop Offset="0.2" Color="#98C599" />
+                            <GradientStop Offset="1" Color="#70AA92" />
+                        </telerik:ValueGradientColorizer>
+                    </telerik:TreeMapTypeDefinition.Mappings>
+                </telerik:TreeMapTypeDefinition>
+            </telerik:RadTreeMap.TypeDefinitions>
+        </telerik:RadTreeMap>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="467"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <telerik:RadTransitionControl x:Name="TransitionWrapper" Duration="0:0:0" Margin="2,2,0,0"
+                                          TransitionStatusChanged="TransitionWrapper_TransitionStatusChanged"
+                                          ContentTemplate="{StaticResource TransitionControlContentTemplate}">
+                    <telerik:RadTransitionControl.Transition>
+                        <telerik:SlideAndZoomTransition />
+                    </telerik:RadTransitionControl.Transition>
+                </telerik:RadTransitionControl>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Height="Auto" VerticalAlignment="Bottom">
+                <Image Source="/Treemap;component/Images/Treemap/Selection/arrow.png" Stretch="None" Margin="2,2,0,0" VerticalAlignment="Center" />
+                <TextBlock Text="choose another country from the treemap to view additional information" Width="210"
+                           TextWrapping="Wrap" FontFamily="Segoe UI" Margin="5,0,15,0" FontSize="11" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿The Title property of RadOutlookBarItem allows easily to define what will appear in the title area of RadOutlookBar every time a selection is made.

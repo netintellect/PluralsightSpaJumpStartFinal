@@ -1,0 +1,3 @@
+﻿Telerik Window control allows you to set up properties like <b>start-up location</b>, <b>states</b>, <b>styles</b>, <b>resize modes</b>, <b>title</b>. You can also rely on events that expose event arguments such as <b>Dialog</b> and <b>Confirm</b> results. You can integrate RadWindow with a UserControl and easily use Commands to boost communication between the two. Even if you are not into creating your own windows, you can simply use the line-long static methods <b>Alert</b>, <b>Prompt</b> and <b>Confirm</b>.
+
+RadWindow is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

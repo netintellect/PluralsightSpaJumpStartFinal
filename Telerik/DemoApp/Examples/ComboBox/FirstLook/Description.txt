@@ -1,0 +1,3 @@
+﻿Telerik ComboBox introduces a number of advanced features like <b>AutoComplete</b>, <b>Filtering</b> and <b>Text Search</b>, separate <b>SelectionBoxTemplate</b>, etc. In this example, you can see the basic functionality of RadComboBox.
+
+RadComboBox is a part of the <b>Telerik.Windows.Controls.Input</b> assembly.

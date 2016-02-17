@@ -1,0 +1,33 @@
+<UserControl x:Class="Telerik.Windows.Examples.OutlookBar.FirstLook.MailMessage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.OutlookBar.FirstLook"
+		FontFamily="Segoe UI">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="text_style" >
+            <Setter Property="Foreground" Value="#767676" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Margin" Value="0 0 15 5" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+    </UserControl.Resources>
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+        <Border>
+			<StackPanel Margin="15 6 15 8">
+                <TextBlock Text="{Binding Title}" Foreground="#1a8abf " FontSize="18" Margin="0 0 0 10" FontFamily="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light"/>
+                <TextBlock Text="{Binding From}" Style="{StaticResource text_style}" />
+				<StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sent:" Style="{StaticResource text_style}"/>
+                    <TextBlock Text="{Binding Sent}" Style="{StaticResource text_style}" />
+				</StackPanel>
+			</StackPanel>
+		</Border>
+        <Rectangle Height="1" Fill="#FFCBCBCB" Grid.Row="1" />
+        <Image Source="{Binding MessageContent}" Stretch="Fill" Grid.Row="2" Width="480" Height="346" />
+	</Grid>
+</UserControl>

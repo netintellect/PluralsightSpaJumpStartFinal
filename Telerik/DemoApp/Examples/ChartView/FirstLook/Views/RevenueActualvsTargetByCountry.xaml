@@ -1,0 +1,89 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.FirstLook.RevenueActualvsTargetByCountry"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:sdk="clr-namespace:Animations"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.ChartView.FirstLook"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.FirstLook"    
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/FirstLook/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="ActualBrush" Color="#FFCCCCCC" />
+            <SolidColorBrush x:Key="TargetBrush" Color="#FF1B9DDE" />
+            <Style x:Key="TextBlockCountryStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Margin" Value="0 0 14 0" />
+            </Style>
+            <telerik:ChartPalette x:Key="ActualTargetChartPalette">
+                <telerik:ChartPalette.GlobalEntries>
+                    <telerik:PaletteEntry Fill="{StaticResource ActualBrush}" />
+                    <telerik:PaletteEntry Fill="{StaticResource TargetBrush}" />
+                </telerik:ChartPalette.GlobalEntries>
+            </telerik:ChartPalette>
+            <Style x:Key="TransparentTickStyle" TargetType="Rectangle" />
+            <local:RightAlignedLabelStrategy x:Key="RightAlignedLabelStrategy" Offset="35" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <telerik:RadCartesianChart x:Name="chart" Palette="{StaticResource ActualTargetChartPalette}" MinHeight="90" MaxHeight="90" Margin="10 0 20 0" ClipToBounds="False">
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:CategoricalAxis IsInverse="True" 
+                                         MajorTickStyle="{StaticResource TransparentTickStyle}" 
+                                         LineStroke="Transparent" 
+                                         LabelStyle="{StaticResource TextBlockCountryStyle}" />
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:LinearAxis ShowLabels="False" ElementBrush="Transparent" />
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.Series>
+                <telerik:BarSeries CategoryBinding="Country" 
+                                   ValueBinding="Actual" 
+                                   ItemsSource="{Binding CountryRevenues}" 
+                                   CombineMode="None" 
+                                   ShowLabels="True" 
+                                   ClipToPlotArea="False"
+                                   sdk:ChartAnimationUtilities.CartesianAnimation="Rise">
+                    <telerik:BarSeries.PointTemplate>
+                        <DataTemplate>
+                            <Rectangle Fill="{StaticResource ActualBrush}" Margin="0 0 0 3" />
+                        </DataTemplate>
+                    </telerik:BarSeries.PointTemplate>
+                    <telerik:BarSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="actual" MarkerGeometry="{StaticResource SolidRectLegendGeometry}" />
+                    </telerik:BarSeries.LegendSettings>
+                    <telerik:BarSeries.LabelDefinitions>
+                        <telerik:ChartSeriesLabelDefinition Binding="Actual" Format="{}{0:F1}" DefaultVisualStyle="{StaticResource TextBlockCountryStyle}" Strategy="{StaticResource RightAlignedLabelStrategy}" />
+                    </telerik:BarSeries.LabelDefinitions>
+                </telerik:BarSeries>
+                <telerik:BarSeries CategoryBinding="Country" 
+                                   ValueBinding="Target" 
+                                   ItemsSource="{Binding CountryRevenues}" 
+                                   CombineMode="None"
+                                   sdk:ChartAnimationUtilities.CartesianAnimation="Rise">
+                    <telerik:BarSeries.PointTemplate>
+                        <DataTemplate>
+                            <Rectangle Fill="{StaticResource TargetBrush}" Height="2" VerticalAlignment="Bottom" />
+                        </DataTemplate>
+                    </telerik:BarSeries.PointTemplate>
+                    <telerik:BarSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="target" MarkerGeometry="{StaticResource LineSeriesLegendGeometry}" />
+                    </telerik:BarSeries.LegendSettings>
+                </telerik:BarSeries>
+            </telerik:RadCartesianChart.Series>
+        </telerik:RadCartesianChart>
+
+        <telerik:RadLegend Grid.Column="1" Grid.Row="1" Margin="24,4,0,0" MinWidth="76" Items="{Binding LegendItems, ElementName=chart}" />
+    </Grid>
+</UserControl>

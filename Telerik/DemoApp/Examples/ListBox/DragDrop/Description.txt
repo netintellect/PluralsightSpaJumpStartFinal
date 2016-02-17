@@ -1,0 +1,1 @@
+﻿The RadListBox employs an improved out-of-the-box DragDrop behavior. You can drag and drop items from one ListBox to another without adding complicated code.

@@ -1,0 +1,1 @@
+﻿RadPropertyGrid provides great performance when having a lot of properties to be displayed. 

@@ -1,0 +1,1 @@
+﻿The Transition control features an extended animation framework that enables you to create and apply transition animations upon changing the control’s content.  Also, you can use the Transition control as a template part in other existing controls like Docking, TabControl, etc, thus bring a richer look and feel to your RIAs with minimal effort.

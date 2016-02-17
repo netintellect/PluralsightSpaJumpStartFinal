@@ -1,0 +1,1 @@
+﻿This example shows how the RibbonView can be easily styled using the built-in themes.

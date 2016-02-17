@@ -1,0 +1,1 @@
+﻿This sample demonstrates the seamless integration between RadDataFilter and RadDomainDataSource.

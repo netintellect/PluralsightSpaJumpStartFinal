@@ -1,0 +1,1 @@
+﻿<p>Telerik RadialMenu is a completely stylable control. This example represents how you can alter the RadialMenu view with small changes in XAML.</p>

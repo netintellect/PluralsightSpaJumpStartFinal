@@ -1,0 +1,1333 @@
+<NWindDataSet>
+  <Invoices>
+    <ShipName>Spécialités du monde</ShipName>
+    <ShipAddress>25, rue Lauriston</ShipAddress>
+    <ShipCity>Paris</ShipCity>
+    <ShipPostalCode>75016</ShipPostalCode>
+    <ShipCountry>France</ShipCountry>
+    <CustomerID>SPECD</CustomerID>
+    <Customers_CompanyName>Spécialités du monde</Customers_CompanyName>
+    <Address>25, rue Lauriston</Address>
+    <City>Paris</City>
+    <PostalCode>75016</PostalCode>
+    <Country>France</Country>
+    <Salesperson>Steven Buchanan</Salesperson>
+    <OrderID>11043</OrderID>
+    <OrderDate>1998-04-22T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-20T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-29T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>11</ProductID>
+    <ProductName>Queso Cabrales</ProductName>
+    <UnitPrice>21.0000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>210.0000</ExtendedPrice>
+    <Freight>8.8000</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Wolski Zajazd</ShipName>
+    <ShipAddress>ul. Filtrowa 68</ShipAddress>
+    <ShipCity>Warszawa</ShipCity>
+    <ShipPostalCode>01-012</ShipPostalCode>
+    <ShipCountry>Poland</ShipCountry>
+    <CustomerID>WOLZA</CustomerID>
+    <Customers_CompanyName>Wolski  Zajazd</Customers_CompanyName>
+    <Address>ul. Filtrowa 68</Address>
+    <City>Warszawa</City>
+    <PostalCode>01-012</PostalCode>
+    <Country>Poland</Country>
+    <Salesperson>Margaret Peacock</Salesperson>
+    <OrderID>11044</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>62</ProductID>
+    <ProductName>Tarte au sucre</ProductName>
+    <UnitPrice>49.3000</UnitPrice>
+    <Quantity>12</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>591.6000</ExtendedPrice>
+    <Freight>8.7200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+    <CustomerID>BOTTM</CustomerID>
+    <Customers_CompanyName>Bottom-Dollar Markets</Customers_CompanyName>
+    <Address>23 Tsawassen Blvd.</Address>
+    <City>Tsawassen</City>
+    <RegionName>BC</RegionName>
+    <PostalCode>T2F 8M4</PostalCode>
+    <Country>Canada</Country>
+    <Salesperson>Michael Suyama</Salesperson>
+    <OrderID>11045</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>33</ProductID>
+    <ProductName>Geitost</ProductName>
+    <UnitPrice>2.5000</UnitPrice>
+    <Quantity>15</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>37.5000</ExtendedPrice>
+    <Freight>70.5800</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+    <CustomerID>BOTTM</CustomerID>
+    <Customers_CompanyName>Bottom-Dollar Markets</Customers_CompanyName>
+    <Address>23 Tsawassen Blvd.</Address>
+    <City>Tsawassen</City>
+    <RegionName>BC</RegionName>
+    <PostalCode>T2F 8M4</PostalCode>
+    <Country>Canada</Country>
+    <Salesperson>Michael Suyama</Salesperson>
+    <OrderID>11045</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>51</ProductID>
+    <ProductName>Manjimup Dried Apples</ProductName>
+    <UnitPrice>53.0000</UnitPrice>
+    <Quantity>24</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>1272.0000</ExtendedPrice>
+    <Freight>70.5800</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Die Wandernde Kuh</ShipName>
+    <ShipAddress>Adenauerallee 900</ShipAddress>
+    <ShipCity>Stuttgart</ShipCity>
+    <ShipPostalCode>70563</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>WANDK</CustomerID>
+    <Customers_CompanyName>Die Wandernde Kuh</Customers_CompanyName>
+    <Address>Adenauerallee 900</Address>
+    <City>Stuttgart</City>
+    <PostalCode>70563</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11046</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>12</ProductID>
+    <ProductName>Queso Manchego La Pastora</ProductName>
+    <UnitPrice>38.0000</UnitPrice>
+    <Quantity>20</Quantity>
+    <Discount>0.05</Discount>
+    <ExtendedPrice>722.0000</ExtendedPrice>
+    <Freight>71.6400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Die Wandernde Kuh</ShipName>
+    <ShipAddress>Adenauerallee 900</ShipAddress>
+    <ShipCity>Stuttgart</ShipCity>
+    <ShipPostalCode>70563</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>WANDK</CustomerID>
+    <Customers_CompanyName>Die Wandernde Kuh</Customers_CompanyName>
+    <Address>Adenauerallee 900</Address>
+    <City>Stuttgart</City>
+    <PostalCode>70563</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11046</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>32</ProductID>
+    <ProductName>Mascarpone Fabioli</ProductName>
+    <UnitPrice>32.0000</UnitPrice>
+    <Quantity>15</Quantity>
+    <Discount>0.05</Discount>
+    <ExtendedPrice>456.0000</ExtendedPrice>
+    <Freight>71.6400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Die Wandernde Kuh</ShipName>
+    <ShipAddress>Adenauerallee 900</ShipAddress>
+    <ShipCity>Stuttgart</ShipCity>
+    <ShipPostalCode>70563</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>WANDK</CustomerID>
+    <Customers_CompanyName>Die Wandernde Kuh</Customers_CompanyName>
+    <Address>Adenauerallee 900</Address>
+    <City>Stuttgart</City>
+    <PostalCode>70563</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11046</OrderID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>35</ProductID>
+    <ProductName>Steeleye Stout</ProductName>
+    <UnitPrice>18.0000</UnitPrice>
+    <Quantity>18</Quantity>
+    <Discount>0.05</Discount>
+    <ExtendedPrice>307.8000</ExtendedPrice>
+    <Freight>71.6400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>EASTC</CustomerID>
+    <Customers_CompanyName>Eastern Connection</Customers_CompanyName>
+    <Address>35 King George</Address>
+    <City>London</City>
+    <PostalCode>WX3 6FW</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11047</OrderID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>1</ProductID>
+    <ProductName>Chai</ProductName>
+    <UnitPrice>18.0000</UnitPrice>
+    <Quantity>25</Quantity>
+    <Discount>0.25</Discount>
+    <ExtendedPrice>337.5000</ExtendedPrice>
+    <Freight>46.6200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>EASTC</CustomerID>
+    <Customers_CompanyName>Eastern Connection</Customers_CompanyName>
+    <Address>35 King George</Address>
+    <City>London</City>
+    <PostalCode>WX3 6FW</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11047</OrderID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>5</ProductID>
+    <ProductName>Chef Anton's Gumbo Mix</ProductName>
+    <UnitPrice>21.3500</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0.25</Discount>
+    <ExtendedPrice>480.3700</ExtendedPrice>
+    <Freight>46.6200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+    <CustomerID>BOTTM</CustomerID>
+    <Customers_CompanyName>Bottom-Dollar Markets</Customers_CompanyName>
+    <Address>23 Tsawassen Blvd.</Address>
+    <City>Tsawassen</City>
+    <RegionName>BC</RegionName>
+    <PostalCode>T2F 8M4</PostalCode>
+    <Country>Canada</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11048</OrderID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-30T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>68</ProductID>
+    <ProductName>Scottish Longbreads</ProductName>
+    <UnitPrice>12.5000</UnitPrice>
+    <Quantity>42</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>525.0000</ExtendedPrice>
+    <Freight>24.1200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Gourmet Lanchonetes</ShipName>
+    <ShipAddress>Av. Brasil, 442</ShipAddress>
+    <ShipCity>Campinas</ShipCity>
+    <ShipRegion>SP</ShipRegion>
+    <ShipPostalCode>04876-786</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>GOURL</CustomerID>
+    <Customers_CompanyName>Gourmet Lanchonetes</Customers_CompanyName>
+    <Address>Av. Brasil, 442</Address>
+    <City>Campinas</City>
+    <RegionName>SP</RegionName>
+    <PostalCode>04876-786</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11049</OrderID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>2</ProductID>
+    <ProductName>Chang</ProductName>
+    <UnitPrice>19.0000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>152.0000</ExtendedPrice>
+    <Freight>8.3400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Gourmet Lanchonetes</ShipName>
+    <ShipAddress>Av. Brasil, 442</ShipAddress>
+    <ShipCity>Campinas</ShipCity>
+    <ShipRegion>SP</ShipRegion>
+    <ShipPostalCode>04876-786</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>GOURL</CustomerID>
+    <Customers_CompanyName>Gourmet Lanchonetes</Customers_CompanyName>
+    <Address>Av. Brasil, 442</Address>
+    <City>Campinas</City>
+    <RegionName>SP</RegionName>
+    <PostalCode>04876-786</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11049</OrderID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>12</ProductID>
+    <ProductName>Queso Manchego La Pastora</ProductName>
+    <UnitPrice>38.0000</UnitPrice>
+    <Quantity>4</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>121.6000</ExtendedPrice>
+    <Freight>8.3400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Folk och fä HB</ShipName>
+    <ShipAddress>Åkergatan 24</ShipAddress>
+    <ShipCity>Bräcke</ShipCity>
+    <ShipPostalCode>S-844 67</ShipPostalCode>
+    <ShipCountry>Sweden</ShipCountry>
+    <CustomerID>FOLKO</CustomerID>
+    <Customers_CompanyName>Folk och fä HB</Customers_CompanyName>
+    <Address>Åkergatan 24</Address>
+    <City>Bräcke</City>
+    <PostalCode>S-844 67</PostalCode>
+    <Country>Sweden</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11050</OrderID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>76</ProductID>
+    <ProductName>Lakkalikööri</ProductName>
+    <UnitPrice>18.0000</UnitPrice>
+    <Quantity>50</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>810.0000</ExtendedPrice>
+    <Freight>59.4100</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>La maison d'Asie</ShipName>
+    <ShipAddress>1 rue Alsace-Lorraine</ShipAddress>
+    <ShipCity>Toulouse</ShipCity>
+    <ShipPostalCode>31000</ShipPostalCode>
+    <ShipCountry>France</ShipCountry>
+    <CustomerID>LAMAI</CustomerID>
+    <Customers_CompanyName>La maison d'Asie</Customers_CompanyName>
+    <Address>1 rue Alsace-Lorraine</Address>
+    <City>Toulouse</City>
+    <PostalCode>31000</PostalCode>
+    <Country>France</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11051</OrderID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>24</ProductID>
+    <ProductName>Guaraná Fantástica</ProductName>
+    <UnitPrice>4.5000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>36.0000</ExtendedPrice>
+    <Freight>2.7900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Hanari Carnes</ShipName>
+    <ShipAddress>Rua do Paço, 67</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>05454-876</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>HANAR</CustomerID>
+    <Customers_CompanyName>Hanari Carnes</Customers_CompanyName>
+    <Address>Rua do Paço, 67</Address>
+    <City>Rio de Janeiro</City>
+    <RegionName>RJ</RegionName>
+    <PostalCode>05454-876</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11052</OrderID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>43</ProductID>
+    <ProductName>Ipoh Coffee</ProductName>
+    <UnitPrice>46.0000</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>1104.0000</ExtendedPrice>
+    <Freight>67.2600</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Hanari Carnes</ShipName>
+    <ShipAddress>Rua do Paço, 67</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>05454-876</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>HANAR</CustomerID>
+    <Customers_CompanyName>Hanari Carnes</Customers_CompanyName>
+    <Address>Rua do Paço, 67</Address>
+    <City>Rio de Janeiro</City>
+    <RegionName>RJ</RegionName>
+    <PostalCode>05454-876</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11052</OrderID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>61</ProductID>
+    <ProductName>Sirop d'érable</ProductName>
+    <UnitPrice>28.5000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>228.0000</ExtendedPrice>
+    <Freight>67.2600</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Piccolo und mehr</ShipName>
+    <ShipAddress>Geislweg 14</ShipAddress>
+    <ShipCity>Salzburg</ShipCity>
+    <ShipPostalCode>5020</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+    <CustomerID>PICCO</CustomerID>
+    <Customers_CompanyName>Piccolo und mehr</Customers_CompanyName>
+    <Address>Geislweg 14</Address>
+    <City>Salzburg</City>
+    <PostalCode>5020</PostalCode>
+    <Country>Austria</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11053</OrderID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-29T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>18</ProductID>
+    <ProductName>Carnarvon Tigers</ProductName>
+    <UnitPrice>62.5000</UnitPrice>
+    <Quantity>35</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>1750.0000</ExtendedPrice>
+    <Freight>53.0500</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Cactus Comidas para llevar</ShipName>
+    <ShipAddress>Cerrito 333</ShipAddress>
+    <ShipCity>Buenos Aires</ShipCity>
+    <ShipPostalCode>1010</ShipPostalCode>
+    <ShipCountry>Argentina</ShipCountry>
+    <CustomerID>CACTU</CustomerID>
+    <Customers_CompanyName>Cactus Comidas para llevar</Customers_CompanyName>
+    <Address>Cerrito 333</Address>
+    <City>Buenos Aires</City>
+    <PostalCode>1010</PostalCode>
+    <Country>Argentina</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11054</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>33</ProductID>
+    <ProductName>Geitost</ProductName>
+    <UnitPrice>2.5000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>25.0000</ExtendedPrice>
+    <Freight>0.3300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Richter Supermarkt</ShipName>
+    <ShipAddress>Starenweg 5</ShipAddress>
+    <ShipCity>Genève</ShipCity>
+    <ShipPostalCode>1204</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+    <CustomerID>RICSU</CustomerID>
+    <Customers_CompanyName>Richter Supermarkt</Customers_CompanyName>
+    <Address>Grenzacherweg 237</Address>
+    <City>Genève</City>
+    <PostalCode>1203</PostalCode>
+    <Country>Switzerland</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11075</OrderID>
+    <OrderDate>1998-05-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>46</ProductID>
+    <ProductName>Spegesild</ProductName>
+    <UnitPrice>12.0000</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0.15</Discount>
+    <ExtendedPrice>306.0000</ExtendedPrice>
+    <Freight>6.1900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Cactus Comidas para llevar</ShipName>
+    <ShipAddress>Cerrito 333</ShipAddress>
+    <ShipCity>Buenos Aires</ShipCity>
+    <ShipPostalCode>1010</ShipPostalCode>
+    <ShipCountry>Argentina</ShipCountry>
+    <CustomerID>CACTU</CustomerID>
+    <Customers_CompanyName>Cactus Comidas para llevar</Customers_CompanyName>
+    <Address>Cerrito 333</Address>
+    <City>Buenos Aires</City>
+    <PostalCode>1010</PostalCode>
+    <Country>Argentina</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11054</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>67</ProductID>
+    <ProductName>Laughing Lumberjack Lager</ProductName>
+    <UnitPrice>14.0000</UnitPrice>
+    <Quantity>20</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>280.0000</ExtendedPrice>
+    <Freight>0.3300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>HILAA</CustomerID>
+    <Customers_CompanyName>HILARIÓN-Abastos</Customers_CompanyName>
+    <Address>Carrera 22 con Ave. Carlos Soublette #8-35</Address>
+    <City>San Cristóbal</City>
+    <RegionName>Táchira</RegionName>
+    <PostalCode>5022</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11055</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>24</ProductID>
+    <ProductName>Guaraná Fantástica</ProductName>
+    <UnitPrice>4.5000</UnitPrice>
+    <Quantity>15</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>67.5000</ExtendedPrice>
+    <Freight>120.9200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>HILAA</CustomerID>
+    <Customers_CompanyName>HILARIÓN-Abastos</Customers_CompanyName>
+    <Address>Carrera 22 con Ave. Carlos Soublette #8-35</Address>
+    <City>San Cristóbal</City>
+    <RegionName>Táchira</RegionName>
+    <PostalCode>5022</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11055</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>25</ProductID>
+    <ProductName>NuNuCa Nuß-Nougat-Creme</ProductName>
+    <UnitPrice>14.0000</UnitPrice>
+    <Quantity>15</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>210.0000</ExtendedPrice>
+    <Freight>120.9200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>HILAA</CustomerID>
+    <Customers_CompanyName>HILARIÓN-Abastos</Customers_CompanyName>
+    <Address>Carrera 22 con Ave. Carlos Soublette #8-35</Address>
+    <City>San Cristóbal</City>
+    <RegionName>Táchira</RegionName>
+    <PostalCode>5022</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11055</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>51</ProductID>
+    <ProductName>Manjimup Dried Apples</ProductName>
+    <UnitPrice>53.0000</UnitPrice>
+    <Quantity>20</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>1060.0000</ExtendedPrice>
+    <Freight>120.9200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>HILAA</CustomerID>
+    <Customers_CompanyName>HILARIÓN-Abastos</Customers_CompanyName>
+    <Address>Carrera 22 con Ave. Carlos Soublette #8-35</Address>
+    <City>San Cristóbal</City>
+    <RegionName>Táchira</RegionName>
+    <PostalCode>5022</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11055</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>57</ProductID>
+    <ProductName>Ravioli Angelo</ProductName>
+    <UnitPrice>19.5000</UnitPrice>
+    <Quantity>20</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>390.0000</ExtendedPrice>
+    <Freight>120.9200</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>EASTC</CustomerID>
+    <Customers_CompanyName>Eastern Connection</Customers_CompanyName>
+    <Address>35 King George</Address>
+    <City>London</City>
+    <PostalCode>WX3 6FW</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11056</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>7</ProductID>
+    <ProductName>Uncle Bob's Organic Dried Pears</ProductName>
+    <UnitPrice>30.0000</UnitPrice>
+    <Quantity>40</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>1200.0000</ExtendedPrice>
+    <Freight>278.9600</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>EASTC</CustomerID>
+    <Customers_CompanyName>Eastern Connection</Customers_CompanyName>
+    <Address>35 King George</Address>
+    <City>London</City>
+    <PostalCode>WX3 6FW</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11056</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>55</ProductID>
+    <ProductName>Pâté chinois</ProductName>
+    <UnitPrice>24.0000</UnitPrice>
+    <Quantity>35</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>840.0000</ExtendedPrice>
+    <Freight>278.9600</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>EASTC</CustomerID>
+    <Customers_CompanyName>Eastern Connection</Customers_CompanyName>
+    <Address>35 King George</Address>
+    <City>London</City>
+    <PostalCode>WX3 6FW</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11056</OrderID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>60</ProductID>
+    <ProductName>Camembert Pierrot</ProductName>
+    <UnitPrice>34.0000</UnitPrice>
+    <Quantity>50</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>1700.0000</ExtendedPrice>
+    <Freight>278.9600</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>North/South</ShipName>
+    <ShipAddress>South House
+300 Queensbridge</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>SW7 1RZ</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+    <CustomerID>NORTS</CustomerID>
+    <Customers_CompanyName>North/South</Customers_CompanyName>
+    <Address>South House
+300 Queensbridge</Address>
+    <City>London</City>
+    <PostalCode>SW7 1RZ</PostalCode>
+    <Country>UK</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11057</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>70</ProductID>
+    <ProductName>Outback Lager</ProductName>
+    <UnitPrice>15.0000</UnitPrice>
+    <Quantity>3</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>45.0000</ExtendedPrice>
+    <Freight>4.1300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Blauer See Delikatessen</ShipName>
+    <ShipAddress>Forsterstr. 57</ShipAddress>
+    <ShipCity>Mannheim</ShipCity>
+    <ShipPostalCode>68306</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>BLAUS</CustomerID>
+    <Customers_CompanyName>Blauer See Delikatessen</Customers_CompanyName>
+    <Address>Forsterstr. 57</Address>
+    <City>Mannheim</City>
+    <PostalCode>68306</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Anne Dodsworth</Salesperson>
+    <OrderID>11058</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>21</ProductID>
+    <ProductName>Sir Rodney's Scones</ProductName>
+    <UnitPrice>10.0000</UnitPrice>
+    <Quantity>3</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>30.0000</ExtendedPrice>
+    <Freight>31.1400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Blauer See Delikatessen</ShipName>
+    <ShipAddress>Forsterstr. 57</ShipAddress>
+    <ShipCity>Mannheim</ShipCity>
+    <ShipPostalCode>68306</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>BLAUS</CustomerID>
+    <Customers_CompanyName>Blauer See Delikatessen</Customers_CompanyName>
+    <Address>Forsterstr. 57</Address>
+    <City>Mannheim</City>
+    <PostalCode>68306</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Anne Dodsworth</Salesperson>
+    <OrderID>11058</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>60</ProductID>
+    <ProductName>Camembert Pierrot</ProductName>
+    <UnitPrice>34.0000</UnitPrice>
+    <Quantity>21</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>714.0000</ExtendedPrice>
+    <Freight>31.1400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Blauer See Delikatessen</ShipName>
+    <ShipAddress>Forsterstr. 57</ShipAddress>
+    <ShipCity>Mannheim</ShipCity>
+    <ShipPostalCode>68306</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+    <CustomerID>BLAUS</CustomerID>
+    <Customers_CompanyName>Blauer See Delikatessen</Customers_CompanyName>
+    <Address>Forsterstr. 57</Address>
+    <City>Mannheim</City>
+    <PostalCode>68306</PostalCode>
+    <Country>Germany</Country>
+    <Salesperson>Anne Dodsworth</Salesperson>
+    <OrderID>11058</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>61</ProductID>
+    <ProductName>Sirop d'érable</ProductName>
+    <UnitPrice>28.5000</UnitPrice>
+    <Quantity>4</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>114.0000</ExtendedPrice>
+    <Freight>31.1400</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Ricardo Adocicados</ShipName>
+    <ShipAddress>Av. Copacabana, 267</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>02389-890</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>RICAR</CustomerID>
+    <Customers_CompanyName>Ricardo Adocicados</Customers_CompanyName>
+    <Address>Av. Copacabana, 267</Address>
+    <City>Rio de Janeiro</City>
+    <RegionName>RJ</RegionName>
+    <PostalCode>02389-890</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11059</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-10T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>13</ProductID>
+    <ProductName>Konbu</ProductName>
+    <UnitPrice>6.0000</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>180.0000</ExtendedPrice>
+    <Freight>85.8000</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Ricardo Adocicados</ShipName>
+    <ShipAddress>Av. Copacabana, 267</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>02389-890</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>RICAR</CustomerID>
+    <Customers_CompanyName>Ricardo Adocicados</Customers_CompanyName>
+    <Address>Av. Copacabana, 267</Address>
+    <City>Rio de Janeiro</City>
+    <RegionName>RJ</RegionName>
+    <PostalCode>02389-890</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11059</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-10T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>17</ProductID>
+    <ProductName>Alice Mutton</ProductName>
+    <UnitPrice>39.0000</UnitPrice>
+    <Quantity>12</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>468.0000</ExtendedPrice>
+    <Freight>85.8000</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Ricardo Adocicados</ShipName>
+    <ShipAddress>Av. Copacabana, 267</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>02389-890</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+    <CustomerID>RICAR</CustomerID>
+    <Customers_CompanyName>Ricardo Adocicados</Customers_CompanyName>
+    <Address>Av. Copacabana, 267</Address>
+    <City>Rio de Janeiro</City>
+    <RegionName>RJ</RegionName>
+    <PostalCode>02389-890</PostalCode>
+    <Country>Brazil</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11059</OrderID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-10T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>60</ProductID>
+    <ProductName>Camembert Pierrot</ProductName>
+    <UnitPrice>34.0000</UnitPrice>
+    <Quantity>35</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>1190.0000</ExtendedPrice>
+    <Freight>85.8000</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Franchi S.p.A.</ShipName>
+    <ShipAddress>Via Monte Bianco 34</ShipAddress>
+    <ShipCity>Torino</ShipCity>
+    <ShipPostalCode>10100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+    <CustomerID>FRANS</CustomerID>
+    <Customers_CompanyName>Franchi S.p.A.</Customers_CompanyName>
+    <Address>Via Monte Bianco 34</Address>
+    <City>Torino</City>
+    <PostalCode>10100</PostalCode>
+    <Country>Italy</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11060</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>60</ProductID>
+    <ProductName>Camembert Pierrot</ProductName>
+    <UnitPrice>34.0000</UnitPrice>
+    <Quantity>4</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>136.0000</ExtendedPrice>
+    <Freight>10.9800</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Franchi S.p.A.</ShipName>
+    <ShipAddress>Via Monte Bianco 34</ShipAddress>
+    <ShipCity>Torino</ShipCity>
+    <ShipPostalCode>10100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+    <CustomerID>FRANS</CustomerID>
+    <Customers_CompanyName>Franchi S.p.A.</Customers_CompanyName>
+    <Address>Via Monte Bianco 34</Address>
+    <City>Torino</City>
+    <PostalCode>10100</PostalCode>
+    <Country>Italy</Country>
+    <Salesperson>Andrew Fuller</Salesperson>
+    <OrderID>11060</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>77</ProductID>
+    <ProductName>Original Frankfurter grüne Soße</ProductName>
+    <UnitPrice>13.0000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>130.0000</ExtendedPrice>
+    <Freight>10.9800</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Great Lakes Food Market</ShipName>
+    <ShipAddress>2732 Baker Blvd.</ShipAddress>
+    <ShipCity>Eugene</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97403</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>GREAL</CustomerID>
+    <Customers_CompanyName>Great Lakes Food Market</Customers_CompanyName>
+    <Address>2732 Baker Blvd.</Address>
+    <City>Eugene</City>
+    <RegionName>OR</RegionName>
+    <PostalCode>97403</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Margaret Peacock</Salesperson>
+    <OrderID>11061</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-11T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Federal Shipping</Shippers_CompanyName>
+    <ProductID>60</ProductID>
+    <ProductName>Camembert Pierrot</ProductName>
+    <UnitPrice>34.0000</UnitPrice>
+    <Quantity>15</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>510.0000</ExtendedPrice>
+    <Freight>14.0100</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Reggiani Caseifici</ShipName>
+    <ShipAddress>Strada Provinciale 124</ShipAddress>
+    <ShipCity>Reggio Emilia</ShipCity>
+    <ShipPostalCode>42100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+    <CustomerID>REGGC</CustomerID>
+    <Customers_CompanyName>Reggiani Caseifici</Customers_CompanyName>
+    <Address>Strada Provinciale 124</Address>
+    <City>Reggio Emilia</City>
+    <PostalCode>42100</PostalCode>
+    <Country>Italy</Country>
+    <Salesperson>Margaret Peacock</Salesperson>
+    <OrderID>11062</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>53</ProductID>
+    <ProductName>Perth Pasties</ProductName>
+    <UnitPrice>32.8000</UnitPrice>
+    <Quantity>10</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>262.4000</ExtendedPrice>
+    <Freight>29.9300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Reggiani Caseifici</ShipName>
+    <ShipAddress>Strada Provinciale 124</ShipAddress>
+    <ShipCity>Reggio Emilia</ShipCity>
+    <ShipPostalCode>42100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+    <CustomerID>REGGC</CustomerID>
+    <Customers_CompanyName>Reggiani Caseifici</Customers_CompanyName>
+    <Address>Strada Provinciale 124</Address>
+    <City>Reggio Emilia</City>
+    <PostalCode>42100</PostalCode>
+    <Country>Italy</Country>
+    <Salesperson>Margaret Peacock</Salesperson>
+    <OrderID>11062</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>70</ProductID>
+    <ProductName>Outback Lager</ProductName>
+    <UnitPrice>15.0000</UnitPrice>
+    <Quantity>12</Quantity>
+    <Discount>0.2</Discount>
+    <ExtendedPrice>144.0000</ExtendedPrice>
+    <Freight>29.9300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Hungry Owl All-Night Grocers</ShipName>
+    <ShipAddress>8 Johnstown Road</ShipAddress>
+    <ShipCity>Cork</ShipCity>
+    <ShipRegion>Co. Cork</ShipRegion>
+    <ShipCountry>Ireland</ShipCountry>
+    <CustomerID>HUNGO</CustomerID>
+    <Customers_CompanyName>Hungry Owl All-Night Grocers</Customers_CompanyName>
+    <Address>8 Johnstown Road</Address>
+    <City>Cork</City>
+    <RegionName>Co. Cork</RegionName>
+    <Country>Ireland</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11063</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>34</ProductID>
+    <ProductName>Sasquatch Ale</ProductName>
+    <UnitPrice>14.0000</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>420.0000</ExtendedPrice>
+    <Freight>81.7300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Hungry Owl All-Night Grocers</ShipName>
+    <ShipAddress>8 Johnstown Road</ShipAddress>
+    <ShipCity>Cork</ShipCity>
+    <ShipRegion>Co. Cork</ShipRegion>
+    <ShipCountry>Ireland</ShipCountry>
+    <CustomerID>HUNGO</CustomerID>
+    <Customers_CompanyName>Hungry Owl All-Night Grocers</Customers_CompanyName>
+    <Address>8 Johnstown Road</Address>
+    <City>Cork</City>
+    <RegionName>Co. Cork</RegionName>
+    <Country>Ireland</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11063</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>40</ProductID>
+    <ProductName>Boston Crab Meat</ProductName>
+    <UnitPrice>18.4000</UnitPrice>
+    <Quantity>40</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>662.4000</ExtendedPrice>
+    <Freight>81.7300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Hungry Owl All-Night Grocers</ShipName>
+    <ShipAddress>8 Johnstown Road</ShipAddress>
+    <ShipCity>Cork</ShipCity>
+    <ShipRegion>Co. Cork</ShipRegion>
+    <ShipCountry>Ireland</ShipCountry>
+    <CustomerID>HUNGO</CustomerID>
+    <Customers_CompanyName>Hungry Owl All-Night Grocers</Customers_CompanyName>
+    <Address>8 Johnstown Road</Address>
+    <City>Cork</City>
+    <RegionName>Co. Cork</RegionName>
+    <Country>Ireland</Country>
+    <Salesperson>Janet Leverling</Salesperson>
+    <OrderID>11063</OrderID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>41</ProductID>
+    <ProductName>Jack's New England Clam Chowder</ProductName>
+    <UnitPrice>9.6500</UnitPrice>
+    <Quantity>30</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>260.5500</ExtendedPrice>
+    <Freight>81.7300</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>SAVEA</CustomerID>
+    <Customers_CompanyName>Save-a-lot Markets</Customers_CompanyName>
+    <Address>187 Suffolk Ln.</Address>
+    <City>Boise</City>
+    <RegionName>ID</RegionName>
+    <PostalCode>83720</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Nancy Davolio</Salesperson>
+    <OrderID>11064</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>17</ProductID>
+    <ProductName>Alice Mutton</ProductName>
+    <UnitPrice>39.0000</UnitPrice>
+    <Quantity>77</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>2702.7000</ExtendedPrice>
+    <Freight>30.0900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>SAVEA</CustomerID>
+    <Customers_CompanyName>Save-a-lot Markets</Customers_CompanyName>
+    <Address>187 Suffolk Ln.</Address>
+    <City>Boise</City>
+    <RegionName>ID</RegionName>
+    <PostalCode>83720</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Nancy Davolio</Salesperson>
+    <OrderID>11064</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>41</ProductID>
+    <ProductName>Jack's New England Clam Chowder</ProductName>
+    <UnitPrice>9.6500</UnitPrice>
+    <Quantity>12</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>115.8000</ExtendedPrice>
+    <Freight>30.0900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>SAVEA</CustomerID>
+    <Customers_CompanyName>Save-a-lot Markets</Customers_CompanyName>
+    <Address>187 Suffolk Ln.</Address>
+    <City>Boise</City>
+    <RegionName>ID</RegionName>
+    <PostalCode>83720</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Nancy Davolio</Salesperson>
+    <OrderID>11064</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>53</ProductID>
+    <ProductName>Perth Pasties</ProductName>
+    <UnitPrice>32.8000</UnitPrice>
+    <Quantity>25</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>738.0000</ExtendedPrice>
+    <Freight>30.0900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>SAVEA</CustomerID>
+    <Customers_CompanyName>Save-a-lot Markets</Customers_CompanyName>
+    <Address>187 Suffolk Ln.</Address>
+    <City>Boise</City>
+    <RegionName>ID</RegionName>
+    <PostalCode>83720</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Nancy Davolio</Salesperson>
+    <OrderID>11064</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>55</ProductID>
+    <ProductName>Pâté chinois</ProductName>
+    <UnitPrice>24.0000</UnitPrice>
+    <Quantity>4</Quantity>
+    <Discount>0.1</Discount>
+    <ExtendedPrice>86.4000</ExtendedPrice>
+    <Freight>30.0900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>SAVEA</CustomerID>
+    <Customers_CompanyName>Save-a-lot Markets</Customers_CompanyName>
+    <Address>187 Suffolk Ln.</Address>
+    <City>Boise</City>
+    <RegionName>ID</RegionName>
+    <PostalCode>83720</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Nancy Davolio</Salesperson>
+    <OrderID>11064</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>68</ProductID>
+    <ProductName>Scottish Longbreads</ProductName>
+    <UnitPrice>12.5000</UnitPrice>
+    <Quantity>55</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>687.5000</ExtendedPrice>
+    <Freight>30.0900</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>LILA-Supermercado</ShipName>
+    <ShipAddress>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</ShipAddress>
+    <ShipCity>Barquisimeto</ShipCity>
+    <ShipRegion>Lara</ShipRegion>
+    <ShipPostalCode>3508</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>LILAS</CustomerID>
+    <Customers_CompanyName>LILA-Supermercado</Customers_CompanyName>
+    <Address>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</Address>
+    <City>Barquisimeto</City>
+    <RegionName>Lara</RegionName>
+    <PostalCode>3508</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11065</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>30</ProductID>
+    <ProductName>Nord-Ost Matjeshering</ProductName>
+    <UnitPrice>25.8900</UnitPrice>
+    <Quantity>4</Quantity>
+    <Discount>0.25</Discount>
+    <ExtendedPrice>77.6700</ExtendedPrice>
+    <Freight>12.9100</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>LILA-Supermercado</ShipName>
+    <ShipAddress>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</ShipAddress>
+    <ShipCity>Barquisimeto</ShipCity>
+    <ShipRegion>Lara</ShipRegion>
+    <ShipPostalCode>3508</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+    <CustomerID>LILAS</CustomerID>
+    <Customers_CompanyName>LILA-Supermercado</Customers_CompanyName>
+    <Address>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</Address>
+    <City>Barquisimeto</City>
+    <RegionName>Lara</RegionName>
+    <PostalCode>3508</PostalCode>
+    <Country>Venezuela</Country>
+    <Salesperson>Laura Callahan</Salesperson>
+    <OrderID>11065</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <Shippers_CompanyName>Speedy Express</Shippers_CompanyName>
+    <ProductID>54</ProductID>
+    <ProductName>Tourtière</ProductName>
+    <UnitPrice>7.4500</UnitPrice>
+    <Quantity>20</Quantity>
+    <Discount>0.25</Discount>
+    <ExtendedPrice>111.7500</ExtendedPrice>
+    <Freight>12.9100</Freight>
+  </Invoices>
+  <Invoices>
+    <ShipName>White Clover Markets</ShipName>
+    <ShipAddress>1029 - 12th Ave. S.</ShipAddress>
+    <ShipCity>Seattle</ShipCity>
+    <ShipRegion>WA</ShipRegion>
+    <ShipPostalCode>98124</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+    <CustomerID>WHITC</CustomerID>
+    <Customers_CompanyName>White Clover Markets</Customers_CompanyName>
+    <Address>305 - 14th Ave. S.Suite 3B</Address>
+    <City>Seattle</City>
+    <RegionName>WA</RegionName>
+    <PostalCode>98128</PostalCode>
+    <Country>USA</Country>
+    <Salesperson>Robert King</Salesperson>
+    <OrderID>11066</OrderID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <Shippers_CompanyName>United Package</Shippers_CompanyName>
+    <ProductID>16</ProductID>
+    <ProductName>Pavlova</ProductName>
+    <UnitPrice>17.4500</UnitPrice>
+    <Quantity>3</Quantity>
+    <Discount>0</Discount>
+    <ExtendedPrice>52.3500</ExtendedPrice>
+    <Freight>44.7200</Freight>
+  </Invoices>
+</NWindDataSet>

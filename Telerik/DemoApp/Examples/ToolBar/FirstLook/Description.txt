@@ -1,0 +1,3 @@
+﻿RadToolBar is a container for a group of controls and commands. You can place it anywhere in your application and embed any control inside it. To achieve a better user experience you can use the <b>RadToolBarTray</b> to handle the layout of several toolbars. The ToolBar control also features an <b>Overflow</b> area that hosts those controls that cannot be currently displayed in the ToolBar. 
+<br/><br/>
+RadToolBar is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

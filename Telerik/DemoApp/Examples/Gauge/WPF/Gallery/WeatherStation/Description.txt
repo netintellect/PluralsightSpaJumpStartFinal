@@ -1,0 +1,1 @@
+﻿The <b>Weather Station</b> application is built using <b>numeric indicators</b> to show temperature.

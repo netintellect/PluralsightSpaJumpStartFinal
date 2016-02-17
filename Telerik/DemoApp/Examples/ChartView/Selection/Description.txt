@@ -1,0 +1,1 @@
+﻿This example demonstrates the ChartView's selection API and the successfull integration of RadChartView and RadMap controls. Select a country either from the map, pie chart or bar chart to highlight the information about this country's GDP and population. 

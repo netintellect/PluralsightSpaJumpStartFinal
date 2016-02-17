@@ -1,0 +1,64 @@
+<Examples:DataPagerExample x:Class="Telerik.Windows.Examples.DataPager.PagingIEnumerable.Example"
+						   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+						   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						   xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+						   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+						   xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Shipping Orders"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Examples:DataPagerExample.Resources>
+		<Examples:ExamplesViewModel x:Key="model" />
+	</Examples:DataPagerExample.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+        <telerik:RadGridView x:Name="radGridView" GroupRenderMode="Flat"
+							 Width="702"
+							 MinHeight="386" MaxHeight="500"
+							 ColumnWidth="*"
+							 ItemsSource="{Binding PagedSource, ElementName=radDataPager1}"
+							 RowIndicatorVisibility="Collapsed"
+							 CanUserFreezeColumns="False"
+							 IsReadOnly="True"
+							 ShowGroupPanel="False"
+							 IsFilteringAllowed="False"
+							 AutoGenerateColumns="True"></telerik:RadGridView>
+		<telerik:RadDataPager Grid.Row="1"
+							  x:Name="radDataPager1" 
+							  PageSize="10" FontSize="12" 
+							  BorderThickness="1,0,1,1" DisplayMode="All"
+							  Source="{Binding RandomProducts, Source={StaticResource model}}"
+							  IsTotalItemCountFixed="True" />
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<StackPanel Margin="0,2">
+				<TextBlock Text="PageSize: " />
+				<telerik:RadNumericUpDown Value="{Binding PageSize, Mode=TwoWay}"
+										  IsInteger="True"
+										  Minimum="1" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal"
+						Margin="0,2">
+				<TextBlock Text="PageIndex: " />
+				<TextBlock Text="{Binding PageIndex}" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal"
+						Margin="0,2">
+				<TextBlock Text="ItemCount: " />
+				<TextBlock Text="{Binding ItemCount}" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal"
+						Margin="0,2">
+				<TextBlock Text="PageCount: " />
+				<TextBlock Text="{Binding PageCount}" />
+			</StackPanel>
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</Examples:DataPagerExample>

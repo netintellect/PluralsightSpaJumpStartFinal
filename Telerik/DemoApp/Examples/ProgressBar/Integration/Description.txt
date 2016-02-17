@@ -1,0 +1,1 @@
+﻿This example demonstrates how to integrate RadProgressBar and RadCoverFlow to create a radio stations application. The ProgressBar in this case allows you to visualize a radio station buffering process.<br/><br/>RadProgressBar is a part of the <b>Telerik.Windows.Controls</b> assembly.

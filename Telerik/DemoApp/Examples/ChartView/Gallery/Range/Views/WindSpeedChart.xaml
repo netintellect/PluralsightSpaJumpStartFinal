@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.Gallery.Range.Views.WindSpeedChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" 
+			 d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Resources.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Text="NYC wind speed in km/h"
+				   HorizontalAlignment="Left"
+				   Foreground="#8C8C8C"
+				   FontFamily="Segoe UI"
+				   FontSize="16"
+				   Margin="10 0 0 0"/>
+		<telerik:RadLegend Items="{Binding LegendItems, ElementName=windSpeedChart}"
+						   FontFamily="Segoe UI"
+						   Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Right">
+			<telerik:RadLegend.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal"/>
+				</ItemsPanelTemplate>
+			</telerik:RadLegend.ItemsPanel>
+            <telerik:RadLegend.DefaultMarkerGeometry>
+                <RectangleGeometry Rect="0 5 10 2" />
+            </telerik:RadLegend.DefaultMarkerGeometry>
+        </telerik:RadLegend>
+		<telerik:RadCartesianChart Name="windSpeedChart"
+								   Grid.Row="1">
+			<telerik:RadCartesianChart.HorizontalAxis>
+				<telerik:DateTimeCategoricalAxis x:Name="windDataDateAxis"
+												 LabelFormat="MMM"/>
+			</telerik:RadCartesianChart.HorizontalAxis>
+			<telerik:RadCartesianChart.VerticalAxis>
+				<telerik:LinearAxis Minimum="0"
+									Maximum="55"
+									MajorStep="11"/>
+			</telerik:RadCartesianChart.VerticalAxis>
+			<telerik:RadCartesianChart.Series>
+                <telerik:LineSeries ItemsSource="{Binding GustWindSpeedData}"
+									CategoryBinding="Date"
+									ValueBinding="Measurement"
+                                    Stroke="#FF5AA4D4">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="Gust wind speed"  />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+                <telerik:LineSeries ItemsSource="{Binding WindSpeedData}"
+									CategoryBinding="Date"
+									ValueBinding="Measurement"
+									Stroke="#FFF59700">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="Wind speed" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+			</telerik:RadCartesianChart.Series>
+			<telerik:RadCartesianChart.Annotations>
+				<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=windDataDateAxis}"
+													 Value="{Binding Year2012Start}"
+													 Style="{StaticResource DashedGridLineStyle}"
+													 Stroke="{StaticResource GridLineAnnotationStroke}"
+													 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+													 Label="{Binding Year2012Start, StringFormat=yyyy}" />
+				<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=windDataDateAxis}"
+													 Value="{Binding Year2011Start}"
+													 Style="{StaticResource DashedGridLineStyle}"
+													 Stroke="{StaticResource GridLineAnnotationStroke}"
+													 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+													 Label="{Binding Year2011Start, StringFormat=yyyy}" />
+			</telerik:RadCartesianChart.Annotations>
+			<telerik:RadCartesianChart.Grid>
+				<telerik:CartesianChartGrid StripLinesVisibility="Y"/>
+			</telerik:RadCartesianChart.Grid>
+		</telerik:RadCartesianChart>
+	</Grid>
+</UserControl>

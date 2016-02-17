@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53339E6E-97CA-477D-BEC9-0DBA7D26C47D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Docking</RootNamespace>
+    <AssemblyName>Docking</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Docking.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls, Version=2010.1.424.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2010.1.424.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.1.424.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompassProgramming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompassStyle\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\ToolboxItem.cs" />
+    <Compile Include="FirstLook\ToolboxItemsCollection.cs" />
+    <Compile Include="NestedDocking\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveLoadLayout\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveLoadLayout\LayoutData.cs" />
+    <Compile Include="SplitContainers\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnpinnedPanes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CompassProgramming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CompassStyle\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NestedDocking\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveLoadLayout\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SplitContainers\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UnpinnedPanes\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\Products\Big\Docking.png" />
+    <Resource Include="Images\Docking\ServerExplorer\event_log.png" />
+    <Resource Include="Images\Docking\ServerExplorer\management_classes.png" />
+    <Resource Include="Images\Docking\ServerExplorer\management_events.png" />
+    <Resource Include="Images\Docking\ServerExplorer\message_queues.png" />
+    <Resource Include="Images\Docking\ServerExplorer\performance_counters.png" />
+    <Resource Include="Images\Docking\ServerExplorer\services.png" />
+    <Resource Include="SaveLoadLayout\Description.txt" />
+    <Resource Include="SplitContainers\Description.txt" />
+    <Resource Include="UnpinnedPanes\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\bullet_toggle_minus.png" />
+    <Resource Include="Images\Docking\bullet_toggle_plus.png" />
+    <Resource Include="Images\Docking\connect_to_database.png" />
+    <Resource Include="Images\Docking\connect_to_server.png" />
+    <Resource Include="Images\Docking\icon1.png" />
+    <Resource Include="Images\Docking\icon2.png" />
+    <Resource Include="Images\Docking\lightning.png" />
+    <Resource Include="Images\Docking\properties_icon.png" />
+    <Resource Include="Images\Docking\server.png" />
+    <Resource Include="Images\Docking\servers.png" />
+    <Resource Include="Images\Docking\sortasc.png" />
+    <Resource Include="Images\Docking\stop_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\Toolbox\radbook_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radcontextmenu_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radcoverflow_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radcube_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radmenu_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radoutlookbar_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radpanelbar_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radribbonbar_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radribboncontextualgroupcontainer_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radribbonwindow_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radrichtextboxribbonui_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radrichtextbox_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radscheduler_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radslider_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radtabcontrol_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radtileview_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radtoolbar_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radtreelist_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radtreeview_sl.png" />
+    <Resource Include="Images\Docking\Toolbox\radwindow_sl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\ErrorList\delete.png" />
+    <Resource Include="Images\Docking\ErrorList\information.png" />
+    <Resource Include="Images\Docking\ErrorList\warning.png" />
+    <Resource Include="Images\Docking\Output\01.png" />
+    <Resource Include="Images\Docking\Output\02.png" />
+    <Resource Include="Images\Docking\Output\03.png" />
+    <Resource Include="Images\Docking\Output\04.png" />
+    <Resource Include="Images\Docking\Output\05.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\bin.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\folder.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon1.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon11.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon2.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon3.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon4.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon5.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon6.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon7.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon8.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\icon9.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\properties.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\references.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\SolutionExplorer\description.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\image.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\usercontrol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CompassProgramming\Description.txt" />
+    <Resource Include="CompassStyle\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\Toolbox\chartview.png" />
+    <Resource Include="Images\Docking\Toolbox\datafilter.png" />
+    <Resource Include="Images\Docking\Toolbox\dataform.png" />
+    <Resource Include="Images\Docking\Toolbox\datapager.png" />
+    <Resource Include="Images\Docking\Toolbox\imageeditor.png" />
+    <Resource Include="Images\Docking\Toolbox\map.png" />
+    <Resource Include="Images\Docking\Toolbox\pdfviewer.png" />
+    <Resource Include="Images\Docking\Toolbox\pivotgrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\Toolbox\richtextbox.png" />
+    <Resource Include="Images\Docking\Toolbox\sparklines.png" />
+    <Resource Include="Images\Docking\Toolbox\timebar.png" />
+    <Resource Include="Images\Docking\Toolbox\timeline.png" />
+    <Resource Include="Images\Docking\Toolbox\treemapandpivotmap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\ServerExplorer\database_connect.png" />
+    <Resource Include="Images\Docking\ServerExplorer\folder.png" />
+    <Resource Include="Images\Docking\ServerExplorer\servers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\SolutionExplorer\assembly.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\enumeration.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\SolutionExplorer\namespace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\_data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\ServerExplorer\references.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\SolutionExplorer\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\ServerExplorer\database_connect_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\event_log_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\folder_open_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\folder_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\hristov.png" />
+    <Resource Include="Images\Docking\ServerExplorer\hristov_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\management_classes_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\message_queues_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\references_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\servers_white.png" />
+    <Resource Include="Images\Docking\ServerExplorer\services_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\SolutionExplorer\assembly_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\data_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\enumeration_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\folder_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\image_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\namespace_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\properties_white.png" />
+    <Resource Include="Images\Docking\SolutionExplorer\references_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Docking\data_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NestedDocking\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

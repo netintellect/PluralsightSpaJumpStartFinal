@@ -1,0 +1,3 @@
+This example illustrates integration between <b>RadRichTextBox</b> and <b>RadPdfViewer</b>.
+
+You can write anything in the RadRichTextBox and it will be exported to Pdf and transported to the RadPdfViewer automatically.

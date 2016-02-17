@@ -1,0 +1,177 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+					xmlns:converters="clr-namespace:Telerik.Windows.Examples.ChartView.InverseAxis.Converters">
+	<converters:BoolToParameterConditionalConverter x:Key="BoolToParameterConditionalConverter"/>
+	<converters:ResourceTypeToBrushConverter x:Key="ResourceTypeToBrushConverter"/>
+	<converters:ToUpperCaseConverter x:Key="ToUpperCaseConverter"/>
+
+	<Style x:Key="ListBoxSelectorItemContainerStyle" TargetType="ListBoxItem">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBoxItem">
+					<Border x:Name="OuterBorder"
+							Margin="0 0 10 10">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="OuterBorder"
+                                                                       Storyboard.TargetProperty="Background"
+                                                                       Duration="0">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<SolidColorBrush Color="#D6D4D4"/>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<ContentPresenter>
+						</ContentPresenter>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="ListBoxStatsItemContainerStyle" TargetType="ListBoxItem">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBoxItem">
+					<ContentPresenter />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="RightVerticalAxisLabelStyle" TargetType="TextBlock">
+		<Setter Property="Width" Value="25"/>
+		<Setter Property="Margin" Value="2 0 0 0" />
+	</Style>
+
+	<Style x:Key="LeftVerticalAxisLabelStyle" TargetType="TextBlock">
+		<Setter Property="Width" Value="25"/>
+		<Setter Property="Margin" Value="0 0 2 0" />
+		<Setter Property="TextAlignment" Value="Right" />
+	</Style>
+
+	<Style x:Key="ResourcesViewVerticalAxisStyle" TargetType="telerik:LinearAxis" BasedOn="{StaticResource AxisStyle}">
+		<Setter Property="Maximum" Value="9999"/>
+		<Setter Property="MajorStep" Value="2500"/>
+		<Setter Property="LineStroke" Value="#828282"/>
+		<Setter Property="IsInverse" Value="True"/>
+	</Style>
+
+	<Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
+		<Setter Property="FontFamily" Value="Segoe UI"/>
+		<Setter Property="FontSize" Value="14"/>
+		<Setter Property="HorizontalAlignment" Value="Left"/>
+	</Style>
+
+	<DataTemplate x:Key="SelectorListBoxItemTemplate">
+        <Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Border Width="6"
+					Background="{Binding Name, Converter={StaticResource ResourceTypeToBrushConverter}}"/>
+			<Border Grid.Column="1"/>
+			<Border Grid.Column="1"
+					Background="{Binding Name, Converter={StaticResource ResourceTypeToBrushConverter}}">
+				<Border.Opacity>
+					<Binding Path="IsSelected"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}"
+							 Converter="{StaticResource BoolToParameterConditionalConverter}"
+							 ConverterParameter="1:0" />
+				</Border.Opacity>
+			</Border>
+
+			<TextBlock Grid.Column="1"
+					   Text="{Binding Name, Converter={StaticResource ToUpperCaseConverter}}"
+					   Margin="5 5 10 5"
+					   TextAlignment="Center"
+					   FontFamily="Segoe UI"
+					   FontSize="14"
+					   VerticalAlignment="Center">
+				<TextBlock.Foreground>
+					<Binding Path="IsSelected"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}"
+							 Converter="{StaticResource BoolToParameterConditionalConverter}"
+							 ConverterParameter="#FFFFFF:#1FA3EB"/>
+				</TextBlock.Foreground>
+			</TextBlock>
+		</Grid>
+	</DataTemplate>
+
+	<Style x:Key="TrackBallLineStyle" TargetType="Polyline">
+		<Setter Property="Visibility" Value="Collapsed" />
+	</Style>
+
+	<Style x:Key="TrackBallInfoStyle" TargetType="telerik:TrackBallInfoControl">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:TrackBallInfoControl" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<DataTemplate x:Key="TrackBallTemplate">
+		<Ellipse Height="8"
+				 Width="8"
+				 Stroke="White"
+				 StrokeThickness="1"
+				 Fill="{Binding Series.Stroke}" />
+	</DataTemplate>
+
+	<Style TargetType="Thumb" x:Key="CustomSliderThumbStyle">
+		<Setter Property="IsTabStop" Value="True" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Background" Value="#DD828282" />
+		<Setter Property="Cursor" Value="SizeWE" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Thumb">
+					<Border x:Name="Border"
+							Background="{TemplateBinding Background}"
+							Width="5"
+							Margin="0">
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="Thumb" x:Key="CustomSliderSelectionMiddleThumbStyle">
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Thumb">
+					<Grid>
+						<Border BorderBrush="{TemplateBinding BorderBrush}"
+								Background="#331B1B1B" />
+                    </Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="CustomSliderTrackStyle" TargetType="ContentControl">
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Height" Value="45" />
+	</Style>
+
+	<Style x:Key="DataBarAverageLabelStyle" TargetType="TextBlock">
+		<Setter Property="Foreground" Value="White" />
+	</Style>
+
+	<Style x:Key="DataBarMaximumLabelStyle" TargetType="TextBlock">
+		<Setter Property="Foreground" Value="#858585" />
+	</Style>
+</ResourceDictionary>

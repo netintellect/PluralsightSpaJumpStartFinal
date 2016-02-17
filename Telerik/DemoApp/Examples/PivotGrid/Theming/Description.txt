@@ -1,0 +1,1 @@
+﻿This example shows the RadPivotGrid nad RadPivotFieldList controls in all telerik themes. Just use the theme selector below.

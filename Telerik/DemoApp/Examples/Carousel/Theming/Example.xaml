@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Carousel.Theming.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:examples="clr-namespace:Telerik.Windows.Examples"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 mc:Ignorable="d">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Theming"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Background="White">
+		<Grid.Resources>
+			<DataTemplate x:Key="customItemTemplate">
+				<Border Width="190"
+						Height="160">
+					<Grid HorizontalAlignment="Center"
+						  VerticalAlignment="Center"
+						  Margin="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="85" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="20" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<TextBlock Grid.Column="0"
+								   Grid.Row="0"
+								   Text="First Name"
+                                   Margin="1,0,5,0"
+								   FontWeight="DemiBold">
+                            <TextBlock.TextDecorations>
+                                <TextDecoration Location="Underline" />
+                            </TextBlock.TextDecorations>
+                        </TextBlock>
+						<TextBlock Grid.Column="0"
+								   Grid.Row="1"
+								   Text="{Binding FirstName}"
+								   Margin="1,0,10,0" />
+						<TextBlock Grid.Column="1"
+								   Grid.Row="0"
+								   Text="Last Name"
+								   FontWeight="DemiBold">
+                            <TextBlock.TextDecorations>
+                                <TextDecoration Location="Underline" />
+                            </TextBlock.TextDecorations>
+                        </TextBlock>
+						<TextBlock Grid.Column="1"
+								   Grid.Row="1"
+								   Text="{Binding LastName}" />
+					</Grid>
+				</Border>
+			</DataTemplate>
+		</Grid.Resources>
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+		<telerik:RadCarousel x:Name="sampleRadCarousel"
+							 ItemTemplate="{StaticResource customItemTemplate}"
+							 Background="Transparent"
+							 ItemsSource="{Binding EmployeesCollection}"
+							 HorizontalAlignment="Stretch"
+							 VerticalAlignment="Stretch" />
+	</Grid>
+</UserControl>

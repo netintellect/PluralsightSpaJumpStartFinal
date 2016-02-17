@@ -1,0 +1,331 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.TimeBar.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:example="clr-namespace:Telerik.Windows.Examples.ScheduleView.TimeBar" mc:Ignorable="d" d:DesignWidth="600"
+		d:DesignHeight="400">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="TimeBar Minimap for ScheduleView" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        <SolidColorBrush x:Key="StrongBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.StrongColor}" />
+        <SolidColorBrush x:Key="MainBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+        <SolidColorBrush x:Key="BasicBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.BasicColor}" />
+        <SolidColorBrush x:Key="MarkerBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MarkerColor}" />
+        <example:VisibleDaysConverter x:Key="VisibleDaysConverter" />
+
+		<example:TimeMarkerToIconConverter x:Key="TimeMarkerToIconConverter" />
+		<example:CategoryToIconConverter x:Key="CategoryToIconConverter" />
+
+		<telerik:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+		<telerik:InvertedNullToVisibilityConverter x:Key="InvertedNullToVisibilityConverter" />
+	</UserControl.Resources>
+
+	<UserControl.DataContext>
+		<example:RandomGeneratorViewModel RandomSeed="123" StartTime="1/1/2011 12:00:00 AM"
+				EndTime="12/31/2011 11:59:59 PM" CurrentTime="6/5/2011 10:00:00 AM">
+			<example:RandomGeneratorViewModel.Lipsum>Pellentesque dapibus congue neque, eu bibendum dui elementum sed. Integer porta suscipit venenatis. Quisque gravida, est in eleifend dignissim, sapien dui euismod erat, pulvinar eleifend leo risus sit amet massa. Suspendisse sit amet metus ut lorem hendrerit molestie sed eu justo. Mauris eu tristique ipsum. Vivamus sodales venenatis nibh quis suscipit. Nulla facilisi. Pellentesque purus risus, hendrerit at venenatis sit amet, fringilla et arcu. Donec luctus tincidunt iaculis. Integer sapien tortor, lacinia et mattis vitae, facilisis at massa. Vestibulum scelerisque euismod posuere. Etiam sed velit non velit hendrerit rutrum eget sed risus. Nullam blandit congue dapibus. Nullam risus velit, pretium vel pretium eu, bibendum in urna. Fusce non nulla eros, eu placerat mauris. Aenean lobortis vehicula mi, ac molestie nisi ornare dictum. Etiam nec dolor nisi. Mauris eleifend lacus vitae felis eleifend eget fringilla sem ultricies. Duis hendrerit dapibus consectetur. Phasellus ac lacus felis, quis pharetra risus. Donec enim magna, sollicitudin vitae dignissim sed, scelerisque quis leo. In hac habitasse platea dictumst. In eu purus augue, vel scelerisque velit. Vivamus nec magna ipsum. Donec porta tellus ac arcu congue pulvinar. Maecenas non tortor orci. In eu erat justo, ac pellentesque urna. Mauris rutrum arcu quis dui tincidunt semper. Aliquam ullamcorper nunc est. Proin suscipit faucibus varius. Quisque suscipit felis ut dolor rutrum convallis. In felis augue, interdum consequat lacinia id, dictum sit amet nisl. Vivamus adipiscing sodales quam, et suscipit mi adipiscing sollicitudin. Vestibulum volutpat dui in massa scelerisque accumsan. Proin ac odio non nisi ornare semper. Morbi sapien ante, pulvinar quis lobortis in, viverra porttitor lorem. Aenean pellentesque euismod risus eu porttitor. Donec lobortis volutpat suscipit.</example:RandomGeneratorViewModel.Lipsum>
+			<example:RandomGeneratorViewModel.Controls>RadComboBox, RadScheduleView, RadNumericUpDown, RadGridView, RadDocking, RadWindow, RadCharting, RadTimeBar, RadPanelBar, RadRibbonView, RadExpander</example:RandomGeneratorViewModel.Controls>
+			<example:RandomGeneratorViewModel.Actions>Bug, Feature, Help Article, Forum Post, Unit Test</example:RandomGeneratorViewModel.Actions>
+			<example:RandomGeneratorViewModel.ResourceTypes>
+				<scheduleView:ResourceType Name="Developer" DisplayName="Developer">
+					<scheduleView:Resource DisplayName="John" ResourceName="John" />
+					<scheduleView:Resource DisplayName="Smith" ResourceName="Smith" />
+					<scheduleView:Resource DisplayName="Bella" ResourceName="Bella" />
+					<scheduleView:Resource DisplayName="Bob" ResourceName="Bob" />
+					<scheduleView:Resource DisplayName="Patrick" ResourceName="Patrick" />
+					<scheduleView:Resource DisplayName="Simone" ResourceName="Simone" />
+					<scheduleView:Resource DisplayName="Mike" ResourceName="Mike" />
+					<scheduleView:Resource DisplayName="Jane" ResourceName="Jane" />
+				</scheduleView:ResourceType>
+			</example:RandomGeneratorViewModel.ResourceTypes>
+		</example:RandomGeneratorViewModel>
+	</UserControl.DataContext>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="200" />
+		</Grid.ColumnDefinitions>
+		<telerik:RadScheduleView x:Name="MinimapSchedule" ResourceTypesSource="{Binding ResourceTypes}"
+				AppointmentsSource="{Binding MinimapAppointments}" MinAppointmentHeight="5" Grid.ColumnSpan="2"
+				Margin="2 60 1 50" CurrentDate="{Binding ElementName=TimeBar,Path=VisiblePeriodStart}"
+				NavigationHeaderVisibility="Collapsed">
+			<telerik:RadScheduleView.ActiveViewDefinition>
+				<telerik:TimelineViewDefinition MinTimeRulerExtent="1" MaxTimeRulerExtent="Infinity" ShowTimeRuler="False"
+						StretchAppointments="True" StretchGroupHeaders="True">
+					<telerik:TimelineViewDefinition.MajorTickLength>
+						<example:OneYearTick />
+					</telerik:TimelineViewDefinition.MajorTickLength>
+					<telerik:TimelineViewDefinition.MinorTickLength>
+						<example:OneYearTick />
+					</telerik:TimelineViewDefinition.MinorTickLength>
+				</telerik:TimelineViewDefinition>
+			</telerik:RadScheduleView.ActiveViewDefinition>
+			<telerik:RadScheduleView.AppointmentStyleSelector>
+				<example:SingleStyleSelector>
+					<Style TargetType="telerik:AppointmentItem">
+						<Setter Property="Margin" Value="1 0" />
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="telerik:AppointmentItem">
+									<Grid>
+										<Rectangle
+												Fill="{Binding Appointment.Category.CategoryBrush, FallbackValue=LightGray}" />
+										<Rectangle
+												Fill="{Binding Appointment.TimeMarker.TimeMarkerBrush, FallbackValue=DarkGray}"
+												Height="2" VerticalAlignment="Bottom" />
+									</Grid>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</example:SingleStyleSelector>
+			</telerik:RadScheduleView.AppointmentStyleSelector>
+			<telerik:RadScheduleView.GroupDescriptionsSource>
+				<scheduleView:GroupDescriptionCollection>
+					<scheduleView:ResourceGroupDescription ResourceType="Developer" />
+				</scheduleView:GroupDescriptionCollection>
+			</telerik:RadScheduleView.GroupDescriptionsSource>
+			<telerik:RadScheduleView.GroupHeaderStyleSelector>
+				<example:SingleStyleSelector>
+					<Style TargetType="telerik:GroupHeader" BasedOn="{StaticResource GroupHeaderBaseStyle}">
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="telerik:GroupHeader">
+									<Rectangle />
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</example:SingleStyleSelector>
+			</telerik:RadScheduleView.GroupHeaderStyleSelector>
+		</telerik:RadScheduleView>
+		<telerik:RadTimeBar x:Name="TimeBar" Margin="2" Grid.ColumnSpan="2"
+				 Background="Transparent" PeriodStart="1/1/2011 12:00:00 AM"
+				PeriodEnd="12/31/2011 11:59:59 PM" VisiblePeriodStart="5/1/2011 12:00:00 AM"
+				VisiblePeriodEnd="7/30/2011 11:59:59 PM" SelectionStart="6/2/2011 10:00:00 AM"
+				SelectionEnd="6/9/2011 10:00:00 AM" MinSelectionRange="1.00:00:00" MaxSelectionRange="31.00:00:00"
+				MinZoomRange="31.00:00:00" IsSnapToIntervalEnabled="True"
+				VisiblePeriodChanged="TimeBar_VisiblePeriodChanged">
+
+			<telerik:RadTimeBar.Intervals>
+				<telerik:YearInterval />
+				<telerik:MonthInterval />
+				<telerik:WeekInterval />
+				<telerik:DayInterval />
+			</telerik:RadTimeBar.Intervals>
+
+		</telerik:RadTimeBar>
+		<telerik:RadScheduleView x:Name="MainSchedule" Grid.Row="1" Margin="2" TimeMarkersSource="{Binding TimeMarkers}"
+				CategoriesSource="{Binding Categories}"  MinAppointmentHeight="10"
+				NavigationHeaderVisibility="Collapsed" AppointmentsSource="{Binding Appointments}" AppointmentCreated="MainSchedule_AppointmentCreated"
+				ResourceTypesSource="{Binding ResourceTypes}" AppointmentDeleted="MainSchedule_AppointmentDeleted" AppointmentEdited="MainSchedule_AppointmentEdited"
+				CurrentDate="{Binding ElementName=TimeBar, Path=SelectionStart}" SelectedAppointment="{Binding SelectedAppointment, Mode=TwoWay}">
+
+			<telerik:RadScheduleView.ActiveViewDefinition>
+				<telerik:TimelineViewDefinition MinTimeRulerExtent="1" MaxTimeRulerExtent="Infinity"
+						VisibleDays="{Binding ElementName=TimeBar, Path=Selection, Converter={StaticResource VisibleDaysConverter}}"
+						StretchAppointments="True" StretchGroupHeaders="True" />
+			</telerik:RadScheduleView.ActiveViewDefinition>
+
+			<telerik:RadScheduleView.AppointmentItemContentTemplate>
+				<DataTemplate>
+					<StackPanel Margin="4 2">
+						<TextBlock Text="{Binding Subject}" FontWeight="Bold" />
+						<TextBlock Text="{Binding Appointment.Body}" TextWrapping="Wrap" />
+					</StackPanel>
+				</DataTemplate>
+			</telerik:RadScheduleView.AppointmentItemContentTemplate>
+			<telerik:RadScheduleView.GroupDescriptionsSource>
+				<scheduleView:GroupDescriptionCollection>
+					<scheduleView:ResourceGroupDescription ResourceType="Developer" />
+				</scheduleView:GroupDescriptionCollection>
+			</telerik:RadScheduleView.GroupDescriptionsSource>
+			<telerik:RadScheduleView.GroupHeaderContentTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding FormattedName}" Width="50" Margin="8 0" VerticalAlignment="Center" />
+				</DataTemplate>
+			</telerik:RadScheduleView.GroupHeaderContentTemplate>
+			<telerik:RadScheduleView.TimeRulerItemStyleSelector>
+				<example:GroupItemStyleSelector>
+					<example:GroupItemStyleSelector.DefaultStyle>
+						<Style TargetType="Control">
+							<Setter Property="Width" Value="1" />
+							<Setter Property="Height" Value="0" />
+						</Style>
+					</example:GroupItemStyleSelector.DefaultStyle>
+					<example:GroupItemStyleSelector.GroupItemStyle>
+						<Style TargetType="telerik:TimeRulerGroupItem">
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="telerik:TimeRulerGroupItem">
+										<Border BorderBrush="{StaticResource BasicBrush}" BorderThickness="1 1 0 0">
+											<ContentPresenter Margin="4 2" />
+										</Border>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</example:GroupItemStyleSelector.GroupItemStyle>
+					<example:GroupItemStyleSelector.TimeRulerLineStyle>
+						<Style TargetType="Control">
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Control">
+										<Border BorderBrush="{StaticResource BasicBrush}" BorderThickness="1 0 0 0" />
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</example:GroupItemStyleSelector.TimeRulerLineStyle>
+				</example:GroupItemStyleSelector>
+			</telerik:RadScheduleView.TimeRulerItemStyleSelector>
+		</telerik:RadScheduleView>
+
+		<Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="{StaticResource BasicBrush}" Margin="2">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+                <telerik:RadTransitionControl Content="{Binding SelectedAppointment, Mode=TwoWay}" Duration="0:0:0.3">
+					<telerik:RadTransitionControl.Transition>
+						<telerik:FadeTransition />
+					</telerik:RadTransitionControl.Transition>
+					<telerik:RadTransitionControl.ContentTemplate>
+						<DataTemplate>
+							<Grid>
+								<StackPanel Margin="4 4 4 8">
+									<TextBlock Text="Selected Owner" Margin="4 2"
+											Foreground="{StaticResource StrongBrush}" />
+									<TextBlock Text="{Binding Path=Resources[0].DisplayName}" Margin="4 0" FontSize="16"
+											Foreground="{StaticResource AccentBrush}" />
+									<TextBlock Text="Time Range" Margin="4 2" Foreground="{StaticResource StrongBrush}" />
+									<StackPanel Orientation="Horizontal" Margin="4 0">
+										<TextBlock Text="{Binding Path=Start, StringFormat='MMM dd'}"
+												FontWeight="SemiBold" Foreground="{StaticResource AccentBrush}" />
+										<TextBlock Text=" - " Foreground="{StaticResource AccentBrush}" />
+                                        <TextBlock Text="{Binding Path=End, StringFormat='MMM dd, yyyy'}"
+												FontWeight="SemiBold" Foreground="{StaticResource AccentBrush}" />
+									</StackPanel>
+
+									<Grid Margin="2">
+										<Border Background="{Binding Category.CategoryBrush}" Padding="2 0"
+												Margin="0 0 0 4">
+											<TextBlock Text="{Binding Subject}" Foreground="{StaticResource MainBrush}" />
+										</Border>
+										<Rectangle Height="3" VerticalAlignment="Bottom"
+												Fill="{Binding TimeMarker.TimeMarkerBrush}" />
+									</Grid>
+
+									<Grid Margin="4">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="Auto" />
+											<ColumnDefinition Width="*" />
+										</Grid.ColumnDefinitions>
+
+										<Image Grid.Row="0" Grid.Column="0" Width="12" Height="12" Margin="0 0 4 0"
+												Source="{Binding TimeMarker, Converter={StaticResource TimeMarkerToIconConverter}}"
+												Stretch="None" />
+										<TextBlock Grid.Row="0" Grid.Column="1"
+												Text="{Binding TimeMarker.TimeMarkerName}" VerticalAlignment="Center" />
+
+										<Image Grid.Row="1" Grid.Column="0" Width="12" Height="12" Margin="0 0 4 0"
+												Source="{Binding Category, Converter={StaticResource CategoryToIconConverter}}"
+												Stretch="None" />
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Category.CategoryName}"
+												VerticalAlignment="Center" />
+									</Grid>
+
+                                    <TextBlock Text="{Binding Body}" Margin="4" TextWrapping="Wrap"
+											Foreground="{StaticResource StrongBrush}" />
+
+								</StackPanel>
+								<Border Background="{StaticResource MainBrush}"
+										Visibility="{Binding Converter={StaticResource InvertedNullToVisibilityConverter}}">
+									<TextBlock Text="Select a Task to view its details."
+											Foreground="{StaticResource StrongBrush}" Margin="5 40"
+											HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" />
+								</Border>
+							</Grid>
+						</DataTemplate>
+					</telerik:RadTransitionControl.ContentTemplate>
+				</telerik:RadTransitionControl>
+
+				<Border Grid.Row="1" Background="{StaticResource BasicBrush}" Padding="4 2 4 8">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="20" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="20" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Grid.Row="0" Grid.ColumnSpan="4" Margin="4" Text="By Status" FontWeight="SemiBold"
+								Foreground="{StaticResource MarkerBrush}" />
+
+						<Image Grid.Row="1" Grid.Column="0" Width="12" Height="12" Margin="4"
+								Source="/ScheduleView;component/Images/ScheduleView/TimeBar/Completed.png"
+								Stretch="None" />
+						<Image Grid.Row="1" Grid.Column="2" Width="12" Height="12" Margin="4"
+								Source="/ScheduleView;component/Images/ScheduleView/TimeBar/InProgress.png"
+								Stretch="None" />
+						<Image Grid.Row="2" Grid.Column="0" Width="12" Height="12" Margin="4"
+								Source="/ScheduleView;component/Images/ScheduleView/TimeBar/NotStarted.png"
+								Stretch="None" />
+
+						<TextBlock Grid.Row="1" Grid.Column="1" Text="Completed" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="1" Grid.Column="3" Text="In Progress" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="2" Grid.Column="1" Text="Not Started" VerticalAlignment="Center" />
+
+						<TextBlock Grid.Row="3" Grid.ColumnSpan="4" Margin="4" Text="By Priority"
+								FontWeight="SemiBold" Foreground="{StaticResource MarkerBrush}" />
+
+						<Image Grid.Row="4" Grid.Column="0" Width="12" Height="12" Margin="0"
+								Source="/ScheduleView;component/Images/ScheduleView/TimeBar/Normal.png" Stretch="None" />
+						<Image Grid.Row="4" Grid.Column="2" Width="12" Height="12" Margin="4"
+								Source="/ScheduleView;component/Images/ScheduleView/TimeBar/HighPriority.png"
+								Stretch="None" />
+
+						<TextBlock Grid.Row="4" Grid.Column="1" Text="Normal" VerticalAlignment="Center" />
+						<TextBlock Grid.Row="4" Grid.Column="3" Text="High Priority" VerticalAlignment="Center" />
+					</Grid>
+				</Border>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

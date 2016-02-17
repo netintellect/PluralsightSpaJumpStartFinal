@@ -1,0 +1,3 @@
+﻿RadMap provides support for stunning map overlays through its ESRI Shapefile Import feature. 
+
+This example demonstrates the usage of custom shapefile to represent hotel floor plan and allows you to manage the data interactively on the map itself.

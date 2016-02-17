@@ -1,0 +1,16 @@
+System.XAML
+System
+System.Data
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls
+Telerik.Windows.Controls.Chart
+Telerik.Windows.Controls.DataVisualization
+Telerik.Windows.Controls.GridView
+Telerik.Windows.Controls.RibbonView
+Telerik.Windows.Data
+WindowsBase
+PresentationCore
+PresentationFramework

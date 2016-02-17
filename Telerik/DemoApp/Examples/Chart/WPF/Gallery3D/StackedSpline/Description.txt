@@ -1,0 +1,1 @@
+﻿This example shows a 3D stacked spline chart. There are two DataSeries with Definition property set to an instance of StackedSpline3DSeriesDefinition.

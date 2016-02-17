@@ -1,0 +1,104 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:example="clr-namespace:Telerik.Windows.Examples.DragAndDrop.FirstLook"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.DragAndDrop.FirstLook"
+			 x:Class="Telerik.Windows.Examples.DragAndDrop.FirstLook.Example"
+			 VerticalAlignment="Center" HorizontalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Drag and Drop" Margin="8"  />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <local:MainViewModel x:Key="ViewModel"/>
+        <DataTemplate x:Key="ApplicationDragTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Width="700" Height="450">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="allApplicationsBox" Margin="0,0,3,0"
+				 ItemsSource="{Binding AllApplications, Source={StaticResource ViewModel}}"
+				 AllowDrop="True" Background="Transparent"
+                 telerik:TouchManager.IsTouchHitTestVisible="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" HorizontalAlignment="Center"
+							   Source="{Binding IconPath}" Width="32" Height="32"
+							   Margin="0 0 5 0" />
+                        <TextBlock Grid.Row="1" Text="{Binding Name}" FontWeight="Bold"
+								   HorizontalAlignment="Center" Foreground="#FF767676"/>
+                        <TextBlock Text="{Binding Author}" Grid.Row="2"
+								   HorizontalAlignment="Center" Foreground="#FF767676"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource ListBoxItemStyle}">
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Foreground" Value="#000000" />
+                    <Setter Property="telerik:DragDropManager.AllowDrag" Value="True" />
+                    <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+                    <Setter Property="telerik:DragDropManager.TouchDragTrigger" Value="TapAndHold"/>
+
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <telerik:ListBoxDragDrop.Behavior>
+                <telerik:ListBoxDragDropBehavior />
+            </telerik:ListBoxDragDrop.Behavior>
+            <telerik:ListBoxDragDrop.DragVisualProvider>
+                <local:DragVisualProvider DraggedItemTemplate="{StaticResource ApplicationDragTemplate}"/>
+            </telerik:ListBoxDragDrop.DragVisualProvider>
+        </ListBox>
+        <ListBox x:Name="myApplicationsBox" Background="Transparent" Grid.Column="1"
+				 ItemsSource="{Binding MyApplications, Source={StaticResource ViewModel}}"
+				 AllowDrop="True"
+				 telerik:TouchManager.IsTouchHitTestVisible="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="{Binding IconPath}" 
+							   HorizontalAlignment="Center" />
+                        <TextBlock Text="{Binding Name}" Foreground="#FF767676" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource ListBoxItemStyle}">
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Foreground" Value="#000000" />
+                    <Setter Property="telerik:DragDropManager.AllowDrag" Value="True" />
+                    <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+                    <Setter Property="telerik:DragDropManager.TouchDragTrigger" Value="TapAndHold"/>
+
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <telerik:RadUniformGrid Columns="4" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <telerik:ListBoxDragDrop.Behavior>
+                <telerik:ListBoxDragDropBehavior />
+            </telerik:ListBoxDragDrop.Behavior>
+            <telerik:ListBoxDragDrop.DragVisualProvider>
+                <local:DragVisualProvider DraggedItemTemplate="{StaticResource ApplicationDragTemplate}"/>
+            </telerik:ListBoxDragDrop.DragVisualProvider>
+        </ListBox>
+    </Grid>
+</UserControl>

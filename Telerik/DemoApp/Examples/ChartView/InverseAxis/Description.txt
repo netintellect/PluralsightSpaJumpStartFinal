@@ -1,0 +1,1 @@
+﻿The example demonstrates RadChartView's support for inverse axes. Here the inverse axes are used to achieve a more readable output, since the data represents depth of wells drilled to acquire different resource types.

@@ -1,0 +1,1 @@
+﻿The RadPivotGrid has been designed to rely on a customizable grouping engine.<br/><br/>You can extend the default group descriptions and implement your own logic.<br/><br>In this example the source data provider has been extended to create custom groups for products. The group Names for Products will contain only the first letter of the Product.

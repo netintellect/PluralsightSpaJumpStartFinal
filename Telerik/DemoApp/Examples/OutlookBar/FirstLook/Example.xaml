@@ -1,0 +1,208 @@
+<UserControl
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.OutlookBar.FirstLook.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.OutlookBar.FirstLook"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Telerik Web Mail" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot" Width="766" Height="460">
+        <Grid.Resources>
+
+            <Storyboard x:Key="MailMessageSelected">
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="businessCard"
+								Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Collapsed</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="mailMessageCard"
+								Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Visible</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="mailMessageCard"
+								Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                    <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="businessCard"
+								Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                    <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="BusinessCardSelected">
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="businessCard"
+								Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Visible</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="mailMessageCard"
+								Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Collapsed</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="mailMessageCard"
+								Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                    <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+								Storyboard.TargetName="businessCard"
+								Storyboard.TargetProperty="(UIElement.Opacity)">
+                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                    <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
+ 
+        <Grid Margin="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadOutlookBar x:Name="outlookBar" Width="250"  MaxWidth="760"
+                            IsMinimized="{Binding ElementName=isMinimizedCheckBox, Path=IsChecked, Mode=TwoWay}"
+                            IsMinimizable="{Binding ElementName=isMinimizableCheckBox, Path=IsChecked, Mode=TwoWay}"
+                            IsVerticalResizerVisible="{Binding ElementName=isVerticalResizerVisibleCheckBox, Path=IsChecked, Mode=TwoWay}"
+							SelectionChanged="outlookBar_SelectionChanged" HorizontalAlignment="Stretch">
+
+                <telerik:RadOutlookBarItem Header="Mail" FontWeight="Bold"
+								Icon="../Images/OutlookBar/mailBig.png"
+								SmallIcon="../Images/OutlookBar/mailSmall.png"
+								Tag="Mail">
+                    <telerik:RadTreeView IsLineEnabled="True" 
+									x:Name="foldersTreeView" 
+									SelectionChanged="foldersTreeView_SelectionChanged">
+                        <telerik:RadTreeViewItem Header="Personal Folders"
+										DefaultImageSrc="../Images/OutlookBar/1PersonalFolders.png"
+										IsExpanded="True">
+                            <telerik:RadTreeViewItem Header="Deleted Items"
+											DefaultImageSrc="../Images/OutlookBar/2DeletedItems.png" />
+                            <telerik:RadTreeViewItem Header="Drafts"
+											DefaultImageSrc="../Images/OutlookBar/3Drafts.png" />
+                            <telerik:RadTreeViewItem x:Name="MessagesTreeView" Header="Inbox(3)"
+											DefaultImageSrc="../Images/OutlookBar/4Inbox.png"
+											IsExpanded="True"
+											
+											Loaded="RadTreeViewItem_Loaded">
+                                <telerik:RadTreeViewItem.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="../Images/OutlookBar/letter.png" />
+                                            <TextBlock Text="{Binding From}"
+															Margin="9 0 0 0" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:RadTreeViewItem.ItemTemplate>
+                            </telerik:RadTreeViewItem>
+                            <telerik:RadTreeViewItem Header="Junk E-mails"
+											DefaultImageSrc="../Images/OutlookBar/junk.png" />
+                            <telerik:RadTreeViewItem Header="Outbox"
+											DefaultImageSrc="../Images/OutlookBar/outbox.png" />
+                            <telerik:RadTreeViewItem Header="Sent Items"
+											DefaultImageSrc="../Images/OutlookBar/sent.png" />
+                        </telerik:RadTreeViewItem>
+                    </telerik:RadTreeView>
+                </telerik:RadOutlookBarItem>
+
+                <telerik:RadOutlookBarItem Header="Calendar" FontWeight="Bold"
+								Icon="../Images/OutlookBar/calendarBig.png"
+								SmallIcon="../Images/OutlookBar/calendarSmall.png">
+                    <telerik:RadCalendar VerticalAlignment="Top" Margin="3" />
+                </telerik:RadOutlookBarItem>
+
+                <telerik:RadOutlookBarItem Header="Contacts" FontWeight="Bold"
+								Icon="../Images/OutlookBar/contactsBig.png"
+								SmallIcon="../Images/OutlookBar/contactsSmall.png"
+								Tag="Contacts">
+                    <ListBox x:Name="ContactsListBox" BorderBrush="{x:Null}"
+									BorderThickness="0" Margin="0 15 0 0"
+									SelectionChanged="ContactsListBox_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="14 3 14 0">
+                                    <Image Source="../Images/OutlookBar/contact.png" />
+                                    <TextBlock Text="{Binding FirstName}" Margin="10 0 0 0"
+													VerticalAlignment="Center" Foreground="#333333" />
+                                    <TextBlock Text="{Binding LastName}" Margin="2 0 0 0"
+													VerticalAlignment="Center" Foreground="#333333"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </telerik:RadOutlookBarItem>
+
+                <telerik:RadOutlookBarItem Header="Tasks" FontWeight="Bold"
+								Icon="../Images/OutlookBar/tasksBig.png"
+								SmallIcon="../Images/OutlookBar/tasksSmall.png">
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"
+									Margin="15 5">
+                        <RadioButton Content="To-Do List" IsChecked="True" Margin="0 5 0 5" />
+                        <RadioButton Content="Simple List" Margin="0 5 0 5" />
+                        <RadioButton Content="Detailed List" Margin="0 5 0 5" />
+                        <RadioButton Content="Active Tasks" Margin="0 5 0 5" />
+                        <RadioButton Content="Next Seven Days" Margin="0 5 0 5" />
+                        <RadioButton Content="Overdue Tasks" Margin="0 5 0 5" />
+                    </StackPanel>
+                </telerik:RadOutlookBarItem>
+            </telerik:RadOutlookBar>
+
+            <Border BorderBrush="#FFd6d4d4" BorderThickness="1" Grid.Column="1"
+							Background="White" Margin="6 0 0 0">
+                <Border BorderBrush="White" BorderThickness="1">
+                    <Grid>
+                        <local:BusinessCard x:Name="businessCard" />
+                        <local:MailMessage x:Name="mailMessageCard"
+										DataContext="{Binding Path=SelectedItem, ElementName=foldersTreeView}" />
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+    </Grid>
+
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <CheckBox x:Name="isMinimizableCheckBox" IsChecked="True" Content="IsMinimizable" Margin="0 2" />
+            <CheckBox x:Name="isMinimizedCheckBox" IsEnabled="{Binding ElementName=isMinimizableCheckBox, Path=IsChecked}" Content="IsMinimized" Margin="0 2" />
+            <CheckBox x:Name="isVerticalResizerVisibleCheckBox" IsChecked="True" Content="IsVerticalResizerVisible" Margin="0 2" />
+            <StackPanel Margin="0 10 0 2">
+                <TextBlock Text="MinimizedWidth:" Margin="0 0 0 2" />
+                <telerik:RadNumericUpDown Minimum="30" Maximum="100" ValueChanged="RadNumericUpDown_ValueChanged"/>
+            </StackPanel>
+            <StackPanel  Margin="0 10 0 2">
+                <TextBlock Text="MinimizedWidthThreshold:" Margin="0 0 0 2" />
+                <telerik:RadNumericUpDown Minimum="34" Maximum="100" ValueChanged="RadNumericUpDown_ValueChanged_1"/>
+            </StackPanel>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

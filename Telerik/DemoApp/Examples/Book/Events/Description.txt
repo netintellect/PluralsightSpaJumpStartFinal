@@ -1,0 +1,1 @@
+﻿RadBook's rich events list allow you to monitor everything that is happening within the control and take appropriate action.

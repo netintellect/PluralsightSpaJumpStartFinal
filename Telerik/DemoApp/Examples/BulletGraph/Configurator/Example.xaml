@@ -1,0 +1,204 @@
+<UserControl x:Class="Telerik.Windows.Examples.BulletGraph.Configurator.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.BulletGraph.Configurator"
+    mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Bullet Graphs" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Height="430"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Margin="30,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadHorizontalBulletGraph Name="RadHorizontalBulletGraph"
+                                                  Grid.Column="1" Height="50" Margin="30,0,0,0"
+                                                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                  AutoRange="false" Minimum="0" Maximum="100"
+                                                  FeaturedMeasure="{Binding FeaturedMeasure}"
+                                                  ComparativeMeasure="{Binding ComparativeMeasure}"
+                                                  ProjectedValue ="{Binding ProjectedMeasure}">
+                <telerik:RadHorizontalBulletGraph.QualitativeRanges>
+                    <telerik:QualitativeRange Value="{Binding Range1Value}"
+                                                  Brush="{Binding Path=QualityPoorBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <telerik:QualitativeRange Value="{Binding Range2Value}"
+                                                  Brush="{Binding Path=QualitySatisfactoryBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <telerik:QualitativeRange Brush="{Binding Path=QualityGoodBrush, ElementName=RadHorizontalBulletGraph}" />
+                </telerik:RadHorizontalBulletGraph.QualitativeRanges>
+            </telerik:RadHorizontalBulletGraph>
+
+            <StackPanel Grid.Column="1" 
+                            VerticalAlignment="Top" HorizontalAlignment="Right"
+                            Orientation="Vertical" Background="#11000000">
+                <StackPanel.Resources>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Orientation" Value="Horizontal" />
+                    </Style>
+                    <Style TargetType="Rectangle">
+                        <Setter Property="Stroke" Value="Black" />
+                        <Setter Property="Width" Value="15" />
+                        <Setter Property="Height" Value="15" />
+                        <Setter Property="Margin" Value="5,2,0,2" />
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter  Property="Margin" Value="5" />
+                        <Setter Property="FontSize" Value="10" />
+                    </Style>
+                </StackPanel.Resources>
+                <StackPanel>
+                    <Rectangle Fill="{Binding Path=QualityPoorBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <TextBlock Text="Poor" />
+                </StackPanel>
+                <StackPanel>
+                    <Rectangle Fill="{Binding Path=QualitySatisfactoryBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <TextBlock Text="Satisfactory" />
+                </StackPanel>
+                <StackPanel>
+                    <Rectangle Fill="{Binding Path=QualityGoodBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <TextBlock Text="Good" />
+                </StackPanel>
+            </StackPanel>
+
+            <telerik:RadVerticalBulletGraph Grid.Column="0" Width="60"
+                                                AutoRange="false" Minimum="0" Maximum="100"
+                                                FeaturedMeasure="{Binding FeaturedMeasure}"
+                                                ComparativeMeasure="{Binding ComparativeMeasure}"
+                                                ProjectedValue="{Binding ProjectedMeasure}"
+                                                VerticalAlignment="Stretch"
+                                                HorizontalAlignment="Center">
+                <telerik:RadVerticalBulletGraph.QualitativeRanges>
+                    <telerik:QualitativeRange Value="{Binding Range1Value}"
+                                                  Brush="{Binding Path=QualityPoorBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <telerik:QualitativeRange Value="{Binding Range2Value}"
+                                                  Brush="{Binding Path=QualitySatisfactoryBrush, ElementName=RadHorizontalBulletGraph}" />
+                    <telerik:QualitativeRange Brush="{Binding Path=QualityGoodBrush, ElementName=RadHorizontalBulletGraph}" />
+                </telerik:RadVerticalBulletGraph.QualitativeRanges>
+            </telerik:RadVerticalBulletGraph>
+        </Grid>
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+		
+        <StackPanel HorizontalAlignment="Stretch">
+			<StackPanel.Resources>
+				<Style TargetType="TextBox" BasedOn="{StaticResource QSFExampleTextBoxStyle}">
+					<Setter Property="HorizontalContentAlignment" Value="Right"/>
+				</Style>
+			</StackPanel.Resources>
+            <!--  Feature  -->
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="Featured:" VerticalAlignment="Center"/>
+                <TextBox Margin="5,0,0,0" Text="{Binding Path=FeaturedMeasure, Mode=TwoWay}" />
+            </StackPanel>
+
+			<Grid Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+                <TextBlock Text="0" Width="10" />
+                <telerik:RadSlider Grid.Column="1"
+                                   Minimum="0"
+                                   Maximum="100"
+                                   SmallChange="1"
+                                   TickFrequency="5"
+                                   IsSnapToTickEnabled="True"
+                                   Value="{Binding Path=FeaturedMeasure, Mode=TwoWay}" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Grid.Column="2" Text="100" />
+            </Grid>
+
+            <!--  Comparative  -->
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock VerticalAlignment="Center" Text="Comparative:"/>
+                <TextBox Margin="5,0,0,0" Text="{Binding Path=ComparativeMeasure, Mode=TwoWay}" />
+            </StackPanel>
+
+            <Grid Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" Text="0" Width="10" />
+                <telerik:RadSlider Grid.Column="1"
+                                   Minimum="0"
+                                   Maximum="100"
+                                   TickFrequency="5"
+                                   IsSnapToTickEnabled="True"
+                                   Value="{Binding Path=ComparativeMeasure, Mode=TwoWay}"
+                                   VerticalAlignment="Center" />
+                <TextBlock VerticalAlignment="Center" Text="100" Grid.Column="2" />
+			</Grid>
+
+
+            <!--  Projected  -->
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock VerticalAlignment="Center" Text="Projected:" />
+                <TextBox Margin="5,0,0,0" Text="{Binding Path=ProjectedMeasure, Mode=TwoWay}" />
+            </StackPanel>
+
+            <Grid Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+                <TextBlock Text="0" Width="10" />
+                <telerik:RadSlider Grid.Column="1"
+                                   Minimum="0"
+                                   Maximum="100"
+                                   TickFrequency="5"
+                                   IsSnapToTickEnabled="True"
+                                   Value="{Binding Path=ProjectedMeasure, Mode=TwoWay}"
+                                   VerticalAlignment="Center" />
+                <TextBlock Grid.Column="2" Text="100" />
+			</Grid>
+
+
+            <!--  Select Ranges  -->
+			<StackPanel Margin="0,20,0,0" Orientation="Horizontal">
+				<TextBlock VerticalAlignment="Center" Text="Range 1:"/>
+				<TextBox x:Name="Range1Textbox" Margin="5,0,0,0" Text="{Binding Path=Range1Value, Mode=TwoWay}" />
+			</StackPanel>
+			<StackPanel Margin="0,5,0,0" Grid.Column="1" Orientation="Horizontal">
+				<TextBlock VerticalAlignment="Center" Text="Range 2:"/>
+				<TextBox Margin="5,0,0,0" x:Name="Range2Textbox"  Text="{Binding Path=Range2Value, Mode=TwoWay}" />
+			</StackPanel>
+
+            <Grid Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+                <TextBlock Text="0" Width="10" />
+                <telerik:RadSlider Grid.Column="1"
+                                   Minimum="0"
+                                   Maximum="100"
+                                   TickFrequency="5"
+                                   IsSnapToTickEnabled="True"
+                                   IsSelectionRangeEnabled="True"
+                                   SelectionEnd="{Binding Path=Range2Value, Mode=TwoWay}"
+                                   SelectionStart="{Binding Path=Range1Value, Mode=TwoWay}"
+                                   VerticalAlignment="Center" />
+                <TextBlock Text="100" Grid.Column="2"/>
+            </Grid>
+
+            <!--  Reset Button  -->
+            <telerik:RadButton Margin="0,10" Content="Reset" Command="{Binding ResetCommand}" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

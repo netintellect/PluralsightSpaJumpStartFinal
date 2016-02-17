@@ -1,0 +1,209 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.HotSpot.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:examples="clr-namespace:Telerik.Windows.Examples.Map"
+             xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.HotSpot">
+    <UserControl.Resources>
+        <example:ExampleViewModel x:Key="ViewModel" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource ViewModel}">
+        <telerik:RadMap x:Name="RadMap1" 
+					Center="37.6841881182094,-122.073445703735"
+					ZoomLevel="14" Provider="{Binding Provider}">
+            <telerik:InformationLayer Name="informationLayer">
+                <Border telerik:MapLayer.Location="37.6841881182094,-122.073445703735" 
+						Background="#00FFFFFF">
+                    <telerik:MapLayer.HotSpot>
+                        <telerik:HotSpot X="0.5" Y="0.5" ElementName="PART_LocationImage" />
+                    </telerik:MapLayer.HotSpot>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28" />
+                            <ColumnDefinition Width="28" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="28" />
+                        </Grid.RowDefinitions>
+                        <Path Fill="Blue" Name="PART_LocationImage">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <EllipseGeometry Center="14,14" RadiusX="4" RadiusY="4" />
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Grid>
+                </Border>
+
+                <Border Name="hotSpotElement" 
+						telerik:MapLayer.Location="37.6841881182094,-122.073445703735" 
+						Background="#7FFFFFFF"
+						BorderBrush="Red"
+						BorderThickness="1">
+                    <telerik:MapLayer.HotSpot>
+                        <telerik:HotSpot x:Name="hotSpot" 
+                                         XUnits="{Binding HotSpotUnits, Source={StaticResource ViewModel}}" 
+                                         YUnits="{Binding HotSpotUnits, Source={StaticResource ViewModel}}" 
+                                         X="{Binding HotSpotX, Source={StaticResource ViewModel}, Mode=TwoWay}" 
+                                         Y="{Binding HotSpotY, Source={StaticResource ViewModel}, Mode=TwoWay}" 
+                                         ElementName="PART_Image" />
+                    </telerik:MapLayer.HotSpot>
+                    <Grid ShowGridLines="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28" />
+                            <ColumnDefinition Width="28" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="28" />
+                        </Grid.RowDefinitions>
+
+                        <Path Fill="Red" Name="PART_Image" 
+                              Grid.Row="{Binding HotSpotGridRow, Source={StaticResource ViewModel}}"
+                              Grid.Column="{Binding HotSpotGridColumn, Source={StaticResource ViewModel}}"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center">
+                            <Path.Data>
+                                <GeometryGroup>
+                                    <EllipseGeometry Center="14,14" RadiusX="10" RadiusY="10" />
+                                    <EllipseGeometry Center="14,14" RadiusX="14" RadiusY="14" />
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                    </Grid>
+                </Border>
+            </telerik:InformationLayer>
+        </telerik:RadMap>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3" DataContext="{StaticResource ViewModel}">
+            <StackPanel.Resources>
+                <ResourceDictionary>
+                    <examples:SolidBrushItemsSource x:Key="SolidBrushSource" />
+                </ResourceDictionary>
+            </StackPanel.Resources>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+						   Text="Image Location" Margin="0,0,0,5" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Column:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotColumn" UpdateValueEvent="PropertyChanged"
+										Grid.Row="1" Grid.Column="1" 
+										Minimum="0" Maximum="1" 
+										IsInteger="True"
+										Value="{Binding HotSpotGridColumn, Mode=TwoWay}"
+										SmallChange="1" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Row:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotRow" UpdateValueEvent="PropertyChanged"
+										Grid.Row="2" Grid.Column="1" 
+										Minimum="0" Maximum="1" 
+										IsInteger="True"
+                                        Value="{Binding HotSpotGridRow, Mode=TwoWay}"
+										SmallChange="1" />
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="Hotspot Parameters" Margin="0,10,0,0" />
+
+                <RadioButton Name="fractionUnit" 
+							 Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+							 GroupName="XUnit"
+                             IsChecked="{Binding HotSpotFractionEnabled, Mode=TwoWay}"
+                             Command="{Binding ChangeHotSpotCommand}"
+                             CommandParameter="Fraction"
+							 Content="Fraction" Margin="0,2" />
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="X:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotXFraction" UpdateValueEvent="PropertyChanged" 
+										Grid.Row="5" Grid.Column="1" 
+										Minimum="0" Maximum="1" 
+                                          IsEnabled="{Binding HotSpotFractionEnabled}"
+										SmallChange="0.1"
+                                          Value="{Binding HotSpotXFraction, Mode=TwoWay}" />
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Y:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotYFraction" UpdateValueEvent="PropertyChanged"
+										Grid.Row="6" Grid.Column="1" 
+										Minimum="0" Maximum="1" 
+                                          IsEnabled="{Binding HotSpotFractionEnabled}"
+										SmallChange="0.1"
+                                          Value="{Binding HotSpotYFraction, Mode=TwoWay}" />
+
+                <RadioButton Name="pixelUnit" 
+							 Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+							 GroupName="XUnit"
+                             Command="{Binding ChangeHotSpotCommand}"
+                             CommandParameter="Pixel"
+                             IsChecked="{Binding HotSpotPixelsEnabled, Mode=TwoWay}"
+							 Content="Pixels" Margin="0,5" />
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="X:" VerticalAlignment="Center"/>
+                <telerik:RadNumericUpDown Name="hotSpotXPixels" UpdateValueEvent="PropertyChanged"
+										Grid.Row="8" Grid.Column="1"
+										Minimum="-30" Maximum="30" 
+										SmallChange="1"
+										LargeChange="3"
+                                          IsEnabled="{Binding HotSpotPixelsEnabled}"
+                                          Value="{Binding HotSpotXPixels, Mode=TwoWay}" />
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Y:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotYPixels" UpdateValueEvent="PropertyChanged"
+										Grid.Row="9" Grid.Column="1"
+										Minimum="-30" Maximum="30" 
+										SmallChange="1"
+										LargeChange="3"
+                                          IsEnabled="{Binding HotSpotPixelsEnabled}"
+                                          Value="{Binding HotSpotYPixels, Mode=TwoWay}" />
+
+                <RadioButton Name="innerPixelUnit" 
+							 Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+							 GroupName="XUnit"
+                             Command="{Binding ChangeHotSpotCommand}"
+                             CommandParameter="InnerPixel"
+                             IsChecked="{Binding HotSpotInnerPixelsEnabled, Mode=TwoWay}"
+							 Content="Inner Pixels" Margin="0,2" />
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="X:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotXInnerPixels" UpdateValueEvent="PropertyChanged"
+										Grid.Row="11" Grid.Column="1"
+										Minimum="-30" Maximum="30" 
+										SmallChange="1"
+										LargeChange="3"
+                                          IsEnabled="{Binding HotSpotInnerPixelsEnabled}"
+                                          Value="{Binding HotSpotXInnerPixels, Mode=TwoWay}" />
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="Y:" VerticalAlignment="Center" />
+                <telerik:RadNumericUpDown Name="hotSpotYInnerPixels" UpdateValueEvent="PropertyChanged"
+										Grid.Row="12" Grid.Column="1"
+										Minimum="-30" Maximum="30" 
+										SmallChange="1"
+										LargeChange="3"
+                                          IsEnabled="{Binding HotSpotInnerPixelsEnabled}"
+                                          Value="{Binding HotSpotYInnerPixels, Mode=TwoWay}" />
+            </Grid>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

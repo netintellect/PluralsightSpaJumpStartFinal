@@ -1,0 +1,101 @@
+<UserControl x:Class="Telerik.Windows.Examples.Window.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Window.Common"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	
+	<UserControl.Resources>
+		<local:InvertedBoolValueConverter x:Key="InvertedBoolValueConverter" />
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid Width="223" HorizontalAlignment="Right">
+			<Border BorderBrush="#0C000000" BorderThickness="1" CornerRadius="9">
+				<Border BorderBrush="#13000000" BorderThickness="1" Margin="0" CornerRadius="8">
+					<Border BorderBrush="#1E000000" BorderThickness="1" Margin="0" CornerRadius="7">
+						<Border BorderBrush="#28000000" BorderThickness="1" Margin="0" CornerRadius="6">
+							<Border BorderBrush="#33000000" BorderThickness="1" Margin="0" CornerRadius="5">
+								<Border BorderBrush="#23000000" BorderThickness="1" Margin="0" CornerRadius="4" />
+							</Border>
+						</Border>
+					</Border>
+				</Border>
+			</Border>
+			
+			<Border BorderBrush="#FFBEBEBE" BorderThickness="1" Background="#FFFFFFFF" CornerRadius="3" Margin="3 3 3 3">
+				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 0">
+					<StackPanel Margin="3">
+						<StackPanel Orientation="Horizontal">
+							<CheckBox Content="" Grid.Column="1" Grid.Row="0" Margin="5 8 5 5"
+									IsChecked="{Binding CanMove, Mode=TwoWay}" />
+							<TextBlock Grid.Row="0" VerticalAlignment="Center" Text="CanMove" Grid.Column="0" />
+
+							<CheckBox x:Name="canCloseCheckBox" Content="" Grid.Column="1" Grid.Row="3"
+									 Margin="5 8 5 5"
+									IsChecked="{Binding CanClose, Mode=TwoWay}" />
+							<TextBlock Text="CanClose" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+						</StackPanel>
+
+						<TextBlock Text="ResizeMode" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+						<telerik:RadComboBox x:Name="resizeModeComboBox" Grid.Column="1" Grid.Row="1"
+								VerticalAlignment="Center" Margin="5" SelectedValue="{Binding ResizeMode, Mode=TwoWay}" />
+
+						<TextBlock Text="WindowStartupLocation" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+						<telerik:RadComboBox x:Name="windowStartupLocationComboBox" VerticalAlignment="Center"
+								Margin="5" Height="22"
+								IsEnabled="{Binding IsOpen, Converter={StaticResource InvertedBoolValueConverter}}"
+								SelectedValue="{Binding StartupLocation, Mode=TwoWay}" />
+
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Left" VerticalAlignment="Center" MinWidth="58" />
+							<telerik:RadNumericUpDown x:Name="numLeft" MinWidth="120" VerticalAlignment="Center"
+									Margin="5" SmallChange="10" LargeChange="50" Minimum="0" Maximum="800"
+									IsEditable="True" Value="{Binding Left, Mode=TwoWay}" UpdateValueEvent="PropertyChanged"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Top" VerticalAlignment="Center" MinWidth="58" />
+							<telerik:RadNumericUpDown x:Name="numTop" Margin="5" VerticalAlignment="Center"
+									MinWidth="120" SmallChange="10" LargeChange="50" Minimum="0" Maximum="800"
+									IsEditable="True" Value="{Binding Top, Mode=TwoWay}" UpdateValueEvent="PropertyChanged"/>
+						</StackPanel>
+
+						<TextBlock Text="WindowState" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" />
+						<telerik:RadComboBox x:Name="windowStateComboBox" VerticalAlignment="Center" Grid.Column="1"
+								Grid.Row="4" Margin="5" Height="22" SelectedValue="{Binding State, Mode=TwoWay}" />
+
+						<StackPanel Orientation="Horizontal">
+							<CheckBox Grid.Row="5" Grid.Column="1" Content="" Margin="5 8 5 5"
+									IsChecked="{Binding RestoreMinimizedLocation, Mode=TwoWay}" />
+							<TextBlock Text="Restore Minimized Location" Grid.Column="0" Grid.Row="5"
+									VerticalAlignment="Center" />
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Width" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"
+									MinWidth="58" />
+							<telerik:RadNumericUpDown Grid.Column="1" Grid.Row="6" Margin="5" x:Name="numWidth"
+									SmallChange="10" LargeChange="50" Minimum="130" IsEditable="True"
+									MinWidth="120" Value="{Binding Width, Mode=TwoWay}" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Height" Grid.Column="3" Grid.Row="0" VerticalAlignment="Center"
+									MinWidth="58" />
+							<telerik:RadNumericUpDown x:Name="numHeight" Grid.Column="4" Grid.Row="0" MinWidth="120"
+									VerticalAlignment="Center" Margin="5" SmallChange="10" LargeChange="50"
+									Minimum="33" IsEditable="True" Value="{Binding Height, Mode=TwoWay}" />
+						</StackPanel>
+
+						<telerik:RadButton x:Name="btnShow" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center"
+								Margin="5" Click="OnShowClicked" Content="Open"
+								IsEnabled="{Binding IsOpen, Converter={StaticResource InvertedBoolValueConverter}}" />
+						<telerik:RadButton x:Name="btnShowModal" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center"
+								Margin="5" Click="OnShowModalClicked" Content="Open Modal"
+								IsEnabled="{Binding IsOpen, Converter={StaticResource InvertedBoolValueConverter}}" />
+					</StackPanel>
+				</Grid>
+			</Border>
+		</Grid>
+
+	</Grid>
+</UserControl>

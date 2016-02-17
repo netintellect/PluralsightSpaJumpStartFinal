@@ -1,0 +1,3 @@
+﻿This example demonstrates the virtualization and the grouping of point type ESRI shape-file for the VisualizationLayer.
+You can show items of cluster by right mouse button click.
+Using the left mouse button click you can show the data point on the predefined zoom level for detalization of the map.

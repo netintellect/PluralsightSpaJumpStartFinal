@@ -1,0 +1,3 @@
+﻿Telerik MediaPlayer is entirely data-driven, so you can model your video classes with presentation patterns like MVVM and after that bind them to MediaPlayer - MediaItems and MediaChapters.
+<br/>
+RadMediaPlayer is a part of the <b>Telerik.Windows.Controls.MediaPlayer</b> assembly.

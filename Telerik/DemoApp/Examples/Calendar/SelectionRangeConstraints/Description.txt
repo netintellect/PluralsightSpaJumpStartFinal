@@ -1,0 +1,2 @@
+﻿With Telerik Calendar control you can select ranges of dates using keys and mouse. In this example, you can use the first calendar to select ranges of dates.
+Also, you can prevent other dates from being selected. The second calendar shows pre-defined constraints - ranges of dates that cannot be selected. In the second calendar, the dates in the first and last sub-calendars are disallowed for selection.

@@ -1,0 +1,1 @@
+﻿This example demonstrates the built-in themes, shipped with RadChart.

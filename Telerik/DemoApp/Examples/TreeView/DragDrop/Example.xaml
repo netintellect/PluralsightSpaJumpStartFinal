@@ -1,0 +1,76 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.TreeView.DragDrop.Example"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Team Explorer" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Grid Margin="5" MinWidth="585" Height="350">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="5" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+					<TextBlock Text="Staff" Style="{StaticResource TitleStyle}" />
+				</Border>
+
+				<Grid Grid.Row="1" Margin="10">
+					<TextBlock Text="Drag People here to remove from Teams" Style="{StaticResource SubTitleStyle}"/>
+					<Path Data="F1M370.3306,313.5356L376.9916,307.2596L371.5746,307.2596L362.6646,315.6586L371.5356,
+							324.0166L376.9506,324.0166L370.3306,317.7776L385.3506,317.7776L385.3506,313.5356z"
+							Fill="#96cb49" Height="16" Stretch="Fill" Width="22" HorizontalAlignment="Right" VerticalAlignment="Top" />
+				</Grid>
+
+				<telerik:RadTreeView x:Name="xTree1" Margin="5" Grid.Row="2" BorderThickness="0" Width="290"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding GroupStaff}"
+						ItemTemplate="{StaticResource GroupTemplate}" />
+			</Grid>
+		</Border>
+
+		<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" Grid.Column="2">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+					<TextBlock Text="Future Projects" Style="{StaticResource TitleStyle}" />
+				</Border>
+
+				<Grid Grid.Row="1" Margin="10">
+					<TextBlock Text="Drag People here to add to Teams" Style="{StaticResource SubTitleStyle}"/>
+					<Path Data="F1M513.7935,318.4341L507.1335,324.7101L512.5495,324.7101L521.4595,316.3111L512.5885,
+							307.9531L507.1735, 307.9531L513.7935,314.1921L498.7735,314.1921L498.7735,318.4341z"
+							Fill="#96cb49" Height="16" Stretch="Fill" Width="22" HorizontalAlignment="Right" VerticalAlignment="Top" />
+				</Grid>
+
+				<telerik:RadTreeView x:Name="xTree2" Grid.Row="2" Margin="5" BorderThickness="0" Width="290"
+						IsDragDropEnabled="True"
+						IsDropPreviewLineEnabled="False"
+						ItemsSource="{Binding GroupTeams}"
+						ItemTemplate="{StaticResource GroupTemplate}" />
+			</Grid>
+		</Border>
+	</Grid>
+
+</UserControl>

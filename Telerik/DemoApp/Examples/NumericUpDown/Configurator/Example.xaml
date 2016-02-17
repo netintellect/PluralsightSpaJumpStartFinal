@@ -1,0 +1,55 @@
+<UserControl x:Class="Telerik.Windows.Examples.NumericUpDown.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Configurator" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Maximum" />
+            <telerik:RadNumericUpDown x:Name="Maximum" Margin="0 2" Value="10" />
+
+            <TextBlock Text="Minimum" Margin="0 10 0 0" />
+            <telerik:RadNumericUpDown x:Name="Minimum" Margin="0 2" Value="-10" />
+
+            <TextBlock Text="SmallChange" Margin="0 10 0 0" />
+            <telerik:RadNumericUpDown x:Name="SmallChange" Margin="0 2" Value="1" Minimum="1"/>
+
+            <TextBlock Text="LargeChange" Margin="0 10 0 0" />
+            <telerik:RadNumericUpDown x:Name="LargeChange" Margin="0 2" Value="5" Minimum="1"/>
+
+            <TextBlock Text="NumberDecimalDigits" Margin="0 10 0 0" />
+            <telerik:RadNumericUpDown x:Name="NumberDecimalDigits" Margin="0 2" Value="2" Minimum="0" Maximum="99" IsInteger="True" />
+
+            <TextBlock Text="ValueFormat" Margin="0 10 0 0" />
+            <telerik:RadComboBox x:Name="ValueFormat" Margin="0 2" SelectedIndex="1" />
+
+            <CheckBox x:Name="AutoReverse" Content="AutoReverse" Margin="0 10 0 2" IsThreeState="False" />
+            <CheckBox x:Name="HideTrailingZeros" Content="HideTrailingZeros" Margin="0 2" IsThreeState="False" />
+            <CheckBox x:Name="IsEditable" Content="IsEditable" IsChecked="True" Margin="0 2" IsThreeState="False" />
+            <CheckBox x:Name="IsReadOnly" Content="IsReadOnly" Margin="0 2" IsThreeState="False" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <telerik:RadNumericUpDown
+			Width="200" Margin="50 25"
+			HorizontalAlignment="Center" VerticalAlignment="Center"
+			IsEditable="{Binding IsChecked, ElementName=IsEditable, Mode=TwoWay}"
+			AutoReverse="{Binding IsChecked, ElementName=AutoReverse, Mode=TwoWay}"
+			Minimum="{Binding Value, ElementName=Minimum, Mode=TwoWay}"
+			Maximum="{Binding Value, ElementName=Maximum, Mode=TwoWay}"
+			SmallChange="{Binding Value, ElementName=SmallChange, Mode=TwoWay}"
+			LargeChange="{Binding Value, ElementName=LargeChange, Mode=TwoWay}"
+			ValueFormat="{Binding SelectedItem, ElementName=ValueFormat, Mode=TwoWay}" 
+			NumberDecimalDigits="{Binding Value, ElementName=NumberDecimalDigits, Mode=TwoWay}"
+			IsReadOnly="{Binding IsChecked, ElementName=IsReadOnly, Mode=TwoWay}"
+			HideTrailingZeros="{Binding IsChecked, ElementName=HideTrailingZeros, Mode=TwoWay}"
+            Value="0"
+        />
+</UserControl>
+

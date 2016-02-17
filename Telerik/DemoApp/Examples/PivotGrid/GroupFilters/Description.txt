@@ -1,0 +1,1 @@
+﻿You can apply simple <b>group filters<b> to find items mathcing criteria.<br/><br/>The following filters are based on the <b>Grand Total</b> values or the <b>Names<b> of the groups.</b></b>

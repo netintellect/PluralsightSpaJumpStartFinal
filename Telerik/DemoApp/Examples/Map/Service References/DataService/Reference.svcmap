@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="221a8d24-cfec-4db4-9e59-a22e9b509f7d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11525/RadMapDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RadMapDataService.disco" MetadataType="Disco" ID="28145b21-2c1f-4c4d-90e8-c9fee626cf47" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?disco" />
+    <MetadataFile FileName="RadMapDataService.xsd" MetadataType="Schema" ID="8a7f96de-a90d-4d94-8e66-8f5758e35c92" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RadMapDataService.wsdl" MetadataType="Wsdl" ID="074d9c2a-a4f6-48b4-ae3c-769f66fd00e2" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?wsdl" />
+    <MetadataFile FileName="RadMapDataService1.xsd" MetadataType="Schema" ID="c9f20cee-b684-409b-87d9-d9f99215103e" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RadMapDataService1.wsdl" MetadataType="Wsdl" ID="fa4ead50-d875-4a71-99fd-cf0c2a3d33b1" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="RadMapDataService2.xsd" MetadataType="Schema" ID="ebc1919b-e37d-46e4-82c7-a5111eef1dab" SourceId="1" SourceUrl="http://localhost:11525/RadMapDataService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

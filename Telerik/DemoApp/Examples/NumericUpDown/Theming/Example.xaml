@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.NumericUpDown.Theming.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    HorizontalAlignment="Center" VerticalAlignment="Center"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Theming" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30" Width="300">
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="NUMERIC FORMAT" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap" Foreground="#FF393838"
+                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <telerik:RadNumericUpDown
+                MinWidth="200" Margin="0 7" ValueFormat="Numeric" NumberDecimalDigits="3"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Value="0" />
+            </StackPanel>
+
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="CURRENCY FORMAT" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap" Foreground="#FF393838"
+                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <telerik:RadNumericUpDown
+                MinWidth="200" Margin="0 7" ValueFormat="Currency"
+                HorizontalAlignment="Left" VerticalAlignment="Center"  Value="0" />
+            </StackPanel>
+
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="PERCENTAGE FORMAT" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap" Foreground="#FF393838"
+                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <telerik:RadNumericUpDown
+                MinWidth="200" Margin="0 7" ValueFormat="Percentage"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Value="0"/>
+            </StackPanel>
+
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="CUSTOM UNIT" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap" Foreground="#FF393838"
+                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <telerik:RadNumericUpDown
+                MinWidth="200" Margin="0 7" CustomUnit="meter"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Value="0" />
+            </StackPanel>
+        </StackPanel>
+        
+    </Border>
+</UserControl>

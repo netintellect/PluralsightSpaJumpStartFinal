@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4BD7DC2B-55A8-4D68-B55B-095DDFFF7A15}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Treemap</RootNamespace>
+    <AssemblyName>Treemap</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Treemap.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Treemap.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>Treemap.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  
+    <Import Project="..\..\SLConfigsAtStart.targets" />
+
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMapping\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMapping\ExampleViewModel.cs" />
+    <Compile Include="CustomMapping\File.cs" />
+    <Compile Include="CustomMapping\FileCustomMapping.cs" />
+    <Compile Include="CustomMapping\Folder.cs" />
+    <Compile Include="CustomMapping\IDiskItem.cs" />
+    <Compile Include="DataSourceViewModelBase.cs" />
+    <Compile Include="Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\ExampleViewModel.cs" />
+    <Compile Include="Selection\OilProducingInfo.cs" />
+    <Compile Include="FirstLookTreeMap\Category.cs" />
+    <Compile Include="FirstLookTreeMap\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLookTreeMap\ExampleViewModel.cs" />
+    <Compile Include="FirstLookTreeMap\Product.cs" />
+    <Compile Include="FirstLook\DefinitionConverter.cs" />
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\ExampleViewModel.cs" />
+    <Compile Include="FirstLook\MovieInfo.cs" />
+    <Compile Include="GradientColorizer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GradientColorizer\ExampleViewModel.cs" />
+    <Compile Include="AbsoluteValueBrushColorizer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AbsoluteValueBrushColorizer\ExampleViewModel.cs" />
+    <Compile Include="AbsoluteValueBrushColorizer\StockInfo.cs" />
+    <Compile Include="GradientColorizer\GdpInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="URIHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CustomMapping\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLookTreeMap\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GradientColorizer\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AbsoluteValueBrushColorizer\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+<Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLookTreeMap\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AbsoluteValueBrushColorizer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GradientColorizer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomMapping\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Treemap\CustomMapping\img.png" />
+    <None Include="Images\Treemap\CustomMapping\music.png" />
+    <None Include="Images\Treemap\CustomMapping\text.png" />
+    <None Include="Images\Treemap\CustomMapping\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pivotmap\FirstLook\a nightmare on elm street.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\alice in wonderland.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\avatar.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\clash of the titans.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\date night.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\despicable me.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\diary of a wimpy kid.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\dinner for schmucks.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\due date.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\easy a.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\get him to the greek.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\grown ups.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\how did i get married too.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\how to train your dragon.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\inception.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\iron man 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\jackass 3d.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\knight and day.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\little fockers.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\megamind.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\paranormal activity 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\red.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\robin hood.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\salt.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\secretariat.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\sex and the city 2.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\sherlock holmes.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\shreck forever after.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\shutter island.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\tangled.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the a team.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the book of eli.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the bounty hunter.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the expendables.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the karate kid.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the last airbender.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the last song.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the other guys.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the social network.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the sorcerers apprentice.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the tooth fairy.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the town.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the twilight saga eclipse.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\the wolf man.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\toy story 3.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\tron the legacy.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\true grit.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\unstoppable.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\valentines day.jpg" />
+    <Resource Include="Images\Pivotmap\FirstLook\yogi bear 3d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Treemap\Selection\russia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Treemap\Selection\algeria.jpg" />
+    <Resource Include="Images\Treemap\Selection\angola.jpg" />
+    <Resource Include="Images\Treemap\Selection\argentina.jpg" />
+    <Resource Include="Images\Treemap\Selection\australia.jpg" />
+    <Resource Include="Images\Treemap\Selection\azerbaijan.jpg" />
+    <Resource Include="Images\Treemap\Selection\brazil.jpg" />
+    <Resource Include="Images\Treemap\Selection\canada.jpg" />
+    <Resource Include="Images\Treemap\Selection\china.jpg" />
+    <Resource Include="Images\Treemap\Selection\colombia.jpg" />
+    <Resource Include="Images\Treemap\Selection\egypt.jpg" />
+    <Resource Include="Images\Treemap\Selection\india.jpg" />
+    <Resource Include="Images\Treemap\Selection\indonesia.jpg" />
+    <Resource Include="Images\Treemap\Selection\iran.jpg" />
+    <Resource Include="Images\Treemap\Selection\iraq.jpg" />
+    <Resource Include="Images\Treemap\Selection\kazakhstan.jpg" />
+    <Resource Include="Images\Treemap\Selection\kuwait.jpg" />
+    <Resource Include="Images\Treemap\Selection\libya.jpg" />
+    <Resource Include="Images\Treemap\Selection\malaysia.jpg" />
+    <Resource Include="Images\Treemap\Selection\mexico.jpg" />
+    <Resource Include="Images\Treemap\Selection\nigeria.jpg" />
+    <Resource Include="Images\Treemap\Selection\norway.jpg" />
+    <Resource Include="Images\Treemap\Selection\oman.jpg" />
+    <Resource Include="Images\Treemap\Selection\qatar.jpg" />
+    <Resource Include="Images\Treemap\Selection\saudi arabia.jpg" />
+    <Resource Include="Images\Treemap\Selection\sudan.jpg" />
+    <Resource Include="Images\Treemap\Selection\uae.jpg" />
+    <Resource Include="Images\Treemap\Selection\uk.jpg" />
+    <Resource Include="Images\Treemap\Selection\usa.jpg" />
+    <Resource Include="Images\Treemap\Selection\venezuela.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Treemap\Selection\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Selection\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

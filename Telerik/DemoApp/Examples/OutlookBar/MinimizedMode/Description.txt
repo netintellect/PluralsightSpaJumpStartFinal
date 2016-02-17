@@ -1,0 +1,1 @@
+﻿With the minimization capabilities of RadOutlookBar you can choose whether the outlookbar should be minimized or not, you can specify the minimized width and minimized width thresholds. You can also resize the outlookbar via the vertical resizer.

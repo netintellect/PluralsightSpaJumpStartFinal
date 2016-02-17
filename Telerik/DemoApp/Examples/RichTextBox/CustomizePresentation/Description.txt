@@ -1,0 +1,2 @@
+﻿Telerik <b>RadRichTextBox</b> control is rich in opportunities for customization. Here is example how you can create you own layer.  
+In this example the custom layers highlights the current word / line.

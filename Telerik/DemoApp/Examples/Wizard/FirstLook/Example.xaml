@@ -1,0 +1,137 @@
+<UserControl x:Class="Telerik.Windows.Examples.Wizard.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:wizard="clr-namespace:Telerik.Windows.Controls.Wizard;assembly=Telerik.Windows.Controls.Navigation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:behaviors="clr-namespace:Telerik.Windows.Examples.Wizard"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="First Look"
+				   Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="headerTemplate">
+                <Border Height="80" Background="#FF282828" Width="600" HorizontalAlignment="Stretch" Margin="-7">
+                    <Grid>
+                        <TextBlock Text="Telerik Control Panel" Foreground="#FFFFFFFF" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" FontSize="24" FontFamily="Segoe UI"/>
+                        <Image Source="../Images/BrandMark_Telerik_White.png" Stretch="Fill" Width="204" Height="84" HorizontalAlignment="Right"/>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </Grid.Resources>
+        <telerik:RadWizard x:Name="wizard" Width="600" Height="400" Completed="wizard_Completed">
+            <telerik:RadWizard.WizardPages>
+                <telerik:WelcomeWizardPage HeaderTemplate="{StaticResource headerTemplate}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <telerik:WelcomeWizardPage.FooterTemplate>
+                        <DataTemplate>
+                            <Border Background="#FF282828" Height="40" Margin="-7">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,16,0">
+                                    <telerik:RadButton Content="Next &gt;" MinWidth="70" Command="wizard:RadWizardCommands.MoveCurrentToNext" BorderThickness="0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:WelcomeWizardPage.FooterTemplate>
+                    <Grid Background="#FFF4F4F5" Margin="-7" Width="600" Height="286">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="15,4,0,0" TextWrapping="Wrap" Text="This wizard will guide you through the installation of Telerik Control Panel." VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12"/>
+                        <Image Grid.Row="2" Source="../Images/BrandMark_Telerik_Black.png"  Margin="0,0,0,30" Stretch="Fill" Width="400" Height="159" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+						<TextBlock Grid.Row="3" Margin="10,7,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="*This is only a simulation, and will not install any actual software." FontFamily="Segoe UI" FontSize="9"/>
+					</Grid>
+                </telerik:WelcomeWizardPage>
+				<telerik:WizardPage x:Name="productsPage" HeaderTemplate="{StaticResource headerTemplate}" AllowNext="{Binding IsSelected}">
+                    <telerik:WizardPage.FooterTemplate>
+                        <DataTemplate>
+                            <Border Background="#FF282828" Height="40" Margin="-7">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,16,0">
+                                    <telerik:RadButton Content="&lt; Back" MinWidth="70" Command="wizard:RadWizardCommands.MoveCurrentToPrevious"  BorderThickness="0" VerticalAlignment="Center"/>
+                                    <telerik:RadButton Content="Next &gt;" Margin="7,0,0,0" MinWidth="70" Command="wizard:RadWizardCommands.MoveCurrentToNext"  BorderThickness="0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:WizardPage.FooterTemplate>
+                    <Grid Background="#FFF4F4F5" Margin="-7" Width="600" Height="286">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" Text="Control Panel" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="15,4,0,0" TextWrapping="Wrap" Text="Please select which tools to install from the list below:" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12"/>
+                        <Grid Grid.Row="2" Margin="15,34,15,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <telerik:RadToggleButton x:Name="devCraftBtn" Content="DevCraft" BorderThickness="2" BorderBrush="#FF27B857" Height="50" Width="110" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                                <telerik:RadToggleButton x:Name="platformBtn" Content="Telerik Platform" BorderThickness="2" BorderBrush="#FF018DC8" Margin="12,0,0,0" Height="50" Width="166" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                                <telerik:RadToggleButton x:Name="kendoBtn" Content="Kendo UI" BorderThickness="2" BorderBrush="#FFE74B3C" Margin="12,0,0,0" Height="50" Width="108" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,15,0,0">
+                                <telerik:RadToggleButton x:Name="sitefinityBtn" Content="Sitefinity" BorderThickness="2" BorderBrush="#FF5573C9" Height="50" Width="105" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                                <telerik:RadToggleButton x:Name="testStudioBtn" Content="Test Studio" BorderThickness="2" BorderBrush="#FFEF8603" Margin="12,0,0,0" Height="50" Width="122" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                                <telerik:RadToggleButton x:Name="fiddlerbtn" Content="Fiddler" BorderThickness="2" BorderBrush="#FF424242" Margin="12,0,0,0" Height="50" Width="87" FontWeight="Bold" FontFamily="Segoe UI" FontSize="18"/>
+                            </StackPanel>
+						</Grid>
+						<TextBlock Grid.Row="3" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="Wrap" Text="*This is only a simulation, and will not install any actual software." FontFamily="Segoe UI" FontSize="9"/>
+					</Grid>
+                </telerik:WizardPage>
+                <telerik:WizardPage x:Name="progressPage" HeaderTemplate="{StaticResource headerTemplate}" behaviors:ProgressPageBehavior.IsEnabled="True">
+                    <telerik:WizardPage.FooterTemplate>
+                        <DataTemplate>
+                            <Border Background="#FF282828" Height="40" Margin="-7">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,16,0">
+                                    <telerik:RadButton Content="&lt; Back" MinWidth="70" Command="wizard:RadWizardCommands.MoveCurrentToPrevious" BorderThickness="0" VerticalAlignment="Center"/>
+                                    <telerik:RadButton Content="Next &gt;" Margin="7,0,0,0" MinWidth="70" Command="wizard:RadWizardCommands.MoveCurrentToNext" BorderThickness="0" VerticalAlignment="Center"/>
+                                    <telerik:RadButton Content="Cancel" Margin="7,0,0,0" MinWidth="70" Command="wizard:RadWizardCommands.Cancel"  BorderThickness="0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:WizardPage.FooterTemplate>
+                    <Grid Background="#FFF4F4F5" Margin="-7" Width="600" Height="286">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" Text="Installing" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="15,4,0,0" TextWrapping="Wrap" Text="Please wait untill the instalation has finished." VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12"/>
+						<telerik:RadProgressBar Grid.Row="2" VerticalAlignment="Center" Minimum="0" Maximum="100" Width="540" Margin="0,70,0,0"/>
+						<TextBlock Grid.Row="3" Margin="10,7,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="Wrap" Text="*This is only a simulation, and will not install any actual software." FontFamily="Segoe UI" FontSize="9"/>
+					</Grid>
+                </telerik:WizardPage>
+                <telerik:CompletionWizardPage HeaderTemplate="{StaticResource headerTemplate}">
+                    <telerik:CompletionWizardPage.FooterTemplate>
+                        <DataTemplate>
+                            <Border Background="#FF282828" Height="40" Margin="-7">
+                                <telerik:RadButton Content="Finish" MinWidth="70" HorizontalAlignment="Right" Margin="0,0,16,0" Command="wizard:RadWizardCommands.Finish"  BorderThickness="0" VerticalAlignment="Center"/>
+                            </Border>
+                        </DataTemplate>
+                    </telerik:CompletionWizardPage.FooterTemplate>
+                    <Grid Background="#FFF4F4F5" Margin="-7" Width="600" Height="286">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" Text="Finished" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="15,4,0,0" TextWrapping="Wrap" Text="Thank you for using Telerik controls!" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12"/>
+						<Image Grid.Row="2" Source="../Images/BrandMark_Telerik_Black.png"  Margin="0,0,0,30" Stretch="Fill" Width="400" Height="159" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+						<TextBlock Grid.Row="3" Margin="10,7,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="*This is only a simulation, and will not install any actual software." FontFamily="Segoe UI" FontSize="9"/>
+					</Grid>
+                </telerik:CompletionWizardPage>
+            </telerik:RadWizard.WizardPages>
+        </telerik:RadWizard>
+    </Grid>
+</UserControl>

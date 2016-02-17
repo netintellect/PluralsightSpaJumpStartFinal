@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.PieSmartLabels.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.PieSmartLabels"
+    mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+
+        <UserControl.DataContext>
+        <example:ExampleViewModel x:Name="exampleViewModel"/>
+    </UserControl.DataContext>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Coca Cola Annual Review for 2012" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Unit Case Volume" HorizontalAlignment="Center" FontSize="18" FontFamily="Segoe UI Light" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+        <telerik:RadPieChart x:Name="PieChart" Grid.Row="1" Grid.RowSpan="3" Margin="0 0 0 22">
+            <telerik:RadPieChart.SmartLabelsStrategy>
+                <example:CustomSpiderLabelsStrategy />
+            </telerik:RadPieChart.SmartLabelsStrategy>
+            <telerik:PieSeries ValueBinding="UnitCaseVolume" RadiusFactor="0.65" ItemsSource="{Binding ExpandedRegions}" DefaultSliceStyle="{StaticResource PieSliceStyle}">
+                <telerik:PieSeries.LabelDefinitions>
+                    <telerik:ChartSeriesLabelDefinition Margin="-10,0,0,0" TemplateSelector="{StaticResource regionLabelTemplateSelector}" />
+                </telerik:PieSeries.LabelDefinitions>
+                <telerik:PieSeries.LabelConnectorsSettings>
+                    <telerik:ChartSeriesLabelConnectorsSettings Style="{StaticResource LabelConnectorStyle}" />
+                </telerik:PieSeries.LabelConnectorsSettings>
+                <telerik:PieSeries.AngleRange>
+                    <telerik:AngleRange StartAngle="-90" SweepAngle="360" />
+                </telerik:PieSeries.AngleRange>
+            </telerik:PieSeries>
+        </telerik:RadPieChart>
+
+        <telerik:RadLegend Grid.Row="1"
+                           Grid.RowSpan="3"
+                           VerticalAlignment="Bottom"
+                           FontFamily="Segoe UI">
+            <telerik:RadLegend.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </telerik:RadLegend.ItemsPanel>
+            <telerik:RadLegend.Items>
+                <telerik:LegendItemCollection>
+                    <telerik:LegendItem MarkerFill="#FF1B9DDE" Title="Latin America" />
+                    <telerik:LegendItem MarkerFill="#FFD4DF32" Title="North America" />
+                    <telerik:LegendItem MarkerFill="#FFF59700" Title="Eurasia &amp; Africa" />
+                    <telerik:LegendItem MarkerFill="#FF8EC441" Title="Pacific" />
+                    <telerik:LegendItem MarkerFill="#FF339933" Title="Europe" />
+                </telerik:LegendItemCollection>
+            </telerik:RadLegend.Items>
+            <telerik:RadLegend.Resources>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Margin" Value="0 0 7 0" />
+                </Style>
+            </telerik:RadLegend.Resources>
+        </telerik:RadLegend>
+
+        <TextBlock Grid.Column="1" Text="Select Regions" HorizontalAlignment="Center" FontSize="18" FontFamily="Segoe UI Light" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+        <example:Regions Grid.Row="1" Grid.Column="1" SelectionChanged="Regions_SelectionChanged" Loaded="Regions_Loaded" />
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Margin="0 0 0 10">
+            <TextBlock Text="Net Operating Revenue" TextAlignment="Center" FontSize="18" FontFamily="Segoe UI Light" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+            <TextBlock Text="(in millions)" FontSize="10" TextAlignment="Center" FontFamily="Segoe UI" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+        </StackPanel>
+
+        <telerik:RadCartesianChart x:Name="chart2" Grid.Row="3" Grid.Column="1" MaxWidth="250">
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:CategoricalAxis GapLength="0.5" TickThickness="0" />
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis HorizontalLocation="Right" ShowLabels="True" LineStroke="Transparent" Minimum="0" Maximum="15000" MajorStep="2500" TickThickness="0" LabelFormat="# ###;();0" LabelStyle="{x:Null}" />
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorLinesVisibility="Y" />
+            </telerik:RadCartesianChart.Grid>
+            <telerik:RadCartesianChart.SeriesProvider>
+                <telerik:ChartSeriesProvider Source="{Binding SelectedRegions}">
+                    <telerik:ChartSeriesProvider.SeriesDescriptors>
+                        <telerik:CategoricalSeriesDescriptor CategoryPath="Year" ValuePath="RevenueValue" ItemsSourcePath="Revenues">
+                            <telerik:CategoricalSeriesDescriptor.Style>
+                                <Style TargetType="telerik:BarSeries" BasedOn="{StaticResource BarSeriesStyle}">
+                                    <Setter Property="CombineMode" Value="Stack" />
+                                    <Setter Property="ShowLabels" Value="True" />
+                                    <Setter Property="example:ChartSeriesLabelDefinitionUtilities.LabelDefinition">
+                                        <Setter.Value>
+                                            <telerik:ChartSeriesLabelDefinition>
+                                                <telerik:ChartSeriesLabelDefinition.Strategy>
+                                                    <example:StackLabelStrategy />
+                                                </telerik:ChartSeriesLabelDefinition.Strategy>
+                                            </telerik:ChartSeriesLabelDefinition>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="DefaultVisualStyle" Value="{StaticResource BarStyle}" />
+                                </Style>
+                            </telerik:CategoricalSeriesDescriptor.Style>
+                        </telerik:CategoricalSeriesDescriptor>
+                    </telerik:ChartSeriesProvider.SeriesDescriptors>
+                </telerik:ChartSeriesProvider>
+            </telerik:RadCartesianChart.SeriesProvider>
+        </telerik:RadCartesianChart>
+
+        <TextBlock Margin="0" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontFamily="Segoe UI" FontSize="10" Text="source: http://www.coca-colacompany.com" Foreground="Gray"/>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonDisableSmartLabels_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Disable smart labels" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonBasic_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Basic" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonOutside_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Outside" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonSpider_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Spider" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonSpiderUnaligned_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="SpiderUnaligned" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonSpiderAlignedOutwards_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="SpiderAlignedOutwards" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonCustomStrategy_Click" GroupName="group1" VerticalAlignment="Center" IsChecked="True">
+                <TextBlock Text="Custom spider strategy" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

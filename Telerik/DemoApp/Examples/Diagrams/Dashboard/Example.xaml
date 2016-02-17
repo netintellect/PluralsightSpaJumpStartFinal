@@ -1,0 +1,135 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.Diagrams.Dashboard"
+		xmlns:dashboard="clr-namespace:Telerik.Windows.Examples.Diagrams.Dashboard"
+		xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Diagrams.Primitives;assembly=Telerik.Windows.Controls.Diagrams"
+		xmlns:extensions="clr-namespace:Telerik.Windows.Controls.Diagrams.Extensions;assembly=Telerik.Windows.Controls.Diagrams.Extensions"
+		x:Class="Telerik.Windows.Examples.Diagrams.Dashboard.Example" HorizontalAlignment="Stretch"
+		VerticalAlignment="Stretch">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Diagrams;component/Dashboard/GenericShapes.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<Style x:Key="NewButtonStyle" TargetType="telerik:RadButton">
+				<Setter Property="FontWeight" Value="Bold" />
+				<Setter Property="Width" Value="100" />
+				<Setter Property="Height" Value="100" />
+				<Setter Property="FontSize" Value="10" />
+				<Setter Property="Cursor" Value="Hand" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="telerik:RadButton">
+							<Grid>
+								<Rectangle Fill="#FF474343" />
+								<Ellipse Margin="25,10,28,44" StrokeThickness="2"
+										Stroke="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+								<Path Data="M7,0 L11,0 L11,7 L18,7 L18,11 L11,11 L11,18 L7,18 L7,11 L0,11 L0,7 L7,7 z"
+										Fill="{telerik:Windows8Resource ResourceKey=AccentBrush}" Height="18"
+										Margin="39,24,41,0" Stretch="Fill" VerticalAlignment="Top" />
+								<TextBlock Height="35" Margin="0,0,1,2" TextWrapping="Wrap" Text="Add Item"
+										VerticalAlignment="Bottom" FontFamily="Segoe UI Light" Foreground="White"
+										FontSize="21" TextAlignment="Center" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="ListBoxPageStyle" TargetType="telerik:RadListBoxItem"
+					BasedOn="{StaticResource RadListBoxItemStyle}">
+				<Setter Property="Width" Value="100" />
+				<Setter Property="Height" Value="100" />
+				<Setter Property="Margin" Value="0 5 0 0" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="telerik:RadListBoxItem">
+							<Border Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" Cursor="Hand">
+								<ContentPresenter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<DataTemplate x:Key="SlideTemplate">
+				<TextBlock Text="{Binding Name}" ToolTipService.ToolTip="When editing, right-click for more options."
+						TextWrapping="Wrap" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
+						Foreground="White">
+					<telerik:RadContextMenu.ContextMenu>
+						<telerik:RadContextMenu Opening="RadContextMenu_OnOpening">
+							<telerik:RadMenuItem Header="Delete" x:Name="DeleteMenuItem" Click="DeleteMenuItem_OnClick" />
+							<telerik:RadMenuItem Header="Rename" x:Name="RenameMenuItem" Click="RenameMenuItem_OnClick" />
+						</telerik:RadContextMenu>
+					</telerik:RadContextMenu.ContextMenu>
+				</TextBlock>
+			</DataTemplate>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Border BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}" BorderThickness="1" Grid.Row="1" />
+		<telerik:RadDiagram x:Name="diagram" Grid.Row="1" IsInformationAdornerVisible="True" IsZoomEnabled="False"
+				SnapX="5" SnapY="5" IsBackgroundSurfaceVisible="False" IsConnectorsManipulationEnabled="False">
+			<primitives:ItemInformationAdorner.AdditionalContent>
+				<telerik:SettingsPane Diagram="{Binding ElementName=diagram}" />
+			</primitives:ItemInformationAdorner.AdditionalContent>
+		</telerik:RadDiagram>
+		<Grid x:Name="HeaderGrid" Grid.ColumnSpan="2">
+			<Border BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}" BorderThickness="1 1 1 0" />
+			<Rectangle Fill="Black" Opacity=".05" />
+
+			<TextBlock x:Name="NameBlock" FontFamily="Segoe UI Light" FontSize="29" Margin="15 0 0 0"
+					ToolTipService.ToolTip="Title of the current page"
+					Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" FontWeight="Bold"
+					Text="{Binding CurrentPage.Name}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+			<StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+				<StackPanel x:Name="SecondaryButtons" Visibility="Collapsed" Orientation="Horizontal"
+						VerticalAlignment="Center">
+					<telerik:RadGeometryButton Click="SaveButton_OnClick" Margin="8" Content="save"
+							Geometry="F1 M0,0 L18,0 L18,18 L13,18 L13,12 L5,12 L5,18 L0,18 L0,0 z M7,18 L7,15 L10,15 L10,18 L7,18 z M3,2 L3,7 L15,7 L15,2 L3,2 z" />
+					<telerik:RadGeometryButton Click="ResetButton_OnClick" Margin="8" Content="reset"
+							Geometry="M0,0 L7.083,0 L7.083,7.5 L4.763,4.763 L4.745,4.782 C3.666,5.867 3,7.36 3,9 C3,12.326 5.686,15 9,15 C12.314,15 15,12.326 15,9 C15,7.251 14.242,5.668 13.034,4.57 L13,4.461 L14.642,2 L14.725,2.067 C16.725,3.718 18,6.216 18,9 C18,14 14,18 9,18 C4,18 0,14 0,9 C0,6.565 1,4.347 2.560,2.725 L2.642,2.642 z" />
+					<telerik:RadGeometryButton Command="telerik:DiagramCommands.Undo" Content="undo"
+							CommandTarget="{Binding ElementName=diagram}" Margin="8"
+							Geometry="M4.2667065,0 L8.4021349,0 L5.2587953,4.1229997 L13.039669,4.1229997 C16.905663,4.1229997 20.039669,7.2570057 20.039669,11.122999 C20.039669,14.988993 16.905663,18.122999 13.039669,18.122999 L11.825022,18.122999 L11.825022,14.123001 L13.039669,14.123001 C14.696525,14.123001 16.039671,12.779856 16.039671,11.123001 C16.039671,9.4661465 14.696525,8.1230011 13.039669,8.1230011 L5.2947307,8.1230011 L8.4021349,12.248009 L4.2667065,12.248009 L0,5.9990273 z"
+							ToolTipService.ToolTip="undo" />
+					<telerik:RadGeometryButton Command="telerik:DiagramCommands.Redo" Content="redo"
+							CommandTarget="{Binding ElementName=diagram}" Margin="8"
+							Geometry="M12,0 L16,0 L20,6 L16,12 L12,12 L14.666667,8 L7,8 C5.3431458,8 4,9.3431454 4,11 C4,12.656855 5.3431458,14 7,14 L8,14 L8,18 L7,18 C3.1340067,18 0,14.865993 0,11 C0,7.134007 3.1340067,4 7,4 L14.666667,4 z"
+							ToolTipService.ToolTip="redo" />
+				</StackPanel>
+				<telerik:RadGeometryToggleButton x:Name="EditButton"
+						ToolTipService.ToolTip="Switch between edit and run modes" Margin="8" Click="EditButton_OnClick"
+						IsChecked="{Binding DiagramDoesnShowASlideRightNow}"
+						Geometry="M0.5,16 L3.333,18.42 L0,19.5 z M14.5,0 L18.5,3.5 L5.5,17.25 L1.375,13.75 z"
+						Content="edit" />
+			</StackPanel>
+		</Grid>
+		<local:ToolboxControl x:Name="Toolbox" Grid.Column="1" Grid.Row="1" />
+		<Grid Grid.Column="2" Grid.RowSpan="2" Margin="10 0 0 0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<telerik:RadButton x:Name="NewButton" ToolTipService.ToolTip="Adds a new page" Click="NewButton_OnClick"
+					Style="{StaticResource NewButtonStyle}" HorizontalAlignment="Left" />
+			<telerik:RadListBox x:Name="SlidesList" Grid.Row="1" ItemsSource="{Binding Pages}"
+					FontFamily="Segoe UI Light" FontSize="21" SelectedItem="{Binding CurrentPage, Mode=TwoWay}"
+					BorderBrush="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto"
+					SelectionMode="Single" ItemContainerStyle="{StaticResource ListBoxPageStyle}"
+					ItemTemplate="{StaticResource SlideTemplate}" />
+		</Grid>
+	</Grid>
+</UserControl>

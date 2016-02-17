@@ -1,0 +1,1 @@
+﻿EntityFrameworkDataSource allows you to connect to EntityFramework ObjectContexts.

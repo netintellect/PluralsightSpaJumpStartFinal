@@ -1,0 +1,1 @@
+﻿This example demonstrates how RadDataBar can be used to enhance the interpretation of numeric values. Adding data bars along with the data makes it extremely easy to perceive and compare values. A RadDataAxis is placed at the footer of the column. This makes it very easy to grasp what are the minimum and maximum values that are used in the relevant column. 

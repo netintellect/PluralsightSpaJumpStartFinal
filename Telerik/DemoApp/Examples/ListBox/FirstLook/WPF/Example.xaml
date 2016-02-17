@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ListBox.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ListBox.FirstLook"
+		xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.DataContext>
+        <local:ViewModel/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ListBox;component/FirstLook/WPF/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:UpperCaseStringConverter x:Key="upperCaseStringConverter" />
+
+            <DataTemplate x:Key="ScrollItemsDataTemplate">
+                <Grid Background="{StaticResource AccentBrush}" Width="100" Height="100">
+                    <TextBlock Text="{Binding Converter={StaticResource upperCaseStringConverter}}" 
+							   TextWrapping="Wrap" 
+							   FontSize="14"
+							   VerticalAlignment="Center" Padding="6 0"
+							   HorizontalAlignment="Center" FontFamily="Segoe UI Light"
+							   TextAlignment="Center" Foreground="{StaticResource WhiteBrush}"/>
+                </Grid>
+            </DataTemplate>
+            <ControlTemplate TargetType="telerik:RadListBox" x:Key="CustomRadListoBoxtemplate">
+                <Grid>
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" x:Name="BorderVisual">
+                        <ScrollViewer x:Name="PART_ScrollViewer" Margin="0"
+                                    HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                    VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+							        Padding="{TemplateBinding Padding}"
+                                    Background="{TemplateBinding Background}"
+								    BorderBrush="{x:Null}" BorderThickness="0"
+								    Loaded="ScrollViewer_Loaded">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                    <ContentPresenter x:Name="dragVisualPlaceholder" Visibility="Collapsed" HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Stretch" />
+                </Grid>
+            </ControlTemplate>
+
+            <Style TargetType="telerik:RadListBox" BasedOn="{StaticResource RadListBoxStyle}" x:Key="CustomRadListBox">
+                <Setter Property="Template" Value="{StaticResource CustomRadListoBoxtemplate}" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="First Look" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="740" Height="515">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Films distributed by:" 
+				   FontSize="20" 
+				   FontFamily="Segoe UI"
+				   Foreground="{StaticResource AccentBrush}"
+				   VerticalAlignment="Center"
+				   Margin="55 0 0 0"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="640" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadButton  Style="{StaticResource LeftArrowButton}" Click="LeftArrow_Click" />
+
+            <telerik:RadListBox ItemsSource="{Binding Studios}" 
+								SelectedItem="{Binding SelectedStudio, Mode=TwoWay}"
+								x:Name="listBox"
+								Style="{StaticResource CustomRadListBox}"
+								ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Left"
+								BorderThickness="0"
+								Grid.Column="1" 
+								ItemTemplate="{StaticResource ScrollItemsDataTemplate}"
+                                ItemsPanel="{StaticResource RadListBoxItemsPanel}"
+								ItemContainerStyle="{StaticResource HorizontalItemsStyle}"/>
+
+            <telerik:RadButton Grid.Column="2" Style="{StaticResource RightArrowButton}" Click="RightArrow_Click"/>
+        </Grid>
+
+        <Grid Width="630" VerticalAlignment="Top" Grid.Row="2" Margin="0 5 0 0" Height="320">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource AccentBrush}" />
+            <TextBlock Text="{Binding SelectedStudio, Converter={StaticResource upperCaseStringConverter}}" FontSize="17" 
+					 Foreground="{StaticResource WhiteBrush}" 
+					 Margin="14 2 0 0"
+					 VerticalAlignment="Top" />
+
+            <telerik:RadListBox ItemsSource="{Binding Movies}" VerticalAlignment="Top"
+								ItemTemplate="{StaticResource MoviesDataTemplate}" Grid.Row="1" />
+        </Grid>
+
+        <TextBlock Text="source: wikipedia.org" Grid.Row="3" HorizontalAlignment="Right" Foreground="#FFD4D6D6" 
+				   FontSize="11" VerticalAlignment="Top" Margin="0 5 55 0"/>
+    </Grid>
+</UserControl>

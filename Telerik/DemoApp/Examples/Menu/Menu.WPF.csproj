@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A59B401-70D5-4085-80D2-17C0584A424F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls, Version=2010.1.423.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2010.2.723.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.1.423.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ViewModels\BooleanToOrientationConverter.cs" />
+    <Compile Include="Common\ViewModels\MenuItem.cs" />
+    <Compile Include="Common\ViewModels\MenuItemsCollection.cs" />
+    <Compile Include="Common\ViewModels\MenuViewModel.cs" />
+    <Compile Include="Customization\PopularControl.cs" />
+    <Compile Include="Customization\TransitionSet.cs" />
+    <Compile Include="Customization\ViewModel.cs" />
+    <Compile Include="MultiColumnMenu\MenuItem.cs" />
+    <Compile Include="MultiColumnMenu\SimpleViewModel.cs" />
+    <Compile Include="Customization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\SDKViewModel.cs" />
+    <Compile Include="Theming\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToe\CheckAction.cs" />
+    <Compile Include="TicTacToe\FalseToVisibleConverter.cs" />
+    <Compile Include="TicTacToe\GameAction.cs" />
+    <Compile Include="TicTacToe\NullToCollapsedConverter.cs" />
+    <Compile Include="TicTacToe\ResetAction.cs" />
+    <Compile Include="TicTacToe\TicTacToeAI.cs" />
+    <Compile Include="TicTacToe\TicTacToeViewModel.cs" />
+    <Compile Include="TicTacToe\TileViewModel.cs" />
+    <Compile Include="TicTacToe\TrueToVisibleConverter.cs" />
+    <Compile Include="WPF\AddRemoveDisable\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\BoundaryDetection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\CheckableMenuItems\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\DataBinding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\MultiColumnMenu\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToe\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Customization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\AddRemoveDisable\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TicTacToe\WPF\BoardStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TicTacToe\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\AddRemoveDisable\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\BoundaryDetection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\BoundaryDetection\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\CheckableMenuItems\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\CheckableMenuItems\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\Configurator\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\Configurator\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\DataBinding\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\DataBinding\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\MultiColumnMenu\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Products\Big\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\11new.png" />
+    <Resource Include="Images\Menu\12open.png" />
+    <Resource Include="Images\Menu\13Save.png" />
+    <Resource Include="Images\Menu\14SaveWeb.png" />
+    <Resource Include="Images\Menu\15printPreview.png" />
+    <Resource Include="Images\Menu\16print.png" />
+    <Resource Include="Images\Menu\19cut.png" />
+    <Resource Include="Images\Menu\1folder.png" />
+    <Resource Include="Images\Menu\20paste.png" />
+    <Resource Include="Images\Menu\21undo.png" />
+    <Resource Include="Images\Menu\22copy.png" />
+    <Resource Include="Images\Menu\23clipboard.png" />
+    <Resource Include="Images\Menu\24find.png" />
+    <Resource Include="Images\Menu\2about.png" />
+    <Resource Include="Images\Menu\31normal.png" />
+    <Resource Include="Images\Menu\32web.png" />
+    <Resource Include="Images\Menu\33print.png" />
+    <Resource Include="Images\Menu\34task.png" />
+    <Resource Include="Images\Menu\7delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\Gallery3D_1.png" />
+    <Resource Include="Images\Menu\Gallery3D_2.png" />
+    <Resource Include="Images\Menu\Integration_1.png" />
+    <Resource Include="Images\Menu\Integration_2.png" />
+    <Resource Include="Images\Menu\Integration_3.png" />
+    <Resource Include="Images\Menu\Integration_4.png" />
+    <Resource Include="Images\Menu\Themes1.png" />
+    <Resource Include="Images\Menu\Themes2.png" />
+    <Resource Include="Images\Menu\Themes3.png" />
+    <Resource Include="Images\Menu\Themes4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WPF\Customization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\first_look_menu.png" />
+    <Resource Include="Images\Menu\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\MVVM\Redo.png" />
+    <Resource Include="Images\Menu\MVVM\Refresh.png" />
+    <Resource Include="Images\Menu\MVVM\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\used.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TicTacToe\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MultiColumnMenu\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CheckableMenuItems\Description.txt" />
+    <Resource Include="Configurator\Description.txt" />
+    <Resource Include="Customization\Description.txt" />
+    <Resource Include="DataBinding\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BoundaryDetection\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\1.png" />
+    <Resource Include="Images\Menu\10.png" />
+    <Resource Include="Images\Menu\11.png" />
+    <Resource Include="Images\Menu\12.png" />
+    <Resource Include="Images\Menu\13.png" />
+    <Resource Include="Images\Menu\14.png" />
+    <Resource Include="Images\Menu\15.png" />
+    <Resource Include="Images\Menu\16.png" />
+    <Resource Include="Images\Menu\17.png" />
+    <Resource Include="Images\Menu\18.png" />
+    <Resource Include="Images\Menu\19.png" />
+    <Resource Include="Images\Menu\2.png" />
+    <Resource Include="Images\Menu\20.png" />
+    <Resource Include="Images\Menu\21.png" />
+    <Resource Include="Images\Menu\22.png" />
+    <Resource Include="Images\Menu\23.png" />
+    <Resource Include="Images\Menu\24.png" />
+    <Resource Include="Images\Menu\25.png" />
+    <Resource Include="Images\Menu\26.png" />
+    <Resource Include="Images\Menu\27.png" />
+    <Resource Include="Images\Menu\28.png" />
+    <Resource Include="Images\Menu\29.png" />
+    <Resource Include="Images\Menu\3.png" />
+    <Resource Include="Images\Menu\30.png" />
+    <Resource Include="Images\Menu\31.png" />
+    <Resource Include="Images\Menu\32.png" />
+    <Resource Include="Images\Menu\33.png" />
+    <Resource Include="Images\Menu\34.png" />
+    <Resource Include="Images\Menu\4.png" />
+    <Resource Include="Images\Menu\5.png" />
+    <Resource Include="Images\Menu\6.png" />
+    <Resource Include="Images\Menu\7.png" />
+    <Resource Include="Images\Menu\8.png" />
+    <Resource Include="Images\Menu\9.png" />
+    <Resource Include="Images\Menu\AllBorder.png" />
+    <Resource Include="Images\Menu\arrows.png" />
+    <Resource Include="Images\Menu\Arrows\1.png" />
+    <Resource Include="Images\Menu\Arrows\10.png" />
+    <Resource Include="Images\Menu\Arrows\11.png" />
+    <Resource Include="Images\Menu\Arrows\12.png" />
+    <Resource Include="Images\Menu\Arrows\13.png" />
+    <Resource Include="Images\Menu\Arrows\14.png" />
+    <Resource Include="Images\Menu\Arrows\15.png" />
+    <Resource Include="Images\Menu\Arrows\16.png" />
+    <Resource Include="Images\Menu\Arrows\17.png" />
+    <Resource Include="Images\Menu\Arrows\18.png" />
+    <Resource Include="Images\Menu\Arrows\19.png" />
+    <Resource Include="Images\Menu\Arrows\2.png" />
+    <Resource Include="Images\Menu\Arrows\20.png" />
+    <Resource Include="Images\Menu\Arrows\21.png" />
+    <Resource Include="Images\Menu\Arrows\3.png" />
+    <Resource Include="Images\Menu\Arrows\4.png" />
+    <Resource Include="Images\Menu\Arrows\5.png" />
+    <Resource Include="Images\Menu\Arrows\6.png" />
+    <Resource Include="Images\Menu\Arrows\7.png" />
+    <Resource Include="Images\Menu\Arrows\8.png" />
+    <Resource Include="Images\Menu\Arrows\9.png" />
+    <Resource Include="Images\Menu\Bold.png" />
+    <Resource Include="Images\Menu\BottomBorder.png" />
+    <Resource Include="Images\Menu\Edit_Copy.png" />
+    <Resource Include="Images\Menu\Edit_EditColor.png" />
+    <Resource Include="Images\Menu\Edit_EditStyle.png" />
+    <Resource Include="Images\Menu\Edit_Find.png" />
+    <Resource Include="Images\Menu\Edit_FlipHorizontal.png" />
+    <Resource Include="Images\Menu\Edit_FlipVertical.png" />
+    <Resource Include="Images\Menu\Edit_Paste.png" />
+    <Resource Include="Images\Menu\Edit_Redo.png" />
+    <Resource Include="Images\Menu\Edit_Undo.png" />
+    <Resource Include="Images\Menu\File_Exit.png" />
+    <Resource Include="Images\Menu\File_New.png" />
+    <Resource Include="Images\Menu\File_Open.png" />
+    <Resource Include="Images\Menu\File_Print.png" />
+    <Resource Include="Images\Menu\File_Save.png" />
+    <Resource Include="Images\Menu\File_Send.png" />
+    <Resource Include="Images\Menu\FirstLookText.png" />
+    <Resource Include="Images\Menu\insert_icons.png" />
+    <Resource Include="Images\Menu\Italic.png" />
+    <Resource Include="Images\Menu\LeftBorder.png" />
+    <Resource Include="Images\Menu\NotBorder.png" />
+    <Resource Include="Images\Menu\OutsideBorder.png" />
+    <Resource Include="Images\Menu\RightBorder.png" />
+    <Resource Include="Images\Menu\Screenshot.png" />
+    <Resource Include="Images\Menu\TopBorder.png" />
+    <Resource Include="Images\Menu\Underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\Lines\1.png" />
+    <Resource Include="Images\Menu\Lines\2.png" />
+    <Resource Include="Images\Menu\Lines\3.png" />
+    <Resource Include="Images\Menu\Lines\4.png" />
+    <Resource Include="Images\Menu\Lines\5.png" />
+    <Resource Include="Images\Menu\Shapes\1.png" />
+    <Resource Include="Images\Menu\Shapes\10.png" />
+    <Resource Include="Images\Menu\Shapes\11.png" />
+    <Resource Include="Images\Menu\Shapes\12.png" />
+    <Resource Include="Images\Menu\Shapes\13.png" />
+    <Resource Include="Images\Menu\Shapes\14.png" />
+    <Resource Include="Images\Menu\Shapes\15.png" />
+    <Resource Include="Images\Menu\Shapes\2.png" />
+    <Resource Include="Images\Menu\Shapes\3.png" />
+    <Resource Include="Images\Menu\Shapes\4.png" />
+    <Resource Include="Images\Menu\Shapes\5.png" />
+    <Resource Include="Images\Menu\Shapes\6.png" />
+    <Resource Include="Images\Menu\Shapes\7.png" />
+    <Resource Include="Images\Menu\Shapes\8.png" />
+    <Resource Include="Images\Menu\Shapes\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\Menu_icon.png" />
+    <Resource Include="Images\Menu\zoom_in.png" />
+    <Resource Include="Images\Menu\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\Multicolumn\android.png" />
+    <Resource Include="Images\Menu\Multicolumn\blackberry.png" />
+    <Resource Include="Images\Menu\Multicolumn\Calculator.png" />
+    <Resource Include="Images\Menu\Multicolumn\camcoder.png" />
+    <Resource Include="Images\Menu\Multicolumn\camcoder_pro.png" />
+    <Resource Include="Images\Menu\Multicolumn\compact_camera.png" />
+    <Resource Include="Images\Menu\Multicolumn\hdd.png" />
+    <Resource Include="Images\Menu\Multicolumn\iphone.png" />
+    <Resource Include="Images\Menu\Multicolumn\keyboard.png" />
+    <Resource Include="Images\Menu\Multicolumn\monitor.png" />
+    <Resource Include="Images\Menu\Multicolumn\mouse.png" />
+    <Resource Include="Images\Menu\Multicolumn\phone.png" />
+    <Resource Include="Images\Menu\Multicolumn\scanner.png" />
+    <Resource Include="Images\Menu\Multicolumn\slr_camera.png" />
+    <Resource Include="Images\Menu\Multicolumn\slr_camera2.png" />
+    <Resource Include="Images\Menu\Multicolumn\video_projector.png" />
+    <Resource Include="Images\Menu\Multicolumn\webcam.png" />
+    <Resource Include="Images\Menu\Multicolumn\windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\icon1.png" />
+    <Resource Include="Images\Customization\icon2.png" />
+    <Resource Include="Images\Customization\icon3.png" />
+    <Resource Include="Images\Customization\icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Image4.png" />
+    <Resource Include="Images\Customization\Image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Menu_Chart.png" />
+    <Resource Include="Images\Customization\Menu_ComboBox.png" />
+    <Resource Include="Images\Customization\Menu_Diagrams.png" />
+    <Resource Include="Images\Customization\Menu_Docking.png" />
+    <Resource Include="Images\Customization\Menu_Grid.png" />
+    <Resource Include="Images\Customization\Menu_Map.png" />
+    <Resource Include="Images\Customization\Menu_Pivot.png" />
+    <Resource Include="Images\Customization\Menu_RTB.PNG" />
+    <Resource Include="Images\Customization\Menu_ScheduleView.png" />
+    <Resource Include="Images\Customization\Menu_Spreadsheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Menu_RadialMenu.png" />
+    <Resource Include="Images\Customization\Menu_ToolTip.png" />
+    <Resource Include="Images\Customization\Menu_WordsProcessing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\CRM.PNG" />
+    <Resource Include="Images\Customization\Executive Dashboard.png" />
+    <Resource Include="Images\Customization\Menu_ThemesGenerator.png" />
+    <Resource Include="Images\Customization\SalesDashboard.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <EmbeddedResource Include="@(Resource)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

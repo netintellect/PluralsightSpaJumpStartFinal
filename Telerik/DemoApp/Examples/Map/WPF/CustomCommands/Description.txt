@@ -1,0 +1,5 @@
+﻿RadMap provides powerful customization options that allow you to change the built-in commands in the MapCommandBar and the zoom levels in the MapZoomBar UI controls with your own.
+
+This example replaces the default CommandBar behavior with custom commands that execute search requests for predefined points of interest through the built-in BingSearchProvider.
+
+Also, the default zoom level presets in the ZoomBar are replaced with three options ("Block", "Neighborhood", and "Downtown") that are more relevant for the visualized map region.

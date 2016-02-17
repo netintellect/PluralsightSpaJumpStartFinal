@@ -1,0 +1,80 @@
+﻿<local:ViewBase x:Class="Telerik.Windows.QuickStart.Showcases"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:core="clr-namespace:Telerik.Windows.QuickStart;assembly=Core"
+		xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+        x:Name="rootShowcases"
+		mc:Ignorable="d" Style="{StaticResource ViewBaseRegularStyle}"
+		d:DesignHeight="800" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Application;component/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid SnapsToDevicePixels="True">
+        <ContentControl x:Name="Controls" Margin="20 20 10 10" Style="{StaticResource ShadowContainerStyle}">
+            <Grid>
+                <Button Style="{StaticResource LeftBookmarkButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="-25 10" IsHitTestVisible="False" IsTabStop="False" />
+            </Grid>
+        </ContentControl>
+        <ContentControl x:Name="RareDecorationContainer" Margin="10 10 20 20" Style="{StaticResource ShadowContainerStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Margin="0,0,260,0" Style="{StaticResource DownloadTrialSmallButtonStyle}" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/account/free-trials/trial-product-versions/single-trial.aspx?pmvid=0&amp;pid=601" Grid.Column="1" HorizontalAlignment="Right" />
+
+                <local:QuickNavigation HorizontalAlignment="Right" Tag="{Binding DataContext, ElementName=rootShowcases}" Panel.ZIndex="1000"/>
+
+                <Button Grid.RowSpan="2" Style="{StaticResource RightBookmarkButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 -10 5" Content="BACK TO _HOME" Command="{Binding NavigateCommand}" CommandParameter="Home" />
+
+                <Button x:Name="Logo" Margin="10 0" HorizontalAlignment="Left" VerticalAlignment="Center" ContentTemplate="{StaticResource TelerikLogoTemplate}" Style="{StaticResource BlankButtonStyle}" Command="{Binding NavigateCommand}" CommandParameter="Home" />
+                
+                <ContentPresenter Margin="0"  ContentTemplate="{StaticResource HeaderSeparatorTemplate}" Grid.Row="1" VerticalAlignment="Top" />
+
+                <Grid Margin="100,0,130,0" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource TitleTextStyle}" VerticalAlignment="Center" Text="Experience the demos" Margin="0 8 0 8"/>
+                    <StackPanel VerticalAlignment="Top" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+
+                            <Button Command="{Binding NavigateCommand}" Style="{StaticResource ShowcasesHyperlinkStyle}" Width="428"  CommandParameter="http://demos.telerik.com/wpf/executivedashboard" Grid.Row="1" Margin="0 0 -50 0">
+                                <Image Source="/Application;component/Resources/Images/ExecutiveDashboard.png"/>
+                            </Button>
+                            <Button Command="{Binding NavigateCommand}" Style="{StaticResource ShowcasesHyperlinkStyle}" Width="474" Height="354" Margin="-20 -10 -10 -10"  CommandParameter="http://demos.telerik.com/wpf/crm/" Grid.Row="1" Canvas.ZIndex="1">
+                                <Image Source="/Application;component/Resources/Images/CRMDashboard.png" Stretch="None" SnapsToDevicePixels="True"/>
+                            </Button>
+                            <Button Command="{Binding NavigateCommand}" Style="{StaticResource ShowcasesHyperlinkStyle}" Width="430" Height="333" Margin="-42 0 -15 -15" CommandParameter="http://demos.telerik.com/wpf/outlookinspiredapp" Grid.Row="1">
+                                <Image Source="/Application;component/Resources/Images/OutlookInspiredApp.png" Stretch="Fill"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel HorizontalAlignment="Left" Width="370" Grid.Row="2" Margin="10 30 0 0">
+                                <TextBlock Margin="10,0,0,0" Style="{StaticResource TitleTextStyle}" Text="Executive Dashboard"/>
+                                <TextBlock Style="{StaticResource TextStyle}" Text="Get the sales breakdown across products, countries and quarters. Windows 8 UI, theming, and real-time customization ensure end-user value for any sales theme." />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Width="424" Grid.Row="2" Grid.Column="1" Margin="0 30 -33 0">
+                                <TextBlock Margin="10,0,0,0" Style="{StaticResource TitleTextStyle}" Text="CRM"/>
+                                <TextBlock Style="{StaticResource TextStyle}" Text="Telerik CRM demo application is a next generation Customer Relationship Management (CRM) solution intended to help a fictional sales person through the trials and tribulations of his day-to-day experience. The demo showcases how an inspiring UI, complex background logic and entertaining user experience can be put together using Telerik UI for WPF." />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Width="410" Grid.Row="2" Grid.Column="2" Margin="35 30 -20 0">
+                                <TextBlock Margin="10,0,0,0" Style="{StaticResource TitleTextStyle}" Text="Outlook Inspired App"/>
+                                <TextBlock Style="{StaticResource TextStyle}" Text="In this demo application we joined the powers of some of the most prominent controls in UI for WPF to create one of the most recognizable UIs in the world – Microsoft Outlook. You can easily spot GridView, RibbonView, ScheduleView, RichTextBox and Calendar how blend seamlessly." />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ContentControl>
+    </Grid>
+</local:ViewBase>

@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65B8CA15-BF29-4812-95BC-BFED927B4C6B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TransitionControl</RootNamespace>
+    <AssemblyName>TransitionControl</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TransitionControl.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TransitionControl.App</SilverlightAppEntry>
+    <TestPageFileName>TransitionControl.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FirstLook\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MappedLightTransitions\MappedLightTransitionsViewModel.cs" />
+    <Compile Include="MappedLightTransitions\NavigationItem.cs" />
+    <Compile Include="Rotator\RotatorExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rotator\RotatorItemsCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurator\ConfiguratorViewModel.cs" />
+    <Compile Include="Configurator\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configurator\Person.cs" />
+    <Compile Include="Configurator\TransitionItem.cs" />
+    <Compile Include="SlideAndZoomTransition\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SlideAndZoomTransition\SiteMap.cs" />
+    <Compile Include="SlideAndZoomTransition\SitePage.cs" />
+    <Compile Include="MappedLightTransitions\InteriorDesignViewModel.cs" />
+    <Compile Include="MappedLightTransitions\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MappedLightTransitions\Wall.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FirstLook\TransitionItems.cs" />
+    <Compile Include="FirstLook\Person.cs" />
+    <Compile Include="FirstLook\TransitionSet.cs" />
+    <Compile Include="Rotator\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Common\Silverlight\SilverlightPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\SundayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\SaturdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\FridayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\ThursdayPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\WindowsPhone7Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\WPFPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Configurator\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Configurator\Silverlight\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SlideAndZoomTransition\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SlideAndZoomTransition\Silverlight\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Silverlight\MondayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\Silverlight\TuesdayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\Silverlight\WednesdayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MappedLightTransitions\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MappedLightTransitions\Silverlight\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rotator\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TransitionControl\Products\Big\TransitionControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Products\Big\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rotator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\CardPerson01.png" />
+    <Resource Include="Images\TransitionControl\CardPerson02.png" />
+    <Resource Include="Images\TransitionControl\CardPerson03.png" />
+    <Resource Include="Images\TransitionControl\CardPerson04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Interior\Furnishing.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall1.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall3.png" />
+    <Resource Include="Images\TransitionControl\Interior\Wall2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\ProgressMaps\BrushReveal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\ProgressMaps\BloxyPattern.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\ProgressMaps\SplitScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MappedLightTransitions\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\FrameNavigation\Silverlight.png" />
+    <Resource Include="Images\TransitionControl\FrameNavigation\WP7.png" />
+    <Resource Include="Images\TransitionControl\FrameNavigation\WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SlideAndZoomTransition\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Configurator\item1.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item2.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item3.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item4.png" />
+    <Resource Include="Images\TransitionControl\Configurator\item5.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\book_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\check_icon.png" />
+    <Resource Include="Images\TransitionControl\Contact_screen.png" />
+    <Resource Include="Images\TransitionControl\Events_screen.png" />
+    <Resource Include="Images\TransitionControl\folder_icon.png" />
+    <Resource Include="Images\TransitionControl\Library_screen.png" />
+    <Resource Include="Images\TransitionControl\Mail_screen.png" />
+    <Resource Include="Images\TransitionControl\message_icon.png" />
+    <Resource Include="Images\TransitionControl\musik_icon.png" />
+    <Resource Include="Images\TransitionControl\MyDestinations_screen.png" />
+    <Resource Include="Images\TransitionControl\myPhotos_screen.png" />
+    <Resource Include="Images\TransitionControl\photo_icon.png" />
+    <Resource Include="Images\TransitionControl\user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\inspiration_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\Inspirations_screen.png" />
+    <Resource Include="Images\TransitionControl\ThingsToDo_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\MusicBox_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Monday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Tuesday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Wednesday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Thursday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Friday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Saturday_screen.png" />
+    <Resource Include="Images\TransitionControl\SlideAndZoomTransition\Silverlight\Sunday_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\1st_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\1st_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\2nd_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\2nd_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\3rd_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\3rd_wom_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\Athl_Image_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\Athletics_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\AthleticsWOMEN_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\Inspiration_icon36x36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\Priz_Front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\AthleticsWOMEN_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\CarmelitaJeter_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\JustinGatlin_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\london2012_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\medalist_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\Shelly-Ann_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\UsainBolt_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\VeronicaCampbell_back.png" />
+    <Resource Include="Images\PerspectiveTransitions\Silverlight\YohanBlake_back.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

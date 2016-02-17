@@ -1,0 +1,1 @@
+﻿Telerik ListBox can be bound to various datasource types. This example shows how two or more ListBoxes can be bound so that the selection of the first one triggers the loading of the second ListBox. Additionally, the item's text can be customized using a custom <b>ItemTemplate</b>. RadListBox is part of the <b>Telerik.Windows.Controls</b> assembly.

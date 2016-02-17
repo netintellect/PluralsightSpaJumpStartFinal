@@ -1,0 +1,1 @@
+﻿By integrating the RadHtmlPlaceholder with RadWindow you can simulate an Html popup behaviour from the Silverlight page.

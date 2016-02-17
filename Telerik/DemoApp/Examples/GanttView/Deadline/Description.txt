@@ -1,0 +1,4 @@
+﻿The TimeLineVisualizationBehavior is responsible for rendering all elements in the Timeline portion of the control (Tasks, Milestones etc.).
+<br />
+<br />
+This example demonstrates how to customize the way items are rendered in the Timeline portion of the control and add additional custom elements by creating a custom TimeLineVisualizationBehavior.

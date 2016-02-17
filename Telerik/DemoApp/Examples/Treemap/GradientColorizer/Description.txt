@@ -1,0 +1,1 @@
+﻿This example demonstrates the ValueGradientColorizer. The colorizer is configured by a collection of GradientStop objects, minimum and maximum values. Each value in the underlying data is evaluated within the min-max range and its color is calculated from the available GradientStops.

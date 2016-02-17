@@ -1,0 +1,154 @@
+<UserControl x:Class="Telerik.Windows.Examples.CoverFlow.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls">
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Configurator" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+		<LinearGradientBrush x:Key="HeaderBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#FF727272" Offset="0"/>
+			<GradientStop Color="#FF727272" Offset="0.996"/>
+			<GradientStop Color="#FF5D5D5D" Offset="0.5889"/>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="CoverFlowItemBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+			<LinearGradientBrush.GradientStops>
+				<GradientStopCollection>
+					<GradientStop Color="#FFd1d1d1" Offset="0" />
+					<GradientStop Color="#FFd1d1d1" Offset="0.02" />
+					<GradientStop Color="#FF7a7a7a" Offset="0.24" />
+					<GradientStop Color="#FF999999" Offset="0.53" />
+					<GradientStop Color="#FFBABABA" Offset="0.98" />
+					<GradientStop Color="#FFbbbbbb" Offset="0.99" />
+				</GradientStopCollection>
+			</LinearGradientBrush.GradientStops>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="CoverFlowItemBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#CCE0E0E0"/>
+			<GradientStop Color="#CCDEDEDE" Offset="1"/>
+		</LinearGradientBrush>
+
+        <Style x:Key="RadCoverFlowItemContainerStyle" TargetType="ListBoxItem">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="telerik:RadCoverFlowItem">
+						<Border Background="{StaticResource CoverFlowItemBackground}" BorderBrush="{StaticResource CoverFlowItemBorderBrush}" 
+									BorderThickness="1"  CornerRadius="3" telerik:RadCoverFlow.EnableLoadNotification="True">
+                            <telerikPrimitives:LayoutTransformControl x:Name="layoutTransform">
+                                <ContentPresenter Margin="9" />
+                            </telerikPrimitives:LayoutTransformControl>
+                        </Border>                        
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+    </UserControl.Resources>
+    
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+			<StackPanel Margin="3">
+            <TextBlock Text="OffsetX" />
+            <telerik:RadNumericUpDown Margin="0 2" SmallChange="10" x:Name="OffsetX" Maximum="300" Value="0" />
+			
+            <TextBlock Text="OffsetY" />
+            <telerik:RadNumericUpDown Margin="0 2" SmallChange="10" x:Name="OffsetY" Maximum="300" Value="100" />
+            
+			<TextBlock Text="DistanceFromSelectedItem" />
+            <telerik:RadNumericUpDown Margin="0 2" SmallChange="10" x:Name="DistanceFromSelectedItem" Value="-30" />
+
+            <TextBlock Text="DistanceBetweenItems" />
+            <telerik:RadNumericUpDown Margin="0 2" Minimum="1" SmallChange="10" x:Name="DistanceBetweenItems" Value="35" />
+
+            <TextBlock Text="RotationY" />
+            <telerik:RadNumericUpDown x:Name="RotationY" Margin="0 2" Minimum="-180" Maximum="180" Value="60" />
+
+            <TextBlock  Text="ItemScale" />
+            <telerik:RadNumericUpDown x:Name="ItemScale" Margin="0 2" SmallChange="0.1" Maximum="1" Minimum="0.01" Value="0.7" />
+
+            <TextBlock Text="ItemChangeDelay" />
+            <telerik:RadNumericUpDown ValueChanged="ItemChangeDelay_Changed" Margin="0 2" Value="300" SmallChange="100" Minimum="10" LargeChange="1000" />
+
+            <CheckBox x:Name="IsReflectionEnabled" Content="IsReflectionEnabled" Margin="0 2" IsChecked="True" IsThreeState="False" />
+
+            <TextBlock Text="CameraRotation" />
+            <telerik:RadSlider x:Name="CameraRotation" Margin="0 2" Maximum="85" Minimum="-85" />
+
+            <TextBlock Text="CameraDistance" />
+            <telerik:RadSlider x:Name="CameraDistance" Margin="0 2" Maximum="2000" Value="1000" Minimum="300" />
+
+            <TextBlock Text="ReflectionHeight" />
+            <telerik:RadSlider x:Name="ReflectionHeight" Margin="0 2" Maximum="1" Value="0.2" Minimum="0" />
+
+            <TextBlock Text="ReflectionOpacity" />
+            <telerik:RadSlider x:Name="ReflectionOpacity" Margin="0 2" Maximum="1" Value="2" Minimum="0" />
+
+            <TextBlock Text="CameraViewpoint" />
+            <telerik:RadComboBox x:Name="CameraViewpoint" Margin="0 2" />
+
+            <TextBlock Text="EasingFunction" />
+            <telerik:RadComboBox x:Name="EasingFunction" Margin="0 2" DisplayMemberPath="Key" SelectedValuePath="Value" />
+
+            <TextBlock Text="Orientation" />
+            <telerik:RadComboBox x:Name="Orientation" Margin="0 2" SelectionChanged="Orientation_SelectionChanged" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Border>
+		<Grid>
+            <!--Decoration borders-->
+            <Border BorderBrush="#FFCBD8E8" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFF3F3F3" Offset="0.004"/>
+                        <GradientStop Color="White" Offset="0.181"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Rectangle HorizontalAlignment="Stretch" Height="31" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#50CCCCCC" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="0.429"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <telerik:RadCoverFlow x:Name="cover" SelectedIndex="0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+				DistanceFromSelectedItem="{Binding ElementName=DistanceFromSelectedItem, Path=Value}"
+				DistanceBetweenItems="{Binding ElementName=DistanceBetweenItems, Path=Value}"
+				RotationY="{Binding ElementName=RotationY, Path=Value}"
+				ItemScale="{Binding ElementName=ItemScale, Path=Value}"
+				IsReflectionEnabled="{Binding ElementName=IsReflectionEnabled, Path=IsChecked}"
+				CameraRotation="{Binding ElementName=CameraRotation, Path=Value}"
+				CameraDistance="{Binding ElementName=CameraDistance, Path=Value}"
+				CameraViewpoint="{Binding ElementName=CameraViewpoint, Path=SelectedValue}"
+				EasingFunction="{Binding ElementName=EasingFunction, Path=SelectedValue}"
+                ReflectionHeight="{Binding ElementName=ReflectionHeight, Path=Value}"
+                ReflectionOpacity="{Binding ElementName=ReflectionOpacity, Path=Value}"
+                Orientation="{Binding ElementName=Orientation, Path=SelectedValue}"
+                OffsetY="{Binding ElementName=OffsetY, Path=Value}"
+                OffsetX="{Binding ElementName=OffsetX, Path=Value}"
+                ItemContainerStyle="{StaticResource RadCoverFlowItemContainerStyle}">
+                
+                <Image Source="../Images/CoverFlow/Paris_1.jpg" Stretch="None" />
+                <Image Source="../Images/CoverFlow/London_2.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Bangkok_3.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Singapore_4.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/New-york5.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Hong-kong_6.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Istanbul_7.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Dubai_8.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Shanghai_9.jpg" Stretch="None" />
+				<Image Source="../Images/CoverFlow/Rome_10.jpg" Stretch="None" />
+
+			</telerik:RadCoverFlow>
+		</Grid>
+	</Border>
+</UserControl>

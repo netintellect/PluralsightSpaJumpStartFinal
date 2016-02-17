@@ -1,0 +1,1 @@
+﻿Telerik RadCloudUpload is a UI control that is easily integrated with any cloud storage provider including Azure, AmazonS3 and Telerik Backend Services, helping you to upload files to the cloud asynchronously. Among the key feature of the control are multiple file selection, cancellation, progress-tracking and validation.

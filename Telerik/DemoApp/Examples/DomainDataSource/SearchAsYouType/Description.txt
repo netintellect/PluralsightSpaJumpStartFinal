@@ -1,0 +1,1 @@
+﻿This sample demonstrates the use of FilterDescriptors and a timer to achieve a "search as you type" functionality directly on the server.

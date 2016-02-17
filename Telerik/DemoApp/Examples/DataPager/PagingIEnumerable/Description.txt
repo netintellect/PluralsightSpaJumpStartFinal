@@ -1,0 +1,1 @@
+﻿This example demonstrates paging using the RadDataPager. In this example the original source collection is not pageable, but thanks to RadDataPager paging is still possible. The Source property of the pager is bound to a simple IEnumerable and the grid uses the PagedSource property of the pager as its ItemsSource. With this functionality you can page any possible collection.

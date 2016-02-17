@@ -1,0 +1,2 @@
+﻿This example demonstrates how to use IsExpandedBinding property to synchronize the TreeListView expanded state with your view-model.
+

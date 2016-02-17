@@ -1,0 +1,186 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Timeline.CustomRowIndex.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Timeline.CustomRowIndex"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    
+    <Grid x:Name="LayoutRoot" Background="White" Margin="10">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="206"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0 0 0 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" MinWidth="135" />
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Foreground="{StaticResource AccentBrush}" FontSize="22" VerticalAlignment="Center" FontFamily="Segoe UI">Royal Houses</TextBlock>
+            <telerik:RadUniformGrid Grid.Column="1" ChildrenFlow="Horizontal" Columns="8" Rows="1" 
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <telerik:RadUniformGrid.Resources>
+                    <Style TargetType="telerik:RadButton" BasedOn="{StaticResource ButtonStyle}">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="MaxWidth" Value="110"/>
+                        <Setter Property="MinWidth" Value="60" />
+                        <Setter Property="Command" Value="{Binding UpdateVisiblePeriodCommand}" />
+                        <Setter Property="CommandParameter" Value="{Binding Path=Content, RelativeSource={RelativeSource Self}}"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                        <Setter Property="Padding" Value="2" />
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    </Style>
+                </telerik:RadUniformGrid.Resources>
+                <telerik:RadButton Background="#FF8EC441" >Wessex</telerik:RadButton>
+                <telerik:RadButton Background="#FF1B9DDE" >Normandy</telerik:RadButton>
+                <telerik:RadButton Background="#FFF59700" >Plantagenet</telerik:RadButton>
+                <telerik:RadButton Background="#FF339933" >Lancaster</telerik:RadButton>
+                <telerik:RadButton Background="#FFD4DF32" >Tudor</telerik:RadButton>
+                <telerik:RadButton Background="#FF00ABA9" >Stuart</telerik:RadButton>
+                <telerik:RadButton Background="#FFDC5B20" >Hanover</telerik:RadButton>
+                <telerik:RadButton Background="#FFE8BC34" >Windsor</telerik:RadButton>
+            </telerik:RadUniformGrid>
+        </Grid>
+        
+        <telerik:RadTimeline x:Name="radTimeline"
+                             Margin="0 15 0 0"
+                             Grid.Row="1"
+                             StartPath="Begin"
+                             DurationPath="Duration"
+                             ItemsSource="{Binding Items}"
+                             PeriodStart="{Binding Start}"
+                             PeriodEnd="{Binding End}"
+                             VisiblePeriodStart="{Binding VisibleStart, Mode=TwoWay}"
+                             VisiblePeriodEnd="{Binding VisibleEnd, Mode=TwoWay}"
+                             ItemRowIndexGenerator="{Binding RowIndexGenerator}"
+                             VerticalScrollBarVisibility="Hidden"
+                             AnnotationContentTemplate="{StaticResource annotationTemplate}"
+                             AnnotationsSource="{Binding Houses}"
+                             AnnotationStartPath="Begin"
+                             AnnotationDurationPath="Duration"
+                             AnnotationContentPath="Data"
+                             IsSelectionEnabled="True"
+                             SelectionMode="Multiple"
+                             MaxZoomRange="{Binding MaxZoomRange}"
+                             example:TimelineCustomSelection.IsTwoWayBindingEnabled="True"
+                             example:TimelineCustomSelection.SelectedItems="{Binding SelectedItems, Mode=TwoWay}">
+            <telerik:RadTimeline.Intervals>
+                <telerik:DecadeInterval/>
+                <telerik:CenturyInterval/>
+            </telerik:RadTimeline.Intervals>
+        </telerik:RadTimeline>
+        
+        <Grid Grid.Row="2" Margin="0 14 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="49" />
+                <ColumnDefinition Width="3*" MinWidth="120"/>
+                <ColumnDefinition Width="49" />
+                <ColumnDefinition Width="3*" MinWidth="81" />
+                <ColumnDefinition Width="5*" MinWidth="172" />
+                <ColumnDefinition Width="14*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="158"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <telerik:RadButton Grid.Column="0"
+                               Grid.RowSpan="3"
+                               Margin="0 0 17 0"
+                               Style="{StaticResource LeftArrowButton}"
+                               Command="{Binding PreviousKingCommand}"/>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="{StaticResource AccentBrush}" Height="158" Width="119" MinWidth="119" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <Image Source="{Binding SelectedKing, Converter={StaticResource imageSourceConverter}}" />
+            </Border>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Foreground="{StaticResource AccentBrush}" FontFamily="Segoe UI Light" FontSize="14"
+                        Text="{Binding SelectedKing, Converter={StaticResource imageLabelConverter}}"
+                        TextAlignment="Center" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Foreground="{StaticResource AccentBrush}" FontFamily="Segoe UI Light" FontSize="11"
+                        TextAlignment="Center">
+                <Run Text="{Binding SelectedKing.Begin.Year, Mode=OneWay}" />
+                <Run Text=" - "/>
+                <Run Text="{Binding SelectedKing, Mode=OneWay, Converter={StaticResource kingToEndYearConverter}}"/>
+            </TextBlock>
+
+            <telerik:RadButton Grid.Column="2"
+                               Grid.RowSpan="3"
+                               Margin="17 0 0 0"
+                               Style="{StaticResource RightArrowButton}"
+                               Command="{Binding NextKingCommand}"/>
+
+            <StackPanel Grid.Column="3"
+                        Grid.RowSpan="3"
+                        Margin="5 -2 0 0"
+                        HorizontalAlignment="Right">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Blue"/>
+                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="TextAlignment" Value="Right"/>
+                        <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Name:"/>
+                <TextBlock Text="Born:"/>
+                <TextBlock Text="Parents:"/>
+                <TextBlock Text="House of:"/>
+                <TextBlock Text="Became King:"/>
+                <TextBlock Text="Children:" Height="32"/>
+                <TextBlock Text="Died:"/>
+                <TextBlock Text="Succeeded by:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="4"
+                        Grid.RowSpan="3"
+                        Margin="5 -2 0 0"
+                        DataContext="{Binding SelectedKing, Converter={StaticResource kingEventConverter}}">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="TextAlignment" Value="Left"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="{Binding Path=Name}" />
+                <TextBlock Text="{Binding Path=Birth, Converter={StaticResource dateTimeLabelConverter}}"/>
+                <TextBlock Text="{Binding Path=Parents}"/>
+                <TextBlock Text="{Binding Path=House}"/>
+                <TextBlock Text="{Binding Path=Begin, Converter={StaticResource dateTimeLabelConverter}}"/>
+                <TextBlock Text="{Binding Path=Children}" Height="32" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Path=Death, Converter={StaticResource dateTimeLabelConverter}}"/>
+                <TextBlock Text="{Binding Path=Successor}" Height="48" TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <Border x:Name="borderWrapper" Grid.Column="5" Grid.RowSpan="3" Margin="0 -4 0 0" telerik:ActualSizeProxy.IsEnabled="True">
+                <Canvas>
+                    <StackPanel Grid.Column="5" Margin="5 0 0 0">
+                        <TextBlock Foreground="{StaticResource AccentBrush}" FontSize="16" FontFamily="Segoe UI">
+                            <Run Text="In " /><Run Text="{Binding SelectedKingEvent.Begin.Year, Mode=OneWay}" /><Run Text="..." />
+                        </TextBlock>
+                        <TextBlock Width="{Binding ElementName=borderWrapper, Path=(telerik:ActualSizeProxy.ActualWidth)}" Text="{Binding SelectedKingEvent, Converter={StaticResource eventLabelConverter}}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="13"/>
+                </StackPanel>
+                </Canvas>
+            </Border>
+        </Grid>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Kings and Queens of England and the United Kingdom" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+</UserControl>

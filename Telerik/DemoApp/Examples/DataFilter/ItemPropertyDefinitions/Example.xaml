@@ -1,0 +1,84 @@
+<Examples:DataFilterExample x:Class="Telerik.Windows.Examples.DataFilter.ItemPropertyDefinitions.Example"
+							xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:sys="clr-namespace:System;assembly=mscorlib"
+							xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+							xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+							xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+							xmlns:datafilter="clr-namespace:Telerik.Windows.Controls.Data.DataFilter;assembly=Telerik.Windows.Controls.Data"
+							xmlns:local="clr-namespace:Telerik.Windows.Examples.DataFilter.ItemPropertyDefinitions"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Soccer Teams"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.Resources>
+			<local:Types x:Key="Types" />
+			<DataTemplate x:Key="RowDetailsTemplate">
+                <telerik:RadGridView Name="playersGrid" GroupRenderMode="Flat"
+									 Width="500"
+									 CanUserFreezeColumns="False"
+									 ItemsSource="{Binding Players}"
+									 AutoGenerateColumns="False">
+					<telerik:RadGridView.Columns>
+						<telerik:GridViewDataColumn DataMemberBinding="{Binding Name}"
+													Width="*" />
+						<telerik:GridViewDataColumn DataMemberBinding="{Binding Number}"
+													Width="100" />
+						<telerik:GridViewDataColumn DataMemberBinding="{Binding Position}"
+													Width="100" />
+						<telerik:GridViewDataColumn DataMemberBinding="{Binding Country}"
+													Width="100" />
+					</telerik:RadGridView.Columns>
+				</telerik:RadGridView>
+			</DataTemplate>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<telerik:RadDataFilter Name="radDataFilter"
+							   Grid.Row="0"
+							   MinHeight="193"
+							   MaxHeight="250"
+							   Width="600"
+							   Source="{Binding Items, ElementName=clubsGrid}"
+							   AutoGenerateItemPropertyDefinitions="True"
+							   Margin="1">
+			<telerik:RadDataFilter.ItemPropertyDefinitions>
+				<!--This will also be displayed along with the auto-generated properties.-->
+				<datafilter:ItemPropertyDefinition PropertyName="Players.Count"
+												   PropertyType="{Binding Int32, Source={StaticResource Types}}"
+												   DisplayName="Squad Size"></datafilter:ItemPropertyDefinition>
+			</telerik:RadDataFilter.ItemPropertyDefinitions>
+		</telerik:RadDataFilter>
+		<telerik:RadGridView Grid.Row="1"
+							 Name="clubsGrid"
+							 MinHeight="193"
+							 MaxHeight="250"
+							 Width="600"
+							 ItemsSource="{Binding Clubs}"
+							 AutoGenerateColumns="False"
+							 IsFilteringAllowed="False"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 RowDetailsTemplate="{StaticResource RowDetailsTemplate}"
+							 Margin="1">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewToggleRowDetailsColumn />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Name}"
+											Width="200" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Established}"
+											Width="200"
+											Header="Est."
+											DataFormatString="{}{0:yyyy}" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding StadiumCapacity}"
+											Width="*"
+											Header="Stadium"
+											DataFormatString="{}{0:N0}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+	</Grid>
+</Examples:DataFilterExample>

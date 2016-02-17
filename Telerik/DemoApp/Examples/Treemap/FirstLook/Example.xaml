@@ -1,0 +1,126 @@
+<UserControl x:Class="Telerik.Windows.Examples.Treemap.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:treeMap="clr-namespace:Telerik.Windows.Controls.TreeMap;assembly=Telerik.Windows.Controls.DataVisualization"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:example="clr-namespace:Telerik.Windows.Examples.Treemap.FirstLook">
+    <UserControl.Resources>
+        <example:DefinitionConverter x:Key="DefinitionConverter" />
+        <Style TargetType="telerik:RadTreeMapItem" BasedOn="{StaticResource RadTreeMapItemStyle}">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+        </Style>
+        <telerik:PaletteBrushes x:Key="FillColorizerBrushes">
+            <SolidColorBrush Color="#69C7D3" />
+            <SolidColorBrush Color="#B1E292" />
+            <SolidColorBrush Color="#D2B4E2" />
+            <SolidColorBrush Color="#A2D7F0" />
+            <SolidColorBrush Color="#E8D982" />
+            <SolidColorBrush Color="#BBDBC6" />
+            <SolidColorBrush Color="#B0BADB" />
+        </telerik:PaletteBrushes>
+        <SolidColorBrush x:Key="GroupHeaderColor" Color="#FFFBE8" />
+        <DataTemplate x:Key="tooltTipTemplate">
+            <Grid>
+                <Rectangle Margin="0,1,0,2" Stroke="#828282" RadiusX="4" RadiusY="4" Fill="#F5F5F5"/>
+                <Path Data="M0.5,61.171852 C0.5,63.38118 2.2908952,65.172203 4.5000739,65.172203 C4.5000739,65.172203 4.5000739,68.172127 4.5000739,68.172127 C2.2908952,68.172127 0.5,66.381119 0.5,64.171799 C0.5,64.171799 0.5,62.393719 0.5,61.282417 z" Fill="#FF828282" HorizontalAlignment="Left" Height="7.584" Margin="0,0,0,-0.07" Stretch="Fill" VerticalAlignment="Bottom" Width="4.016"/>
+                <Path Data="M0.5,61.171852 C0.5,63.38118 2.2908952,65.172203 4.5000739,65.172203 L170.78708,65.172203 C172.99626,65.172203 174.78716,63.38118 174.78716,61.171852 L174.78716,64.171799 C174.78716,66.381119 172.99626,68.172127 170.78708,68.172127 L4.5000739,68.172127 C2.2908952,68.172127 0.5,66.381119 0.5,64.171799 C0.5,64.171799 0.5,62.393719 0.5,61.282417 z" Height="7.584" Stretch="Fill" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Fill="#FF828282">
+                    <Path.RenderTransform>
+                        <ScaleTransform ScaleY="-1"/>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Data="M158.83592,65.172203 C161.0451,65.172203 162.836,63.38118 162.836,61.171852 L162.836,64.171799 C162.836,66.381119 161.0451,68.172127 158.83592,68.172127 C158.83592,68.172127 158.83592,65.172203 158.83592,65.172203 z" Fill="#FF828282" HorizontalAlignment="Right" Height="7.584" Margin="0,0,0,-0.074" Stretch="Fill" VerticalAlignment="Bottom" Width="4.016"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="46" Height="64"
+                           Source="{Binding ImagePath}" 
+                           Stretch="Uniform" 
+                           VerticalAlignment="Top" HorizontalAlignment="Left"
+                           Margin="6" />
+                    <StackPanel Grid.Column="1" MinWidth="160" Margin="0,0,3,0" Orientation="Vertical" VerticalAlignment="Center">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap" />
+                                <Setter Property="FontSize" Value="11" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="FontFamily" Value="Segoe UI" />
+                            </Style>
+                        </StackPanel.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Genre: " />
+                            <TextBlock FontWeight="Bold" Text="{Binding Genre}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Distributor: " />
+                            <TextBlock FontWeight="Bold" Text="{Binding Distributor}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tickets Sold: " />
+                            <TextBlock FontWeight="Bold" Text="{Binding TicketsSold, StringFormat='{}{0:N0}'}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Gross Sales: " />
+                            <TextBlock FontWeight="Bold" Text="{Binding GrossSales, StringFormat='{}{0:C0}'}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Path Data="M0,0 L167.5,0 L167.5,3 L0,3 z" Fill="#FF828282" Height="3.2" Margin="4,0,3.5,-0.069" Stretch="Fill" VerticalAlignment="Bottom" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Top Grossing Movies of 2010" Margin="8"/>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadPivotMap Background="#A7AFA3"
+                             Padding="1"
+                             ItemsSource="{Binding Data}"
+                             LayoutStrategy="{Binding ElementName=LayoutCombo, Path=SelectedValue}"
+                             GroupDefinitions="{Binding ElementName=GroupCombo, Path=SelectedValue, Converter={StaticResource DefinitionConverter}}"
+                             ValuePath="GrossSales"
+                             LabelPath="Name"
+                             ToolTipTemplate="{StaticResource tooltTipTemplate}">
+            <telerik:RadPivotMap.LeafMappings>
+                <telerik:DesaturationColorizer From="0.9" To="0.6" ParentSourceColorPropertyName="ChildrenBackgroundBrush" />
+            </telerik:RadPivotMap.LeafMappings>
+            <telerik:RadPivotMap.LeafItemStyle>
+                <Style TargetType="telerik:RadTreeMapItem" BasedOn="{StaticResource RadTreeMapItemStyle}">
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="BorderBrush" Value="#C3C8C1" />
+                </Style>
+            </telerik:RadPivotMap.LeafItemStyle>
+        </telerik:RadPivotMap>
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel>
+            <TextBlock Text="Layout:" />
+            <telerik:RadComboBox x:Name="LayoutCombo" SelectedIndex="0">
+                <telerik:SquarifiedStrategy />
+                <telerik:SliceDiceStrategy />
+            </telerik:RadComboBox>
+            <TextBlock Text="Group By:" Margin="0,10,0,0" />
+            <telerik:RadComboBox x:Name="GroupCombo" SelectedIndex="0">
+                <treeMap:PivotMapGroupDefinition Member="Genre">
+                    <treeMap:PivotMapGroupDefinition.Mappings>
+                        <telerik:BrushColorizer Brush="{StaticResource GroupHeaderColor}" />
+                        <telerik:PaletteColorizer TargetPropertyName="ChildrenBackgroundBrush" Brushes="{StaticResource FillColorizerBrushes}" />
+                    </treeMap:PivotMapGroupDefinition.Mappings>
+                </treeMap:PivotMapGroupDefinition>
+                <treeMap:PivotMapGroupDefinition Member="Distributor">
+                    <treeMap:PivotMapGroupDefinition.Mappings>
+                        <telerik:BrushColorizer Brush="{StaticResource GroupHeaderColor}" />
+                        <telerik:PaletteColorizer TargetPropertyName="ChildrenBackgroundBrush" Brushes="{StaticResource FillColorizerBrushes}" />
+                    </treeMap:PivotMapGroupDefinition.Mappings>
+                </treeMap:PivotMapGroupDefinition>
+            </telerik:RadComboBox>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

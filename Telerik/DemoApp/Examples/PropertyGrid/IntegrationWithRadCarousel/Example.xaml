@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.IntegrationWithRadCarousel.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"	
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Integration with RadCarousel" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.Resources>
+			<telerik:BinaryImageConverter x:Key="converter"/>
+			<DataTemplate x:Key="CarouselItemTemplate">
+				<Grid x:Name="grid" Height="182" HorizontalAlignment="Left" Width="160">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="24" />
+							<RowDefinition />
+							<RowDefinition Height="24" />
+						</Grid.RowDefinitions>
+						<Border Grid.Row="0" BorderThickness="1" Margin="0" VerticalAlignment="Top" Height="24" CornerRadius="2,2,0,0">
+							<Border.Background>
+								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+									<GradientStop Color="#FF5B5B5B" Offset="1"/>
+									<GradientStop Color="#FF868686" Offset="0.1"/>
+									<GradientStop Color="#FF4F4F4F" Offset="0.57"/>
+									<GradientStop Color="#FF0E0E0E" Offset="0.11"/>
+								</LinearGradientBrush>
+							</Border.Background>
+							<Border.BorderBrush>
+								<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+									<GradientStop Offset="0"/>
+									<GradientStop Offset="1"/>
+									<GradientStop Color="White" Offset="0.5"/>
+								</LinearGradientBrush>
+							</Border.BorderBrush>
+							<StackPanel x:Name="stackPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0">
+								<TextBlock Text="{Binding FirstName}" TextWrapping="Wrap" Foreground="White" FontSize="11" TextAlignment="Center" Margin="0,0,3,0"/>
+								<TextBlock Text="{Binding LastName}" TextWrapping="Wrap" Foreground="White" FontSize="11" TextAlignment="Center"/>
+								<TextBlock x:Name="textBlock" Text=" - " TextWrapping="Wrap" Foreground="White" FontSize="11" TextAlignment="Center" Opacity="0" />
+								<TextBlock x:Name="textBlock1" Text="{Binding Title}" TextWrapping="Wrap" Foreground="White" FontSize="11" TextAlignment="Center" Opacity="0"/>
+							</StackPanel>
+						</Border>
+						<StackPanel Grid.Row="1" Orientation="Horizontal">
+							<Image VerticalAlignment="Center" HorizontalAlignment="Left" Source="{Binding Picture, Converter={StaticResource converter}}" Stretch="None" Margin="22,18,6,0" />
+						</StackPanel>
+						<TextBlock x:Name="textBlock2" Grid.Row="2" Text="{Binding Title}" TextWrapping="Wrap" FontSize="10" TextAlignment="Center" />
+						<TextBlock Grid.Row="2" Text="{Binding Notes}" Opacity="0" />
+					</Grid>
+				</Grid>
+			</DataTemplate>
+		</Grid.Resources>
+
+		<telerik:RadCarousel x:Name="myRadCarousel" Grid.Column="0" ItemTemplate="{StaticResource CarouselItemTemplate}" 
+							 ItemsSource="{Binding EmployeesCollection}" Background="Transparent" VirtualizingStackPanel.IsVirtualizing="False" >
+			<telerik:RadCarousel.ReflectionSettings>
+				<telerik:ReflectionSettings Visibility="Visible" />
+			</telerik:RadCarousel.ReflectionSettings>
+		</telerik:RadCarousel>
+		<telerik:RadPropertyGrid x:Name="propertyGrid1" 
+								 AutoGeneratePropertyDefinitions="False"
+								 Item="{Binding ReflectionSettings, ElementName=myRadCarousel}" 
+								 Height="600" Width="370" 
+								 HorizontalAlignment="Right"
+								 Grid.Column="1">
+			<telerik:RadPropertyGrid.PropertyDefinitions>
+				<telerik:PropertyDefinition DisplayName="Angle" Binding="{Binding Angle}" />
+				<telerik:PropertyDefinition DisplayName="Height Offset" Binding="{Binding HeightOffset}" />
+				<telerik:PropertyDefinition DisplayName="Hidden Percentage" Binding="{Binding HiddenPercentage}" />
+				<telerik:PropertyDefinition DisplayName="Is Sealed" Binding="{Binding IsSealed}" />
+				<telerik:PropertyDefinition DisplayName="OffsetX" Binding="{Binding OffsetX}" />
+				<telerik:PropertyDefinition DisplayName="OffsetY" Binding="{Binding OffsetY}" />
+				<telerik:PropertyDefinition DisplayName="Opacity" Binding="{Binding Opacity}" />
+				<telerik:PropertyDefinition DisplayName="Visibility" Binding="{Binding Visibility}" />
+				<telerik:PropertyDefinition DisplayName="Width Offset" Binding="{Binding WidthOffset}" />
+			</telerik:RadPropertyGrid.PropertyDefinitions>
+		</telerik:RadPropertyGrid>
+
+
+	</Grid>
+</UserControl>

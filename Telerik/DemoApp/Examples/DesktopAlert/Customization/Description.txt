@@ -1,0 +1,1 @@
+﻿<p><b>RadDesktopAlert</b> is a fully stylable control. This example demonstrates how you can easily modify RadDesktopAlert's default Style and replace it with a custom one.</p>

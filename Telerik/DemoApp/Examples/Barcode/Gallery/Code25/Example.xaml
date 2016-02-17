@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Barcode.Gallery.Code25.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"
+    xmlns:Converters="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"       
+    HorizontalAlignment="Center" VerticalAlignment="Center"             
+    mc:Ignorable="d" >
+
+    <UserControl.DataContext>
+        <vm:GalleryViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Converters:VisibilityConverter x:Key="VisibilityConverter">            
+        </Converters:VisibilityConverter>
+    </UserControl.Resources>
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Code25" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <Grid x:Name="LayoutRoot">
+
+        <telerik:RadBarcode25Standard Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code25StandardVisibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="56789" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+        <telerik:RadBarcode25Interleaved Margin="10, 10, 10, 10" Height="120" Width="425" Visibility="{Binding Code25InterleavedVisibility, Converter={StaticResource VisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0123456789" ShowChecksum="{Binding ShowChecksum, Mode=TwoWay}" />
+       
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">          
+            <TextBlock Text="Code25 type:" Margin="0, 0, 10, 10"></TextBlock>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <RadioButton x:Name="Code25Standard"
+                             Content="Code25Standard"                              
+                             Command="{Binding Code25VisibilityCommand}" 
+                             CommandParameter="Code25Standard" IsChecked="True" 
+                             GroupName="codetype" Margin="0, 2"/>
+                <RadioButton x:Name="Code25Interleaved"
+                             Content="Code25Interleaved" 
+                             Command="{Binding Code25VisibilityCommand}" 
+                             CommandParameter="Code25Interleaved"
+                             GroupName="codetype" Margin="0, 2"/>                              
+            </StackPanel>
+            <CheckBox x:Name="ChecksumBox"
+                      Content="Show Checksum"
+                      Margin="0,2"
+                      IsChecked="{Binding ShowChecksum, Mode=TwoWay}" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

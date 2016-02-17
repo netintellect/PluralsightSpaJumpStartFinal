@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35218086-CFDC-4358-8BFC-CF5926F828F2}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.TreeView</RootNamespace>
+    <AssemblyName>TreeView</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TreeView.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TreeView.Silverlight.App</SilverlightAppEntry>
+    <TestPageFileName>TreeView.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\..\Examples.Web\Examples.Web.csproj</LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Data.Services.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.DomainServices, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSource\Employee.cs" />
+    <Compile Include="DataSource\ExamplesDB.cs" />
+    <Compile Include="FirstLook\MasterDetailTemplateSelector.cs" />
+    <Compile Include="HeaderToImageConverter.cs" />
+    <Compile Include="HierarchicalTemplate\MasterDetailTemplateSelector.cs" />
+    <Compile Include="HierarchicalTemplate\OlympicGameTemplateSelector.cs" />
+    <Compile Include="HierarchicalTemplate\ViewModels.cs" />
+    <Compile Include="ContentControlEx.cs" />
+    <Compile Include="CustomContextMenu\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomContextMenu\ViewModels.cs" />
+    <Compile Include="DragDrop\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HierarchicalTemplate\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Performance\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Performance\FileViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Performance\FolderViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Performance\HierarchyTemplateSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplatedNodes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theming\SL\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomContextMenu\Description.txt" />
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Performance\Description.txt" />
+    <Resource Include="TemplatedNodes\Description.txt" />
+    <Resource Include="HierarchicalTemplate\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+    <Resource Include="DragDrop\Description.txt" />
+    <None Include="Images\TreeView\Outlook\1PersonalFolders.png" />
+    <None Include="Images\TreeView\Outlook\2DeletedItems.png" />
+    <None Include="Images\TreeView\Outlook\3Drafts.png" />
+    <None Include="Images\TreeView\Outlook\4Inbox.png" />
+    <None Include="Images\TreeView\Outlook\folder.png" />
+    <None Include="Images\TreeView\Outlook\junk.png" />
+    <None Include="Images\TreeView\Outlook\outbox.png" />
+    <None Include="Images\TreeView\Outlook\search.png" />
+    <None Include="Images\TreeView\Outlook\searchFolder.png" />
+    <None Include="Images\TreeView\Outlook\sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CustomContextMenu\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomContextMenu\TreeViewTemplates_SL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DragDrop\TreeViewTemplates_SL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirstLook\TreeViewTemplates_SL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirstLook\DetailsTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HierarchicalTemplate\DetailsTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HierarchicalTemplate\TreeViewTemplates_SL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Performance\TreeViewTemplates_SL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomContextMenu\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DragDrop\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HierarchicalTemplate\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Performance\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplatedNodes\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theming\SL\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\File.png" />
+    <Resource Include="Images\TreeView\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TreeView\ContextMenu\csFile.png" />
+    <None Include="Images\TreeView\ContextMenu\solution.png" />
+    <None Include="Images\TreeView\ContextMenu\viewCode.png" />
+    <None Include="Images\TreeView\ContextMenu\xamlCsFile.png" />
+    <None Include="Images\TreeView\ContextMenu\xamlFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\Flags\Image10.png" />
+    <Resource Include="Images\TreeView\Flags\Image2.png" />
+    <Resource Include="Images\TreeView\Flags\Image8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\Flags\Austria.png" />
+    <Resource Include="Images\TreeView\Flags\China.png" />
+    <Resource Include="Images\TreeView\Flags\Norway.png" />
+    <Resource Include="Images\TreeView\Flags\Russia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\medal-bronze.png" />
+    <Resource Include="Images\TreeView\medal-gold.png" />
+    <Resource Include="Images\TreeView\medal-silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataSource\Employees.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\Employees\EmpID1.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID2.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID3.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID4.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID5.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID6.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID7.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID8.png" />
+    <Resource Include="Images\TreeView\Employees\EmpID9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\pic1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TreeView\IconTemplatedNodes\basketball_cup.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon1.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon2.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon3.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon4.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon5.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon6.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon7.png" />
+    <Resource Include="Images\TreeView\IconTemplatedNodes\icon8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Theming\SL\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

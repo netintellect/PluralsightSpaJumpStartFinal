@@ -1,0 +1,104 @@
+<UserControl x:Class="Telerik.Windows.Examples.Treemap.AbsoluteValueBrushColorizer.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:example="clr-namespace:Telerik.Windows.Examples.Treemap.AbsoluteValueBrushColorizer"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush Color="#FFE10000" x:Key="SubstantialLossBrush" />
+        <SolidColorBrush Color="#FFF5A4A4" x:Key="ModerateLossBrush" />
+        <SolidColorBrush Color="#FFBDDDFF" x:Key="MinorGainBrush"/>
+        <SolidColorBrush Color="#FF87C2FF" x:Key="ModerateGainBrush" />
+        <SolidColorBrush Color="#FF0C6BBF" x:Key="SubstantialGainBrush" />
+        <SolidColorBrush Color="#FFCECECE" x:Key="BorderBrush" />
+
+        <telerik:RangeBrushCollection x:Key="ColorizerBrushes">
+            <telerik:RangeBrush Brush="{StaticResource SubstantialLossBrush}" From="-10" To="-1" />
+            <telerik:RangeBrush Brush="{StaticResource ModerateLossBrush}" From="-1" To="0"  />
+            <telerik:RangeBrush Brush="{StaticResource MinorGainBrush}" From="0" To="0.3" />
+            <telerik:RangeBrush Brush="{StaticResource ModerateGainBrush}" From="0.3" To="1" />
+            <telerik:RangeBrush Brush="{StaticResource SubstantialGainBrush}" From="1" To="10"  />
+        </telerik:RangeBrushCollection>
+
+        <Style TargetType="telerik:RadTreeMapItem" BasedOn="{StaticResource RadTreeMapItemStyle}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HeaderEffect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="4" ShadowDepth="0" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Rectangle">
+            <Setter Property="Width" Value="70" />
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="My NASDAQ Portfolio" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <telerik:RadTreeMap ItemsSource="{Binding Data}" LayoutStrategy="Squarified" >
+            <telerik:RadTreeMap.TypeDefinitions>
+                <telerik:TreeMapTypeDefinition TargetTypeName="StockInfo" 
+                                        ValuePath="MarketValue" 
+                                        LabelPath="StockSymbol" 
+                                        ToolTipPath="ChangeRate" 
+                                        ToolTipFormat="Change: {0}%" >
+                    <telerik:TreeMapTypeDefinition.Mappings>
+                        <telerik:ValueBrushColorizer IsAbsolute="True" ValuePath="ChangeRate"
+                                                     RangeMinimum="-10" RangeMaximum="10"
+                                                     Brushes="{StaticResource ColorizerBrushes}" />
+                    </telerik:TreeMapTypeDefinition.Mappings>
+                </telerik:TreeMapTypeDefinition>
+            </telerik:RadTreeMap.TypeDefinitions>
+        </telerik:RadTreeMap>
+
+        <Grid Grid.Row="1" Width="430" HorizontalAlignment="Left" Margin="0,8,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Change (in %)"  />
+            <StackPanel Orientation="Horizontal" Grid.Column="1" >
+                <Rectangle Fill="{StaticResource SubstantialLossBrush}" ></Rectangle>
+                <Rectangle Fill="{StaticResource ModerateLossBrush}" ></Rectangle>
+                <Rectangle Fill="{StaticResource MinorGainBrush}" ></Rectangle>
+                <Rectangle Fill="{StaticResource ModerateGainBrush}"  ></Rectangle>
+                <Rectangle Fill="{StaticResource SubstantialGainBrush}"></Rectangle>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="63,0,0,0"  Text="-1" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="137,0,0,0"  Text="0"  />
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="204,0,0,0" Text="0.3"  />
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="278,0,0,0" Text="1"  />
+        </Grid>
+    </Grid>
+</UserControl>
+
+    

@@ -1,0 +1,104 @@
+<Examples:EntityFrameworkDataSourceExample x:Class="Telerik.Windows.Examples.EntityFrameworkDataSource.FirstLook.Example"
+										   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+										   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										   xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+										   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+										   xmlns:sys="clr-namespace:System;assembly=mscorlib"
+										   xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+										   xmlns:db="clr-namespace:QuickStart.DataBase;assembly=QuickStart.DataBase">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Customers"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<telerik:RadEntityFrameworkDataSource Name="customersDataSource"
+											  QueryName="Customers">
+			<telerik:RadEntityFrameworkDataSource.RelatedObjects>
+				<sys:String>Orders</sys:String>
+			</telerik:RadEntityFrameworkDataSource.RelatedObjects>
+			<telerik:RadEntityFrameworkDataSource.ObjectContext>
+				<db:NorthwindEntities />
+			</telerik:RadEntityFrameworkDataSource.ObjectContext>
+		</telerik:RadEntityFrameworkDataSource>
+		<StackPanel Orientation="Horizontal"
+					HorizontalAlignment="Center"
+					Grid.Row="0"
+					Margin="0, 5, 0, 5">
+			<telerik:RadButton Content="Load"
+							   Click="LoadButton_Click"
+							   Width="150"
+							   Margin="0, 0, 5, 0" />
+			<telerik:RadButton Content="SubmitChanges"
+							   Click="SubmitChangesButton_Click"
+							   Width="150"
+							   Margin="0, 0, 5, 0" />
+		</StackPanel>
+        <telerik:RadGridView Name="customersGrid" GroupRenderMode="Flat"
+							 Grid.Row="1"
+							 Margin="0, 5, 0, 0"
+							 AutoGenerateColumns="False"
+							 ItemsSource="{Binding DataView, ElementName=customersDataSource}"
+							 AddingNewDataItem="customersGrid_AddingNewDataItem"
+							 RowIndicatorVisibility="Collapsed"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewToggleRowDetailsColumn />
+				<telerik:GridViewDataColumn Header="CustomerID"
+											DataMemberBinding="{Binding CustomerID}" />
+				<telerik:GridViewDataColumn Header="Company Name"
+											DataMemberBinding="{Binding CompanyName}" />
+				<telerik:GridViewDataColumn Header="Contact Name"
+											DataMemberBinding="{Binding ContactName}" />
+				<telerik:GridViewDataColumn Header="Contact Title"
+											DataMemberBinding="{Binding ContactTitle}" />
+				<telerik:GridViewDataColumn Header="Address"
+											DataMemberBinding="{Binding Address}" />
+				<telerik:GridViewDataColumn Header="City"
+											DataMemberBinding="{Binding City}" />
+				<telerik:GridViewDataColumn Header="Region"
+											DataMemberBinding="{Binding Region}" />
+				<telerik:GridViewDataColumn Header="PostalCode"
+											DataMemberBinding="{Binding PostalCode}" />
+				<telerik:GridViewDataColumn Header="Country"
+											DataMemberBinding="{Binding Country}" />
+				<telerik:GridViewDataColumn Header="Phone"
+											DataMemberBinding="{Binding Phone}" />
+				<telerik:GridViewDataColumn Header="Fax"
+											DataMemberBinding="{Binding Fax}" />
+			</telerik:RadGridView.Columns>
+			<telerik:RadGridView.RowDetailsTemplate>
+				<DataTemplate>
+					<telerik:RadGridView ItemsSource="{Binding Orders}"
+										 RowIndicatorVisibility="Collapsed"
+										 AutoGenerateColumns="False"
+										 CanUserFreezeColumns="False"
+										 CanUserResizeColumns="False"
+										 ShowGroupPanel="False">
+						<telerik:RadGridView.Columns>
+							<telerik:GridViewDataColumn Header="Order ID"
+														DataMemberBinding="{Binding OrderID}" />
+							<telerik:GridViewDataColumn Header="Order Date"
+														DataMemberBinding="{Binding OrderDate}" />
+							<telerik:GridViewDataColumn Header="Customer"
+														DataMemberBinding="{Binding ShipName}" />
+							<telerik:GridViewDataColumn Header="City"
+														DataMemberBinding="{Binding ShipCity}" />
+							<telerik:GridViewDataColumn Header="Country"
+														DataMemberBinding="{Binding ShipCountry}" />
+						</telerik:RadGridView.Columns>
+					</telerik:RadGridView>
+				</DataTemplate>
+			</telerik:RadGridView.RowDetailsTemplate>
+		</telerik:RadGridView>
+		<telerik:RadDataPager Name="pager"
+							  Source="{Binding DataView, ElementName=customersDataSource}"
+							  PageSize="10"
+							  Grid.Row="2" />
+	</Grid>
+</Examples:EntityFrameworkDataSourceExample>

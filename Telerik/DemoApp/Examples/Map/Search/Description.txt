@@ -1,0 +1,1 @@
+﻿The RadMap control provides unified search architecture which uses functionality of the different search services. This example demonstrates how the BingSearchProvider can be used to search different locations.

@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5263A09-FF8F-418D-9CB0-0B368D59035D}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Chart</RootNamespace>
+    <AssemblyName>Chart</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Chart.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Chart.App</SilverlightAppEntry>
+    <TestPageFileName>Chart.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\..\Examples.Web\Examples.Web.csproj</LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.DomainServices" />
+    <Reference Include="System.Windows.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Charting">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DomainServices">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DomainServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aggregates\ExampleViewModel.cs" />
+    <Compile Include="Aggregates\SalesBusinessObject.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisFeatures\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisFeatures\ExampleViewModel.cs" />
+    <Compile Include="CustomGridLines\ExampleViewModel.cs" />
+    <Compile Include="CustomGridLines\SystemLoadInfo.cs" />
+    <Compile Include="CustomTooltips\Data.cs" />
+    <Compile Include="CustomTooltips\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTooltips\ExampleViewModel.cs" />
+    <Compile Include="DragAndDrop\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDown\CensusDetails.cs" />
+    <Compile Include="DrillDown\CensusGenderView.cs" />
+    <Compile Include="DrillDown\CensusViewModel.cs" />
+    <Compile Include="DrillDown\ExampleViewModel.cs" />
+    <Compile Include="EmptyValues\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyValues\ExampleViewModel.cs" />
+    <Compile Include="EmptyValues\MyDateObject.cs" />
+    <Compile Include="EmptyValues\NullToStringConverter.cs" />
+    <Compile Include="FirstLook\Country.cs" />
+    <Compile Include="FirstLook\OrderData.cs" />
+    <Compile Include="FirstLook\OrderDataConverter.cs" />
+    <Compile Include="FirstLook\OrderView.cs" />
+    <Compile Include="FirstLook\OrderViewModel.cs" />
+    <Compile Include="DataSourceViewModelBase.cs" />
+    <Compile Include="FirstLook\Region.cs" />
+    <Compile Include="Gallery\RangeBar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\ViewModel\Bubble\BubbleViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Financial\FinancialViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Radial\RadialViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Range\RangeViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\Scatter\ScatterViewModel.cs" />
+    <Compile Include="Gallery\ViewModel\UserData\UserDataViewModel.cs" />
+    <Compile Include="InteractivityEffects\ExampleViewModel.cs" />
+    <Compile Include="InverseAxis\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InverseAxis\ExampleViewModel.cs" />
+    <Compile Include="InverseAxis\Data.cs" />
+    <Compile Include="LegendFeatures\ExampleViewModel.cs" />
+    <Compile Include="LegendFeatures\GDPData.cs" />
+    <Compile Include="LiveData\ExampleViewModel.cs" />
+    <Compile Include="LiveData\SystemLoadInfo.cs" />
+    <Compile Include="LogarithmicScale\ExampleViewModel.cs" />
+    <Compile Include="MarkedZones\ExampleViewModel.cs" />
+    <Compile Include="MeteoChart\ExampleViewModel.cs" />
+    <Compile Include="MultipleDataSources\VehiclesData.cs" />
+    <Compile Include="MultipleDataSources\RoadNetworkData.cs" />
+    <Compile Include="MultipleDataSources\PopulationData.cs" />
+    <Compile Include="MultipleDataSources\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleDataSources\ExampleViewModel.cs" />
+    <Compile Include="MultipleYAxes\ClimateData.cs" />
+    <Compile Include="MultipleYAxes\ExampleViewModel.cs" />
+    <Compile Include="MVVM\ExampleViewModel.cs" />
+    <Compile Include="Selection\Country.cs" />
+    <Compile Include="Selection\ExampleViewModel.cs" />
+    <Compile Include="Selection\MapInteractivity.cs" />
+    <Compile Include="Service References\NorthwindWCFServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\PrintAndExportWithRadDocument\ExampleViewModel.cs" />
+    <Compile Include="Silverlight\PrintAndExportWithRadDocument\MyBusinessObject.cs" />
+    <Compile Include="Silverlight\PrintAndExportWithRadDocument\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Exporting\ExampleViewModel.cs" />
+    <Compile Include="Silverlight\RadDomainDataSource\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleFiltering\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleHelpers\URIHelper.cs" />
+    <Compile Include="Gallery\StepArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StepLine\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractivityEffects\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomGridLines\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiveData\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogarithmicScale\CountryStats.cs" />
+    <Compile Include="LogarithmicScale\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPalette\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="CustomPointMarks\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDown\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlexibleAPI\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarkedZones\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\Area\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Gallery3D\Bar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\Doughnut\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\Line\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\Pie\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\StackedArea100\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\StackedArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\StackedBar100\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\StackedBar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery3D\StackedLine\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Area\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Bar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Bubble\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\CandleStick\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Doughnut\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Line\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Pie\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Range\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Scatter\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\SplineArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\SplineRange\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Spline\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedArea100\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedBar100\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedBar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedLine\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedSplineArea100\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedSplineArea\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\StackedSpline\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Stick\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LegendFeatures\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeteoChart\DependencyObjectExtensions.cs" />
+    <Compile Include="MeteoChart\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeteoChart\ForecastData.cs" />
+    <Compile Include="MeteoChart\LabelVisibilityConverter.cs" />
+    <Compile Include="MeteoChart\WeatherConditions.cs" />
+    <Compile Include="MultipleYAxes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Data.cs" />
+    <Compile Include="MVVM\DataViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeriesExtensions.cs" />
+    <Compile Include="Silverlight\ExamplesDB.cs" />
+    <Compile Include="Silverlight\Exporting\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Integration\ChartAndGrid\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\ChartDataCollection.cs" />
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\ChartDataItem.cs" />
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\ChartViewModel.cs" />
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\MenuItem.cs" />
+    <Compile Include="Silverlight\Integration\ChartContextMenuIntegration\MenuItemsCollection.cs" />
+    <Compile Include="Silverlight\Invoice.cs" />
+    <Compile Include="DataObject.cs" />
+    <Compile Include="SimpleFiltering\ExampleViewModel.cs" />
+    <Compile Include="SmartLabels\Company.cs" />
+    <Compile Include="SmartLabels\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLabels\ExampleViewModel.cs" />
+    <Compile Include="SmartLabels\Revenue.cs" />
+    <Compile Include="SortFilter\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SortFilter\ExampleViewModel.cs" />
+    <Compile Include="SortFilter\GDPData.cs" />
+    <Compile Include="Theming\Data.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\ThemingViewModel.cs" />
+    <Compile Include="Silverlight\WCFRIAService\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomScroll\ChartData.cs" />
+    <Compile Include="ZoomScroll\DowJonesData.cs" />
+    <Compile Include="ZoomScroll\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomScroll\ExampleViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSources\chartdata.csv" />
+    <None Include="DataSources\dashboard.csv" />
+    <None Include="DataSources\omega.csv" />
+    <None Include="DataSources\PopulationPyramiddata.csv" />
+    <None Include="DataSources\temperatures.csv" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService.wsdl" />
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService1.wsdl" />
+    <None Include="Service References\NorthwindWCFServiceReference\Telerik.Windows.Examples.Chart.NorthwindWCFServiceReference.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NorthwindWCFServiceReference\configuration.svcinfo" />
+    <None Include="Service References\NorthwindWCFServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\NorthwindWCFServiceReference\NorthwindWCFService.disco" />
+    <Resource Include="Silverlight\WCFRIAService\Description.txt" />
+    <Resource Include="Silverlight\RadDomainDataSource\Description.txt" />
+    <Resource Include="DragAndDrop\Description.txt" />
+    <Resource Include="Silverlight\PrintAndExportWithRadDocument\Description.txt" />
+    <Resource Include="InverseAxis\Description.txt" />
+    <Resource Include="MultipleDataSources\Description.txt" />
+    <Resource Include="EmptyValues\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="Gallery\RangeBar\Description.txt" />
+    <Resource Include="SmartLabels\Description.txt" />
+    <Resource Include="Selection\Description.txt" />
+    <Resource Include="Gallery\StepArea\Description.txt" />
+    <Resource Include="Gallery\StepLine\Description.txt" />
+    <Resource Include="CustomGridLines\Description.txt" />
+    <Resource Include="MarkedZones\Description.txt" />
+    <Resource Include="InteractivityEffects\Description.txt" />
+    <None Include="Images\Chart\MeteoChart\rainy.png" />
+    <None Include="Images\Chart\MeteoChart\cloudy.png" />
+    <None Include="Images\Chart\MeteoChart\sunny.png" />
+    <Resource Include="Aggregates\Description.txt" />
+    <Resource Include="AxisFeatures\Description.txt" />
+    <Resource Include="CustomPalette\Description.txt" />
+    <Resource Include="CustomPointMarks\Description.txt" />
+    <Resource Include="LiveData\Description.txt" />
+    <Resource Include="LogarithmicScale\Description.txt" />
+    <Resource Include="SimpleFiltering\Description.txt" />
+    <Resource Include="CustomTooltips\Description.txt" />
+    <Content Include="DataSources\Invoices.xml" />
+    <Resource Include="DrillDown\Description.txt" />
+    <Resource Include="FlexibleAPI\Description.txt" />
+    <Resource Include="Gallery3D\Area\Description.txt" />
+    <Resource Include="Silverlight\Gallery3D\Bar\Description.txt" />
+    <Resource Include="Gallery3D\Doughnut\Description.txt" />
+    <Resource Include="Gallery3D\Line\Description.txt" />
+    <Resource Include="Gallery3D\Pie\Description.txt" />
+    <Resource Include="Gallery3D\StackedArea100\Description.txt" />
+    <Resource Include="Gallery3D\StackedArea\Description.txt" />
+    <Resource Include="Gallery3D\StackedBar100\Description.txt" />
+    <Resource Include="Gallery3D\StackedBar\Description.txt" />
+    <Resource Include="Gallery3D\StackedLine\Description.txt" />
+    <Resource Include="Gallery\Area\Description.txt" />
+    <Resource Include="Gallery\Bar\Description.txt" />
+    <Resource Include="Gallery\Bubble\Description.txt" />
+    <Resource Include="Gallery\CandleStick\Description.txt" />
+    <Resource Include="Gallery\Doughnut\Description.txt" />
+    <Resource Include="Gallery\Line\Description.txt" />
+    <Resource Include="Gallery\Pie\Description.txt" />
+    <Resource Include="Gallery\Range\Description.txt" />
+    <Resource Include="Gallery\Scatter\Description.txt" />
+    <Resource Include="Gallery\SplineArea\Description.txt" />
+    <Resource Include="Gallery\SplineRange\Description.txt" />
+    <Resource Include="Gallery\Spline\Description.txt" />
+    <Resource Include="Gallery\StackedArea100\Description.txt" />
+    <Resource Include="Gallery\StackedArea\Description.txt" />
+    <Resource Include="Gallery\StackedBar100\Description.txt" />
+    <Resource Include="Gallery\StackedBar\Description.txt" />
+    <Resource Include="Gallery\StackedLine\Description.txt" />
+    <Resource Include="Gallery\StackedSplineArea100\Description.txt" />
+    <Resource Include="Gallery\StackedSplineArea\Description.txt" />
+    <Resource Include="Gallery\StackedSpline\Description.txt" />
+    <Resource Include="Gallery\Stick\Description.txt" />
+    <Resource Include="LegendFeatures\Description.txt" />
+    <Resource Include="MeteoChart\Description.txt" />
+    <Resource Include="MultipleYAxes\Description.txt" />
+    <Resource Include="MVVM\Description.txt" />
+    <Resource Include="Silverlight\Exporting\Description.txt" />
+    <Resource Include="Silverlight\Integration\ChartAndGrid\Description.txt" />
+    <Resource Include="Silverlight\Integration\ChartContextMenuIntegration\Description.txt" />
+    <Resource Include="SortFilter\Description.txt" />
+    <Resource Include="ZoomScroll\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Aggregates\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AxisFeatures\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomTooltips\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DragAndDrop\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmptyValues\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\RangeBar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InverseAxis\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultipleDataSources\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\PrintAndExportWithRadDocument\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\RadDomainDataSource\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleFiltering\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StepArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StepLine\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractivityEffects\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomGridLines\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LiveData\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogarithmicScale\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomPalette\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomPointMarks\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DrillDown\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FlexibleAPI\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MarkedZones\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\Area\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Gallery3D\Bar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\Doughnut\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\Line\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\Pie\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\StackedArea100\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\StackedArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\StackedBar100\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\StackedBar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery3D\StackedLine\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Area\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Bar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Bubble\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\CandleStick\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Doughnut\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Line\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Pie\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Range\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Scatter\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\SplineArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\SplineRange\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Spline\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedArea100\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedBar100\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedBar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedLine\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedSplineArea100\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedSplineArea\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\StackedSpline\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gallery\Stick\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LegendFeatures\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MeteoChart\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultipleYAxes\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Exporting\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Integration\ChartAndGrid\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Integration\ChartContextMenuIntegration\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SmartLabels\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SortFilter\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\WCFRIAService\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZoomScroll\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+<Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NorthwindWCFServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

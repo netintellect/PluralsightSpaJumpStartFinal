@@ -1,0 +1,2 @@
+﻿Telerik <b>RadSpellChecker</b> can check spelling of various controls. It can be easily adapted to work with your custom controls. 
+Custom dictionaries can be used.

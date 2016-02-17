@@ -1,0 +1,1 @@
+﻿The GroupFilter is a predicate that further elaborates the use of custom views. It takes the available group as a parameter and returns a bool value which determines whether the resulting modified group will be displayed or not. This functionality is very useful if you wish to display only weekends, as in this example, or only working week days.

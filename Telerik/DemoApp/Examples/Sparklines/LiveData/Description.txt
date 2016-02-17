@@ -1,0 +1,5 @@
+﻿Telerik Sparklines are characterized by their small size and high data density.
+
+This example demonstrates the great performance of the controls, which is being refreshed
+
+twice each second, with randomly generated data.

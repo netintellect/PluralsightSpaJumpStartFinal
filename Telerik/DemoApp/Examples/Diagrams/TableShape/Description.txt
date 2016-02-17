@@ -1,0 +1,7 @@
+﻿The TableShape example demonstrates how a custom table shape could be created.
+The example supports following features:
+</br>- Edit table header and rows (F2 or double click)
+</br>- Add or remove rows
+</br>- Expand or collapse tables
+</br>- Connection aggregation
+</br>- Self referencing tables (hierarchy)

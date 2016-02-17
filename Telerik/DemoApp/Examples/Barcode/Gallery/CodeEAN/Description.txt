@@ -1,0 +1,1 @@
+﻿EAN-13 and EAN-8 are fixed length numeric barcodes.

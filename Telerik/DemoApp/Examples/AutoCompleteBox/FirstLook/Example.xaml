@@ -1,0 +1,217 @@
+<UserControl x:Class="Telerik.Windows.Examples.AutoCompleteBox.FirstLook.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+			 xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.AutoCompleteBox.FirstLook"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 HorizontalAlignment="Center" VerticalAlignment="Center"
+			 Margin="6,20,6,6" >
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="First look" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="Black" Color="#FF000000"/>
+		<SolidColorBrush x:Key="Grey" Color="#FF767676"/>
+		<SolidColorBrush x:Key="W Grey" Color="#FFD6D4D4"/>
+		<Style x:Key="AutoCompleteStyle" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI" />
+			<Setter Property="FontSize" Value="13.333" />
+			<Setter Property="Foreground" Value="#FF0A0A0A" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+
+		<Style x:Key="ColumnHeaderStyle" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI" />
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="Foreground" Value="#FFFFFFFF" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+
+		<Style x:Key="PathFrameEllipseStyle" TargetType="Ellipse">
+			<Setter Property="Width" Value="40" />
+			<Setter Property="Height" Value="40" />
+			<Setter Property="Stroke" Value="#FFFFFFFF" />
+			<Setter Property="StrokeThickness" Value="2" />
+		</Style>
+
+		<local:ExampleViewModel x:Key="ViewModel" />
+
+		<DataTemplate x:Key="SongsSearchAutoComplete">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="{Binding Title}" Style="{StaticResource AutoCompleteStyle}" />
+				<TextBlock Text=", " Style="{StaticResource AutoCompleteStyle}" />
+				<TextBlock Text="{Binding Author}" Style="{StaticResource AutoCompleteStyle}" />
+			</StackPanel>
+		</DataTemplate>
+
+		<DataTemplate x:Key="MoviesSearchAutoComplete">
+			<StackPanel Orientation="Horizontal">
+				<Path Data="M11.000001,11.000001 L11.000001,13.000001 L13.000001,13.000001 L13.000001,11.000001 z M1.000001,11.000001 L1.000001,13.000001 L3.0000007,13.000001 L3.0000007,11.000001 z M11.000001,7.0000005 L11.000001,9.000001 L13.000001,9.000001 L13.000001,7.0000005 z M1.0000004,7 L1.0000004,9 L3.0000002,9 L3.0000002,7 z M11.000001,3.0000002 L11.000001,5.0000005 L13.000001,5.0000005 L13.000001,3.0000002 z M1.000001,3.0000002 L1.000001,5.0000005 L3.0000007,5.0000005 L3.0000007,3.0000002 z M0,0 L1.000001,0 L1.000001,1.0000005 L3.0000007,1.0000005 L3.0000007,0 L11.000001,0 L11.000001,1.0000005 L13.000001,1.0000005 L13.000001,0 L14,0 L14,16 L13.000001,16 L13.000001,15 L11.000001,15 L11.000001,16 L3.0000007,16 L3.0000007,15 L1.000001,15 L1.000001,16 L0,16 z" 
+					  Fill="#FF307EBA" HorizontalAlignment="Left" Margin="7 0 0 0" Stretch="Fill" Width="14" Height="16" VerticalAlignment="Center"/>
+				<TextBlock Text="{Binding MovieTitle}" Style="{StaticResource AutoCompleteStyle}" Margin="10 0 0 0" />
+			</StackPanel>
+		</DataTemplate>
+
+		<DataTemplate x:Key="FoodPlacesSearchAutoComplete">
+			<StackPanel Orientation="Horizontal">
+				<Border Height="36" Width="36" >
+					<Image Source="{Binding IconPath}" Height="26" Width="26" />
+				</Border>
+				<TextBlock Text="{Binding Name}" Style="{StaticResource AutoCompleteStyle}" Margin="10 0 0 0" />
+			</StackPanel>
+		</DataTemplate>
+
+		<local:StringToUpperCaseConverter x:Key="StringToUpperCaseConverter" />
+		
+	</UserControl.Resources>
+
+	<Grid Margin="0 0 -1 0" HorizontalAlignment="Center" Height="405" Width="935">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="16" Foreground="{StaticResource Black}" Height="24" Margin="14 0 14 18" Text="Choose the best hit, movie and kitchen of the day"/>
+		<StackPanel Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" Orientation="Horizontal">
+			<StackPanel x:Name="LeftColumn" Grid.Row="1" Grid.Column="0" Width="265.5" Margin="14 0 14 0">
+				<StackPanel Background="#FF3366CC" Height="55" Orientation="Horizontal">
+					<Grid HorizontalAlignment="Left" Margin="6 7 0 8" Width="40">
+						<Ellipse Fill="Transparent" Style="{StaticResource PathFrameEllipseStyle}"></Ellipse>
+						<Path Data="M7.8937554,17.561998 L3.9999974,20.533983 L6.5134616,22.739998 L9.2219973,18.775862 z M13.000001,11.999996 C13.552285,11.999996 14.000001,12.447711 14.000001,12.999996 C14.000001,13.55228 13.552285,13.999996 13.000001,13.999996 C12.447716,13.999996 12.000001,13.55228 12.000001,12.999996 C12.000001,12.447711 12.447716,11.999996 13.000001,11.999996 z M13,7.9999962 C10.238576,7.9999962 8,10.238572 8,12.999996 C8,15.761419 10.238576,17.999996 13,17.999996 C15.761423,17.999996 18,15.761419 18,12.999996 C18,10.238572 15.761423,7.9999962 13,7.9999962 z M19.708536,3.8469982 L17.000002,7.8111353 L18.328243,9.0249977 L22.222,6.0530143 z M13,0 C20.179701,0 26,5.8202982 26,13 C26,20.179701 20.179701,26 13,26 C5.8202982,26 0,20.179701 0,13 C0,5.8202982 5.8202982,0 13,0 z"
+							  Fill="White" Margin="7" Stretch="Fill"  Width="24" Height="24" />
+					</Grid>
+					<TextBlock Margin="10 0 0 0" TextWrapping="Wrap" Text="Choose the best music hits:" Style="{StaticResource ColumnHeaderStyle}"/>
+				</StackPanel>
+				<telerik:RadAutoCompleteBox  WatermarkContent="Enter a song..."
+											 x:Name="songsAutoCompleteBox"
+											 TextSearchMode="Contains"
+											 AutoCompleteMode="Suggest"
+											 SelectionMode="Single"
+											 TextSearchPath="Title"
+											 ItemsSource="{Binding SongsList}"
+											 DropDownItemTemplate="{StaticResource SongsSearchAutoComplete}"
+											 Margin="0 20 0 0" BorderBrush="#FF25A0DA" BorderThickness="1"
+											 SelectionChanged="songsAutoCompleteBoxSelectionChanged"/>
+				<StackPanel x:Name="songInfoStackPanel" Visibility="Collapsed">
+					<TextBlock  Margin="0 30 0 0" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="13.333" Foreground="{StaticResource Black}" Text="You choose the best hit of the day :"/>
+					
+					<Rectangle HorizontalAlignment="Left" Height="1"  VerticalAlignment="Bottom" Width="280" Margin="0 0 0 8" Fill="{StaticResource W Grey}" StrokeThickness="0"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="DATE:" FontFamily="Segoe UI" FontSize="10.667" Foreground="#FF767676"  Margin="0 0 10 0" Grid.Column="0"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='MMM dd, yyyy'}" FontWeight="Bold" Opacity="0.7" FontSize="10.667" FontFamily="Segoe UI" Grid.Column="1"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='h:mm tt'}" FontWeight="Bold" FontSize="10.667" Opacity="0.7"  FontFamily="Segoe UI" HorizontalAlignment="Right" Grid.Column="2"/>
+					</Grid>
+
+					<StackPanel Orientation="Horizontal" Margin="0 9 0 2">
+						<TextBlock TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="18.667" Foreground="Black" FontWeight="Bold"  Height="26" Text="{Binding ElementName=songsAutoCompleteBox, Path=SelectedItem.Title}"/>
+						<TextBlock FontFamily="Segoe UI Light" FontSize="18.667" Foreground="Black" FontWeight="Bold"  Height="26" Text=","/>
+					</StackPanel>
+					<TextBlock TextWrapping="Wrap" Height="30" FontWeight="Bold" FontFamily="Segoe UI Light" FontSize="12" Text="{Binding ElementName=songsAutoCompleteBox, Path=SelectedItem.Author, Converter={StaticResource StringToUpperCaseConverter}}"/>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel x:Name="CenterColumn" Grid.Row="1" Grid.Column="1" Width="265.5" Margin="14 0 14 0">
+				<StackPanel Background="#FF307EBA" Height="55" Orientation="Horizontal">
+					<Grid HorizontalAlignment="Left" Margin="6 7 0 8" Width="40">
+						<Ellipse Fill="Transparent" Style="{StaticResource PathFrameEllipseStyle}"></Ellipse>
+						<Path Data="M17.999996,15.999996 L17.999996,18.999996 L20.999996,18.999996 L20.999996,15.999996 z M0.99999845,15.999996 L0.99999845,18.999996 L3.9999979,18.999996 L3.9999979,15.999996 z M17.999996,10 L17.999996,13 L20.999996,13 L20.999996,10 z M0.99999845,10 L0.99999845,13 L3.9999979,13 L3.9999979,10 z M17.999996,4.0000029 L17.999996,7.0000024 L20.999996,7.0000024 L20.999996,4.0000029 z M0.99999845,4.0000029 L0.99999845,7.0000024 L3.9999979,7.0000024 L3.9999979,4.0000029 z M0,0 L0.99999845,0 L0.99999845,2.0000012 L3.9999979,2.0000012 L3.9999979,0 L17.999998,0 L17.999998,2.0000007 L20.999998,2.0000007 L20.999998,0 L22,0 L22,24 L20.999996,24 L20.999996,22.000002 L17.999996,22.000002 L17.999996,24 L3.9999979,24 L3.9999979,22.000002 L0.99999845,22.000002 L0.99999845,24 L0,24 z" Fill="White" Margin="9,8" Stretch="Fill"  />
+					</Grid>
+					<TextBlock Margin="10 0 0 0" TextWrapping="Wrap" Text="Choose the best movie:" Style="{StaticResource ColumnHeaderStyle}"/>
+				</StackPanel>
+				<telerik:RadAutoCompleteBox  WatermarkContent="Enter a movie..." 
+											 x:Name="movieAutoCompleteBox"
+											 TextSearchPath="MovieTitle"
+											 TextSearchMode="Contains"
+											 AutoCompleteMode="Suggest"
+											 SelectionMode="Single"
+											 ItemsSource="{Binding MoviesList}"
+											 DropDownItemTemplate="{StaticResource MoviesSearchAutoComplete}"
+											 Margin="0 20 0 0" BorderBrush="#FF25A0DA" BorderThickness="1"
+											 SelectionChanged="movieAutoCompleteBoxSelectionChanged"/>
+				<StackPanel x:Name="movieInfoStackPanel" Visibility="Collapsed">
+					<TextBlock Margin="0 30 0 0" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="13.333" Foreground="{StaticResource Black}" Text="You choose the best movie of the day :"/>
+					
+					<Rectangle HorizontalAlignment="Left" Height="1"  VerticalAlignment="Bottom" Width="280" Margin="0 0 0 8" Fill="{StaticResource W Grey}" StrokeThickness="0"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="DATE:" FontFamily="Segoe UI" FontSize="10.667" Foreground="#FF767676" Margin="0 0 10 0" Grid.Column="0"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='MMM dd, yyyy'}" FontWeight="Bold" Opacity="0.7" FontSize="10.667" FontFamily="Segoe UI" Grid.Column="1"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='h:mm tt'}" FontWeight="Bold" Opacity="0.7" FontSize="10.667" FontFamily="Segoe UI" HorizontalAlignment="Right" Grid.Column="2"/>
+					</Grid>
+
+					<TextBlock TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="18.667" Foreground="Black" Height="26" Margin="0 9 0 2" Text="{Binding ElementName=movieAutoCompleteBox, Path=SelectedItem.MovieTitle}"/>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="0 0 10 0"  VerticalAlignment="Bottom" Text="RATING:" FontWeight="Bold" FontSize="12" FontFamily="Segoe UI Light"/>
+						<Image Source="../Images/FirstLook/movies-stars.png" Width="73" Height="12" />
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel x:Name="RightColumn" Grid.Row="1" Grid.Column="2" Width="320" Margin="14 0 14 0">
+				<StackPanel Background="#FF7E51A1" Height="55" Orientation="Horizontal">
+					<Grid HorizontalAlignment="Left" Margin="6 7 0 8" Width="40">
+						<Ellipse Fill="Transparent" Style="{StaticResource PathFrameEllipseStyle}"></Ellipse>
+						<Path Data="M2.1158192,0.00029299688 C5.0189452,0.031523477 10.852773,2.5617125 10.35569,8.6779318 C10.319827,9.1191978 10.834954,9.6378546 11.729403,10.365902 L11.80146,10.424181 L22.705135,0.11500034 C25.168894,2.1418355 20.212318,8.1139612 20.212318,8.1139612 C20.212318,8.1139612 17.655169,11.378872 14.524959,10.402928 C14.214757,10.764678 13.910346,11.11844 13.611698,11.464159 L13.412997,11.693871 L13.520914,11.779166 C15.599537,13.426377 18.453806,15.841311 21.312561,19.616936 C21.921844,20.326666 22.272079,21.503172 21.735573,21.927814 C21.735573,21.927814 20.911972,22.300703 19.592583,21.351486 C15.911307,18.626564 13.535508,15.853563 11.873812,13.765342 L11.74568,13.603841 L11.614968,13.752126 C6.72083,19.294065 3.6736975,22.188425 2.3155007,22.113583 C0.70578617,22.024879 1.6895995,19.984718 1.6895996,19.984718 L10.331717,11.813789 L10.27448,11.743631 C9.5186787,10.823895 8.9551983,10.279004 8.4396582,10.287879 C1.2454258,10.411721 -0.45640457,2.4858205 0.096345089,1.2473987 C0.10002168,1.2391611 0.20110118,0.14996141 1.446517,0.045532893 C1.644812,0.012946793 1.8697917,-0.0023536845 2.1158192,0.00029299688 z" Fill="White" Margin="8.236,8.789,8.372,9.096" Stretch="Fill"  />
+					</Grid>
+					<TextBlock Margin="5 0 0 0" TextWrapping="Wrap" Text="Choose the best kitchen/restaurant:" Style="{StaticResource ColumnHeaderStyle}"/>
+				</StackPanel>
+				<telerik:RadAutoCompleteBox  WatermarkContent="Enter a restaurant name..."     
+											 x:Name="restAutoCompleteBox"
+											 TextSearchPath="Name"
+											 SelectionMode="Single"
+											 TextSearchMode="Contains"
+											 AutoCompleteMode="Suggest"
+											 ItemsSource="{Binding FoodPlacesList}"
+											 DropDownItemTemplate="{StaticResource FoodPlacesSearchAutoComplete}"
+											 Margin="0 20 0 0" BorderBrush="#FF25A0DA" BorderThickness="1"
+											 SelectionChanged="RadAutoCompleteBoxSelectionChanged"/>
+				<StackPanel x:Name="restInfoStackPanel" Visibility="Collapsed">
+					<TextBlock Margin="0 30 0 0" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="13.333" Foreground="{StaticResource Black}" Text="You choose the best kitchen/ restaurant of the day : "/>
+					
+					<Rectangle HorizontalAlignment="Left" Height="1"  VerticalAlignment="Bottom" Width="320" Margin="0 0 0 8" Fill="{StaticResource W Grey}" StrokeThickness="0"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="DATE:" FontFamily="Segoe UI" FontSize="10.667" Foreground="#FF767676"  Margin="0 0 10 0" Grid.Column="0"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='MMM dd, yyyy'}" FontWeight="Bold" Opacity="0.7" FontSize="10.667"  FontFamily="Segoe UI" Grid.Column="1"/>
+						<TextBlock Text="{Binding CurrentDate, StringFormat='h:mm tt'}" FontWeight="Bold" Opacity="0.7" FontSize="10.667"  FontFamily="Segoe UI" HorizontalAlignment="Right" Grid.Column="2"/>
+					</Grid>
+					
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<StackPanel Grid.Column="0" Margin="0 9 0 0">
+							<TextBlock TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="18.667" Foreground="Black" Height="26" Text="{Binding ElementName=restAutoCompleteBox, Path=SelectedItem.Name}" Margin="0 0 0 2"/>
+							<TextBlock TextWrapping="Wrap"  FontFamily="Segoe UI Light" FontSize="12" Text="ITALIAN FOOD"/>
+						</StackPanel>
+						<Border  Grid.Column="2" HorizontalAlignment="Right"  Height="36" Width="36" VerticalAlignment="Bottom">
+							<Image Source="{Binding ElementName=restAutoCompleteBox, Path=SelectedItem.IconPath}" Height="26" Width="26"/>
+						</Border>
+					</Grid>
+					<!--</Border>-->
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

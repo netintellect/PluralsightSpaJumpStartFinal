@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.LargeData.Views.PermitsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.LargeData.ViewModels"
+             xmlns:converters="clr-namespace:Telerik.Windows.Examples.ChartView.LargeData"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/LargeData/Resources/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <telerik:VisibilityToBooleanConverter x:Key="visibilityToBooleanConverter" />
+            <converters:YearToLegendSettingsConverter x:Key="YearToLegendSettingsConverter" />
+            <converters:YearToInitialVisibilityConverter x:Key="YearToInitialVisibilityConverter" />
+            <telerik:ChartAnnotationLabelDefinition x:Key="horizontalLineLabelDefinition" 
+                                                    Location="Left" 
+                                                    HorizontalAlignment="Right" 
+                                                    VerticalAlignment="Center" 
+                                                    Format="{}{0:0}" />
+            <telerik:ChartAnnotationLabelDefinition x:Key="verticalLineLabelDefinition" 
+                                                    Location="Bottom" 
+                                                    HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Top" 
+                                                    Format="{}{0:0,}k" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <vm:PermitsViewModel />
+    </UserControl.DataContext>
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition MaxWidth="205" />
+        </Grid.ColumnDefinitions>
+        <telerik:RadCartesianChart x:Name="permitsChart" Palette="Windows8" MaxZoom="1000,100">
+            <telerik:RadCartesianChart.Resources>
+                <telerik:BitmapRenderOptions x:Key="renderOptions" />
+            </telerik:RadCartesianChart.Resources>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:LinearAxis x:Name="horizontalAxis" Title="Estimated Cost" RangeExtendDirection="None" LabelFormat="0,k"></telerik:LinearAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis Title="Permit Fee" x:Name="verticalAxis" RangeExtendDirection="None" />
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorLinesVisibility="XY"
+                                            StripLinesVisibility="Y">
+                    <telerik:CartesianChartGrid.YStripeBrushes>
+                        <SolidColorBrush Color="Transparent" />
+                        <SolidColorBrush Color="#FFD7D7D7" Opacity="0.3" />
+                    </telerik:CartesianChartGrid.YStripeBrushes>
+                </telerik:CartesianChartGrid>
+            </telerik:RadCartesianChart.Grid>
+            <telerik:RadCartesianChart.Behaviors>
+                <telerik:ChartPanAndZoomBehavior ZoomMode="Both" PanMode="Both" />
+                <telerik:ChartSelectionBehavior />
+                <telerik:ChartCrosshairBehavior x:Name="crosshair" 
+                                                HorizontalLineLabelDefinition="{StaticResource horizontalLineLabelDefinition}" 
+                                                VerticalLineLabelDefinition="{StaticResource verticalLineLabelDefinition}"
+                                                PositionChanged="crosshair_PositionChanged" />
+            </telerik:RadCartesianChart.Behaviors>
+            <telerik:RadCartesianChart.SeriesProvider>
+                <telerik:ChartSeriesProvider Source="{Binding Data}"  >
+                    <telerik:ChartSeriesProvider.SeriesDescriptors>
+                        <telerik:ScatterSeriesDescriptor  ItemsSourcePath="Value" XValuePath="EstimatedCost" YValuePath="PermitFee" >
+                            <telerik:ScatterSeriesDescriptor.Style>
+                                <Style TargetType="telerik:ScatterPointSeries" BasedOn="{StaticResource ScatterPointSeriesStyle}">
+                                    <Setter Property="PointSize" Value="3,3" />
+                                    <Setter Property="RenderOptions" Value="{StaticResource renderOptions}" />
+                                    <Setter Property="LegendSettings" Value="{Binding Key, Converter={StaticResource YearToLegendSettingsConverter}}" />
+                                    <Setter Property="Visibility" Value="{Binding Key, Converter={StaticResource YearToInitialVisibilityConverter}, ConverterParameter=2010}" />
+                                </Style>
+                            </telerik:ScatterSeriesDescriptor.Style>
+                        </telerik:ScatterSeriesDescriptor>
+                    </telerik:ChartSeriesProvider.SeriesDescriptors>
+                </telerik:ChartSeriesProvider>
+            </telerik:RadCartesianChart.SeriesProvider>
+        </telerik:RadCartesianChart>
+
+        <Grid Grid.Column="1" Grid.RowSpan="2" Margin="0 6 6 0">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="Average Cost" Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock Text="{Binding AverageCost, StringFormat=C2}" Style="{StaticResource AccentTextBlockStyle}" Margin="0 0 0 12" />
+                    <TextBlock Text="Max Cost" Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock Text="{Binding MaxCost, StringFormat=C2}" Style="{StaticResource AccentTextBlockStyle}" Margin="0 0 0 12" />
+                    <TextBlock Text="Average Fee" Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock Text="{Binding AverageFee, StringFormat=C2}" Style="{StaticResource AccentTextBlockStyle}" Margin="0 0 0 12" />
+                    <TextBlock Text="Max Fee" Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock Text="{Binding MaxFee, StringFormat=C2}" Style="{StaticResource AccentTextBlockStyle}" Margin="0 0 0 12" />
+                    <TextBlock Text="Total Entries" Style="{StaticResource TitleTextBlockStyle}" Margin="0 20 0 0" />
+                    <TextBlock Text="{Binding Count}" Style="{StaticResource AccentTextBlockStyle}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1"  
+              VerticalAlignment="Bottom"
+              Background="White">
+            <telerik:RadLegend Items="{Binding Path=LegendItems, ElementName=permitsChart}">
+                <telerik:RadLegend.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <telerik:RadWrapPanel />
+                    </ItemsPanelTemplate>
+                </telerik:RadLegend.ItemsPanel>
+                <telerik:RadLegend.ItemTemplate>
+                    <DataTemplate>
+                        <telerik:RadToggleButton Content="{Binding Title}" 
+                                                 IsChecked="{Binding Presenter.Visibility, Mode=TwoWay, Converter={StaticResource visibilityToBooleanConverter}}"
+                                                 Background="{Binding MarkerFill}">
+                        </telerik:RadToggleButton>
+                    </DataTemplate>
+                </telerik:RadLegend.ItemTemplate>
+            </telerik:RadLegend>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿QueryableDataProvider gives you the ability to use any source that implements IQueryable interface. By using QueryableDataProvider you can execute most of the data operations directly on the server and this way reduce the used memory and network traffic.

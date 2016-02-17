@@ -1,0 +1,2 @@
+﻿If you need tool that is not curentlly available in RadImageEditor you can create it by yourself. 
+This example illustrates how you can create simple watermark tool.

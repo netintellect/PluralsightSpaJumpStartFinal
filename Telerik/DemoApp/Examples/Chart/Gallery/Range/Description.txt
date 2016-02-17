@@ -1,0 +1,1 @@
+﻿This example shows Chart with one Range series. There is one DataSeries and its Definition property is set to an instance of RangeSeriesDefinition.

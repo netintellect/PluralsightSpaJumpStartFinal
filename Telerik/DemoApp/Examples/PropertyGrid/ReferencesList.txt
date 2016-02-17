@@ -1,0 +1,20 @@
+System.XAML
+Microsoft.CSharp
+System
+System.ComponentModel.DataAnnotations
+System.Data
+System.Drawing
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls, Version=2011.2.613.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Data, Version=2011.2.613.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.GridView, Version=2011.2.613.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Input, Version=2011.2.613.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Navigation, Version=2011.3.1017.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Data, Version=2011.2.613.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.DataVisualization
+WindowsBase
+PresentationCore
+PresentationFramework

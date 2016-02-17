@@ -1,0 +1,1 @@
+﻿Using the <b>SpecialSlotsGenerator</b> property of RadGanttView control, you can mark special slots along the visible range of days displayed in the control.

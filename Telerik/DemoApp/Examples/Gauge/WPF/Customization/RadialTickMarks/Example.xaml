@@ -1,0 +1,224 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Customization.RadialTickMarks.Example"
+					  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                      xmlns:telerikGauge="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Gauge"
+                      xmlns:telerikGauges="clr-namespace:Telerik.Windows.Controls.Gauges;assembly=Telerik.Windows.Controls.Gauge"
+                      xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=Telerik.Windows.Controls"
+					  xmlns:demo="clr-namespace:Telerik.Examples.Gauge">
+    <demo:DynamicBasePage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Gauge;component/RadGaugeResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </demo:DynamicBasePage.Resources>
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+            <telerikGauge:RadGauge x:Name="radGauge" Width="240" Height="240">
+                <telerikGauges:RadialGauge>
+                    <telerikGauges:RadialScale x:Name="radialScale"
+                                         Min="0" Max="100"
+                                         MajorTicks="{Binding ElementName=majorTicks, Path=Value}"
+                                         MiddleTicks="{Binding ElementName=middleTicks, Path=Value}"
+                                         MinorTicks="{Binding ElementName=minorTicks, Path=Value}"
+                                         MajorTickStep="{Binding ElementName=majorTickStep, Path=Value}"
+                                         ShowLastLabel="{Binding ElementName=showLastTick, Path=IsChecked}">
+
+                        <telerikGauges:RadialScale.MajorTick>
+                            <telerikGauges:MajorTickProperties Length="{Binding ElementName=majorLength, Path=Value}"
+													     Location="{Binding ElementName=majorTickLocation, Path=SelectedItem}"/>
+                        </telerikGauges:RadialScale.MajorTick>
+                        <telerikGauges:RadialScale.MiddleTick>
+                            <telerikGauges:MiddleTickProperties Length="{Binding ElementName=middleLength, Path=Value}"
+													      Location="{Binding ElementName=middleTickLocation, Path=SelectedItem}" />
+                        </telerikGauges:RadialScale.MiddleTick>
+                        <telerikGauges:RadialScale.MinorTick>
+                            <telerikGauges:MinorTickProperties Length="{Binding ElementName=minorLength, Path=Value}"
+													     Location="{Binding ElementName=minorTickLocation, Path=SelectedItem}" />
+                        </telerikGauges:RadialScale.MinorTick>
+
+                        <telerikGauges:RadialScale.Label>
+                            <telerikGauges:LabelProperties FontSize="11" />
+                        </telerikGauges:RadialScale.Label>
+
+                        <telerikGauges:IndicatorList>
+                            <telerikGauges:RadialBar x:Name="radialBar"
+                                               IsAnimated="true"
+                                               Value="50" />
+
+                            <telerikGauges:Needle x:Name="needle"
+                                            IsAnimated="true" />
+                        </telerikGauges:IndicatorList>
+
+                        <telerikGauges:TickList>
+                            <telerikGauges:CustomTickMark Name="customTickMark"
+                                                    Value="{Binding ElementName=tickValue, Path=Value}"
+                                                    Type="Custom"
+                                                    Length="0.12"
+                                                    TickWidth="0.3"
+                                                    Location="OverCenter"
+                                                    FontSize="14"
+                                                    FontFamily="Arial"
+                                                    Foreground="GhostWhite"
+                                                    Background="Red" />
+
+                            <telerikGauges:CustomTickMark Name="offPositionTickMark"
+                                                    Value="-10"
+                                                    Type="OffPosition"
+                                                    Length="0.1"
+                                                    TickWidth="1"
+                                                    Location="OverCenter"
+                                                    FontSize="14"
+                                                    FontFamily="Arial"
+                                                    Foreground="White"
+                                                    Background="Red"
+                                                    Format="OFF"
+                                                    Style="{StaticResource OffPositionStyle}" />
+                        </telerikGauges:TickList>
+                    </telerikGauges:RadialScale>
+                </telerikGauges:RadialGauge>
+            </telerikGauge:RadGauge>
+        </Border>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Tick marks properties:" />
+
+            <!-- Major tick mark's properties -->
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../../Images/Gauge/Icons/Major.png" />
+                <TextBlock VerticalAlignment="Center">Major tick marks</TextBlock>
+            </StackPanel>
+
+            <RadioButton GroupName="SetWay"
+                         Name="ticksCount"
+                         IsChecked="True"
+                         Checked="SetWayChanged"
+                         Content="Count"
+                         Margin="0,2" />
+
+            <RadioButton GroupName="SetWay"
+                         Name="tickStep"
+                         Content="Step"
+                         Checked="SetWayChanged"
+                         Margin="0,2" />
+
+            <TextBlock>Count:</TextBlock>
+            <telerik:RadNumericUpDown Name="majorTicks"
+                                      Minimum="1" Maximum="10"
+                                      Value="0"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+            <TextBlock>Step:</TextBlock>
+            <telerik:RadNumericUpDown Name="majorTickStep"
+                                      Minimum="1" Maximum="50"
+                                      Value="10"
+                                      SmallChange="1"
+                                      IsEnabled="False"
+                                      Margin="0,2" />
+
+            <CheckBox Name="showLastTick"
+                      Content="Show last tick"
+                      IsEnabled="False"
+                      IsChecked="True"
+                      Margin="0,2" />
+
+            <TextBlock>Length:</TextBlock>
+            <telerik:RadNumericUpDown Name="majorLength"
+                                      Minimum="0" Maximum="1"
+                                      Value="0"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+            <TextBlock>Tick location:</TextBlock>
+            <telerik:RadComboBox Name="majorTickLocation"
+                                 ItemsSource="{StaticResource ScaleObjectLocationItemsSource}"
+                                 SelectedIndex="2"
+                                 Margin="0,2" />
+
+            <TextBlock>Shape:</TextBlock>
+            <telerik:RadComboBox Name="majorTickStyle"
+                                 Margin="0,2" />
+
+            <!-- Middle tick mark's properties -->
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../../Images/Gauge/Icons/Middle.png" />
+                <TextBlock VerticalAlignment="Center">Middle tick marks</TextBlock>
+            </StackPanel>
+
+            <TextBlock>Count:</TextBlock>
+            <telerik:RadNumericUpDown Name="middleTicks"
+                                      Minimum="1" Maximum="10"
+                                      Value="0"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+            <TextBlock>Length:</TextBlock>
+            <telerik:RadNumericUpDown Name="middleLength"
+                                      Minimum="0" Maximum="1"
+                                      Value="0"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+            <TextBlock>Tick location:</TextBlock>
+            <telerik:RadComboBox Name="middleTickLocation"
+                                 ItemsSource="{StaticResource ScaleObjectLocationItemsSource}"
+                                 SelectedIndex="2"
+                                 Margin="0,2" />
+
+            <TextBlock>Shape:</TextBlock>
+            <telerik:RadComboBox Name="middleTickStyle"
+                                 Margin="0,2" />
+
+            <!-- Minor tick mark's properties -->
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../../Images/Gauge/Icons/Minor.png" />
+                <TextBlock VerticalAlignment="Center">Minor tick marks</TextBlock>
+            </StackPanel>
+
+            <TextBlock>Count:</TextBlock>
+            <telerik:RadNumericUpDown Name="minorTicks"
+                                      Minimum="1" Maximum="10"
+                                      Value="0"
+                                      SmallChange="1"
+                                      Margin="0,2"/>
+
+            <TextBlock>Length:</TextBlock>
+            <telerik:RadNumericUpDown Name="minorLength"
+                                      Minimum="0" Maximum="1"
+                                      Value="0"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+            <TextBlock>Tick location:</TextBlock>
+            <telerik:RadComboBox Name="minorTickLocation"
+                                 ItemsSource="{StaticResource ScaleObjectLocationItemsSource}"
+                                 SelectedIndex="2"
+                                 Margin="0,2" />
+
+            <TextBlock>Shape:</TextBlock>
+            <telerik:RadComboBox Name="minorTickStyle"
+                                 Margin="0,2" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../../Images/Gauge/Icons/Custom.png" />
+                <TextBlock VerticalAlignment="Center">Custom tick marks</TextBlock>
+            </StackPanel>
+
+            <TextBlock>Value:</TextBlock>
+            <telerik:RadNumericUpDown Name="tickValue"
+                                      Minimum="0" Maximum="100"
+                                      Value="0"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+            <Button x:Name="ToggleButton"
+                    Click="TurnIndicatorOnOff"
+                    Content="Turn OFF"
+                    Margin="0,2" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

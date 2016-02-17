@@ -1,0 +1,1 @@
+﻿RadBook UI Virtualization feature can further improve the performance of your application while giving you the opportunity to display millions of pages without any significant performance impact.

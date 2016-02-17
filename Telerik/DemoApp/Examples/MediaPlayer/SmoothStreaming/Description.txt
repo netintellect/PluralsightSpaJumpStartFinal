@@ -1,0 +1,4 @@
+﻿RadMediaPlayer is a part of the <b>Telerik.Windows.Controls.MediaPlayer</b> assembly. It allows you to easily deliver audio and video content to your web site. You can create and load playlists, set chapters, watch the video in a full-screen mode and completely customize the appearance of the control. Furthermore, you can use RadMediaPlayer to give your viewers the best possible video experience by using the SmoothStreaming. This example demonstrates how to take advantage of that feature.
+
+
+

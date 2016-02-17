@@ -1,0 +1,1 @@
+﻿Telerik <b>RadPdfProcessing</b> provides easy to use API which allows code-only generation of PDF documents. This examples demonstrates how to create a document containing images, text and shapes and export it to PDF.

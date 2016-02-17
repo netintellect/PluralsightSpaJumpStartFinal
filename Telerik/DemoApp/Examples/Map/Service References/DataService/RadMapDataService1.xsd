@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Examples.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Examples.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="RadMapDataService.StoreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Area" />
+      <xs:enumeration value="Market" />
+      <xs:enumeration value="Store" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RadMapDataService.StoreType" nillable="true" type="tns:RadMapDataService.StoreType" />
+  <xs:complexType name="ArrayOfRadMapDataService.StoreLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RadMapDataService.StoreLocation" nillable="true" type="tns:RadMapDataService.StoreLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRadMapDataService.StoreLocation" nillable="true" type="tns:ArrayOfRadMapDataService.StoreLocation" />
+  <xs:complexType name="RadMapDataService.StoreLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="StoreName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreType" type="tns:RadMapDataService.StoreType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RadMapDataService.StoreLocation" nillable="true" type="tns:RadMapDataService.StoreLocation" />
+  <xs:complexType name="ArrayOfRadMapDataService.SalesArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RadMapDataService.SalesArea" nillable="true" type="tns:RadMapDataService.SalesArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRadMapDataService.SalesArea" nillable="true" type="tns:ArrayOfRadMapDataService.SalesArea" />
+  <xs:complexType name="RadMapDataService.SalesArea">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RadMapDataService.StoreLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Area" nillable="true" type="tns:ArrayOfRadMapDataService.Location" />
+          <xs:element minOccurs="0" name="Fill" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Stores" nillable="true" type="tns:ArrayOfRadMapDataService.StoreData" />
+          <xs:element minOccurs="0" name="Stroke" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RadMapDataService.SalesArea" nillable="true" type="tns:RadMapDataService.SalesArea" />
+  <xs:complexType name="ArrayOfRadMapDataService.Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RadMapDataService.Location" nillable="true" type="tns:RadMapDataService.Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRadMapDataService.Location" nillable="true" type="tns:ArrayOfRadMapDataService.Location" />
+  <xs:complexType name="RadMapDataService.Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RadMapDataService.Location" nillable="true" type="tns:RadMapDataService.Location" />
+  <xs:complexType name="ArrayOfRadMapDataService.StoreData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RadMapDataService.StoreData" nillable="true" type="tns:RadMapDataService.StoreData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRadMapDataService.StoreData" nillable="true" type="tns:ArrayOfRadMapDataService.StoreData" />
+  <xs:complexType name="RadMapDataService.StoreData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RadMapDataService.StoreLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Managers" type="xs:int" />
+          <xs:element minOccurs="0" name="SalesTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SalesTarget" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RadMapDataService.StoreData" nillable="true" type="tns:RadMapDataService.StoreData" />
+</xs:schema>

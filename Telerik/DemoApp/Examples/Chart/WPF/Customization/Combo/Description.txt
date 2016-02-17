@@ -1,0 +1,1 @@
+﻿This example presents a combination of two series: 3D Bar series and 3D Spline series in a single chart. CameraExtension is added, allowing rotation. Just click on the chart and grag to rotate it.<br/>

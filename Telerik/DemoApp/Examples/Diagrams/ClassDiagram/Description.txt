@@ -1,0 +1,1 @@
+﻿The class diagram example describes the structure of Telerik.Windows.Diagrams.Core.dll and Telerik.Windows.Controls.Diagrams.dll by displaying all their namespaces, classes, interfaces, structures, methods and properties.

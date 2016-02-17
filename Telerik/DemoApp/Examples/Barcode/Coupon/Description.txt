@@ -1,0 +1,1 @@
+﻿This example utilizes a QR Code to encode a coupon discount code.

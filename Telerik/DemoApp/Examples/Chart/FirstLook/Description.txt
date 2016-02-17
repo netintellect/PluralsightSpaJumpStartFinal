@@ -1,0 +1,3 @@
+﻿Telerik Chart control helps users understand and analyze complex data and empowers easy customization of the chart layout.<br />
+This example demonstrates how to drill down into generalized data. Clicking on a bar in "Total Sales by Product" chart will display specific data for the selected year and will update the "Percent of target" chart below using a command. Clicking on a slice in the "Total Sales by Region" pie chart will drill down using the intrinsic hierarchical data support in RadChart to display data for specific countries and will update the RadGridView.<br /><br />
+RadChart is a part of the <b>Telerik.Windows.Controls.Charting</b> assembly.

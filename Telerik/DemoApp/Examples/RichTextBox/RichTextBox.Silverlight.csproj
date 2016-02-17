@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4CAEB18-FC3D-415C-8631-9B1E9DC4736B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.RichTextBox</RootNamespace>
+    <AssemblyName>RichTextBox</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>RichTextBox.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>RichTextBox.App</SilverlightAppEntry>
+    <TestPageFileName>RichTextBoxTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.Navigation" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ImageEditor">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Rtf">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Binding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBlocks\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="References\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RepeatHeaderRows\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\StructuredContentEditingExample\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StructuredContentEditing\DocumentInfo.cs" />
+    <Compile Include="Silverlight\StructuredContentEditingExample\RecipeExample.xaml.cs">
+      <DependentUpon>RecipeExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StructuredContentEditing\HRecipeFormatProvider.cs" />
+    <Compile Include="StructuredContentEditing\RecipeRangeEnd.cs" />
+    <Compile Include="StructuredContentEditing\RecipeRangeStart.cs" />
+    <Compile Include="CustomizePresentation\CustomLayersBuilder.cs" />
+    <Compile Include="CustomizePresentation\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizePresentation\HighlightCurrentLineLayer.cs" />
+    <Compile Include="CustomizePresentation\HighlightCurrentWordLayer.cs" />
+    <Compile Include="DocumentProtection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensibility\ExamplesMefCatalogManager.cs" />
+    <Compile Include="Integration\PdfViewerIntegration\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MailMerge\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MailMerge\HelperClasses\ExampleDataContext.cs" />
+    <Compile Include="MailMerge\HelperClasses\MailMessageInfo.cs" />
+    <Compile Include="StyleSheets\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableStylesGallery\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikEditor\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Parsers\ColorConverter.cs" />
+    <Compile Include="Parsers\CSharpSyntaxParser.cs" />
+    <Compile Include="Parsers\LanguageSyntaxStructure.cs" />
+    <Compile Include="Parsers\SyntaxParser.cs" />
+    <Compile Include="Parsers\SyntaxPicker.cs" />
+    <Compile Include="Parsers\Token.cs" />
+    <Compile Include="Parsers\Tokenizer.cs" />
+    <Compile Include="Parsers\XamlSyntaxParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData\Employee.cs" />
+    <Compile Include="SampleData\ExamplesDataContext.cs" />
+    <Compile Include="Silverlight\TelerikEditorExample\TelerikEditorExample.xaml.cs">
+      <DependentUpon>TelerikEditorExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SyntaxHighlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Binding\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="SampleData\StyleSheetDemoDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="SampleData\StyleSheetDefault.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="SampleData\StyleSheetDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="SampleData\ReferencesFootnote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="SampleData\ReferencesEndnote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="CodeBlocks\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="References\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="SampleData\ReferencesBibliography.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\CodeBlocks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="RepeatHeaderRows\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\StructuredContentEditingExample\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\StructuredContentEditingExample\RecipeExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizePresentation\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocumentProtection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Integration\PdfViewerIntegration\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="SampleData\RadRichTextBoxCustomizePresentation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\RadRichTextBoxProtection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="MailMerge\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="SampleData\RadRichTextBoxMailMerge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\RadRichTextBoxPdfViewerIntegration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\Recipe1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\Recipe2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\Recipe3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\Recipe4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="StyleSheets\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableStylesGallery\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TelerikEditor\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="SampleData\RadRichTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="SampleData\RadRichTextBoxOverview.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Silverlight\TelerikEditorExample\TelerikEditorExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SyntaxHighlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="SampleData\RepeatHeaderRows.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleData\SampleCS.txt" />
+    <Resource Include="SampleData\SampleXAML.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleData\TableStylesGalleryDemo.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\Description.txt" />
+    <Resource Include="TableStylesGallery\Description.txt" />
+    <Resource Include="TelerikEditor\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SyntaxHighlight\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\MSOffice\AppIcon-telerik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Binding\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RichTextBox\CoverFlow\01.png" />
+    <None Include="Images\RichTextBox\CoverFlow\02.png" />
+    <None Include="Images\RichTextBox\CoverFlow\03.png" />
+    <None Include="Images\RichTextBox\CoverFlow\04.png" />
+    <None Include="Images\RichTextBox\CoverFlow\05.png" />
+    <None Include="Images\RichTextBox\CoverFlow\06.png" />
+    <None Include="Images\RichTextBox\CoverFlow\07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\MSOffice\16\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DocumentProtection\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomizePresentation\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MailMerge\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\MailMerge\female1.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\female2.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\female3.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\female4.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\male1.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\male2.png" />
+    <Resource Include="Images\RichTextBox\MailMerge\male3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Integration\PdfViewerIntegration\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\AppIcon-telerik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StructuredContentEditing\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="References\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CodeBlocks\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\recipe3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\recipe1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\recipe2.jpg" />
+    <Resource Include="Images\RichTextBox\StructuredContentEditing\recipe4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RepeatHeaderRows\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+      "$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+      "$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+      xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+      xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+      xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

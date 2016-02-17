@@ -1,0 +1,2 @@
+﻿This example demonstrates how RadChart supports empty/null values. There are three ways in which these values can be handled. This is specified by a property in the control, for the series definition, named EmptyPointBehavior, defined per Series Definition. It has three options: <strong>Zero</strong>, <strong>Drop</strong> and <strong>Gap</strong>. 
+

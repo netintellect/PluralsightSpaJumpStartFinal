@@ -1,0 +1,1 @@
+﻿Telerik Chart control provides a flexible API that grants full control over various programmatic operations. The example demonstrates how to show/hide chart labels, tooltips, axes, gridlines and striplines. Changing the axes' titles and the data formatting is easy.

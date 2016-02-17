@@ -1,0 +1,1 @@
+﻿RadTimeline allows changing the default ItemTemplateSelector. This example shows the Nobel Prize Laureates and every one of them is represented in the timeline by a DataTemplate based on the Nobel Prize category, gender or contribution.

@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Telerik.Windows.QuickStart.QuickNavigation"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+		mc:Ignorable="d" 
+        Height="56"
+        x:Name="root"
+		IsTabStop="False">
+    <UserControl.Resources>
+        <local:ExampleModeToVisibilityConverter x:Key="exampleModeToVisibilityConverter" />
+    </UserControl.Resources>
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="152" />
+                </Grid.ColumnDefinitions>
+                <local:SearchBox x:Name="ExampleSearch" Panel.ZIndex="100"
+						Margin="130 3 15 0" Height="20" VerticalAlignment="Center"
+						Source="{Binding Data.Examples}" local:SearchBoxBehaviors.UseDefaultQuickStartSearchBehavior="True">
+
+                    <local:SearchBox.GroupDescriptions>
+                        <PropertyGroupDescription PropertyName="ExampleGroup.Control" />
+                    </local:SearchBox.GroupDescriptions>
+                    <local:SearchBox.ResultEmptyContentTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="20 15" Text="No Examples Found" Style="{StaticResource SubtitleTextStyle}" />
+                        </DataTemplate>
+                    </local:SearchBox.ResultEmptyContentTemplate>
+                    <local:SearchBox.ResultGroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="GroupItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="GroupItem">
+                                                <Grid>
+                                                    <Image VerticalAlignment="Top" HorizontalAlignment="Left" Width="16" Height="16" Margin="2" Source="{Binding Name, Converter={StaticResource ControlToIconConverter}, ConverterParameter='16x16'}" />
+                                                    <TextBlock Margin="22 2 2 2" VerticalAlignment="Top" Text="{Binding Name.Text}" Foreground="{StaticResource Text.Title}" FontWeight="Bold" />
+                                                    <ItemsPresenter Margin="0 22 0 0" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                            <GroupStyle.Panel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel />
+                                </ItemsPanelTemplate>
+                            </GroupStyle.Panel>
+                        </GroupStyle>
+                    </local:SearchBox.ResultGroupStyle>
+                    <local:SearchBox.ResultItemContainerStyle>
+                        <Style TargetType="{x:Type local:ResultBoxItem}">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter Property="Margin" Value="0 -40 0 -40" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type local:ResultBoxItem}">
+                                        <Grid x:Name="Root" Margin="20 40 0 40" Background="{TemplateBinding Background}">
+                                            <TextBlock x:Name="Content" Text="{Binding Text}" Margin="2 0" />
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsHighlighted" Value="True">
+                                                <Setter Property="Background" Value="{StaticResource ContentControl.Highlight}" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:SearchBox.ResultItemContainerStyle>
+                </local:SearchBox>
+                <Button x:Name="switchToTouch"  Style="{StaticResource RightBookmarkButtonStyle}" HorizontalAlignment="Right" 
+                        Grid.Column="1"  VerticalAlignment="Center" Margin="0 9 -10 7" 
+                        Command="{Binding ToggleApplicationTouchModeCommand}" CommandParameter="{Binding CurrentExample}"
+                        Visibility="{Binding CurrentExample, ConverterParameter=ToTouch, Converter={StaticResource exampleModeToVisibilityConverter}}"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0 0 -12 -17">
+                    <Grid Grid.Column="1"> 
+                        <TextBlock VerticalAlignment="Center" Margin="26,-18,0,0"  Text="SWITCH TO TOUCH"/>
+                        <ContentPresenter IsHitTestVisible="False" ContentTemplate="{StaticResource SwitchToTouchIcon}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                    </Grid>
+                </Button>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger SourceName="ExampleSearch" Property="IsOpen" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation To="120 3 -140 0" BeginTime="0:0:0.0" Duration="0:0:0.3" DecelerationRatio="1" Storyboard.TargetName="ExampleSearch" Storyboard.TargetProperty="Margin" />
+
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="switchToTouch">
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation To="130 3 15 0" Duration="0:0:0.3" BeginTime="0:0:0.3" DecelerationRatio="1" Storyboard.TargetName="ExampleSearch" Storyboard.TargetProperty="Margin" />
+
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="switchToTouch">
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

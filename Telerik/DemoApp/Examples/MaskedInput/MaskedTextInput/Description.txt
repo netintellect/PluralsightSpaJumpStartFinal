@@ -1,0 +1,5 @@
+﻿RadMaskedTextInput's mask is characted based and allows you to specify the type of each character. You can set it to the following values:<br />
+ - Number<br />
+ - Letter<br />
+ - Fixed symbol<br />
+ - Any character

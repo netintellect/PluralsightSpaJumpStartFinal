@@ -1,0 +1,1 @@
+﻿Using the MsProjectImportHelper class you can easily import MsProject xml file to RadGanttView.

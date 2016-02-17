@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.WordsProcessing.Replace.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		     xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:conversionCommon="clr-namespace:Telerik.Windows.Examples.WordsProcessing.ConversionCommon"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.WordsProcessing.Replace"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             VerticalAlignment="Center" HorizontalAlignment="Center">
+        <UserControl.Resources>
+                <local:ExampleViewModel x:Key="exampleViewModel" 
+                                        SampleDocumentFile="SampleDocument.docx" 
+                                        DefaultDocumentThumbnailPath="/WordsProcessing;component/SampleData/SampleDocumentLargeThumbnail.png"/>
+        <telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:ReplaceOptionConverter x:Key="ReplaceOptionConverter" />
+        
+    </UserControl.Resources>
+    
+        <telerikQuickStart:QuickStart.ExampleHeader>
+            <TextBlock Text="Replace" Margin="8" />
+        </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="20" DataContext="{StaticResource exampleViewModel}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Border BorderBrush="#D6D4D4" BorderThickness="1" Margin="0 0 0 6">
+                <Image Source="{Binding DefaultDocumentThumbnailPath}" Stretch="None"/>
+            </Border>
+            <telerik:RadButton Content="Load Sample Document" Command="{Binding OpenSampleCommand}" Padding="8 4"
+                               HorizontalAlignment="Center" Grid.Row="1" Margin="0 6 0 0" />
+            <TextBlock Text="- OR -" HorizontalAlignment="Center" Grid.Row="2" Margin="6" />
+            <telerik:RadButton Content="Load Custom Document" Command="{Binding OpenCommand}" Padding="8 4"
+                            HorizontalAlignment="Center" Grid.Row="3" />
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="6 15 0 0">
+            <TextBlock Text="FILE: " FontWeight="SemiBold" FontSize="13" Foreground="#2CB144" />
+            <TextBlock Text="{Binding FileName}" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="6">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="Method:"
+                       FontWeight="Bold"    
+                       VerticalAlignment="Center"
+                       Margin="0 6 6 6"/>
+
+                <telerik:RadComboBox Margin="0 0 6 6" Grid.Row="1" ItemsSource="{Binding ReplaceOptions}" SelectedItem="{Binding SelectedReplaceOption}" HorizontalAlignment="Stretch" MinWidth="150">
+                    <telerik:RadComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource ReplaceOptionConverter}}"/>
+                        </DataTemplate>
+                    </telerik:RadComboBox.ItemTemplate>
+                </telerik:RadComboBox>
+            </StackPanel>
+
+            <StackPanel Width="200" Grid.Column="1">
+                <TextBlock Text="Find what:"
+                    Grid.Row="1" 
+                    Visibility="{Binding ReplaceOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    VerticalAlignment="Center"
+                    Margin="6 6 6 6"/>
+                <TextBox Text="{Binding FindWhat}"
+                    Grid.Row="1" Grid.Column="1"
+                    Visibility="{Binding ReplaceOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Margin="6 0 6 6"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="2" Width="200">
+                    <TextBlock Text="Replace with:"
+                       Grid.Column="2"
+                       Grid.Row="1"
+                       Visibility="{Binding ReplaceOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       VerticalAlignment="Center"
+                       Margin="6"/>
+                    <TextBox Text="{Binding ReplaceWith}"
+                     Grid.Row="1" 
+                     Grid.Column="3"
+                     Visibility="{Binding ReplaceOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                     Margin="6 0 6 6" />
+                </StackPanel>
+            <StackPanel Grid.Column="1"  Width="200">
+                    <TextBlock Text="Find what:"
+                       Grid.Row="1" 
+                       Visibility="{Binding HighlightTextOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       VerticalAlignment="Center"
+                       Margin="6 6 6 6"/>
+                    <TextBox Text="{Binding StylingFindWhat}"
+                     Grid.Row="1" 
+                     Grid.Column="1"
+                     Visibility="{Binding HighlightTextOptionsFieldsAreEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                     Margin="6 0 6 6"/>
+           </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="4">
+                <CheckBox IsChecked="{Binding MatchCase}" Margin="0 6 6 6" IsEnabled="{Binding UseRegex, Converter={StaticResource BooleanToInvertedBooleanConverter}}" Content="Match Case"/>
+                <CheckBox IsChecked="{Binding MatchWholeWord}" Margin="6" IsEnabled="{Binding UseRegex, Converter={StaticResource BooleanToInvertedBooleanConverter}}" Content="Match Whole Word"/>
+                <CheckBox IsChecked="{Binding UseRegex}" Margin="6" Content="Use Regular Expressions"/>
+            </StackPanel>
+        </Grid>
+
+        <telerik:RadButton Grid.Row="3" Grid.ColumnSpan="3"
+                           Padding="8 4" Margin="6"
+                           Content="Replace and Save" 
+                           Command="{Binding ReplaceAndSaveCommand}" 
+                           IsEnabled="{Binding ReplaceAndSaveIsEnabled}"
+                           HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>

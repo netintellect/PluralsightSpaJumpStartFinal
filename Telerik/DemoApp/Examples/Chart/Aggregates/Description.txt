@@ -1,0 +1,3 @@
+﻿Data grouping and aggregation is some first-class BI behavior built-in RadChart. The feature allows you to group business objects according to some criteria and calculate aggregate functions on those groups. That ability is very useful and powerful way to build charts which summarize important business data in seconds. 
+<br /><br />
+The data used for this example is shown in the RadGridView. When you group the grid by some of its columns, RadChart performs exactly the same operation. You can also change the aggregate function from the combobox on the right side and observe how the chart control reflects the changes.

@@ -1,0 +1,5 @@
+﻿The example shows the market areas on the map for zoom level between 3 and 8. When the zoom level is more than 8 then it shows the stores. You can click a marker to selecting and to zooming the area or the store.
+
+The Visualization Layer supports items virtualization -- this means items are only loaded when the region of the map they belong to is visible. 
+
+The example uses the virtualization feature of the VisualizationLayer to issue requests to a web service and retrieve the necessary data to display new objects on the map.

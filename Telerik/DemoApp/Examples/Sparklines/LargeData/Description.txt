@@ -1,0 +1,1 @@
+﻿This example is integration between several controls - RadTimeBar, RadSparkline and RadChart. It demonstrates how easily RadSparkline and RadTimeBar can be bound to large amount of data - daily temperatures for a long period of time /from 1948 to 2011/.

@@ -1,0 +1,1 @@
+﻿RadCalculatorPicker works as an editor control for numeric data types. It provides the familiar look and feel of all Telerik picker controls and the full functionality of RadCaluclator at the same time. 

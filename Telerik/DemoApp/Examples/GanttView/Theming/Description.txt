@@ -1,0 +1,1 @@
+﻿This example shows the RadGanttView control in all Telerik themes. Just use the theme selector below.

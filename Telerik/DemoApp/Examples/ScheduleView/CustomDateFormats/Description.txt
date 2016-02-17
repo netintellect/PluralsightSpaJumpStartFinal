@@ -1,0 +1,1 @@
+﻿Using the TimerulerGroupStringFormat, TimerulerMajorTickStringFormat, TimerulerMinorTickStringFormat and GroupHeaderDateStringFormat properties of the view definition, each Telerik ScheduleView ViewDefinition can be easily customized to display the dates and times on the time ruler and in the GroupHeaders, containing dates in custom formats.

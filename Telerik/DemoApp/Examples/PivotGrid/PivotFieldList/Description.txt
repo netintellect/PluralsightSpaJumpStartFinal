@@ -1,0 +1,1 @@
+﻿You can use the RadPivotFieldList control to provide your users an easy runtime customization of the RadPivotGrid reports.

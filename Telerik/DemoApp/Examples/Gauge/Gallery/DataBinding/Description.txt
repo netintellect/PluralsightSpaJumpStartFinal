@@ -1,0 +1,1 @@
+﻿The RadGauge control allows you to assign collection of doubles to the indicator's ValueSource property and then to use the exposed MoveNext, MovePrevious, StartPlayback, StopPlayback, or Reset methods of the indicator.

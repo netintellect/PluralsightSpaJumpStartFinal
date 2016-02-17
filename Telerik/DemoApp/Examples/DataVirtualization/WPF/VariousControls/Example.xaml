@@ -1,0 +1,130 @@
+<Examples:DataVirtualizationExample x:Class="Telerik.Windows.Examples.DataVirtualization.WPF.VariousControls.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.DataVirtualization.WPF.VariousControls"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Orders by Companies" Margin="10,6,0,6" FontFamily="Segoe UI Light"/>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+	<Examples:DataVirtualizationExample.Resources>
+		<local:ExamplesDataContext x:Key="ExamplesDataContext" />
+	</Examples:DataVirtualizationExample.Resources>
+	<Grid Margin="-5,-5,-5,-4" DataContext="{StaticResource ExamplesDataContext}" UseLayoutRounding="True">
+        <Grid.Resources>		
+            <DataTemplate x:Key="Orders">
+                <StackPanel Height="34">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="OrderID: " />
+                        <TextBlock Text="{Binding OrderID}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="OrderDate: " />
+                        <TextBlock Text="{Binding OrderDate}" />
+                    </StackPanel>
+                </StackPanel>
+            </DataTemplate>
+            <HierarchicalDataTemplate x:Key="Customers"
+											  ItemTemplate="{StaticResource Orders}"
+											  ItemsSource="{Binding Orders}">
+                <Border Height="34">
+					<TextBlock Text="{Binding CompanyName}" VerticalAlignment="Center" FontWeight="Bold" FontSize="12"/>
+                </Border>
+            </HierarchicalDataTemplate>
+			<Style TargetType="telerik:CarouselItem" BasedOn="{StaticResource CarouselItemStyle}">
+				<Setter Property="telerik:RadCarousel.ReflectionSettings">
+                        <Setter.Value>
+                        <telerik:ReflectionSettings HeightOffset="0.1" HiddenPercentage="0.1"  Opacity="0.5" Visibility="Visible"/>
+                    </Setter.Value>
+				</Setter>
+                <Setter Property="Margin" Value="0,-80,0,0"/>
+			</Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Padding="0,10,0,0" Height="85" BorderThickness="0,0,0,1" BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="23,0,0,0" VerticalAlignment="Top" Text="Select Country:" FontWeight="Bold" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+                    <telerik:RadComboBox Margin="23,13,32,23" Width="230" Grid.Row="1" VerticalAlignment="Center" 
+										 SelectedItem="{Binding SelectedCustomer}"
+										 ItemsSource="{Binding Customers}" DisplayMemberPath="Country"
+										 ClearSelectionButtonVisibility="Visible"
+										 ClearSelectionButtonContent="Clear selected country"/>
+                </Grid>
+            </Border>
+			<telerik:RadTreeView x:Name="treeView" Grid.Row="1" ItemsSource="{Binding SelectedCustomers}"
+								 SelectionChanged="OnTreeViewSelectionChanged"
+								 IsVirtualizing="True" Margin="16,0,0,0"
+								 ItemTemplate="{StaticResource Customers}"
+								 IsExpandOnSingleClickEnabled="True"/>
+        </Grid>
+        <Border Grid.Column="1" Width="1" Background="{telerik:Windows8Resource ResourceKey=BasicBrush}"/>
+		<telerik:RadCarousel x:Name="customersCarousel"
+							 Grid.Column="2" Margin="20,0" 
+							 ItemsSource="{Binding SelectedCustomers}">
+            <telerik:RadCarousel.ItemTemplate>
+                <DataTemplate>
+                    <Border Height="155" Width="255" VerticalAlignment="Center" BorderThickness="1" BorderBrush="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Padding="6,6,6,5" Height="30" Background="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <TextBlock FontSize="14" Foreground="{telerik:Windows8Resource ResourceKey=MainBrush}" Text="Customer " />
+                                    <TextBlock FontSize="14" Foreground="{telerik:Windows8Resource ResourceKey=MainBrush}" Text="{Binding CompanyName}" />
+                                </StackPanel>
+                            </Border>
+                            <StackPanel Grid.Row="1">
+                                <StackPanel Orientation="Horizontal" Margin="13,10,0,0">
+									<TextBlock Text="Contact " Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+									<TextBlock Text="{Binding ContactName}" Foreground="{telerik:Windows8Resource ResourceKey=MarkerBrush}" />
+                                </StackPanel>
+                                <Grid>
+                                    <StackPanel  Margin="13,10,0,0" Orientation="Horizontal">
+										<TextBlock Text="Title " Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+										<TextBlock Text="{Binding ContactTitle}" />
+                                    </StackPanel>                                   
+                                </Grid>
+								<Grid>
+									<StackPanel  Margin="13,10,0,0" Orientation="Horizontal">
+										<TextBlock Text="Country " Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+										<TextBlock Text="{Binding Country}" />
+									</StackPanel>
+								</Grid>
+								<Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel  Margin="13,10,0,0" Orientation="Horizontal">
+										<TextBlock Text="City " Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+										<TextBlock Text="{Binding City}" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1"  Margin="13,10,0,0" Orientation="Horizontal">
+										<TextBlock Text="Phone " Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+										<TextBlock Text="{Binding Phone}" />
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </telerik:RadCarousel.ItemTemplate>
+        </telerik:RadCarousel>
+    </Grid>
+</Examples:DataVirtualizationExample>

@@ -1,0 +1,2 @@
+﻿Telerik ChartView control helps users understand and analyze complex data and loads it with ultimate fast performance.
+This example demonstrates a company’s sales. You can make a comparison between the actual and target revenues by country with rich data visualizations for analyzing enterprise data, thus facilitating the decision-making process in a typical business environment. You can see the easy accommodation of multiple chart controls such as SparkLines, BulletGraphs, Line and Bar series in one place.

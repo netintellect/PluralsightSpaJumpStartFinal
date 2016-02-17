@@ -1,0 +1,90 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.CustomStyles.GroupHeaderTemplate.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+             xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.CustomStyles.GroupHeaderTemplate"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="GroupHeader Template" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <local:ViewModel x:Key="ViewModel" AppointmentsSource="/ScheduleView;component/DataSources/DragDrop/Appointments.xaml" />
+        <SolidColorBrush x:Key="GroupHeaderForeground" Color="#FFFFFFFF" />
+
+        <local:OrientedGroupHeaderContentTemplateSelector x:Key="GroupHeaderContentTemplateSelector">
+            <!-- Default templates -->
+            <local:OrientedGroupHeaderContentTemplateSelector.HorizontalTemplate>
+                <DataTemplate>
+                    <ContentPresenter Content="{Binding FormattedName}" Height="16" Margin="4" />
+                </DataTemplate>
+            </local:OrientedGroupHeaderContentTemplateSelector.HorizontalTemplate>
+            <local:OrientedGroupHeaderContentTemplateSelector.VerticalTemplate>
+                <DataTemplate>
+                    <telerik:LayoutTransformControl VerticalAlignment="Top">
+                        <telerik:LayoutTransformControl.LayoutTransform>
+                            <RotateTransform Angle="-90" />
+                        </telerik:LayoutTransformControl.LayoutTransform>
+                        <ContentPresenter Content="{Binding FormattedName}" Margin="4" Height="16" />
+                    </telerik:LayoutTransformControl>
+                </DataTemplate>
+            </local:OrientedGroupHeaderContentTemplateSelector.VerticalTemplate>
+            <local:OrientedGroupHeaderContentTemplateSelector.HorizontalResourceTemplate>
+                <DataTemplate>
+                    <Border Background="{Binding Name.Brush}" Height="100" Margin="1 1 1 0">
+                        <StackPanel Margin="10 10 10 10" Orientation="Horizontal">
+                            <Image Width="60" Height="60" Margin="5 0 10 0" HorizontalAlignment="Left" Stretch="UniformToFill" Source="{Binding Name.Photo}" />
+                            <StackPanel Orientation="Vertical" Margin="0 8 0 0">
+                                <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="16" Margin="0" Text="{Binding Name.DisplayName}" />
+                                <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="12" Text="{Binding Name.Title}" />
+                                <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="12" Margin="0 -3 0 0" Text="{Binding Name.City}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </local:OrientedGroupHeaderContentTemplateSelector.HorizontalResourceTemplate>
+            <local:OrientedGroupHeaderContentTemplateSelector.VerticalResourceTemplate>
+                <DataTemplate>
+                    <Border Background="{Binding Name.Brush}" Width="140" Margin="0 2 2 2">
+                        <StackPanel Margin="15 13 0 10">
+                            <Image Width="60" Height="60" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="UniformToFill" Source="{Binding Name.Photo}" />
+                            <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="16" Margin="-2 3 0 5"  Text="{Binding Name.DisplayName}" />
+                            <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="12" Text="{Binding Name.Title}" />
+                            <TextBlock Foreground="{StaticResource GroupHeaderForeground}" FontSize="12" Text="{Binding Name.City}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </local:OrientedGroupHeaderContentTemplateSelector.VerticalResourceTemplate>
+        </local:OrientedGroupHeaderContentTemplateSelector>
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ViewModel}">
+        <scheduleView:RadScheduleView AppointmentsSource="{Binding Appointments}" GroupHeaderContentTemplateSelector="{StaticResource GroupHeaderContentTemplateSelector}">
+            <scheduleView:RadScheduleView.ViewDefinitions>
+                <scheduleView:DayViewDefinition DayStartTime="8:00" DayEndTime="20:00" />
+                <scheduleView:WeekViewDefinition DayStartTime="8:00" DayEndTime="20:00" />
+                <scheduleView:MonthViewDefinition />
+                <scheduleView:TimelineViewDefinition />
+            </scheduleView:RadScheduleView.ViewDefinitions>
+
+            <scheduleView:RadScheduleView.GroupDescriptionsSource>
+                <scheduleView:GroupDescriptionCollection>
+                    <scheduleView:ResourceGroupDescription ResourceType="HR" />
+                </scheduleView:GroupDescriptionCollection>
+            </scheduleView:RadScheduleView.GroupDescriptionsSource>
+
+            <scheduleView:RadScheduleView.ResourceTypesSource>
+                <scheduleView:ResourceTypeCollection>
+                    <scheduleView:ResourceType Name="HR">
+                        <local:EmployeeResource ResourceName="Mary Baird" DisplayName="MARY BAIRD" Title="Sales Associate" City="Seattle" Photo="../../Images/ScheduleView/CustomStyles/image1.png" Brush="#FF8EBC00" />
+                        <local:EmployeeResource ResourceName="Diego Roel" DisplayName="DIEGO ROEL" Title="Brand Manager" City="Seattle" Photo="../../Images/ScheduleView/CustomStyles/image2.png" Brush="#FF2F6495" />
+                        <local:EmployeeResource ResourceName="Grace Becerra" DisplayName="GRACE BECERRA" Title="Software Developer" City="Seattle" Photo="../../Images/ScheduleView/CustomStyles/image3.png" Brush="#FF7E51A1" />
+                    </scheduleView:ResourceType>
+                </scheduleView:ResourceTypeCollection>
+            </scheduleView:RadScheduleView.ResourceTypesSource>
+        </scheduleView:RadScheduleView>
+    </Grid>
+</UserControl>

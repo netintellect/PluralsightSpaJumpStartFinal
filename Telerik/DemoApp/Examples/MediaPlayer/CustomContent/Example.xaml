@@ -1,0 +1,167 @@
+<UserControl
+		xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.MediaPlayer.CustomContent.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:player="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.MediaPlayer"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        VerticalAlignment="Center" HorizontalAlignment="Center">
+
+	    <Grid x:Name="LayoutRoot" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640"
+			Height="360">
+
+		<telerik:RadMediaPlayer x:Name="player" IsChaptersPanelPinned="True"
+				IsVideoPanelPinned="True" SelectedIndex="0">
+
+            <telerik:RadMediaItem Source="http://773649a1298f63779f19-68dcd217a70edadad8c7b04ba4a904f0.r12.cf2.rackcdn.com/XAMLflix_ChartView_Getting-Started_Using-RadCartesianChart-for-Silverlight-and-WPF.mp4"
+					VideoStretch="Fill">
+				<telerik:RadMediaItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<StackPanel Margin="8">
+							<TextBlock Text="Name: " FontWeight="Normal" />
+							<TextBlock
+									Text="Getting started using RadCartesianChart for Silverlight and WPF"
+									Margin="4" FontWeight="Bold" />
+						</StackPanel>
+						<StackPanel Margin="8">
+							<TextBlock Text="Genre: " FontWeight="Normal" />
+							<TextBlock Text="Tech Video" Margin="4" FontWeight="Bold" />
+						</StackPanel>
+					</StackPanel>
+				</telerik:RadMediaItem.Header>
+				<telerik:RadMediaChapter Position="00:01:15">
+					<Grid MaxWidth="170">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadCartesianChart1.png" Width="50" Margin="4" />
+						<TextBlock Text="Defining Telerik RadCartesianChart grid" TextWrapping="Wrap"
+								Grid.Column="1" Margin="4" />
+					</Grid>
+				</telerik:RadMediaChapter>
+				<telerik:RadMediaChapter Position="00:02:14">
+					<Grid MaxWidth="170">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadCartesianChart2.png" Width="50" Margin="4" />
+                        <TextBlock Text="Defining Telerik RadCartesianChart axes" TextWrapping="Wrap"
+								Grid.Column="1" Margin="4" />
+					</Grid>
+				</telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:03:08">
+                    <Grid MaxWidth="170">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadCartesianChart3.png" Width="50" Margin="4" />
+                        <TextBlock Text="Defining Telerik RadCartesianChart series" TextWrapping="Wrap"
+								Grid.Column="1" Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:04:18">
+                    <Grid MaxWidth="170">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadCartesianChart4.png" Width="50" Margin="4" />
+                        <TextBlock Text="Populating with data" TextWrapping="Wrap"
+								Grid.Column="1" Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:06:51">
+                    <Grid MaxWidth="170">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadCartesianChart5.png" Width="50" Margin="4" />
+                        <TextBlock Text="Result" TextWrapping="Wrap"
+								Grid.Column="1" Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+            </telerik:RadMediaItem>
+
+            <telerik:RadMediaItem Source="http://773649a1298f63779f19-68dcd217a70edadad8c7b04ba4a904f0.r12.cf2.rackcdn.com/XAMLflix_ChartView_Getting-Started_Using-RadPolarChart-for-Silverlight-and-WPF.mp4"
+					VideoStretch="Fill">
+				<telerik:RadMediaItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<StackPanel Margin="8">
+							<TextBlock Text="Name: " FontWeight="Normal" />
+                            <TextBlock Text="Getting started using RadPolarChart for Silverlight and WPF" Margin="4"
+									FontWeight="Bold" />
+						</StackPanel>
+						<StackPanel Margin="8">
+							<TextBlock Text="Genre: " FontWeight="Normal" />
+							<TextBlock Text="Tech Video" Margin="4" FontWeight="Bold"
+									Grid.Column="1" />
+						</StackPanel>
+					</StackPanel>
+				</telerik:RadMediaItem.Header>
+				<telerik:RadMediaChapter Position="00:01:02">
+					<Grid MaxWidth="150">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadPolarChart1.png" Width="50" Margin="4" />
+                        <TextBlock Text="Defining Telerik RadPolarChart grid" TextWrapping="Wrap" Grid.Column="1"
+								Margin="4" />
+					</Grid>
+				</telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:01:45">
+                    <Grid MaxWidth="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadPolarChart2.png" Width="50" Margin="4" />
+                        <TextBlock Text="Defining Telerik RadPolarChart axes" TextWrapping="Wrap" Grid.Column="1"
+								Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:02:27">
+                    <Grid MaxWidth="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadPolarChart3.png" Width="50" Margin="4" />
+                        <TextBlock Text="Defining Telerik RadPolarChart series" TextWrapping="Wrap" Grid.Column="1"
+								Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:03:01">
+                    <Grid MaxWidth="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadPolarChart4.png" Width="50" Margin="4" />
+                        <TextBlock Text="Populating with data" TextWrapping="Wrap" Grid.Column="1"
+								Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+                <telerik:RadMediaChapter Position="00:04:53">
+                    <Grid MaxWidth="150">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="../Images/MediaPlayer/RadPolarChart5.png" Width="50" Margin="4" />
+                        <TextBlock Text="Result" TextWrapping="Wrap" Grid.Column="1"
+								Margin="4" />
+                    </Grid>
+                </telerik:RadMediaChapter>
+            </telerik:RadMediaItem>
+
+		</telerik:RadMediaPlayer>
+	</Grid>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Getting Started Videos" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+</UserControl>

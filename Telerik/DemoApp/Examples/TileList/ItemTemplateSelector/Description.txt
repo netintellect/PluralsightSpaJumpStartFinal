@@ -1,0 +1,1 @@
+﻿RadTileList can customize conditionally the template of its tiles using ItemTemplateSelector.

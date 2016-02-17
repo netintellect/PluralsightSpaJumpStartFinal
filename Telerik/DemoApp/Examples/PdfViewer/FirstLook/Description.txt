@@ -1,0 +1,1 @@
+﻿Telerik <b>PdfViewer</b> is a control that can visualize PDF documents straight in your application.

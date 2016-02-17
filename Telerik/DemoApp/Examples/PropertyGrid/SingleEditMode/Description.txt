@@ -1,0 +1,1 @@
+﻿Single EditMode introduces the concept of editing properties one at a time. An editor is created only for the currently edited property. The other values are displayed in read-only mode. It relies on the PropertyDefinition’s Binding property. Setting this mode is not supported with dynamic data or when Property-Sets are defined.

@@ -1,0 +1,127 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:local="clr-namespace:Telerik.Windows.Examples.Calendar.DatePicker">
+
+	<SolidColorBrush x:Key="GrayBrush" Color="#FF666666" />
+	<SolidColorBrush x:Key="LightGrayBrush" Color="#FFD6D4D4" />
+	<SolidColorBrush x:Key="LightGrayTransparentBrush" Color="#FFD6D4D4" Opacity="0.2"/>
+    
+    
+    <local:UpperCaseStringConverter x:Key="upperCaseStringConverter" />
+	
+	<Style x:Key="baseLabelStyle" TargetType="TextBlock">
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+	</Style>
+
+	<Style x:Key="boldAccentLabelStyle" TargetType="TextBlock">
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="Foreground" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+	</Style>
+
+	<Style x:Key="dateLabelStyle" TargetType="TextBlock" BasedOn="{StaticResource baseLabelStyle}">
+		<Setter Property="FontSize" Value="18" />
+		<Setter Property="Margin" Value="0 1 0 10" />
+	</Style>
+
+	<Style x:Key="eventsLabelStyle" TargetType="TextBlock" BasedOn="{StaticResource baseLabelStyle}">
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="Margin" Value="0 5 0 5" />
+        <Setter Property="Foreground" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+	</Style>
+
+	<Style x:Key="dayLabelStyle" TargetType="TextBlock">
+		<Setter Property="FontSize" Value="48" />
+		<Setter Property="FontFamily" Value="Segoe UI Light" />
+        <Setter Property="Foreground" Value="{telerik:Windows8Resource ResourceKey=MainBrush}" />
+	</Style>
+
+	<Style x:Key="dayOfWeekLabelStyle" TargetType="TextBlock">
+		<Setter Property="FontSize" Value="15" />
+		<Setter Property="FontFamily" Value="Segoe UI Light" />
+        <Setter Property="Foreground" Value="{telerik:Windows8Resource ResourceKey=MainBrush}" />
+	</Style>
+
+	<DataTemplate x:Key="ItemTemplate">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="5*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" 
+						Width="100" Margin="1">
+				<TextBlock Text="{Binding ElementName=calendar, Path= SelectedDate.Day}" Style="{StaticResource dayLabelStyle}"
+						 Margin="7 0 0 0" />
+				<TextBlock Text="{Binding Date.DayOfWeek, Converter={StaticResource upperCaseStringConverter}}" 
+						   Style="{StaticResource dayOfWeekLabelStyle}" Margin="7 0 0 0" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Width="330" HorizontalAlignment="Left" Grid.Column="1" Margin="10 0 0 0">
+				<StackPanel Orientation="Horizontal" Margin="0 5">
+					<TextBlock Text="{Binding Date.TimeOfDay}" Style="{StaticResource boldAccentLabelStyle}" />
+					<TextBlock Text=" - " Style="{StaticResource boldAccentLabelStyle}" />
+					<TextBlock x:Name="room" Text="{Binding Room}" Style="{StaticResource boldAccentLabelStyle}" />
+				</StackPanel>
+				<TextBlock x:Name="name" TextWrapping="Wrap" FontSize="18" Text="{Binding Name}"/>
+				<StackPanel Orientation="Horizontal">
+                    <TextBlock Text="with " Margin="0 4" Opacity="0.8" FontSize="12" />
+					<TextBlock x:Name="lecturer" TextWrapping="Wrap" Margin="0 4" 
+							   FontWeight="Bold" Opacity="0.8"
+							   FontSize="12" Text="{Binding Lecturer.Name}" />
+				</StackPanel>
+			</StackPanel>
+			<Border BorderBrush="{StaticResource LightGrayBrush}" BorderThickness="1" VerticalAlignment="Top" 
+					Width="50" Height="50" Grid.Column="2" Margin="0 5 0 0">
+				<Image x:Name="image" Source="{Binding Lecturer.Photo}" />
+			</Border>
+		</Grid>
+	</DataTemplate>
+
+	<Style x:Key="ListBoxStyle" TargetType="telerik:RadListBox" BasedOn="{StaticResource RadListBoxStyle}">
+		<Setter Property="ItemTemplate" Value="{StaticResource ItemTemplate}" />
+		<Setter Property="Height" Value="420" />
+	</Style>
+
+	<local:CourceDayTemplateSelector x:Key="CourceDayTemplateSelector">
+		<local:CourceDayTemplateSelector.DefaultTemplate>
+			<DataTemplate>
+				<TextBlock Text="{Binding Text}" FontSize="11" />
+			</DataTemplate>
+		</local:CourceDayTemplateSelector.DefaultTemplate>
+		<local:CourceDayTemplateSelector.CourceTemplate>
+			<DataTemplate>
+				<TextBlock Text="{Binding Text}" FontWeight="Bold" FontSize="11" />
+			</DataTemplate>
+		</local:CourceDayTemplateSelector.CourceTemplate>
+	</local:CourceDayTemplateSelector>
+
+	<Style TargetType="telerik:RadCalendar" x:Key="CalendarStyle" BasedOn="{StaticResource RadCalendarStyle}">
+		<Setter Property="FirstDayOfWeek" Value="Monday"/>
+		<Setter Property="DayTemplateSelector" Value="{StaticResource CourceDayTemplateSelector}"/>
+		<Setter Property="VerticalAlignment" Value="Center" />
+	</Style>
+
+	<Style TargetType="telerik:RadListBoxItem" BasedOn="{StaticResource RadListBoxItemStyle}" x:Key="courcesListBoxItemStyle">
+		<Setter Property="Padding" Value="0 0 0 13" />
+	</Style>
+
+	<Style TargetType="telerik:RadListBoxItem" BasedOn="{StaticResource RadListBoxItemStyle}" x:Key="eventsListBoxItemStyle">
+		<Setter Property="Height" Value="100" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0 3 0 1" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadListBoxItem">
+					<ContentPresenter Margin="{TemplateBinding Padding}" />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<DataTemplate x:Key="coursesListBoxItemTemplate">
+		<TextBlock Text="{Binding}" TextWrapping="Wrap" Opacity="0.8" />
+	</DataTemplate>
+</ResourceDictionary>

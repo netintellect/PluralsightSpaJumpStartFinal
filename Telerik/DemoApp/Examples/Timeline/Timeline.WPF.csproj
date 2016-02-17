@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08B516A4-F998-4087-9000-CD9DF4FDB092}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Timeline</RootNamespace>
+    <AssemblyName>Timeline</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Annotations\ExampleViewModel.cs" />
+    <Compile Include="Annotations\WorldCupGame.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomRowIndex\Converters\KingToEndYearConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\KingNameToAbbreviatedNameConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\KingEventToTimelineItemTitleConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\NameToStripLineConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\DateTimeNullLabelConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\EventLabelConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\ImageLabelConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\ImageSourceConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\KingEventConverter.cs" />
+    <Compile Include="CustomRowIndex\Converters\NameToColorConverter.cs" />
+    <Compile Include="CustomRowIndex\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRowIndex\Model\House.cs" />
+    <Compile Include="CustomRowIndex\Model\King.cs" />
+    <Compile Include="CustomRowIndex\Model\KingEvent.cs" />
+    <Compile Include="CustomRowIndex\TextBlockTextTrimmer.cs" />
+    <Compile Include="CustomRowIndex\TimelineCustomSelection.cs" />
+    <Compile Include="CustomRowIndex\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="CustomRowIndex\ViewModel\HouseRowIndexGenerator.cs" />
+    <Compile Include="FirstLook\Converters\PresidentDataToDetailsBackgroundConverter.cs" />
+    <Compile Include="FirstLook\Converters\PresidentDataToDetailsConverter.cs" />
+    <Compile Include="FirstLook\Converters\PresidentDataToPercentConverter.cs" />
+    <Compile Include="FirstLook\CustomTimelineControl.cs" />
+    <Compile Include="FirstLook\ExampleViewModel.cs" />
+    <Compile Include="FirstLook\LegendPanel.cs" />
+    <Compile Include="FirstLook\Converters\PartyToColorConverter.cs" />
+    <Compile Include="FirstLook\PresidentData.cs" />
+    <Compile Include="DataSourceViewModelBase.cs" />
+    <Compile Include="Grouping\RadListBoxItemUtils.cs" />
+    <Compile Include="Grouping\EventToDateTimeConverter.cs" />
+    <Compile Include="Grouping\TimelineGroupStateSwitch.cs" />
+    <Compile Include="Grouping\WorldWar2Annotation.cs" />
+    <Compile Include="Grouping\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\ExampleViewModel.cs" />
+    <Compile Include="Grouping\WorldWar2Event.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FirstLook\WPF\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selection\ExampleViewModel.cs" />
+    <Compile Include="Selection\LifeEvent.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\ExampleViewModel.cs" />
+    <Compile Include="Theming\ExampleData.cs" />
+    <Compile Include="TimelineItemTemplate\CustomTimelineControl.cs" />
+    <Compile Include="TimelineItemTemplate\LegendPanel.cs" />
+    <Compile Include="TimelineItemTemplate\DataTemplateSelectors\CategoryTemplateSelector.cs" />
+    <Compile Include="TimelineItemTemplate\DataTemplateSelectors\ContributionTemplateSelector.cs" />
+    <Compile Include="TimelineItemTemplate\DataTemplateSelectors\GenderTemplateSelector.cs" />
+    <Compile Include="TimelineItemTemplate\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimelineItemTemplate\ExampleViewModel.cs" />
+    <Compile Include="TimelineItemTemplate\NobelPrize.cs" />
+    <Compile Include="TimelineItemTemplate\OpacityConverter.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Resource Include="DataSources\MichaelJacksonEvents.csv" />
+    <Resource Include="DataSources\NobelPrizeLaureates.csv" />
+    <Resource Include="DataSources\AmericanPresidents.csv" />
+    <Resource Include="DataSources\WorldCup.csv" />
+    <Resource Include="DataSources\WorldWar2Events.csv" />
+    <Resource Include="DataSources\KingsAndEvents.csv" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Annotations\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Annotations\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomRowIndex\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomRowIndex\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomRowIndex\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomRowIndex\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\WPF\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\Win8Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Grouping\Win8TouchResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Selection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selection\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selection\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimelineItemTemplate\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimelineItemTemplate\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimelineItemTemplate\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimelineItemTemplate\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Timeline\TimelineItemTemplate\EconomicsToolTipCorner.png" />
+    <Resource Include="Images\Timeline\TimelineItemTemplate\PeaceToolTipCorner.png" />
+    <Resource Include="Images\Timeline\TimelineItemTemplate\MedicineToolTipCorner.png" />
+    <Resource Include="Images\Timeline\TimelineItemTemplate\PhysicsToolTipCorner.png" />
+    <Resource Include="Images\Timeline\TimelineItemTemplate\ChemistryToolTipCorner.png" />
+    <Resource Include="Images\Timeline\TimelineItemTemplate\LiteratureToolTipCorner.png" />
+    <Resource Include="TimelineItemTemplate\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="Grouping\Description.txt" />
+    <Resource Include="Images\Timeline\FirstLook\Abraham Lincoln.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Andrew Jackson.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Andrew Johnson.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Barack Obama.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Benjamin Harrison.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Calvin Coolidge.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Chester A. Arthur.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Dwight D. Eisenhower.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Franklin D. Roosevelt.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Franklin Pierce.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\George H. W. Bush.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\George W. Bush.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\George Washington.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Gerald R. Ford.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Grover Cleveland.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Harry S. Truman.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Herbert Hoover.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James Buchanan.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James Carter.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James Garfield.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James K. Polk.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James Madison.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\James Monroe.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\John Adams.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\John F. Kennedy.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\John Quincy Adams.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\John Tyler.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Lyndon B. Johnson.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Martin Van Buren.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Millard Fillmore.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\no_selection.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Richard M. Nixon.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Ronald Reagan.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Rutherford B. Hayes.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Theodore Roosevelt.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Thomas Jefferson.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Ulysses S. Grant.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Warren G. Harding.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\William Henry Harrison.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\William Howard Taft.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\William J. Clinton.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\William McKinley.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Woodrow Wilson.jpg" />
+    <Resource Include="Images\Timeline\FirstLook\Zachary Taylor.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Annotations\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Selection\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Timeline\KingsPictures\Aethelbald.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Aethelred I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Aethelred II the Unready.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Aethelwulf.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Alfred the Great.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Anne.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Athelstan.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Charles I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Charles II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Cnut %28Canute%29.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Cnut.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edgar.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edmund II lronside.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edmund.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edred.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward III.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward IV.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward The Confessor.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward The Elder.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward The Martyr.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward V.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward VI.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward VII.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edward VIII.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Edwy.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Egbert.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Elizabeth I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Elizabeth II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George III.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George IV.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George V.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\George VI.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Harold I Harefoot.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Harold II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Harthacanut.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Harthacnut.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry III.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry IV.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry V.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry VI.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry VII.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Henry VIII.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\James I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\James II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\John.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Mary I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\offa.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Queen Anne.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Richard I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Richard II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Richard III.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Stephen.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\Victoria.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\William I.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\William II.jpg" />
+    <Resource Include="Images\Timeline\KingsPictures\William IV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomRowIndex\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Timeline\KingsPictures\William III and Mary II.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Timeline\KingsPictures\Default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Timeline\Grouping\allias_group.jpg" />
+    <Resource Include="Images\Timeline\Grouping\axis_group.jpg" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

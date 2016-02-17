@@ -1,0 +1,152 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Customization.Range.Example"
+					  xmlns="http://schemas.microsoft.com/client/2007"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                      xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+					  xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
+	<demo:DynamicBasePage.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Gauge;component/RadGaugeResources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<demo:SolidBrushItemsSource x:Key="SolidBrushSource" />
+
+			<telerik:Windows8Colors x:Key="Windows8Colors" />
+			<SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+
+			<Style x:Key="EllipseMarkerStyle" TargetType="telerik:Marker">
+				<Setter Property="telerik:ScaleObject.Location" Value="OverCenter" />
+				<Setter Property="telerik:ScaleObject.RelativeHeight" Value="0.08" />
+				<Setter Property="telerik:ScaleObject.RelativeWidth" Value="0.08" />
+				<Setter Property="Background" Value="{StaticResource AccentBrush}" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="telerik:Marker">
+							<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+								<Ellipse Stretch="Fill" 
+					                     Fill="{TemplateBinding Background}"
+					                     Stroke="{TemplateBinding BorderBrush}"
+					                     StrokeThickness="{TemplateBinding BorderThickness}" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</demo:DynamicBasePage.Resources>
+	<Grid Width="784" Height="484">
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+			<telerik:RadRadialGauge Name="radGauge" Width="240" Height="240">
+				<telerik:RadialScale x:Name="radialScale" 
+									 Min="0"
+									 Max="100"
+									 RangeLocation="Inside"
+									 MajorTickUseRangeColor="{Binding ElementName=majorUseRangeColor,Path=IsChecked}"
+									 MiddleTickUseRangeColor="{Binding ElementName=middleUseRangeColor,Path=IsChecked}"
+									 MinorTickUseRangeColor="{Binding ElementName=minorUseRangeColor,Path=IsChecked}"
+									 LabelUseRangeColor="{Binding ElementName=labelUseRangeColor,Path=IsChecked}"
+									 IsReversed="{Binding ElementName=isReversed,Path=IsChecked}">
+					<telerik:RadialScale.Ranges>
+						<telerik:GaugeRange x:Name="radialRange"
+											Min="{Binding ElementName=rangeMin,Path=Value}" 
+											Max="{Binding ElementName=rangeMax,Path=Value}"
+											StartWidth="{Binding ElementName=startWidth,Path=Value}" 
+											EndWidth="{Binding ElementName=endWidth,Path=Value}"
+											Background="{Binding ElementName=fillCombo, Path=SelectedItem}"
+											Stroke="{Binding ElementName=strokeCombo, Path=SelectedItem}"
+											TickBackground="{Binding ElementName=ticksCombo, Path=SelectedItem}"
+											LabelForeground="{Binding ElementName=labelsCombo, Path=SelectedItem}"/>
+					</telerik:RadialScale.Ranges>
+
+					<telerik:RadialScale.Indicators>
+						<telerik:Marker Name="marker"
+										IsAnimated="True"
+										Style="{StaticResource EllipseMarkerStyle}"/>
+					</telerik:RadialScale.Indicators>
+				</telerik:RadialScale>
+			</telerik:RadRadialGauge>
+		</Border>
+	</Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+				<Image VerticalAlignment="Center" Margin="0,0,5,0" Width="14" Height="16" Source="../../../Images/Gauge/Icons/Range_properties.png" />
+				<TextBlock VerticalAlignment="Center">Range Properties</TextBlock>
+			</StackPanel>
+
+			<TextBlock Text="Min:" />
+            <telerik:RadNumericUpDown Name="rangeMin" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="49"
+                                      Value="0"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+			<TextBlock Text="Max:" />
+            <telerik:RadNumericUpDown Name="rangeMax" UpdateValueEvent="PropertyChanged"
+                                      Minimum="50" Maximum="100"
+                                      Value="100"
+                                      SmallChange="1"
+                                      Margin="0,2" />
+
+			<TextBlock Text="Start Width:" />
+            <telerik:RadNumericUpDown Name="startWidth" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.02"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+			<TextBlock Text="End Width:" />
+            <telerik:RadNumericUpDown Name="endWidth" UpdateValueEvent="PropertyChanged"
+                                      Minimum="0" Maximum="0.4"
+                                      Value="0.1"
+                                      SmallChange="0.01"
+                                      Margin="0,2" />
+
+			<TextBlock Text="Background:" />
+			<telerik:RadComboBox Name="fillCombo"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectedItem="Magenta"
+                                 Margin="0,2" />
+
+			<TextBlock Text="Border brush:" />
+			<telerik:RadComboBox Name="strokeCombo"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectedItem="Magenta"
+                                 Margin="0,2" />
+
+			<TextBlock Text="Tick Background:" />
+			<telerik:RadComboBox Name="ticksCombo"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectedItem="Magenta"
+                                 Margin="0,2" />
+
+			<TextBlock Text="Label Foreground:" />
+			<telerik:RadComboBox Name="labelsCombo"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectedItem="Magenta"
+                                 Margin="0,2" />
+
+			<TextBlock Text="Use range color for:" />
+			<CheckBox x:Name="majorUseRangeColor" 
+                      Content="Major ticks"
+                      Margin="0,2" />
+			<CheckBox x:Name="middleUseRangeColor" 
+                      Content="Middle ticks"
+                      Margin="0,2" />
+			<CheckBox x:Name="minorUseRangeColor" 
+                      Content="Minor ticks"
+                      Margin="0,2" />
+			<CheckBox x:Name="labelUseRangeColor" 
+                      Content="Labels"
+                      Margin="0,2" />
+			
+			<TextBlock Text="Scale properties" />
+			<CheckBox x:Name="isReversed"
+                      Content="Reversed Scale"
+                      Margin="0,2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

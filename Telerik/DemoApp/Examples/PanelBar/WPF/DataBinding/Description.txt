@@ -1,0 +1,1 @@
+﻿Telerik PanelBar's advanced data binding capabilites allow you to bind the control using <B>LINQ to XML</B> binding. This example clearly shows this approach. You can directly reuse the code and customize it as per your requirements.

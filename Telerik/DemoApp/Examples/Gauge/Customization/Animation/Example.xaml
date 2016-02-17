@@ -1,0 +1,157 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Customization.Animation.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+             HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Animated indicators" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <demo:DynamicBasePage.Resources>
+        
+        <Style x:Key="CustomMarker" TargetType="telerik:Marker" >
+            <Setter Property="telerik:ScaleObject.Location" Value="CenterOutside" />
+            <Setter Property="telerik:ScaleObject.Offset" Value="-0.01*" />
+            <Setter Property="telerik:ScaleObject.RelativeHeight" Value="0.08*" />
+            <Setter Property="telerik:ScaleObject.RelativeWidth" Value="0.12*" />
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:Marker">
+                        <Grid HorizontalAlignment="Stretch" 
+						  VerticalAlignment="Stretch">
+                            <Polygon Points="0,0 1,0 0.5,0.5"
+								 Stretch="Fill"
+								 Fill="{TemplateBinding Background}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </demo:DynamicBasePage.Resources>
+    <Grid Width="740" Height="520">
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+            <telerik:RadRadialGauge Width="220" Height="220">
+				<telerik:RadialScale x:Name="radialScale" 
+                                     Min="0"
+                                     Max="100"
+                                     MajorTicks="10"
+                                     MiddleTicks="2"
+                                     MinorTicks="2" 
+                                     LabelLocation="Outside"
+                                     LabelRotationMode="SurroundOut"
+                                     LabelOffset="0.03*"
+                                     MajorTickLocation="CenterOutside"
+                                     MiddleTickLocation="CenterOutside"
+                                     MinorTickLocation="CenterOutside"
+                                     RangeLocation="CenterOutside"
+                                     RangeOffset="-0.01*">
+					<telerik:RadialScale.Indicators>
+						<telerik:Marker x:Name="marker"
+										IsAnimated="{Binding ElementName=isMarkerAnimated, Path=IsChecked}"
+										Duration="{Binding ElementName=markerDuration, Path=SelectedItem.DataContext}"
+                                        Style="{StaticResource CustomMarker}"/>
+						<telerik:BarIndicator x:Name="radialBar"
+                                              telerik:ScaleObject.Location="Inside"
+                                              telerik:ScaleObject.Offset="0.3*"
+                                              Opacity="0.6"
+											  IsAnimated="{Binding ElementName=isBarAnimated, Path=IsChecked}" 
+											  Duration="{Binding ElementName=barDuration, Path=SelectedItem.DataContext}" />
+						<telerik:Needle x:Name="needle"
+										IsAnimated="{Binding ElementName=isNeedleAnimated, Path=IsChecked}"
+										Duration="{Binding ElementName=needleDuration, Path=SelectedItem.DataContext}"
+                                        telerik:ScaleObject.Location="OverOutside"/>
+                        <telerik:Pinpoint /> 
+					</telerik:RadialScale.Indicators>
+                    <telerik:RadialScale.Ranges>
+                        <telerik:GaugeRange Min="0" Max="100"
+                                            Background="#FFA3A3A3" 
+                                            StartWidth="0.01"
+                                            EndWidth="0.01" />
+                    </telerik:RadialScale.Ranges>
+				</telerik:RadialScale>
+			</telerik:RadRadialGauge>
+        </Border>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Movement animation:" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Source="../../Images/Gauge/Icons/needle.png" Width="{StaticResource imageWidth}" Height="{StaticResource imageHeight}" />
+                <TextBlock VerticalAlignment="Center" FontSize="{StaticResource fontSize}">Needle</TextBlock>
+            </StackPanel>
+
+            <CheckBox x:Name="isNeedleAnimated"
+                      Content="Animated"
+                      IsChecked="True"
+                      Margin="0,2"/>
+            <TextBlock>Duration (fractional sec):</TextBlock>
+            <telerik:RadComboBox Name="needleDuration"
+                                 SelectedIndex="2"
+                                 Margin="0,2">
+                <telerik:RadComboBoxItem DataContext="00:00:00.1">1</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.2">2</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.3">3</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.4">4</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.5">5</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.6">6</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.7">7</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.8">8</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.9">9</telerik:RadComboBoxItem>
+            </telerik:RadComboBox>
+
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Source="../../Images/Gauge/Icons/Marker.png" Width="{StaticResource imageWidth}" Height="{StaticResource imageHeight}" />
+                <TextBlock VerticalAlignment="Center" FontSize="{StaticResource fontSize}">Marker</TextBlock>
+            </StackPanel>
+
+            <CheckBox x:Name="isMarkerAnimated"
+                      Content="Animated"
+                      IsChecked="True"
+                      Margin="0,2"/>
+
+            <TextBlock>Duration (fractional sec):</TextBlock>
+            <telerik:RadComboBox Name="markerDuration"
+                                    SelectedIndex="2"
+                                    Margin="0,2">
+                <telerik:RadComboBoxItem DataContext="00:00:00.1">1</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.2">2</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.3">3</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.4">4</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.5">5</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.6">6</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.7">7</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.8">8</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.9">9</telerik:RadComboBoxItem>
+            </telerik:RadComboBox>
+
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Image VerticalAlignment="Center" Margin="0,0,5,0" Source="../../Images/Gauge/Icons/Bar_indicator.png" Width="{StaticResource imageWidth}" Height="{StaticResource imageHeight}" />
+                <TextBlock VerticalAlignment="Center" FontSize="{StaticResource fontSize}">Bar Indicator</TextBlock>
+            </StackPanel>
+
+            <CheckBox x:Name="isBarAnimated"
+                      Content="Animated"
+                      IsChecked="True"
+                      Margin="0,2"/>
+
+            <TextBlock>Duration (fractional sec):</TextBlock>
+            <telerik:RadComboBox Name="barDuration"
+                                 SelectedIndex="2"
+                                 Margin="0,2">
+                <telerik:RadComboBoxItem DataContext="00:00:00.1">1</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.2">2</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.3">3</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.4">4</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.5">5</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.6">6</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.7">7</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.8">8</telerik:RadComboBoxItem>
+                <telerik:RadComboBoxItem DataContext="00:00:00.999">9</telerik:RadComboBoxItem>
+            </telerik:RadComboBox>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

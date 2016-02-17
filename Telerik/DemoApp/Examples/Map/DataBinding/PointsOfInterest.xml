@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<POIS>
+  <POI>
+    <Location>48.804404,2.123162</Location>
+    <Title>Château de Versailles</Title>
+    <ImageUri></ImageUri>
+    <Description></Description>
+  </POI>
+  <POI>
+    <Location>48.402222, 2.700556</Location>
+    <Title>Château de Fontainebleau</Title>
+    <ImageUri></ImageUri>
+    <Description></Description>
+  </POI>
+  <POI>
+    <Location>47.413056,0.985833</Location>
+    <Title>Château d'Amboise</Title>
+    <ImageUri></ImageUri>
+    <Description></Description>
+  </POI>
+</POIS>

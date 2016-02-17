@@ -1,0 +1,6 @@
+﻿<b>Indicators</b> are scale elements that point to a value along a scale. Linear scale can contain four types of indicators:
+
+<b>Marker</b> - a small shape that can be located around scale bar.
+<b>Bar</b> - a colored bar drawn around scale bar. One of ends of this bar points to the scale value.
+<b>State Indicator</b> - a shape with arbitrary size located anywhere on the scale.
+<b>Numeric indicator</b> - shows indicator's value as a number.

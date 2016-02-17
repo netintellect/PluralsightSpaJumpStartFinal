@@ -1,0 +1,2295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6C6AEFF-0B5E-4515-8229-39CF47F8EAB9}</ProjectGuid>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.QuickStart.Examples</RootNamespace>
+    <AssemblyName>WPF Demos</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\qsftest\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.telerik.com/support</SupportUrl>
+    <ErrorReportUrl>http://www.telerik.com/support</ErrorReportUrl>
+    <ProductName>Demos - Telerik UI for WPF</ProductName>
+    <PublisherName>TELERIK</PublisherName>
+    <SuiteName>UI for WPF</SuiteName>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputType>WinExe</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputType>WinExe</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputType>WinExe</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputType>WinExe</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SkipSigning Condition=" $(SkipSigning) == '' ">true</SkipSigning>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>80AE3CDA73B94159D2F42D571794A53888C7D687</ManifestCertificateThumbprint>
+    <GenerateManifests>true</GenerateManifests>
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wpf.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Application, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Deploy\Application.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCompleteBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\AutoCompleteBox.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Barcode, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Barcode.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Book, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Book.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Breadcrumb, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Breadcrumb.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BulletGraph, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\BulletGraph.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BusyIndicator, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\BusyIndicator.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Buttons, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Buttons.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Calculator, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Calculator.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Calendar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Calendar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Carousel, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Carousel.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ChartView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ChartView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CollectionNavigator, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\CollectionNavigator.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ColorEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ColorEditor.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ColorPicker.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ComboBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ComboBox.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ContextMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ContextMenu.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataBar">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataFilter.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataForm.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataPager, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataPager.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataServiceDataSource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataServiceDataSource.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DataVirtualization, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DataVirtualization.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DateTimePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DateTimePicker.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DesktopAlert, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Deploy\DesktopAlert.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Diagrams, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Diagrams.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Docking, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Docking.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DragAndDrop, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\DragAndDrop.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EntityFrameworkDataSource, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\EntityFrameworkDataSource.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expander, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Expander.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExpressionEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ExpressionEditor.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RadialMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Deploy\RadialMenu.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2015.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Green">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Green.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeSpanPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Deploy\TimeSpanPicker.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ToolTip, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ToolTip.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TouchManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Deploy\TouchManager.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WordsProcessing, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\WordsProcessing.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GanttView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\GanttView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Gauge, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Gauge.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GridView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\GridView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HeatMap, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\HeatMap.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ListBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ListBox.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Map, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Map.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MaskedInput, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\MaskedInput.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Menu, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Menu.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NumericUpDown, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\NumericUpDown.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutlookBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\OutlookBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PanelBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PanelBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PdfViewer, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PdfViewer.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PdfProcessing, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PdfProcessing.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PersistenceFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PersistenceFramework.exe</HintPath>
+    </Reference>
+    <Reference Include="PivotGrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PivotGrid.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ProgressBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ProgressBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PropertyGrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\PropertyGrid.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rating, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Rating.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RibbonView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\RibbonView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RichTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\RichTextBox.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ImageEditor.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ScheduleView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ScheduleView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Slider, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Slider.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sparklines, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Sparklines.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SpellChecker, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\SpellChecker.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Spreadsheet, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Spreadsheet.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SpreadProcessing, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\SpreadProcessing.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="TabControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TabControl.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.VisualStudio2013">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.VisualStudio2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Expression_Dark, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Expression_Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office2013">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Office2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Black, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Office_Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Blue, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Office_Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Office_Silver, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Office_Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Summer, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Summer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Transparent, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Transparent.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Vista, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Vista.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows7, Version=2012.1.515.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8Touch">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Windows8Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="TileView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TileView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TileList, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TileList.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TimeBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TimeBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Timeline, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Timeline.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ToolBar, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ToolBar.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TransitionControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TransitionControl.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TreeListView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TreeListView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Treemap, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Treemap.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TreeView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\TreeView.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VirtualizingWrapPanel, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\VirtualizingWrapPanel.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WatermarkTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\WatermarkTextBox.exe</HintPath>
+    </Reference>
+    <Reference Include="Window, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Window.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZipLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\ZipLibrary.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CloudUpload, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\CloudUpload.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Wizard, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\Deploy\Wizard.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" Condition=" '$(OutputType)' != 'Library' ">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShellViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Application">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AutoCompleteBox">
+      <Visible>False</Visible>
+      <Group>AutoCompleteBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Barcode">
+      <Visible>False</Visible>
+      <Group>Barcode</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Book">
+      <Visible>False</Visible>
+      <Group>Book</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Breadcrumb">
+      <Visible>False</Visible>
+      <Group>Breadcrumb</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="BulletGraph">
+      <Visible>False</Visible>
+      <Group>BulletGraph</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="BusyIndicator">
+      <Visible>False</Visible>
+      <Group>BusyIndicator</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Buttons">
+      <Visible>False</Visible>
+      <Group>Buttons</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Calculator">
+      <Visible>False</Visible>
+      <Group>Calculator</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Calendar">
+      <Visible>False</Visible>
+      <Group>Calendar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Carousel">
+      <Visible>False</Visible>
+      <Group>Carousel</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ChartView">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CloudUpload">
+      <Visible>False</Visible>
+      <Group>CloudUpload</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CollectionNavigator">
+      <Visible>False</Visible>
+      <Group>CollectionNavigator</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ColorEditor">
+      <Visible>False</Visible>
+      <Group>ColorEditor</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ColorPicker">
+      <Visible>False</Visible>
+      <Group>ColorPicker</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ComboBox">
+      <Visible>False</Visible>
+      <Group>ComboBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ContextMenu">
+      <Visible>False</Visible>
+      <Group>ContextMenu</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataBar">
+      <Visible>False</Visible>
+      <Group>DataBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataFilter">
+      <Visible>False</Visible>
+      <Group>DataFilter</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataForm">
+      <Visible>False</Visible>
+      <Group>DataForm</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataPager">
+      <Visible>False</Visible>
+      <Group>DataPager</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataServiceDataSource">
+      <Visible>False</Visible>
+      <Group>DataServiceDataSource</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataVirtualization">
+      <Visible>False</Visible>
+      <Group>DataVirtualization</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DateTimePicker">
+      <Visible>False</Visible>
+      <Group>DateTimePicker</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DesktopAlert">
+      <Visible>False</Visible>
+      <Group>DesktopAlert</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="de\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Diagrams">
+      <Visible>False</Visible>
+      <Group>Diagrams</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Docking">
+      <Visible>False</Visible>
+      <Group>Docking</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DragAndDrop">
+      <Visible>False</Visible>
+      <Group>DragAndDrop</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EntityFrameworkDataSource">
+      <Visible>False</Visible>
+      <Group>EntityFrameworkDataSource</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EQATEC.Analytics.Monitor">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="es\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Expander">
+      <Visible>False</Visible>
+      <Group>Expander</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ExpressionEditor">
+      <Visible>False</Visible>
+      <Group>ExpressionEditor</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="fr\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="GanttView">
+      <Visible>False</Visible>
+      <Group>GanttView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Gauge">
+      <Visible>False</Visible>
+      <Group>Gauge</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="GridView">
+      <Visible>False</Visible>
+      <Group>GridView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="HeatMap">
+      <Visible>False</Visible>
+      <Group>HeatMap</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ImageEditor">
+      <Visible>False</Visible>
+      <Group>ImageEditor</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="it\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="ListBox">
+      <Visible>False</Visible>
+      <Group>ListBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Map">
+      <Visible>False</Visible>
+      <Group>Map</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MaskedInput">
+      <Visible>False</Visible>
+      <Group>MaskedInput</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MaskedTextBox">
+      <Visible>False</Visible>
+      <Group>MaskedTextBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Menu">
+      <Visible>False</Visible>
+      <Group>Menu</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Expression.Drawing">
+      <Visible>False</Visible>
+      <Group>Microsoft.Expression.Drawing</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Expression.Interactions">
+      <Visible>False</Visible>
+      <Group>Microsoft.Expression.Interactions</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="nl\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="NumericUpDown">
+      <Visible>False</Visible>
+      <Group>NumericUpDown</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="OutlookBar">
+      <Visible>False</Visible>
+      <Group>OutlookBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PanelBar">
+      <Visible>False</Visible>
+      <Group>PanelBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PdfProcessing">
+      <Visible>False</Visible>
+      <Group>PdfProcessing</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PdfViewer">
+      <Visible>False</Visible>
+      <Group>PdfViewer</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PersistenceFramework">
+      <Visible>False</Visible>
+      <Group>PersistenceFramework</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PivotGrid">
+      <Visible>False</Visible>
+      <Group>PivotGrid</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ProgressBar">
+      <Visible>False</Visible>
+      <Group>ProgressBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PropertyGrid">
+      <Visible>False</Visible>
+      <Group>PropertyGrid</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="QuickStart.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="QuickStart.DataBase">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="RadialMenu">
+      <Visible>False</Visible>
+      <Group>RadialMenu</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Rating">
+      <Visible>False</Visible>
+      <Group>Rating</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="RibbonView">
+      <Visible>False</Visible>
+      <Group>RibbonView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="RichTextBox">
+      <Visible>False</Visible>
+      <Group>RichTextBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SampleData\Northwind_log.ldf">
+      <Visible>False</Visible>
+      <Group>GridView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ScheduleView">
+      <Visible>False</Visible>
+      <Group>ScheduleView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX.D3DCompiler">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX.Direct2D1">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX.Direct3D10">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX.Direct3D9">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SharpDX.DXGI">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Slider">
+      <Visible>False</Visible>
+      <Group>Slider</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SL\Window.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Sparklines">
+      <Visible>False</Visible>
+      <Group>Sparklines</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SpellChecker">
+      <Visible>False</Visible>
+      <Group>SpellChecker</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SpreadProcessing">
+      <Visible>False</Visible>
+      <Group>SpreadProcessing</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Spreadsheet">
+      <Visible>False</Visible>
+      <Group>Spreadsheet</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Interactivity">
+      <Visible>False</Visible>
+      <Group>System.Windows.Interactivity</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TabControl">
+      <Visible>False</Visible>
+      <Group>TabControl</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Pivot.Core">
+      <Visible>False</Visible>
+      <Group>Telerik.Pivot.Core</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Pivot.DataProviders.Queryable">
+      <Visible>False</Visible>
+      <Group>Telerik.Pivot.DataProviders.Queryable</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Pivot.DataProviders.Xmla">
+      <Visible>False</Visible>
+      <Group>Telerik.Pivot.DataProviders.Xmla</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Cloud">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Cloud</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Cloud.Controls">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Cloud.Controls</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Chart">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Chart</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Chart.Direct2D">
+      <Visible>False</Visible>
+      <Group>ChartView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.CodeEditor">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Data">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Data</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.DataServices">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.DataServices</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.DataVisualization">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.DataVisualization</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Diagrams">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Diagrams</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Diagrams.Extensions">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Diagrams.Extensions</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Docking">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Docking</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.EntityFramework">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.EntityFramework</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Expressions">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Expressions</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.FixedDocumentViewers">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.FixedDocumentViewers</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.FixedDocumentViewersUI">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.FixedDocumentViewersUI</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.GanttView">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.GanttView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Gauge">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Gauge</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.GridView">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.GridView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.GridView.Export">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.GridView.Export</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.ImageEditor">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.ImageEditor</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Input">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Navigation">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Pivot">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Pivot</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.PivotFieldList">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.PivotFieldList</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.RibbonBar">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.RibbonBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.RibbonView">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.RibbonView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.RichTextBoxUI">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.RichTextBoxUI</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.ScheduleView">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.ScheduleView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Controls.Spreadsheet">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Controls.Spreadsheet</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Data">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Diagrams.Core">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Diagrams.Core</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Diagrams.Features">
+      <Visible>False</Visible>
+      <Group>Diagrams</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Code">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Core">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Fixed">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Fixed</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Flow">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Flow.FormatProviders.Pdf</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.FormatProviders.OpenXml</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.Pdf">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.FormatProviders.Pdf</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.Rtf">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.FormatProviders.Rtf</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.FormatProviders.Xaml">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.FormatProviders.Xaml</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Proofing">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Proofing</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Proofing.DataGrid">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Proofing.DataGrid</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Proofing.Dictionaries.En-US</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Proofing.RadGridView">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Proofing.RadGridView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Spreadsheet</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.PersistenceFramework">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.PersistenceFramework</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Scheduling.Core">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Scheduling.Core</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Expression_Dark">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Office_Black">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Office_Blue">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Office_Silver">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Summer">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Transparent">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Vista">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Windows7">
+      <Visible>False</Visible>
+      <Group>Themes</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Windows8">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Themes.Windows8Touch">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Zip">
+      <Visible>False</Visible>
+      <Group>Telerik.Windows.Zip</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TileList">
+      <Visible>False</Visible>
+      <Group>TileList</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TileView">
+      <Visible>False</Visible>
+      <Group>TileView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TimeBar">
+      <Visible>False</Visible>
+      <Group>TimeBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Timeline">
+      <Visible>False</Visible>
+      <Group>Timeline</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TimeSpanPicker">
+      <Visible>False</Visible>
+      <Group>TimeSpanPicker</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ToolBar">
+      <Visible>False</Visible>
+      <Group>ToolBar</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ToolTip">
+      <Visible>False</Visible>
+      <Group>ToolTip</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TouchManager">
+      <Visible>False</Visible>
+      <Group>TouchManager</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TransitionControl">
+      <Visible>False</Visible>
+      <Group>TransitionControl</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TreeListView">
+      <Visible>False</Visible>
+      <Group>TreeListView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Treemap">
+      <Visible>False</Visible>
+      <Group>Treemap</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TreeView">
+      <Visible>False</Visible>
+      <Group>TreeView</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="tr\Telerik.Windows.Controls.resources">
+      <Visible>False</Visible>
+      <Group>Application</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="VirtualizingWrapPanel">
+      <Visible>False</Visible>
+      <Group>VirtualizingWrapPanel</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="WatermarkTextBox">
+      <Visible>False</Visible>
+      <Group>WatermarkTextBox</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Window">
+      <Visible>False</Visible>
+      <Group>Window</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Wizard">
+      <Visible>False</Visible>
+      <Group>Wizard</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="WordsProcessing">
+      <Visible>False</Visible>
+      <Group>WordsProcessing</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ZipLibrary">
+      <Visible>False</Visible>
+      <Group>ZipLibrary</Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415db-e612-4692-bd5c-12a7e01361c9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickStart.Core\QuickStart.Core.csproj">
+      <Project>{909003CC-3FFD-4B96-B39D-EEDD81CA31BC}</Project>
+      <Name>QuickStart.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="wpf.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="..\QuickStart.DataBase\Northwind.mdf">
+      <Link>Northwind.mdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\QuickStart.DataBase\Northwind_log.ldf">
+      <Link>Northwind_log.ldf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Northwind.mdf</DependentUpon>
+    </Content>
+    <Resource Include="TelerikUIlogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterCompile">
+    <PropertyGroup>
+      <FilePathToSign>$(ProjectDir)obj\$(ConfigurationName)\$(TargetFileName)</FilePathToSign>
+    </PropertyGroup>
+    <Message Importance="High" Text="DEBUG INFO: AFTERCOMPILE: SkipSigning: $(SkipSigning)" />
+    <Message Importance="High" Text="DEBUG INFO: AFTERCOMPILE: Path to signfiles proj: $(MSBuildProjectDirectory)\..\..\Build\SignFiles.proj |" />
+    <Message Importance="High" Text="DEBUG INFO: AFTERCOMPILE: FilePathToSign: $(FilePathToSign) |" />
+    <MSBuild Condition=" '$(SkipSigning)' != 'true' " Projects="$(MSBuildProjectDirectory)\..\..\Build\SignFiles.proj" Properties="ProductName=Telerik UI for WPF;ProductUrl=http://www.telerik.com/;SignedFilePath=$(FilePathToSign)" />
+  </Target>
+</Project>

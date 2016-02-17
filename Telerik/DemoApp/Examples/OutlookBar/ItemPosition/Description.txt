@@ -1,0 +1,1 @@
+﻿The items can be easily moved from the main navigation bar containing the OutlookBar’s groups to the overflow menu area by simply dragging the main navigation bar’s horizontal splitter.

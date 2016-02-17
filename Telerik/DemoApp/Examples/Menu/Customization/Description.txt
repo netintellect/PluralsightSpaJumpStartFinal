@@ -1,0 +1,1 @@
+﻿Telerik Menu allows full customization of its items. In this example, the submenu items represent rich content visualizing different view models.

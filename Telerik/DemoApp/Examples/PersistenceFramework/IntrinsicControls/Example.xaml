@@ -1,0 +1,94 @@
+<UserControl x:Class="Telerik.Windows.Examples.PersistenceFramework.IntrinsicControls.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:interactions="http://schemas.microsoft.com/expression/2010/interactions"
+		xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.PersistenceFramework.IntrinsicControls"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <UserControl.DataContext>
+        <local:MainViewModel />
+    </UserControl.DataContext>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Silverlight Control" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Border BorderBrush="#abc1de" BorderThickness="1">
+            <StackPanel Margin="45 15 45 0" x:Name="layout">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <TextBlock Text="From:" Margin="0 0 0 5"/>
+                        <TextBox Width="150"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                        <TextBlock Text="To:" Margin="0 0 0 5"/>
+                        <TextBox Width="150"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Subject:" Margin="0 0 0 5"/>
+                        <TextBox Width="150"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 15">
+                        <TextBlock Text="FontFamily" Margin="0 0 0 5"/>
+                        <telerik:RadComboBox x:Name="comboFontFamily" HorizontalAlignment="Left" SelectedIndex="0" Width="150">
+                            <telerik:RadComboBoxItem Content="Arial" />
+                            <telerik:RadComboBoxItem Content="TimesNewRoman" />
+                            <telerik:RadComboBoxItem Content="Verdana" />
+                            <telerik:RadComboBoxItem Content="Comic Sans MS" />
+                        </telerik:RadComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 15">
+                        <TextBlock Text="FontSize" Margin="0 0 0 5"/>
+                        <StackPanel Orientation="Horizontal">
+                            <telerik:RadComboBox x:Name="comboFontSize" SelectedIndex="1" Width="60"  Margin="0 0 10 0">
+                                <telerik:RadComboBoxItem Content="11" />
+                                <telerik:RadComboBoxItem Content="12" />
+                                <telerik:RadComboBoxItem Content="16" />
+                                <telerik:RadComboBoxItem Content="18" />
+                            </telerik:RadComboBox>
+                            <telerik:RadToggleButton Content="B" x:Name="buttonBold" Checked="buttonBold_Click" Unchecked="buttonBold_Click" FontWeight="Bold" Width="24" Margin="0 0 2 0"/>
+                            <telerik:RadToggleButton Content="I" x:Name="buttonItalic" Checked="buttonItalic_Click" Unchecked="buttonItalic_Click" FontWeight="Bold" Width="24" FontStyle="Italic" Margin="0 0 2 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+
+                <TextBox Height="70" Background="GhostWhite" Margin="2"
+                     AcceptsReturn="True"
+                     x:Name="targetText"
+                     FontSize="{Binding Path=SelectedItem.Content, ElementName=comboFontSize, FallbackValue=12}"
+                     FontFamily="{Binding Path=SelectedItem.Content, ElementName=comboFontFamily, FallbackValue=Portable User Interface}"/>
+
+
+                <TextBlock Text="Drafts" Margin="0 15 0 5"/>
+                <ListBox MinHeight="70" 
+                        ItemsSource="{Binding Drafts}" 
+                        DisplayMemberPath="Title"
+                        SelectedItem="{Binding SelectedDraft, Mode=TwoWay}"/>
+
+                <Border BorderBrush="#dde6f1" BorderThickness="0 1 0 0" Background="#f0f4fa" Margin="-45 15 -45 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 5" HorizontalAlignment="Right">
+                        <telerik:RadButton Content="Save" Command="{Binding SaveDraft}" CommandParameter="{Binding ElementName=layout}" Width="70" Margin="0 0 10 0"/>
+                        <telerik:RadButton Content="Load" Command="{Binding LoadDraft}" CommandParameter="{Binding ElementName=layout}" Width="70" Margin="0 0 10 0"/>
+                        <telerik:RadButton Content="Delete" Command="{Binding DeleteDraft}" Width="70"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

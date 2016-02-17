@@ -1,0 +1,1 @@
+﻿Telerik <b>RadWatermarkTextBox</b> control provides you with the possibility to neatly display more information about the TextBox itself while it is empty.

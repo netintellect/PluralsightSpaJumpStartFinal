@@ -1,0 +1,1 @@
+﻿The example demonstrates various properties of RadBusyIndicator control that can be used to customize its behavior.

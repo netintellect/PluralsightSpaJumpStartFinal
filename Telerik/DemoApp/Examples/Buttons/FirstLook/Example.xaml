@@ -1,0 +1,117 @@
+<UserControl x:Class="Telerik.Windows.Examples.Buttons.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:Telerik.Windows.Examples.Buttons.FirstLook.Common"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.Buttons.FirstLook.UIControls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Margin="10 0 0 5"
+			           HorizontalAlignment="Left"
+			           FontFamily="Segoe UI Light"
+			           FontSize="24"
+			           Foreground="White"
+			           Text="Airline Ticket Booking" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid Width="734" Height="450" Background="White">
+		<Grid.Resources>
+			<common:CurrentStepToVisibilityConverter x:Key="StepToVisibilityConverter" />
+			<common:NumberOfSeatsToAvailabilityConverter x:Key="NumberOfSeatsToAvailabilityConverter"/>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="70" />
+			<RowDefinition Height="290" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<local:ReservationStepsControl Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" CurrentStep="{Binding CurrentStep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+		<Grid Grid.Row="1">
+			<local:SeatsReserveForm Visibility="{Binding CurrentStep, Converter={StaticResource StepToVisibilityConverter}, ConverterParameter=3}" />
+			<local:PassengersDetailsForm Visibility="{Binding CurrentStep, Converter={StaticResource StepToVisibilityConverter}, ConverterParameter=2}" />
+			<local:FlightDetailsForm Visibility="{Binding CurrentStep, Converter={StaticResource StepToVisibilityConverter}, ConverterParameter=1}" />
+		</Grid>
+		<Border Grid.Row="2"
+		        Width="500"
+		        HorizontalAlignment="Center"
+		        VerticalAlignment="Top"
+		        BorderBrush="#767676"
+		        BorderThickness="0 1 0 0"
+		        Padding="30 10 30 0">
+			<StackPanel MinWidth="{StaticResource MinHeight}"
+			            MinHeight="{StaticResource MinHeight}"
+			            HorizontalAlignment="Right"
+			            Orientation="Horizontal">
+				<telerik:RadPathButton Width="80"
+				                       MinHeight="{StaticResource MinHeight}"
+				                       Margin="0 0 15 0"
+				                       HorizontalContentAlignment="Center"
+				                       Command="{Binding PreviosStepCommand}"
+				                       Content="Back"
+				                       ContentPlacement="Right"
+				                       Padding="10 5"
+				                       PathGeometry="M6,0L12,0L6,6L12,12L6,12L0,6z"
+				                       Visibility="{Binding CurrentStep,
+				                                            Converter={StaticResource StepToVisibilityConverter},
+				                                            ConverterParameter=BackButton}">
+					<telerik:RadPathButton.PathStyle>
+						<Style TargetType="Path">
+							<Setter Property="Fill" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+							<Setter Property="Stretch" Value="None" />
+							<Setter Property="HorizontalAlignment" Value="Left" />
+							<Setter Property="VerticalAlignment" Value="Center" />
+						</Style>
+					</telerik:RadPathButton.PathStyle>
+				</telerik:RadPathButton>
+				<Grid MinHeight="{StaticResource MinHeight}">
+					<telerik:RadPathButton Width="80"
+					                       MinHeight="{StaticResource MinHeight}"
+					                       HorizontalContentAlignment="Center"
+					                       Command="{Binding NextStepCommand}"
+					                       Content="Next"
+					                       ContentPlacement="Left"
+					                       IsEnabled="{Binding IsNextStepEnabled,
+					                                           Mode=TwoWay}"
+					                       Padding="10 5"
+					                       PathGeometry="M0,0L6,0L12,6L6,12L0,12L6,6z"
+					                       Visibility="{Binding CurrentStep,
+					                                            Converter={StaticResource StepToVisibilityConverter},
+					                                            ConverterParameter=NextButton}">
+						<telerik:RadPathButton.PathStyle>
+							<Style TargetType="Path">
+								<Setter Property="Fill" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+								<Setter Property="Stretch" Value="None" />
+								<Setter Property="HorizontalAlignment" Value="Right" />
+								<Setter Property="VerticalAlignment" Value="Center" />
+							</Style>
+						</telerik:RadPathButton.PathStyle>
+					</telerik:RadPathButton>
+					<telerik:RadPathButton Width="80"
+					                       MinHeight="{StaticResource MinHeight}"
+					                       HorizontalContentAlignment="Center"
+					                       Content="Submit"
+										   IsEnabled="{Binding SeatsFormModel.RemainingSeats,Converter={StaticResource NumberOfSeatsToAvailabilityConverter}}"
+										   Click="RadPathButton_Click"
+					                       ContentPlacement="Left"
+					                       Padding="10 5"
+					                       PathGeometry="M0,0L6,0L12,6L6,12L0,12L6,6z"
+					                       Visibility="{Binding CurrentStep,
+					                                            Converter={StaticResource StepToVisibilityConverter},
+					                                            ConverterParameter=SubmitButton}">
+						<telerik:RadPathButton.PathStyle>
+							<Style TargetType="Path">
+								<Setter Property="Fill" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+								<Setter Property="Stretch" Value="None" />
+								<Setter Property="HorizontalAlignment" Value="Right" />
+								<Setter Property="VerticalAlignment" Value="Center" />
+							</Style>
+						</telerik:RadPathButton.PathStyle>
+					</telerik:RadPathButton>
+				</Grid>
+			</StackPanel>
+		</Border>
+	</Grid>
+</UserControl>

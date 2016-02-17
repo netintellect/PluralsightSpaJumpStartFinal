@@ -1,0 +1,1 @@
+﻿This example demonstrates how RadHeatMap can be used to enhance the interpretation of numeric values. The color of each cell represents a value and it is quite easy to perceive and compare these values. 

@@ -1,0 +1,5 @@
+﻿<b>MinimumRangeSpan</b> determines the minimum value distance between RadSlider's SelectionStart and SelectionEnd properties.
+This means that if SelectionStart is 4 and MinimumRangeBase is 2, then SelectionEnd cannot be LESS than 6.
+<br/>
+On the other hand <b>MaximumRangeSpan</b> is the maximum value distance between RadSlider's SelectionStart and SelectionEnd properties.
+This means that if SelectionStart is 4 and MaximumRangeBase is 2, then SelectionEnd cannot be MORE than 6.

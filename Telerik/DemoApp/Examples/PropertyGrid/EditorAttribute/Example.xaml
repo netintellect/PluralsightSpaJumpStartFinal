@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.EditorAttribute.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 mc:Ignorable="d" 
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Editor Attribute"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Height="350"
+		  Width="900"
+		  Background="White">
+		<Grid.Resources>
+			<telerik:ColorToBrushConverter x:Key="colorToBrushConverter" />
+			<telerik:UppercaseConverter x:Key="uppercaseConverter"/>
+			<Style TargetType="TextBlock">
+				<Setter Property="MaxWidth" Value="200"/>
+			</Style>
+		</Grid.Resources>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid x:Name="Business_Card" Margin="20,0,0,0" Height="200"  Width="400" HorizontalAlignment="Left" VerticalAlignment="Center">
+			<Border BorderBrush="{Binding CurrentColor,Converter={StaticResource colorToBrushConverter}}" BorderThickness="2"/>
+			<Rectangle Fill="{Binding CurrentColor,Converter={StaticResource colorToBrushConverter}}" HorizontalAlignment="Left" Height="50" Margin="30,0,0,0" VerticalAlignment="Top" Width="130"/>
+			<Rectangle Fill="{Binding CurrentColor,Converter={StaticResource colorToBrushConverter}}" HorizontalAlignment="Left" Height="70" Margin="30,0,0,0" VerticalAlignment="Bottom" Width="130"/>
+			<Border BorderBrush="#D2616161" BorderThickness="0,0,0,1" HorizontalAlignment="Right" Margin="0,22,5,0" VerticalAlignment="Top" Width="200">
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,20,0"  Text="{Binding Name,Converter={StaticResource uppercaseConverter}}" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="20" Foreground="#FF616161"/>
+			</Border>
+			<Border BorderBrush="#FF616161" BorderThickness="0" HorizontalAlignment="Right" Margin="0,50,0,0" VerticalAlignment="Top" Width="294">
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,20,0"  Text="{Binding Position}" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Foreground="#FF616161"/>
+			</Border>
+			<Border BorderBrush="#FF717171" BorderThickness="0" HorizontalAlignment="Right" Margin="0,113,0,0" VerticalAlignment="Top" Width="294">
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,20,0"  Text="{Binding Location}" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Foreground="#FF616161"/>
+			</Border>
+			<Border BorderBrush="#FF717171" BorderThickness="0" HorizontalAlignment="Right" Margin="0,129,0,0" VerticalAlignment="Top" Width="294">
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,20,0"  Text="{Binding ContactInformation.PhoneNumber}" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Foreground="#FF616161"/>
+			</Border>
+			<Border BorderBrush="#FF717171" BorderThickness="0" HorizontalAlignment="Right" Margin="0,145,0,0" VerticalAlignment="Top" Width="294">
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,20,0"  Text="{Binding ContactInformation.Email}" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="12" Foreground="#FF616161"/>
+			</Border>
+			<Border BorderBrush="{Binding CurrentColor,Converter={StaticResource colorToBrushConverter}}"  BorderThickness="0,0,0,0" HorizontalAlignment="Right" Margin="0,50,243,0" VerticalAlignment="Top" Width="125" Height="77">
+				<TextBlock HorizontalAlignment="Center"  Text="GREEN TECH" VerticalAlignment="Top"  FontSize="17" Foreground="{Binding CurrentColor,Converter={StaticResource colorToBrushConverter}}"  FontWeight="Bold" Width="125" Margin="3,28,0,0"/>
+			</Border>
+		</Grid>
+		<telerik:RadPropertyGrid Grid.Column="1" x:Name="propertyGrid1" Width="400" Height="200" Margin="0,0,20,0" VerticalAlignment="Center" HorizontalAlignment="Right" DescriptionPanelVisibility="Collapsed"  Item="{Binding}" LabelColumnWidth="180"/>
+	</Grid>
+</UserControl>

@@ -1,0 +1,2 @@
+﻿Telerik ImageEditor control provides a flexible way of customizing the default UI.
+In this example you can see how easily you can add and remove tools dynamically.

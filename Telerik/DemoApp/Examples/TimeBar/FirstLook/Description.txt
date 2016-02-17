@@ -1,0 +1,3 @@
+﻿The RadTimeBar is a time bound DataVisualization control that allows lightweight scrolling and navigation through large periods of time. It can host other controls, however its true power comes when combined with RadSparklines to show trends in large data collections.<br /><br />
+This example demonstrates how to create a dashboard and to change the displayed data according to the selected period. Changing the selection of a time span in the RadTimeBar control will update the "Traffic Source" and "Hourly distribution" charts. Furthermore you may track the average statistics for the selected period.<br /><br />
+RadTimeBar is a part of the <b>Telerik.Windows.Controls.DataVisualization</b> assembly.

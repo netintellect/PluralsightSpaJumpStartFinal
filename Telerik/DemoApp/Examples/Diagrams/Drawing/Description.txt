@@ -1,0 +1,1 @@
+﻿The Drawing example demonstrates how to use the RadDiagram's Path and Pencil tools in order to draw custom shapes. The Path tool gives you the ability to draw polyline figures whereas the Pencil tool simulates free hand drawing.

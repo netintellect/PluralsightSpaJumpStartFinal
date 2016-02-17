@@ -1,0 +1,34 @@
+<UserControl x:Class="Telerik.Windows.Examples.BusyIndicator.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.BusyIndicator.Configurator"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+	<UserControl.Resources>
+		<telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+	</UserControl.Resources>
+
+	<UserControl.DataContext>
+		<local:ViewModel />
+	</UserControl.DataContext>
+
+	<Grid>
+		<telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" IsIndeterminate="{Binding IsIndeterminate}"
+				ProgressValue="{Binding ProgressValue}" BusyContent="{Binding BusyContent}"
+				DisplayAfter="{Binding DisplayAfter}">
+			<Image Source="../Images/BusyIndicator/scheduleview.png" Stretch="None" />
+		</telerik:RadBusyIndicator>
+	</Grid>
+
+	<qsf:QuickStart.ConfigurationPanel>
+		<StackPanel>
+			<CheckBox Content="IsBusy" IsChecked="{Binding IsBusy, Mode=TwoWay}" Margin="4" />
+			<CheckBox Content="IsIndeterminate" IsChecked="{Binding IsIndeterminate, Mode=TwoWay}" Margin="4" />
+			<TextBlock Text="DisplayAfter (seconds):" Margin="4,4,4,0" />
+			<telerik:RadComboBox Margin="4,0,4,4" SelectedValue="{Binding DisplayAfter, Mode=TwoWay}"
+					ItemsSource="{Binding DisplayAfterChoices}" DisplayMemberPath="TotalSeconds" />
+		</StackPanel>
+	</qsf:QuickStart.ConfigurationPanel>
+</UserControl>

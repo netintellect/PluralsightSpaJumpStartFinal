@@ -1,0 +1,1 @@
+﻿This example shows a customized 3D Bar chart. You can define the style in XAML and set the Style property of the Bar3DSeriesDefinition object. CameraExtension tool is also added to this example.<br/>

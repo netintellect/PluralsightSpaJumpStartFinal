@@ -1,0 +1,2 @@
+﻿If you build business dashboards or you just need graphical indicators, you will find our Gauge control indispensable. With the powerful customization capabilities of all gauges you are free to build the exact dynamic data visualization tool that you need.<br /><br />
+Gauge controls are part of the <b>Telerik.Windows.Controls.DataVisualization</b> assembly.

@@ -1,0 +1,108 @@
+<UserControl
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Telerik.Windows.Examples.Upload.FirstLook.Example"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common" 
+    VerticalAlignment="Center" HorizontalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <StackPanel Orientation="Horizontal">
+            <Path Data="M1.94E-06,16 C1.8E-06,18.28 5.88,20 13,20 C20.18,20 26,18.20 26,16 L26,19 C26,21.20 20.18,23 13,23 C5.8,23 1.8E-06,21.20 1.9E-06,19 z M1.9E-06,11 C1.8E-06,13.20 5.8,15 13,15 C20.18,15 26,13.20 26,11 L26,14 C26,16.20 20.18,18 13,18 C5.8,18 1.8E-06,16.20 1.9E-06,14 z M1.9E-06,6 C1.8E-06,8.20 5.8,10 13,10 C20.18,10 26,8.20 26,6 L26,9 C26,11.20 20.18,13 13,13 C5.8,13 1.8E-06,11.20 1.9E-06,9 z M13,0 C20.18,3.5E-07 26,1.8 26,4 C26,6.20 20.18,8 13,8 C5.8,8 0,6.20 0,4 C0,1.8 5.8,3.5E-07 13,0 z" 
+                  Fill="White" Stretch="Fill"  Width="26" Margin="14,11,0,11"/>
+            <TextBlock Text="My Storage" Margin="8" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Border CornerRadius="6" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Fill="#FFEBEBEB" Stroke="#FFBEBEBE" StrokeDashArray="4 4"/>
+			<telerik:RadUploadDropPanel VerticalAlignment="Stretch"  IsEnabled="{Binding ElementName=AllowDropButton,Path=IsChecked}"
+                                        HorizontalAlignment="Stretch" DragEnter="RadUploadDropPanel1_DragEnter"  
+                                        DragLeave="RadUploadDropPanel_DragLeave" x:Name="RadUploadDropPanel1" RadUpload="{Binding ElementName=RadUpload1}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 -15 0 0">
+                    <Path Data="M5,0 L19,0 L19,12 L24,12 L12,26 L0,12 L5,12 z" Fill="#FF79C2E5" Height="26" Stretch="Fill" Margin="0 0 0 15" Width="24">
+                        <Path.Effect>
+                            <DropShadowEffect BlurRadius="1" ShadowDepth="1.5" Direction="275" Color="White"/>
+                        </Path.Effect>
+                    </Path>
+                    <TextBlock TextWrapping="Wrap" Text="Drag Items here to Upload" FontSize="15"
+                               Foreground="#FF25A0DA" FontFamily="Segoe UI Light" UseLayoutRounding="True" >
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="1" ShadowDepth="1" Direction="275" Color="White"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
+            </telerik:RadUploadDropPanel>
+            <telerik:RadUpload Grid.Column="2"
+			            x:Name="RadUpload1"
+			            Filter="Image Files (*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png|Text Files (*.txt)|*.txt|All Files(*.*)|*.*"
+			            FilterIndex="0" MaxFileCount="5"    
+                        AllowDrop="true" Width="415"
+			            IsAutomaticUpload="false"
+			            OverwriteExistingFiles="True"
+			            UploadServiceUrl="../../RadUploadHandler.ashx"
+			            TargetFolder="{StaticResource TargetFolder}"
+			            HorizontalAlignment="Left"
+                        IsAppendFilesEnabled="True"
+			            FileUploadStarting="RadUpload1_FileUploadStarting"
+			            FileUploaded="RadUpload1_FileUploaded"
+                        UploadStarted="RadUpload1_UploadStarted"
+                        MaxFileSize="3000000" MaxUploadSize="10000000"  />
+        </Grid>
+    </Border>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel  Margin="3">
+            <TextBlock Text="Upload Mode:" />
+            <RadioButton Checked="ButtonUploadMode_Checked" Content="Manual" IsChecked="true"
+				GroupName="UploadMode"  Margin="0,0,0,2" />
+            <RadioButton Checked="ButtonUploadMode_Checked" Content="Automatic" 
+				GroupName="UploadMode" Margin="0,2" />
+           
+            <CheckBox x:Name="AllowDropButton" Checked="ButtonAllowDrop_Checked" Unchecked="ButtonAllowDrop_Checked" Content="Allow Drop" IsChecked="true"
+				 Margin="0,2" />
+            
+            <CheckBox x:Name="UseMultipleUpload" Margin="0,2"
+				Content="Multiple files selection" IsChecked="true"
+				Checked="ButtonAllowMultiple_Checked"
+				Unchecked="ButtonAllowMultiple_Checked" />
+            <CheckBox x:Name="UseMoreFilesUpload" Margin="0,2" Content="Show 'Add more files' button"
+                    IsChecked="true" Checked="ButtonAllowMoreFiles_Checked"
+                    Unchecked="ButtonAllowMoreFiles_Checked" />
+            
+            <TextBlock x:Name="MaxFileCountLabel" Text="MaxFileCount:"  Margin="0,10,0,0" />
+            <telerik:RadNumericUpDown x:Name="MaxFileCount" 
+				Value="5" Minimum="1" Maximum="20" SmallChange="1"
+				ValueChanged="MaxFileCount_ValueChanged" />
+            
+            <TextBlock Text="Size Limitation:" Margin="0,10,0,0" />
+
+            <TextBlock Text="MaxUploadSize:"  Margin="0,2,0,0" />
+            <telerik:RadNumericUpDown x:Name="MaxUploadSize" Value="10000000" Minimum="1"
+					Maximum="20000000" SmallChange="1000" ValueChanged="MaxUploadSize_ValueChanged" />
+            
+            <TextBlock Text="MaxFileSize:" VerticalAlignment="Center" Margin="0,10,0,0" />
+            <telerik:RadNumericUpDown x:Name="MaxFileSize" Value="2000000" SmallChange="1000"
+					Minimum="1" Maximum="20000000" ValueChanged="MaxFileSize_ValueChanged" />
+
+            <TextBlock Text="Browse Filter:" Margin="0,10,0,0"  />
+            <TextBox x:Name="BrowseFilter" Margin="0,2,0,0" 
+				Text="Image Files (*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png|Text Files (*.txt)|*.txt|All Files(*.*)|*.*"
+				TextChanged="BrowseFilter_TextChanged" />
+            
+            <TextBlock Text="Custom Parameter" Margin="0,10,0,0" />
+            <TextBlock Text="Value to be sent:"  Margin="0,2,0,0"/>
+            <TextBox x:Name="MyParam" Text="MyParamValue" Margin="0 0 0 2" />
+
+            <TextBlock Text="Value returned by the server:" Margin="0,10,0,0"/>
+            <TextBlock x:Name="ServerReturnedValue" Text="Select File!" Margin="0 2 0 0" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

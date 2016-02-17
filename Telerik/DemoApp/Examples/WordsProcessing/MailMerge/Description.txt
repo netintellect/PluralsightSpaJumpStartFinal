@@ -1,0 +1,1 @@
+﻿This example illustrates Mail Merge functionality in <b>RadWordsProcessing</b>. You can export the merged document to any of the supported formats.

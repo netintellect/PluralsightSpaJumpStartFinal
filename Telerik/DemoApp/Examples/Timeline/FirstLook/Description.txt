@@ -1,0 +1,2 @@
+﻿The Timeline control enables you to visualize sequence of events and timelines in a user friendly manner. You can represent various occurrences like biographical data, historical events, or any other story you need to represent in a timeline format over a specified period of time.<br /><br />
+RadTimeline is a part of the <b>Telerik.Windows.Controls.DataVisualization</b> assembly.

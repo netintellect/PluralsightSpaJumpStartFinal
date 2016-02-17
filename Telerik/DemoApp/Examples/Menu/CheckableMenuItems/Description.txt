@@ -1,0 +1,1 @@
+﻿Telerik RadMenu supports checkbox items. Radiobutton items are not supported yet, but this example demonstrates how to create a view model, that allows declaring radiobutton items.

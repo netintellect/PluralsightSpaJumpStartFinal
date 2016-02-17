@@ -1,0 +1,159 @@
+<UserControl x:Class="Telerik.Windows.Examples.CoverFlow.DataBinding.Example"
+		xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+		xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Data Binding" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+
+		<LinearGradientBrush x:Key="CoverFlowItemBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+			<LinearGradientBrush.GradientStops>
+				<GradientStopCollection>
+					<GradientStop Color="#FFd1d1d1" Offset="0" />
+					<GradientStop Color="#FFd1d1d1" Offset="0.02" />
+					<GradientStop Color="#FF7a7a7a" Offset="0.24" />
+					<GradientStop Color="#FF999999" Offset="0.53" />
+					<GradientStop Color="#FFBABABA" Offset="0.98" />
+					<GradientStop Color="#FFbbbbbb" Offset="0.99" />
+				</GradientStopCollection>
+			</LinearGradientBrush.GradientStops>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="CoverFlowItemBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#CCE0E0E0"/>
+			<GradientStop Color="#CCDEDEDE" Offset="1"/>
+		</LinearGradientBrush>
+
+		<SolidColorBrush x:Key="DisabledBrush" Color="#99FFFFFF"></SolidColorBrush>
+
+		<Style x:Key="RadCoverFlowItemContainerStyle" TargetType="telerik:RadCoverFlowItem">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="telerik:RadCoverFlowItem">
+						<Border>
+							<vsm:VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Focused" />
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="PART_DisabledBox"
+												Storyboard.TargetProperty="Visibility" Duration="0">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="MouseOver" />
+									<VisualState x:Name="Normal" />
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="SelectionStates">
+									<VisualState x:Name="Selected" />
+									<VisualState x:Name="Unselected">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="ContentElement"
+												Storyboard.TargetProperty="IsHitTestVisible"
+												Duration="0">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="False" />
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="ContentStates">
+									<VisualState x:Name="Loaded"/>
+									<VisualState x:Name="Loading">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="LoadingVisual">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0:0:2" From="0" RepeatBehavior="Forever" To="359" Storyboard.TargetProperty="Angle" Storyboard.TargetName="LoadingVisualAngleTransform"/>
+											<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="InvalidContent">
+										<Storyboard Duration="0">
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ErrorElement">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>										
+									</VisualState>
+								</VisualStateGroup>
+							</vsm:VisualStateManager.VisualStateGroups>
+							<telerikPrimitives:LayoutTransformControl x:Name="layoutTransform">
+								<Grid Background="Transparent">
+									<Border Background="{StaticResource CoverFlowItemBackground}" BorderBrush="{StaticResource CoverFlowItemBorderBrush}" 
+									BorderThickness="1"  CornerRadius="3" telerik:RadCoverFlow.EnableLoadNotification="True">
+										<ContentPresenter x:Name="ContentElement" Margin="9" />
+									</Border>
+
+									<Grid x:Name="LoadingVisual" RenderTransformOrigin="0.5,0.5"
+									Visibility="Collapsed" VerticalAlignment="Center"
+									HorizontalAlignment="Center" MaxWidth="50" MaxHeight="50">
+										<Grid.RenderTransform>
+											<RotateTransform x:Name="LoadingVisualAngleTransform" Angle="0"
+											CenterX="0.5" CenterY="0.5" />
+										</Grid.RenderTransform>
+
+										<Path Stretch="UniformToFill" 
+										Stroke="Gray" StrokeThickness="6"
+										StrokeStartLineCap="Flat" StrokeEndLineCap="Triangle"
+										Data="M1,0 A1,1,90,1,1,0,-1" HorizontalAlignment="Center"
+										VerticalAlignment="Center" />
+									</Grid>
+
+									<Image x:Name="ErrorElement" Stretch="None" Visibility="Collapsed"
+									Source="/Telerik.Windows.Controls.Navigation;component/images/CoverFlowError.png"
+									HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+									<Rectangle x:Name="PART_DisabledBox"
+									Fill="{StaticResource DisabledBrush}" Visibility="Collapsed" />
+								</Grid>
+							</telerikPrimitives:LayoutTransformControl>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+	</UserControl.Resources>
+	
+	<Grid>
+            <!--Decoration borders-->
+            <Border BorderBrush="#FFCBD8E8" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFF3F3F3" Offset="0.004"/>
+                        <GradientStop Color="White" Offset="0.181"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Rectangle HorizontalAlignment="Stretch" Height="31" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#50CCCCCC" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="0.429"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            
+            <telerik:RadCoverFlow x:Name="coverFlow" OffsetY="100" VerticalAlignment="Center"
+                                        CameraViewpoint="Center" ItemScale="0.7" RotationY="60" ReflectionHeight="0.2" ReflectionOpacity="2"
+										DistanceBetweenItems="35" DistanceFromSelectedItem="-30" IsVirtualizing="True"
+										ItemContainerStyle="{StaticResource RadCoverFlowItemContainerStyle}">
+				<telerik:RadCoverFlow.ItemTemplate>
+					<DataTemplate>
+						<Image Source="{Binding}" Width="316" Height="223" Stretch="UniformToFill"
+							telerik:RadCoverFlow.EnableLoadNotification="True" />
+					</DataTemplate>
+				</telerik:RadCoverFlow.ItemTemplate>
+			</telerik:RadCoverFlow>
+
+		</Grid>
+</UserControl>

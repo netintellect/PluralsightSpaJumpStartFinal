@@ -1,0 +1,1 @@
+﻿Telerik Upload control provides a rich Event Handling Model. You can see all the events being logged in the log area on the right as you interact with the Upload control.

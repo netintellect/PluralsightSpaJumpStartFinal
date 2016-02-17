@@ -1,0 +1,12 @@
+System
+System.Data
+System.Xml
+Microsoft.CSharp
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+System.Xaml
+Telerik.Windows.Controls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+WindowsBase
+PresentationCore
+PresentationFramework

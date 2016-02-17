@@ -1,0 +1,894 @@
+<UserControl x:Class="Telerik.Windows.Examples.Book.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="darkGrey" Color="#767676" />
+        <Style x:Key="LinkButtonStyle" TargetType="Border">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="CornerRadius" Value="2" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <telerik:RadBook x:Name="book1"
+                         Width="702"
+                         Height="396"
+                         FirstPagePosition="Right"
+                         FoldActivated="RadBook1_FoldActivated"
+                         FoldDeactivated="RadBook1_FoldDeactivated"
+                         FoldSize="35,35"
+                         FontSize="11"
+                         IsKeyboardNavigationEnabled="{Binding IsChecked,
+                                                               ElementName=isKeyboardNavigationEnabled}"
+                         RightPageIndex="0">
+            <telerik:RadBookItem Cursor="Hand" MouseLeftButtonUp="RadBookItemMouseLeftButtonUp">
+                <Image Source="../Images/Book/FirstLook/frontcover.png"
+                       Width="351"
+                       Height="396"
+                       Stretch="None" />
+            </telerik:RadBookItem>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/01.png" />
+                <telerik:RadTreeView x:Name="treeView1"
+                                     Margin="20,55,0,0"
+                                     Background="Transparent"
+                                     BorderBrush="Transparent"
+                                     FontFamily="Segoe UI"
+                                     FontSize="11"
+                                     Foreground="#FF4F4F4F"
+                                     ItemClick="RadTreeViewItemClick">
+                    <telerik:RadTreeViewItem Header="WEB UI CONTROL &amp; COMPONENTS" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="ASP.NET AJAX" Tag="4" />
+                        <telerik:RadTreeViewItem Header="ASP.NET MVC" Tag="6" />
+                        <telerik:RadTreeViewItem Header="Silverlight" Tag="8" />
+                    </telerik:RadTreeViewItem>
+                    <telerik:RadTreeViewItem Header="DESKTOP UI CONTROL &amp; COMPONENTS" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="WPF" Tag="10" />
+                        <telerik:RadTreeViewItem Header="Windows Forms" Tag="12" />
+                    </telerik:RadTreeViewItem>
+                    <telerik:RadTreeViewItem Header="MOBILE UI CONTROL &amp; COMPONENTS" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="Windows Phone" />
+                    </telerik:RadTreeViewItem>
+                    <telerik:RadTreeViewItem Header="REPORT DESIGNER &amp; VIEWER" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="Telerik Reporting" />
+                    </telerik:RadTreeViewItem>
+                    <telerik:RadTreeViewItem Header="AGILE PROJECT MANAGEMENT TOOLS" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="TeamPulse" />
+                    </telerik:RadTreeViewItem>
+                </telerik:RadTreeView>
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/02.png" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/03.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/window.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/window.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/button.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/button.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/calendar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/calendar.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/chart.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/chart.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/treelist.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/treelist.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/combobox.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/combobox.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/dock.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/dock.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/04.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/editor.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/editor.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/grid.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/grid.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/menu.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/menu.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/orgchart.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/orgchart.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/rating.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/rating.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/slider.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/slider.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-ajax/toolbar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-ajax/toolbar.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/05.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/window.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/window.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/web-asset-managers.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/web-asset-managers.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/calendar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/calendar.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/chart.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/chart.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/treeview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/treeview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/combobox.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/combobox.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/upload.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/upload.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/06.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/editor.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/editor.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/grid.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/grid.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/menu.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/menu.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/datetimepickers.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/datetimepickers.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/splitter.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/splitter.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/slider.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/slider.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/aspnet-mvc/tabstrip.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/aspnet-mvc/tabstrip.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/07.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/gauge.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/gauge.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/gridview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/gridview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/mediaplayer.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/mediaplayer.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/panelbar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/panelbar.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/persistenceframework.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/persistenceframework.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/ribbonview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/ribbonview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/scheduleview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/scheduleview.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/08.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/tileview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/tileview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/dataservicedatasource.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/dataservicedatasource.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/transition.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/transition.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/datapager.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/datapager.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/book.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/book.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/map.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/map.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/silverlight/controls_/expander.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/silverlight/controls_/expander.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/09.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/transition.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/transition.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/map.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/map.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/tileview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/tileview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/sparklines.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/sparklines.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/scheduleview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/scheduleview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/tabcontrol.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/tabcontrol.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/propertygrid.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/propertygrid.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/10.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/expander.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/expander.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/treemap-and-pivotmap.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/treemap-and-pivotmap.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/map.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/map.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/gridview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/gridview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/busyindicator.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/busyindicator.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/gauge.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/gauge.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/wpf/treeview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/wpf/treeview.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/11.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/tools.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/tools.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/buttons.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/buttons.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/calendar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/calendar.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/chart.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/chart.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/treeview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/treeview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/dropdown-and-list.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/dropdown-and-list.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/carousel.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/carousel.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/12.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/editors.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/editors.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/gridview.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/gridview.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/menus.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/menus.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/rotator.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/rotator.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/scheduler.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/scheduler.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/track-and-status.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/track-and-status.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/winforms/commandbar.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/winforms/commandbar.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/13.png" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="38 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#gauge"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#gauge" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="84 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#transitioncontrol"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#transitioncontrol" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="130 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#uniformgrid"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#uniformgrid" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="176 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#applicationframe"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#applicationframe" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="222 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#contextmenu"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#contextmenu" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="268 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#calendar"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#calendar" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="313 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#timepicker"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#timepicker" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/14.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone.aspx" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="8 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#dockpanel"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#dockpanel" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="54 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#jumplist"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#jumplist" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="100 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#layouttransform"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#layouttransform" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="146 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#listpicker"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#listpicker" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="192 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#loopinglist"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#loopinglist" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="238 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#pickerbox"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#pickerbox" />
+                <Border Width="30"
+                        Height="30"
+                        Margin="283 0 0 0"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#messagebox"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/windows-phone/overview/all-controls.aspx#messagebox" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/15.png" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/16.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/products/reporting.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/products/reporting.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/17.png" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/18.png" />
+                <Border Width="200"
+                        Height="25"
+                        Margin="131 0 0 57"
+                        MouseLeftButtonUp="LinkMouseLeftButtonUp"
+                        Style="{StaticResource LinkButtonStyle}"
+                        Tag="http://www.telerik.com/team-productivity-tools.aspx"
+                        ToolTipService.ToolTip="http://www.telerik.com/team-productivity-tools.aspx" />
+            </Grid>
+            <Grid>
+                <Image Width="351"
+                       Height="396"
+                       Stretch="None"
+                       Source="../Images/Book/FirstLook/backcover.png" />
+            </Grid>
+        </telerik:RadBook>
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <telerik:RadButton Width="24"
+                               Height="24"
+                               Command="telerik:BookCommands.FirstPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="First Page">
+                <Path Margin="-2 0 0 0"
+                      Data="M12,0 L12,8 L6,4 L6,8 L0,4 L6,0 L6,4 z"
+                      Fill="{StaticResource darkGrey}" />
+            </telerik:RadButton>
+            <telerik:RadButton Width="24"
+                               Height="24"
+                               Margin="8 0 12 0"
+                               Command="telerik:BookCommands.PreviousPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Previous Page">
+                <Path Margin="-2 0 0 0"
+                      Data="  M0,4 L6,0 L6,8 z"
+                      Fill="{StaticResource darkGrey}" />
+            </telerik:RadButton>
+            <telerik:RadButton Width="24"
+                               Height="24"
+                               Margin="12 0 8 0"
+                               Command="telerik:BookCommands.NextPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Next Page">
+                <Path Margin="2 0 0 0"
+                      Data="M0,0 L6,4 L0,8 z"
+                      Fill="{StaticResource darkGrey}" />
+            </telerik:RadButton>
+            <telerik:RadButton Width="24"
+                               Height="24"
+                               Command="telerik:BookCommands.LastPage"
+                               CommandTarget="{Binding ElementName=book1}"
+                               CornerRadius="12"
+                               ToolTipService.ToolTip="Last Page">
+                <Path Margin="2 0 0 0"
+                      Data="M6,0 L12,4 L6,8 z M0,0 L6,4 L0,8 z"
+                      Fill="{StaticResource darkGrey}" />
+            </telerik:RadButton>
+        </StackPanel>
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <CheckBox x:Name="isKeyboardNavigationEnabled"
+                      HorizontalAlignment="Left"
+                      Content="EnableKeyboardNavigation"
+                      IsChecked="True" />
+            <TextBlock Margin="0 25 0 5"
+                       FontWeight="Bold"
+                       Text="Hard Pages:" />
+            <telerik:RadRadioButton Checked="HardPagesRadioButton_Checked"
+                                    Content="None"
+                                    IsChecked="True" />
+            <telerik:RadRadioButton Checked="HardPagesRadioButton_Checked" Content="All" />
+            <telerik:RadRadioButton Checked="HardPagesRadioButton_Checked" Content="First" />
+            <telerik:RadRadioButton Checked="HardPagesRadioButton_Checked" Content="Last" />
+            <telerik:RadRadioButton Checked="HardPagesRadioButton_Checked" Content="FirstAndLast" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

@@ -1,0 +1,49 @@
+<UserControl x:Class="Telerik.Windows.Examples.Upload.ImageGallery.Example"
+             xmlns="http://schemas.microsoft.com/client/2007"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+    <Border CornerRadius="6" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <Grid ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadUpload x:Name="RadUpload1"
+                               Grid.Column="0"
+                               MaxWidth="350"
+                               MaxHeight="222"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               FileUploaded="RadUpload_FileUploaded"
+                               Filter="Image Files (*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png"
+                               IsAutomaticUpload="True"
+                               OverwriteExistingFiles="True"
+                               TargetFolder="{StaticResource TargetFolder}"
+                               UploadServiceUrl="../../RadUploadHandler.ashx"
+                               UploadStarted="RadUpload1_UploadStarted" />
+
+            <Border Grid.Column="1"
+                    Margin="8 0 0 0"
+                    Background="#FFFFFFFF"
+                    BorderBrush="#FFcbcbcb"
+                    BorderThickness="1">
+                <ScrollViewer x:Name="scrollViewer"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              BorderThickness="0"
+                              VerticalScrollBarVisibility="Auto">
+                    <telerik:RadWrapPanel x:Name="ImageContainer"
+                                          MaxWidth="700"
+                                          Orientation="Horizontal">
+                        <TextBlock x:Name="TextOutput"
+                                   FontWeight="Bold"
+                                   Foreground="#FF000000"
+                                   Text="Please select images!" />
+                    </telerik:RadWrapPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

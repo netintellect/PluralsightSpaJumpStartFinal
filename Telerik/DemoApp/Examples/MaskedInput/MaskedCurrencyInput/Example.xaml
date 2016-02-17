@@ -1,0 +1,100 @@
+<UserControl x:Class="Telerik.Windows.Examples.MaskedInput.MaskedCurrencyInput.Example" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="MaskedCurrencyInput" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadMaskedCurrencyInput x:Name="radMaskedCurrencyInput" Width="200"  Margin="20 20 20 10"
+                                    AllowSkipPlaceholders="{Binding ElementName=AllowSkipPlaceholders, Path=IsChecked}"
+                                    AutoFillNumberGroupSeparators="{Binding ElementName=AutoFillNumberGroupSeparators, Path=IsChecked}"
+                                    AutoFillZeros="{Binding ElementName=AutoFillZeros, Path=IsChecked}"
+                                    Culture="{Binding ElementName=Culture, Path=SelectedItem}"
+                                    FormatString="{Binding ElementName=FormatString, Path=Text}"
+                                    EmptyContent="{Binding ElementName=EmptyContent, Path=Text}"
+                                    InputBehavior="{Binding ElementName=InputBehavior, Path=SelectedItem, Mode=TwoWay}"
+                                    IsClearButtonVisible="{Binding ElementName=IsClearButtonVisible, Path=IsChecked}"
+                                    IsCurrencySymbolVisible="{Binding ElementName=IsCurrencySymbolVisible, Path=IsChecked}"
+                                    Mask="{Binding Path=Text, ElementName=Mask}"
+                                    SelectionOnFocus="{Binding ElementName=SelectionOnFocus, Path=SelectedItem}"
+                                    SpinMode="{Binding ElementName=SpinMode, Path=SelectedItem}"
+                                    TextMode="{Binding ElementName=TextMode, Path=SelectedItem}"
+                                    UpdateValueEvent="{Binding ElementName=UpdateValueEvent, Path=SelectedItem}"
+                                    Value="12345.67" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="20 0 20 20">
+            <TextBlock Margin="0 2 10 2" Text="Value:" />
+            <TextBlock Margin="0 2" FontWeight="Bold" Text="{Binding Path=Value, ElementName=radMaskedCurrencyInput}" />
+        </StackPanel>
+
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+			<StackPanel.Resources>
+				<Style TargetType="TextBox" BasedOn="{StaticResource QSFExampleTextBoxStyle}">
+					<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+					<Setter Property="HorizontalAlignment" Value="Stretch" />
+					<Setter Property="Background" Value="Transparent" />
+					<Setter Property="Padding" Value="4,2" />
+				</Style>
+			</StackPanel.Resources>
+			<TextBlock Text="Mask" />
+            <TextBox x:Name="Mask"  Margin="0 2" Text="#9.2" />
+
+            <TextBlock Margin="0 10 0 0" Text="Culture" />
+            <telerik:RadComboBox x:Name="Culture"  Margin="0 2" SelectedIndex="0" />
+
+            <TextBlock Text="Text Mode" />
+            <telerik:RadComboBox x:Name="TextMode" Margin="0 2" SelectedIndex="1" />
+
+            <TextBlock Margin="0 10 0 0" Text="Input Behavior" />
+            <telerik:RadComboBox x:Name="InputBehavior" Margin="0 2" SelectedIndex="1" />
+
+            <TextBlock Margin="0 10 0 0" Text="Spin Mode" />
+            <telerik:RadComboBox x:Name="SpinMode" Margin="0 2"  SelectedIndex="1" />
+
+            <TextBlock Margin="0 10 0 0" Text="Selection On Focus" />
+            <telerik:RadComboBox x:Name="SelectionOnFocus" Margin="0 2" SelectedIndex="0" />
+
+            <TextBlock Margin="0 5 0 0" Text="Update Value Event" />
+            <telerik:RadComboBox x:Name="UpdateValueEvent" Margin="0 2" SelectedIndex="0" />
+
+            <TextBlock Margin="0 5 0 0" Text="Format String" />
+            <TextBox x:Name="FormatString" Margin="0 2" />
+
+            <TextBlock Margin="0 10 0 0" Text="Empty Content" />
+            <TextBox x:Name="EmptyContent" Margin="0 2" />
+
+            <CheckBox x:Name="IsClearButtonVisible" Margin="0 10 0 0" 
+                      Content="Is Clear Button Visible" IsChecked="True" />
+
+            <CheckBox x:Name="IsCurrencySymbolVisible"  Margin="0 10 0 0"
+                      Content="Is Currency Symbol Visible" IsChecked="True" />
+
+            <CheckBox x:Name="AutoFillZeros" Margin="0 10 0 0" 
+                      Content="Auto Fill Zeros" IsChecked="True" />
+
+            <CheckBox x:Name="AllowSkipPlaceholders" Margin="0 10 0 0" 
+                      Content="Allow Skip Placeholders" IsChecked="True" />
+
+            <CheckBox x:Name="AutoFillNumberGroupSeparators" Margin="0 10 0 0" 
+                      Content="Auto Fill NumberGroup Separators" IsChecked="True" />
+
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+</UserControl>
+

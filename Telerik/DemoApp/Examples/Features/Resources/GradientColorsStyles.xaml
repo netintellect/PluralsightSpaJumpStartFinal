@@ -1,0 +1,1027 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:Telerik.Windows.Diagrams.Features">
+
+	<local:ColorStyle x:Key="1" OrderId="1" Stroke="#FF938129">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFF195" Offset="1"/>
+				<GradientStop Color="#FFD8CC4A" Offset="0.03"/>
+				<GradientStop Color="#FFCAB13C" Offset="0.032"/>
+				<GradientStop Color="#FFFBF2B5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="2" OrderId="2" Stroke="#FF785313">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE7CD94" Offset="1"/>
+				<GradientStop Color="#FFDAA84F" Offset="0.03"/>
+				<GradientStop Color="#FFBE9549" Offset="0.03"/>
+				<GradientStop Color="#FFF3DEA3" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="3" OrderId="3" Stroke="#FF304509">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFA7C477" Offset="1"/>
+				<GradientStop Color="#FF92A35B" Offset="0.03"/>
+				<GradientStop Color="#FF788F4F" Offset="0.03"/>
+				<GradientStop Color="#FFC2E091"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="4" OrderId="4" Stroke="#FF122B1A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF5CAB89" Offset="0.996"/>
+				<GradientStop Color="#FF38724B" Offset="0.03"/>
+				<GradientStop Color="#FF476650" Offset="0.03"/>
+				<GradientStop Color="#FFA0DEC2"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="5" OrderId="5" Stroke="#FF122F2E">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF74C1C6" Offset="1"/>
+				<GradientStop Color="#FF50908C" Offset="0.03"/>
+				<GradientStop Color="#FF468382" Offset="0.03"/>
+				<GradientStop Color="#FFABE7E0" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="6" OrderId="6" Stroke="#FF264F62">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB1D6F9" Offset="1"/>
+				<GradientStop Color="#FF6EB6CE" Offset="0.03"/>
+				<GradientStop Color="#FF59A1C2" Offset="0.03"/>
+				<GradientStop Color="#FFD9F2FF" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="7" OrderId="7" Stroke="#FF000618">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF7AA1CC" Offset="1"/>
+				<GradientStop Color="#FF5A6A9B" Offset="0.03"/>
+				<GradientStop Color="#FF485680" Offset="0.03"/>
+				<GradientStop Color="#FF78B1C9"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="8" OrderId="8" Stroke="#FF08001D">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFA186BE" Offset="1"/>
+				<GradientStop Color="#FF6E5A91" Offset="0.03"/>
+				<GradientStop Color="#FF584D7A" Offset="0.03"/>
+				<GradientStop Color="#FFCAB3E4"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="9" OrderId="9" Stroke="#FF503142">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFDEB1C8" Offset="1"/>
+				<GradientStop Color="#FF997783" Offset="0.03"/>
+				<GradientStop Color="#FFE9C5D2"/>
+				<GradientStop Color="#FF8D6C7D" Offset="0.03"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="10" OrderId="10" Stroke="#FF501026">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC06381" Offset="1"/>
+				<GradientStop Color="#FF8F3D5B" Offset="0.03"/>
+				<GradientStop Color="#FFE4919D"/>
+				<GradientStop Color="#FF7E334B" Offset="0.03"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="11" OrderId="11" Stroke="#FF2B0A0A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF8E5555" Offset="0.03"/>
+				<GradientStop Color="#FFAF6E6E" Offset="1"/>
+				<GradientStop Color="#FF744040" Offset="0.03"/>
+				<GradientStop Color="#FFD29C91"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="12" OrderId="12" Stroke="#FF2D2420">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB29C8E" Offset="1"/>
+				<GradientStop Color="#FF816D62" Offset="0.03"/>
+				<GradientStop Color="#FFD4C7BF" Offset="0"/>
+				<GradientStop Color="#FF6C5B51" Offset="0.03"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="13" OrderId="13" Stroke="#FF727272">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFEFEFEF" Offset="1"/>
+				<GradientStop Color="#FFD2D2D2" Offset="0.03"/>
+				<GradientStop Color="Silver" Offset="0.03"/>
+				<GradientStop Color="White"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="14" OrderId="14" Stroke="#FF373737">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC6C6C6" Offset="1"/>
+				<GradientStop Color="#FF8B8C8E" Offset="0.03"/>
+				<GradientStop Color="#FF76787A" Offset="0.03"/>
+				<GradientStop Color="#FFD6D6D6"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="15" OrderId="15" Stroke="#FF9B9F87">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE7EDC8" Offset="0.06"/>
+				<GradientStop Color="#FFBFC4A4" Offset="1"/>
+				<GradientStop Color="#FFFFFFF1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="16" OrderId="16" Stroke="#FF787528">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE7E486" Offset="0.06"/>
+				<GradientStop Color="#FFB6B34E" Offset="0.989"/>
+				<GradientStop Color="#FFFFFCA2"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="17" OrderId="17" Stroke="#FF535A29">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB6AF5D" Offset="0.06"/>
+				<GradientStop Color="#FF636C35" Offset="1"/>
+				<GradientStop Color="#FFD0C869"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="18" OrderId="18" Stroke="#FF46623A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB2CE97" Offset="0.06"/>
+				<GradientStop Color="#FF5E8350" Offset="1"/>
+				<GradientStop Color="#FFDAEBBD"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="19" OrderId="19" Stroke="#FF120808">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF804E46" Offset="0.069"/>
+				<GradientStop Color="#FF473130" Offset="1"/>
+				<GradientStop Color="#FFA1685F"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="20" OrderId="20" Stroke="#FF7A6443">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE5CEA5" Offset="0.06"/>
+				<GradientStop Color="#FFAD9874" Offset="1"/>
+				<GradientStop Color="#FFFFEED1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="21" OrderId="21" Stroke="#FF696A5A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFCDCEBA" Offset="0.06"/>
+				<GradientStop Color="#FF989989" Offset="1"/>
+				<GradientStop Color="#FFE6E7D0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="22" OrderId="22" Stroke="#FF937A73">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFBE3DC" Offset="0.06"/>
+				<GradientStop Color="#FFC8B4AE" Offset="1"/>
+				<GradientStop Color="#FFFFF7F3"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="23" OrderId="23" Stroke="#FF744945">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE5B5AF" Offset="0.06"/>
+				<GradientStop Color="#FFB17C76" Offset="1"/>
+				<GradientStop Color="#FFF7CEC9"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="24" OrderId="24" Stroke="#FF4B3328">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC08E79" Offset="0.06"/>
+				<GradientStop Color="#FF876252" Offset="1"/>
+				<GradientStop Color="#FFE2BAA9"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="25" OrderId="25" Stroke="#FF372000">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFD29A56" Offset="0.06"/>
+				<GradientStop Color="#FF8D603A" Offset="1"/>
+				<GradientStop Color="#FFE7B771" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="26" OrderId="26" Stroke="#FF111F25">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF4C7487" Offset="0.06"/>
+				<GradientStop Color="#FF2D4A58" Offset="1"/>
+				<GradientStop Color="#FF5BA19F" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="27" OrderId="27" Stroke="#FF2C3D45">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF7696A3" Offset="0.06"/>
+				<GradientStop Color="#FF49636E" Offset="1"/>
+				<GradientStop Color="#FF90B8C8"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="28" OrderId="28" Stroke="#FF4E7070">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFAFD5D6" Offset="0.06"/>
+				<GradientStop Color="#FF97B2B2" Offset="1"/>
+				<GradientStop Color="#FFC8EEEF"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="29" OrderId="29" Stroke="#FFBA4A18">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFFFAE7F"/>
+				<GradientStop Color="#FFFD5912" Offset="1"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="30" OrderId="30" Stroke="#FFB12705">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFEC3F15" Offset="1"/>
+				<GradientStop Color="#FFFF9C9C"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="31" OrderId="31" Stroke="#FF9B1B1C">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFCC1717" Offset="1"/>
+				<GradientStop Color="#FFFF7CB2" Offset="0.003"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="32" OrderId="32" Stroke="#FF18060C">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF62273B" Offset="0.997"/>
+				<GradientStop Color="#FFA15694"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="33" OrderId="33" Stroke="#FF605097">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF7E6ABF" Offset="1"/>
+				<GradientStop Color="#FFC4D7FB"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="34" OrderId="34" Stroke="#FF1A153F">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF51489B" Offset="1"/>
+				<GradientStop Color="#FF8B8BCE"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="35" OrderId="35" Stroke="#FF464950">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF666A74" Offset="1"/>
+				<GradientStop Color="#FFCED5E4"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="36" OrderId="36" Stroke="#FFB89838">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFFFD96A" Offset="1"/>
+				<GradientStop Color="#FFFFF4E3"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="37" OrderId="37" Stroke="#FF8B661C">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFBD9442" Offset="1"/>
+				<GradientStop Color="#FFF7E0BD"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="38" OrderId="38" Stroke="#FF705526">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF8F6F39" Offset="1"/>
+				<GradientStop Color="#FFE7C884"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="39" OrderId="39" Stroke="#FF3F301F">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF604D37" Offset="1"/>
+				<GradientStop Color="#FFBC9F7E"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="40" OrderId="40" Stroke="#FF856A4C">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFCE985B" Offset="1"/>
+				<GradientStop Color="#FFFFEDD9"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="41" OrderId="41" Stroke="#FF7F9374">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFADC2A3" Offset="1"/>
+				<GradientStop Color="#FFF8FFF7"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="42" OrderId="42" Stroke="#FFA19F4A">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFCBC974" Offset="1"/>
+				<GradientStop Color="#FFFDFFEB"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="43" OrderId="43" Stroke="#FFB88C0D">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFEE75" Offset="0.06"/>
+				<GradientStop Color="#FFF5BE2D" Offset="1"/>
+				<GradientStop Color="#FFFFFED9"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="44" OrderId="44" Stroke="#FFA35D00">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFCD60" Offset="0.06"/>
+				<GradientStop Color="#FFE59B18" Offset="1"/>
+				<GradientStop Color="#FFFFE6AE"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="45" OrderId="45" Stroke="#FF467600">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFD6E268" Offset="0.06"/>
+				<GradientStop Color="#FF80C015" Offset="1"/>
+				<GradientStop Color="#FFE6EF8A"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="46" OrderId="46" Stroke="#FF016215">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF64CE35" Offset="0.06"/>
+				<GradientStop Color="#FF1D9740" Offset="1"/>
+				<GradientStop Color="#FF89E96F"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="47" OrderId="47" Stroke="#FF00817F">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF7FEBDA" Offset="0.06"/>
+				<GradientStop Color="#FF0DAFAC" Offset="1"/>
+				<GradientStop Color="#FF9FFFE7"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="48" OrderId="48" Stroke="#FF006FA3">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF64E1F1" Offset="0.069"/>
+				<GradientStop Color="#FF3CADE2" Offset="1"/>
+				<GradientStop Color="#FFA2F2FB"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="49" OrderId="49" Stroke="#FF173697">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF69BDE9" Offset="0.06"/>
+				<GradientStop Color="#FF4D79C0" Offset="1"/>
+				<GradientStop Color="#FF91D4F5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="50" OrderId="50" Stroke="#FF3E2C4D">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB780C4" Offset="0.06"/>
+				<GradientStop Color="#FF734795" Offset="1"/>
+				<GradientStop Color="#FFCB9CDA"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="51" OrderId="51" Stroke="#FF894A6C">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFF5B6C7" Offset="0.06"/>
+				<GradientStop Color="#FFE07BB1" Offset="1"/>
+				<GradientStop Color="#FFFFD4DA"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="52" OrderId="52" Stroke="#FF760228">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFB6A8B" Offset="0.06"/>
+				<GradientStop Color="#FFE50049" Offset="1"/>
+				<GradientStop Color="#FFFF9BB2"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="53" OrderId="53" Stroke="#FF661300">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE97156" Offset="0.06"/>
+				<GradientStop Color="#FFD43232" Offset="1"/>
+				<GradientStop Color="#FFFF9982"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="54" OrderId="54" Stroke="#FF372000">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFD29A56" Offset="0.06"/>
+				<GradientStop Color="#FF8D603A" Offset="1"/>
+				<GradientStop Color="#FFE7B771" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="55" OrderId="55" Stroke="#FF6E6E6E">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFEFEFEF" Offset="0.06"/>
+				<GradientStop Color="Silver" Offset="1"/>
+				<GradientStop Color="#FFFDFDFD" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="56" OrderId="56" Stroke="#FF353535">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB0B2B2" Offset="0.06"/>
+				<GradientStop Color="#FF76787A" Offset="1"/>
+				<GradientStop Color="#FFD2D2D2"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="57" OrderId="57" Stroke="#FFC0B76E">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFE9E6BB" Offset="1"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="58" OrderId="58" Stroke="#FFBEA46B">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFE4CD9D" Offset="1"/>
+				<GradientStop Color="#FFFFFDF2"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="59" OrderId="59" Stroke="#FFA3B280">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFCAD6B0" Offset="1"/>
+				<GradientStop Color="#FFFEFFF7" Offset="0.003"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="60" OrderId="60" Stroke="#FF7AAD79">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFABC6AA" Offset="0.997"/>
+				<GradientStop Color="#FFF2FFF2"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="61" OrderId="61" Stroke="#FF73A7A1">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FF99CCC6" Offset="1"/>
+				<GradientStop Color="#FFF2FFFE"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="62" OrderId="62" Stroke="#FF6EA3B1">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFA1CFDA" Offset="1"/>
+				<GradientStop Color="#FFEDFDFF"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="63" OrderId="63" Stroke="#FF7A91B1">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFAEC1DA" Offset="1"/>
+				<GradientStop Color="#FFF5F9FF" Offset="0.003"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="64" OrderId="64" Stroke="#FF9784A3">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFCFC7D4" Offset="1"/>
+				<GradientStop Color="#FFFDF7FF"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="65" OrderId="65" Stroke="#FFAD8896">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFDEC5CF" Offset="1"/>
+				<GradientStop Color="#FFFDFDFD"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="66" OrderId="66" Stroke="#FFB67575">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFEBB9B9" Offset="1"/>
+				<GradientStop Color="#FFFFF6F3"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="67" OrderId="67" Stroke="#FFB67C62">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFE2B49F" Offset="1"/>
+				<GradientStop Color="#FFFFF7F1"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="68" OrderId="68" Stroke="#FF977A5A">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFD2C2B1" Offset="1"/>
+				<GradientStop Color="#FFFFFCF8"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="69" OrderId="69" Stroke="#FF919191">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFD8D8D8" Offset="1"/>
+				<GradientStop Color="White"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="70" OrderId="70" Stroke="#FF626262">
+		<local:ColorStyle.Fill>
+			<RadialGradientBrush RadiusY="1.062" RadiusX="1.712" Center="0.323,-0.003" GradientOrigin="0.323,-0.003">
+				<GradientStop Color="#FFAFAFAF" Offset="1"/>
+				<GradientStop Color="#FFF3F3F3"/>
+			</RadialGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="71" OrderId="71" Stroke="#FFAD7E00">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFF617" Offset="1"/>
+				<GradientStop Color="#FFFFFED5"/>
+				<GradientStop Color="#FFF5BB22" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="72" OrderId="72" Stroke="#FFB84600">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFB356" Offset="1"/>
+				<GradientStop Color="#FFFFDEDE"/>
+				<GradientStop Color="#FFFF5D00" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="73" OrderId="73" Stroke="#FF318500">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF4CCA07" Offset="0.5"/>
+				<GradientStop Color="#FFC6FF41" Offset="1"/>
+				<GradientStop Color="#FFC1FFB8"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="74" OrderId="74" Stroke="#FF007A1F">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF4DD802" Offset="1"/>
+				<GradientStop Color="#FF64FFA6"/>
+				<GradientStop Color="#FF059B2A" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="75" OrderId="75" Stroke="#FF007E6F">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF3EF9C1" Offset="1"/>
+				<GradientStop Color="#FF57FFEC" Offset="0.009"/>
+				<GradientStop Color="#FF00AF9B" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="76" OrderId="76" Stroke="#FF006897">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF59ECFF" Offset="1"/>
+				<GradientStop Color="#FFBCE5FF"/>
+				<GradientStop Color="#FF10AAF1" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="77" OrderId="77" Stroke="#FF4C4C7A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF7BC6FF" Offset="1"/>
+				<GradientStop Color="#FFFFFDC6"/>
+				<GradientStop Color="#FF4B89D4" Offset="0.5"/>
+				<GradientStop Color="#FFEAF3FB" Offset="0"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="78" OrderId="78" Stroke="#FF4C4C7A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC7C7F1" Offset="1"/>
+				<GradientStop Color="#FFFCFCFF"/>
+				<GradientStop Color="#FF8D8DBA" Offset="0.504"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="79" OrderId="79" Stroke="#FFA71551">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFFB3C8" Offset="1"/>
+				<GradientStop Color="#FFFFCFE7"/>
+				<GradientStop Color="#FFFF59CC" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="80" OrderId="80" Stroke="#FF8D0C88">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFD8DD5" Offset="1"/>
+				<GradientStop Color="#FFF6C0FF"/>
+				<GradientStop Color="#FFF717EE" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="81" OrderId="81" Stroke="#FF990500">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFFF6846" Offset="1"/>
+				<GradientStop Color="#FFFFB1B8"/>
+				<GradientStop Color="#FFD60A05" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="82" OrderId="82" Stroke="#FF311200">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC2660A" Offset="1"/>
+				<GradientStop Color="#FFD4B1A7"/>
+				<GradientStop Color="#FF8D3908" Offset="0.496"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="83" OrderId="83" Stroke="#FF777792">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE1E1EA" Offset="1"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFB1B7CB" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="84" OrderId="84" Stroke="#FF272727">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF939393" Offset="1"/>
+				<GradientStop Color="#FFD0D5D8"/>
+				<GradientStop Color="#FF6B6E70" Offset="0.5"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="85" OrderId="85" Stroke="#FF978822">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFD4C243" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFEFE17B" Offset="0.5"/>
+				<GradientStop Color="#FFF1E79D" Offset="0.491"/>
+				<GradientStop Color="#FFEFE183" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="86" OrderId="86" Stroke="#FFA96F2A">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFE09B4B" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFFFCD9B" Offset="0.49"/>
+				<GradientStop Color="#FFFFC178" Offset="0.5"/>
+				<GradientStop Color="#FFFFC56F" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="87" OrderId="87" Stroke="#FF5B8F52">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC6F5BF" Offset="0.49"/>
+				<GradientStop Color="#FF7BBA71" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFB2E9AA" Offset="0.5"/>
+				<GradientStop Color="#FFA2DB9A" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="88" OrderId="88" Stroke="#FF458F4C">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF479D50" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFA3F1AB" Offset="0.49"/>
+				<GradientStop Color="#FF83E58D" Offset="0.5"/>
+				<GradientStop Color="#FF5DB766" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="89" OrderId="89" Stroke="#FF4E9997">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF4CBA99" Offset="0.92"/>
+				<GradientStop Color="White" Offset="0.009"/>
+				<GradientStop Color="#FFAEFFF6" Offset="0.49"/>
+				<GradientStop Color="#FF6FFFD3" Offset="0.5"/>
+				<GradientStop Color="#FF59D3AE" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="90" OrderId="90" Stroke="#FF4F84A5">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF94C3D6" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFC2EDFF" Offset="0.491"/>
+				<GradientStop Color="#FFACE4FB" Offset="0.5"/>
+				<GradientStop Color="#FFACDBED" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="91" OrderId="91" Stroke="#FF365F7E">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF538EBA" Offset="0.92"/>
+				<GradientStop Color="#FFFFFDC6"/>
+				<GradientStop Color="#FFAAD5F5" Offset="0.49"/>
+				<GradientStop Color="White" Offset="0"/>
+				<GradientStop Color="#FF97C7EB" Offset="0.5"/>
+				<GradientStop Color="#FF7DB1D8" Offset="0.996"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+
+
+	<local:ColorStyle x:Key="92" OrderId="92" Stroke="#FF5E4C7C">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFB38EED" Offset="1"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFD1B3FF" Offset="0.49"/>
+				<GradientStop Color="#FFC0A6E7" Offset="0.5"/>
+				<GradientStop Color="#FF927AB8" Offset="0.92"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="93" OrderId="93" Stroke="#FF937182">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFD897B7" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFF9C2DD" Offset="0.5"/>
+				<GradientStop Color="#FFFFCFE7" Offset="0.49"/>
+				<GradientStop Color="#FFF0B7D3" Offset="0.996"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="94" OrderId="94" Stroke="#FF86568D">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC771D6" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFF6C0FF" Offset="0.49"/>
+				<GradientStop Color="#FFEFB1F9" Offset="0.5"/>
+				<GradientStop Color="#FFE39FEE" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="95" OrderId="95" Stroke="#FF995050">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFDE7F7F" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFFFB1B8" Offset="0.49"/>
+				<GradientStop Color="#FFF7A9A9" Offset="0.5"/>
+				<GradientStop Color="#FFF7A9A9" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="96" OrderId="96" Stroke="#FF624A45">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF8F6E66" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFD4B1A7" Offset="0.49"/>
+				<GradientStop Color="#FFC8A59C" Offset="0.5"/>
+				<GradientStop Color="#FFB39189" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="97" OrderId="97" Stroke="#FF6C6C6C">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFC4C4C4" Offset="0.92"/>
+				<GradientStop Color="White"/>
+				<GradientStop Color="#FFE2E0E0" Offset="0.5"/>
+				<GradientStop Color="#FFF1F1F1" Offset="0.49"/>
+				<GradientStop Color="#FFE5E5E5" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+
+	<local:ColorStyle x:Key="98" OrderId="98" Stroke="#FF393939">
+		<local:ColorStyle.Fill>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF4D4D4D" Offset="0.92"/>
+				<GradientStop Color="#FFF3F3F3"/>
+				<GradientStop Color="#FF787878" Offset="0.5"/>
+				<GradientStop Color="#FF838687" Offset="0.49"/>
+				<GradientStop Color="#FF777777" Offset="1"/>
+			</LinearGradientBrush>
+		</local:ColorStyle.Fill>
+	</local:ColorStyle>
+	
+</ResourceDictionary>

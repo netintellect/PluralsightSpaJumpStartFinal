@@ -1,0 +1,2 @@
+﻿This example demonstrates ValueBrushColorizer with absolute values. It is configured with 5 brushes, each corresponding to a certain range of values in the underlying data.
+The example shows how to visualize two values in a single treemap. The area of the rectangles show the overall market capitalization and the color denotes the range according to the ValueBrushColorizer definition.

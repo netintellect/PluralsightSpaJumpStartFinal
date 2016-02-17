@@ -1,0 +1,1 @@
+﻿You can easily load data on demand, only when rows are about to be expanded. This is ideal when the RadTreeListView is backed by a webservice, database or another computationally expensive data source.

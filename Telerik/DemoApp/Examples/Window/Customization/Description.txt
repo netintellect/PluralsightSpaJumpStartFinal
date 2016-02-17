@@ -1,0 +1,1 @@
+﻿Telerik Window is a completely stylable control. This example shows how you can alter the window by changing different properties, like <b>Background</b>, <b>Foreground</b>, <b>BorderThickness</b>, <b>BorderBackground</b>, <b>BorderBrush</b>.

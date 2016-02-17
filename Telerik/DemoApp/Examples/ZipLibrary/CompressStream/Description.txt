@@ -1,0 +1,1 @@
+﻿With the ZipLibrary you can easily compress and decompress your streams using the preferred compression level.

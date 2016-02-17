@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Telerik.Windows.QuickStart.NonHighlightedControls"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+        x:Name="rootNonHighlightedControls"
+		mc:Ignorable="d" 
+		d:DesignHeight="300" d:DesignWidth="300">
+
+	<UserControl.Resources>
+		<DataTemplate x:Key="VerticalSeparatorTemplate">
+			<Rectangle HorizontalAlignment="Left" Width="16" StrokeThickness="0">
+				<Rectangle.OpacityMask>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="White" Offset="0.5"/>
+						<GradientStop/>
+						<GradientStop Offset="1"/>
+					</LinearGradientBrush>
+				</Rectangle.OpacityMask>
+				<Rectangle.Fill>
+					<LinearGradientBrush EndPoint="0.5,0.5" StartPoint="0,0.5">
+						<GradientStop Color="#3F000000"/>
+						<GradientStop Offset="1"/>
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+			</Rectangle>
+		</DataTemplate>
+
+		<Style x:Key="HighlightedExampleLargeButton" TargetType="Button">
+			<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="Cursor" Value="Hand" />
+			<Setter Property="Margin" Value="0" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid Background="Transparent">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition MinWidth="4" MaxWidth="15" Width="*" />
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="130" />
+								<ColumnDefinition Width="2*" />
+							</Grid.ColumnDefinitions>
+							
+                            <ContentPresenter x:Name="SmallImage" Content="{Binding}" Grid.Column="1" VerticalAlignment="Center" Width="26" Height="26" ContentTemplateSelector="{StaticResource Image16x16TemplateSelector}" />
+							<TextBlock x:Name="SmallName" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Text}" Style="{StaticResource LabelLarge}" VerticalAlignment="Center" FontSize="{TemplateBinding FontSize}" Margin="1 0 0 0"/>
+							
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Foreground" Value="{StaticResource Text.MouseOver}" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<DataTemplate x:Key="ExampleTemplate">
+            <Button VerticalAlignment="Top" Command="{Binding Tag.NavigateCommand, ElementName=rootNonHighlightedControls}" CommandParameter="{Binding}" Style="{StaticResource HighlightedExampleLargeButton}" />
+		</DataTemplate>
+		
+	</UserControl.Resources>
+
+	<Grid>
+
+		<Grid Grid.Row="2" Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<ContentPresenter Grid.Column="0" HorizontalAlignment="Left" ContentTemplate="{StaticResource VerticalSeparatorTemplate}" />
+			<ContentPresenter Grid.Column="1" HorizontalAlignment="Left" ContentTemplate="{StaticResource VerticalSeparatorTemplate}" />
+			<ContentPresenter Grid.Column="2" HorizontalAlignment="Left" ContentTemplate="{StaticResource VerticalSeparatorTemplate}" />
+			<ContentPresenter Grid.Column="3" HorizontalAlignment="Left" ContentTemplate="{StaticResource VerticalSeparatorTemplate}" />
+		</Grid>
+
+		<ItemsControl x:Name="ControlsList" Grid.Row="2" ItemsSource="{Binding}" IsTabStop="False" ItemTemplate="{StaticResource ExampleTemplate}">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<telerik:RadUniformGrid ChildrenFlow="Vertical" Columns="4" VerticalAlignment="Top" />
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+		</ItemsControl>
+		
+	</Grid>
+	
+</UserControl>

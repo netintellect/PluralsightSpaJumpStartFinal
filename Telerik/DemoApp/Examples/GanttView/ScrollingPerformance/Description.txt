@@ -1,0 +1,1 @@
+﻿This example demonstrates the outstanding scrolling, collapsing and expanding performance of RadGanttView.

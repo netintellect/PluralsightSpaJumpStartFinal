@@ -1,0 +1,1 @@
+﻿This example shows Chart with two Line, Spline, Area or Spline Area series. Select a series type from the ComboBox to visualize it. Choose an item from the second ComboBox to see our mechanism for combining datapoints that reside in different series but have the same category in action.

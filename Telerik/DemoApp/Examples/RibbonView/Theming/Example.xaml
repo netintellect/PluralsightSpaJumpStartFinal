@@ -1,0 +1,7 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.RibbonView.Theming.Example"
+        xmlns:firstLook="clr-namespace:Telerik.Windows.Examples.RibbonView.FirstLook"
+        x:Name="UserControl">
+	<firstLook:Example />
+</UserControl>

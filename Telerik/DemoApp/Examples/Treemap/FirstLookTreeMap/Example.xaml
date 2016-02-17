@@ -1,0 +1,113 @@
+<UserControl x:Class="Telerik.Windows.Examples.Treemap.FirstLookTreeMap.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:example="clr-namespace:Telerik.Windows.Examples.Treemap.FirstLookTreeMap">
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate x:Key="tooltTipTemplate">
+            <Grid>
+                <Rectangle Margin="0,1,0,2" RadiusX="4" RadiusY="4" Fill="#F5F5F5" Stroke="#D5D5D5"/>
+                <Path Data="M0.5,61.171852 C0.5,63.38118 2.2908952,65.172203 4.5000739,65.172203 C4.5000739,65.172203 4.5000739,68.172127 4.5000739,68.172127 C2.2908952,68.172127 0.5,66.381119 0.5,64.171799 C0.5,64.171799 0.5,62.393719 0.5,61.282417 z"
+                      Fill="#CCCCCC" HorizontalAlignment="Left" Height="7.584" Margin="0,0,0,-0.07" Stretch="Fill" VerticalAlignment="Bottom" Width="4.016"/>
+                <Path Data="M0.5,61.171852 C0.5,63.38118 2.2908952,65.172203 4.5000739,65.172203 L170.78708,65.172203 C172.99626,65.172203 174.78716,63.38118 174.78716,61.171852 L174.78716,64.171799 C174.78716,66.381119 172.99626,68.172127 170.78708,68.172127 L4.5000739,68.172127 C2.2908952,68.172127 0.5,66.381119 0.5,64.171799 C0.5,64.171799 0.5,62.393719 0.5,61.282417 z"
+                      Fill="#CCCCCC" Height="7.584" Stretch="Fill" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <ScaleTransform ScaleY="-1"/>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Data="M158.83592,65.172203 C161.0451,65.172203 162.836,63.38118 162.836,61.171852 L162.836,64.171799 C162.836,66.381119 161.0451,68.172127 158.83592,68.172127 C158.83592,68.172127 158.83592,65.172203 158.83592,65.172203 z"
+                      Fill="#CCCCCC" HorizontalAlignment="Right" Height="7.584" Margin="0,0,0,-0.074" Stretch="Fill" VerticalAlignment="Bottom" Width="4.016"/>
+                <StackPanel Margin="6, 3" Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                            <Setter Property="FontSize" Value="11" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Setter Property="FontFamily" Value="Segoe UI" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Product: " />
+                        <TextBlock FontWeight="Bold" Text="{Binding ProductName}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Unit Price: " />
+                        <TextBlock FontWeight="Bold" Text="{Binding UnitPrice, StringFormat='{}{0:C0}'}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Units Sold: " />
+                        <TextBlock FontWeight="Bold" Text="{Binding UnitsInStock}" />
+                    </StackPanel>
+                </StackPanel>
+                <Path Data="M0,0 L167.5,0 L167.5,3 L0,3 z" Fill="#CCCCCC" Height="3.2" Margin="4,0,3.5,-0.069" Stretch="Fill" VerticalAlignment="Bottom" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Product Sales for 2010" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot">
+        <telerik:RadTreeMap ItemsSource="{Binding Data}" 
+                            Background="#57391A" 
+                            BorderThickness="0"
+                            LayoutStrategy="Squarified" 
+                            Padding="1">
+            <telerik:RadTreeMap.TypeDefinitions>
+                <telerik:TreeMapTypeDefinition TargetTypeName="Category"
+                                        ValuePath="CategoryValue"
+                                        ChildrenPath="Products"
+                                        LayoutStrategy="Squarified"
+                                        LabelPath="CategoryName">
+                    <telerik:TreeMapTypeDefinition.Mappings>
+                        <telerik:BrushColorizer Brush="#EFDFCF" />
+                        <telerik:BrushColorizer Brush="#EFDFCF" TargetPropertyName="BorderBrush" />
+                        <telerik:PaletteColorizer TargetPropertyName="ChildrenBackgroundBrush">
+                            <SolidColorBrush Color="#EB9A3A" />
+                            <SolidColorBrush Color="#854E29" />
+                            <SolidColorBrush Color="#CC9966" />
+                            <SolidColorBrush Color="#D2412C" />
+                            <SolidColorBrush Color="#8BA041" />
+                            <SolidColorBrush Color="#F0B32D" />
+                            <SolidColorBrush Color="#CC6633" />
+                            <SolidColorBrush Color="#ADB827" />
+                            <SolidColorBrush Color="#897341" />
+                            <SolidColorBrush Color="#C14611" />
+                        </telerik:PaletteColorizer>
+                        <telerik:PaletteColorizer TargetPropertyName="ChildrenBorderBrush">
+                            <SolidColorBrush Color="#D17C14" />
+                            <SolidColorBrush Color="#532F1A" />
+                            <SolidColorBrush Color="#B87A3D" />
+                            <SolidColorBrush Color="#9B3020" />
+                            <SolidColorBrush Color="#6D7E34" />
+                            <SolidColorBrush Color="#E29E10" />
+                            <SolidColorBrush Color="#A35129" />
+                            <SolidColorBrush Color="#8B941F" />
+                            <SolidColorBrush Color="#705E34" />
+                            <SolidColorBrush Color="#A43C0F" />
+                        </telerik:PaletteColorizer>
+                    </telerik:TreeMapTypeDefinition.Mappings>
+                </telerik:TreeMapTypeDefinition>
+                <telerik:TreeMapTypeDefinition TargetTypeName="Product"
+                                        ValuePath="ValueInStock"
+                                        LabelPath="ValueInStock"
+                                        LabelFormat="{}{0:C0}"
+                                        ToolTipTemplate="{StaticResource tooltTipTemplate}">
+                    <telerik:TreeMapTypeDefinition.ItemStyle>
+                        <Style TargetType="telerik:RadTreeMapItem" BasedOn="{StaticResource RadTreeMapItemStyle}">
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="HeaderEffect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="4" ShadowDepth="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </telerik:TreeMapTypeDefinition.ItemStyle>
+                </telerik:TreeMapTypeDefinition>
+            </telerik:RadTreeMap.TypeDefinitions>
+        </telerik:RadTreeMap>
+    </Grid>
+</UserControl>

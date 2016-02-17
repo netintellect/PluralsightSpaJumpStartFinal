@@ -1,0 +1,1 @@
+﻿Stanadard 2 of 5 is a low-density numeric symbology. Interleaved 2 of 5 is a higher-density numeric symbology based upon the Standard 2 of 5 symbology. 

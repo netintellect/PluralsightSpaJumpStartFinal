@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PivotGrid.OlapKpis.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:pivot="http://schemas.telerik.com/2008/xaml/presentation/pivot"
+        xmlns:data="clr-namespace:Telerik.Windows.Examples.PivotGrid.SampleData"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:example="clr-namespace:Telerik.Windows.Examples.PivotGrid.Layouts"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="700" d:DesignHeight="400">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Margin="8" Text="KPIs" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <pivot:XmlaDataProvider x:Key="DataProvider" AggregatesPosition="Rows">
+            
+            <pivot:XmlaDataProvider.ConnectionSettings>
+                <pivot:XmlaConnectionSettings 
+                    Cube="Adventure Works" 
+                    Database="Adventure Works DW 2008R2" 
+                    ServerAddress="http://demos.telerik.com/olap/msmdpump.dll"/>
+            </pivot:XmlaDataProvider.ConnectionSettings>    
+            
+            <pivot:XmlaDataProvider.RowGroupDescriptions>
+                <pivot:XmlaGroupDescription MemberName="[Product].[Category]"/>
+            </pivot:XmlaDataProvider.RowGroupDescriptions>
+
+            <pivot:XmlaDataProvider.ColumnGroupDescriptions>
+                <pivot:XmlaGroupDescription MemberName="[Date].[Fiscal Year]"/>
+            </pivot:XmlaDataProvider.ColumnGroupDescriptions>
+            
+            <pivot:XmlaDataProvider.AggregateDescriptions>
+                <pivot:XmlaAggregateDescription MemberName="[Measures].[Internet Sales Amount]"/>
+                <pivot:XmlaAggregateDescription MemberName="[Measures].[Internet Revenue Goal]"/>
+                <pivot:XmlaAggregateDescription MemberName="[Measures].[Internet Revenue Status]"/>
+                <pivot:XmlaAggregateDescription MemberName="[Measures].[Internet Revenue Trend]"/>
+            </pivot:XmlaDataProvider.AggregateDescriptions>
+
+        </pivot:XmlaDataProvider>
+    </UserControl.Resources>
+
+    <Grid>
+        <pivot:RadPivotGrid x:Name="Pivot" DataProvider="{StaticResource DataProvider}" />
+    </Grid>
+
+</UserControl>

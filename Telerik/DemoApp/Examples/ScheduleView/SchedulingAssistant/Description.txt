@@ -1,0 +1,3 @@
+﻿The brand new features of the ScheduleView DragDropBehavior make it pretty simple to implement a custom logic when dropping on existing Appointment. 
+Now it is also possible to get the original resource from which the dragging operation has started in the case when the Appointment has multiple resources assigned.
+</br></br>This example demonstrates those features of the ScheduleView DragDropBehavior in a real life scenario – Scheduling Assistant. 

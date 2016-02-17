@@ -1,0 +1,2 @@
+﻿<p>RadPivotGrid can group data using multithreading so your end-users may benefit a performance boost on large data using all their processor.</p>
+<p>Even on a single core unit the multithread support would leave the UI thread intact. As a result they will still be able to 'click around' while the heavy computations are done in the background.</p>

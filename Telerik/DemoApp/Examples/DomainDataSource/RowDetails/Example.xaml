@@ -1,0 +1,84 @@
+<Examples:DomainDataSourceExample x:Class="Telerik.Windows.Examples.DomainDataSource.RowDetails.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  xmlns:e="clr-namespace:Examples.Web">
+	<Grid Name="mainGrid">
+		<Grid.Resources>
+			<telerik:RadDomainDataSource x:Key="customersDataSource"
+										 AutoLoad="True"
+										 QueryName="GetCustomers">
+				<telerik:RadDomainDataSource.DomainContext>
+					<e:NorthwindDomainContext />
+				</telerik:RadDomainDataSource.DomainContext>
+			</telerik:RadDomainDataSource>
+			<telerik:RadDomainDataSource x:Key="detailOrdersDataSource"
+										 QueryName="GetOrdersByCustomerID"
+										 AutoLoad="True">
+				<telerik:RadDomainDataSource.DomainContext>
+					<e:NorthwindDomainContext />
+				</telerik:RadDomainDataSource.DomainContext>
+				<telerik:RadDomainDataSource.QueryParameters>
+					<telerik:QueryParameter ParameterName="customerID"
+											Value="{Binding SelectedItem.CustomerID, ElementName=masterGridView}" />
+				</telerik:RadDomainDataSource.QueryParameters>
+			</telerik:RadDomainDataSource>
+		</Grid.Resources>
+		<telerik:RadGridView x:Name="masterGridView"
+							 Grid.Row="0"
+							 ItemsSource="{Binding DataView, Source={StaticResource customersDataSource}}"
+							 IsBusy="{Binding IsBusy, Source={StaticResource customersDataSource}}"
+							 ShowGroupPanel="False"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 IsFilteringAllowed="False"
+							 CanUserSortColumns="False"
+							 AutoGenerateColumns="False"
+							 RowDetailsVisibilityMode="VisibleWhenSelected"
+							 IsReadOnly="True">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Country}"
+											Header="Country" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding City}"
+											Header="City" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding ContactName}"
+											Header="Contact" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding ContactTitle}"
+											Header="Title" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding CompanyName}"
+											Header="Company" />
+			</telerik:RadGridView.Columns>
+			<telerik:RadGridView.RowDetailsTemplate>
+				<DataTemplate>
+					<telerik:RadGridView Margin="5"
+										 ItemsSource="{Binding DataView, Source={StaticResource detailOrdersDataSource}}"
+										 IsBusy="{Binding IsBusy, Source={StaticResource detailOrdersDataSource}}"
+										 AutoGenerateColumns="False"
+										 ShowGroupPanel="False"
+										 CanUserFreezeColumns="False"
+										 RowIndicatorVisibility="Collapsed"
+										 IsFilteringAllowed="False"
+										 CanUserSortColumns="False"
+										 IsReadOnly="True">
+						<telerik:RadGridView.Columns>
+							<telerik:GridViewDataColumn Header="Order ID"
+														DataMemberBinding="{Binding OrderID}" />
+							<telerik:GridViewDataColumn Header="Ship Country"
+														DataMemberBinding="{Binding ShipCountry}" />
+							<telerik:GridViewDataColumn Header="Ship City"
+														DataMemberBinding="{Binding ShipCity}" />
+							<telerik:GridViewDataColumn Header="Ship Address"
+														DataMemberBinding="{Binding ShipAddress}" />
+							<telerik:GridViewDataColumn Header="Order Date"
+														DataMemberBinding="{Binding OrderDate}" />
+							<telerik:GridViewDataColumn Header="Freight"
+														DataMemberBinding="{Binding Freight}" />
+						</telerik:RadGridView.Columns>
+					</telerik:RadGridView>
+				</DataTemplate>
+			</telerik:RadGridView.RowDetailsTemplate>
+		</telerik:RadGridView>
+	</Grid>
+</Examples:DomainDataSourceExample>

@@ -1,0 +1,3 @@
+﻿Drill-down into different levels of items with the new RadRadialMenu control. This circular menu comes with support for selection, a variety of commands and more than 15 predefined themes.
+<p>This example also shows integration between RadImageEditor and RadRadialMenu.</p>
+<p>This example demonstrates also how to create and use custom navigation command to drill-down to subitems via clicking on the menu item, not only via the navigation button.</p>

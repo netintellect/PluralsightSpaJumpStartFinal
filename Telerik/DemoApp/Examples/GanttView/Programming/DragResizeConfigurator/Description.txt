@@ -1,0 +1,3 @@
+﻿This example demonstrates how to customize drag and resize functionality of GanttView using <b>ResizeBehavior</b> and <b>DragDropBehavior</b> properties of the control.
+The example renders a special slot for the past. When allow modifications in the past is unchecked, you are not able to perform any modifications that are affecting the past.
+The example also demonstrates how to implement snapping logic using the drag and resize behaviors. Snapping is activated by default.

@@ -1,0 +1,201 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<SolidColorBrush Color="#bababa" x:Key="background_block" />
+	<Style TargetType="TextBlock" x:Key="calandar_data">
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="Foreground" Value="#ffffff" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 2" />
+	</Style>
+
+	<Style TargetType="TextBlock" x:Key="time">
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="Foreground" Value="#ffffff" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 5" />
+		<Setter Property="FontWeight" Value="Bold" />
+	</Style>
+
+	<Style TargetType="TextBlock" x:Key="title_c">
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="Foreground" Value="#333333" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+	</Style>
+
+	<Style TargetType="TextBlock" x:Key="Name_Style">
+		<Setter Property="FontSize" Value="17" />
+		<Setter Property="Foreground" Value="#986827" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 7" />
+	</Style>
+	<Style TargetType="TextBlock" x:Key="SubTitle_Style">
+		<Setter Property="FontSize" Value="10" />
+		<Setter Property="Foreground" Value="#333333" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="0 0 0 7" />
+		<Setter Property="FontWeight" Value="Bold" />
+	</Style>
+	<Style TargetType="TextBlock" x:Key="Info_TextBlockStyle">
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="Foreground" Value="#333333" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="5 2 0 5" />
+	</Style>
+	<DataTemplate x:Key="BusinessCardTemplate">
+		<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Image Source="{Binding LargeImage}" Stretch="None" />
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="itemTemplate">
+		<Image Width="70" Height="70" Source="{Binding SmallImage}" />
+	</DataTemplate>
+	<DataTemplate x:Key="borderedItemTemplate">
+		<Border BorderBrush="Gray" BorderThickness="1">
+			<Image Width="70" Height="70" Source="{Binding SmallImage}" />
+		</Border>
+	</DataTemplate>
+	<Style x:Key="ListBoxStyle" TargetType="ListBox">
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBox">
+					<ScrollViewer BorderThickness="0" HorizontalScrollBarVisibility="Auto"
+							VerticalScrollBarVisibility="Hidden">
+						<ItemsPresenter />
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemContainerStyle">
+			<Setter.Value>
+				<Style TargetType="ListBoxItem">
+					<Setter Property="Margin" Value="4 10 3 10" />
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="ListBoxItem">
+								<Border x:Name="Border" BorderBrush="#FFD8D6D6" BorderThickness="1">
+									<ContentPresenter Content="{TemplateBinding Content}"
+											ContentTemplate="{TemplateBinding ContentTemplate}" />
+								</Border>
+								<ControlTemplate.Triggers>
+									<Trigger Property="IsSelected" Value="True">
+										<Setter TargetName="Border" Property="BorderBrush" Value="#FF7FCBE5" />
+									</Trigger>
+								</ControlTemplate.Triggers>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemTemplate" Value="{StaticResource itemTemplate}" />
+	</Style>
+	<Style x:Key="wrapListBoxStyle" TargetType="ListBox">
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<telerik:RadWrapPanel />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ListBox">
+					<ItemsPresenter />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemContainerStyle">
+			<Setter.Value>
+				<Style TargetType="ListBoxItem">
+					<Setter Property="Margin" Value="8" />
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="ListBoxItem">
+								<Border x:Name="Border" BorderBrush="#FFD8D6D6" BorderThickness="1">
+									<ContentPresenter Content="{TemplateBinding Content}"
+											ContentTemplate="{TemplateBinding ContentTemplate}" />
+								</Border>
+								<ControlTemplate.Triggers>
+									<Trigger Property="IsSelected" Value="True">
+										<Setter TargetName="Border" Property="BorderBrush" Value="#FF7FCBE5" />
+									</Trigger>
+								</ControlTemplate.Triggers>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemTemplate" Value="{StaticResource borderedItemTemplate}" />
+	</Style>
+	<Style x:Key="LeftArrowButton" TargetType="telerik:RadButton">
+		<Setter Property="Background" Value="#FF909090" />
+		<Setter Property="Width" Value="32" />
+		<Setter Property="Height" Value="32" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Margin" Value="8" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+					<Grid x:Name="Root">
+						<Ellipse x:Name="Ellipse" Width="32" Height="32" Fill="Transparent" Stroke="#FF909090"
+								StrokeThickness="2" />
+						<Path x:Name="Arrow" Width="16" Height="16" Data="M1,8 L15,8 M8,1 L1,8 8,15" Stroke="#FF909090"
+								StrokeThickness="2.5" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="Ellipse" Property="Opacity" Value="0.5" />
+							<Setter TargetName="Arrow" Property="Opacity" Value="0.5" />
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="False">
+							<Setter TargetName="Ellipse" Property="Stroke" Value="#FFAFAFAF" />
+							<Setter TargetName="Arrow" Property="Stroke" Value="#FFAFAFAF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="RightArrowButton" TargetType="telerik:RadButton">
+		<Setter Property="Background" Value="#FF909090" />
+		<Setter Property="Width" Value="32" />
+		<Setter Property="Height" Value="32" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Margin" Value="8" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+					<Grid x:Name="Root">
+						<Ellipse x:Name="Ellipse" Width="32" Height="32" Fill="Transparent" Stroke="#FF909090"
+								StrokeThickness="2" />
+						<Path x:Name="Arrow" Width="16" Height="16" Data="M1,8 L15,8 M8,1 L15,8 8,15" Stroke="#FF909090"
+								StrokeThickness="2.5" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="Ellipse" Property="Opacity" Value="0.5" />
+							<Setter TargetName="Arrow" Property="Opacity" Value="0.5" />
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="False">
+							<Setter TargetName="Ellipse" Property="Stroke" Value="#FFAFAFAF" />
+							<Setter TargetName="Arrow" Property="Stroke" Value="#FFAFAFAF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

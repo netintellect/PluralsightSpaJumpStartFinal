@@ -1,0 +1,308 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.Hotel.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Hotel Booking Interface" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+        <telerik:ExtendedDataConverter x:Key="ExtendedDataConverter"/>
+
+        <SolidColorBrush x:Key="hotelBase" Color="#464646"/>
+        <SolidColorBrush x:Key="roomsDefault" Color="#393838"/>
+        <SolidColorBrush x:Key="roomsDefaultStroke" Color="#000000"/>
+
+        <SolidColorBrush x:Key="corridorFill" Color="#313131" />
+
+        <SolidColorBrush x:Key="serviceRoomFill" Color="#686868" />
+        <SolidColorBrush x:Key="serviceRoomStroke" Color="Transparent" />
+
+        <ImageBrush x:Key="ladderHorizontal" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/ladderpic.jpg"/>
+        <ImageBrush x:Key="ladderVertical" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/ladderpic2.jpg"/>
+        <ImageBrush x:Key="passengerLifts" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/PassengerLifts.jpg"/>
+        <ImageBrush x:Key="serviceLifts" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/ServiceLifts.jpg"/>
+        <ImageBrush x:Key="vent" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/Vent.jpg"/>
+        <ImageBrush x:Key="vent1" Stretch="Uniform" ImageSource="/Map;component/Hotel/Pictures/Vent1.jpg"/>
+        <ImageBrush x:Key="exampleBackground" Stretch="UniformToFill" ImageSource="/Map;component/Hotel/Pictures/hotel-floorplan.jpg"/>
+
+        <SolidColorBrush x:Key="Free" Color="#393838" />
+        <SolidColorBrush x:Key="FreeStroke" Color="#ffffff" />
+        <SolidColorBrush x:Key="FreeHighlightFill" Color="#1d1d1d" />
+        <SolidColorBrush x:Key="FreeHighlightStroke" Color="#ffffff" />
+
+        <LinearGradientBrush x:Key="Reserved" StartPoint="0,0" EndPoint="3,3" MappingMode="Absolute" SpreadMethod="Repeat">
+            <GradientStop Color="Gray" Offset="0"/>
+            <GradientStop Color="Gray" Offset="0.5"/>
+            <GradientStop Color="Transparent" Offset="0.5"/>
+            <GradientStop Color="Transparent" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ReservedStroke" Color="#ffffff" />
+        <LinearGradientBrush x:Key="ReservedHighlightFill" StartPoint="0,0" EndPoint="3,3" MappingMode="Absolute" SpreadMethod="Repeat">
+            <GradientStop Color="#1d1d1d" Offset="0"/>
+            <GradientStop Color="#1d1d1d" Offset="0.5"/>
+            <GradientStop Color="Transparent" Offset="0.5"/>
+            <GradientStop Color="Transparent" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ReservedHighlightStroke" Color="#ffffff" />
+
+        <SolidColorBrush x:Key="Occupied" Color="#393838" />
+        <SolidColorBrush x:Key="OccupiedStroke" Color="#8851b4" />
+        <SolidColorBrush x:Key="OccupiedHighlightFill" Color="#1d1d1d" />
+        <SolidColorBrush x:Key="OccupiedHighlightStroke" Color="#8851b4" />
+
+        <SolidColorBrush x:Key="roomNumberColor" Color="#ffffff" />
+
+        <Style x:Key="roomNumbers" TargetType="TextBlock">
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="{StaticResource roomNumberColor}"/>
+        </Style>
+
+		<DataTemplate x:Key="roomNumberTemplate">
+			<TextBlock telerik:MapLayer.Location="{Binding Location}"
+					   Text="{Binding Path=ExtendedData.Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter=Name}"
+					   Style="{StaticResource roomNumbers}">
+				<telerik:MapLayer.HotSpot>
+					<telerik:HotSpot X="0.5" Y="0.5" />
+				</telerik:MapLayer.HotSpot>
+			</TextBlock>
+		</DataTemplate>
+		
+		<Style x:Key="roomNumbersSelected" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+
+        <Style x:Key="textStyle" TargetType="TextBlock">
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Arial Black"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <DataTemplate x:Key="TooltipTemplate">
+            <Grid Margin="5,6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                                    Width="42"
+                                    Height="26"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Background="Transparent"
+                                    CornerRadius="7">
+                    <TextBlock Style="{StaticResource roomNumbersSelected}"
+							   x:Name="roomNumberTextBlock" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='Name'}"/>
+                </Border>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Type:" />
+				<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='RoomType'}" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price:" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='Price'}" />
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Status:" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='RoomState'}" />
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Date:" />
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='ResDate'}" />
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Guest:" />
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=Data, Converter={StaticResource ExtendedDataConverter}, ConverterParameter='GuestName'}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource exampleBackground}">
+        <telerik:RadMap x:Name="radMap"
+						Center="0.00566482542974434,-0.00197817993118133"
+						ZoomLevel="13" MinZoomLevel="13" MaxZoomLevel="13"
+						MouseClickMode="SelectItem"
+						UseDefaultLayout="False"
+						UseSpringAnimations="False"
+                        Background="Transparent"
+                        MouseDragMode="None"
+                        MouseDoubleClickMode="None">
+            <telerik:RadMap.Provider>
+                <telerik:EmptyProvider />
+            </telerik:RadMap.Provider>
+			<telerik:VisualizationLayer x:Name="visualizationLayer"
+										ItemTemplate="{StaticResource roomNumberTemplate}"
+										SelectionChanged="RoomSelectionChanged">
+				<telerik:VisualizationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#feee" Stroke="White" StrokeThickness="1" />
+				</telerik:VisualizationLayer.ShapeFill>
+
+				<telerik:VisualizationLayer.Reader>
+					<telerik:AsyncShapeFileReader PreviewReadShapeDataCompleted="OnPreviewReadShapeDataCompleted">
+						<telerik:AsyncReaderSource Source="/Map;component/Hotel/ShapeFiles/Hotel_base.shp" />
+						<telerik:AsyncReaderSource Source="/Map;component/Hotel/ShapeFiles/Hotel_Corridors.shp" />
+						<telerik:AsyncReaderSource Source="/Map;component/Hotel/ShapeFiles/Hotel_ServiceRooms.shp" />
+						<telerik:AsyncReaderSource Source="/Map;component/Hotel/ShapeFiles/Hotel_LiftsAndLadders.shp" />
+						<telerik:AsyncReaderSource Source="/Map;component/Hotel/ShapeFiles/Hotel_Rooms.shp" />
+					</telerik:AsyncShapeFileReader>
+				</telerik:VisualizationLayer.Reader>
+			</telerik:VisualizationLayer>
+        </telerik:RadMap>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+
+            <TextBlock Text="FILTER BY" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,6" />
+
+            <TextBlock Text="Room status" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,3" />
+
+            <CheckBox x:Name="checkBoxFree"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="checkBoxFree_Checked"
+                      Unchecked="checkBoxFree_Unchecked"
+                      IsChecked="True">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="15" Height="15" RadiusX="4" RadiusY="4"
+                           Fill="{StaticResource Free}" Stroke="{StaticResource FreeStroke}" StrokeThickness="2"/>
+                    <TextBlock Text="Free" />
+                </StackPanel>
+            </CheckBox>
+
+            <CheckBox x:Name="checkBoxReserved"
+                      Grid.Column="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="checkBoxReserved_Checked"
+                      Unchecked="checkBoxReserved_Unchecked"
+                      IsChecked="True">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="15" Height="15" RadiusX="4" RadiusY="4"
+                           Fill="{StaticResource Reserved}" Stroke="{StaticResource ReservedStroke}" StrokeThickness="2"/>
+                    <TextBlock Text="Reserved" />
+                </StackPanel>
+            </CheckBox>
+
+            <CheckBox x:Name="checkBoxOccupied"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="checkBoxOccupied_Checked"
+                      Unchecked="checkBoxOccupied_Unchecked"
+                      IsChecked="True">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="15" Height="15" RadiusX="4" RadiusY="4" 
+                                       Fill="{StaticResource Occupied}" Stroke="{StaticResource OccupiedStroke}" StrokeThickness="2"/>
+                    <TextBlock Text="Occupied"  />
+                </StackPanel>
+            </CheckBox>
+
+            <TextBlock Text="Room Type" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Margin="0,10,0,3" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="8*" />
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Grid.Column="0" 
+                          FontSize="10"
+                          Content="Lux"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxLuxury"
+                          IsChecked="True"
+                          Checked="checkBoxLuxury_Checked"
+                          Unchecked="checkBoxLuxury_Unchecked" />
+
+                <CheckBox Grid.Column="1"
+                          FontSize="10"
+                          Content="Business Lux"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxBusinessLuxury"
+                          IsChecked="True"
+                          Checked="checkBoxBusinessLuxury_Checked"
+                          Unchecked="checkBoxBusinessLuxury_Unchecked" />
+
+                <CheckBox Grid.Column="0"
+                          Grid.Row="1"
+                          FontSize="10"
+                          Content="Comfort"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxComfort"
+                          IsChecked="True"
+                          Checked="checkBoxComfort_Checked"
+                          Unchecked="checkBoxComfort_Unchecked" />
+
+                <CheckBox Grid.Column="1"
+                          Grid.Row="1"
+                          FontSize="10"
+                          Content="Business"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxBusinessStandart"
+                          IsChecked="True"
+                          Checked="checkBoxBusinessStandart_Checked"
+                          Unchecked="checkBoxBusinessStandart_Unchecked" />
+
+                <CheckBox Grid.Column="0"
+                          Grid.Row="2"
+                          FontSize="10"
+                          Content="Standard"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxStandart"
+                          IsChecked="True"
+                          Checked="checkBoxStandart_Checked"
+                          Unchecked="checkBoxStandart_Unchecked" />
+
+                <CheckBox Grid.Column="1"
+                          Grid.Row="2"
+                          FontSize="10"
+                          Content="Economy"
+                          HorizontalAlignment="Left"
+                          x:Name="checkBoxEconom"
+                          IsChecked="True"
+                          Unchecked="checkBoxEconom_Unchecked"
+                          Checked="checkBoxEconom_Checked" />
+            </Grid>
+
+            <Rectangle Height="2" Width="150" Margin="5,25,5,3" Fill="#6e6f70" />
+
+            <TextBlock Text="INFORMATION" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" />
+
+            <TextBlock Text="Room" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Margin="0,8,0,0" />
+            <TextBlock x:Name="roomInfoTextBlock" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Text="304, Economy"/>
+
+            <TextBlock Text="Status" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Margin="0,8,0,0" />
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="15" Height="15" RadiusX="4" RadiusY="4" x:Name="statusMarker"
+                           Fill="{StaticResource Free}" Stroke="{StaticResource FreeStroke}" StrokeThickness="2"/>
+                <TextBlock x:Name="statusTextBlock" Text="Free" Margin="3,0,0,0" />
+            </StackPanel>
+
+            <TextBlock x:Name="statusChangingDate" Text="Until" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" Visibility="Collapsed" Margin="0,8,0,0"  />
+            <TextBlock x:Name="statusChangingDateTextBlock" Foreground="#6e6f70" FontSize="11" FontWeight="SemiBold" />
+
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

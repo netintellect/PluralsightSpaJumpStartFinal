@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ContextMenu.DropDownButtonIntegration.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Margin="8" Text="RadDropDownButton Integration" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="IconTemplate">
+            <Ellipse Margin="3" Fill="Red" Height="{Binding}" Width="{Binding}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Width="650" Height="370">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Ellipse x:Name="ellipse" Width="302.5" Height="302.5" Opacity="{Binding Value, ElementName=sliderOpacity}">
+            <Ellipse.Fill>
+                <SolidColorBrush x:Name="EllipseBrush" Color="{Binding ElementName=ColorSelector, Path=SelectedColor, Mode=TwoWay}" />
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <telerik:RadDropDownButton Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="25" Content="Customize" Width="173">
+            <telerik:RadDropDownButton.DropDownContent>
+                <telerik:RadContextMenu x:Name="dropDownButtonContextMenu" BorderThickness="0" IconColumnWidth="0">
+                    <telerik:RadMenuGroupItem Header="Opacity">
+                        <telerik:RadSlider x:Name="sliderOpacity" Margin="10" Maximum="1" LargeChange="0.1" Value="1" HandlesVisibility="Visible" />
+                    </telerik:RadMenuGroupItem>
+
+                    <telerik:RadMenuGroupItem Header="Fill Color" BorderThickness="0">
+                        <telerik:RadColorSelector x:Name="ColorSelector" BorderThickness="0" SelectedColor="Red">
+                            <telerik:EventToCommandBehavior.EventBindings>
+                                <telerik:EventBinding EventName="SelectedColorChanged" Command="telerik:PopupCommands.CloseAll" RaiseOnHandledEvents="True" />
+                            </telerik:EventToCommandBehavior.EventBindings>
+                        </telerik:RadColorSelector>
+                        <telerik:RadMenuItem Header="More Colors">
+                            <telerik:RadMenuGroupItem BorderThickness="0">
+                                <telerik:RadColorEditor x:Name="ColorEditor" BorderThickness="0" Width="400" Loaded="OnColorEditorLoaded"/>
+                                <telerik:RadButton Content="Set" Margin="12 0 12 8" Command="telerik:PopupCommands.CloseAll" Click="OnSetButtonClick"/>
+                            </telerik:RadMenuGroupItem>
+                        </telerik:RadMenuItem>
+                    </telerik:RadMenuGroupItem>
+
+                    <telerik:RadMenuSeparatorItem/>
+
+                    <telerik:RadMenuItem Header="Elipse Size" x:Name="sizeRadMenu" IconColumnWidth="0">
+                        <telerik:RadMenuItem Header="Small" IconTemplate="{StaticResource IconTemplate}" Icon="s" IconColumnWidth="35" Height="35" Click="OnSizeButtonClick"/>
+                        <telerik:RadMenuItem Header="Medium" IconTemplate="{StaticResource IconTemplate}" Icon="s" IconColumnWidth="45" Height="45" Click="OnSizeButtonClick"/>
+                        <telerik:RadMenuItem Header="Large" IconTemplate="{StaticResource IconTemplate}" Icon="s" IconColumnWidth="55" Height="55" Click="OnSizeButtonClick" />
+                    </telerik:RadMenuItem>
+                </telerik:RadContextMenu>
+
+            </telerik:RadDropDownButton.DropDownContent>
+        </telerik:RadDropDownButton>
+    </Grid>
+</UserControl>

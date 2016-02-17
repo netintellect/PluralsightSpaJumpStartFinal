@@ -1,0 +1,19 @@
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="RibbonWindowExample.App"
+			 xmlns:local="clr-namespace:RibbonWindowExample">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Telerik.Windows.Themes.Windows8;component/themes/System.Windows.xaml" />
+				<ResourceDictionary
+						Source="/Telerik.Windows.Themes.Windows8;component/themes/Telerik.Windows.Controls.xaml" />
+				<ResourceDictionary
+						Source="/Telerik.Windows.Themes.Windows8;component/themes/Telerik.Windows.Controls.Input.xaml" />
+				<ResourceDictionary
+						Source="/Telerik.Windows.Themes.Windows8;component/themes/Telerik.Windows.Controls.Navigation.xaml" />
+				<ResourceDictionary
+						Source="/Telerik.Windows.Themes.Windows8;component/themes/Telerik.Windows.Controls.RibbonView.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

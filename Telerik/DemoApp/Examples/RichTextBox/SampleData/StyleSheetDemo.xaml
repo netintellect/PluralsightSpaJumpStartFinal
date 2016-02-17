@@ -1,0 +1,187 @@
+<d:Stylesheet xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:d="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" xmlns:r="clr-namespace:Telerik.Windows.Documents.Model.Revisions;assembly=Telerik.Windows.Documents" xmlns:n="clr-namespace:Telerik.Windows.Documents.Model.Notes;assembly=Telerik.Windows.Documents" xmlns:th="clr-namespace:Telerik.Windows.Documents.Model.Themes;assembly=Telerik.Windows.Documents" Version="1.0">
+  <d:Stylesheet.Styles>
+    <d:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="True" Name="defaultDocumentStyle" Type="Default">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties FirstLineIndent="0" LeftIndent="0" LineSpacing="1.07916666666667" LineSpacingType="Auto" RightIndent="0" SpacingAfter="10.6666669845581" SpacingBefore="0" TextAlignment="Left" />
+      </d:StyleDefinition.ParagraphStyle>
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FlowDirection="LeftToRight" FontFamily="Calibri" FontSize="14.6666669845581" ForeColor="#FF000000" ThemeFontFamily="minor" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition DisplayName="Normal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="Normal" Type="Paragraph" UIPriority="0">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Segoe UI" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition DisplayName="Normal Table" IsCustom="False" IsDefault="True" IsPrimary="False" Name="TableNormal" Type="Table" UIPriority="99">
+      <d:StyleDefinition.TableStyle>
+        <d:TableProperties CellPadding="7,0,7,0" TableIndent="0">
+          <d:TableProperties.TableLook>
+            <t:TableLook />
+          </d:TableProperties.TableLook>
+        </d:TableProperties>
+      </d:StyleDefinition.TableStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Hyperlink" IsCustom="False" IsDefault="False" IsPrimary="False" Name="Hyperlink" Type="Character" UIPriority="99">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties ForeColor="#FF833C0B" UnderlineDecoration="Line" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition DisplayName="Default Paragraph Font" IsCustom="False" IsDefault="True" IsPrimary="False" Name="DefaultParagraphFont" Type="Character" UIPriority="1" />
+    <d:StyleDefinition BasedOnName="Normal" DisplayName="heading 1" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading1Char" Name="Heading1" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties KeepLines="True" OutlineLevel="1" SpacingAfter="0" SpacingBefore="16" />
+      </d:StyleDefinition.ParagraphStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="Normal" DisplayName="heading 3" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading3Char" Name="Heading3" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties KeepLines="True" OutlineLevel="3" SpacingAfter="0" SpacingBefore="2.66666674613953" />
+      </d:StyleDefinition.ParagraphStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="Normal" DisplayName="heading 2" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading2Char" Name="Heading2" NextStyleName="Normal" Type="Paragraph" UIPriority="9">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties KeepLines="True" OutlineLevel="2" SpacingAfter="0" SpacingBefore="2.66666674613953" />
+      </d:StyleDefinition.ParagraphStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="TableNormal" DisplayName="Grid Table 4 Accent 5" IsCustom="False" IsDefault="False" IsPrimary="False" Name="GridTable4-Accent5" Type="Table" UIPriority="49">
+      <d:StyleDefinition.ConditionalTableStylesList>
+        <d:ConditionalTableStyleInfo Type="FirstRow">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.SpanStyle>
+                <d:SpanProperties FontWeight="Bold" ForeColor="#FFFFFFFF" ThemeForeColor="background1" />
+              </d:StyleDefinition.SpanStyle>
+              <d:StyleDefinition.TableCellStyle>
+                <d:TableCellProperties Background="#FFED7D31" />
+              </d:StyleDefinition.TableCellStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+        <d:ConditionalTableStyleInfo Type="LastRow">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.SpanStyle>
+                <d:SpanProperties FontWeight="Bold" />
+              </d:StyleDefinition.SpanStyle>
+              <d:StyleDefinition.TableCellStyle>
+                <d:TableCellProperties Borders="0,Inherit,#FF000000,none,,;0.6666667,Double,#FF4472C4,accent5,,;0,Inherit,#FF000000,none,,;0,Inherit,#FF000000,none,," />
+              </d:StyleDefinition.TableCellStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+        <d:ConditionalTableStyleInfo Type="FirstColumn">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.SpanStyle>
+                <d:SpanProperties FontWeight="Normal" />
+              </d:StyleDefinition.SpanStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+        <d:ConditionalTableStyleInfo Type="LastColumn">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.SpanStyle>
+                <d:SpanProperties FontWeight="Bold" />
+              </d:StyleDefinition.SpanStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+        <d:ConditionalTableStyleInfo Type="OddColumnBanding">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.TableCellStyle>
+                <d:TableCellProperties Background="#FFDAE3F3" ThemeBackground="accent5" ThemeFillTint="33" />
+              </d:StyleDefinition.TableCellStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+        <d:ConditionalTableStyleInfo Type="OddRowBanding">
+          <d:ConditionalTableStyleInfo.Style>
+            <d:StyleDefinition IsCustom="True" IsDefault="False" IsPrimary="True" Type="Table">
+              <d:StyleDefinition.TableCellStyle>
+                <d:TableCellProperties Background="#FFFBE4D5" />
+              </d:StyleDefinition.TableCellStyle>
+            </d:StyleDefinition>
+          </d:ConditionalTableStyleInfo.Style>
+        </d:ConditionalTableStyleInfo>
+      </d:StyleDefinition.ConditionalTableStylesList>
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" />
+      </d:StyleDefinition.ParagraphStyle>
+      <d:StyleDefinition.TableStyle>
+        <d:TableProperties Borders="0.6666667,Single,#FF833C0B,none,," CellPadding="7,0,7,0" ColumnBandSize="1" RowBandSize="1" TableIndent="0">
+          <d:TableProperties.TableLook>
+            <t:TableLook />
+          </d:TableProperties.TableLook>
+        </d:TableProperties>
+      </d:StyleDefinition.TableStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition DisplayName="No List" IsCustom="False" IsDefault="True" IsPrimary="False" Name="NoList" Type="Numbering" UIPriority="99" />
+    <d:StyleDefinition BasedOnName="Normal" DisplayName="Title" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="TitleChar" Name="Title" NextStyleName="Normal" Type="Paragraph" UIPriority="10">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="20" />
+      </d:StyleDefinition.ParagraphStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Title Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Title" Name="TitleChar" Type="Character" UIPriority="10">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Times New Roman" FontSize="42.6666679382324" ForeColor="#FFED7D31" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Strong" IsCustom="False" IsDefault="False" IsPrimary="True" Name="Strong" Type="Character" UIPriority="22">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontWeight="Bold" ForeColor="#FF833C0B" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="FollowedHyperlink" IsCustom="False" IsDefault="False" IsPrimary="False" Name="FollowedHyperlink" Type="Character" UIPriority="99">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties ForeColor="#FF954F72" ThemeForeColor="followedHyperlink" UnderlineDecoration="Line" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 1 Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading1" Name="Heading1Char" Type="Character" UIPriority="9">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Times New Roman" FontSize="26.6666660308838" ForeColor="#FFC45911" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Subtle Emphasis" IsCustom="False" IsDefault="False" IsPrimary="True" Name="SubtleEmphasis" Type="Character" UIPriority="19">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontStyle="Italic" ForeColor="#FF404040" ThemeForeColor="text1" ThemeForeColorTint="BF" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 2 Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading2" Name="Heading2Char" Type="Character" UIPriority="9">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Times New Roman" FontSize="17.3333339691162" ForeColor="#FFC45911" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Emphasis" IsCustom="False" IsDefault="False" IsPrimary="True" Name="Emphasis" Type="Character" UIPriority="20">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontStyle="Italic" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="TableNormal" DisplayName="Table Grid" IsCustom="False" IsDefault="False" IsPrimary="False" Name="TableGrid" Type="Table" UIPriority="39">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" />
+      </d:StyleDefinition.ParagraphStyle>
+      <d:StyleDefinition.TableStyle>
+        <d:TableProperties Borders="0.6666667,Single,#FF000000,none,," CellPadding="7,0,7,0" TableIndent="0">
+          <d:TableProperties.TableLook>
+            <t:TableLook />
+          </d:TableProperties.TableLook>
+        </d:TableProperties>
+      </d:StyleDefinition.TableStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition DisplayName="No Spacing" IsCustom="False" IsDefault="False" IsPrimary="True" Name="NoSpacing" Type="Paragraph" UIPriority="1">
+      <d:StyleDefinition.ParagraphStyle>
+        <d:ParagraphProperties LineSpacing="1" LineSpacingType="Auto" SpacingAfter="0" TextAlignment="Right" />
+      </d:StyleDefinition.ParagraphStyle>
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Segoe UI" FontSize="10.6666669845581" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+    <d:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 3 Char" IsCustom="True" IsDefault="False" IsPrimary="False" LinkedStyleName="Heading3" Name="Heading3Char" Type="Character" UIPriority="9">
+      <d:StyleDefinition.SpanStyle>
+        <d:SpanProperties FontFamily="Times New Roman" FontSize="16" ForeColor="#FFC45911" />
+      </d:StyleDefinition.SpanStyle>
+    </d:StyleDefinition>
+  </d:Stylesheet.Styles>
+</d:Stylesheet>

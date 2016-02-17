@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11525/RadMapDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Examples.Web" />
+  <xs:element name="GetStores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="upperLeftLat" type="xs:double" />
+        <xs:element minOccurs="0" name="upperLeftLong" type="xs:double" />
+        <xs:element minOccurs="0" name="lowerRightLat" type="xs:double" />
+        <xs:element minOccurs="0" name="lowerRightLong" type="xs:double" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Examples.Web" minOccurs="0" name="storeType" type="q1:RadMapDataService.StoreType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Examples.Web" minOccurs="0" name="GetStoresResult" nillable="true" type="q2:ArrayOfRadMapDataService.StoreLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesAreas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesAreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Examples.Web" minOccurs="0" name="GetSalesAreasResult" nillable="true" type="q3:ArrayOfRadMapDataService.SalesArea" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

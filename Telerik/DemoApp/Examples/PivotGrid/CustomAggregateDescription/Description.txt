@@ -1,0 +1,8 @@
+﻿The example demonstrates how to implement a custom aggregate description and function. 
+You will also find out how to modify the list of the supported functions for the custom aggregate description.
+<br/><br/>
+The supported functions for an aggregate description are listed in the <b>More Aggregate Options</b> dialog. You can
+open that dialog from the menu of each description placed in the Values section of the RadPivotFieldList. 
+<br/><br/>
+You can see in the example that the custom aggregate function is present in the supported functions list and 
+the Min and Average functions are removed.

@@ -1,0 +1,225 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.SmartLabels.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"   
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.SmartLabels"
+    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel x:Name="exampleViewModel"/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/SmartLabels/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Airline Fuel Statistics (2007 - 2013)" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" MinWidth="495" MaxWidth="630" />
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock FontFamily="Segoe UI Light"
+                           Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+                     <Run Text="{Binding SelectedChart.FullName, Mode=OneWay}" FontSize="24" />
+                     <LineBreak />
+                     <Run Text="{Binding SelectedChart.TitleNote, Mode=OneWay,Converter={StaticResource toUpperCaseConverter}}" FontSize="11" />
+                </TextBlock>
+            </StackPanel>
+
+            <telerik:RadLegend VerticalAlignment="Bottom" 
+                               Items="{Binding LegendItems, ElementName=FuelChart}" 
+                               Visibility="{Binding IsConsumptionDataVisible, Converter={StaticResource boleanToVisibilityConverter}}">
+                <telerik:RadLegend.DefaultMarkerGeometry>
+                    <RectangleGeometry Rect="0 5 10 2" />
+                </telerik:RadLegend.DefaultMarkerGeometry>
+            </telerik:RadLegend>
+        </Grid>
+
+        <telerik:RadListBox Grid.Column="1"
+                            Padding="0"
+                            ItemsSource="{Binding Charts}"
+                            SelectedItem="{Binding SelectedChart, Mode=TwoWay}"
+                            Background="Transparent" BorderBrush="Transparent">
+            <telerik:RadListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <telerik:RadUniformGrid Columns="3" Margin="0 0 -15 0" />
+                </ItemsPanelTemplate>
+            </telerik:RadListBox.ItemsPanel>
+        </telerik:RadListBox>
+
+        <telerik:RadCartesianChart x:Name="FuelChart"
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="2"
+                                   Margin="0,30,0,16"
+                                   ClipToBounds="False">
+            <telerik:RadCartesianChart.SmartLabelsStrategy>
+                <telerik:ChartSmartLabelsStrategy />
+            </telerik:RadCartesianChart.SmartLabelsStrategy>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:DateTimeContinuousAxis MajorStep="3"
+                                                MajorStepUnit="Month"
+                                                PlotMode="OnTicks"
+                                                LabelTemplate="{StaticResource axisLabelTemplate}"
+                                                MajorTickStyle="{StaticResource tickStyle}"
+                                                LineThickness="2"
+                                                LineStroke="Gray" />
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis x:Name="VerticalAxis"
+                                    Minimum="{Binding SelectedChart.ChartAxisMinimum}"
+                                    Maximum="{Binding SelectedChart.ChartAxisMaximum}"
+                                    MajorStep="{Binding SelectedChart.ChartAxisMajorStep}"
+                                    HorizontalAlignment="Left"
+                                    MajorTickStyle="{StaticResource tickStyle}"
+                                    LineThickness="2"
+                                    LineStroke="Gray"
+                                    LabelOffset="1">
+                    <telerik:LinearAxis.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Width" Value="30"/>
+                            <Setter Property="Margin" Value="0,2,0,0"/>
+                            <Setter Property="TextAlignment" Value="Right" />
+                            <Setter Property="FontFamily" Value="Segoe UI"/>
+                        </Style>
+                    </telerik:LinearAxis.LabelStyle>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:LineSeries ItemsSource="{Binding SelectedChart.Data, Mode=OneWay}"
+                                CategoryBinding="Date"
+                                ValueBinding="Cost"
+                                StrokeThickness="2"
+                                Stroke="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+                                ShowLabels="True">
+                <telerik:LineSeries.PointTemplate>
+                    <DataTemplate>
+                        <Ellipse Width="6" Height="6" Fill="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+                    </DataTemplate>
+                </telerik:LineSeries.PointTemplate>
+                <telerik:LineSeries.LegendSettings>
+                    <telerik:SeriesLegendSettings Title="Cost (min $)" />
+                </telerik:LineSeries.LegendSettings>
+                <telerik:LineSeries.LabelConnectorsSettings>
+                    <telerik:ChartSeriesLabelConnectorsSettings>
+                        <telerik:ChartSeriesLabelConnectorsSettings.Style>
+                            <Style TargetType="Path">
+                                <Setter Property="Stroke" Value="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+                            </Style>
+                        </telerik:ChartSeriesLabelConnectorsSettings.Style>
+                    </telerik:ChartSeriesLabelConnectorsSettings>
+                </telerik:LineSeries.LabelConnectorsSettings>
+                <telerik:LineSeries.LabelDefinitions>
+                    <telerik:ChartSeriesLabelDefinition VerticalAlignment="Top" Margin="0 0 0 6">
+                        <telerik:ChartSeriesLabelDefinition.Template>
+                            <DataTemplate>
+                                <Border Background="{telerik:Windows8Resource ResourceKey=AccentBrush}" BorderBrush="White" BorderThickness="1">
+                                    <TextBlock Text="{Binding Label}" Foreground="White" FontFamily="Segoe UI" Margin="2 0 2 1" FontSize="10" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:ChartSeriesLabelDefinition.Template>
+                    </telerik:ChartSeriesLabelDefinition>
+                </telerik:LineSeries.LabelDefinitions>
+                <telerik:LineSeries.VerticalAxis>
+                    <telerik:LinearAxis Minimum="{Binding SelectedChart.ChartAxisMinimum}"
+                                        Maximum="{Binding SelectedChart.ChartAxisMaximum}"
+                                        MajorStep="{Binding SelectedChart.ChartAxisMajorStep}"
+                                        HorizontalLocation="Right"
+                                        MajorTickStyle="{StaticResource tickStyle}"
+                                        LineThickness="1.5"
+                                        LineStroke="Gray"
+                                        LabelOffset="1">
+                        <telerik:LinearAxis.LabelStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Width" Value="30"/>
+                                <Setter Property="Margin" Value="0,2,0,0"/>
+                                <Setter Property="TextAlignment" Value="Left" />
+                                <Setter Property="FontFamily" Value="Segoe UI"/>
+                            </Style>
+                        </telerik:LinearAxis.LabelStyle>
+                    </telerik:LinearAxis>
+                </telerik:LineSeries.VerticalAxis>
+            </telerik:LineSeries>
+            <telerik:LineSeries Visibility="{Binding IsConsumptionDataVisible, Converter={StaticResource boleanToVisibilityConverter}}"
+                                ItemsSource="{Binding SelectedChart.Data, Mode=OneWay}"
+                                CategoryBinding="Date"
+                                ValueBinding="Consumption"
+                                StrokeThickness="2"
+                                Stroke="{StaticResource GreenBrush}"
+                                ShowLabels="True">
+                <telerik:LineSeries.PointTemplate>
+                    <DataTemplate>
+                        <Ellipse Width="6" Height="6" Fill="{StaticResource GreenBrush}" />
+                    </DataTemplate>
+                </telerik:LineSeries.PointTemplate>
+                <telerik:LineSeries.LegendSettings>
+                    <telerik:SeriesLegendSettings Title="Consumption (mln gallons)" />
+                </telerik:LineSeries.LegendSettings>
+                <telerik:LineSeries.LabelConnectorsSettings>
+                    <telerik:ChartSeriesLabelConnectorsSettings>
+                        <telerik:ChartSeriesLabelConnectorsSettings.Style>
+                            <Style TargetType="Path">
+                                <Setter Property="Stroke" Value="{StaticResource GreenBrush}" />
+                            </Style>
+                        </telerik:ChartSeriesLabelConnectorsSettings.Style>
+                    </telerik:ChartSeriesLabelConnectorsSettings>
+                </telerik:LineSeries.LabelConnectorsSettings>
+                <telerik:LineSeries.LabelDefinitions>
+                    <telerik:ChartSeriesLabelDefinition VerticalAlignment="Top" Margin="0 0 0 6">
+                        <telerik:ChartSeriesLabelDefinition.Template>
+                            <DataTemplate>
+                                <Border Background="{StaticResource GreenBrush}" BorderThickness="1" BorderBrush="White">
+                                    <TextBlock Text="{Binding Label}" Foreground="White" FontFamily="Segoe UI" Margin="2 0 2 1" FontSize="10" />
+                                </Border>
+                            </DataTemplate>
+                        </telerik:ChartSeriesLabelDefinition.Template>
+                    </telerik:ChartSeriesLabelDefinition>
+                </telerik:LineSeries.LabelDefinitions>
+            </telerik:LineSeries>
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorLinesVisibility="Y" />
+            </telerik:RadCartesianChart.Grid>
+            <telerik:RadCartesianChart.Annotations>
+                <telerik:CartesianGridLineAnnotation Value="0" Axis="{Binding ElementName=VerticalAxis}" ZIndex="-200" />
+            </telerik:RadCartesianChart.Annotations>
+        </telerik:RadCartesianChart>
+
+        <TextBlock Margin="0,0,0,-7"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   FontFamily="Segoe UI" FontSize="10"
+                   Text="source: Bureau of Transportation Statistics" Foreground="Gray"/>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonDisable_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Disable smart labels" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonChartStrategy_Click" GroupName="group1" VerticalAlignment="Center" IsChecked="True">
+                <TextBlock Text="Chart smart labels strategy" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+            <RadioButton Style="{StaticResource QSFExampleRadioButtonStyle}" Margin="0 0 0 3" Click="RadioButtonCustomStrategy_Click" GroupName="group1" VerticalAlignment="Center">
+                <TextBlock Text="Custom smart labels strategy" FontFamily="Segoe UI" Margin="2 0 0 2" />
+            </RadioButton>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+</UserControl>

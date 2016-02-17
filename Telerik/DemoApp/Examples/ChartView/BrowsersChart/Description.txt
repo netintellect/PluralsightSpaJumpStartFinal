@@ -1,0 +1,1 @@
+﻿This example demonstrates how easy it is to customize the item labels, through the Template property of the label definition. You can place arbitrary items in the template and present meteo charts and cover many other scenarios. 

@@ -1,0 +1,95 @@
+<Examples:DataServiceDataSourceExample x:Class="Telerik.Windows.Examples.DataServiceDataSource.LoadDelay.Example"
+									   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+									   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+									   xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+									   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+									   xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+									   xmlns:odata="clr-namespace:Telerik.Windows.Examples.DataServiceDataSource.OData"
+									   xmlns:local="clr-namespace:Telerik.Windows.Examples.DataServiceDataSource.LoadDelay">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Corporate Address Book"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.Resources>
+			<local:MillisecondsToTimeSpanConverter x:Key="LoadDelayConverter" />
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Find Contact Name"
+					   VerticalAlignment="Center"
+					   Margin="2,0,0,0" />
+			<TextBox x:Name="searchTextBox"
+					 Width="150"
+					 Margin="2,5"
+					 Text="{Binding FilterDescriptors[0].Value, ElementName=customersDataSource, Mode=TwoWay}"
+					 telerik:TextBoxBehavior.UpdateTextOnTextChanged="True" />
+			<TextBlock Text="Load Delay (ms)"
+					   VerticalAlignment="Center"
+					   Margin="10,0,0,0" />
+			<telerik:RadNumericUpDown Value="1000"
+									  Margin="2,5"
+									  IsEditable="False"
+									  Name="loadDelayUpDown"
+									  IsInteger="True"
+									  NumberDecimalDigits="0"
+									  ValueFormat="Numeric"
+									  Minimum="0"
+									  Maximum="2000"
+									  SmallChange="100"
+									  LargeChange="1000" />
+		</StackPanel>
+		<telerik:RadDataServiceDataSource x:Name="customersDataSource"
+										  LoadDelay="{Binding Value, ElementName=loadDelayUpDown, Converter={StaticResource LoadDelayConverter}}"
+										  AutoLoad="True"
+										  QueryName="Customers">
+			<telerik:RadDataServiceDataSource.DataServiceContext>
+				<odata:NorthwindEntities />
+			</telerik:RadDataServiceDataSource.DataServiceContext>
+			<telerik:RadDataServiceDataSource.FilterDescriptors>
+				<telerik:FilterDescriptor Member="ContactName"
+										  Operator="Contains" />
+			</telerik:RadDataServiceDataSource.FilterDescriptors>
+		</telerik:RadDataServiceDataSource>
+        <telerik:RadGridView x:Name="radGridView" GroupRenderMode="Flat"
+							 Grid.Row="1"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 MinHeight="386"
+							 MaxHeight="500"
+							 ItemsSource="{Binding DataView, ElementName=customersDataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=customersDataSource}"
+							 AutoGenerateColumns="False"
+							 ShowGroupPanel="False"
+							 IsFilteringAllowed="False"
+							 CanUserSortColumns="False"
+							 IsReadOnly="True">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Customer ID"
+											DataMemberBinding="{Binding CustomerID}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Company Name"
+											DataMemberBinding="{Binding CompanyName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Contact Name"
+											DataMemberBinding="{Binding ContactName}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Contact Title"
+											DataMemberBinding="{Binding ContactTitle}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Address"
+											DataMemberBinding="{Binding Address}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="City"
+											DataMemberBinding="{Binding City}" />
+				<telerik:GridViewDataColumn ShowDistinctFilters="False"
+											Header="Country"
+											DataMemberBinding="{Binding Country}" />
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+	</Grid>
+</Examples:DataServiceDataSourceExample>

@@ -1,0 +1,174 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.SchedulingAssistant.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:drag="clr-namespace:Telerik.Windows.DragDrop.Behaviors;assembly=Telerik.Windows.Controls"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.SchedulingAssistant">
+
+    <qsf:QuickStart.ExampleHeader>
+        <TextBlock Text="Scheduling Assistant" Margin="8" />
+    </qsf:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ScheduleView;component/SchedulingAssistant/WPF/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <telerik:Windows8Colors x:Key="Windows8Colors" />
+            <SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+            <SolidColorBrush x:Key="MarkerBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MarkerColor}" />
+            <SolidColorBrush x:Key="BasicBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.BasicColor}" />
+
+            <local:ViewModel x:Key="ViewModel" />
+
+            <telerik:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <telerik:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" />
+            <telerik:DraggedAppointmentsToLocalizedStringConverter x:Key="DraggedAppointmentsToLocalizedStringConverter" />
+            <local:DraggedAppointmentToSourceResourceConverter x:Key="DraggedAppointmentToSourceResourceConverter" />
+
+            <Style x:Key="EmployeeNameStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="Segoe UI Light" />
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Width" Value="160"/>
+                <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+                <Setter Property="Margin" Value="5 0 0 0" />
+            </Style>
+
+            <DataTemplate x:Key="RadListBoxItemTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding ImageSource}" Width="48" Height="48" />
+                        <TextBlock Text="{Binding Name}" Style="{StaticResource EmployeeNameStyle}" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
+            <Style x:Key="RadListBoxItemStyle" TargetType="telerik:RadListBoxItem" BasedOn="{StaticResource RadListBoxItemStyle}">
+                <Setter Property="telerik:DragDropManager.AllowCapturedDrag" Value="True" />
+            </Style>
+
+            <DataTemplate x:Key="AppointmentItemTemplate">
+                <StackPanel>
+                    <TextBlock Text="{Binding Subject}" TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+                    <ItemsControl ItemsSource="{Binding Appointment.Attendees}" Margin="10">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageSource}" Width="48" Height="48" Margin="0 0 3 0"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Key="DragVisualContentTemplate">
+                <StackPanel Margin="3">
+                    <TextBlock Text="{Binding Converter={StaticResource DraggedAppointmentsToLocalizedStringConverter}}" FontWeight="Bold" />
+                    <TextBlock Text="{Binding Converter={StaticResource DraggedAppointmentToSourceResourceConverter}}" FontStyle="Italic" />
+                </StackPanel>
+            </DataTemplate>
+
+            <Style x:Key="CustomDragDropHighlightStyle" TargetType="telerik:HighlightItem" BasedOn="{StaticResource DragDropHighlightStyle}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid Visibility="{Binding Appointment.IsDraggedFromListBox, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                                <Border Background="{TemplateBinding Background}" Opacity="0.1"/>
+                                <Path
+                                Data="M0,0 L2,0 L0,2 z"
+                                Height="4"
+                                Width="4"
+                                Margin="1"
+                                Stretch="Fill"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Fill="{telerik:Windows8Resource ResourceKey=MarkerBrush}"/>
+                                <TextBlock x:Name="StartTextBox"
+                                Margin="4 2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding ActualStart,StringFormat=t}"
+                                Foreground="{telerik:Windows8Resource ResourceKey=MarkerBrush}"/>
+                                <Path
+                                Data="M2,0 L2,2 L0,2 z"
+                                Height="4"
+                                Width="4"
+                                Stretch="Fill"
+                                Margin="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Fill="{telerik:Windows8Resource ResourceKey=MarkerBrush}"/>
+                                <TextBlock x:Name="EndTextBox"
+                                Margin="4 2"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Text="{Binding ActualEnd,StringFormat=t}"
+                                Foreground="{telerik:Windows8Resource ResourceKey=MarkerBrush}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ViewModel}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <qsf:HeaderedContentControl Grid.Column="0" Header="Employees">
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                <StackPanel MaxWidth="225">
+                    <telerik:RadListBox Margin="1" BorderThickness="0" BorderBrush="{x:Null}"
+					                  ItemContainerStyle="{StaticResource RadListBoxItemStyle}"  HorizontalAlignment="Left"
+					                  ItemsSource="{Binding EmployeesSource}" ItemTemplate="{StaticResource RadListBoxItemTemplate}"
+					                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <telerik:RadListBox.DragDropBehavior>
+                            <local:CustomListBoxDragDropBehavior AllowReorder="False" />
+                        </telerik:RadListBox.DragDropBehavior>
+                        <telerik:RadListBox.DragVisualProvider>
+                            <telerik:ScreenshotDragVisualProvider />
+                        </telerik:RadListBox.DragVisualProvider>
+                    </telerik:RadListBox>
+                    <Border MaxWidth="225" Background="{StaticResource BasicBrush}" Margin="0 8 0 0">
+                        <TextBlock  Text="Please drag/drop the required attendees on each appointment. Note that only up to four attendees are allowed in every meeting." 
+                               TextWrapping="Wrap" Padding="5" Foreground="{StaticResource MarkerBrush}" FontFamily="Segoe UI Light" FontSize="14" />
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+
+        </qsf:HeaderedContentControl>
+
+        <telerik:RadScheduleView AppointmentsSource="{Binding Appointments}"
+								                 Grid.Column="2" AppointmentItemContentTemplate="{StaticResource AppointmentItemTemplate}"
+								                 FirstVisibleTime="8:00" DragVisualTemplate="{StaticResource DragVisualContentTemplate}"
+                                 ResourceTypesSource="{Binding Resources}" 
+                                 EditAppointmentDialogStyle="{StaticResource CustomEditAppointmentDialogStyle}"
+                                 GroupDescriptionsSource="{Binding GroupDescriptions}"
+                                 DragDropHighlightStyle="{StaticResource CustomDragDropHighlightStyle}">
+            <telerik:RadScheduleView.ViewDefinitions>
+                <telerik:DayViewDefinition DayStartTime="8:00" DayEndTime="20:00" />
+            </telerik:RadScheduleView.ViewDefinitions>
+            <telerik:RadScheduleView.DragDropBehavior>
+                <local:CustomScheduleViewDragDropBehavior />
+            </telerik:RadScheduleView.DragDropBehavior>
+        </telerik:RadScheduleView>
+    </Grid>
+</UserControl>

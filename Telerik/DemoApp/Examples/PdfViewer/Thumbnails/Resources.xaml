@@ -1,0 +1,276 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.PdfViewer.Thumbnails">
+    <telerik:Windows8Colors x:Key="Windows8Colors" />
+
+    <SolidColorBrush x:Key="LightBrush" Color="#FFE9E9E9" />
+    <LinearGradientBrush x:Key="LightGradientBrush" EndPoint="1,0.5" StartPoint="0,0.5">
+        <GradientStop Color="#FFD6D6D6" Offset="0"/>
+        <GradientStop Color="#FFF4F4F4" Offset="0.25"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ThumbnailsAccentBrush" Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8Colors}}" telerik:Windows8Colors.Color="BoundColor" />
+    <SolidColorBrush x:Key="ThumbnailsBasicBrush" Color="#FFD6D4D4" />
+    <SolidColorBrush x:Key="ThumbnailsStrongBrush" Color="#FF767676" />
+    
+    <Style x:Key="ThumbnailsButtonBaseStyle" TargetType="ButtonBase">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3 4"/>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <Style x:Key="ThumbnailsButtonStyle" TargetType="telerik:RadButton" BasedOn="{StaticResource ThumbnailsButtonBaseStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" To="0.5"/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" To="0.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="BackgroundVisibility">
+                                <VisualState x:Name="BackgroundIsHidden">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="BackgroundIsVisible"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStatesGroup">
+                                <VisualState x:Name="Unfocused" />
+                                <VisualState x:Name="Focused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <Border x:Name="MouseOverBorder" Visibility="Collapsed" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="White" BorderThickness="1"/>
+                        <ContentControl x:Name="Content"
+                                IsTabStop="False"
+                                Content="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Margin="{TemplateBinding Padding}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ThumbnailsToggleButtonStyle" TargetType="telerik:RadToggleButton" BasedOn="{StaticResource ThumbnailsButtonBaseStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" To="0.5"/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" To="0.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="DisabledChecked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" To="0.5"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOverChecked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="BackgroundVisibility">
+                                <VisualState x:Name="BackgroundIsHidden">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="BackgroundIsVisible"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked" />
+                                <VisualState x:Name="Unchecked"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStatesGroup">
+                                <VisualState x:Name="Unfocused" />
+                                <VisualState x:Name="Focused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <Border x:Name="MouseOverBorder" Visibility="Collapsed" Background="{StaticResource ThumbnailsBasicBrush}" BorderThickness="0" CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <Border x:Name="PressedBorder" Visibility="Collapsed" Background="{StaticResource ThumbnailsBasicBrush}" Opacity="0.2" CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <Border x:Name="CheckedVisual"
+                                Opacity="0"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{StaticResource ThumbnailsAccentBrush}"
+                                BorderBrush="{StaticResource ThumbnailsAccentBrush}"
+                                CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <ContentControl x:Name="Content"
+                                IsTabStop="False"
+                                Content="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Margin="{TemplateBinding Padding}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="PageNavigationStyle" TargetType="telerik:RadListBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="0 5 0 22" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#FF000000" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadListBoxItem">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.15" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MouseOverVisualElement"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentPresenter"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.15" To=".35" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectedVisualElement"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisualElement">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <Rectangle x:Name="MouseOverVisualElement" Opacity="0" Fill="{StaticResource ThumbnailsBasicBrush}" IsHitTestVisible="False"/>
+                            <Rectangle x:Name="SelectedVisualElement" Opacity="0" Fill="{StaticResource ThumbnailsStrongBrush}" IsHitTestVisible="False"/>
+                            <Border BorderThickness="0" Background="White" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
+                                <Border.Effect>
+                                    <DropShadowEffect Direction="270" Opacity="0.15" BlurRadius="10" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <Grid>
+                                    <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                    <Rectangle x:Name="FocusVisualElement" Stroke="{StaticResource ThumbnailsAccentBrush}" 
+                                               StrokeThickness="1" Visibility="Collapsed" >
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8Colors}}" telerik:Windows8Colors.Color="BoundColor" Opacity="0.25" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <TextBlock HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Bottom" Text="{Binding Page.PageNo}" Margin="0 0 0 2" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

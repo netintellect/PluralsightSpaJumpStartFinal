@@ -1,0 +1,1 @@
+﻿This example demonstrates RadChart and Telerik DragAndDrop Framework integration scenario. You can drag whole series or separate chart items between the two charts based on your preferences.

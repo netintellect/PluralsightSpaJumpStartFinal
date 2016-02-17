@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Breadcrumb.FirstLook.WPF.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<Grid>
+		<Grid.Resources>
+			<Style BasedOn="{StaticResource RadTreeViewItemStyle}" TargetType="telerik:RadTreeViewItem">
+				<Setter Property="DefaultImageSrc" Value="{Binding Image}" />
+			</Style>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<telerik:RadBreadcrumb x:Name="explorerBreadcrumb"
+		                       Grid.Row="0"
+		                       CurrentItemChanged="explorerBreadcrumb_CurrentItemChanged"
+		                       Header="{Binding Root}"
+		                       HeaderMemberPath="Header"
+		                       HierarchicalItemsSource="Children"
+		                       HierarchicalMemberPath="Header"
+		                       ImagePath="Image"
+		                       IsIconVisible="True"
+		                       ItemsSource="{Binding Root.Children}"
+		                       Path="Desktop\Computer\Local Disk (C:)\Program Files(86)"
+		                       TextModePath="Header" />
+        <Border Grid.Row="1" BorderThickness="1" Margin="0 5 0 0" BorderBrush="#FFD7D5D5">
+            <telerik:RadTreeView x:Name="explorerTree"
+			                     Margin="0 3 0 0"
+			                     ItemsSource="{Binding Items}"
+			                     SelectionChanged="explorerTree_SelectionChanged"
+			                     SelectionMode="Single"
+			                     telerik:TextSearch.TextPath="Header">
+                <telerik:RadTreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Header}" />
+                    </HierarchicalDataTemplate>
+                </telerik:RadTreeView.ItemTemplate>
+            </telerik:RadTreeView>
+        </Border>
+    </Grid>
+</UserControl>

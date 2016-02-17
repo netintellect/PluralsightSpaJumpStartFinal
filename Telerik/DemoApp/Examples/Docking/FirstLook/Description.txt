@@ -1,0 +1,10 @@
+﻿The Telerik <b>RadDocking</b> control helps you to manage multiple panes in your application with a docking system like the one in Microsoft Visual Studio. This advanced window management system enables dockable floating windows (with retainable size), tabbed documents and other advanced functionalities. 
+<br/>
+<br/>
+You get the dockable <b>RadPanes</b>, <b>RadSplitContainers</b> and the <b>RadPaneGroups</b> to build any Explorer and Outlook like layouts. The movable bars allow you to resize the panes and fit them to any layout you need to achieve. The <b>Drag And Drop</b> capabilities of the Docking control allows you to re-arrange the panes in a complete WYSIWYG manner.
+<br/>
+<br/>
+Using the <b>RetainPaneSizeMode</b> property you can easily achieve the same docking/floating behavior as the one seen in Microsoft Visual Studio.
+<br/>
+<br/>
+RadDocking is a part of the <b>Telerik.Windows.Controls.Docking</b> assembly.

@@ -1,0 +1,1 @@
+﻿The Gauge control has <b>TooltipFormat</b> property for the scale elements. The radial scale of this example is interactive. You can drag indicators and tooltip will be changed according to value of indicator.

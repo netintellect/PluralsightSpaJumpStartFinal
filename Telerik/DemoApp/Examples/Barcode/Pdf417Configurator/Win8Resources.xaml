@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Thickness x:Key="ButtonMargin" Left="0" Top="15" Right="0" Bottom="0" />
+    <Thickness x:Key="TopInputMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="MiddleInputMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="BottomInputMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="TopLabelMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="MiddleLabelMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="BottomLabelMargin" Left="10" Top="11" Right="10" Bottom="10" />
+    <Thickness x:Key="LeftStackPanelMargin" Left="0" Top="25" Right="0" Bottom="0" />
+    <Thickness x:Key="RightStackPanelMargin" Left="15" Top="25" Right="0" Bottom="0" />
+    <Thickness x:Key="BottomGridMargin" Left="0" Top="17" Right="0" Bottom="0" />
+    <Thickness x:Key="BarcodeStackPanelMargin" Left="0" Top="20" Right="0" Bottom="25" />
+</ResourceDictionary>

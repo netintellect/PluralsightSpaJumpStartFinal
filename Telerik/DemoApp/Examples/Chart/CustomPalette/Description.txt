@@ -1,0 +1,2 @@
+﻿This example shows how easy it is to customize the series palette in RadChart. <br />
+Add items to the PaletteBrushes collection by choosing a color in the RadColorSelector control. You can remove a color by clicking on it in the ListBox. The Repeat Palette Brushes checkbox defines whether the chart will use only the custom brushes or it will switch to the built-in ones after using the custom list.

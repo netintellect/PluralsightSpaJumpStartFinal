@@ -1,0 +1,1 @@
+﻿RadTimeline allows selecting one or multiple timeline items. By default, the selection feature of the control is disabled. In order to enable it, set IsSelectionEnabled to true and specify the selection mode using the SelectionMode property. This example shows important events from the life of Michael Jackson, grouped into two catogeries - Career and Personal Life.

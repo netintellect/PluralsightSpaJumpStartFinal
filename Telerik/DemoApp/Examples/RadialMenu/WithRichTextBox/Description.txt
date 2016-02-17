@@ -1,0 +1,1 @@
+The RadRadialMenu is designed to be easily integrated with any existing control and application in order to provide an easier menu control experience to the user. In the current example a RadRadialMenu control is integrated as RadialContextMenu to the RadRichTextBox. Simply highlight some text in the document to show the menu.

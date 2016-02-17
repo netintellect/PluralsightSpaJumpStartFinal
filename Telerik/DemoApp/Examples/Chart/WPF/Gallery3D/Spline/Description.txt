@@ -1,0 +1,1 @@
+﻿This example shows a 3D spline chart. There is one DataSeries, its Definition property is set to an instance of Spline3DSeriesDefinition.<br/>

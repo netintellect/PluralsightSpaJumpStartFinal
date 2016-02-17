@@ -1,0 +1,867 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.TVSchedule.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+             xmlns:dragDrop="clr-namespace:Telerik.Windows.DragDrop;assembly=Telerik.Windows.Controls"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.TVSchedule"
+             xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:common="clr-namespace:Telerik.Windows.Examples.ScheduleView.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="TV Schedule" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <UserControl.Resources>
+        <local:ViewModel x:Key="ViewModel"
+						 AppointmentsSource="/ScheduleView;component/DataSources/TvScheduleCustom/Appointments.xaml" />
+
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="ValidationBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.ValidationColor}" />
+        <SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        <SolidColorBrush x:Key="MainBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+        <SolidColorBrush x:Key="StrongBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.StrongColor}" />
+        <SolidColorBrush x:Key="MarkerBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MarkerColor}" />
+        
+        <LinearGradientBrush x:Key="HeaderBackground" EndPoint="0.984,0.5" StartPoint="0.022,0.5">
+            <GradientStop Color="#FFF4F4F5" Offset="0.075"/>
+            <GradientStop Color="#FFE9E9EE" Offset="0.25"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="LegendItemBorderBrush" Color="#FFA0AFC3" />
+
+        <Thickness x:Key="HorizontalGroupHeaderTodayBorderThickness">1 0 0 1</Thickness>
+        <SolidColorBrush x:Key="GroupHeaderBorderBrush_Today" Color="#FF246982" />
+        <Thickness x:Key="VerticalGroupHeaderTodayBorderThickness">0 1 1 1</Thickness>
+        
+        <ImageSource x:Key="AppointmentItem_Recurrence">/Telerik.Windows.Controls.ScheduleView;component/Themes/Images/AppointmentException.png</ImageSource>
+        <ImageSource x:Key="AppointmentItem_Exception">/Telerik.Windows.Controls.ScheduleView;component/Themes/Images/AppointmentRecurrence.png</ImageSource>
+        <SolidColorBrush x:Key="AppointmentItemBackground" Color="#FFF2F2F2" />
+        <SolidColorBrush x:Key="DecorationRectangleOuterBorder_DragOver" Color="#AA3C7FB0" />
+        <ControlTemplate x:Key="CalendarIcon" TargetType="ContentControl">
+            <Border Background="Transparent">
+                <Path Data="M188,502L188,481.207C188,480.257,188.771,479.484,189.723,479.484L190.473,479.484L190.473,484.786L197.551,484.786L197.551,479.484L202.568,479.484L202.568,484.786L209.645,484.786L209.645,479.484L210.516,479.484C211.465,479.484,212.237,480.257,212.237,481.207L212.237,502C212.237,502.949,211.465,503.722,210.516,503.722L189.723,503.722C188.771,503.722,188,502.949,188,502 M209.746,487.307L190.503,487.307L190.503,501.544L209.746,501.544z M198.362,499.882L198.186,499.779C197.602,499.439,197.403,498.687,197.744,498.102L201.192,492.208L197.258,492.208C196.581,492.208,196.031,491.658,196.031,490.98L196.031,490.777C196.031,490.102,196.581,489.551,197.258,489.551L203.483,489.551C204.107,489.551,204.623,490.02,204.7,490.623C204.813,490.949,204.788,491.32,204.602,491.643L200.04,499.441C199.699,500.025,198.947,500.223,198.362,499.882 M192.369,482.613L192.369,477.786C192.354,477.697,192.348,477.607,192.348,477.514C192.348,476.605,193.085,475.867,193.994,475.867C194.885,475.867,195.611,476.578,195.639,477.461L195.654,477.461L195.654,482.613z M204.465,482.613L204.463,477.857C204.439,477.747,204.428,477.632,204.428,477.514C204.428,476.605,205.166,475.867,206.075,475.867C206.965,475.867,207.692,476.578,207.721,477.461L207.749,477.461L207.749,482.613z" 
+                      Fill="{StaticResource MainBrush}" Stretch="Fill" Width="14" Height="16" />
+            </Border>
+        </ControlTemplate>        
+        <SolidColorBrush x:Key="RedCategoryBrush" Color="#FFFFE0E0" />
+        <SolidColorBrush x:Key="GreenCategoryBrush" Color="#FFE8FDDE" />
+        <SolidColorBrush x:Key="BlueCategoryBrush" Color="#FFDCF4FF" />
+        <SolidColorBrush x:Key="PurpleCategoryBrush" Color="#FFF3E3FB" />
+        <SolidColorBrush x:Key="YellowCategoryBrush" Color="#FFFFFEDC" />
+        <SolidColorBrush x:Key="OliveCategoryBrush" Color="#FFEFF5DC" />
+        <SolidColorBrush x:Key="PinkCategoryBrush" Color="#FFFFDDFD" />
+        <SolidColorBrush x:Key="OrangeCategoryBrush" Color="#FFFFECD5" />
+        <SolidColorBrush x:Key="FreeMarkerBrush" Color="#FF8EBC00" />
+        <SolidColorBrush x:Key="TentativeMarkerBrush" Color="#FF7E51A1" />
+        <SolidColorBrush x:Key="BusyMarkerBrush" Color="#FFE61E26" />
+        <SolidColorBrush x:Key="OutOfOfficeMarkerBrush" Color="#FFEBE200" />
+        <telerik:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" />
+        <scheduleView:InvertedNullToVisibilityConverter x:Key="InvertedNullToVisibilityConverter" />
+        <scheduleView:InvertedVisibilityConverter x:Key="InvertedVisibilityConverter" />
+        <telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <scheduleView:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <scheduleView:BoolToInputModeConverter x:Key="BoolToInputModeConverter" />
+        <scheduleView:ResourcesSeparatorConverter x:Key="ResourcesSeparatorConverter" />
+        <telerik:EnumToBooleanConverter x:Key="EnumToBoolConverter" />
+        <telerik:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter" />
+        <telerik:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+        <scheduleView:RecurrenceStateIsExeptionToVisibilityConverter x:Key="RecurrenceStateIsExeptionToVisibilityConverter" />
+        <scheduleView:RecurrenceStateIsOccurenceToVisibilityConverter x:Key="RecurrenceStateIsOccurenceToVisibilityConverter" />
+
+        <scheduleView:DraggedAppointmentsToLocalizedStringConverter x:Key="DraggedAppointmentsToLocalizedStringConverter" />
+        <scheduleView:EnumerableCountToVisibilityConverter x:Key="EnumerableCountToVisibilityConverter" />
+
+        <telerik:LocalizationManager x:Key="LocalizationManager"/>
+
+        <!-- AppointmentItem -->
+
+        <SolidColorBrush x:Key="NewsAppointmentBackgroundBrush" Color="#FFC62B6D" />
+        <SolidColorBrush x:Key="MoviesAppointmentBackgroundBrush" Color="#FF2F6495" />
+        <SolidColorBrush x:Key="SportsAppointmentBackgroundBrush" Color="#FF16ABA9" />
+        <SolidColorBrush x:Key="ShowsAppointmentBackgroundBrush" Color="#FF7E51A1" />
+        <SolidColorBrush x:Key="KidsAppointmentBackgroundBrush" Color="#FF8EBC00" />
+
+        <SolidColorBrush x:Key="NewsAppointmentBorderBrush" Color="#FFF2D3CC" />
+        <SolidColorBrush x:Key="MoviesAppointmentBorderBrush" Color="#FFACCDD3" />
+        <SolidColorBrush x:Key="SportsAppointmentBorderBrush" Color="#FFFFFDB3" />
+        <SolidColorBrush x:Key="ShowsAppointmentBorderBrush" Color="#FFD9D0E5" />
+        <SolidColorBrush x:Key="KidsAppointmentBorderBrush" Color="#FFB5E198" />
+
+        <SolidColorBrush x:Key="NewsLabelFill" Color="#FFB13E1E" />
+        <SolidColorBrush x:Key="MoviesLabelFill" Color="#FF328493" />
+        <SolidColorBrush x:Key="SportsLabelFill" Color="#FFBE7900" />
+        <SolidColorBrush x:Key="ShowsLabelFill" Color="#FF8A72AF" />
+        <SolidColorBrush x:Key="KidsLabelFill" Color="#FF255C00" />
+
+        <SolidColorBrush x:Key="ClockIconFill" Color="#FFA0AFC3" />
+        <ControlTemplate x:Key="LowImportanceMarkTemplate">
+            <Grid>
+                <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="5" Background="{StaticResource MainBrush}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                    <Grid>
+                        <Path Data="F1M329.667,242.3496L324.512,236.8906L324.512,241.3296L331.411,248.6386L338.28,241.3636L338.28,236.9226L333.152,242.3496L333.152,230.0356L329.667,230.0356z"
+                          Fill="{StaticResource MarkerBrush}" Stretch="Fill" Margin="2,1" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="HighImportanceMarkTemplate">
+            <Grid>
+                <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="5" Background="{StaticResource ValidationBrush}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                    <Grid>
+                        <Rectangle Fill="{StaticResource MainBrush}" Height="2" Margin="4,0,4,1" VerticalAlignment="Bottom"/>
+                        <Rectangle Fill="{StaticResource MainBrush}" Margin="4,1,4,4"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
+        <Style x:Key="ImportanceMarkContentControlStyle" TargetType="ContentControl">
+            <Setter Property="Width" Value="10" />
+            <Setter Property="Height" Value="10" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+
+        <Storyboard x:Key="MouseOverEnterStoryboard">
+            <ObjectAnimationUsingKeyFrames Duration="0:0:0.400" Storyboard.TargetName="MouseOverGrid" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation BeginTime="0:0:0.200" Duration="0:0:0.200" To="1" Storyboard.TargetName="MouseOverGrid" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+        <Storyboard x:Key="MouseOverExitStoryboard">
+            <ObjectAnimationUsingKeyFrames Duration="0:0:0.200" Storyboard.TargetName="MouseOverGrid" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.200">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation BeginTime="0:0:0.0" Duration="0:0:0.200" To="0" Storyboard.TargetName="MouseOverGrid" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+
+        <ControlTemplate x:Key="AppointmentToolTipTemplate" TargetType="ToolTip">
+            <Border BorderBrush="{Binding Appointment.LabelBrush}" BorderThickness="1" Background="#FFFFFFFF">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Margin="10 0 10 15">
+                        <!--Subject-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!--High & Low importance marks -->
+                            <Grid VerticalAlignment="Top">
+                                <ContentControl x:Name="HighImportanceMark" Template="{StaticResource HighImportanceMarkTemplate}" Margin="0 5 5 0" 
+                                                Style="{StaticResource ImportanceMarkContentControlStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=High}" />
+                                <ContentControl x:Name="LowImportanceMark" Template="{StaticResource LowImportanceMarkTemplate}" Margin="0 5 5 0" 
+                                                Style="{StaticResource ImportanceMarkContentControlStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Low}" />
+                            </Grid>
+
+                            <TextBlock Grid.Column="1" Text="{Binding Subject}" TextWrapping="Wrap" FontSize="17" Foreground="{Binding Appointment.LabelBrush}" 
+                                    FontFamily="Segoe UI" TextTrimming="WordEllipsis" MaxWidth="300" VerticalAlignment="Top" />
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Appointment.Start, StringFormat='hh:mm tt'}" FontFamily="Segoe UI Semibold" Foreground="#FF4D4D4D" FontSize="13" />
+                                <TextBlock Text="-" FontFamily="Segoe UI Semibold" Foreground="#FF4D4D4D" FontSize="13"/>
+                                <TextBlock Text="{Binding Appointment.End, StringFormat='hh:mm tt'}" FontFamily="Segoe UI Semibold" Foreground="#FF4D4D4D" FontSize="13" />
+                            </StackPanel>
+                            <TextBlock  Grid.Row="3" Grid.Column="1" Text="{Binding Appointment.Programme}" Foreground="#FFE61E26" FontSize="12" FontFamily="Segoe UI"/>
+                        </Grid>
+                    </StackPanel>
+                    <Grid Grid.Column="1" Margin="0 5 5 15">
+                        <!--ToolTip image -->
+                        <Image Source="{Binding Appointment.ProgrammeImageSource}" Stretch="Fill" Width="96" Height="68" />
+                        <Grid Margin="0 5 5 0" HorizontalAlignment="Right" Width="24" Height="24" VerticalAlignment="Top" 
+                          Visibility="{Binding Appointment.IsLive, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                            <Path Data="M23.5,12 C23.5,18.351274 18.351274,23.5 12,23.5 C5.6487255,23.5 0.5,18.351274 0.5,12 C0.5,5.6487255 5.6487255,0.5 12,0.5 C18.351274,0.5 23.5,5.6487255 23.5,12 z" 
+                              Stretch="Fill" StrokeThickness="1.5" Stroke="White"/>
+                            <Path Data="F1 M112.0544,459.8237 L112.0414,469.36169 C112.0414,469.8287 111.7474,469.96371 111.3924,469.6597 L109.2034,467.7887 C109.0514,467.65869 108.9174,467.4657 108.8054,467.2547 L107.8354,467.2547 L107.8354,469.27271 C107.8354,469.7847 107.4154,470.20071 106.9024,470.19669 L93.544403,470.08771 C93.030403,470.08569 92.608398,469.66171 92.608398,469.14969 L92.608398,460.85172 C92.608398,460.33569 93.030403,459.91669 93.544403,459.91669 L106.9024,459.91669 C107.4154,459.91669 107.8354,460.33569 107.8354,460.85172 L107.8354,461.9267 L108.8254,461.9267 C108.9334,461.73169 109.0554,461.54871 109.2014,461.42371 L111.4064,459.52771 C111.7634,459.2197 112.0544,459.3537 112.0544,459.8237" 
+                              Stretch="Fill" Margin="3 6 3 7" Fill="White" Height="8" Width="15"/>
+                        </Grid>
+                    </Grid>
+
+                    <!-- Programme Label-->
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="{Binding Appointment.LabelBrush}">
+                        <TextBlock Text="{Binding Start, StringFormat='dd MMM'}" Margin="3 0 0 0" FontFamily="Segoe UI Semibold" FontSize="13" Foreground="White" VerticalAlignment="Center" />
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Appointment.ProgrammeLabel}" VerticalAlignment="Center" Margin="0 0 3 0"
+                                   FontFamily="Segoe UI Semibol" FontSize="13" Foreground="White"  />
+                    </Grid>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <Style x:Key="AppointmentToolTipStyle" TargetType="ToolTip">
+            <Setter Property="Template" Value="{StaticResource AppointmentToolTipTemplate}" />
+            <Setter Property="MinWidth" Value="280" />
+            <Setter Property="MinHeight" Value="117" />
+        </Style>
+
+        <!-- Appointment Item Horizontal Template-->
+        <ControlTemplate x:Key="AppointmentItemHorizontalControlTemplate" TargetType="scheduleView:AppointmentItem">
+            <Grid x:Name="Root">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="2" ShadowDepth="2" Opacity="0.3"/>
+                </Grid.Effect>
+                <!--NOTE: Add a tooltip-->
+                <ToolTipService.ToolTip>
+                    <ToolTip Style="{StaticResource AppointmentToolTipStyle}"/>
+                </ToolTipService.ToolTip>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Height="1" Margin="1 0">
+                    <Border x:Name="PART_TimeMarker" Margin="{TemplateBinding DurationMarkerMargin}"  Background="{Binding Path=TimeMarker.TimeMarkerBrush}" Visibility="{Binding Path=TimeMarker, Converter={StaticResource NullToVisibilityConverter}}" />
+                </Grid>
+
+                <Grid Grid.Row="0">
+                    <Grid.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" Command="scheduleView:RadScheduleViewCommands.EditAppointment" />
+                    </Grid.InputBindings>
+
+                    <Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" />
+                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" />
+                    <Border x:Name="SelectionVisual" Visibility="Collapsed" Background="{StaticResource StrongBrush}" Opacity="0.2" />
+
+                    <Border x:Name="PART_Category" Background="{Binding Path=Category.CategoryBrush}" Margin="1" />
+
+                    <Rectangle x:Name="ReadOnlyVisual" Visibility="Collapsed" Fill="{StaticResource MarkerBrush}" Opacity="0.2" />
+
+                    <!-- Programme Label-->
+                    <TextBlock  Grid.Row="1" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Appointment.ProgrammeLabel}" 
+                                VerticalAlignment="Bottom" FontFamily="Segoe UI Semibold" FontSize="13" Foreground="White" Margin="0 0 5 2" />
+
+                    <Grid Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Path Grid.Column="0" Data="M-919.69031,2003.9496 L-919.69031,2010.7375 L-923.7619,2007.4564 z" Fill="{StaticResource StrongBrush}" Margin="3 0"
+                      HorizontalAlignment="Left" Height="7" Stretch="Fill" VerticalAlignment="Center" Width="4" Visibility="{TemplateBinding StartIndicatorVisibility}"/>
+
+                        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="4 6 0 0">
+                            <Image x:Name="RecurrenceMark" Grid.Column="0" Margin="2 1 1 0" Width="10" Height="10" Visibility="{Binding Path=RecurrenceState, Converter={StaticResource RecurrenceStateIsExeptionToVisibilityConverter}}" HorizontalAlignment="Left" Source="{StaticResource AppointmentItem_Recurrence}" />
+                            <Image x:Name="ExceptionMark" Grid.Column="0" Margin="2 1 1 0" Width="10" Height="10" Visibility="{Binding Path=RecurrenceState, Converter={StaticResource RecurrenceStateIsOccurenceToVisibilityConverter}}" HorizontalAlignment="Left" Source="{StaticResource AppointmentItem_Exception}" />
+                            <ContentControl x:Name="HighImportanceMark" Template="{StaticResource HighImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"
+                                        Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=High}"   />
+                            <ContentControl x:Name="LowImportanceMark" Template="{StaticResource LowImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"
+                                        Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Low}"/>
+                        </StackPanel>
+
+                        <ContentPresenter Grid.Column="2" Margin="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        <Path Grid.Column="3" Data="M1109.0469,332.70313 L1113.0469,336.29663 L1109.0469,339.68823 z" Margin="3 0" Fill="{StaticResource StrongBrush}"
+                      HorizontalAlignment="Right" Height="6.984" Stretch="Fill" VerticalAlignment="Center" Width="4" Visibility="{TemplateBinding EndIndicatorVisibility}"/>
+                    </Grid>
+
+                    <Grid x:Name="MouseOverGrid" Visibility="Collapsed" Opacity="0">
+                        <Border x:Name="MouseOverVisual" Background="{StaticResource StrongBrush}" Opacity="0.1" />
+                        <Border x:Name="PART_StartResizeGrip" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch" Cursor="SizeWE" dragDrop:DragDropManager.AllowDrag="True" Width="6"
+						Visibility="{Binding IsAllDay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertedBooleanToVisibilityConverter}}" />
+
+                        <Border x:Name="PART_EndResizeGrip" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Stretch" Cursor="SizeWE" dragDrop:DragDropManager.AllowDrag="True" Width="6"
+						Visibility="{Binding IsAllDay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsReadOnly" Value="True" />
+                        <Condition Property="IsEnabled" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="ReadOnlyVisual" Property="Visibility" Value="Visible" />
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsReadOnly" Value="False" />
+                        <Condition Property="IsInInlineEditingMode" Value="False" />
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsEnabled" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="MouseOverGrid" Property="Visibility" Value="Visible" />
+                    <MultiTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverEnterStoryboard}" />
+                    </MultiTrigger.EnterActions>
+                    <MultiTrigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverExitStoryboard}" />
+                    </MultiTrigger.ExitActions>
+                </MultiTrigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter TargetName="SelectionVisual" Property="Visibility" Value="Visible" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!-- Appointment Item Vertical Template-->
+        <ControlTemplate x:Key="AppointmentItemVerticalControlTemplate" TargetType="scheduleView:AppointmentItem">
+            <Grid x:Name="Root">
+
+                <!--NOTE: Add a tooltip-->
+                <ToolTipService.ToolTip>
+                    <ToolTip Style="{StaticResource AppointmentToolTipStyle}"/>
+                </ToolTipService.ToolTip>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Width="1" Margin="0 1">
+                    <Border x:Name="PART_TimeMarker" Margin="{TemplateBinding DurationMarkerMargin}" Background="{Binding Path=TimeMarker.TimeMarkerBrush}" Visibility="{Binding Path=TimeMarker, Converter={StaticResource NullToVisibilityConverter}}" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" Command="scheduleView:RadScheduleViewCommands.EditAppointment" />
+                    </Grid.InputBindings>
+
+                    <Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" />
+                    <Border x:Name="Border" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" />
+                    <Border x:Name="SelectionVisual" Visibility="Collapsed" Background="{StaticResource StrongBrush}" Opacity="0.2" />
+                    <Border x:Name="PART_Category" Background="{Binding Path=Category.CategoryBrush}"/>
+                    <Rectangle x:Name="ReadOnlyVisual"  Visibility="Collapsed" Fill="{StaticResource MarkerBrush}" Opacity="0.2" />
+
+                    <!-- Programme Label-->
+                    <Grid HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Path Data="M15,0 L30,10 L30,22 L0,0z" Width="30" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top"
+                          Fill="{Binding Appointment.LabelBrush}" Stretch="Fill" />
+                        <TextBlock HorizontalAlignment="Right" Height="12" TextWrapping="Wrap" Text="{Binding Appointment.ProgrammeLabel}" VerticalAlignment="Top" Margin="0 2 1 0"
+                                   FontFamily="Segoe UI" FontSize="8" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="Bold">
+			                <TextBlock.RenderTransform>
+				                <RotateTransform Angle="37"/>
+			                </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Path Grid.ColumnSpan="3" Grid.Row="0" Data="M3.5,0 L7,4 L0,4 z" Fill="{StaticResource StrongBrush}" Margin="2 4 2 2"
+                      Height="4" Width="7" VerticalAlignment="Top" Stretch="Fill" HorizontalAlignment="Center" Visibility="{TemplateBinding StartIndicatorVisibility}" />
+
+                        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Margin="2 4 2 2">
+                            <Image x:Name="RecurrenceMark" Grid.Column="0" Margin="2 1 1 0" Width="10" Height="10" Visibility="{Binding Path=RecurrenceState, Converter={StaticResource RecurrenceStateIsExeptionToVisibilityConverter}}" HorizontalAlignment="Left" Source="{StaticResource AppointmentItem_Recurrence}" />
+                            <Image x:Name="ExceptionMark" Grid.Column="0" Margin="2 1 1 0" Width="10" Height="10" Visibility="{Binding Path=RecurrenceState, Converter={StaticResource RecurrenceStateIsOccurenceToVisibilityConverter}}" HorizontalAlignment="Left" Source="{StaticResource AppointmentItem_Exception}" />
+                            <ContentControl x:Name="HighImportanceMark" Template="{StaticResource HighImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"
+                                        Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=High}"   />
+                            <ContentControl x:Name="LowImportanceMark" Template="{StaticResource LowImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"
+                                        Visibility="{Binding Importance, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Low}"/>
+                        </StackPanel>
+
+                        <ContentPresenter Grid.Column="1" Grid.Row="1" Margin="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        <Path Grid.ColumnSpan="2" Grid.Row="2" Data="M7,0 L3.5,4 L0,0 z" Height="4" Width="7" Stretch="Fill" Fill="{StaticResource StrongBrush}" Margin="2 2 2 4"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="{TemplateBinding EndIndicatorVisibility}"/>
+                    </Grid>
+
+                    <Grid x:Name="MouseOverGrid" Visibility="Collapsed" Opacity="0">
+                        <Border x:Name="MouseOverVisual" Background="{StaticResource StrongBrush}" Opacity="0.1" />
+                        <Border x:Name="PART_StartResizeGrip" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Top" Cursor="SizeNS" dragDrop:DragDropManager.AllowDrag="True" Height="6" 
+						Visibility="{Binding IsAllDay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+
+                        <Border x:Name="PART_EndResizeGrip" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Cursor="SizeNS" dragDrop:DragDropManager.AllowDrag="True" Height="6"
+						Visibility="{Binding IsAllDay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"/>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsReadOnly" Value="True" />
+                        <Condition Property="IsEnabled" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="ReadOnlyVisual" Property="Visibility" Value="Visible" />
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsReadOnly" Value="False" />
+                        <Condition Property="IsInInlineEditingMode" Value="False" />
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsEnabled" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="MouseOverGrid" Property="Visibility" Value="Visible" />
+                    <MultiTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverEnterStoryboard}" />
+                    </MultiTrigger.EnterActions>
+                    <MultiTrigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource MouseOverExitStoryboard}" />
+                    </MultiTrigger.ExitActions>
+                </MultiTrigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter TargetName="SelectionVisual" Property="Visibility" Value="Visible" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <DataTemplate x:Key="AppointmentItemTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="{Binding Subject}" TextWrapping="NoWrap" FontSize="16" Foreground="White" FontFamily="Segoe UI" Margin="3 0 30 0"
+                               TextTrimming="WordEllipsis" dragDrop:DragDropManager.AllowDrag="False" />
+
+                    <StackPanel Orientation="Horizontal" Margin="3 0">
+                        <TextBlock Text="{Binding Appointment.Start, StringFormat='hh:mm'}" FontFamily="Segoe UI" Foreground="White" FontSize="13" />
+                        <TextBlock Text="-" FontFamily="Segoe UI" Foreground="White" FontSize="13"/>
+                        <TextBlock Text="{Binding Appointment.End, StringFormat='hh:mm'}" FontFamily="Segoe UI" Foreground="White" FontSize="13" />
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Column="1" Margin="0 5 5 6" HorizontalAlignment="Right" Width="24" Height="24" VerticalAlignment="Top" 
+                          Visibility="{Binding Appointment.IsLive, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                    <Path Data="M23.5,12 C23.5,18.351274 18.351274,23.5 12,23.5 C5.6487255,23.5 0.5,18.351274 0.5,12 C0.5,5.6487255 5.6487255,0.5 12,0.5 C18.351274,0.5 23.5,5.6487255 23.5,12 z" 
+                              Stretch="Fill" StrokeThickness="1.5" Stroke="White"/>
+                    <Path Data="F1 M112.0544,459.8237 L112.0414,469.36169 C112.0414,469.8287 111.7474,469.96371 111.3924,469.6597 L109.2034,467.7887 C109.0514,467.65869 108.9174,467.4657 108.8054,467.2547 L107.8354,467.2547 L107.8354,469.27271 C107.8354,469.7847 107.4154,470.20071 106.9024,470.19669 L93.544403,470.08771 C93.030403,470.08569 92.608398,469.66171 92.608398,469.14969 L92.608398,460.85172 C92.608398,460.33569 93.030403,459.91669 93.544403,459.91669 L106.9024,459.91669 C107.4154,459.91669 107.8354,460.33569 107.8354,460.85172 L107.8354,461.9267 L108.8254,461.9267 C108.9334,461.73169 109.0554,461.54871 109.2014,461.42371 L111.4064,459.52771 C111.7634,459.2197 112.0544,459.3537 112.0544,459.8237" 
+                              Stretch="Fill" Margin="3 6 3 7" Fill="White" Height="8" Width="15"/>
+                </Grid>
+
+
+                <TextBlock Grid.Row="2" Text="{Binding Start, StringFormat='dd MMM'}" VerticalAlignment="Bottom" Margin="3 0 0 0"
+                           FontFamily="Segoe UI Semibold" FontSize="13" Foreground="White" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="InlineEditTemplate">
+            <TextBox VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding Appointment.Subject, Mode=TwoWay}" TextWrapping="Wrap"  />
+        </DataTemplate>
+
+        <scheduleView:AppointmentItemContentTemplateSelector x:Key="AppointmentItemTemplateSelector" DefaultTemplate="{StaticResource AppointmentItemTemplate}" />
+
+        <Style x:Key="AppointmentItemBaseStyle" TargetType="scheduleView:AppointmentItem">
+            <Setter Property="Background" Value="{StaticResource AppointmentItemBackground}" />
+            <Setter Property="BorderBrush" Value="{StaticResource MainBrush}" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="Foreground" Value="{StaticResource MarkerBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="2 0 0 0" />
+            <Setter Property="ContentTemplate" Value="{StaticResource AppointmentItemTemplate}" />
+            <Setter Property="Template" Value="{StaticResource AppointmentItemHorizontalControlTemplate}" />
+            <Setter Property="Panel.ZIndex" Value="1" />
+        </Style>
+
+        <common:ResourceAppointmentItemStyleSelector x:Key="AppointmentItemStyleSelector">
+            <common:ResourceAppointmentItemStyleSelector.MonthViewStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="2 1 2 0" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.MonthViewStyle>
+            <common:ResourceAppointmentItemStyleSelector.HorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.HorizontalStyle>
+            <common:ResourceAppointmentItemStyleSelector.NewsHorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                    <Setter Property="Background" Value="{StaticResource NewsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.NewsHorizontalStyle>
+            <common:ResourceAppointmentItemStyleSelector.SportsHorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                    <Setter Property="Background" Value="{StaticResource SportsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.SportsHorizontalStyle>
+            <common:ResourceAppointmentItemStyleSelector.KidsHorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                    <Setter Property="Background" Value="{StaticResource KidsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.KidsHorizontalStyle>
+            <common:ResourceAppointmentItemStyleSelector.MoviesHorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                    <Setter Property="Background" Value="{StaticResource MoviesAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.MoviesHorizontalStyle>
+            <common:ResourceAppointmentItemStyleSelector.ShowsHorizontalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Margin" Value="0 1 0 0" />
+                    <Setter Property="Background" Value="{StaticResource ShowsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.ShowsHorizontalStyle>
+
+            <common:ResourceAppointmentItemStyleSelector.VerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.VerticalStyle>
+            <common:ResourceAppointmentItemStyleSelector.NewsVerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                    <Setter Property="Background" Value="{StaticResource NewsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.NewsVerticalStyle>
+            <common:ResourceAppointmentItemStyleSelector.SportsVerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                    <Setter Property="Background" Value="{StaticResource SportsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.SportsVerticalStyle>
+            <common:ResourceAppointmentItemStyleSelector.KidsVerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                    <Setter Property="Background" Value="{StaticResource KidsAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.KidsVerticalStyle>
+            <common:ResourceAppointmentItemStyleSelector.MoviesVerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                    <Setter Property="Background" Value="{StaticResource MoviesAppointmentBackgroundBrush}" />
+                </Style>
+                </common:ResourceAppointmentItemStyleSelector.MoviesVerticalStyle>
+            <common:ResourceAppointmentItemStyleSelector.ShowsVerticalStyle>
+                <Style TargetType="scheduleView:AppointmentItem" BasedOn="{StaticResource AppointmentItemBaseStyle}">
+                    <Setter Property="Template" Value="{StaticResource AppointmentItemVerticalControlTemplate}" />
+                    <Setter Property="Margin" Value="1 0 0 0" />
+                    <Setter Property="Background" Value="{StaticResource ShowsAppointmentBackgroundBrush}" />
+                </Style>
+            </common:ResourceAppointmentItemStyleSelector.ShowsVerticalStyle>
+        </common:ResourceAppointmentItemStyleSelector>
+
+        <!--EditAppointmentStyle-->
+        <scheduleView:ResourceTypeTemplateSelector x:Key="ResourcesEditorItemTemplateSelector">
+            <scheduleView:ResourceTypeTemplateSelector.SingleSelectionTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="100" SharedSizeGroup="LabelsGroup" />
+
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding ResourceType.DisplayName}" Margin="6" HorizontalAlignment="Right" />
+                        <telerik:RadComboBox Grid.Column="1" Margin="3" ItemsSource="{Binding ResourceItems}" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="{Binding ClearAllButtonContent}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" DisplayMemberPath="Resource.DisplayName"  />
+                    </Grid>
+                </DataTemplate>
+            </scheduleView:ResourceTypeTemplateSelector.SingleSelectionTemplate>
+            <scheduleView:ResourceTypeTemplateSelector.MultipleSelectionTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="100" SharedSizeGroup="LabelsGroup" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding ResourceType.DisplayName}" Margin="6" />
+                        <telerik:RadComboBox Grid.Column="1" Margin="3" ItemsSource="{Binding ResourceItems}" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="{Binding ClearAllButtonContent}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" >
+                            <telerik:RadComboBox.ItemContainerStyle>
+                                <Style TargetType="telerik:RadComboBoxItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate>
+                                                <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" Content="{Binding Resource.DisplayName}"  />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </telerik:RadComboBox.ItemContainerStyle>
+                            <telerik:RadComboBox.SelectionBoxTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Owner.CheckedItems, Converter={StaticResource ResourcesSeparatorConverter}}" />
+                                </DataTemplate>
+                            </telerik:RadComboBox.SelectionBoxTemplate>
+                        </telerik:RadComboBox>
+                    </Grid>
+                </DataTemplate>
+            </scheduleView:ResourceTypeTemplateSelector.MultipleSelectionTemplate>
+        </scheduleView:ResourceTypeTemplateSelector>
+        <DataTemplate x:Key="TimeMarkerComboBoxItemContentTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="{Binding TimeMarkerBrush}" Margin="2 0" Width="12" Height="12" />
+                <TextBlock telerik:LocalizationManager.ResourceKey="{Binding TimeMarkerName}" Margin="2 0" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="CategoryComboBoxItemContentTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="{Binding CategoryBrush}" Margin="2 0" Width="12" Height="12" />
+                <TextBlock Text="{Binding DisplayName}" Margin="2 0" />
+            </StackPanel>
+        </DataTemplate>      
+
+        <ControlTemplate x:Key="EditAppointmentTemplate" TargetType="scheduleView:SchedulerDialog">
+            <Grid IsSharedSizeScope="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <telerik:RadToolBar x:Name="AppointmentToolbar"  BorderThickness="0 0 0 1" FocusManager.IsFocusScope="False"
+                 GripVisibility="Collapsed" Grid.Row="0" Margin="-1 0 -1 3" >
+                    <telerik:RadButton x:Name="EditRecurrenceButton" Command="scheduleView:RadScheduleViewCommands.EditRecurrenceRule" Visibility="{Binding CanEditParentAppointment, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                        <ToolTipService.ToolTip>
+                            <ToolTip telerik:LocalizationManager.ResourceKey="EditRecurrence"  />
+                        </ToolTipService.ToolTip>
+                        <TextBlock Margin="6 0" telerik:LocalizationManager.ResourceKey="EditRecurrence" Foreground="{StaticResource StrongBrush}" />
+                    </telerik:RadButton>
+                    <telerik:RadButton x:Name="EditParentAppointmentButton" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" Command="scheduleView:RadScheduleViewCommands.EditParentAppointment" Visibility="{Binding CanEditParentAppointment, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <ToolTipService.ToolTip>
+                            <TextBlock telerik:LocalizationManager.ResourceKey="EditParentAppointment"  />
+                        </ToolTipService.ToolTip>
+                        <TextBlock Margin="4 0" telerik:LocalizationManager.ResourceKey="EditParentAppointment" Foreground="{StaticResource StrongBrush}" />
+                    </telerik:RadButton>
+                    <telerik:RadToolBarSeparator />
+                    <TextBlock x:Name="ShowAs" telerik:LocalizationManager.ResourceKey="ShowAs" Margin="6 0" VerticalAlignment="Center" Foreground="{StaticResource StrongBrush}" />
+                    <telerik:RadComboBox x:Name="PART_TimeMarkers" Margin="2 1" Width="110" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" EmptyText="{Binding TimeMarkersEmptyText}" ItemsSource="{Binding TimeMarkers}" SelectedItem="{Binding Occurrence.Appointment.TimeMarker, Mode=TwoWay}" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="{Binding ClearSelectionButtonContent}" ItemTemplate="{StaticResource TimeMarkerComboBoxItemContentTemplate}" SelectionBoxTemplate="{StaticResource TimeMarkerComboBoxItemContentTemplate}"  />
+                    <telerik:RadComboBox x:Name="PART_Categories" Margin="2 1" Width="130" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" EmptyText="{Binding CategoriesEmptyText}" ItemsSource="{Binding Categories}" SelectedItem="{Binding Occurrence.Appointment.Category, Mode=TwoWay}" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="{Binding ClearSelectionButtonContent}" ItemTemplate="{StaticResource CategoryComboBoxItemContentTemplate}" SelectionBoxTemplate="{StaticResource CategoryComboBoxItemContentTemplate}"  />
+                    <telerik:RadToggleButton x:Name="HighImportaceButton" Width="22" Height="22" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" IsChecked="{Binding IsHighImportance, Mode=TwoWay}">
+                        <ToolTipService.ToolTip>
+                            <ToolTip telerik:LocalizationManager.ResourceKey="HighImportance"  />
+                        </ToolTipService.ToolTip>
+                        <ContentControl x:Name="HighImportanceMark" Template="{StaticResource HighImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"  />
+                    </telerik:RadToggleButton>
+                    <telerik:RadToggleButton x:Name="LowImportaceButton" Width="22" Height="22" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" IsChecked="{Binding IsLowImportance, Mode=TwoWay}">
+                        <ToolTipService.ToolTip>
+                            <ToolTip telerik:LocalizationManager.ResourceKey="LowImportance"  />
+                        </ToolTipService.ToolTip>
+                        <ContentControl x:Name="LowImportanceMark" Template="{StaticResource LowImportanceMarkTemplate}" Margin="2 1 1 0" Style="{StaticResource ImportanceMarkContentControlStyle}"  />
+
+                    </telerik:RadToggleButton>
+                </telerik:RadToolBar>
+                <Border x:Name="AppointmentCategory" Grid.Row="1" Height="20" Margin="6 6" Background="{Binding SelectedItem.CategoryBrush, ElementName=PART_Categories}" Visibility="{Binding SelectedItem, ElementName=PART_Categories,Converter={StaticResource NullToVisibilityConverter}}">
+                    <TextBlock Margin="6 0" Text="{Binding SelectedItem.DisplayName, ElementName=PART_Categories}" Foreground="{StaticResource MainBrush}" VerticalAlignment="Center"  />
+                </Border>
+
+                <Grid x:Name="Details" Grid.Row="2" Margin="6">
+                    <Grid.Resources>
+                        <telerik:InputMode x:Key="RadDateTimePickerInputModeDatePicker">DatePicker</telerik:InputMode>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="100" SharedSizeGroup="LabelsGroup" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock	Grid.Row="0" Grid.Column="0" Margin="6" telerik:LocalizationManager.ResourceKey="Subject" HorizontalAlignment="Right" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" IsReadOnly="{Binding IsReadOnly}" Text="{Binding Occurrence.Appointment.Subject, Mode=TwoWay}"  />
+
+                    <TextBlock	Grid.Row="1" Grid.Column="0" Margin="6" telerik:LocalizationManager.ResourceKey="Body" HorizontalAlignment="Right" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="3" Height="70" IsReadOnly="{Binding IsReadOnly}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Text="{Binding Occurrence.Appointment.Body, Mode=TwoWay}" TextWrapping="Wrap"   />
+
+                    <TextBlock	Grid.Row="2" Grid.Column="0" Margin="6" telerik:LocalizationManager.ResourceKey="StartTime" HorizontalAlignment="Right" />
+
+                    <telerik:RadDateTimePicker Grid.Row="2" Grid.Column="1" Margin="3" IsReadOnly="{Binding IsReadOnly}" Culture="{Binding DefaultCulture,Source={StaticResource LocalizationManager}}"  SelectedValue="{Binding  ActualStart, Mode=TwoWay}" IsEnabled="{Binding IsNotRecurrent}" InputMode="{Binding IsAllDayEvent, Converter={StaticResource BoolToInputModeConverter}, ConverterParameter={x:Static telerik:InputMode.DatePicker}}"  />
+
+                    <TextBlock	Grid.Row="3" Grid.Column="0" Margin="6" VerticalAlignment="Center" telerik:LocalizationManager.ResourceKey="EndTime"   HorizontalAlignment="Right" />
+
+                    <telerik:RadDateTimePicker Grid.Row="3" SelectedValue="{Binding  ActualEnd, Mode=TwoWay}" Grid.Column="1" Margin="3" IsReadOnly="{Binding IsReadOnly}" Culture="{Binding DefaultCulture,Source={StaticResource LocalizationManager}}" IsEnabled="{Binding IsNotRecurrent}" InputMode="{Binding IsAllDayEvent, Converter={StaticResource BoolToInputModeConverter}, ConverterParameter={x:Static telerik:InputMode.DatePicker}}"  >
+
+                    </telerik:RadDateTimePicker>
+
+                    <CheckBox x:Name="AllDayEventCheckbox" Grid.Row="4"  Grid.Column="1" Margin="3" VerticalAlignment="Center" 
+                          IsChecked="{Binding Path=IsAllDayEvent, Mode=TwoWay}" IsEnabled="{Binding IsNotRecurrent}" telerik:LocalizationManager.ResourceKey="AllDayEvent"  />
+                </Grid>
+
+                <Border Grid.Row="3" Grid.RowSpan="3" BorderBrush="#FFE6E6E6" BorderThickness="1" Margin="6 0" />
+
+                <!-- Resource Editor -->
+                <Grid Grid.Row="3" Margin="3" Visibility="{Binding ResourceTypesVisibility}">
+                    <ItemsControl x:Name="PART_Resources" Margin="3" IsTabStop="false" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" ItemsSource="{Binding ResourceTypes}" ItemTemplateSelector="{StaticResource ResourcesEditorItemTemplateSelector}" Visibility="{Binding ResourceTypesVisibility}" />
+                    <TextBlock HorizontalAlignment="Center" Text="You can only change the resources by opening the series" Margin="3" Visibility="{Binding ResourceTypesVisibility, Converter={StaticResource InvertedVisibilityConverter}}" />
+                </Grid>
+
+                <CheckBox Grid.Row="4" Margin="108 3 3 3" Content="Live"  IsChecked="{Binding Occurrence.Appointment.IsLive, Mode=TwoWay}" />
+
+                <Grid Grid.Row="5" Margin="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="102" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Duration" Margin="6 0" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="6 0" VerticalAlignment="Center">
+                        <Grid Width="10" Height="10" Margin="-2 0 4 0">
+                            <Ellipse Fill="#FFA0AFC3" StrokeThickness="0"/>
+                            <Path Data="M0.49834815,0.15624278 C0.77310983,0.15624278 0.99500001,0.44771525 0.99500001,1 L0.99500001,2 C0.99500001,2.0862944 0.98956204,2.1700361 0.9793374,2.2499156 L0.97761548,2.2621038 0.99138665,2.2724657 C1.0551,2.3217192 1.1181594,2.3770881 1.1791788,2.4381075 L2.1627799,3.4035487 C2.5533043,3.7940731 2.602693,4.1590443 2.4084071,4.3533302 2.2141213,4.5476161 1.8497329,4.4976445 1.4592087,4.1071201 L0.47560761,3.1416788 C0.39018041,3.0562518 0.31582806,2.9668262 0.25382683,2.8772056 L0.23600964,2.8506927 0.21934302,2.8292158 C0.15979189,2.7483475 0.10941981,2.6422429 0.072024727,2.5185363 L0.068973461,2.5078697 0.06744724,2.5030127 0.065087656,2.4942856 0.060045546,2.4766593 C0.021751793,2.3349662 1.8765149E-09,2.1725891 0,2 L0,1 C1.8765149E-09,0.44771525 0.22358649,0.15624278 0.49834815,0.15624278 z" 
+                              Fill="White" Margin="4,2,3,3" Stretch="Fill"/>
+                        </Grid>
+                        <TextBlock Text="{Binding Occurrence.Appointment.Duration}" />
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Grid.Row="6" Margin="13 6 6 6" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <telerik:RadButton Margin="2" MinWidth="84" Command="telerik:WindowCommands.Confirm" telerik:LocalizationManager.ResourceKey="Ok" telerik:RadWindow.ResponseButton="Accept" >
+                        <ToolTipService.ToolTip>
+                            <TextBlock telerik:LocalizationManager.ResourceKey="SaveAndClose"  />
+                        </ToolTipService.ToolTip>
+                    </telerik:RadButton>
+                    <telerik:RadButton Margin="2" MinWidth="84" IsCancel="true"
+                     Command="telerik:WindowCommands.Cancel" telerik:LocalizationManager.ResourceKey="Cancel" telerik:RadWindow.ResponseButton="Cancel"  />
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="EditAppointmentDialogStyle" TargetType="scheduleView:SchedulerDialog">
+            <Setter Property="Foreground" Value="{StaticResource StrongBrush}" />
+            <Setter Property="Width" Value="600" />
+            <Setter Property="IsTabStop" Value="False" />
+
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template" Value="{StaticResource EditAppointmentTemplate}" />
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" MaxWidth="400" HorizontalAlignment="Left">
+                            <TextBlock telerik:LocalizationManager.ResourceKey="Event" Visibility="{Binding Occurrence.Appointment.IsAllDayEvent, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <TextBlock telerik:LocalizationManager.ResourceKey="Appointment" Visibility="{Binding Occurrence.Appointment.IsAllDayEvent, Converter={StaticResource InvertedBooleanToVisibilityConverter}}" />
+                            <TextBlock Text=" - " />
+                            <TextBlock x:Name="SubjectTextBlock" Text="{Binding Occurrence.Appointment.Subject}" Visibility="{Binding Occurrence.Appointment.Subject, Converter={StaticResource NullToVisibilityConverter}}" />
+                            <TextBlock telerik:LocalizationManager.ResourceKey="Untitled" Visibility="{Binding Occurrence.Appointment.Subject, Converter={StaticResource InvertedNullToVisibilityConverter}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="IconTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Path Data="M188,502L188,481.207C188,480.257,188.771,479.484,189.723,479.484L190.473,479.484L190.473,484.786L197.551,484.786L197.551,479.484L202.568,479.484L202.568,484.786L209.645,484.786L209.645,479.484L210.516,479.484C211.465,479.484,212.237,480.257,212.237,481.207L212.237,502C212.237,502.949,211.465,503.722,210.516,503.722L189.723,503.722C188.771,503.722,188,502.949,188,502 M209.746,487.307L190.503,487.307L190.503,501.544L209.746,501.544z M198.362,499.882L198.186,499.779C197.602,499.439,197.403,498.687,197.744,498.102L201.192,492.208L197.258,492.208C196.581,492.208,196.031,491.658,196.031,490.98L196.031,490.777C196.031,490.102,196.581,489.551,197.258,489.551L203.483,489.551C204.107,489.551,204.623,490.02,204.7,490.623C204.813,490.949,204.788,491.32,204.602,491.643L200.04,499.441C199.699,500.025,198.947,500.223,198.362,499.882 M192.369,482.613L192.369,477.786C192.354,477.697,192.348,477.607,192.348,477.514C192.348,476.605,193.085,475.867,193.994,475.867C194.885,475.867,195.611,476.578,195.639,477.461L195.654,477.461L195.654,482.613z M204.465,482.613L204.463,477.857C204.439,477.747,204.428,477.632,204.428,477.514C204.428,476.605,205.166,475.867,206.075,475.867C206.965,475.867,207.692,476.578,207.721,477.461L207.749,477.461L207.749,482.613z" 
+                      Fill="{StaticResource MainBrush}" Stretch="Fill" Width="14" Height="16" Margin="0 0 2 0" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Group headers -->
+
+		<Style x:Key="LiveCastNewsGroupHeaderStyle" TargetType="scheduleView:GroupHeader" BasedOn="{StaticResource GroupHeaderBaseStyle}">
+            <Setter Property="Foreground" Value="#FFB11E54" />
+        </Style>
+		<Style x:Key="VoozyGroupHeaderStyle" TargetType="scheduleView:GroupHeader" BasedOn="{StaticResource GroupHeaderBaseStyle}">
+            <Setter Property="Foreground" Value="#FF7E51A1" />
+        </Style>
+		<Style x:Key="SportixGroupHeaderStyle" TargetType="scheduleView:GroupHeader" BasedOn="{StaticResource GroupHeaderBaseStyle}">
+            <Setter Property="Foreground" Value="#FF309B46" />
+        </Style>
+        <common:TVGroupHeaderStyleSelector x:Key="GroupHeaderStyleSelector" LiveCastNewsGroupHeaderStyle="{StaticResource LiveCastNewsGroupHeaderStyle}"
+                                        VoozyGroupHeaderStyle="{StaticResource VoozyGroupHeaderStyle}"
+                                        SportixGroupHeaderStyle="{StaticResource SportixGroupHeaderStyle}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource ViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadScheduleView x:Name="scheduleview" Grid.Row="1" AppointmentsSource="{Binding Appointments}" ActiveViewDefinitionIndex="1" AppointmentStyleSelector="{StaticResource AppointmentItemStyleSelector}"
+                                  MinAppointmentHeight="60" NavigationHeaderVisibility="Collapsed" GroupHeaderStyleSelector="{StaticResource GroupHeaderStyleSelector}"
+                                 EditAppointmentDialogStyle="{StaticResource EditAppointmentDialogStyle}">
+            <telerik:RadScheduleView.ResourceTypesSource>
+                <scheduleView:ResourceTypeCollection>
+					<scheduleView:ResourceType Name="TV">
+						<scheduleView:Resource ResourceName="LiveCastNews" DisplayName="LiveCast News"  />
+						<scheduleView:Resource ResourceName="Voozy" DisplayName="Voozy TV"  />
+						<scheduleView:Resource ResourceName="Sportix" DisplayName="Sportix TV"  />
+					</scheduleView:ResourceType>
+					<scheduleView:ResourceType Name="Programme">
+						<scheduleView:Resource ResourceName="News" DisplayName="News"  />
+						<scheduleView:Resource ResourceName="Sports" DisplayName="Sports"  />
+						<scheduleView:Resource ResourceName="Kids" DisplayName="Kids"  />
+						<scheduleView:Resource ResourceName="Movies" DisplayName="Movies" />
+						<scheduleView:Resource ResourceName="Shows" DisplayName="Shows" />
+					</scheduleView:ResourceType>
+				</scheduleView:ResourceTypeCollection>
+            </telerik:RadScheduleView.ResourceTypesSource>
+
+            <telerik:RadScheduleView.GroupDescriptionsSource>
+				<scheduleView:GroupDescriptionCollection>
+					<scheduleView:DateGroupDescription />
+					<scheduleView:ResourceGroupDescription ResourceType="TV" />
+				</scheduleView:GroupDescriptionCollection>
+            </telerik:RadScheduleView.GroupDescriptionsSource>
+
+            <telerik:RadScheduleView.ViewDefinitions>             
+                <telerik:WeekViewDefinition Orientation="Horizontal" DayStartTime="6:00" DayEndTime="21:00"
+											MajorTickLength="30min" MinTimeRulerExtent="3000" FirstDayOfWeek="Sunday" />
+            </telerik:RadScheduleView.ViewDefinitions>
+
+        </telerik:RadScheduleView>
+
+        <Border Grid.Row="2" Background="#FFFFFFFF" Height="28">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 4">
+                <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                    <Border Width="20" Height="12" Background="{StaticResource NewsAppointmentBackgroundBrush}" />
+                    <TextBlock Text="News" Margin="4 0 0 0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                    <Border Width="20" Height="12" Background="{StaticResource SportsAppointmentBackgroundBrush}" />
+                    <TextBlock Text="Sports" Margin="4 0 0 0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                    <Border Width="20" Height="12" Background="{StaticResource KidsAppointmentBackgroundBrush}" />
+                    <TextBlock Text="Kids" Margin="4 0 0 0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                    <Border Width="20" Height="12" Background="{StaticResource MoviesAppointmentBackgroundBrush}" />
+                    <TextBlock Text="Movies" Margin="4 0 0 0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                    <Border Width="20" Height="12" Background="{StaticResource ShowsAppointmentBackgroundBrush}" />
+                    <TextBlock Text="Shows" Margin="4 0 0 0" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,3 @@
+﻿Telerik DragAndDrop framework allows users to drag any element and drop it onto any other element. The associated events allow users to completely handle the Drag And Drop process, thus easily building complex and flexible business logic. The Drag And Drop Manager allows Drag-Drop operations to be implemented between any two controls. The manager can generate visual cues to help the user. In this example elements between the two ListBoxes can be dragged and dropped.
+
+DragDropManager is a part of the <b>Telerik.Windows.Controls</b> assembly.

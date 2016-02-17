@@ -1,0 +1,1 @@
+﻿This sample demonstrates that RadDiagram is not just about diagramming - it can serve as a design surface that hosts controls to create dashboards and slides. </br>Note that all data in this example is randomly generated for demonstration purposes only.

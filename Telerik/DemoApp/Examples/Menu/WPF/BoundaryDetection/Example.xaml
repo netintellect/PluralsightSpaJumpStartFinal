@@ -1,0 +1,21 @@
+<UserControl x:Class="Telerik.Windows.Examples.Menu.WPF.BoundaryDetection.Example" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Examples.Menu.Common" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" HorizontalAlignment="Center" VerticalAlignment="Center" xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Boundary Detection" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<UserControl.DataContext>
+		<local:MenuViewModel Source="/Menu;component/WPF/BoundaryDetection/menu.xaml" />
+	</UserControl.DataContext>
+    <Grid Width="700" Height="400" VerticalAlignment="Bottom">
+        <telerik:RadMenu VerticalAlignment="Bottom" ItemsSource="{Binding Items}" >
+			<telerik:RadMenu.ItemContainerStyle>
+				<Style TargetType="telerik:RadMenuItem" BasedOn="{StaticResource RadMenuItemStyle}">
+					<Setter Property="IsSeparator" Value="{Binding IsSeparator}" />
+					<Setter Property="Icon" Value="{Binding Image}" />
+                    <Setter Property="Header" Value="{Binding Text}"/>
+                    <Setter Property="ItemsSource" Value="{Binding Items}"/>
+				</Style>
+			</telerik:RadMenu.ItemContainerStyle>
+		</telerik:RadMenu>
+	</Grid>
+</UserControl>
+

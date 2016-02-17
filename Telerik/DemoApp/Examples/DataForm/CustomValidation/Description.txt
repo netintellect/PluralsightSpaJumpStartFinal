@@ -1,0 +1,1 @@
+﻿This example illustrates how to implement custom validation logic (including cross-field validation), utilizng the DataAnnotations.CustomValidationAttribute.

@@ -1,0 +1,3 @@
+﻿A <b>Needle</b>, <b>Marker</b> and <b>Bar</b> indicators can point their values on the scale using the <b>movement animation effect</b>. that animation allows smooth transition of the indicator from one value to the next. 
+
+The <b>movement animation feature</b> is controlled through two properties - <b>IsAnimated</b> property and <b>Duration</b> property that affects to animation speed.

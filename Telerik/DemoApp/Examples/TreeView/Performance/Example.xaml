@@ -1,0 +1,37 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.TreeView.Performance.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+	
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="UI and Data Virtualization" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Width="544" Height="340">
+		
+		<telerik:RadTreeView x:Name="treeView"
+				IsVirtualizing="True"
+				IsLoadOnDemandEnabled="True"
+				ItemTemplateSelector="{StaticResource ItemTemplateSelector}"
+				LoadOnDemand="TreeView_LoadOnDemand"
+				ItemPrepared="TreeView_ItemPrepared"
+				telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+		
+		<telerik:RadBusyIndicator x:Name="xLoadingIndicator"
+				VerticalAlignment="Stretch" 
+				HorizontalAlignment="Stretch" />
+
+		<Border x:Name="xLoadButton" Height="30" Background="{StaticResource TreeView_Performance_ButtonBackground}"
+				HorizontalAlignment="Center" VerticalAlignment="Center"
+				MouseLeftButtonDown="LoadButtonClick">
+			<TextBlock Text="Generate 1 Million Items"
+					   Foreground="White" FontSize="12" Margin="10 2"
+					   HorizontalAlignment="Center" VerticalAlignment="Center" />
+		</Border>
+	</Grid>
+</UserControl>
+

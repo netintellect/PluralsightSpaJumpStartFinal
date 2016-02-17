@@ -1,0 +1,2 @@
+﻿Telerik TabControl brings great flexibility to your application’s navigation, allowing you to place any control inside the tabs. This example demonstrates how the control can be used when creating a virtual contacts book. 
+<br/><br/>RadTabControl is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

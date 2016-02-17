@@ -1,0 +1,25 @@
+<menuModel:MenuItemsCollection 
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:menuModel="clr-namespace:Examples.Menu.Common;assembly=Menu">
+	<menuModel:MenuItem Text="File">
+		<menuModel:MenuItem Text="Exit" />
+	</menuModel:MenuItem>
+	<menuModel:MenuItem Text="Options">
+		<menuModel:MenuItem Text="CheckBox 1" IsCheckable="True" />
+		<menuModel:MenuItem Text="CheckBox 2" IsCheckable="True" />
+		<menuModel:MenuItem Text="CheckBox 3" IsCheckable="True" />
+		<menuModel:MenuItem IsSeparator="True" />
+		<menuModel:MenuItem Text="RadioButton 1.1" IsCheckable="True" GroupName="1" />
+		<menuModel:MenuItem Text="RadioButton 1.2" IsCheckable="True" GroupName="1" />
+		<menuModel:MenuItem Text="RadioButton 1.3" IsCheckable="True" GroupName="1" />
+		<menuModel:MenuItem IsSeparator="True" />
+		<menuModel:MenuItem Text="RadioButton 2.1" IsCheckable="True" GroupName="2" />
+		<menuModel:MenuItem Text="RadioButton 2.2" IsCheckable="True" GroupName="2" />
+		<menuModel:MenuItem Text="RadioButton 2.3" IsCheckable="True" GroupName="2" />
+		<menuModel:MenuItem IsSeparator="True" />
+		<menuModel:MenuItem Text="RadioButton 3.1" IsCheckable="True" GroupName="3" />
+		<menuModel:MenuItem Text="RadioButton 3.2" IsCheckable="True" GroupName="3" />
+		<menuModel:MenuItem Text="RadioButton 3.3" IsCheckable="True" GroupName="3" />
+	</menuModel:MenuItem>
+</menuModel:MenuItemsCollection>

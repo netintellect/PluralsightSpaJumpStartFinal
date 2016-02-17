@@ -1,0 +1,44 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" version="1.2" DefaultPageLayoutSettings="410,550" LayoutMode="Paged" PageViewMargin="10,10" StyleName="defaultDocumentStyle">
+  <t:RadDocument.ProtectionSettings>
+    <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+  </t:RadDocument.ProtectionSettings>
+  <t:RadDocument.Styles>
+    <s:StyleDefinition DisplayName="charStyle" IsCustom="False" IsDefault="False" IsPrimary="False" Name="charStyle" Type="Character">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontFamily="Calibri" FontSize="20" ForeColor="#FFFFA500" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="True" Name="defaultDocumentStyle" Type="Default">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontFamily="Verdana" FontSize="16" FontStyle="Normal" FontWeight="Normal" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="linkedStyleChar" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="linkedStyleParagraph" Name="linkedStyleChar" Type="Character">
+      <s:StyleDefinition.SpanStyle>
+        <s:SpanProperties FontSize="30" FontWeight="Bold" ForeColor="#FF800080" />
+      </s:StyleDefinition.SpanStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="linkedStyleParagraph" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="linkedStyleChar" Name="linkedStyleParagraph" Type="Paragraph">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties Background="#FFFFFF00" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+    <s:StyleDefinition DisplayName="styleparagraph" IsCustom="False" IsDefault="False" IsPrimary="True" Name="styleparagraph" Type="Paragraph">
+      <s:StyleDefinition.ParagraphStyle>
+        <s:ParagraphProperties Background="#FFFF0000" />
+      </s:StyleDefinition.ParagraphStyle>
+    </s:StyleDefinition>
+  </t:RadDocument.Styles>
+  <t:Section PageMargin="24,24,24,24">
+    <t:Paragraph LeftIndent="24" />
+    <t:Paragraph LeftIndent="24">
+      <t:Span ForeColor="#FF83B5F1" Text="About Telerik" />
+    </t:Paragraph>
+    <t:Paragraph FontSize="13.3333330154419" LeftIndent="24">
+      <t:Span FontFamily="Calibri" FontSize="13.3333330154419" Text="Telerik’s mission is to make software development easier and more enjoyable. Our tools for agile project management, collaboration, development and testing allow companies of all sizes to create richer, more stable and aesthetic software faster than ever before. Trusted by over 100,000 customers worldwide for our devotion to quality and customer care, Telerik helps technical and business professionals maximize their productivity and &quot;develop experiences” every day." />
+    </t:Paragraph>
+    <t:Paragraph FontSize="13.3333330154419" LeftIndent="24">
+      <t:Span FontFamily="Calibri" FontSize="13.3333330154419" Text="As true craftsmen, we don&apos;t believe in compromises and our goal is to only release tools that we can be proud of." />
+    </t:Paragraph>
+  </t:Section>
+</t:RadDocument>

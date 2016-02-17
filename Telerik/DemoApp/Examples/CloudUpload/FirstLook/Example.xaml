@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.CloudUpload.FirstLook.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"		
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:common="clr-namespace:Telerik.Windows.Examples.CloudUpload.Common"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+			 Loaded="userControl_Loaded" Unloaded="userControl_Unloaded"
+			 HorizontalAlignment="Center" VerticalAlignment="Center">
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="hearedForeground" Color="White" />
+		<SolidColorBrush x:Key="hearedBackground" Color="#FF79256B" />
+		<SolidColorBrush x:Key="controlsBorderRush" Color="#FFD6D4D4" />
+	</UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="File Upload to Azure" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Grid x:Name="rootElement" Width="714" Height="445">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid Margin="5">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<TextBlock Text="Select multiple files at a time" 
+					   Background="{StaticResource hearedBackground}" 
+					   Foreground="{StaticResource hearedForeground}" 
+					   Padding="10" />
+			<Border BorderBrush="{StaticResource controlsBorderRush}" BorderThickness="1 0 1 1" Grid.Row="1">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<telerik:RadCloudUpload x:Name="cloudUpload" 
+											Buttons="AddFiles,Upload,Cancel,Clear" 
+											Margin="10" 
+											Unloaded="cloudUpload_Unloaded">
+						<telerik:RadCloudUpload.Provider>
+							<common:DummyProvider />
+						</telerik:RadCloudUpload.Provider>
+						<telerik:RadCloudUpload.ValidationRules>
+							<common:FileExtensionRule />
+						</telerik:RadCloudUpload.ValidationRules>
+					</telerik:RadCloudUpload>
+					<Border Grid.Row="1" Margin="10 0 10 10">
+						<Border.Style>
+							<Style TargetType="Border">
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding InvalidItems.Count, ElementName=cloudUpload}" Value="0">
+										<Setter Property="Visibility" Value="Collapsed" />
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Border.Style>
+						<ScrollViewer MaxHeight="120" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" BorderThickness="1">
+							<telerik:RadCloudUploadList ItemsSource="{Binding InvalidItems, ElementName=cloudUpload}" BorderThickness="0" />
+						</ScrollViewer>
+					</Border>
+					<Border Grid.Row="2" Margin="10 0 10 10">
+						<Border.Style>
+							<Style TargetType="Border">
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding ValidItems.Count, ElementName=cloudUpload}" Value="0">
+										<Setter Property="Visibility" Value="Collapsed" />
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</Border.Style>
+						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" BorderThickness="1">
+							<telerik:RadCloudUploadList ItemsSource="{Binding ValidItems, ElementName=cloudUpload}" BorderThickness="0" />
+						</ScrollViewer>
+					</Border>
+				</Grid>
+			</Border>
+		</Grid>
+		<Grid Margin="5" Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Uploaded Items" 
+					   Background="{StaticResource hearedBackground}" 
+					   Foreground="{StaticResource hearedForeground}" 
+					   Padding="10" />
+			<telerik:RadGridView x:Name="uploadedItemsList" 
+								 Grid.Row="1" 
+								 AutoGenerateColumns="False" 
+								 CanUserResizeColumns="False" 
+								 CanUserFreezeColumns="False" 
+								 RowIndicatorVisibility="Collapsed" 
+								 ShowGroupPanel="False" 
+                                 GroupRenderMode="Flat"
+								 CanUserSelect="False" 
+								 IsFilteringAllowed="False" 
+								 GridLinesVisibility="None" 
+								 IsReadOnly="True">
+				<telerik:RadGridView.Columns>
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" 
+												Header="Name" 
+												Width="250" 
+												HeaderTextAlignment="Center" />
+					<telerik:GridViewDataColumn DataMemberBinding="{Binding Size}" 
+												Header="Size" 
+												Width="73" 
+												HeaderTextAlignment="Center" 
+												TextAlignment="Right" />
+				</telerik:RadGridView.Columns>
+			</telerik:RadGridView>
+		</Grid>
+	</Grid>
+</UserControl>

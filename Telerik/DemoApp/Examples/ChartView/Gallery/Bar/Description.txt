@@ -1,0 +1,1 @@
+﻿This example shows a Bar and Horizontal Bar charts. The series have a mechanism for combining data points that reside in different series but have the same category. This mechanism is controlled via the CombineMode property. Choose an item from the ComboBox to see this mode in action.

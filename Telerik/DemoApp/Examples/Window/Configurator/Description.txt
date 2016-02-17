@@ -1,0 +1,1 @@
+﻿Telerik Window control is fully configurable in terms of determining its size, state and position. This example shows how to use the Window's properties to completely configure the control.

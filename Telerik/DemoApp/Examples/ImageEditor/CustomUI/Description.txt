@@ -1,0 +1,2 @@
+﻿With our new ImageEditor control you can freely create your own fancy user interface. 
+Please move your mouse cursor to the image so you can see more clearly the toolbar.

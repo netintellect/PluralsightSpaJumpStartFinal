@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC020482-0CDE-44C3-B1CB-E545AD67B664}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.ListBox</RootNamespace>
+    <AssemblyName>ListBox</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ListBox.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ListBox.App</SilverlightAppEntry>
+    <TestPageFileName>ListBoxTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Silverlight\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Silverlight\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls, Version=2012.1.121.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Agency.cs" />
+    <Compile Include="Common\AgencyViewModel.cs" />
+    <Compile Include="Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configurator\ViewModel.cs" />
+    <Compile Include="DragDrop\Country.cs" />
+    <Compile Include="DragDrop\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragDrop\ExampleViewModel.cs" />
+    <Compile Include="FirstLook\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Movie.cs" />
+    <Compile Include="FirstLook\UpperCaseStringConverter.cs" />
+    <Compile Include="FirstLook\ViewModel.cs" />
+    <Compile Include="GroupingFiltering\Employee.cs" />
+    <Compile Include="GroupingFiltering\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupingFiltering\UpperCaseStringConverter.cs" />
+    <Compile Include="GroupingFiltering\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Configurator\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DragDrop\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirstLook\Silverlight\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupingFiltering\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DragDrop\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\DragDrop\cr.png" />
+    <Resource Include="Images\ListBox\DragDrop\cz.png" />
+    <Resource Include="Images\ListBox\DragDrop\de.png" />
+    <Resource Include="Images\ListBox\DragDrop\dk.png" />
+    <Resource Include="Images\ListBox\DragDrop\es.png" />
+    <Resource Include="Images\ListBox\DragDrop\fr.png" />
+    <Resource Include="Images\ListBox\DragDrop\gb.png" />
+    <Resource Include="Images\ListBox\DragDrop\gr.png" />
+    <Resource Include="Images\ListBox\DragDrop\it.png" />
+    <Resource Include="Images\ListBox\DragDrop\nl.png" />
+    <Resource Include="Images\ListBox\DragDrop\pl.png" />
+    <Resource Include="Images\ListBox\DragDrop\pt.png" />
+    <Resource Include="Images\ListBox\DragDrop\ru.png" />
+    <Resource Include="Images\ListBox\DragDrop\se.png" />
+    <Resource Include="Images\ListBox\DragDrop\ua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\DragDrop\ie.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\FirstLook\8 Mile.png" />
+    <Resource Include="Images\ListBox\FirstLook\A Beautiful Mind.png" />
+    <Resource Include="Images\ListBox\FirstLook\American Pie 2.png" />
+    <Resource Include="Images\ListBox\FirstLook\American_Graffiti.png" />
+    <Resource Include="Images\ListBox\FirstLook\Autumn in New York .png" />
+    <Resource Include="Images\ListBox\FirstLook\Avatar.png" />
+    <Resource Include="Images\ListBox\FirstLook\Basic Instinct 2.png" />
+    <Resource Include="Images\ListBox\FirstLook\Behind Enemy Lines.png" />
+    <Resource Include="Images\ListBox\FirstLook\Bridget Jones%27s Diary.png" />
+    <Resource Include="Images\ListBox\FirstLook\Captain America_The First Avenger.png" />
+    <Resource Include="Images\ListBox\FirstLook\Charlie Bartlett .png" />
+    <Resource Include="Images\ListBox\FirstLook\Chicken Little .png" />
+    <Resource Include="Images\ListBox\FirstLook\Dr. Dolittle 2.png" />
+    <Resource Include="Images\ListBox\FirstLook\Frida.png" />
+    <Resource Include="Images\ListBox\FirstLook\Harry Potter and the Order of the Phoenix.png" />
+    <Resource Include="Images\ListBox\FirstLook\How to Train Your Dragon.png" />
+    <Resource Include="Images\ListBox\FirstLook\Ice Age.png" />
+    <Resource Include="Images\ListBox\FirstLook\Indiana Jones and the Raiders of the Lost Ark_The IMAX Experience.png" />
+    <Resource Include="Images\ListBox\FirstLook\Indiana Jones and the Temple of Doom.png" />
+    <Resource Include="Images\ListBox\FirstLook\Iron Man 2.png" />
+    <Resource Include="Images\ListBox\FirstLook\Johnny English.png" />
+    <Resource Include="Images\ListBox\FirstLook\Kill Bill Volume 1.png" />
+    <Resource Include="Images\ListBox\FirstLook\Kung Fu Panda 2.png" />
+    <Resource Include="Images\ListBox\FirstLook\Men in Black 3.png" />
+    <Resource Include="Images\ListBox\FirstLook\Michael Clayton.png" />
+    <Resource Include="Images\ListBox\FirstLook\Michael Jackson%27s This Is It.png" />
+    <Resource Include="Images\ListBox\FirstLook\Raiders of the Lost Ark .png" />
+    <Resource Include="Images\ListBox\FirstLook\Rango.png" />
+    <Resource Include="Images\ListBox\FirstLook\Rocky Balboa.png" />
+    <Resource Include="Images\ListBox\FirstLook\Sherlock Holmes.png" />
+    <Resource Include="Images\ListBox\FirstLook\Shrek Forever After.png" />
+    <Resource Include="Images\ListBox\FirstLook\Skyline.png" />
+    <Resource Include="Images\ListBox\FirstLook\Star Wars Episode III_Revenge of the Sith .png" />
+    <Resource Include="Images\ListBox\FirstLook\Star Wars Episode II_Attack of the Clones.png" />
+    <Resource Include="Images\ListBox\FirstLook\Star Wars_The Clone Wars.png" />
+    <Resource Include="Images\ListBox\FirstLook\Stargate_Continuum .png" />
+    <Resource Include="Images\ListBox\FirstLook\StarWars.png" />
+    <Resource Include="Images\ListBox\FirstLook\Taxi.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Bounty Hunte.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Brothers Grimm .png" />
+    <Resource Include="Images\ListBox\FirstLook\The Girl with the Dragon Tattoo.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Karate Kid.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Life of David Gale.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Other Guys.png" />
+    <Resource Include="Images\ListBox\FirstLook\The Princess and the Frog .png" />
+    <Resource Include="Images\ListBox\FirstLook\TheAviator.png" />
+    <Resource Include="Images\ListBox\FirstLook\TheFirm.png" />
+    <Resource Include="Images\ListBox\FirstLook\Thor.png" />
+    <Resource Include="Images\ListBox\FirstLook\Transformers-Dark of the Moon.png" />
+    <Resource Include="Images\ListBox\FirstLook\Willow .png" />
+    <Resource Include="Images\ListBox\FirstLook\Winnie the Pooh.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image51.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image52.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image53.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image54.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image55.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image56.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image57.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image58.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image59.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image60.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image61.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image62.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image63.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image64.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image65.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image66.png" />
+    <Resource Include="Images\ListBox\GroupingFiltering\Image67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\FirstLook\Robin Hood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\FirstLook\Brother Bear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GroupingFiltering\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListBox\FirstLook\TheLionKing.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r		</PostBuildEvent>
+  </PropertyGroup>
+</Project>

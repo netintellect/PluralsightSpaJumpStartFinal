@@ -1,0 +1,101 @@
+<UserControl x:Class="Telerik.Windows.Examples.DesktopAlert.Configurator.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:Telerik.Windows.Examples.DesktopAlert.Configurator"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="DefaultBackgroundColor" Color="#FFF1F1F1" />
+        <SolidColorBrush x:Key="DefaultHeaderColor" Color="#FF373737" />
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Configurator" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <UserControl.DataContext>
+        <local:ViewModel />
+    </UserControl.DataContext>
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" MinWidth="470"/>
+            <ColumnDefinition Width="*" MinWidth="400" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="DESKTOP ALERT MANAGER SETTINGS" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" FontWeight="Bold"/>
+        <TextBlock Grid.Column="1" Text="DESKTOP ALERT SETTINGS" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" FontWeight="Bold" Margin="10 0 0 0" />
+
+        <Border Grid.Row="1" BorderThickness="1" BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}" Margin="0 5 0 0">
+
+            <Grid Background="{StaticResource DefaultBackgroundColor}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Border BorderThickness="0">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Choose position:" Margin="0 0 0 5" />
+                        <telerik:RadComboBox ItemsSource="{Binding DesktopAlertManagers}"
+                                 SelectedIndex="0"
+                                 DisplayMemberPath="ScreenPosition"
+                                 SelectedItem="{Binding SelectedDesktopAlertManager}"/>
+
+                        <TextBlock Text="Choose distance between the alerts:" Margin="0 25 0 5" />
+                        <telerik:RadNumericUpDown Value="{Binding AlertsDistance}" SmallChange="10" Minimum="0" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2" BorderThickness="0">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Show Animation:" Margin="0 0 0 5" />
+                        <telerik:RadComboBox ItemsSource="{Binding ShowAnimations}"
+                                 SelectedIndex="1"
+                                 SelectedValue="{Binding SelectedShowAnimation}"
+                                 SelectedValuePath="Animation"
+                                 DisplayMemberPath="Title" />
+                        <TextBlock Text="Hide Animation:" Margin="0 25 0 5" />
+                        <telerik:RadComboBox ItemsSource="{Binding HideAnimations}" 
+                                 SelectedIndex="1"
+                                 SelectedValue="{Binding SelectedHideAnimation}"
+                                 SelectedValuePath="Animation"
+                                 DisplayMemberPath="Title" />
+                        <TextBlock Text="Reorder Animation Duration (in ms):" Margin="0 25 0 5" />
+                        <telerik:RadNumericUpDown Value="{Binding AlertReorderAnimationDuration}" Minimum="0" SmallChange="100" IsInteger="True" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}" Margin="10 5 0 0" Background="{StaticResource DefaultBackgroundColor}">
+            <Grid>
+                <Border BorderThickness="0">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Header:" Margin="0 0 0 5" />
+                        <TextBox Text="{Binding HeaderText}" />
+                        <TextBlock Text="Content:" Margin="0 15 0 8" />
+                        <TextBox Text="{Binding ContentText}" TextWrapping="Wrap" VerticalContentAlignment="Top" Height="60" />
+                        <TextBlock Text="Show Duration (in ms):" Margin="0 10 0 8"/>
+                        <telerik:RadNumericUpDown Value="{Binding ShowDuration}" Minimum="0" SmallChange="1000" IsInteger="True" Margin="0 0 0 5" />
+                        
+                        <CheckBox Content="Can Drag" IsChecked="{Binding CanMove}" />
+                        <CheckBox Content="Can Auto Close" IsChecked="{Binding CanAutoClose}" />
+                        <CheckBox Content="Show Menu Button" IsChecked="{Binding ShowMenuButton}" />
+                        <CheckBox Content="Show Close Button" IsChecked="{Binding ShowCloseButton}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="1">
+            <telerik:RadButton Content="Close All Alerts" Command="{Binding CloseAllAlertsCommand}" Width="115" Margin="0 10 10 0" />
+            <telerik:RadButton Content="Show Alert" Command="{Binding ShowAlertCommand}" Width="115" Margin="0 10 0 0" />
+        </StackPanel>
+    </Grid>
+</UserControl>

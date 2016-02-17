@@ -1,0 +1,1 @@
+﻿This example demonstrates how the RadExpressionEditor can be used to let the user apply an advanced manual filter to RadGridView.

@@ -1,0 +1,1 @@
+﻿This example demonstrates how the data from RadChart can be exported in PNG, BMP, XLSX or XPS format.

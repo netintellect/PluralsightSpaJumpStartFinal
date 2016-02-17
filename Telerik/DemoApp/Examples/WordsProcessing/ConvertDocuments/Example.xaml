@@ -1,0 +1,26 @@
+<UserControl x:Class="Telerik.Windows.Examples.WordsProcessing.ConvertDocuments.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:conversionCommon="clr-namespace:Telerik.Windows.Examples.WordsProcessing.ConversionCommon"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <UserControl.Resources>
+        <conversionCommon:FileExportViewModel x:Key="viewModel" 
+                                              SampleDocumentFile="SampleDocument.docx" 
+                                              DefaultDocumentThumbnailPath="/WordsProcessing;component/SampleData/SampleDocumentThumbnail.png">
+            <conversionCommon:FileExportViewModel.ExportFormats>
+                <system:String>Docx</system:String>
+                <system:String>Rtf</system:String>
+                <system:String>Html</system:String>
+                <system:String>Txt</system:String>
+            </conversionCommon:FileExportViewModel.ExportFormats>
+        </conversionCommon:FileExportViewModel>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Convert Documents" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <conversionCommon:FileExportView DataContext="{StaticResource viewModel}" />
+</UserControl>

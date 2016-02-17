@@ -1,0 +1,1 @@
+﻿Telerik suite features standard Button, PathButton, ToggleButton, RadioButton, DropDownButton and SplitButton controls, which you can use to build complex forms and easily manage the user input. All these buttons provide specific functionality that can be instrumental in achieving complete line-of-business applications.

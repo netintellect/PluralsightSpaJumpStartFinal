@@ -1,0 +1,1 @@
+﻿UPC-A, UPC-E, EAN-13, and EAN-8 may all include an additional bar code to the right of the main bar code. It may be 2 or 5 digits.

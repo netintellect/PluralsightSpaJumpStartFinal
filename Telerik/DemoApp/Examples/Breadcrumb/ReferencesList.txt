@@ -1,0 +1,12 @@
+System.XAML
+System
+System.Data
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls
+Telerik.Windows.Controls.Navigation, Version=2011.2.711.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+WindowsBase
+PresentationCore
+PresentationFramework

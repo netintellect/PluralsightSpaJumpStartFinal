@@ -1,0 +1,1 @@
+﻿In this example you can see some of the selection and hover capabilities of the heat map. 

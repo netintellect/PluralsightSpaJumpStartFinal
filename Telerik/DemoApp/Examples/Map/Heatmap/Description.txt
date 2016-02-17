@@ -1,0 +1,2 @@
+﻿RadMap provides built-in support for choropleth type map (heat map) and legend colorization that provide stunning results together with the ESRI Shapefile functionality.
+The example shown presents land area per country. Hover over any of the countries to see tooltip showing the area in square kilometers.

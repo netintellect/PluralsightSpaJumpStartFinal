@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47578F68-5BCE-4CD9-9892-C81114438EAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Map</RootNamespace>
+    <AssemblyName>Map</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AsyncReadWithVirtualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsyncReadWithVirtualization\InverseBooleanConverter.cs" />
+    <Compile Include="ClusterVirtualization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cluster\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cluster\MapItemsCollection.cs" />
+    <Compile Include="Cluster\MyMapItem.cs" />
+    <Compile Include="DataBinding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBinding\POICollection.cs" />
+    <Compile Include="DataBinding\PointOfInterest.cs" />
+    <Compile Include="DataBinding\WayPointCollection.cs" />
+    <Compile Include="DataBinding\WayPointTemplateSelector.cs" />
+    <Compile Include="DrillDown\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDown\ExampleViewModel.cs" />
+    <Compile Include="DynamicLayer\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicLayer\ExampleViewModel.cs" />
+    <Compile Include="DynamicLayer\StoreLocation.cs" />
+    <Compile Include="DynamicLayer\StoreTemplateSelector.cs" />
+    <Compile Include="DynamicLayer\VirtualizationSource.cs" />
+    <Compile Include="ExampleHelpers\DataSourceViewModelBase.cs" />
+    <Compile Include="ExampleHelpers\MapLegendData\MapLegendData.cs" />
+    <Compile Include="ExampleHelpers\SolidBrushItemsSource\SolidBrushItemsSource.cs" />
+    <Compile Include="Geocoding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeoImageryProviders\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GraphColoriser\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Heatmap\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HotSpot\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HotSpot\ExampleViewModel.cs" />
+    <Compile Include="MultipleTileLayers\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projection\MercatorMeter\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projection\NationalGrid\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projection\MercatorDegree\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Routing\AnimatedMapItem.cs" />
+    <Compile Include="Routing\ColorStringConverter.cs" />
+    <Compile Include="Routing\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SalesDashboard\Area.cs" />
+    <Compile Include="SalesDashboard\AreaSelection.cs" />
+    <Compile Include="SalesDashboard\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SalesDashboard\ExampleViewModel.cs" />
+    <Compile Include="SalesDashboard\ISalesData.cs" />
+    <Compile Include="SalesDashboard\SalesArea.cs" />
+    <Compile Include="SalesDashboard\Store.cs" />
+    <Compile Include="SalesDashboard\StoreData.cs" />
+    <Compile Include="SalesDashboard\StoreLocation.cs" />
+    <Compile Include="Search\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Search\MapItemsCollection.cs" />
+    <Compile Include="Search\MyMapItem.cs" />
+    <Compile Include="Shapefile\Africa\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\Asia\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\Europe\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\NorthAmerica\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\Oceania\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\ShapefileViewModel.cs" />
+    <Compile Include="Shapefile\SouthAmerica\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\UnitedStates\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\WorldContinents\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapefile\World\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stadium\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stadium\ExampleViewModel.cs" />
+    <Compile Include="Stadium\TicketPriceInfo.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrafficProvider\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USA\ExampleViewModel.cs" />
+    <Compile Include="WktReader\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WktReader\WktDataRow.cs" />
+    <Compile Include="WktReader\WktDataViewModel.cs" />
+    <Compile Include="WPF\BingMapHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPF\CustomCommands\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\CustomCommands\MapItemsCollection.cs" />
+    <Compile Include="WPF\CustomCommands\MyMapItem.cs" />
+    <Compile Include="WPF\Integration\MapPieChart\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USA\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Theatre\BookingViewModel.cs" />
+    <Compile Include="WPF\Theatre\BookingWindow.xaml.cs">
+      <DependentUpon>BookingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Theatre\ColorizationHelper.cs" />
+    <Compile Include="WPF\Theatre\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Theatre\ExampleViewModel.cs" />
+    <Compile Include="WPF\Theatre\SeatAvailability.cs" />
+    <Compile Include="WPF\Theatre\SeatAvailabilityConverter.cs" />
+    <Compile Include="WPF\Theatre\TheatreSeatInfo.cs" />
+    <Compile Include="WPF\Theatre\TheatreSeatInfoCollection.cs" />
+    <Compile Include="WPF\UriImageProvider\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Hotel\ShapeFiles\Hotel_base.dbf" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_base.shp" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_Corridors.dbf" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_Corridors.shp" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_LiftsAndLadders.dbf" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_LiftsAndLadders.shp" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_Rooms.dbf" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_Rooms.shp" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_ServiceRooms.dbf" />
+    <Resource Include="Hotel\ShapeFiles\Hotel_ServiceRooms.shp" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\bulgaria.kml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\eu.kml" />
+    <Resource Include="Resources\africa.dbf" />
+    <Resource Include="Resources\africa.shp" />
+    <Resource Include="Resources\asia.dbf" />
+    <Resource Include="Resources\asia.shp" />
+    <Resource Include="Resources\europe.dbf" />
+    <Resource Include="Resources\europe.shp" />
+    <Resource Include="Resources\north_america.dbf" />
+    <Resource Include="Resources\north_america.shp" />
+    <Resource Include="Resources\oceania.dbf" />
+    <Resource Include="Resources\oceania.shp" />
+    <Resource Include="Resources\south_america.dbf" />
+    <Resource Include="Resources\south_america.shp" />
+    <Resource Include="Resources\USA\usa_states.dbf" />
+    <Resource Include="Resources\USA\usa_states.shp" />
+    <Resource Include="Resources\world.dbf" />
+    <Resource Include="Resources\world.shp" />
+    <Resource Include="Resources\world_continents.dbf" />
+    <Resource Include="Resources\world_continents.shp" />
+    <Resource Include="Resources\USA\Alabama.dbf" />
+    <Resource Include="Resources\USA\Alabama.shp" />
+    <Resource Include="Resources\USA\Alaska.dbf" />
+    <Resource Include="Resources\USA\Alaska.shp" />
+    <Resource Include="Resources\USA\Arizona.dbf" />
+    <Resource Include="Resources\USA\Arizona.shp" />
+    <Resource Include="Resources\USA\Arkansas.dbf" />
+    <Resource Include="Resources\USA\Arkansas.shp" />
+    <Resource Include="Resources\USA\California.dbf" />
+    <Resource Include="Resources\USA\California.shp" />
+    <Resource Include="Resources\USA\Colorado.dbf" />
+    <Resource Include="Resources\USA\Colorado.shp" />
+    <Resource Include="Resources\USA\Connecticut.dbf" />
+    <Resource Include="Resources\USA\Connecticut.shp" />
+    <Resource Include="Resources\USA\Delaware.dbf" />
+    <Resource Include="Resources\USA\Delaware.shp" />
+    <Resource Include="Resources\USA\District_of_Columbia.dbf" />
+    <Resource Include="Resources\USA\District_of_Columbia.shp" />
+    <Resource Include="Resources\USA\Florida.dbf" />
+    <Resource Include="Resources\USA\Florida.shp" />
+    <Resource Include="Resources\USA\Georgia.dbf" />
+    <Resource Include="Resources\USA\Georgia.shp" />
+    <Resource Include="Resources\USA\Hawaii.dbf" />
+    <Resource Include="Resources\USA\Hawaii.shp" />
+    <Resource Include="Resources\USA\Idaho.dbf" />
+    <Resource Include="Resources\USA\Idaho.shp" />
+    <Resource Include="Resources\USA\Illinois.dbf" />
+    <Resource Include="Resources\USA\Illinois.shp" />
+    <Resource Include="Resources\USA\Indiana.dbf" />
+    <Resource Include="Resources\USA\Indiana.shp" />
+    <Resource Include="Resources\USA\Iowa.dbf" />
+    <Resource Include="Resources\USA\Iowa.shp" />
+    <Resource Include="Resources\USA\Kansas.dbf" />
+    <Resource Include="Resources\USA\Kansas.shp" />
+    <Resource Include="Resources\USA\Kentucky.dbf" />
+    <Resource Include="Resources\USA\Kentucky.shp" />
+    <Resource Include="Resources\USA\Louisiana.dbf" />
+    <Resource Include="Resources\USA\Louisiana.shp" />
+    <Resource Include="Resources\USA\Maine.dbf" />
+    <Resource Include="Resources\USA\Maine.shp" />
+    <Resource Include="Resources\USA\Maryland.dbf" />
+    <Resource Include="Resources\USA\Maryland.shp" />
+    <Resource Include="Resources\USA\Massachusetts.dbf" />
+    <Resource Include="Resources\USA\Massachusetts.shp" />
+    <Resource Include="Resources\USA\Michigan.dbf" />
+    <Resource Include="Resources\USA\Michigan.shp" />
+    <Resource Include="Resources\USA\Minnesota.dbf" />
+    <Resource Include="Resources\USA\Minnesota.shp" />
+    <Resource Include="Resources\USA\Mississippi.dbf" />
+    <Resource Include="Resources\USA\Mississippi.shp" />
+    <Resource Include="Resources\USA\Missouri.dbf" />
+    <Resource Include="Resources\USA\Missouri.shp" />
+    <Resource Include="Resources\USA\Montana.dbf" />
+    <Resource Include="Resources\USA\Montana.shp" />
+    <Resource Include="Resources\USA\Nebraska.dbf" />
+    <Resource Include="Resources\USA\Nebraska.shp" />
+    <Resource Include="Resources\USA\Nevada.dbf" />
+    <Resource Include="Resources\USA\Nevada.shp" />
+    <Resource Include="Resources\USA\New_Hampshire.dbf" />
+    <Resource Include="Resources\USA\New_Hampshire.shp" />
+    <Resource Include="Resources\USA\New_Jersey.dbf" />
+    <Resource Include="Resources\USA\New_Jersey.shp" />
+    <Resource Include="Resources\USA\New_Mexico.dbf" />
+    <Resource Include="Resources\USA\New_Mexico.shp" />
+    <Resource Include="Resources\USA\New_York.dbf" />
+    <Resource Include="Resources\USA\New_York.shp" />
+    <Resource Include="Resources\USA\North_Carolina.dbf" />
+    <Resource Include="Resources\USA\North_Carolina.shp" />
+    <Resource Include="Resources\USA\North_Dakota.dbf" />
+    <Resource Include="Resources\USA\North_Dakota.shp" />
+    <Resource Include="Resources\USA\Ohio.dbf" />
+    <Resource Include="Resources\USA\Ohio.shp" />
+    <Resource Include="Resources\USA\Oklahoma.dbf" />
+    <Resource Include="Resources\USA\Oklahoma.shp" />
+    <Resource Include="Resources\USA\Oregon.dbf" />
+    <Resource Include="Resources\USA\Oregon.shp" />
+    <Resource Include="Resources\USA\Pennsylvania.dbf" />
+    <Resource Include="Resources\USA\Pennsylvania.shp" />
+    <Resource Include="Resources\USA\Rhode_Island.dbf" />
+    <Resource Include="Resources\USA\Rhode_Island.shp" />
+    <Resource Include="Resources\USA\South_Carolina.dbf" />
+    <Resource Include="Resources\USA\South_Carolina.shp" />
+    <Resource Include="Resources\USA\South_Dakota.dbf" />
+    <Resource Include="Resources\USA\South_Dakota.shp" />
+    <Resource Include="Resources\USA\Tennessee.dbf" />
+    <Resource Include="Resources\USA\Tennessee.shp" />
+    <Resource Include="Resources\USA\Texas.dbf" />
+    <Resource Include="Resources\USA\Texas.shp" />
+    <Resource Include="Resources\USA\Utah.dbf" />
+    <Resource Include="Resources\USA\Utah.shp" />
+    <Resource Include="Resources\USA\Vermont.dbf" />
+    <Resource Include="Resources\USA\Vermont.shp" />
+    <Resource Include="Resources\USA\Virginia.dbf" />
+    <Resource Include="Resources\USA\Virginia.shp" />
+    <Resource Include="Resources\USA\Washington.dbf" />
+    <Resource Include="Resources\USA\Washington.shp" />
+    <Resource Include="Resources\USA\West_Virginia.dbf" />
+    <Resource Include="Resources\USA\West_Virginia.shp" />
+    <Resource Include="Resources\USA\Wisconsin.dbf" />
+    <Resource Include="Resources\USA\Wisconsin.shp" />
+    <Resource Include="Resources\USA\Wyoming.dbf" />
+    <Resource Include="Resources\USA\Wyoming.shp" />
+    <Resource Include="Resources\county_region_osgb36.dbf" />
+    <Resource Include="Resources\county_region_osgb36.shp" />
+    <Resource Include="Resources\world_continents_epsg900913.dbf" />
+    <Resource Include="Resources\world_continents_epsg900913.shp" />
+    <Resource Include="Resources\Stadium\field_pol.shp" />
+    <Resource Include="Resources\Stadium\grass_pol.shp" />
+    <Resource Include="Resources\Stadium\playground_lin.shp" />
+    <Resource Include="Resources\Stadium\stadium_pol.dbf" />
+    <Resource Include="Resources\Stadium\stadium_pol.shp" />
+    <Resource Include="DataSources\seating_plan.csv" />
+    <Resource Include="Resources\Theatre\theatre_seats_pol.dbf" />
+    <Resource Include="Resources\Theatre\theatre_seats_pol.shp" />
+    <Resource Include="Resources\Theatre\theatre_aisle_labels.shp" />
+    <Resource Include="Resources\airports.dbf" />
+    <Resource Include="Resources\airports.shp" />
+    <Resource Include="Resources\County.dbf" />
+    <Resource Include="Resources\County.shp" />
+    <None Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="WPF\Integration\MapPieChart\Description.txt" />
+    <Resource Include="USA\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AsyncReadWithVirtualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClusterVirtualization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cluster\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataBinding\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DrillDown\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeoImageryProviders\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GraphColoriser\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Projection\MercatorDegree\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SalesDashboard\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="SalesDashboard\GridViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="SalesDashboard\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SalesDashboard\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stadium\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrafficProvider\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WktReader\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\CustomCommands\Win8Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\CustomCommands\Win8TouchResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Theatre\BookingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="WPF\Theatre\ButtonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="WPF\Theatre\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\UriImageProvider\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="DynamicLayer\DynamicLayerDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="DynamicLayer\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Geocoding\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Heatmap\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hotel\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HotSpot\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultipleTileLayers\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Projection\MercatorMeter\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Projection\NationalGrid\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Routing\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Search\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\Africa\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\Asia\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\Europe\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\NorthAmerica\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\Oceania\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\SouthAmerica\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\UnitedStates\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\WorldContinents\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shapefile\World\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\CustomCommands\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Integration\MapPieChart\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="USA\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataBinding\Description.txt" />
+    <Resource Include="DataBinding\PointsOfInterest.xml" />
+    <Resource Include="DataBinding\WayPoints.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Geocoding\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HotSpot\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Routing\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Search\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\Africa\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\Asia\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\Europe\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\NorthAmerica\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\Oceania\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\SouthAmerica\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\UnitedStates\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\World\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shapefile\WorldContinents\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Heatmap\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DrillDown\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Hotel\Description.txt" />
+    <Resource Include="Hotel\Pictures\ladderpic.jpg" />
+    <Resource Include="Hotel\Pictures\ladderpic2.jpg" />
+    <Resource Include="Hotel\Pictures\PassengerLifts.jpg" />
+    <Resource Include="Hotel\Pictures\ServiceLifts.jpg" />
+    <Resource Include="Hotel\Pictures\Vent.jpg" />
+    <Resource Include="Hotel\Pictures\Vent1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UsaSimplified.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DynamicLayer\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Hotel\Pictures\hotel-floorplan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DynamicLayer\StoresLocation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Projection\MercatorMeter\Description.txt" />
+    <Resource Include="Projection\NationalGrid\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MultipleTileLayers\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\CustomCommands\Description.txt" />
+    <Resource Include="WPF\CustomCommands\Images\bars.png" />
+    <Resource Include="WPF\CustomCommands\Images\block.png" />
+    <Resource Include="WPF\CustomCommands\Images\downtown.png" />
+    <Resource Include="WPF\CustomCommands\Images\museums.png" />
+    <Resource Include="WPF\CustomCommands\Images\neighborhood.png" />
+    <Resource Include="WPF\CustomCommands\Images\restaurants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\osm_10.png" />
+    <Resource Include="Resources\osm_11.png" />
+    <Resource Include="Resources\osm_12.png" />
+    <Resource Include="Resources\osm_13.png" />
+    <Resource Include="Resources\osm_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\UriImageProvider\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GraphColoriser\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Projection\MercatorDegree\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WktReader\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Stadium\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Stadium\Images\default.jpg" />
+    <Resource Include="Stadium\Images\stadium_angle_1.jpg" />
+    <Resource Include="Stadium\Images\stadium_angle_2.jpg" />
+    <Resource Include="Stadium\Images\stadium_long_side.jpg" />
+    <Resource Include="Stadium\Images\stadium_short_side.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TrafficProvider\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GeoImageryProviders\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\Theatre\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SalesDashboard\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SalesDashboard\AtlantaAreas.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cluster\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClusterVirtualization\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AsyncReadWithVirtualization\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\placemark_circle.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+﻿RadMap provides support for stunning map overlays through its ESRI Shapefile Import feature. 
+
+This example loads the data for all African countries.

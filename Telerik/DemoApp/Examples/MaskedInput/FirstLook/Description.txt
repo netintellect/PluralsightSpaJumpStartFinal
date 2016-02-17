@@ -1,0 +1,2 @@
+﻿Telerik MaskedInput controls allow you to enter text, numbers and dates that conform to a given mask. The MaskedInput controls accept string and numeric data in various customizable formats and provide cross-culture support. The above example shows all the pre-defined masks and formats Telerik MaskedInput controls support.
+</br></br>RadMaskedNumericInput, RadMaskedCurrencyInput, RadMaskedDateTimeInput and RadMaskedTextInput are all a part of the <b>Telerik.Windows.Controls.Input</b> assembly.</br>

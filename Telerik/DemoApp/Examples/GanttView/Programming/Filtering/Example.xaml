@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.Programming.Filtering.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.Programming.Filtering"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <UserControl.Resources>
+        <local:ViewModel x:Key="ViewModel" />
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        
+        <SolidColorBrush x:Key="RadioButtonForeground" Color="#FF373737" />
+    </UserControl.Resources>
+    <qsf:QuickStart.ExampleHeader>
+        <TextBlock Text="Filtering TimeRuler Items" Margin="8" />
+    </qsf:QuickStart.ExampleHeader>
+    <Grid DataContext="{StaticResource ViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#FFD6D4D4" Grid.Row="0" BorderThickness="1" Margin="6">
+            <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Height="40" Width="769" HorizontalAlignment="Left">
+                <Grid HorizontalAlignment="Left" Height="40" Width="769" Margin="10 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Margin="10,8,0,0" TextWrapping="Wrap" Text="Filtering by time:" FontFamily="Segoe UI"
+								FontSize="14.667" HorizontalAlignment="Left" />
+                        <RadioButton HorizontalAlignment="Left" Margin="22,12,0,10" Content="No filter"
+								Command="{Binding FilteringCommand}" CommandParameter="NoFilter"
+								IsChecked="True" FontWeight="Bold" Foreground="{StaticResource RadioButtonForeground}" />
+                        <RadioButton HorizontalAlignment="Left" Margin="22,12,0,10" Content="Working days"
+								FontWeight="Bold" Foreground="{StaticResource RadioButtonForeground}" 
+								Command="{Binding FilteringCommand}" CommandParameter="WeekDays" />
+                        <RadioButton HorizontalAlignment="Left" Margin="22,12,0,10" Content="Weekends" FontWeight="Bold" Foreground="{StaticResource RadioButtonForeground}" 
+								 Command="{Binding FilteringCommand}"
+								CommandParameter="WeekEnds" />
+                        <RadioButton HorizontalAlignment="Left" Margin="22,12,0,10" Content="Days with meetings"
+								FontWeight="Bold" Foreground="{StaticResource RadioButtonForeground}" 
+								Command="{Binding FilteringCommand}" CommandParameter="Custom" />
+                    </StackPanel>
+                    <Grid HorizontalAlignment="Left" Width="32" Height="32" Grid.Column="0">
+                        <Ellipse Stroke="{StaticResource AccentBrush}" />
+                        <Path
+								Data="M0.93340254,0 L4.934082,0 L6.934082,0 L10.93358,0 C11.996876,0 12.199773,0.75 11.668063,1.359375 L8.4335356,5.5 C8.100522,5.8975558 7.983531,6.062263 7.9429321,6.2736206 L7.934082,6.3298788 L7.934082,10.332101 C7.934082,10.332101 3.9340818,14.997499 3.9340818,14.997499 L3.9340818,6.3293748 L3.9286206,6.3012671 C3.8825667,6.1045012 3.751812,5.9296875 3.3865709,5.5 L0.24589038,1.40625 C-0.2067349,0.84375 -0.066181421,1.2241071E-16 0.93340254,0 z"
+								Fill="{StaticResource AccentBrush}" Margin="10.027,8.298,9.973,7.702" Stretch="Fill"
+								UseLayoutRounding="False" />
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <telerik:RadGanttView Grid.Row="1" TasksSource="{Binding Tasks}" VisibleRange="{Binding VisibleRange}"
+				TimeLineFilteringBehavior="{Binding FilterBehavior}" PixelLength="00:15:00">
+            <telerik:RadGanttView.TimeRulerLines>
+                <telerik:GroupTickLine>
+                    <telerik:TickInterval Interval="OneWeek" FormatString="Week #{1}, {0:yyyy}" />
+                </telerik:GroupTickLine>
+                <telerik:MajorTickLine>
+                    <telerik:TickInterval Interval="OneDay" FormatString="{}{0:ddd}" />
+                </telerik:MajorTickLine>
+            </telerik:RadGanttView.TimeRulerLines>
+            <telerik:RadGanttView.Columns>
+                <telerik:TreeColumnDefinition MemberBinding="{Binding Title}" Header="Title" Width="240" IsFrozenColumn="True"/>
+                <telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="160">
+                    <telerik:ColumnDefinition.CellEditTemplate>
+                        <DataTemplate>
+                            <telerik:RadDateTimePicker SelectedValue="{Binding Start, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </telerik:ColumnDefinition.CellEditTemplate>
+                </telerik:ColumnDefinition>
+                <telerik:ColumnDefinition Header="End" MemberBinding="{Binding End}" Width="160" />
+                <telerik:ColumnDefinition Header="Duration" MemberBinding="{Binding Duration}" Width="120" />
+            </telerik:RadGanttView.Columns>
+        </telerik:RadGanttView>
+    </Grid>
+</UserControl>

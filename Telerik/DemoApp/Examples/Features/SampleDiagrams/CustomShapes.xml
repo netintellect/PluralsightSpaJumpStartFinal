@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadDiagram Type="Telerik.Windows.Diagrams.Core.Models.IGraphInternal" Version="2012.1">
+  <Metadata Zoom="1" PositionX="0" PositionY="0" IsRotationEnabled="true" IsResizingEnabled="true" SelectionMode="Extended" IsSnapEnabled="true" SnapValue="20" IsGridVisible="false">
+    <Title><![CDATA[Custom shapes]]]></Title>
+    <Description><![CDATA[A sample showing how to create a custom shape and implement the (de)serialization.]]></Description>
+    <Background>#FFFFFFFF</Background>
+  </Metadata>
+  <Shapes QNs="Diagrams.Toolbox;Telerik.Windows.Controls.Diagrams;Diagrams.Toolbox;">
+    <TreeShape Type="Diagrams.Toolbox_WPF.TreeShape" Id="9d58185a-5637-4778-8965-41a0d9809b85" Label="" ZIndex="1" Position="220;220" IsVisible="true" IsEditable="true" Size="134.7;151.96" RotationAngle="0" Background="#FFB6CCEC" BorderBrush="#FF6D7A8E" Thickness="1;1;1;1" QN="0" />
+    <RectangleShape Type="Telerik.Windows.Controls.Diagrams.RectangleShape" Id="aba2ef83-35c9-4d4c-a6df-e140b8384c24" Label="" ZIndex="1" Position="300;60" IsVisible="true" IsEditable="true" Size="278;50" RotationAngle="0" Content="Custom shape with (de)serialization." Background="#FFFFFFFF" BorderBrush="#FF838383" Thickness="1;1;1;1" Geometry="M0,0L100,0L100,78L0,78L0,0" QN="1" />
+    <ThermoShape Type="Diagrams.Toolbox_WPF.ThermoShape" Id="5d7725d0-6a63-4688-80e8-16726aba8bcc" Label="" ZIndex="1" Position="500;250" IsVisible="true" IsEditable="true" Size="323.541114807129;149.024238586426" RotationAngle="0" Content="Diagrams.Toolbox_WPF.ThermoData" Background="#FAA2645A" BorderBrush="#FF838383" Thickness="1;1;1;1" Geometry="M80,128C71.500008,199.49988 95.5,255.5 223.5,239.5 351.5,223.5 471.5,135.49999 351.5,127.5 231.5,119.50001 88.499992,56.500121 80,128z" Data="40;swa" QN="0" />
+  </Shapes>
+  <Connections />
+</RadDiagram>

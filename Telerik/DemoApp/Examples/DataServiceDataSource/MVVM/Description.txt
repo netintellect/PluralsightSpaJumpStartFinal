@@ -1,0 +1,1 @@
+﻿This sample demonstrates how to use the QueryableDataServiceCollectionView<T> class in an MVVM architecture. It also shows how you can create master-detail relationships by using filtering.

@@ -1,0 +1,1 @@
+﻿This example shows how RadCalculator can be easily styled using the built-in themes.

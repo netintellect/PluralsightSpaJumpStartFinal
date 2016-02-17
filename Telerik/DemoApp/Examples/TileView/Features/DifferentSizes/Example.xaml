@@ -1,0 +1,170 @@
+<UserControl x:Class="Telerik.Windows.Examples.TileView.Features.DifferentSizes.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TileView.Features.DifferentSizes"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:tileview="clr-namespace:Telerik.Windows.Controls.TileView;assembly=Telerik.Windows.Controls.Navigation">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/TileView;component/Features/DifferentSizes/Resources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+		<local:DateTimeToStringConverter x:Key="converter" />
+	</UserControl.Resources>
+	<Grid>
+		<Image Source="{Binding ElementName=backgroundListBox, Path=SelectedItem.LargeImage}" Stretch="Fill" />
+		<telerik:RadTileView x:Name="myTileView" ColumnWidth="Auto"
+				DragMode="{Binding ElementName=dragMode, Path=SelectedItem}" IsItemsSizeInPercentages="True"
+				MinimizedColumnWidth="250" PreservePositionWhenMaximized="true" RowHeight="Auto"
+				MinimizedRowHeight="Auto" telerik:TileViewPanel.IsColumnsShrinkEnabled="True"
+				telerik:TileViewPanel.IsRowsShrinkEnabled="True" telerik:TileViewPanel.IsSizeBoundToPosition="True">
+			<telerik:RadTileViewItem Header="My Contacts" RestoredHeight="62" MinimizedHeight="164" RestoredWidth="18">
+				<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+						BorderThickness="0">
+					<Grid Margin="15 8">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<StackPanel>
+							<TextBlock Text="Andrew Fuller" Style="{StaticResource Name_Style}" />
+							<TextBlock Text="Sales representative" Style="{StaticResource SubTitle_Style}" />
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/mail.png" Stretch="None" />
+								<TextBlock Text="fuller@fuller.com" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/call.png" Stretch="None" />
+								<TextBlock Text="(002) 231 3441" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+
+							<Rectangle Height="1" Fill="#15aca9" Margin="0 8" />
+						</StackPanel>
+
+						<StackPanel Grid.Row="1">
+							<TextBlock Text="Janet Levering" Style="{StaticResource Name_Style}" />
+							<TextBlock Text="Sales representative" Style="{StaticResource SubTitle_Style}" />
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/mail.png" Stretch="None" />
+								<TextBlock Text="levering@levering.com" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/call.png" Stretch="None" />
+								<TextBlock Text="(002) 231 3441" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+
+							<Rectangle Height="1" Fill="#15aca9" Margin="0 8" />
+						</StackPanel>
+
+						<StackPanel Grid.Row="2">
+							<TextBlock Text="Janet Levering" Style="{StaticResource Name_Style}" />
+							<TextBlock Text="Sales representative" Style="{StaticResource SubTitle_Style}" />
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/mail.png" Stretch="None" />
+								<TextBlock Text="janet@janet.com" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Image Source="../../Images/TileView/call.png" Stretch="None" />
+								<TextBlock Text="(002) 231 3441" Style="{StaticResource Info_TextBlockStyle}" />
+							</StackPanel>
+						</StackPanel>
+
+					</Grid>
+				</ScrollViewer>
+			</telerik:RadTileViewItem>
+
+			<telerik:RadTileViewItem Header="My Pictures" RestoredHeight="62" MinimizedHeight="150" RestoredWidth="50">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="50" />
+					</Grid.ColumnDefinitions>
+					<telerik:RadTransitionControl Grid.Row="0" Grid.ColumnSpan="3" Content="{Binding SelectedPair}"
+							ContentTemplate="{StaticResource BusinessCardTemplate}">
+						<telerik:RadTransitionControl.Transition>
+							<telerik:LinearFadeTransition />
+						</telerik:RadTransitionControl.Transition>
+					</telerik:RadTransitionControl>
+					<telerik:RadButton Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"
+							Command="{Binding SelectPreviousPerson}" Style="{StaticResource LeftArrowButton}" />
+					<ListBox Grid.Row="1" Grid.Column="1" Margin="10 0" ItemsSource="{Binding Items}"
+							SelectedItem="{Binding SelectedPair, Mode=TwoWay}" Style="{StaticResource ListBoxStyle}" />
+					<telerik:RadButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left"
+							Command="{Binding SelectNextPerson}" Style="{StaticResource RightArrowButton}" />
+				</Grid>
+			</telerik:RadTileViewItem>
+			<telerik:RadTileViewItem Header="My Videos" RestoredHeight="50" MinimizedHeight="164" RestoredWidth="32">
+				<telerik:RadMediaPlayer>
+                    <telerik:RadMediaItem Header="Getting started using RadCartesianChart"
+							Source="http://773649a1298f63779f19-68dcd217a70edadad8c7b04ba4a904f0.r12.cf2.rackcdn.com/XAMLflix_ChartView_Getting-Started_Using-RadCartesianChart-for-Silverlight-and-WPF.mp4" />
+                    <telerik:RadMediaItem Header="Getting started using RadPolarChart"
+							Source="http://773649a1298f63779f19-68dcd217a70edadad8c7b04ba4a904f0.r12.cf2.rackcdn.com/XAMLflix_ChartView_Getting-Started_Using-RadPolarChart-for-Silverlight-and-WPF.mp4" />
+				</telerik:RadMediaPlayer>
+			</telerik:RadTileViewItem>
+			<telerik:RadTileViewItem Header="My Settings" RestoredHeight="38" MinimizedHeight="140" RestoredWidth="18">
+				<StackPanel Margin="5 5 0 0">
+					<ListBox x:Name="backgroundListBox" ItemsSource="{Binding Backgounds}"
+							Style="{StaticResource wrapListBoxStyle}" />
+				</StackPanel>
+			</telerik:RadTileViewItem>
+			<telerik:RadTileViewItem Header="My Calendar" RestoredHeight="38" MinimizedHeight="200" RestoredWidth="50">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition MinWidth="218" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<telerik:RadCalendar x:Name="myCalandar" Margin="7" />
+					<Grid Grid.Column="1" Margin="7">
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition Height="7" />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Grid Background="#15aca9">
+							<StackPanel Margin="10">
+								<TextBlock Foreground="#ffffff" FontSize="16" Margin="0 0 0 2" FontFamily="Segoe UI"
+										Text="{Binding ElementName=myCalandar, Path=SelectedDate, Mode=TwoWay, Converter={StaticResource converter}}" />
+								<TextBlock Foreground="#ffffff" FontSize="10" Margin="0 0 0 5" FontWeight="Bold"
+										FontFamily="Segoe UI" Text="Telerik INC - Boston; Start Time - 3.00 pm" />
+								<TextBlock Foreground="#333333" FontSize="12" FontFamily="Segoe UI"
+										Text="Things Every ASP.NET Developer" />
+							</StackPanel>
+						</Grid>
+						<Grid Grid.Row="2" Background="#15aca9">
+							<StackPanel Margin="10">
+								<TextBlock Foreground="#ffffff" FontSize="16" Margin="0 0 0 2" FontFamily="Segoe UI"
+										Text="{Binding ElementName=myCalandar, Path=SelectedDate, Mode=TwoWay, Converter={StaticResource converter}}" />
+								<TextBlock Foreground="#ffffff" FontSize="10" Margin="0 0 0 5" FontWeight="Bold"
+										FontFamily="Segoe UI" Text="Telerik INC - Boston; Start Time - 3.00 pm" />
+								<TextBlock Foreground="#333333" FontSize="12" FontFamily="Segoe UI"
+										Text="Things Every ASP.NET Developer" />
+							</StackPanel>
+						</Grid>
+					</Grid>
+				</Grid>
+			</telerik:RadTileViewItem>
+		</telerik:RadTileView>
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<TextBlock Text="Drag Mode:" />
+			<telerik:RadComboBox x:Name="dragMode" Margin="0 2" SelectedIndex="0" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

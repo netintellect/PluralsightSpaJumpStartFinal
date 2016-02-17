@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <Style TargetType="telerik:RadialScale" BasedOn="{StaticResource RadialScaleStyle}">
+        <Setter Property="LabelOffset" Value="-0.31*"/>
+        <Setter Property="MajorTickOffset" Value="-0.02*"/>
+        <Setter Property="MiddleTickOffset" Value="-0.02*"/>
+        <Setter Property="MinorTickOffset" Value="-0.02*"/>
+    </Style>
+</ResourceDictionary>

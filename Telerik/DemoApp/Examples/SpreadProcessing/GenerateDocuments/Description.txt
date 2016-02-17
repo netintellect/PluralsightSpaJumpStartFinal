@@ -1,0 +1,1 @@
+﻿<b>RadSpreadProcessing</b> allows you to create a document from scratch using code only. This is particularly convenient when in need to export large amount of data to one of the supported formats – Xlsx, Csv, Txt.

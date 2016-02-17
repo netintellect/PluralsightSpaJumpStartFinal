@@ -1,0 +1,1 @@
+﻿The RadScheduleView control employes an improved DragDrop API and provides draggin of multiple appointments functionality, as well as improved resizing capabilities. More usable visual drag and resize cues bring the polishing touch of the DragAndDrop feature.

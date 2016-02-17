@@ -1,0 +1,2 @@
+﻿Telerik RadRibbonWindow is a specialized window that is pre-configured with a RadRibbonView to emulate MS Office UI and so that you don't have to spend time 
+setting up this first layer of the UI. It also comes with a set of minimize, maximize and close buttons so that you do not have to add these yourself.

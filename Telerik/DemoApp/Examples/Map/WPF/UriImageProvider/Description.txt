@@ -1,0 +1,3 @@
+﻿RadMap provides support for single image providers besides the built-in support for tiled (MultiScaleImage) providers like BingMaps and OpenStreetMap.
+
+Note that it cannot be used as a master provider in a multi-provider scenario and always should be restricted within geographic region (i.e. you need to set the UriImageProvider.GeoBounds property).

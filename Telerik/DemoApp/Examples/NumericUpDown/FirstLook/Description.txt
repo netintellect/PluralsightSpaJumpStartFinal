@@ -1,0 +1,3 @@
+﻿Telerik NumericUpDown control provides a rich user experience by allowing the users define various <b>ValueFormats</b> as well as additionally customize them to meet the customers' business requirements. This example shows a grid containing stock quotes. It demonstrates the variety of formats that can be used with the NumericUpDown control.
+
+RadNumericUpDown is a part of the <b>Telerik.Windows.Controls.Input</b> assembly.

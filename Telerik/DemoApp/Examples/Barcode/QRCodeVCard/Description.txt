@@ -1,0 +1,1 @@
+﻿This example Demonstrates a vCard, which utilizes a QRCode to show contact information.

@@ -1,0 +1,1 @@
+﻿This example shows Chart with three Stacked Area 100 series. There are three DataSeries whose Definition properties are set to instances of StackedArea100SeriesDefinition.

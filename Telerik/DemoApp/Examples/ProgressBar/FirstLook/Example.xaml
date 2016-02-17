@@ -1,0 +1,45 @@
+<UserControl x:Class="Telerik.Windows.Examples.ProgressBar.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Download" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid Margin="30">
+		<StackPanel VerticalAlignment="Center" Width="260">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock x:Name="LoadingLabel" Text="Download Components" FontSize="13"
+						HorizontalAlignment="Left" FontFamily="Segoe UI" />
+				<TextBlock x:Name="PercentageLabel" Text="" FontSize="13"
+						HorizontalAlignment="Right" FontFamily="Segoe UI" />
+			</StackPanel>
+			<telerik:RadProgressBar x:Name="RadProgressBar1" Minimum="0" Maximum="100"
+					IsIndeterminate="{Binding IsChecked, ElementName=IsIndeterminateCheckBox, Mode=TwoWay}"
+					Value="{Binding Value, ElementName=ValueNumericInput, Mode=TwoWay}"
+					ValueChanged="RadProgressBar1_ValueChanged" Width="260" Height="6"
+					Margin="0,20" />
+			<StackPanel Width="Auto" Orientation="Horizontal" HorizontalAlignment="Right"
+					VerticalAlignment="Center" Grid.Row="1">
+				<telerik:RadButton x:Name="ButtonStart" Click="Start_Click" Width="60"
+						 VerticalAlignment="Top" Content="Start" Margin="5 0"  />
+				<telerik:RadButton x:Name="ButtonPause" Click="Pause_Click" Width="60"
+						 VerticalAlignment="Top" Content="Pause " Margin="5 0" />
+				<telerik:RadButton x:Name="ButtonRestart" Click="Restart_Click" Width="60"
+						 VerticalAlignment="Top" Content="Restart" Margin="5 0" />
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<TextBlock Text="Common Properties:" />
+			<CheckBox Content="IsIndeterminate" x:Name="IsIndeterminateCheckBox" Margin="0 2"  />
+			<TextBlock Text="Value:" Margin="0 5 0 2" />
+			<telerik:RadNumericUpDown x:Name="ValueNumericInput" Maximum="100" Minimum="0" UpdateValueEvent="PropertyChanged"
+					IsInteger="True" Margin="0 2"/>
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿This example demonstrates the logarithmic Y axis support in RadChart. Toggle the logarithmic mode by checking/unchecking the Checkbox in the configuration panel.

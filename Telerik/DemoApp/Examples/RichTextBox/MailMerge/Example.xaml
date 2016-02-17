@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.RichTextBox.MailMerge.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"   
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="1500">
+
+    <UserControl.Resources>
+        <telerik:IconSources x:Key="IconSources" 
+                             LightBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/" 
+                             DarkBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/Dark/"
+                             ModernBasePath="/Telerik.Windows.Controls.RichTextBoxUI;component/Images/MSOffice/Modern/" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Mail Merge" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <telerik:RadRibbonView ApplicationButtonImageSource="/RichTextBox;component/Images/RichTextBox/MSOffice/AppIcon-telerik.png" 
+                               BackstageClippingElement="{Binding ElementName=LayoutRoot}"  
+                               DataContext="{Binding Path=Commands, ElementName=radRichTextBox}" CollapseThresholdSize="100,100"
+                               Grid.Row="0" Name="ribonView" ApplicationName="Mailing Features" Grid.ColumnSpan="2" >
+            <telerik:RadRibbonView.Backstage>
+                <telerik:RadRibbonBackstage>
+                    <telerik:RadRibbonBackstageItem Header="New" Icon="{telerik:IconResource IconRelativePath=16/new.png, IconSources={StaticResource IconSources}}" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=NewDocumentCommand}" />
+                    <telerik:RadRibbonBackstageItem Header="Open" Icon="{telerik:IconResource IconRelativePath=16/open.png, IconSources={StaticResource IconSources}}" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=OpenDocumentCommand}" />
+                    <telerik:RadRibbonBackstageItem Header="Save" Icon="{telerik:IconResource IconRelativePath=16/save.png, IconSources={StaticResource IconSources}}" IsSelectable="false" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" />
+                    <telerik:RadRibbonBackstageItem Header="Save As" Icon="{telerik:IconResource IconRelativePath=16/saveas.png, IconSources={StaticResource IconSources}}" IsDefault="false">
+                        <StackPanel HorizontalAlignment="Stretch" Margin="20,20,0,0" UseLayoutRounding="True">
+                            <TextBlock FontFamily="Verdana" FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Save As" />
+                            <Rectangle Fill="Gray" Height="1" HorizontalAlignment="Left" Width="410" />
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="docx" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/worddoc.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Word Document" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save the file as a Word document." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="pdf" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Pdf.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="PDF Document" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save document as a PDF file." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="html" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/html.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="HTML Document" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save the file as a HTML document." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="rtf" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Rtf.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Rich Text Format" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save document in Rich Text Format." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="txt" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/PlainText.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Plain text" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save document in plain text format." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="xaml" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=SaveCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/Xaml.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="XAML Document" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Save document as a XAML file." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </telerik:RadRibbonBackstageItem>
+                    <telerik:RadRibbonBackstageItem Header="Print" Icon="{telerik:IconResource IconRelativePath=16/print.png, IconSources={StaticResource IconSources}}" IsDefault="true">
+                        <StackPanel HorizontalAlignment="Stretch" Margin="20,20,0,0" UseLayoutRounding="True">
+                            <TextBlock FontFamily="Verdana" FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Print" />
+                            <Rectangle Fill="Gray" Height="1" HorizontalAlignment="Left" Width="410" />
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="Html" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PrintCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/print.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="HTML Print" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Select a printer, number of copies before printing." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="Native" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PrintCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/pagesetup.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Native Print" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Send the document directly to the default printer without making changes." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                                <telerik:RadRibbonButton BorderBrush="Gray" VerticalContentAlignment="Center" CommandParameter="HtmlPreview" CornerRadius="3" Height="80" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PrintCommand}" Width="90">
+                                    <Image HorizontalAlignment="Center" Source="{telerik:IconResource IconRelativePath=ApplicationMenu/print_preview.png, IconSources={StaticResource IconSources}}" Stretch="None" />
+                                </telerik:RadRibbonButton>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock FontSize="18" FontWeight="ExtraBold" Foreground="#FF5E5E7C" Text="Print Preview" />
+                                    <TextBlock FontFamily="Verdana" FontSize="13" Text="Preview and make changes to pages before printing." TextWrapping="Wrap" Width="300" />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </telerik:RadRibbonBackstageItem>
+                </telerik:RadRibbonBackstage>
+            </telerik:RadRibbonView.Backstage>
+            <telerik:RadRibbonTab Header="Mailings">
+                <telerik:RadRibbonGroup Header="Write &amp; Insert Fields">
+                    <telerik:RadRibbonToggleButton LargeImage="{telerik:IconResource IconRelativePath=32/HighlightMergeFields.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ToggleMergeFieldsHighlightCommand}" Size="Large" Text="Highlight Merge Fields" telerik:ScreenTip.Title="Highlight Merge Fields" telerik:ScreenTip.Description="Highlight the fields you have inserted into the document." />
+                    <telerik:RadRibbonDropDownButton CollapseToMedium="WhenGroupIsMedium" LargeImage="{telerik:IconResource IconRelativePath=32/InsertMergeField.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=InsertMergeFieldEmptyCommand}" Size="Large" Text="Insert Merge Field" telerik:ScreenTip.Title="Insert Merge Field" telerik:ScreenTip.Description="You can insert fields such as Name or Address, which will be replaced automatically with information from a database or contact list for each copy of the form letter." />
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Preview Results">
+                    <telerik:RadRibbonButton CommandParameter="Code" LargeImage="{telerik:IconResource IconRelativePath=32/ShowAllFieldsCodes.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Show All Fields Codes" telerik:ScreenTip.Title="Show Fields Codes" telerik:ScreenTip.Description="Shows all fields codes in the current document." />
+                    <telerik:RadRibbonButton CommandParameter="DisplayName" LargeImage="{telerik:IconResource IconRelativePath=32/ShowAllFieldsDisplayNames.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Show All Fields Names" telerik:ScreenTip.Title="Show Fields Names" telerik:ScreenTip.Description="Show all fields names in the current document." />
+                    <telerik:RadRibbonButton CommandParameter="Result" LargeImage="{telerik:IconResource IconRelativePath=32/ShowAllFieldsResults.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=ChangeAllFieldsDisplayModeCommand}" Size="Large" Text="Preview Results" telerik:ScreenTip.Title="View Merged Data" telerik:ScreenTip.Description="Replace the merge fields in your document with actual data from your recipient list so you can see what it looks like." />
+                    <telerik:Separator />
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/First.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PreviewFirstMailMergeDataRecordCommand}" Size="Large" Text="First" telerik:ScreenTip.Title="Preview First Record" telerik:ScreenTip.Description="Preview the first record in the recipient list." />
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/Previous.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PreviewPreviousMailMergeDataRecordCommand}" Size="Large" Text="Previous" telerik:ScreenTip.Title="Preview Previous Record" telerik:ScreenTip.Description="Preview the previous record in the recipient list." />
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/Next.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PreviewNextMailMergeDataRecordCommand}" Size="Large" Text="Next" telerik:ScreenTip.Title="Preview Next Record" telerik:ScreenTip.Description="Preview the next record in the recipient list." />
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/Last.png, IconSources={StaticResource IconSources}}" telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=PreviewLastMailMergeDataRecordCommand}" Size="Large" Text="Last" telerik:ScreenTip.Title="Preview Last Record" telerik:ScreenTip.Description="Preview the last record in the recipient list." />
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Finish">
+                    <telerik:RadRibbonButton LargeImage="{telerik:IconResource IconRelativePath=32/MailMerge.png, IconSources={StaticResource IconSources}}"  telerik:RadRichTextBoxRibbonUI.RichTextCommand="{Binding Path=MailMergeCommand}" Size="Large" Text="Mail Merge" telerik:ScreenTip.Title="Finish &amp; Merge" telerik:ScreenTip.Description="Complete the mail merge." />
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+        </telerik:RadRibbonView>
+        <Rectangle Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Fill="#FFF7F7F7" />
+        <Border Grid.Row="1" Background="White" Width="200" HorizontalAlignment="Left" 
+                Margin="32 18 0 0" VerticalAlignment="Top" BorderBrush="#FFD6D4D4" BorderThickness="1">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+                <Grid HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Bottom">
+                    <Rectangle Fill="{telerik:Windows8Resource ResourceKey=AccentBrush}" Stroke="{telerik:Windows8Resource ResourceKey=AccentBrush}"/>
+                    <TextBlock Margin="8,4,4,4" TextWrapping="Wrap" Text="RECEPIENTS" Foreground="#FFFFFFFF" FontSize="10.667" FontFamily="Segoe UI Semibold" Height="16"/>
+                </Grid>
+                <telerik:RadListBox x:Name="mailMessageInfosListBox" 
+                         BorderBrush="Gray" BorderThickness="0"
+                         ItemsSource="{Binding MailMessageInfos}"
+                         SelectionMode="Single" SelectedItem="{Binding SelectedMessageInfo, Mode=TwoWay}"
+                         SelectionChanged="MailMessageInfosListBox_SelectionChanged"
+                         ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <telerik:RadListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <telerik:RadWrapPanel Width="200" HorizontalAlignment="Left"/>
+                        </ItemsPanelTemplate>
+                    </telerik:RadListBox.ItemsPanel>
+                        <telerik:RadListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 4 0 0" Width="92">
+                                <Image HorizontalAlignment="Center" Stretch="None" Source="{Binding RecipientPhoto}"/>
+                                <TextBlock Margin="4" TextWrapping="Wrap" Text="{Binding FullRecipientName}" 
+                                       FontSize="10.667" FontFamily="Segoe UI Semibold" Foreground="#FF767676" 
+                                       TextAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:RadListBox.ItemTemplate>
+                </telerik:RadListBox>
+            </StackPanel>
+        </Border>
+
+        <telerik:RadButton Content="Insert Picture Field" Margin="32 18 0 0" Click="InsertPictureField_Click" Grid.Row="2" VerticalAlignment="Top"/>
+
+        <telerik:RadRichTextBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" DocumentInheritsDefaultStyleSettings="True" 
+                                Margin="32 18" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                IsContextMenuEnabled="True" IsSelectionMiniToolBarEnabled="True"
+                                IsSpellCheckingEnabled="False" Name="radRichTextBox" LayoutMode="Flow"
+                                VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" >
+        </telerik:RadRichTextBox>
+    </Grid>
+</UserControl>

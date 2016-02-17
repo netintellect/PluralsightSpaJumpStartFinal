@@ -1,0 +1,2 @@
+﻿In addition to the 3D Bar, this example demonstrates the CameraExtension tool that provides zooming and rotation interactivity out of the box.<br/><br/>
+The extensibility mechanism is provided via the .NET 3.0 IExtensibleObject pattern. Each extension must inherit from the Telerik.Windows.Controls.Charting.ChartExtension class. You can add custom control extensions on the chart area level via the ChartArea.Extensions collection property.

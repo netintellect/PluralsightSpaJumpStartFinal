@@ -1,0 +1,1 @@
+﻿Using the <b>TimeLineFilteringBehavior</b> property of RadGanttView control you can easily filter the visible range of days displayed in the control.

@@ -1,0 +1,66 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.TileView.Features.Docking.Example"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../../Common/CommonTemplates.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<DataTemplate x:Key="sizeTemplate">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Item" />
+					<TextBlock Text="{Binding Name}" />
+				</StackPanel>
+			</DataTemplate>
+
+			<DataTemplate x:Key="contentTemplate">
+                <TextBlock FontStyle="Italic" FontSize="48" Foreground="#767676" Text="{Binding Name}"
+						HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </DataTemplate>
+
+			<Style TargetType="telerik:RadTileViewItem" BasedOn="{StaticResource RadTileViewItemStyle}">
+                <Setter Property="Background" Value="#eaeaea" />
+            </Style>
+
+			<Style TargetType="telerik:RadTileView" BasedOn="{StaticResource RadTileViewStyle}">
+				<Setter Property="RowHeight" Value="200" />
+				<Setter Property="ColumnWidth" Value="200" />
+				<Setter Property="ColumnsCount" Value="7" />
+				<Setter Property="MinimizedRowHeight" Value="100" />
+				<Setter Property="MinimizedColumnWidth" Value="150" />
+				<Setter Property="IsDockingEnabled" Value="True" />
+				<Setter Property="PreservePositionWhenMaximized" Value="True" />
+				<Setter Property="ItemTemplate" Value="{StaticResource sizeTemplate}" />
+				<Setter Property="ContentTemplate" Value="{StaticResource contentTemplate}" />
+			</Style>
+
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid>
+		<telerik:RadTileView ItemsSource="{Binding}"
+				MinimizedItemsPosition="{Binding ElementName=dockPosition, Path=SelectedItem, Mode=TwoWay}" />
+
+        <Border x:Name="DialogBox" CornerRadius="3" BorderThickness="1" BorderBrush="#d6d4d4" Background="#fff"
+				HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Width="480">
+			<Grid>
+				<TextBlock Text="Drag an item close to an edge of the TileView to maximize it." FontSize="12"
+						HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+				<telerik:RadButton Click="Button_Click" Style="{StaticResource ClosePopupStyle}" />
+			</Grid>
+		</Border>
+	</Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<TextBlock Text="MinimizedItemsPosition" />
+			<telerik:RadComboBox x:Name="dockPosition" SelectedIndex="0" Margin="0 2">
+			</telerik:RadComboBox>
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+
+</UserControl>
+

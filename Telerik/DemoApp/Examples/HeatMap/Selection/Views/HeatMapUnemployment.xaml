@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.HeatMap.Selection.Views.HeatMapUnemployment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <Style x:Key="ColumnLabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <telerik:RadHeatMap CellBorderThickness="1" 
+                            SelectionMode="SingleDataItem"
+                            SelectedCellBorderThickness="1"
+                            SelectedCellBorderColor="{Binding Color, Source={StaticResource AccentBrush}}"
+                            HoveredCellBorderThickness="1"
+                            HoveredCellBorderColor="{Binding Color, Source={StaticResource AccentBrush}}"
+                            MouseLeftButtonDown="RadHeatMap_MouseLeftButtonDown">
+            <telerik:RadHeatMap.Definition>
+                <telerik:CategoricalDefinition RowGroupMemberPath="CountryName" 
+                                               ColumnGroupMemberPath="Year"
+                                               ValuePath="UnemploymentRate"
+                                               ItemsSource="{Binding Data}"
+                                               SelectedItems="{Binding SelectedCountries}"
+                                               Colorizer="{StaticResource UnemploymentRateColorizer}"/>
+            </telerik:RadHeatMap.Definition>
+            <telerik:RadHeatMap.ColumnHeaderSettings>
+                <telerik:HeatMapColumnHeaderSettings LabelStyle="{StaticResource ColumnLabelStyle}" />
+            </telerik:RadHeatMap.ColumnHeaderSettings>
+        </telerik:RadHeatMap>
+        <Grid Width="250" Grid.Row="1" HorizontalAlignment="Right">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="11" />
+                    <Setter Property="FontFamily" Value="Segoe UI" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="low" />
+            <TextBlock Grid.Column="2" Text="high" />
+            <Border Grid.Column="1" Margin="4">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0.0" Color="{StaticResource LowColor}" />
+                        <GradientStop Offset="0.5" Color="{StaticResource MidColor}" />
+                        <GradientStop Offset="1.0" Color="{StaticResource HighColor}" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿This example demonstrates built-in automatic support for handling hierarchical data sources. Each level of the hierachy is defined via a separate ChartHierarchicalViewDescriptor and the source for the underlying drilled view is specified via a PropertyRelation. The API is designed to be fully XAML friendly as seen in this example.

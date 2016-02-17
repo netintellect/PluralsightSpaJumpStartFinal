@@ -1,0 +1,25 @@
+<UserControl x:Class="Telerik.Windows.Examples.DesktopAlert.Theming.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <UserControl.Resources>
+        <DataTemplate x:Key="DesktopAlertIconTemplate">
+            <Image Source="{Binding}" Width="48" Height="48" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Theming" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        <telerik:RadDesktopAlert Header="MAIL NOTIFICATION" Margin="150"
+                                 Content="Hello, Here are two things that we noticed today on our weekly meeting."
+                                 Icon="{DynamicResource DesktopAlertIcon}"
+                                 IconTemplate="{StaticResource DesktopAlertIconTemplate}"
+                                 IconColumnWidth="48"
+                                 IconMargin="10 0 20 0">
+            
+        </telerik:RadDesktopAlert>
+    </Border>
+</UserControl>

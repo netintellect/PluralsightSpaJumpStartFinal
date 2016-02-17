@@ -1,0 +1,1 @@
+﻿RadDataForm offers visual flexibility by allowing manual definition and placement of fields. Auto generating of fields may be turned off and fields can be placed manually.

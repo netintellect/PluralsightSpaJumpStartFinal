@@ -1,0 +1,34 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	
+	<Style TargetType="telerik:RadTreeViewItem" BasedOn="{StaticResource RadTreeViewItemStyle}">
+		<Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+		<Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+		<Setter Property="IsEditable" Value="{Binding IsEditable, Mode=TwoWay}" />
+	</Style>
+
+	<DataTemplate x:Key="EmployeeTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Image Source="../Images/TreeView/pic1.png" Stretch="None" />
+			<TextBlock Text="{Binding FirstName}" Margin="5,0" />
+			<TextBlock Text="{Binding LastName}" />
+		</StackPanel>
+	</DataTemplate>
+
+	<telerik:HierarchicalDataTemplate x:Key="OfficeTemplate"
+				ItemsSource="{Binding Employees}"
+				ItemTemplate="{StaticResource EmployeeTemplate}">
+		<TextBlock Text="{Binding Name}" />
+	</telerik:HierarchicalDataTemplate>
+
+	<DataTemplate x:Key="EditTemplate">
+		<StackPanel Orientation="Horizontal">
+			<TextBox Text="{Binding FirstName, Mode=TwoWay}" Margin="1, 2" Padding="3, 2" />
+			<TextBox Text="{Binding LastName, Mode=TwoWay}" Margin="1, 2" Padding="3, 2" />
+		</StackPanel>
+	</DataTemplate>
+	
+</ResourceDictionary>

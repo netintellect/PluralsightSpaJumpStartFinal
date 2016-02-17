@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.Selection.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.PropertyGrid.Selection"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<UserControl.Resources>
+		<local:MyViewModel x:Key="myViewModel"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle}">
+            <Setter Property="Margin" Value="0,0,2,0"/>
+        </Style>
+        <Style TargetType="telerik:RadComboBox" BasedOn="{StaticResource RadComboBoxStyle}">
+            <Setter Property="Margin" Value="0,0,2,0"/>
+        </Style>
+        <Style TargetType="telerik:RadDateTimePicker" BasedOn="{StaticResource RadDateTimePickerStyle}">
+            <Setter Property="Margin" Value="0,0,2,0"/>
+        </Style>
+    </UserControl.Resources>
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Selection modes"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Background="White" DataContext="{StaticResource myViewModel}">	
+		<telerik:RadPropertyGrid x:Name="propertyGrid1"
+								 Item="{Binding CurrentOrder}" 
+								 Width="600" Height="400" LabelColumnWidth="130"
+								 NestedPropertiesVisibility="Visible"
+								 RenderMode="Flat"
+								 CanUserSelect="{Binding IsChecked, ElementName=CanUserSelectCheckBox, Mode=TwoWay}"
+								 SelectionMode="{Binding SelectedValue,ElementName=selectionModeCombo, Mode=TwoWay}"/>
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<CheckBox x:Name="CanUserSelectCheckBox"
+                      IsChecked="True"
+                      Content="Can user select items"
+                      Margin="0,2" />
+			<TextBlock Text="Selection mode:"
+                       Margin="0,10,0,0" />
+			<telerik:RadComboBox x:Name="selectionModeCombo"
+                                 SelectedIndex="0" 
+                                 ItemsSource="{Binding Modes, Source={StaticResource myViewModel}}"
+                                 Margin="0,2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

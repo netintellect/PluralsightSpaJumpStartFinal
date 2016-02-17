@@ -1,0 +1,1 @@
+﻿The TreeView is a lookless and competely stylable control. This example demonstrates how you can build a horizontal treeview by simply using <b>Styles</b> and <b>ControlTemplates</b>. Click on a node to expand or collapse it.

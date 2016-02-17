@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Barcode.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"
+    xmlns:Converters="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"       
+    HorizontalAlignment="Center" VerticalAlignment="Center"             
+    mc:Ignorable="d" >
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="FirstLook" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot">
+
+        <telerik:RadBook x:Name="RadBook1" FoldSize="130, 130">
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code1Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>                  
+                    <Image Source="..//Images/page2.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="0, 336, 103, 0" x:Name="Barcode1" Width="180" Height="50" Text="34567834566" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code2Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..//Images/page3.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="0, 336, 173, 0" x:Name="Barcode2" Width="180" Height="50" Text="56786567889" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code3Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..//Images/page4.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="15, 327, 0, 0" x:Name="Barcode3" Width="180" Height="50" Text="12345678901" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code4Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..//Images/page5.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="0, 327, 155, 0" x:Name="Barcode4" Width="180" Height="50" Text="45345677701" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code5Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..//Images/page6.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="0, 337, 71, 0" x:Name="Barcode5" Width="180" Height="50" Text="12345634901" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+
+            <telerik:RadBookItem Width="374" Height="424">
+                <Grid x:Name="Code6Grid" Background="White" ShowGridLines="False" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..//Images/page7.png" Grid.Row="0"></Image>
+
+                    <telerik:RadBarcodeUPCA Grid.Row="0" Margin="0, 0, 173, 147" x:Name="Barcode6" Width="180" Height="50" Text="45340077701" ></telerik:RadBarcodeUPCA>
+
+                </Grid>
+            </telerik:RadBookItem>
+
+        </telerik:RadBook>        
+    </Grid>
+</UserControl>

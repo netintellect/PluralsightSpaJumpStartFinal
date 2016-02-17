@@ -1,0 +1,39 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <SolidColorBrush x:Key="ChartBrush1" Color="#FF8EC441" />
+    <SolidColorBrush x:Key="ChartBrush2" Color="#FF1B9DDE" />
+    <SolidColorBrush x:Key="ChartBrush3" Color="#FFF59700" />
+    <SolidColorBrush x:Key="ChartBrush4" Color="#FFD4DF32" />
+
+    <Style x:Key="TextBlockLegendStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#FF767676" />
+        <Setter Property="Margin" Value="4,2,4,2" />
+    </Style>
+    <Style TargetType="telerik:RadLegend" BasedOn="{StaticResource RadLegendStyle}">
+        <Setter Property="Margin" Value="10,6,10,0" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="#FF767676" />
+        <Setter Property="MinWidth" Value="75"/>
+    </Style>
+
+    <ControlTemplate x:Key="GridViewCellTemplate" TargetType="telerik:GridViewCell">
+        <ContentPresenter x:Name="PART_ContentPresenter"
+						Margin="{TemplateBinding Padding}"
+						Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+    </ControlTemplate>
+
+    <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+        <Setter Property="Template" Value="{StaticResource GridViewCellTemplate}"/>
+    </Style>
+
+    <RectangleGeometry x:Key="LineSeriesLegendGeometry" Rect="0 5 12 2" />
+    <RectangleGeometry x:Key="SolidRectLegendGeometry" Rect="0 0 12 12" />
+</ResourceDictionary>

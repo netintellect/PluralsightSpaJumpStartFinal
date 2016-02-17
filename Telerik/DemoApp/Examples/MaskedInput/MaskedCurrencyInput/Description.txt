@@ -1,0 +1,1 @@
+﻿The RadMaskedCurrencyInput allows you to display currency formatted values. The currency format can easily be specified by setting the Culture property.

@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.DataBar.AnnualExpenditures.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:local="clr-namespace:Telerik.Windows.Examples.DataBar.AnnualExpenditures" >
+    <UserControl.Resources>
+        <local:AnnualExpendituresStatisticViewModel x:Key="viewModel" />
+
+        <system:Double x:Key="BarHeightPercent">0.5</system:Double>
+
+        <DataTemplate x:Key="RadDataBarOverflowTemplate">
+            <Grid Height="10" HorizontalAlignment="Right" >
+                <Path Data="M9,0 L0,10 L2,10 L11,0 z" HorizontalAlignment="Stretch" Fill="White" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="RadDataBarUnderflowTemplate">
+            <Grid Height="10" HorizontalAlignment="Left">
+                <Path Data="M0,0 L9,10 L11,10 L2,0 z" HorizontalAlignment="Stretch" Fill="White" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Average annual expenditures and percent changes (2009-2010)" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource viewModel}"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{StaticResource RadGridViewWidth}" />
+            <ColumnDefinition Width="{StaticResource ChartWidth}"/>
+        </Grid.ColumnDefinitions>
+        <telerik:RadGridView ItemsSource="{Binding Statistics}"
+							 Margin="10 10 5 30"
+							 UseLayoutRounding="True"
+							 ShowGroupFooters="True"
+                             AutoExpandGroups="True" 
+                             AutoGenerateColumns="False" 
+                             GroupRenderMode="Flat"
+                             RowIndicatorVisibility="Collapsed" 
+                             ShowColumnFooters="True" 
+                             ShowColumnHeaders="True" 
+                             ShowGroupPanel="False" 
+                             CanUserSortColumns="False" 
+                             IsReadOnly="True"
+                             CanUserFreezeColumns="False" 
+                             CanUserSelect="False" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Item" DataMemberBinding="{Binding Name}" IsSortable="False" IsFilterable="False" IsGroupable="False" MinWidth="80" Width="27*" />
+                <telerik:GridViewDataColumn Header="Total 2010  " HeaderTextAlignment="Right" DataMemberBinding="{Binding Expenditures2010}" 
+                                            MinWidth="105" Width="15*" IsGroupable="False" IsFilterable="False" IsSortable="False" >
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Expenditures2010, StringFormat=C0}" HorizontalAlignment="Right" Margin="0 0 10 0" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.GroupFooterTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="Total:" Margin="0 0 60 3" HorizontalAlignment="Right" />
+                                <TextBlock Text="{Binding FormattedValue, StringFormat=C0}" HorizontalAlignment="Right" Margin="0 0 5 0" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.GroupFooterTemplate>
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="27*" MinWidth="100" Header="% of annual spending" DataMemberBinding="{Binding AnnualExpendituresPercent}" IsFilterable="False" IsSortable="False" IsGroupable="False"  >
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding AnnualExpendituresPercent, StringFormat=P2}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                <telerik:RadDataBar Grid.Column="1" 
+                                    Margin="5 0 10 0"
+                                    Value="{Binding AnnualExpendituresPercent}" 
+                                    Maximum="0.2"
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    LabelVisibility="Collapsed" 
+                                    ShowOutOfRangeIndicators="False"
+                                    Height="18" OverflowTemplate="{StaticResource RadDataBarOverflowTemplate}" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Maximum="20" Step="10" LabelStep="2" LabelsVisibility="All" Margin="60 0 10 0" />
+                    </telerik:GridViewDataColumn.Footer>
+                    <telerik:GridViewDataColumn.GroupFooterTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding FormattedValue, StringFormat=P2}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                <telerik:RadDataBar Grid.Column="1" 
+                                    Margin="5 0 5 0" 
+                                    ValueBrush="{StaticResource GreenBrush}" 
+                                    Value="{Binding FormattedValue}" 
+                                    Maximum="0.2"
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    LabelVisibility="Collapsed" Height="18" 
+                                    ShowOutOfRangeIndicators="False"
+                                    UnderflowTemplate="{StaticResource RadDataBarUnderflowTemplate}"
+                                    OverflowTemplate="{StaticResource RadDataBarOverflowTemplate}" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.GroupFooterTemplate>
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="25*" MinWidth="100" Header="% change, 2009/10" DataMemberBinding="{Binding YearlyExpendituresPercentChangeByType}" 
+                                            IsFilterable="False" IsSortable="False" IsGroupable="False" >
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding ExpendituresChangePercent, StringFormat=P2}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                <telerik:RadDataBar AxisVisibility="Visible" 
+                                    Grid.Column="1"  
+                                    Value="{Binding ExpendituresChangePercent}" 
+                                    Minimum="-0.05" 
+                                    Maximum="0.05"
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    ShowOutOfRangeIndicators="False"
+                                    UnderflowTemplate="{StaticResource RadDataBarUnderflowTemplate}"
+                                    OverflowTemplate="{StaticResource RadDataBarOverflowTemplate}" 
+                                    LabelVisibility="Collapsed" 
+                                    Height="18" Margin="5 0 5 0" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Minimum="-5" Maximum="5" Step="5" 
+                                             LabelsVisibility="FirstLastAndOriginValueOnly" 
+                                             Margin="60 0 5 0" />
+                    </telerik:GridViewDataColumn.Footer>
+                    <telerik:GridViewDataColumn.GroupFooterTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding FormattedValue, StringFormat=P2}" HorizontalAlignment="Right" 
+                                           VerticalAlignment="Center" />
+                                <telerik:RadDataBar AxisVisibility="Visible" 
+                                        Grid.Column="1"
+                                        Value="{Binding FormattedValue}"
+                                        Minimum="-0.05" 
+                                        Maximum="0.05"
+                                        ValueBrush="{StaticResource GreenBrush}" 
+                                        BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                        ShowOutOfRangeIndicators="False"
+                                        UnderflowTemplate="{StaticResource RadDataBarUnderflowTemplate}"
+                                        OverflowTemplate="{StaticResource RadDataBarOverflowTemplate}" 
+                                        LabelVisibility="Collapsed"
+                                        Height="18" Margin="5 0 5 0">
+                                    <telerik:RadDataBar.NegativeValueBrush>
+                                        <SolidColorBrush telerik:Windows8Colors.Color="Basic" />
+                                    </telerik:RadDataBar.NegativeValueBrush>
+                                </telerik:RadDataBar>
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.GroupFooterTemplate>
+                    <telerik:GridViewDataColumn.AggregateFunctions>
+                        <telerik:SumFunction />
+                    </telerik:GridViewDataColumn.AggregateFunctions>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.GroupDescriptors>
+                <telerik:GroupDescriptor Member="Type" />
+            </telerik:RadGridView.GroupDescriptors>
+        </telerik:RadGridView>
+        <local:Charts Grid.Column="1" Margin="5 10 10 30" />
+        <TextBlock Grid.Column="2" TextWrapping="NoWrap" Text="source: www.bls.gov" Foreground="#FFD6D4D4" FontFamily="Segoe UI"
+                    Margin="0,0,10,5" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>

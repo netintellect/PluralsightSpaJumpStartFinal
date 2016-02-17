@@ -1,0 +1,87 @@
+<UserControl x:Class="Telerik.Windows.Examples.ComboBox.Configurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ComboBox.Configurator"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Configurator" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+
+	<UserControl.DataContext>
+		<local:ViewModel />
+	</UserControl.DataContext>
+
+	<qsf:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<TextBlock Text="TextSearchMode" />
+			<telerik:RadComboBox x:Name="TextSearchMode" Margin="0 2" SelectedIndex="0" Height="22">
+				<telerik:TextSearchMode>StartsWith</telerik:TextSearchMode>
+				<telerik:TextSearchMode>Contains</telerik:TextSearchMode>
+				<telerik:TextSearchMode>StartsWithCaseSensitive</telerik:TextSearchMode>
+				<telerik:TextSearchMode>ContainsCaseSensitive</telerik:TextSearchMode>
+			</telerik:RadComboBox>
+
+			<CheckBox x:Name="IsFilteringEnabled" Margin="0 2" IsThreeState="False" Content="IsFilteringEnabled" />
+
+			<TextBlock Text="ClearSelectionButtonVisibility" Margin="0 10 0 0" TextTrimming="WordEllipsis" />
+			<telerik:RadComboBox x:Name="ClearSelectionButtonVisibility" Margin="0 2" SelectedIndex="0" Height="22">
+				<Visibility>Visible</Visibility>
+				<Visibility>Collapsed</Visibility>
+			</telerik:RadComboBox>
+
+			<TextBlock Text="ClearSelectionButtonContent" Margin="0 10 0 0" />
+			<TextBox x:Name="ClearSelectionButtonContent" Text="Clear" Margin="0 2" />
+
+			<CheckBox x:Name="CanAutocompleteSelectItems" Margin="0 10 0 2" IsThreeState="True">
+				<TextBlock Text="CanAutocompleteSelectItems" TextTrimming="WordEllipsis" />
+			</CheckBox>
+
+			<CheckBox x:Name="CanKeyboardNavigationSelectItems" Margin="0 2" IsThreeState="True">
+				<TextBlock Text="CanKeyboardNavigationSelectItems" TextTrimming="WordEllipsis" />
+			</CheckBox>
+
+			<CheckBox x:Name="IsEditable" Margin="0 2" IsThreeState="False" Content="IsEditable" IsChecked="True" />
+
+			<CheckBox x:Name="IsReadOnly" Margin="0 2" IsThreeState="False" Content="IsReadOnly" />
+
+			<CheckBox x:Name="OpenDropDownOnFocus" Margin="0 2" Content="OpenDropDownOnFocus" IsThreeState="False" />
+
+			<CheckBox x:Name="IsDropDownOpen" Margin="0 2" IsThreeState="False" Content="IsDropDownOpen" />
+
+			<TextBlock Text="EmptyText" Margin="0 10 0 0" />
+			<TextBox x:Name="EmptyText" Margin="0 2" Text="Please, select an item..." />
+		</StackPanel>
+	</qsf:QuickStart.ConfigurationPanel>
+
+	<Grid Width="400">
+		<StackPanel Margin="10">
+			<TextBlock Grid.Row="0" Grid.Column="0" Margin="0 10 0 0" Text="SelectedItem:" />
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding SelectedItem, ElementName=RadComboBox1}"
+					Foreground="#003366" />
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Margin="0 10 0 0" Text="SelectedValue:" />
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding SelectedValue, ElementName=RadComboBox1}"
+					Foreground="#003366" />
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Margin="0 10 0 0" Text="Text:" />
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Text, ElementName=RadComboBox1}" Foreground="#003366" />
+
+			<telerik:RadComboBox x:Name="RadComboBox1" Margin="0 10 0 10" VerticalAlignment="Center"
+					ItemsSource="{Binding Agencies}" SelectedValuePath="Phone" DisplayMemberPath="Name"
+					ClearSelectionButtonContent="{Binding Text, ElementName=ClearSelectionButtonContent}"
+					ClearSelectionButtonVisibility="{Binding SelectedItem, ElementName=ClearSelectionButtonVisibility}"
+					CanAutocompleteSelectItems="{Binding IsChecked, ElementName=CanAutocompleteSelectItems}"
+					CanKeyboardNavigationSelectItems="{Binding IsChecked, ElementName=CanKeyboardNavigationSelectItems}"
+					IsEditable="{Binding IsChecked, ElementName=IsEditable}"
+					IsReadOnly="{Binding IsChecked, ElementName=IsReadOnly}"
+					OpenDropDownOnFocus="{Binding IsChecked, ElementName=OpenDropDownOnFocus}"
+					IsFilteringEnabled="{Binding IsChecked, ElementName=IsFilteringEnabled}"
+					TextSearchMode="{Binding SelectedItem, ElementName=TextSearchMode}"
+					IsDropDownOpen="{Binding IsChecked, ElementName=IsDropDownOpen, Mode=TwoWay}"
+					EmptyText="{Binding Text, ElementName=EmptyText}" />
+		</StackPanel>
+	</Grid>
+</UserControl>

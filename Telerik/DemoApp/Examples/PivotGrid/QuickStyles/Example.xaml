@@ -1,0 +1,279 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PivotGrid.QuickStyles.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:pivot="http://schemas.telerik.com/2008/xaml/presentation/pivot"
+        xmlns:data="clr-namespace:Telerik.Windows.Examples.PivotGrid.SampleData"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:local="clr-namespace:Telerik.Windows.Examples.PivotGrid.QuickStyles"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="400">
+    
+    <UserControl.Resources>
+        <pivot:LocalDataSourceProvider x:Key="DataProvider">
+            <pivot:LocalDataSourceProvider.ItemsSource>
+                <data:SampleOrders />
+            </pivot:LocalDataSourceProvider.ItemsSource>
+            <pivot:LocalDataSourceProvider.RowGroupDescriptions>
+                <pivot:PropertyGroupDescription PropertyName="Product" />
+                <pivot:PropertyGroupDescription PropertyName="Promotion" />
+            </pivot:LocalDataSourceProvider.RowGroupDescriptions>
+            <pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+                <pivot:DateTimeGroupDescription PropertyName="Date" Step="Month" />
+                <pivot:PropertyGroupDescription PropertyName="Advertisement" />
+            </pivot:LocalDataSourceProvider.ColumnGroupDescriptions>
+            <pivot:LocalDataSourceProvider.AggregateDescriptions>
+                <pivot:PropertyAggregateDescription PropertyName="Quantity" />
+            </pivot:LocalDataSourceProvider.AggregateDescriptions>
+        </pivot:LocalDataSourceProvider>
+        
+        <local:QuickStylesCollection x:Key="QuickStyles">
+
+            <local:QuickStyleItem DisplayName="Green Medium">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+                        <pivot:QuickStyle.HeaderRow>
+                            <pivot:ElementProperties Background="#FF9BBB59" BorderThickness="0 2" BorderBrush="#FF76933C" />
+                        </pivot:QuickStyle.HeaderRow>
+                        <pivot:QuickStyle.RowSubgroups>
+                            <pivot:ElementProperties Background="#FFEBF1DE" FontWeight="Bold" />
+                        </pivot:QuickStyle.RowSubgroups>
+                        <pivot:QuickStyle.ColumnSubgroups>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.ColumnSubgroups>
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalColumns>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="#FFEBF1DE" BorderThickness="0 3 0 2" BorderBrush="#FF76933C" />
+                        </pivot:QuickStyle.GrandTotalRow>
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+            <local:QuickStyleItem DisplayName="Orange Medium">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+                        <pivot:QuickStyle.HeaderRow>
+                            <pivot:ElementProperties Background="#FFE26B0A" BorderThickness="0 2" BorderBrush="#FFFABF8F" />
+                        </pivot:QuickStyle.HeaderRow>
+                        <pivot:QuickStyle.RowSubgroups>
+                            <pivot:ElementProperties Background="#FFFABF8F" FontWeight="Bold" />
+                        </pivot:QuickStyle.RowSubgroups>
+                        <pivot:QuickStyle.ColumnSubgroups>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.ColumnSubgroups>
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalColumns>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="#FFFABF8F" BorderThickness="0 3 0 2" BorderBrush="#FFE26B0A" />
+                        </pivot:QuickStyle.GrandTotalRow>
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+            <local:QuickStyleItem DisplayName="Purple Heavy">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+                        <pivot:QuickStyle.HeaderRow>
+                            <pivot:ElementProperties Background="#FF6A5A7C" BorderBrush="#FFB1A0C7" BorderThickness="1" />
+                        </pivot:QuickStyle.HeaderRow>
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="#FF6A5A7C" BorderBrush="#FFB1A0C7" BorderThickness="1" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalRow>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties Background="#FF6A5A7C" BorderBrush="#FFB1A0C7" BorderThickness="1" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+                        <pivot:QuickStyle.RowSubgroups>
+                            <pivot:ElementProperties Background="#FFE4DFEC" BorderThickness="1" BorderBrush="#FFCCC0DA" FontWeight="Bold" />
+                        </pivot:QuickStyle.RowSubgroups>
+                        <pivot:QuickStyle.ColumnSubgroups>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.ColumnSubgroups>
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalColumns>
+                        <pivot:QuickStyle.ColumnFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderBrush="#FFE4DFEC" BorderThickness="1" />
+                        </pivot:QuickStyle.ColumnFirstAlternationPattern>
+                        <pivot:QuickStyle.ColumnSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderBrush="#FFE4DFEC" BorderThickness="1" />
+                        </pivot:QuickStyle.ColumnSecondAlternationPattern>
+                        <pivot:QuickStyle.RowFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="#FFCCC0DA" BorderBrush="#FFE4DFEC" BorderThickness="1" />
+                        </pivot:QuickStyle.RowFirstAlternationPattern>
+                        <pivot:QuickStyle.RowSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="#FFCCC0DA" BorderBrush="#FFE4DFEC" BorderThickness="1" />
+                        </pivot:QuickStyle.RowSecondAlternationPattern>
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+            <local:QuickStyleItem DisplayName="FirstLook">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+
+                        <pivot:QuickStyle.HeaderRow>
+                            <pivot:ElementProperties Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.HeaderRow>
+                        <pivot:QuickStyle.HeaderColumn>
+                            <pivot:ElementProperties Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.HeaderColumn>
+                        <pivot:QuickStyle.HeaderCell>
+                            <pivot:ElementProperties Background="#FFF4F4F4" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.HeaderCell>
+
+                        <pivot:QuickStyle.RowSubgroups>
+                            <pivot:ElementProperties Background="#FFE4E4E4" BorderThickness="1" BorderBrush="#FFCBCBCB" FontWeight="Bold" />
+                        </pivot:QuickStyle.RowSubgroups>
+                        <pivot:QuickStyle.ColumnSubgroups>
+                            <pivot:ElementProperties Background="#FFE4E4E4" BorderThickness="1" BorderBrush="#FFCBCBCB" FontWeight="Bold" />
+                        </pivot:QuickStyle.ColumnSubgroups>
+
+                        <pivot:QuickStyle.ColumnFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.ColumnFirstAlternationPattern>
+                        <pivot:QuickStyle.ColumnSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.ColumnSecondAlternationPattern>
+                        <pivot:QuickStyle.RowFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.RowFirstAlternationPattern>
+                        <pivot:QuickStyle.RowSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="{x:Null}" BorderThickness="1" BorderBrush="#FFCBCBCB" />
+                        </pivot:QuickStyle.RowSecondAlternationPattern>
+
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties BorderThickness="1" BorderBrush="#FFCBCBCB" Background="#FFFFEBB6" FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties BorderThickness="1" BorderBrush="#FFCBCBCB" Background="#FFFFEBB6" FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalColumns>
+
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="#FFCBCBCB" BorderThickness="1" BorderBrush="#FFCBCBCB" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalRow>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties Background="#FFCBCBCB" BorderThickness="1" BorderBrush="#FFCBCBCB" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+            <local:QuickStyleItem DisplayName="Pale Cells">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+                        <pivot:QuickStyle.ColumnFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.ColumnFirstAlternationPattern>
+                        <pivot:QuickStyle.ColumnSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.ColumnSecondAlternationPattern>
+                        <pivot:QuickStyle.RowFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.RowFirstAlternationPattern>
+                        <pivot:QuickStyle.RowSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.RowSecondAlternationPattern>
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties Background="WhiteSmoke" FontWeight="Bold" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties Background="WhiteSmoke" FontWeight="Bold" BorderThickness="1" BorderBrush="LightGray" />
+                        </pivot:QuickStyle.SubtotalColumns>
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="LemonChiffon" FontWeight="Bold" BorderThickness="1" BorderBrush="Gray"/>
+                        </pivot:QuickStyle.GrandTotalRow>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties Background="LemonChiffon" FontWeight="Bold" BorderThickness="1" BorderBrush="Gray" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+            <local:QuickStyleItem DisplayName="Blue">
+                <local:QuickStyleItem.QuickStyle>
+                    <pivot:QuickStyle>
+                        <pivot:QuickStyle.HeaderRow>
+                            <pivot:ElementProperties Background="#FF31869B" />
+                        </pivot:QuickStyle.HeaderRow>
+                        <pivot:QuickStyle.GrandTotalRow>
+                            <pivot:ElementProperties Background="#FF31869B" BorderThickness="2" BorderBrush="Black" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalRow>
+                        <pivot:QuickStyle.GrandTotalColumn>
+                            <pivot:ElementProperties Background="#FFB7DEE8" FontWeight="Bold" />
+                        </pivot:QuickStyle.GrandTotalColumn>
+                        <pivot:QuickStyle.RowSubgroups>
+                            <pivot:ElementProperties FontWeight="Bold" Background="#FFFFFFFF" />
+                        </pivot:QuickStyle.RowSubgroups>
+                        <pivot:QuickStyle.SubtotalRows>
+                            <pivot:ElementProperties Background="#FFBBCCFF" FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalRows>
+                        <pivot:QuickStyle.SubtotalColumns>
+                            <pivot:ElementProperties Background="#FFBBCCFF" FontWeight="Bold" />
+                        </pivot:QuickStyle.SubtotalColumns>
+                        <pivot:QuickStyle.RowFirstAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="#FFB7DEE8" />
+                        </pivot:QuickStyle.RowFirstAlternationPattern>
+                        <pivot:QuickStyle.RowSecondAlternationPattern>
+                            <pivot:AlternationElementProperties AlternationCount="1" Background="#FFDAEEF3" />
+                        </pivot:QuickStyle.RowSecondAlternationPattern>
+                    </pivot:QuickStyle>
+                </local:QuickStyleItem.QuickStyle>
+            </local:QuickStyleItem>
+
+        </local:QuickStylesCollection>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Margin="8" Text="QuickStyles" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="4">
+            <TextBlock Text="Select QuickStyles:" Margin="0 8 0 4" />
+            <ListBox x:Name="QuickStyles" ItemsSource="{StaticResource QuickStyles}" SelectionChanged="QuickStyles_SelectionChanged" SelectedIndex="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding DisplayName}" Margin="4" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <Grid>
+        <telerik:RadTransitionControl Content="{Binding ElementName=QuickStyles, Path=SelectedItem}" Duration="0:0:0.33">
+            <telerik:RadTransitionControl.Transition>
+                <telerik:FadeTransition />
+            </telerik:RadTransitionControl.Transition>
+            <telerik:RadTransitionControl.ContentTemplate>
+                <DataTemplate>
+                    <pivot:RadPivotGrid DataProvider="{StaticResource DataProvider}" QuickStyle="{Binding QuickStyle}" />
+                </DataTemplate>
+            </telerik:RadTransitionControl.ContentTemplate>
+        </telerik:RadTransitionControl>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,2 @@
+﻿This example demonstrates how the RadGanttView control can be integrated with RadTimeline control. This way you could represent different occurrences like movie events or any other story in Timeline format and integrating both controls you can use the RadTimeline control to navigate among the top-level occurrences. Thanks to the interaction between both controls, you can use the GanttView control to manage details about the planning of the whole process.
+

@@ -1,0 +1,15 @@
+System.XAML
+System
+System.Data
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls, Version=2010.2.528.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Input, Version=2010.2.528.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Navigation, Version=2010.2.706.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.ScheduleView, Version=2011.2.712.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Data, Version=2010.2.706.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+WindowsBase
+PresentationCore
+PresentationFramework

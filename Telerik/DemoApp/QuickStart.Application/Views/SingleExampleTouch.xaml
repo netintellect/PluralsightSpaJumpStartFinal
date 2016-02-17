@@ -1,0 +1,545 @@
+﻿<local:ViewBase x:Class="Telerik.Windows.QuickStart.SingleExampleTouch"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mscorlib="clr-namespace:System;assembly=mscorlib"
+	xmlns:localPrism="clr-namespace:Telerik.Windows.QuickStart;assembly=QuickStart.Common"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"        
+	xmlns:telerikCodeViewer="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.CodeEditor"
+	xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+	xmlns:telerikDocumentsHTML="clr-namespace:Telerik.Windows.Documents.FormatProviders.Html;assembly=Telerik.Windows.Documents.FormatProviders.Html"
+	xmlns:transitionControl="clr-namespace:Telerik.Windows.Controls.TransitionControl;assembly=Telerik.Windows.Controls"
+	xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+	xmlns:touch="clr-namespace:Telerik.Windows.Input.Touch;assembly=Telerik.Windows.Controls"
+	x:Name="rootSingleExample" Style="{StaticResource ViewBaseTouchStyle}"
+	mc:Ignorable="d" 
+	d:DesignHeight="600" d:DesignWidth="1024">
+
+    <UserControl.Resources>
+        <local:ExampleModeToVisibilityConverter x:Key="exampleModeToVisibilityConverter" />
+        <SolidColorBrush x:Key="Control.Border" Color="#FF79256B" />
+        <local:FriendlyExampleNameConverter x:Key="FriendlyExampleNameConverter" />
+        <local:HtmlFontConverter x:Key="HtmlFontConverter" />
+
+        <Storyboard x:Key="FullScreenLabelAnimation">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-1000"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.578" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="40"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="textBlock1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="700"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="-20"/>
+			</DoubleAnimationUsingKeyFrames>-->
+        </Storyboard>
+
+        <Style x:Key="ViewModeCheckBoxButtonStyle" TargetType="CheckBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="textBlock">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Text.MouseOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="textBlock1">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Text.MouseOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates"/>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="textBlock1">
+                                                <EasingThicknessKeyFrame KeyTime="0" Value="10,0"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBlock">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked"/>
+                                    <VisualState x:Name="Indeterminate"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="ValidationStates"/>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="border" BorderBrush="{StaticResource ContentControl.BorderTouch}" BorderThickness="1,1,1,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Background="{DynamicResource ContentControl.BackgroundTouch}" Visibility="Collapsed">
+                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{TemplateBinding Content}" VerticalAlignment="Center" Style="{DynamicResource GroupHeaderTouchTextStyle}"/>
+                            </Border>
+                            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{TemplateBinding Content}" VerticalAlignment="Center" Style="{DynamicResource GroupHeaderTouchTextStyle}" Margin="10,0" Foreground="{DynamicResource Text.Header}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsChecked" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Foreground" Value="{StaticResource Text.MouseOver}" />
+                </MultiTrigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Text.MouseOver}" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TabControlContentOnlyStyle" TargetType="TabControl">
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="{StaticResource ContentControl.BackgroundTouch}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ContentControl.BorderTouch}"/>
+            <Setter Property="Padding" Value="0,-2,0,0"/>
+            <Setter Property="touch:TouchManager.IsTouchHitTestVisible" Value="True" />
+        </Style>
+
+        <DataTemplate x:Key="ExampleTemplate">
+            <Border>
+                <Grid Margin="20" HorizontalAlignment="{Binding Path=Content.HorizontalAlignment, ElementName=Content}" VerticalAlignment="{Binding Path=Content.VerticalAlignment, ElementName=Content}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.RowSpan="2" CornerRadius="5" BorderBrush="#FFAAB9C0" BorderThickness="1" Background="White">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="7" ShadowDepth="2" Opacity="0.5" />
+                        </Border.Effect>
+                    </Border>
+                    <Border x:Name="Header" CornerRadius="5 5 0 0" Background="#FF79256B" BorderThickness="0 0 0 1" BorderBrush="#FFAAB9C0">
+                        <Grid>
+                            <Path Width="223" Height="29" HorizontalAlignment="Right" VerticalAlignment="Top" Data="M0.5,12.1 L222.4,12.1 L222.5,37.6 C176.7,29.8 107.9,19.0 0.5,19.0 z" Stretch="Fill" StrokeThickness="0" >
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0.0" EndPoint="0.5,0.8">
+                                        <GradientStop Offset="1" Color="#FF8E347D"/>
+                                        <GradientStop Offset="0.1" Color="#0079256B"/>
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <ContentPresenter Content="{Binding ElementName=Content, Path=(ContentPresenter.Content).(telerikQuickStart:QuickStart.ExampleHeader)}" TextBlock.Foreground="White" TextBlock.FontSize="24" TextBlock.FontFamily="Myriad Pro Light" />
+                        </Grid>
+                    </Border>
+                    <ContentPresenter x:Name="Content" Margin="5" Grid.Row="1" Content="{Binding}" />
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Content, Path=(ContentPresenter.Content).(telerikQuickStart:QuickStart.ExampleHeader)}" Value="{x:Null}">
+                    <Setter TargetName="Header" Property="Visibility" Value="Collapsed" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- CodeViewer templates -->
+        <DataTemplate x:Key="XAMLContentDataTemplate">
+            <Grid Margin="20" >
+                <!--HorizontalAlignment="{Binding Path=Content.HorizontalAlignment, ElementName=Content}" 
+							VerticalAlignment="{Binding Path=Content.VerticalAlignment, ElementName=Content}"-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.RowSpan="2" CornerRadius="5" BorderBrush="#FFAAB9C0" BorderThickness="1" Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="7" ShadowDepth="2" Opacity="0.5" />
+                    </Border.Effect>
+                </Border>
+                <Border x:Name="Header" CornerRadius="5 5 0 0" Background="#FF79256B" BorderThickness="0 0 0 1" BorderBrush="#FFAAB9C0">
+                    <Grid>
+                        <Path Width="223" Height="29" HorizontalAlignment="Right" VerticalAlignment="Top" Data="M0.5,12.1 L222.4,12.1 L222.5,37.6 C176.7,29.8 107.9,19.0 0.5,19.0 z" Stretch="Fill" StrokeThickness="0" >
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0.0" EndPoint="0.5,0.8">
+                                    <GradientStop Offset="1" Color="#FF8E347D"/>
+                                    <GradientStop Offset="0.1" Color="#0079256B"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                    </Grid>
+                </Border>
+                <telerikCodeViewer:RadCodeEditor x:Name="codeViewer" Grid.Row="1"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" FontFamily="Consolas" FontSize="12" AllowScaling="false" >
+                    <telerikCodeViewer:RadCodeEditor.Resources>
+                        <Style TargetType="ScrollBar" BasedOn="{StaticResource QSFScrollBarStyle}">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </telerikCodeViewer:RadCodeEditor.Resources>
+
+                </telerikCodeViewer:RadCodeEditor>
+            </Grid>
+
+        </DataTemplate>
+
+        <DataTemplate x:Key="CodeContentDataTemplate">
+            <telerik:RadTabControl Style="{StaticResource CodeRadTabControlTouchStyle}" >
+                <telerik:RadTabItem Style="{StaticResource CodeRadTabItemStyle}"  Header="C#" />
+                <telerik:RadTabItem Style="{StaticResource CodeRadTabItemStyle}" Header="VB.NET" />
+                <telerik:RadTabControl.ItemTemplate>
+                    <DataTemplate>
+                        <telerikCodeViewer:RadCodeEditor  x:Name="codeViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
+							FontFamily="Consolas" FontSize="12" AllowScaling="false"
+							Foreground="Black">
+                            <telerikCodeViewer:RadCodeEditor.Resources>
+                                <Style TargetType="ScrollBar" BasedOn="{StaticResource QSFScrollBarStyle}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </telerikCodeViewer:RadCodeEditor.Resources>
+                        </telerikCodeViewer:RadCodeEditor>
+                    </DataTemplate>
+                </telerik:RadTabControl.ItemTemplate>
+            </telerik:RadTabControl>
+        </DataTemplate>
+
+        <Style x:Key="CodeViewerStyle" TargetType="local:CodeViewer">
+            <Setter Property="CodeContentTemplate" Value="{StaticResource CodeContentDataTemplate}" />
+            <Setter Property="XAMLContentTemplate" Value="{StaticResource XAMLContentDataTemplate}" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="60 0 0 -10" VerticalAlignment="Bottom">
+                <Button  x:Name="Logo" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource TelerikLogoTemplate}" Style="{StaticResource BlankButtonStyle}" Command="{Binding NavigateCommand}" CommandParameter="Home"/>
+                <Button x:Name="ReleaseNotes" Style="{StaticResource RealeaseNotesButtonStyle}" Margin="0 -5 0 0"  Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/support/whats-new/wpf/release-history" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            </StackPanel>
+
+            <Button  x:Name="allControlls" Grid.Column="1" Margin="60 0 0 0" Command="{Binding NavigateCommand}" CommandParameter="AllControlsTouch" HorizontalAlignment="Left" VerticalAlignment="Bottom" Style="{StaticResource BlankButtonStyle}">
+                <StackPanel Height="24" Orientation="Horizontal">
+                    <WrapPanel Orientation="Vertical" Height="16" Margin="0">
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                    </WrapPanel>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="15,0,0,0" Foreground="{DynamicResource Text.Header}" Text="All Controls"/>
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding NavigateCommand}" CommandParameter="{Binding CurrentExample.ExampleGroup.Control}" Grid.Column="2" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Style="{StaticResource BlankButtonStyle}">
+                <StackPanel Height="24" Orientation="Horizontal">
+                    <Image Stretch="None"  Source="{Binding CurrentExample.ExampleGroup.Control, ConverterParameter=24x24, Converter={StaticResource ControlToIconConverter}}" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="10,0,0,0" Foreground="{DynamicResource Text.Header}" >
+					<Run Text="All"/>
+					<Run Text="Examples"/>
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="60,20,0,0"  Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Text="{Binding CurrentExample.ExampleGroup.Control.Text}" VerticalAlignment="Top" HorizontalAlignment="Left"  Style="{StaticResource ControlTitleTouchTextStyle}"/>
+                <TextBlock Text="/" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Style="{StaticResource ControlTitleTouchTextStyle}" Margin="20,8,0,0"/>
+                <TextBlock Text="{Binding CurrentExample.Text}" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="20,8,0,0" Style="{StaticResource ControlTitleTouchTextStyle}" />
+            </StackPanel>
+
+            <ScrollViewer Background="Transparent" Style="{StaticResource QSFScrollViewerStyle}"  Margin="60,85,0,0" Padding="0,0,20,0"  Grid.Row="1" CanContentScroll="False" HorizontalScrollBarVisibility="Disabled" Visibility="{Binding Content, ElementName=ExampleArea, Converter={StaticResource ContentToVisibilityConverter}}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="Example Description"  Style="{StaticResource GroupHeaderTouchTextStyle}"/>
+                        <telerik:RadRichTextBox Margin="-1,0,0,0"  x:Name="DescriptionRichTextBox" Style="{StaticResource RadRichTextBoxReadOnlyTouchStyle}" HorizontalScrollBarVisibility="Disabled" IsSelectionEnabled="False" IsEnabled="False" HorizontalAlignment="Stretch" />
+                        <telerikDocumentsHTML:HtmlDataProvider RichTextBox="{Binding ElementName=DescriptionRichTextBox}" Html="{Binding CurrentExample.Description, Mode=OneWay, ConverterParameter='touchMode', Converter={StaticResource HtmlFontConverter}}" />
+                    </StackPanel>
+
+                    <TabControl Grid.Row="1" Margin="0,20,0,60" Background="Transparent" BorderThickness="0"  Style="{StaticResource TabControlContentOnlyStyle}">
+                        <TabItem Header="Example" IsSelected="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Example, Mode=TwoWay}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Example Configuration" Margin="0,20,0,0" Visibility="{Binding Content, ElementName=Configurator, Converter={StaticResource ContentToVisibilityConverter}}" Style="{StaticResource GroupHeaderTouchTextStyle}"/>
+                                <ContentControl x:Name="Configurator" Margin="0,40,0,0" HorizontalAlignment="Stretch"  Content="{Binding ElementName=ExampleArea, Path=(ContentControl.Content).(telerikQuickStart:QuickStart.ConfigurationPanel)}">
+                                    <ContentControl.Resources>
+                                        <!--<Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource QSFScrollViewerStyle}" />
+										<Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource QSFScrollBarStyle}" />-->
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextWrapping" Value="Wrap" />
+                                        </Style>
+                                        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource QSFCheckBoxTouchStyle}" />
+                                        <!--<Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource QSFRadioButtonStyle}" />
+										<Style TargetType="{x:Type telerik:RadComboBox}" BasedOn="{StaticResource QSFRadComboBoxStyle}" />
+										<Style TargetType="{x:Type telerik:RadComboBoxItem}" BasedOn="{StaticResource QSFRadComboBoxItemStyle}" />
+										<Style TargetType="{x:Type telerik:RadButton}" BasedOn="{StaticResource QSFRadButtonStyle}" />
+										<Style TargetType="{x:Type Button}" BasedOn="{StaticResource QSFButtonStyle}" />
+										<Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource QSFExampleTextBoxStyle}" />
+										<Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource QSFListBoxStyle}" />
+										<Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource QSFListBoxItemStyle}" />
+										<Style TargetType="{x:Type telerik:RadNumericUpDown}" BasedOn="{StaticResource QSFRadNumericUpDownStyle}" />
+										<Style TargetType="{x:Type telerik:RadDateTimePicker}" BasedOn="{StaticResource QSFRadDateTimePickerStyle}" />
+										<Style TargetType="{x:Type telerik:RadColorSelector}" BasedOn="{StaticResource QSFRadColorSelectorStyle}" />
+										<Style TargetType="{x:Type telerik:RadColorPicker}" BasedOn="{StaticResource QSFRadColorPickerStyle}" />
+										<Style TargetType="{x:Type telerik:RadSlider}" BasedOn="{StaticResource QSFRadSliderStyle}" />-->
+                                    </ContentControl.Resources>
+                                </ContentControl>
+                                <ListBox x:Name="themesList" VerticalAlignment="Stretch"  ItemsSource="{Binding Themes}" SelectedItem="{Binding CurrentTheme, Mode=TwoWay}" Visibility="{Binding CurrentExample.Type, Converter={StaticResource ThemingToVisibleConverter}, FallbackValue=Collapsed}" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Code" IsSelected="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Code, Mode=TwoWay}">
+                            <local:ResourceBox x:Name="ResourcesList" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Stretch" ItemsSource="{Binding CurrentExample.Resources}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding DisplayName, Converter={StaticResource FriendlyExampleNameConverter}}"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </local:ResourceBox>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </ScrollViewer>
+
+            <Grid Margin="0,45,60,40"  Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TabControl Grid.Row="1" Margin="0,-3,0,0"  x:Name="Example" Style="{StaticResource TabControlContentOnlyStyle}">
+                    <TabItem Header="Example" IsSelected="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Example, Mode=TwoWay}">
+                        <Grid>
+                            <ContentControl Visibility="{Binding ExampleProgress, Converter={StaticResource InvertedIntProgressToVisibilityConverter}}" x:Name="ExampleArea" 
+								Content="{Binding CurrentExampleInstance}"
+								ContentTemplate="{StaticResource ExampleTemplate}" />
+                            <telerik:RadButton x:Name="FullScreenButton" Style="{StaticResource FullScreenModeButtonStyle}" Background="White"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,1,0"
+								Click="OnFullscreenButtonClick">
+                                <Path x:Name="content" Data="M17.243,13.619 L22.104,18.479 L24,16.581 L24,24.438 L16.144,24.438 L18.042,22.541 L13.182,17.681 z M6.757,13.619 L10.82,17.681 L5.95799,22.541 L7.856,24.438 L0,24.438 L0,16.581 L1.89899,18.479 z M16.144,0 L24,0 L24,7.85702 L22.104,5.96002 L17.243,10.82 L13.182,6.759 L18.042,1.89801 z M0,0 L7.856,0 L5.95799,1.89801 L10.82,6.759 L6.757,10.82 L1.89899,5.96002 L0,7.85702 z" Fill="{StaticResource Text.Title}" Height="24.438" Canvas.Left="0" Stretch="Fill" Width="24"/>
+
+                            </telerik:RadButton>
+                            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding ExampleProgress, Converter={StaticResource IntProgressToVisibilityConverter}}" Grid.Column="1">
+                                <TextBlock Text="{Binding CurrentExample.ExampleGroup.Control.Text}" FontWeight="DemiBold" FontSize="64" TextAlignment="Center" Foreground="#44000000" Style="{StaticResource TitleTextStyle}" />
+                                <TextBlock Text="DOWNLOADING EXAMPLES" TextAlignment="Center" FontSize="9" Foreground="#AA000000" Margin="2" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="16" Height="16" Margin="2 1" StrokeThickness="1" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="24" Height="24" Margin="3 1" StrokeThickness="1.5" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="32" Height="32" Margin="4 1" StrokeThickness="2" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                    <Image VerticalAlignment="Top" Stretch="None" Margin="5 0" Width="46" Height="46" Source="{Binding CurrentExample.ExampleGroup.Control, Converter={StaticResource ControlToIconConverter}, ConverterParameter='46x46'}" />
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="32" Height="32" Margin="4 1" StrokeThickness="2" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="24" Height="24" Margin="3 1" StrokeThickness="1.5" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                    <Rectangle VerticalAlignment="Top" RadiusX="2" RadiusY="2" Width="16" Height="16" Margin="2 1" StrokeThickness="1" Stroke="{StaticResource Control.Border}" Fill="White" />
+                                </StackPanel>
+                            </StackPanel>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Code" IsSelected="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Code, Mode=TwoWay}">
+                        <local:CodeViewer Source="{Binding SelectedItem.ExampleUri, ElementName=ResourcesList}" Margin="0" 
+							Style="{StaticResource CodeViewerStyle}"/>
+                    </TabItem>
+                </TabControl>
+                <StackPanel x:Name="ViewModeSelection" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <CheckBox x:Name="ViewModeExampleButton" Content="Example" IsChecked="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Example, Mode=TwoWay}" IsEnabled="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsChecked, Converter={StaticResource BooleanToInvertedBooleanConverter}}" Style="{StaticResource ViewModeCheckBoxButtonStyle}"/>
+                    <CheckBox x:Name="ViewModeCodeButton" Content="Code" IsChecked="{Binding ViewMode, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Code, Mode=TwoWay}" IsEnabled="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsChecked, Converter={StaticResource BooleanToInvertedBooleanConverter}}"  Style="{StaticResource ViewModeCheckBoxButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <StackPanel Margin="0,0,60,-5" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="AllProducts" Height="20" Width="140"  Margin="15 0" Style="{StaticResource AllControlsButtonStyle}" Content="ALL _TELERIK PRODUCTS" HorizontalAlignment="Left" VerticalAlignment="Center" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/support/demos"/>
+            <ContentControl Style="{StaticResource ToolBarTouchContentControlStyle}"/>
+            <Button Margin="20,0,0,0"  Command="{Binding ToggleApplicationTouchModeCommand}" CommandParameter="{Binding CurrentExample}" Style="{DynamicResource SwitchToMouseModeButtonStyle}"
+				Visibility="{Binding CurrentExample, Converter={StaticResource exampleModeToVisibilityConverter}, ConverterParameter='ToDesktop'}" />
+        </StackPanel>
+
+        <!--Fullscreen mode UI-->
+        <Grid x:Name="FullscreenPanel" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="{StaticResource Window.Background}"  Visibility="Collapsed">
+
+            <ContentControl x:Name="FullscreenExampleArea" 
+				ContentTemplate="{StaticResource ExampleTemplate}" Margin="40,0"  />
+
+            <!--Normal Screen Button-->
+            <telerik:RadButton x:Name="NormalScreenButton" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" 
+				Click="OnNormalScreenButtonClick" Style="{StaticResource FullScreenModeButtonStyle}">
+                <Path Data="F1M309.2188,411.3823L305.4898,407.6513L297.2168,415.9223L288.9478,407.6513L285.2188,411.3823L293.4888,419.6533L285.2188,427.9233L288.9478,431.6533L297.2168,423.3823L305.4898,431.6533L309.2188,427.9233L300.9478,419.6533z" Fill="{StaticResource Text.Title}" Height="24.002" Canvas.Left="0" Stretch="Fill" Canvas.Top="0" Width="24"/>
+            </telerik:RadButton>
+
+            <telerik:RadDropDownButton VerticalAlignment="Top" HorizontalAlignment="Left" 
+				Visibility="{Binding ElementName=FullscreenExampleArea, 
+				Path=(ContentControl.Content).(telerikQuickStart:QuickStart.ConfigurationPanel), 
+				Converter={StaticResource ContentToVisibilityConverter}}" Style="{StaticResource FullScreenConfiguratorDropDownButtonStyle}">
+                <telerik:RadDropDownButton.Content>
+                    <Path Data="F1M296.665,426.1768C293.322,426.1768,290.611,423.4748,290.611,420.1228C290.611,416.7758,293.322,414.0728,296.665,414.0728C300.012,414.0728,302.723,416.7758,302.723,420.1228C302.723,423.4748,300.012,426.1768,296.665,426.1768 M311.325,417.0108L306.869,417.0108C306.602,416.1568,306.23,415.3498,305.777,414.5998L308.732,411.6348C309.432,410.9458,309.432,409.8188,308.732,409.1238L307.478,407.8708C306.783,407.1788,305.657,407.1808,304.965,407.8708L301.957,410.8738C301.144,410.4108,300.264,410.0518,299.327,409.8108L299.327,405.9048C299.327,404.9258,298.535,404.1258,297.55,404.1258L295.773,404.1258C294.794,404.1258,293.998,404.9258,293.998,405.9048L293.998,409.8108C292.976,410.0698,292.019,410.4778,291.139,411.0098L288.623,408.4948C287.931,407.8058,286.801,407.8018,286.108,408.4948L284.848,409.7518C284.154,410.4438,284.164,411.5738,284.853,412.2688L287.415,414.8298C286.874,415.7768,286.467,416.8088,286.234,417.9018L282.888,417.9018C281.905,417.9018,281.108,418.6968,281.108,419.6798L281.108,421.4558C281.108,422.4358,281.905,423.2298,282.888,423.2298L286.462,423.2298C286.785,424.3028,287.274,425.2908,287.9,426.1908L285.483,428.6068C284.787,429.3038,284.787,430.4308,285.477,431.1238L286.732,432.3788C287.431,433.0698,288.559,433.0698,289.25,432.3758L291.951,429.6778C292.861,430.1298,293.847,430.4558,294.887,430.6248L294.887,434.3418C294.887,435.3228,295.681,436.1178,296.664,436.1228L298.44,436.1228C299.42,436.1178,300.217,435.3228,300.217,434.3418L300.217,430.1668C301.113,429.8488,301.962,429.4258,302.73,428.8868L305.592,431.7498C306.287,432.4428,307.41,432.4428,308.107,431.7498L309.363,430.4938C310.061,429.8008,310.061,428.6748,309.357,427.9788L306.223,424.8368C306.607,424.0568,306.906,423.2248,307.092,422.3448L311.325,422.3448C312.311,422.3448,313.104,421.5538,313.107,420.5658L313.107,418.7898C313.104,417.8108,312.311,417.0108,311.325,417.0108" Fill="{StaticResource Text.Title}" Height="31.997" Stretch="Fill" Width="31.999"/>
+                </telerik:RadDropDownButton.Content>
+                <telerik:RadDropDownButton.DropDownContent>
+                    <Grid Width="360" Background="White" MinHeight="150"  MaxHeight="680">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border VerticalAlignment="Top"  Height="40" Width="40">
+                            <Path Data="F1M296.665,426.1768C293.322,426.1768,290.611,423.4748,290.611,420.1228C290.611,416.7758,293.322,414.0728,296.665,414.0728C300.012,414.0728,302.723,416.7758,302.723,420.1228C302.723,423.4748,300.012,426.1768,296.665,426.1768 M311.325,417.0108L306.869,417.0108C306.602,416.1568,306.23,415.3498,305.777,414.5998L308.732,411.6348C309.432,410.9458,309.432,409.8188,308.732,409.1238L307.478,407.8708C306.783,407.1788,305.657,407.1808,304.965,407.8708L301.957,410.8738C301.144,410.4108,300.264,410.0518,299.327,409.8108L299.327,405.9048C299.327,404.9258,298.535,404.1258,297.55,404.1258L295.773,404.1258C294.794,404.1258,293.998,404.9258,293.998,405.9048L293.998,409.8108C292.976,410.0698,292.019,410.4778,291.139,411.0098L288.623,408.4948C287.931,407.8058,286.801,407.8018,286.108,408.4948L284.848,409.7518C284.154,410.4438,284.164,411.5738,284.853,412.2688L287.415,414.8298C286.874,415.7768,286.467,416.8088,286.234,417.9018L282.888,417.9018C281.905,417.9018,281.108,418.6968,281.108,419.6798L281.108,421.4558C281.108,422.4358,281.905,423.2298,282.888,423.2298L286.462,423.2298C286.785,424.3028,287.274,425.2908,287.9,426.1908L285.483,428.6068C284.787,429.3038,284.787,430.4308,285.477,431.1238L286.732,432.3788C287.431,433.0698,288.559,433.0698,289.25,432.3758L291.951,429.6778C292.861,430.1298,293.847,430.4558,294.887,430.6248L294.887,434.3418C294.887,435.3228,295.681,436.1178,296.664,436.1228L298.44,436.1228C299.42,436.1178,300.217,435.3228,300.217,434.3418L300.217,430.1668C301.113,429.8488,301.962,429.4258,302.73,428.8868L305.592,431.7498C306.287,432.4428,307.41,432.4428,308.107,431.7498L309.363,430.4938C310.061,429.8008,310.061,428.6748,309.357,427.9788L306.223,424.8368C306.607,424.0568,306.906,423.2248,307.092,422.3448L311.325,422.3448C312.311,422.3448,313.104,421.5538,313.107,420.5658L313.107,418.7898C313.104,417.8108,312.311,417.0108,311.325,417.0108" Fill="{StaticResource Text.Title}" Height="31.997" Stretch="Fill" Width="31.999"/>
+                        </Border>
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Padding="0,10,10,10" Background="Transparent"  Grid.Column="1"  VerticalScrollBarVisibility="Auto">
+                            <ContentControl x:Name="FullscreenConfigurator" HorizontalAlignment="Stretch" 
+								Content="{Binding ElementName=FullscreenExampleArea, Path=(ContentControl.Content).(telerikQuickStart:QuickStart.ConfigurationPanel)}">
+                                <ContentControl.Resources>
+                                    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource QSFCheckBoxTouchStyle}" />
+                                </ContentControl.Resources>
+                            </ContentControl>
+                        </ScrollViewer>
+                    </Grid>
+                </telerik:RadDropDownButton.DropDownContent>
+            </telerik:RadDropDownButton>
+
+            <Grid x:Name="grid" Visibility="Collapsed"  Background="#CC000000" Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Style="{StaticResource ControlTitleTouchTextStyle}" FontSize="28" TextWrapping="Wrap" Text="{Binding CurrentExample.ExampleGroup.Control.Text}" VerticalAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform Y="-20"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Style="{StaticResource ControlTitleTouchTextStyle}" FontSize="40"  TextWrapping="Wrap" Text="{Binding CurrentExample.Text}" VerticalAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform Y="20"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+            </Grid>
+
+        </Grid>
+
+        <!--Previous Button-->
+        <Button Width="40" Height="40" Grid.RowSpan="2"  DataContext="{Binding PreviousExample}" Style="{StaticResource TouchModeButtonStyle}" 
+			Command="{Binding DataContext.NavigateCommand, ElementName=rootSingleExample}" CommandParameter="{Binding}" 
+			VerticalAlignment="Center" HorizontalAlignment="Left" >
+            <Path Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="14" 
+				Data="M0.00012350082,0 L3.0001235,0 3.0001235,10.999877 14,10.999877 14,13.999877 3.0001235,13.999877 0.00012350082,14 0,10.999877 z" 
+				Height="14" Margin="-4,-3,0,0"  RenderTransformOrigin="0.500000001064368,0.89284832501928" Stretch="Fill">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Effect>
+                    <DropShadowEffect Opacity="0.3"  BlurRadius="4" Direction="150" ShadowDepth="1" />
+                </Path.Effect>
+            </Path>
+        </Button>
+
+        <!--Next Button-->
+        <Button Width="40" Height="40" Grid.RowSpan="2" DataContext="{Binding NextExample}" Style="{StaticResource TouchModeButtonStyle}" 
+			Command="{Binding DataContext.NavigateCommand, ElementName=rootSingleExample}" CommandParameter="{Binding}" 
+			VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="40"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Path Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="14" 
+				Data="M0.00012350082,0 L3.0001235,0 3.0001235,10.999877 14,10.999877 14,13.999877 3.0001235,13.999877 0.00012350082,14 0,10.999877 z" 
+				Height="14" Margin="-4,-3,0,0"  RenderTransformOrigin="0.500000001064368,0.89284832501928" Stretch="Fill">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Effect>
+                    <DropShadowEffect Opacity="0.3"  BlurRadius="4" Direction="150" ShadowDepth="1" />
+                </Path.Effect>
+            </Path>
+        </Button>
+        <Rectangle Height="4" Fill="#FF79256B" HorizontalAlignment="Stretch" Visibility="{Binding ExampleProgress, Converter={StaticResource IntProgressToVisibilityConverter}}" VerticalAlignment="Top">
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleX="{Binding ExampleProgress, Converter={StaticResource IntProgressToNormalizedDouble}, FallbackValue=0}"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</local:ViewBase>

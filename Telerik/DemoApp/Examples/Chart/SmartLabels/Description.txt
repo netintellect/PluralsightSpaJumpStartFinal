@@ -1,0 +1,2 @@
+﻿This example demonstrates smart label positioning with different types of visual series such as Bar, Line, HorizontalBar, Pie and combination. <br />
+Use the configurator to adjust the positioning options available for each of the series types.

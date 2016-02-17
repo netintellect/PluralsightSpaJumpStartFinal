@@ -1,0 +1,300 @@
+<UserControl x:Class="Telerik.Windows.Examples.Sparklines.LiveData.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Sparklines.LiveData"
+    xmlns:chart="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Chart"
+    xmlns:chartView="clr-namespace:Telerik.Windows.Controls.ChartView;assembly=Telerik.Windows.Controls.Chart"
+    mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center"
+    d:DesignHeight="600" d:DesignWidth="800"
+    Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded" >
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <example:VisibilityConverter x:Key="VisibilityConverter" />
+        <example:ColorConverter x:Key="ColorConverter"></example:ColorConverter>
+
+        <LinearGradientBrush x:Key="ChartBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+            <GradientStop Color="#FFDBE4ED" Offset="0"/>
+            <GradientStop Color="#FFFCFCFC" Offset="0.211"/>
+            <GradientStop Color="#FFFCFCFC" Offset="0.694"/>
+            <GradientStop Color="#FFE5EEF8" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="legendStyle" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,10,10,0" />
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+        </Style>
+
+        <Style x:Key="labelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11" />
+        </Style>
+
+        <Style x:Key="legendItemStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="#FF767676" />
+            <Setter Property="Margin" Value="4,2,4,4" />
+        </Style>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Call Center Monitoring" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Width="784" Height="484">
+        <Grid x:Name="gridAll">
+            <Grid x:Name="gridSparklines" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Performance by Represantative" FontFamily="Segoe UI Light" FontSize="18" TextAlignment="Left" Margin="10,7,7,5" />
+
+                <Grid Grid.Row="1" Margin="10,0,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" />
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Column="1">
+                        <TextBlock Text="Call Duration" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Column="2">
+                        <TextBlock Text="Hold Time" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,1,0" Grid.Column="3">
+                        <TextBlock Text="Issue Resolved" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="1">
+                        <TextBlock Text="Call Person1" VerticalAlignment="Center" Padding="5,0,0,0" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="1" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" VerticalAlignment="Center" Stretch="None" Visibility="{Binding DurationOverLimitData1, Converter={StaticResource VisibilityConverter}}" />
+                            <telerik:RadLinearSparkline Grid.Column="1" Grid.Row="1" 
+                                                            ItemsSource="{Binding Data1}"
+                                                            x:Name="SparkLine1" 
+                                                            YValuePath="TicksDuration" 
+                                                            Margin="0,5,0,5" />
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Foreground="{Binding DurationOverLimitData1, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageData1"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="1" Grid.Column="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" Stretch="None" VerticalAlignment="Center" Visibility="{Binding HoldOverLimitData1, Converter={StaticResource VisibilityConverter}}" />
+
+                            <telerik:RadLinearSparkline ItemsSource="{Binding Data1}"
+                                                            x:Name="SparkLine2"
+                                                            YValuePath="TicksHoldTime"
+                                                            Grid.Column="1" 
+                                                            Margin="0,5,0,5" />
+                            <TextBlock  Grid.Column="2" VerticalAlignment="Center" 
+                                    Foreground="{Binding HoldOverLimitData1, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageHoldData1"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,1,0" Grid.Row="1" Grid.Column="3">
+                        <telerik:RadWinLossSparkline ItemsSource="{Binding Data1}" x:Name="SparkLine3" YValuePath="IssueResolved" ShowNegativePointIndicators="False" Margin="0,5,0,5" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="2">
+                        <TextBlock Text="Call Person2" VerticalAlignment="Center" Padding="5,0,0,0" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="2" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" Stretch="None" VerticalAlignment="Center" Visibility="{Binding DurationOverLimitData2, Converter={StaticResource VisibilityConverter}}" />
+
+                            <telerik:RadLinearSparkline Grid.Column="1"  ItemsSource="{Binding Data2}"
+                                                            x:Name="SparkLine12" 
+                                                            YValuePath="TicksDuration"
+                                                            Margin="0,5,0,5" />
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center"  Foreground="{Binding DurationOverLimitData2, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageData2"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,0" Grid.Row="2" Grid.Column="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" Stretch="None" VerticalAlignment="Center" Visibility="{Binding HoldOverLimitData2, Converter={StaticResource VisibilityConverter}}" />
+
+                            <telerik:RadLinearSparkline ItemsSource="{Binding Data2}" 
+                                                            x:Name="SparkLine22" 
+                                                            YValuePath="TicksHoldTime"  
+                                                            Grid.Column="1" 
+                                                            Margin="0,5,0,5" />
+                            <TextBlock  Grid.Column="2" VerticalAlignment="Center"
+                                    Foreground="{Binding HoldOverLimitData2, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageHoldData2"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,1,0" Grid.Row="2" Grid.Column="3">
+                        <telerik:RadWinLossSparkline ItemsSource="{Binding Data2}" x:Name="SparkLine32" YValuePath="IssueResolved" ShowNegativePointIndicators="False" Margin="0,5,0,5" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,1" Grid.Row="3">
+                        <TextBlock Text="Call Person3" VerticalAlignment="Center" Padding="5,0,0,0" />
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,1" Grid.Row="3" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" Stretch="None"   Visibility="{Binding DurationOverLimitData3, Converter={StaticResource VisibilityConverter}}" />
+
+                            <telerik:RadLinearSparkline Grid.Column="1"
+                                                            ItemsSource="{Binding Data3}"
+                                                            x:Name="SparkLine13" 
+                                                            YValuePath="TicksDuration" 
+                                                            Margin="0,5,0,5" />
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Foreground="{Binding DurationOverLimitData3, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageData3"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1,1,0,1" Grid.Row="3" Grid.Column="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="../Images/Sparklines/LiveData/Error.png" Stretch="None" Visibility="{Binding HoldOverLimitData3, Converter={StaticResource VisibilityConverter}}" />
+
+                            <telerik:RadLinearSparkline ItemsSource="{Binding Data3}" x:Name="SparkLine23" 
+                                                            YValuePath="TicksHoldTime"  
+                                                            Grid.Column="1" 
+                                                            Margin="0,5,0,5" />
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center"
+                                    Foreground="{Binding HoldOverLimitData3, Converter={StaticResource ColorConverter}}">
+                                    <TextBlock.Text>
+                                                <Binding Path="AvarageHoldData3"/>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="#66C5C2C2" BorderThickness="1" Grid.Row="3" Grid.Column="3">
+                        <telerik:RadWinLossSparkline ItemsSource="{Binding Data3}" x:Name="SparkLine33" YValuePath="IssueResolved" ShowNegativePointIndicators="False" Margin="0,5,0,5" />
+                    </Border>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Overall performance for the past 24 hours" FontFamily="Segoe UI Light" FontSize="18" 
+                                   TextAlignment="Left" Grid.ColumnSpan="2" Margin="10,10,7,5" />
+
+                    <chart:RadCartesianChart x:Name="RadChart1" Palette="Metro" Grid.Row="1" Margin="10,0,0,10">
+                        <chart:RadCartesianChart.HorizontalAxis>
+                            <chartView:DateTimeCategoricalAxis LabelFormat="HH:mm\h" LabelInterval="2" PlotMode="OnTicksPadded" LabelStyle="{StaticResource labelStyle}" />
+                        </chart:RadCartesianChart.HorizontalAxis>
+                        <chart:RadCartesianChart.VerticalAxis>
+                            <chartView:LinearAxis MajorStep="20" LabelStyle="{StaticResource labelStyle}" />
+                        </chart:RadCartesianChart.VerticalAxis>
+
+                        <chartView:LineSeries CategoryBinding="TimeInverval" ValueBinding="TicksDuration" ItemsSource="{Binding Data4}" />
+                        <chartView:LineSeries CategoryBinding="TimeInverval" ValueBinding="TicksHoldTime" ItemsSource="{Binding Data4}" />
+                        <chartView:LineSeries CategoryBinding="TimeInverval" ValueBinding="Abandonments" ItemsSource="{Binding Data4}" />
+
+                    </chart:RadCartesianChart>
+
+                    <StackPanel Style="{StaticResource legendStyle}" Grid.Row="1" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="14" Height="14" Fill="{Binding Palette.GlobalEntries[0].Fill, ElementName=RadChart1}" />
+                            <TextBlock Text="Active Calls" Style="{StaticResource legendItemStyle}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="14" Height="14" Fill="{Binding Palette.GlobalEntries[1].Fill, ElementName=RadChart1}" />
+                            <TextBlock Text="Calls on Hold" Style="{StaticResource legendItemStyle}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="14" Height="14" Fill="{Binding Palette.GlobalEntries[2].Fill, ElementName=RadChart1}" />
+                            <TextBlock Text="Abandonments" Style="{StaticResource legendItemStyle}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

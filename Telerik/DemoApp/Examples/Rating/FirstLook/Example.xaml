@@ -1,0 +1,111 @@
+<UserControl x:Class="Telerik.Windows.Examples.Rating.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        VerticalAlignment="Center" HorizontalAlignment="Center">
+    
+    <UserControl.Resources>
+        <SolidColorBrush Color="#d6d4d4" x:Key="Border_Outer" />
+        <SolidColorBrush Color="Transparent" x:Key="Border_Background"/>
+        <Style x:Key="Title_text" TargetType="TextBlock">
+            <Setter Property="Margin" Value="20,15,20,0" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#23a0da" />
+            <Setter Property="FontFamily" Value="Segoe UI Light" />
+        </Style>
+        <Style TargetType="Border" x:Key="Border_Style">
+            <Setter Property="BorderBrush" Value="{StaticResource Border_Outer}" />
+            <Setter Property="Background" Value="{StaticResource Border_Background}" />
+            <Setter Property="Width" Value="260" />
+            <Setter Property="Height" Value="240" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="First Look" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+        <Grid MinHeight="310">
+            <StackPanel Orientation="Horizontal" >
+                <Border Style="{StaticResource Border_Style}">
+                    <Grid>
+                        <TextBlock Text="Horizontal Rating" Style="{StaticResource Title_text}" />
+                        <telerik:RadRating Value="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,35,0,15" x:Name="horizontalRating" Precision="Item"/>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource Border_Style}">
+                    <Grid>
+                        <TextBlock Style="{StaticResource Title_text}" Text="Rating with content" />
+                        <telerik:RadRating  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,52,10,15" x:Name="contentRating" Precision="Item">
+                            <telerik:RadRatingItem Content="1" ToolTipService.ToolTip="1"/>
+                            <telerik:RadRatingItem Content="2" ToolTipService.ToolTip="2"/>
+                            <telerik:RadRatingItem Content="3" ToolTipService.ToolTip="3"/>
+                            <telerik:RadRatingItem Content="4" ToolTipService.ToolTip="4"/>
+                            <telerik:RadRatingItem Content="5" ToolTipService.ToolTip="5"/>
+                        </telerik:RadRating>
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource Border_Style}">
+                    <Grid>
+                        <TextBlock Style="{StaticResource Title_text}" Text="Vertical Rating" />
+                        <Border BorderThickness="1">
+                            <telerik:RadRating x:Name="verticalRating" Precision="Item" Value="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,45,0,15">
+                                <telerik:RadRatingItem Margin="1 0" RenderTransformOrigin="0.5,0.5" ToolTipService.ToolTip="1" >
+                                    <telerik:RadRatingItem.RenderTransform>
+                                        <RotateTransform Angle="18"/>
+                                    </telerik:RadRatingItem.RenderTransform>
+                                </telerik:RadRatingItem>
+                                <telerik:RadRatingItem Margin="1 0" RenderTransformOrigin="0.5,0.5" ToolTipService.ToolTip="2">
+                                    <telerik:RadRatingItem.RenderTransform>
+                                        <RotateTransform Angle="18"/>
+                                    </telerik:RadRatingItem.RenderTransform>
+                                </telerik:RadRatingItem>
+                                <telerik:RadRatingItem  Margin="1 0" RenderTransformOrigin="0.5,0.5" ToolTipService.ToolTip="3">
+                                    <telerik:RadRatingItem.RenderTransform>
+                                        <RotateTransform Angle="18"/>
+                                    </telerik:RadRatingItem.RenderTransform>
+                                </telerik:RadRatingItem>
+                                <telerik:RadRatingItem Margin="1 0" RenderTransformOrigin="0.5,0.5" ToolTipService.ToolTip="4">
+                                    <telerik:RadRatingItem.RenderTransform>
+                                        <RotateTransform Angle="18"/>
+                                    </telerik:RadRatingItem.RenderTransform>
+                                </telerik:RadRatingItem>
+                                <telerik:RadRatingItem Margin="1 0" RenderTransformOrigin="0.5,0.5" ToolTipService.ToolTip="5">
+                                    <telerik:RadRatingItem.RenderTransform>
+                                        <RotateTransform Angle="18"/>
+                                    </telerik:RadRatingItem.RenderTransform>
+                                </telerik:RadRatingItem>
+                                <telerik:RadRating.RenderTransform>
+                                    <RotateTransform Angle="270"/>
+                                </telerik:RadRating.RenderTransform>
+                            </telerik:RadRating>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <TextBlock Text="Precision:" FontFamily="Segoe UI" FontSize="12" Margin="0 2"/>
+            <RadioButton Margin="0 2" Content="Item" IsChecked="True"   Checked="PrecisionChanged"/>
+            <RadioButton Margin="0 2"  Content="Half" Checked="PrecisionChanged"/>
+            <RadioButton Margin="0 2"  Content="Exact" Checked="PrecisionChanged"/>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+
+</UserControl>

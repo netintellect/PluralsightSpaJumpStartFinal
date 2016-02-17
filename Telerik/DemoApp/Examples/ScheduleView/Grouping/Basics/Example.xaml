@@ -1,0 +1,81 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.Grouping.Basics.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.Grouping.Basics"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+	<UserControl.Resources>
+		<scheduleView:ResourceTypeCollection x:Key="ResourceTypes">
+			<scheduleView:ResourceType Name="Category">
+				<scheduleView:Resource ResourceName="Business Layer" />
+				<scheduleView:Resource ResourceName="Data layer" />
+				<scheduleView:Resource ResourceName="Presentation Layer" />
+				<scheduleView:Resource ResourceName="Best Practices" />
+				<scheduleView:Resource ResourceName="Architecture" />
+			</scheduleView:ResourceType>
+			<scheduleView:ResourceType Name="Level">
+				<scheduleView:Resource ResourceName="200" />
+				<scheduleView:Resource ResourceName="250" />
+				<scheduleView:Resource ResourceName="300" />
+				<scheduleView:Resource ResourceName="400" />
+			</scheduleView:ResourceType>
+		</scheduleView:ResourceTypeCollection>
+
+	</UserControl.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition Width="6" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<telerikQuickStart:HeaderedContentControl Grid.Column="0" Header="Default Group Order">
+			<scheduleView:RadScheduleView Margin="5" AppointmentsSource="{Binding Appointments}" ResourceTypesSource="{StaticResource ResourceTypes}"
+										  FirstVisibleTime="12:00">
+				<scheduleView:RadScheduleView.DataContext>
+					<local:ViewModel AppointmentsSource="/ScheduleView;component/DataSources/DevReach/Appointments.xaml" />
+				</scheduleView:RadScheduleView.DataContext>
+
+				<scheduleView:RadScheduleView.ViewDefinitions>
+					<scheduleView:DayViewDefinition />
+					<scheduleView:WeekViewDefinition />
+				</scheduleView:RadScheduleView.ViewDefinitions>
+
+				<scheduleView:RadScheduleView.GroupDescriptionsSource>
+					<scheduleView:GroupDescriptionCollection>
+						<scheduleView:ResourceGroupDescription ResourceType="Category" />
+						<scheduleView:ResourceGroupDescription ResourceType="Level" />
+					</scheduleView:GroupDescriptionCollection>
+				</scheduleView:RadScheduleView.GroupDescriptionsSource>
+
+			</scheduleView:RadScheduleView>
+		</telerikQuickStart:HeaderedContentControl>
+
+		<telerikQuickStart:HeaderedContentControl Grid.Column="2" Header="Custom Group Order">
+			<scheduleView:RadScheduleView Margin="5" AppointmentsSource="{Binding Appointments}" ResourceTypesSource="{StaticResource ResourceTypes}"
+										  FirstVisibleTime="12:00">
+				<scheduleView:RadScheduleView.DataContext>
+					<local:ViewModel AppointmentsSource="/ScheduleView;component/DataSources/DevReach/Appointments.xaml" />
+				</scheduleView:RadScheduleView.DataContext>
+
+				<scheduleView:RadScheduleView.ViewDefinitions>
+					<scheduleView:DayViewDefinition />
+					<scheduleView:WeekViewDefinition />
+				</scheduleView:RadScheduleView.ViewDefinitions>
+
+				<scheduleView:RadScheduleView.GroupDescriptionsSource>
+					<scheduleView:GroupDescriptionCollection>
+						<scheduleView:DateGroupDescription />
+						<scheduleView:ResourceGroupDescription ResourceType="Category" />
+						<scheduleView:ResourceGroupDescription ResourceType="Level" />
+					</scheduleView:GroupDescriptionCollection>
+				</scheduleView:RadScheduleView.GroupDescriptionsSource>
+
+			</scheduleView:RadScheduleView>
+		</telerikQuickStart:HeaderedContentControl>
+	</Grid>
+</UserControl>

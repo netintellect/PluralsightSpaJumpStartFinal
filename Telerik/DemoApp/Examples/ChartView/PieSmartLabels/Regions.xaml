@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.PieSmartLabels.Regions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Width="300" Height="190">
+
+        <Image Source="../Images/ChartView/PieSmartLabels/WorldMap.png" />
+        <Image x:Name="ImageLatinAmericaMap" Source="../Images/ChartView/PieSmartLabels/LatinAmericaMap.png" Opacity="0" />
+        <Image x:Name="ImageNorthAmericaMap" Source="../Images/ChartView/PieSmartLabels/NorthAmerica.png" Opacity="0" />
+        <Image x:Name="ImageEurasiaMap" Source="../Images/ChartView/PieSmartLabels/EurasiaMap.png" Opacity="0" />
+        <Image x:Name="ImageEuropeMap"  Source="../Images/ChartView/PieSmartLabels/EuropeMap.png" Opacity="0" />
+        <Image x:Name="ImagePacificMap" Source="../Images/ChartView/PieSmartLabels/PacificMap.png" Opacity="0" />
+
+        <Path Tag="latin" Stroke="Transparent" Fill="Transparent" Data="M50,108 L60,108 L90,120 L120,140 L90, 190 L80,190 L80,150 Z" MouseEnter="Path_MouseEnter" MouseLeave="Path_MouseLeave" MouseLeftButtonUp="Path_MouseLeftButtonUp" />
+        <Path Tag="north" Stroke="Transparent" Fill="Transparent" Data="M70,0 L95,0 L95,10 L85,45 L105,90 L80,115 L55,105 L48,108 L30,75 L5,75 L5,55 Z" MouseEnter="Path_MouseEnter" MouseLeave="Path_MouseLeave" MouseLeftButtonUp="Path_MouseLeftButtonUp" />
+        <Path Tag="eurasia" Stroke="Transparent" Fill="Transparent" Data="M168,50 L180,10 L230,10 L300,50 L300,80 L250,110 L250,85 L230,98 L215,88 L205,100 L222,112 L208,130 L160,170 L130,120 L140,102 L165,100 L165,95 L175,95 Z" MouseEnter="Path_MouseEnter" MouseLeave="Path_MouseLeave" MouseLeftButtonUp="Path_MouseLeftButtonUp" />
+        <Path Tag="europe" Stroke="Transparent" Fill="Transparent" Data="M100,5 L115,0 L130,0 L170,20 L167,50 L175,95 L165,95 L165,100 L140,102 L85,35 Z" MouseEnter="Path_MouseEnter" MouseLeave="Path_MouseLeave" MouseLeftButtonUp="Path_MouseLeftButtonUp" />
+        <Path Tag="pacific" Stroke="Transparent" Fill="Transparent" Data="M223,112 L222,112 L205,100 L215,88 L230,98 L250,85 L250,110 L290,150 L290,180 L240,180 Z" MouseEnter="Path_MouseEnter" MouseLeave="Path_MouseLeave" MouseLeftButtonUp="Path_MouseLeftButtonUp" />
+
+    </Grid>
+</UserControl>

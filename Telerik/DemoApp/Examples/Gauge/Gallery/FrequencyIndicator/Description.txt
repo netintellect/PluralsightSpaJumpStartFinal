@@ -1,0 +1,1 @@
+﻿This <b>Frequency Indicator</b> is built using a <b>linear scale</b> and 30 <b>Bar Indicators</b> each having its own offset property.

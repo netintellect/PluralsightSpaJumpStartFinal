@@ -1,0 +1,1 @@
+﻿The RadPivotGrid is a data summarization tool with great visualization capabilities.<br/><br/>Among other functions, the RadPivotGrid can automatically sort, count, total or give the average of the data it is bound to.

@@ -1,0 +1,2 @@
+﻿This example shows the ability of RadTreeListView to show hierarchy connecting lines, in order to present a comprehensible and intuitive way to navigate in hierarchy scenarios. 
+      

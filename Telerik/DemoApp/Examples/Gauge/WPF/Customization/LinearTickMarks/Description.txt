@@ -1,0 +1,3 @@
+﻿The <b>Major</b>, <b>Middle</b> and <b>Minor</b> tick marks display value intervals along the gauge scale.<br />
+The scale’s <b>MajorTicks</b>, <b>MiddleTicks</b> and <b>MinorTicks</b> properties specify the number of value intervals inside their respective bigger intervals.<br />
+You can specify common properties and appearance using the <b>MajorTick</b>, <b>MiddleTick</b> or the <b>MinorTick</b> property of the scale.

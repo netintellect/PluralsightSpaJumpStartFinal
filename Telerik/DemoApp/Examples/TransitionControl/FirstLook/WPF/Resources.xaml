@@ -1,0 +1,23 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+	<Style x:Key="TransitionButton" TargetType="telerik:RadButton">
+		<Setter Property="Background" Value="{x:Null}" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="telerik:RadButton">
+                    <Grid x:Name="Root">
+                        <ContentPresenter />
+                    </Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>	
+</ResourceDictionary>

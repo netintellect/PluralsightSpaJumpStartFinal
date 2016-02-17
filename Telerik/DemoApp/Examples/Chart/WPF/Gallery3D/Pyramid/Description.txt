@@ -1,0 +1,1 @@
+﻿This example shows a pyramid chart. The chart has one DataSeries and its Definition property is set to an instance of Pyramid3DSeriesDefinition. The legend automatically generates an item for each data item in the series.<br/>

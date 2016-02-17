@@ -1,0 +1,1 @@
+﻿An Ad Rotator is a useful implementation of RadTransitionControl, mostly appropriate for displaying ads and banners with auto animation. You can easily switch between different transition effects that come with RadTransitionControl or change the transition delay to get a different transition effect for the Rotator.

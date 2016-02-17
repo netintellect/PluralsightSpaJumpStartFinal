@@ -1,0 +1,42 @@
+<menuModel:MenuItemsCollection 
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:menuModel="clr-namespace:Examples.Menu.Common;assembly=Menu">
+	<menuModel:MenuItem Text="File">
+		<menuModel:MenuItem Text="New" ImageUrl="../../Images/Menu/11new.png" />
+		<menuModel:MenuItem Text="Open">
+			<menuModel:MenuItem Text="Project/Solution..." />
+			<menuModel:MenuItem Text="Web Site..." />
+			<menuModel:MenuItem Text="Team Project..." />
+			<menuModel:MenuItem Text="File..." />
+			<menuModel:MenuItem Text="Convert..." />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Exit" />
+	</menuModel:MenuItem>
+	<menuModel:MenuItem Text="Edit">
+		<menuModel:MenuItem Text="Undo" />
+		<menuModel:MenuItem Text="Redo" IsEnabled="false" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Cut" ImageUrl="../../Images/Menu/19cut.png" />
+		<menuModel:MenuItem Text="Copy" ImageUrl="../../Images/Menu/22copy.png" />
+		<menuModel:MenuItem Text="Paste" IsEnabled="False" ImageUrl="../../Images/Menu/20paste.png" />
+	</menuModel:MenuItem>
+	<menuModel:MenuItem Text="View">
+		<menuModel:MenuItem Text="Server Explorer" IsChecked="true" StaysOpenOnClick="True" />
+		<menuModel:MenuItem Text="Solution Explorer" IsCheckable="True" StaysOpenOnClick="True" />
+		<menuModel:MenuItem Text="Team Explorer" IsCheckable="True" StaysOpenOnClick="True" />
+		<menuModel:MenuItem Text="Toolbox" IsCheckable="True" StaysOpenOnClick="True" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Class View" IsCheckable="True" StaysOpenOnClick="True" />
+		<menuModel:MenuItem Text="Code Definition Window" IsCheckable="True" StaysOpenOnClick="True" />
+		<menuModel:MenuItem Text="Object Browser" IsCheckable="True" StaysOpenOnClick="True" />
+	</menuModel:MenuItem>
+	<menuModel:MenuItem Text="Help">
+		<menuModel:MenuItem Text="Index" />
+		<menuModel:MenuItem Text="Search" />
+		<menuModel:MenuItem Text="Online" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="About" />
+	</menuModel:MenuItem>
+</menuModel:MenuItemsCollection>

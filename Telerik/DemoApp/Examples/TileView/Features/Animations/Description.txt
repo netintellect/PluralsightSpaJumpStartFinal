@@ -1,0 +1,1 @@
+﻿You can easily customize the overall look and feel of the RadTileView by changing the animations-related properties - easings, durations and so on.

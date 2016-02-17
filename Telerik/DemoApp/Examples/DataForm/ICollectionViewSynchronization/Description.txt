@@ -1,0 +1,1 @@
+﻿Both RadGridView and RadDataForm respect the ICollectionView. To have data in both controls synchronized just bind them to the same collection view. Navigating in RadGridView will affect RadDataForm and vice versa. 

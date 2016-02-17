@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56DDFA10-95C1-4609-B9E4-49209798955A}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.GanttView</RootNamespace>
+    <AssemblyName>GanttView</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>GanttView.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>GanttView.App</SilverlightAppEntry>
+    <TestPageFileName>GanttView.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+			 MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+			 to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GanttView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.GanttView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ScheduleView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Scheduling.Core">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Scheduling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Themes.Windows8.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataSources\SoftwarePlanning.cs" />
+    <Compile Include="Common\GanttViewModel\GanttViewModel.cs" />
+    <Compile Include="Common\TicksToTimeSpanConverter.cs" />
+    <Compile Include="Configuration\TimeRuler\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CurrentYearVisibleRange.cs" />
+    <Compile Include="Common\CurrentMonthVisibleRange.cs" />
+    <Compile Include="Common\CurrentWeekVisibleRange.cs" />
+    <Compile Include="Configuration\TimeRuler\TicksToTimeSpanConverter.cs" />
+    <Compile Include="Configuration\TimeRuler\ViewModel.cs" />
+    <Compile Include="Deadline\Converters\BoolToBrushConverter.cs" />
+    <Compile Include="Deadline\CustomTickInterval.cs" />
+    <Compile Include="Deadline\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Deadline\GanttDeadlineTask.cs" />
+    <Compile Include="Deadline\GanttDeadlineViewModel.cs" />
+    <Compile Include="Deadline\ProjectDeadlineContainer.cs" />
+    <Compile Include="Deadline\ProjectDeadlineEventInfo.cs" />
+    <Compile Include="Deadline\SoftwarePlanning.cs" />
+    <Compile Include="Deadline\TimeLineDeadlineBehavior.cs" />
+    <Compile Include="Deadline\TimeLineDeadlineContainer.cs" />
+    <Compile Include="Deadline\TimeLineDeadlineContainerSelector.cs" />
+    <Compile Include="Deadline\TimeLineDeadlineEventInfo.cs" />
+    <Compile Include="Deadline\TimeRulerAlternatingContainer.cs" />
+    <Compile Include="Deadline\TimeRulerAlternatingInfo.cs" />
+    <Compile Include="Deadline\TimeRulerDeadlineBehavior.cs" />
+    <Compile Include="Deadline\TimeRulerDeadlineContainerSelector.cs" />
+    <Compile Include="Deadline\TimeRulerOverdueContainer.cs" />
+    <Compile Include="Deadline\TimeRulerOverdueTickInfo.cs" />
+    <Compile Include="FirstLook\CurrentYearVisibleRange.cs" />
+    <Compile Include="GanttTimeline\CustomDragDropBehavior.cs" />
+    <Compile Include="GanttTimeline\CustomResizeBehavior.cs" />
+    <Compile Include="GanttTimeline\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GanttTimeline\Movie.cs" />
+    <Compile Include="GanttTimeline\MovieRepository.cs" />
+    <Compile Include="GanttTimeline\ViewModel.cs" />
+    <Compile Include="Programming\LockingFunctions\BoolToImageConverter.cs" />
+    <Compile Include="Programming\LockingFunctions\BoolToStringConverter.cs" />
+    <Compile Include="Programming\LockingFunctions\CustomDragDependenciesBehavior.cs" />
+    <Compile Include="Programming\LockingFunctions\CustomDragDropBehavior.cs" />
+    <Compile Include="Programming\LockingFunctions\CustomResizeBehavior.cs" />
+    <Compile Include="Programming\LockingFunctions\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\LockingFunctions\LockingTask.cs" />
+    <Compile Include="Programming\LockingFunctions\RadSplitButtonExtensions.cs" />
+    <Compile Include="Programming\LockingFunctions\SoftwarePlanning.cs" />
+    <Compile Include="Programming\LockingFunctions\ViewModel.cs" />
+    <Compile Include="TaskPlanner\CommonModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskPlanner\EmployeeResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskPlanner\OrientedGroupHeaderContentTemplateSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskPlanner\ParentsInfo.cs" />
+    <Compile Include="TaskPlanner\ScheduleViewDragDropBehavior.cs" />
+    <Compile Include="TaskPlanner\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\DragResizeConfigurator\PastRangeGenerator.cs" />
+    <Compile Include="Programming\SpecialSlots\CustomRangeGenerator.cs" />
+    <Compile Include="Programming\SpecialSlots\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\SpecialSlots\ViewModel.cs" />
+    <Compile Include="Programming\Filtering\CustomRangeGenerator.cs" />
+    <Compile Include="Programming\Filtering\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\Filtering\ViewModel.cs" />
+    <Compile Include="FirstLook\ViewModel.cs" />
+    <Compile Include="Highlighting\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Highlighting\HighlightModes.cs" />
+    <Compile Include="Highlighting\ViewModel.cs" />
+    <Compile Include="Import\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Import\MsProjectImportHelper.cs" />
+    <Compile Include="Import\ViewModel.cs" />
+    <Compile Include="Programming\CustomTickInterval\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\CustomTickInterval\QuarterlyInterval.cs" />
+    <Compile Include="Programming\CustomTickInterval\ViewModel.cs" />
+    <Compile Include="Programming\DragResizeConfigurator\CustomDragDropBehavior.cs" />
+    <Compile Include="Programming\DragResizeConfigurator\CustomResizeBehavior.cs" />
+    <Compile Include="Programming\DragResizeConfigurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programming\DragResizeConfigurator\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScrollingPerformance\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollingPerformance\ViewModel.cs" />
+    <Compile Include="TaskPlanner\UpperCaseStringConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskPlanner\ViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theming\ViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\ExamplesViewModel.cs" />
+    <Compile Include="Utils\ExampleViewModel.cs" />
+    <Compile Include="Utils\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Configuration\TimeRuler\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Deadline\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GanttTimeline\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programming\LockingFunctions\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Programming\LockingFunctions\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programming\SpecialSlots\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Programming\Filtering\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Highlighting\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Import\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programming\CustomTickInterval\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Programming\DragResizeConfigurator\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScrollingPerformance\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskPlanner\Silverlight\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskPlanner\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utils\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\ExpressionDark\" />
+    <Folder Include="Common\Metro\" />
+    <Folder Include="Common\OfficeBlack\" />
+    <Folder Include="Common\OfficeBlue\" />
+    <Folder Include="Common\OfficeSilver\" />
+    <Folder Include="Common\Summer\" />
+    <Folder Include="Common\Transparent\" />
+    <Folder Include="Common\Vista\" />
+    <Folder Include="Common\Windows7\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Import\Description.txt" />
+    <Resource Include="Import\HomeMovePlan.xml" />
+    <Resource Include="Import\MarketSchedule.xml" />
+    <Resource Include="Import\NursingSchedule.xml" />
+    <Resource Include="Import\WeddingPlanner.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Highlighting\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ScrollingPerformance\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GanttView\FirstLook\AddChild.png" />
+    <Resource Include="Images\GanttView\FirstLook\AddMilestone.png" />
+    <Resource Include="Images\GanttView\FirstLook\All.png" />
+    <Resource Include="Images\GanttView\FirstLook\AllChildren.png" />
+    <Resource Include="Images\GanttView\FirstLook\AllSummaries.png" />
+    <Resource Include="Images\GanttView\FirstLook\CurrentMonth.png" />
+    <Resource Include="Images\GanttView\FirstLook\CurrentWeek.png" />
+    <Resource Include="Images\GanttView\FirstLook\CurrentYear.png" />
+    <Resource Include="Images\GanttView\FirstLook\Late.png" />
+    <Resource Include="Images\GanttView\FirstLook\RemoveSelectedItem.png" />
+    <Resource Include="Images\GanttView\FirstLook\Zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GanttView\FirstLook\progress100.png" />
+    <Resource Include="Images\GanttView\FirstLook\progress25.png" />
+    <Resource Include="Images\GanttView\FirstLook\progress50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GanttView\FirstLook\AllMilestones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GanttView\FirstLook\NextWeek.png" />
+    <Resource Include="Images\GanttView\FirstLook\PrevWeek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Configuration\TimeRuler\Description.txt" />
+    <Resource Include="Programming\CustomTickInterval\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Programming\Filtering\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Programming\DragResizeConfigurator\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GanttTimeline\Description.txt" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_4.png" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_5.png" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_6.png" />
+    <Resource Include="TaskPlanner\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="Programming\SpecialSlots\Description.txt" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_1.png" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_2.png" />
+    <Resource Include="Images\GanttView\TaskPlanning\employee_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GanttView\LockingFunctions\Lock-icon.png" />
+    <Resource Include="Images\GanttView\LockingFunctions\Unlock-icon.png" />
+    <Resource Include="Images\GanttView\LockingFunctions\wheel.png" />
+    <Resource Include="Images\GanttView\LockingFunctions\padlock.png" />
+    <Resource Include="Images\GanttView\LockingFunctions\padlock_open.png" />
+    <Resource Include="Programming\LockingFunctions\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Deadline\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+			"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+			"$(MSBuildToolsPath)\MSBuild.exe" "$(ProjectDir)..\..\ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r		</PostBuildEvent>
+  </PropertyGroup>
+</Project>

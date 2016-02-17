@@ -1,0 +1,1 @@
+﻿The RadDateTimePicker control offers series of properties that allow you to easily configure its behavior. In this example you can experiment with the values of the properties below.

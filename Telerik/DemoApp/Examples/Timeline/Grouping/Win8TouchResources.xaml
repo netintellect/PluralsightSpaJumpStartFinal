@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:example="clr-namespace:Telerik.Windows.Examples.Timeline.Grouping">
+
+    <example:ExampleViewModel x:Key="ExampleViewModel" />
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8TouchColors}}" />
+
+    <Style TargetType="telerik:TimelineItemGroupControl" BasedOn="{StaticResource TimelineItemGroupControlStyle}">
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="ExpandMode" Value="{Binding GroupExpandMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTimeline}}" />
+        <Setter Property="example:TimelineGroupStateSwitch.ExpandedGroupKey" Value="{Binding SelectedItem, Source={StaticResource ExampleViewModel}}" />
+    </Style>
+
+    <ScrollBarVisibility x:Key="TimelineVerticalScrollbarVisibility">Auto</ScrollBarVisibility>
+
+</ResourceDictionary>

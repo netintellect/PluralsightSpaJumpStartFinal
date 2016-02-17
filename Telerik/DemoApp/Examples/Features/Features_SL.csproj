@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5CA4679-FD79-4226-BD07-715AFD45CD60}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Diagrams.Features</RootNamespace>
+    <AssemblyName>Telerik.Windows.Diagrams.Features</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <CodeAnalysisRuleSet>..\CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <NoXamlCop>true</NoXamlCop>
+     
+     
+     
+     
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>$(CARules)</CodeAnalysisRules>
+    <StyleCopEnabled>true</StyleCopEnabled>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Diagrams.Core">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Diagrams.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimatedToolbox\Toolbox.cs" />
+    <Compile Include="AnimatedToolbox\ToolboxItem.cs" />
+    <Compile Include="AttachedProperties.cs" />
+    <Compile Include="Commands\DiagramCommands.cs" />
+    <Compile Include="RadGeometryToggleButton.cs" />
+    <Compile Include="ExpanderToolbox\DiagramToolbox.cs" />
+    <Compile Include="FileLocation.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ExpanderToolbox\ToolboxGroup.cs" />
+    <Compile Include="ExpanderToolbox\ToolboxItem.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="ImageShape.cs" />
+    <Compile Include="Layout\HierarchicalGraphSourceConverter.cs" />
+    <Compile Include="Layout\OrgLayoutAlgorithm.cs" />
+    <Compile Include="Layout\ShapeExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadGeometryButton.cs" />
+    <Compile Include="Resources\IsInShapeEditModelToColorListHeightConverter.cs" />
+    <Compile Include="SampleItem.cs" />
+    <Compile Include="SamplesFactory.cs" />
+    <Compile Include="SettingsPane.xaml.cs">
+      <DependentUpon>SettingsPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thumbnail\Thumbnail.cs" />
+    <Compile Include="ToolboxItemsSource\Gallery.cs" />
+    <Compile Include="ToolboxItemsSource\GalleryItem.cs" />
+    <Compile Include="ToolboxItemsSource\HierarchicalItemsSourceCollection.cs" />
+    <Compile Include="ToolboxItemsSource\ShapesCollection.cs" />
+    <Compile Include="ToolboxItemsSource\ToolboxCategoryNames.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModels\ColorStyle.cs" />
+    <Compile Include="ViewModels\GraphSourceBase.cs" />
+    <Compile Include="ViewModels\HierarchicalNodeViewModel.cs" />
+    <Compile Include="ViewModels\ItemViewModelBase.cs" />
+    <Compile Include="ViewModels\LinkViewModelBase.cs" />
+    <Compile Include="ViewModels\NodeViewModelBase.cs" />
+    <Compile Include="ViewModels\SettingsPaneDataProvider.cs" />
+    <Compile Include="ViewModels\SettingsPaneViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\FontColorsStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\GradientColorsStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\SettingsPaneDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\SolidColorsStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleDiagrams\FloorPlan.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleDiagrams\Cycle.xml" />
+    <Resource Include="SampleDiagrams\Flow.xml" />
+    <Resource Include="SampleDiagrams\Hexagons.xml" />
+    <Resource Include="SampleDiagrams\Rolls.xml" />
+    <Resource Include="SampleDiagrams\SimpleFlow.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\circle.jpg" />
+    <Resource Include="Images\floorplan.jpg" />
+    <Resource Include="Images\flow.jpg" />
+    <Resource Include="Images\rolls.jpg" />
+    <Resource Include="Images\simpleflow.jpg" />
+    <Resource Include="Images\stakeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleDiagrams\Connections.xml" />
+    <Resource Include="SampleDiagrams\CustomShapes.xml" />
+    <Resource Include="SampleDiagrams\Cycle3.xml" />
+    <Resource Include="SampleDiagrams\Flow2.xml" />
+    <Resource Include="SampleDiagrams\SimpleFlow2.xml" />
+    <Resource Include="SampleDiagrams\Stakeholder.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

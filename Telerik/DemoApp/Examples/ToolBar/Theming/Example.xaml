@@ -1,0 +1,16 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:toolbar="clr-namespace:Telerik.Windows.Examples.ToolBar.FirstLook"
+		x:Class="Telerik.Windows.Examples.ToolBar.Theming.Example"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <toolbar:Example />
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <Path Data="M0,4L13,10L26,4L26,18L0,18zM0,0L26,0L26,2L13,8L0,2z" Fill="White" Opacity="1" Width="26" Height="18" Margin="15 0 7 0"/>
+                <TextBlock Text="Contact Us" Margin="8" FontFamily="Segoe UI Light"/>
+            </StackPanel>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+</UserControl>

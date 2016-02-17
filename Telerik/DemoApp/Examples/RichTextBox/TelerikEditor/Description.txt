@@ -1,0 +1,3 @@
+﻿<b>RadRichTextBox</b> offers broad editing and formatting capabilities which come with unmatched performance. This example demonstrates how RadRichTextBox can provide MS Word-like editing experience. Support for import/export in <b>.docx</b>, <b>.html</b>, <b>.pdf</b> (export only), <b>.rtf</b>, <b>.xaml</b>, <b>.txt</b> formats is also available.
+
+RadRichTextBox is a part of the <b>Telerik.Windows.Documents</b> assembly.

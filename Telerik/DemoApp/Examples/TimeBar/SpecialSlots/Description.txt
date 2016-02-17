@@ -1,0 +1,1 @@
+﻿This example demonstrates the special slots generator feature of RadTimeBar. Its purpose is to highlight repetitve periods of time. In this demonstration, you can select between higlighting workingdays and weekends.

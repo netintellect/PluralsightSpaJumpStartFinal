@@ -1,0 +1,432 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:dashboard="clr-namespace:Telerik.Windows.Examples.Diagrams.Dashboard">
+
+	<dashboard:AbsoluteValueConverter x:Key="AbsoluteValueConverter" />
+	<dashboard:StockChangeColorConverter x:Key="StockChangeColorConverter" />
+	<telerik:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+
+	<Style TargetType="dashboard:TextShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Foreground" Value="Black" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Width" Value="200" />
+		<Setter Property="Height" Value="50" />
+		<Setter Property="MaxWidth" Value="900" />
+	</Style>
+
+	<Style TargetType="dashboard:ImageShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Image Source="{Binding}" Stretch="None"/>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:SparkLineShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Width" Value="200" />
+		<Setter Property="Height" Value="80" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Border BorderBrush="Silver" BorderThickness=".5" Padding="5,1,5,1">
+						<StackPanel>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+								<TextBlock FontWeight="Bold" VerticalAlignment="Center" Text="{Binding Path=Min}" />
+								<TextBlock FontWeight="Bold" VerticalAlignment="Center" Text="{Binding Path=Max}"
+										Margin="5,0,0,0" />
+								<TextBlock FontWeight="Bold" VerticalAlignment="Center" Text="{Binding Path=Points}"
+										Margin="5,0,0,0" />
+							</StackPanel>
+							<telerik:RadLinearSparkline Width="170" Height="50" x:Name="SparkLine" Margin="0,5,0,0"
+									ItemsSource="{Binding Path=Data}" ShowFirstPointIndicator="True"
+									ShowLastPointIndicator="True" ShowHighPointIndicators="True"
+									ShowLowPointIndicators="True" />
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:NewsShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Address" Value="http://finance.yahoo.com/rss/headline?s=xom,msft,aapl,goog, " />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition Width="auto" />
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+                        <ScrollViewer Grid.ColumnSpan="3" Background="{x:Null}" BorderThickness="0" HorizontalScrollBarVisibility="Disabled">
+						    <ItemsControl ItemsSource="{Binding}" BorderThickness="0">
+                                <ItemsControl.ItemTemplate>
+								    <DataTemplate>
+									    <Grid Width="450" Height="230">
+										    <Grid.RowDefinitions>
+											    <RowDefinition Height="Auto" />
+											    <RowDefinition Height="*" />
+											    <RowDefinition Height="Auto" />
+										    </Grid.RowDefinitions>
+										    <TextBlock IsHitTestVisible="False" Text="{Binding Path=Title}" VerticalAlignment="Top"
+												    HorizontalAlignment="Left" Foreground="#FF2D5980"
+												    FontFamily="Segoe UI Light" FontSize="20" TextWrapping="Wrap"
+												    Grid.Column="1" />
+										    <TextBlock IsHitTestVisible="False" Text="{Binding Path=Description}" VerticalAlignment="Top"
+												    FontFamily="Segoe UI" HorizontalAlignment="Center" FontSize="13"
+												    TextWrapping="Wrap" TextTrimming="WordEllipsis" Margin="0,2,2,2"  Grid.Row="1" />
+										    <dashboard:HyperlinkControl VerticalAlignment="Top" HorizontalAlignment="Right"
+												    Grid.Row="2" Grid.ColumnSpan="2" FontWeight="Bold"
+												    Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+												    Uri="http://finance.yahoo.com" Text="Read more" />
+									    </Grid>
+								    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+								    <ItemsPanelTemplate>
+									    <telerik:RadWrapPanel ItemWidth="480" ItemHeight="260"/>
+								    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </ScrollViewer>
+                        <Border Width="1" Grid.Column="1"  Background="{telerik:Windows8Resource ResourceKey=BasicBrush}" Margin="-20 50 0 70" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+					</Grid>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:HyperlinkShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Width" Value="150" />
+		<Setter Property="Height" Value="50" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<dashboard:HyperlinkControl Command="{Binding Path=Do}" Foreground="DimGray" Margin="10,0,0,0"
+							FontWeight="Bold" Text="{Binding Path=Text}" />
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+
+	</Style>
+
+	<Style TargetType="dashboard:StockSummaryShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Width" Value="200" />
+		<Setter Property="Height" Value="100" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Border Background="WhiteSmoke" Padding="7" Width="{TemplateBinding Width}"
+							Height="{TemplateBinding Height}">
+						<Border.Resources>
+							<Style TargetType="TextBlock">
+								<Setter Property="Foreground" Value="DimGray" />
+							</Style>
+						</Border.Resources>
+						<Grid Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" MinWidth="120" />
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="Auto" MinWidth="120" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+
+							<Border Grid.ColumnSpan="4" Margin="5,5,0,5" VerticalAlignment="Center"
+									Background="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+								<StackPanel Orientation="Horizontal" Height="15.96">
+									<TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" />
+									<TextBlock Text="{Binding Symbol, StringFormat=(\{0\})}" Margin="5,0,0,0"
+											Foreground="White" FontWeight="Bold" />
+									<TextBlock Text="{Binding StockExchange}" Margin="10,0,0,0" Foreground="White"
+											FontWeight="Bold" />
+								</StackPanel>
+
+							</Border>
+
+							<TextBlock Text="Last Update:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding LastUpdate}" Grid.Row="1" Grid.Column="1" Margin="5,3.5,4.999,1.5"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Volume:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding Volume}" Grid.Row="2" Grid.Column="1" Margin="5,3.5,4.999,1.5"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Price/Earnings Ration:" Grid.Row="3" Grid.Column="0"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding PeRatio}" Grid.Row="3" Grid.Column="1" Margin="5,3.5,4.999,1.5"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="% Change From 200 Day Moving Average:" Grid.Row="4" Grid.Column="0"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding PercentChangeFromTwoHundredDayMovingAverage}" Grid.Row="4"
+									Grid.Column="1" Margin="5,3.5,4.999,1.5" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Dividend Pay Date:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding DividendPayDate}" Grid.Row="5" Grid.Column="1" Padding="1,0,0,0"
+									Margin="5,3.5,4.999,1.5" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Dividend Yield:" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding DividendYield}" Grid.Row="6" Grid.Column="1"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="One Year Price Target:" Grid.Row="7" Grid.Column="0"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding OneYearPriceTarget}" Grid.Row="7" Grid.Column="1"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Short Ratio:" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding ShortRatio}" Grid.Row="8" Grid.Column="1"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Price Eps Estimate Next Year:" Grid.Row="9" Grid.Column="0"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding PriceEpsEstimateNextYear}" Grid.Row="9" Grid.Column="1"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Price Eps Estimate CurrentYear:" Grid.Row="10" Grid.Column="0"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0" />
+							<TextBlock Text="{Binding PriceEpsEstimateCurrentYear}" Grid.Row="10" Grid.Column="1"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Last Trade Price:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding LastTradePrice}" Grid.Row="1" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="% Change From Year High:" Grid.Row="2" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding PercentChangeFromYearHigh}" Grid.Row="2" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Change From Year High:" Grid.Row="3" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding ChangeFromYearHigh}" Grid.Row="3" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Change From Year Low:" Grid.Row="4" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding ChangeFromYearLow}" Grid.Row="4" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Ebitda:" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding Ebitda}" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"
+									HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Market Capitalization:" Grid.Row="6" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding MarketCapitalization}" Grid.Row="6" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Yearly High:" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center"
+									HorizontalAlignment="Left" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding YearlyHigh}" Grid.Row="7" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Daily Low:" Grid.Row="8" Grid.Column="2" HorizontalAlignment="Left"
+									VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding DailyLow}" Grid.Row="8" Grid.Column="3" VerticalAlignment="Center"
+									HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Eps Estimate Next Quarter:" Grid.Row="9" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding EpsEstimateNextQuarter}" Grid.Row="9" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+
+							<TextBlock Text="Eps Estimate Next Year:" Grid.Row="10" Grid.Column="2"
+									HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,5,5,0" />
+							<TextBlock Text="{Binding EpsEstimateNextYear}" Grid.Row="10" Grid.Column="3"
+									VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,0"
+									Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:GaugeShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Width" Value="120" />
+		<Setter Property="Height" Value="120" />
+		<Setter Property="Padding" Value="1" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Border Background="WhiteSmoke" Padding="7">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition />
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+							<TextBlock Text="{Binding Path=Name}" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}"
+									FontWeight="Bold" HorizontalAlignment="Center" />
+							<telerik:RadRadialGauge OuterBorderBrush="#FF08FF00" Grid.Row="1" Background="WhiteSmoke">
+								<telerik:RadialScale>
+									<telerik:RadialScale.Indicators>
+                                        <telerik:Pinpoint Background="DimGray" />
+										<telerik:Needle
+												Value="{Binding Path=Change, Converter={StaticResource AbsoluteValueConverter}}"
+												ToolTipService.ToolTip="Change"
+												Background="{Binding Change, Converter={StaticResource StockChangeColorConverter}}" />
+										<telerik:Needle
+												Background="{Binding ChangeInPercent, Converter={StaticResource StockChangeColorConverter}}"
+												Value="{Binding Path=ChangeInPercent, Converter={StaticResource AbsoluteValueConverter}}"
+												ToolTipService.ToolTip="Change in %" />
+									</telerik:RadialScale.Indicators>
+
+								</telerik:RadialScale>
+							</telerik:RadRadialGauge>
+							<StackPanel Orientation="Horizontal" Margin="2,5,2,0" Grid.Row="2"
+									HorizontalAlignment="Center">
+								<TextBlock Text="{Binding LastTradePrice}" FontWeight="Bold" FontSize="14"
+										VerticalAlignment="Center" />
+								<TextBlock Text="{Binding ChangeInPercent,StringFormat=\{0\}%}"
+										Foreground="{Binding ChangeInPercent, Converter={StaticResource StockChangeColorConverter}}"
+										FontWeight="Bold" Margin="10,0,0,0" VerticalAlignment="Center" />
+							</StackPanel>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:ChartShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Width" Value="200" />
+		<Setter Property="Height" Value="150" />
+		<Setter Property="Padding" Value="1" />
+		<Setter Property="BorderBrush" Value="#B7CBCBCB" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<Border Background="#FFF5F5F5" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<telerik:RadCartesianChart x:Name="chart" Margin="5,2,5,0" MinHeight="50">
+
+							<telerik:RadCartesianChart.HorizontalAxis>
+								<telerik:CategoricalAxis ShowLabels="false" MajorTickInterval="100"
+										LabelInterval="10000" />
+							</telerik:RadCartesianChart.HorizontalAxis>
+							<telerik:RadCartesianChart.VerticalAxis>
+								<telerik:LinearAxis ShowLabels="false" LabelInterval="100" MajorStep="500" />
+							</telerik:RadCartesianChart.VerticalAxis>
+							<telerik:RadCartesianChart.Series>
+								<telerik:SplineAreaSeries ItemsSource="{Binding Data}" ShowLabels="false" />
+							</telerik:RadCartesianChart.Series>
+						</telerik:RadCartesianChart>
+					</Border>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="dashboard:GridShape" BasedOn="{StaticResource RadDiagramShapeStyle}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Foreground" Value="Black" />
+		<Setter Property="Width" Value="300" />
+		<Setter Property="Height" Value="100" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<telerik:RadGridView ItemsSource="{Binding}" IsReadOnly="true" NewRowPosition="Top"
+							ShowColumnFooters="false" GroupRenderMode="Flat"/>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

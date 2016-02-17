@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB30FA95-71A0-45FB-99EE-80051A7376AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.RibbonView</RootNamespace>
+    <AssemblyName>RibbonView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RibbonView.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2010.1.514.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\BackstageClasses.cs" />
+    <Compile Include="Common\ButtonsTemplateSelector.cs" />
+    <Compile Include="Common\ViewModels\ButtonGroupViewModel.cs" />
+    <Compile Include="Common\ViewModels\ButtonViewModel.cs" />
+    <Compile Include="Common\ViewModels\ContextualGroupViewModel.cs" />
+    <Compile Include="Common\ViewModels\GroupViewModel.cs" />
+    <Compile Include="Common\ViewModels\MainViewModel.cs" />
+    <Compile Include="Common\ViewModels\SplitButtonViewModel.cs" />
+    <Compile Include="Common\ViewModels\TabViewModel.cs" />
+    <Compile Include="MVVM\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\ColorGroup.xaml.cs">
+      <DependentUpon>ColorGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\RibbonWindow\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="Images\RibbonView\FirstLook\aligncenter.png" />
+    <Resource Include="Images\RibbonView\FirstLook\alignjustify.png" />
+    <Resource Include="Images\RibbonView\FirstLook\alignleft.png" />
+    <Resource Include="Images\RibbonView\FirstLook\alignright.png" />
+    <Resource Include="Images\RibbonView\FirstLook\bold.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ClearFormatting16.png" />
+    <Resource Include="Images\RibbonView\FirstLook\copy.png" />
+    <Resource Include="Images\RibbonView\FirstLook\cut.png" />
+    <Resource Include="Images\RibbonView\FirstLook\EditFooter.png" />
+    <Resource Include="Images\RibbonView\FirstLook\EditHeader.png" />
+    <Resource Include="Images\RibbonView\FirstLook\exit.png" />
+    <Resource Include="Images\RibbonView\FirstLook\find.png" />
+    <Resource Include="Images\RibbonView\FirstLook\font-decreasesize.png" />
+    <Resource Include="Images\RibbonView\FirstLook\font-increasesize.png" />
+    <Resource Include="Images\RibbonView\FirstLook\fontcolor.png" />
+    <Resource Include="Images\RibbonView\FirstLook\fontscheme.png" />
+    <Resource Include="Images\RibbonView\FirstLook\formatpainter.png" />
+    <Resource Include="Images\RibbonView\FirstLook\formatting-symbols.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsNone.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType1.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType2.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType3.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType4.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType5.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType6.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryBulletsType7.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersNone.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType1.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType2.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType3.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType4.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType5.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType6.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Gallery\GalleryNumbersType7.png" />
+    <Resource Include="Images\RibbonView\FirstLook\highlight.png" />
+    <Resource Include="Images\RibbonView\FirstLook\indent.png" />
+    <Resource Include="Images\RibbonView\FirstLook\inserthyperlink.png" />
+    <Resource Include="Images\RibbonView\FirstLook\italic.png" />
+    <Resource Include="Images\RibbonView\FirstLook\linecolor.png" />
+    <Resource Include="Images\RibbonView\FirstLook\list-bullets.png" />
+    <Resource Include="Images\RibbonView\FirstLook\list-numbered.png" />
+    <Resource Include="Images\RibbonView\FirstLook\MultilevelList.png" />
+    <Resource Include="Images\RibbonView\FirstLook\new.png" />
+    <Resource Include="Images\RibbonView\FirstLook\open.png" />
+    <Resource Include="Images\RibbonView\FirstLook\outdent.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ParagraphBackgroundColor.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ParagraphProperties.png" />
+    <Resource Include="Images\RibbonView\FirstLook\paste.png" />
+    <Resource Include="Images\RibbonView\FirstLook\pastehyperlink.png" />
+    <Resource Include="Images\RibbonView\FirstLook\pastespecial.png" />
+    <Resource Include="Images\RibbonView\FirstLook\print.png" />
+    <Resource Include="Images\RibbonView\FirstLook\redo.png" />
+    <Resource Include="Images\RibbonView\FirstLook\save.png" />
+    <Resource Include="Images\RibbonView\FirstLook\saveas.png" />
+    <Resource Include="Images\RibbonView\FirstLook\sortasc.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Strikethrough16.png" />
+    <Resource Include="Images\RibbonView\FirstLook\subscript.png" />
+    <Resource Include="Images\RibbonView\FirstLook\superscript.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Symbol.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline1.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline2.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline3.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline4.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline5.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline6.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline7.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Underline\underline8.png" />
+    <Resource Include="Images\RibbonView\FirstLook\undo.png" />
+    <Resource Include="Images\RibbonView\FirstLook\zoom.png" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MVVM\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\ColorGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\RibbonWindow\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\RibbonView_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\RibbonWindow\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\".</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Bookmark.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ChangeStyles32.png" />
+    <Resource Include="Images\RibbonView\FirstLook\chart.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ClipArt.png" />
+    <Resource Include="Images\RibbonView\FirstLook\color.png" />
+    <Resource Include="Images\RibbonView\FirstLook\colorpicker.png" />
+    <Resource Include="Images\RibbonView\FirstLook\CoverPage.png" />
+    <Resource Include="Images\RibbonView\FirstLook\crop.png" />
+    <Resource Include="Images\RibbonView\FirstLook\CrossReference.png" />
+    <Resource Include="Images\RibbonView\FirstLook\DateTime.png" />
+    <Resource Include="Images\RibbonView\FirstLook\DropCap.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Equation.png" />
+    <Resource Include="Images\RibbonView\FirstLook\expandspace.png" />
+    <Resource Include="Images\RibbonView\FirstLook\findnext.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Footer.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Header.png" />
+    <Resource Include="Images\RibbonView\FirstLook\list-numbered-tb.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Object.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph1.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph10.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph2.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph3.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph4.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph5.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph6.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph7.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph8.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Paragraph\paragraph9.png" />
+    <Resource Include="Images\RibbonView\FirstLook\pointer.png" />
+    <Resource Include="Images\RibbonView\FirstLook\QuickParts.png" />
+    <Resource Include="Images\RibbonView\FirstLook\refresh.png" />
+    <Resource Include="Images\RibbonView\FirstLook\ruler.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Shapes.png" />
+    <Resource Include="Images\RibbonView\FirstLook\SignatureLine.png" />
+    <Resource Include="Images\RibbonView\FirstLook\SmartArt.png" />
+    <Resource Include="Images\RibbonView\FirstLook\strikeout.png" />
+    <Resource Include="Images\RibbonView\FirstLook\synchronizelist.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Table.png" />
+    <Resource Include="Images\RibbonView\FirstLook\textbox.png" />
+    <Resource Include="Images\RibbonView\FirstLook\users.png" />
+    <Resource Include="Images\RibbonView\FirstLook\WordArt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Help64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Getting_Started.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\curved_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\hexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\left_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\paint_bucker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\path5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\pentagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\right-angled-triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\right_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\rounded_rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\turned_rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Shapes\up_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\crayon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\natural-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\no_outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\oil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\solid_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Outline\watercolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\rect_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\delete_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Rotate\rotate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Rotate\rotate2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Rotate\rotate3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Rotate\rotate4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Rotate\rotate5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Brushes\brush9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\colors_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\paint-bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Eyedropper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Size\size1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Size\size3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Size\size5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Size\size8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\PageBreak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\PageNumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\lineSpacing_more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\MVVM\brush1.png" />
+    <Resource Include="Images\RibbonView\MVVM\copy.png" />
+    <Resource Include="Images\RibbonView\MVVM\crop.png" />
+    <Resource Include="Images\RibbonView\MVVM\cut.png" />
+    <Resource Include="Images\RibbonView\MVVM\eraser.png" />
+    <Resource Include="Images\RibbonView\MVVM\Eyedropper.png" />
+    <Resource Include="Images\RibbonView\MVVM\paint-bucket.png" />
+    <Resource Include="Images\RibbonView\MVVM\paint.png" />
+    <Resource Include="Images\RibbonView\MVVM\paste.png" />
+    <Resource Include="Images\RibbonView\MVVM\pen.png" />
+    <Resource Include="Images\RibbonView\MVVM\resize.png" />
+    <Resource Include="Images\RibbonView\MVVM\rotate.png" />
+    <Resource Include="Images\RibbonView\MVVM\select.png" />
+    <Resource Include="Images\RibbonView\MVVM\text.png" />
+    <Resource Include="Images\RibbonView\MVVM\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Backstage_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\MVVM\print.png" />
+    <Resource Include="Images\RibbonView\MVVM\save.png" />
+    <Resource Include="Images\RibbonView\MVVM\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\MVVM\Ribbon_Paint.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\ContactUs2.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateBlogPost.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateMy.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateNew.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateNewBasedOn.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateRecent.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\DocTemplateSamples.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Document.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Exit.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Getting_Started.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Globe.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Help64.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Open.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Options.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\Save.png" />
+    <Resource Include="Images\RibbonView\FirstLook\Backstage\SaveAs.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <EmbeddedResource Include="@(Page)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+      <Private>False</Private>
+    </ProjectReference>
+</ItemGroup>
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

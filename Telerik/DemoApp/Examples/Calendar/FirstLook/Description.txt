@@ -1,0 +1,4 @@
+Powerful databinding, different views - month, year, decade, multiple views, culture awareness, flexible date navigation and transition animations -
+Telerik Calendar has it all. This example shows a common approach, where date range selection is required. As the Calendar control supports <b>Range Selection</b>, <b>Selection Constraints</b> and <b>Multiple Calendars View</b> such an approach can be easily accomplished. To select a range of dates simply hold the <b>Shift</b> key and use the <b>Arrow</b> keys to make a range selection. 
+
+RadCalendar is a part of the <b>Telerik.Windows.Controls.Input</b> assembly.

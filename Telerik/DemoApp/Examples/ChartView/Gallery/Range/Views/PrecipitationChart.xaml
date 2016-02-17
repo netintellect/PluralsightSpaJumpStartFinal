@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ChartView.Gallery.Range.Views.PrecipitationChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:behaviors="clr-namespace:Telerik.Windows.Examples.ChartView.Gallery.Range.Behaviors"
+			 xmlns:converters="clr-namespace:Telerik.Windows.Examples.ChartView.Gallery.Range.Converters"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300"
+			 d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Resources.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<converters:SeriesTypeConverter x:Key="SeriesTypeConverter"/>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<telerik:RadCartesianChart Palette="Windows8"
+							   behaviors:SeriesTypeSwitch.ItemsSource="{Binding PrecipitationData}"
+							   behaviors:SeriesTypeSwitch.SeriesType="{Binding SeriesType, Converter={StaticResource SeriesTypeConverter}}">
+		<telerik:RadCartesianChart.HorizontalAxis>
+			<telerik:DateTimeCategoricalAxis x:Name="precipitationDateAxis"
+											 LabelFormat="MMM"
+											 TickThickness="0">
+				<telerik:DateTimeCategoricalAxis.ShowLabels>
+					<Binding Path="TileState"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToBoolConverter}"/>
+				</telerik:DateTimeCategoricalAxis.ShowLabels>
+			</telerik:DateTimeCategoricalAxis>
+		</telerik:RadCartesianChart.HorizontalAxis>
+		<telerik:RadCartesianChart.VerticalAxis>
+			<telerik:LinearAxis Maximum="16"
+								MajorStep="4"
+								LabelFormat="0 mm"/>
+		</telerik:RadCartesianChart.VerticalAxis>
+		<telerik:RadCartesianChart.Annotations>
+			<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=precipitationDateAxis}"
+												 Value="{Binding Year2012Start}"
+												 Label="{Binding Year2012Start, StringFormat=yyyy}"
+												 Style="{StaticResource DashedGridLineStyle}"
+												 Stroke="{StaticResource GridLineAnnotationStroke}"
+												 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+												 ZIndex="-230">
+				<telerik:CartesianGridLineAnnotation.Opacity>
+					<Binding Path="TileState"
+							 Mode="TwoWay"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToOpacityConverter}"/>
+				</telerik:CartesianGridLineAnnotation.Opacity>
+			</telerik:CartesianGridLineAnnotation>
+			<telerik:CartesianGridLineAnnotation Axis="{Binding ElementName=precipitationDateAxis}"
+												 Value="{Binding Year2011Start}"
+												 Label="{Binding Year2011Start, StringFormat=yyyy}"
+												 Style="{StaticResource DashedGridLineStyle}"
+												 Stroke="{StaticResource GridLineAnnotationStroke}"
+												 Foreground="{StaticResource GridLineAnnotationLabelBrush}"
+												 ZIndex="-230">
+				<telerik:CartesianGridLineAnnotation.Opacity>
+					<Binding Path="TileState"
+							 Mode="TwoWay"
+							 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=telerik:RadTileViewItem}"
+							 Converter="{StaticResource TileStateToOpacityConverter}"/>
+				</telerik:CartesianGridLineAnnotation.Opacity>
+			</telerik:CartesianGridLineAnnotation>
+		</telerik:RadCartesianChart.Annotations>
+		<telerik:RadCartesianChart.Grid>
+			<telerik:CartesianChartGrid StripLinesVisibility="Y"/>
+		</telerik:RadCartesianChart.Grid>
+	</telerik:RadCartesianChart>
+</UserControl>

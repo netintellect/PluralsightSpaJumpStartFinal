@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadDiagram Type="Telerik.Windows.Diagrams.Core.IGraphInternal" Version="2012.2">
+	<Metadata Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapDiagram" Id="63367c6f-3736-4cf1-976f-5624ca0b2882" Zoom="1" Position="369; -6" IsRotationEnabled="false" IsResizingEnabled="false" IsManipulationAdornerVisible="true" SelectionMode="Single" IsSnapEnabled="false" SnapX="20" SnapY="20" IsBackgroundSurfaceVisible="true" IsEditable="true" IsDraggingEnabled="true" IsPanEnabled="true" IsZoomEnabled="true" IsConnectorsManipulationEnabled="true" AllowDelete="true" AllowCut="true" AllowCopy="true" AllowPaste="true">
+		<Title>Diagram [5/29/2012 3:34:12 PM]</Title>
+		<Description></Description>
+		<Background>
+			<SolidColorBrush Color="#00FFFFFF" />
+		</Background>
+	</Metadata>
+	<Groups />
+	<Shapes QNs="Diagrams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;">
+		<MindmapRootShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapRootShape" Id="35a51223-0af0-4b1c-854c-f15cc097ce54" ZIndex="1" Position="122.5;193" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="rootLeft:0.4;0.5,rootRight:0.6;0.5," QN="0" Text="Career Planning" ShapeType="Root" IsVisible="true" AreChildrenVisible="true" UniqueId="Root122.5,193Career PlanningTrue" SelectedNumberIndex="0" SelectedIconsIndexes="" />
+		<MindmapFirstLevelShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapFirstLevelShape" Id="5fa152bb-7aca-4a08-9d29-2c9a153629c9" ZIndex="1" Position="281;101" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="firstLevelItemLeft:0.4;0.5,firstLevelItemRight:0.6;0.5," QN="0" Text="Weaknesses" ShapeType="FirstLevelItem" MainColor="FF309b46" IsVisible="true" AreChildrenVisible="true" UniqueId="FirstLevelItem281,101WeaknessesTrue" SelectedNumberIndex="3" SelectedIconsIndexes="2;">
+			<Background>
+				<SolidColorBrush Color="#FF309B46" />
+			</Background>
+			<BorderBrush>
+				<SolidColorBrush Color="#FF309B46" />
+			</BorderBrush>
+		</MindmapFirstLevelShape>
+		<MindmapFirstLevelShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapFirstLevelShape" Id="f494feb2-7e8d-4cc5-a6b7-bd7fade1c483" ZIndex="1" Position="283;340" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="firstLevelItemLeft:0.4;0.5,firstLevelItemRight:0.6;0.5," QN="0" Text="Threats" ShapeType="FirstLevelItem" MainColor="FF15aca9" IsVisible="true" AreChildrenVisible="true" UniqueId="FirstLevelItem283,340ThreatsTrue" SelectedNumberIndex="4" SelectedIconsIndexes="5;">
+			<Background>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</Background>
+			<BorderBrush>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</BorderBrush>
+		</MindmapFirstLevelShape>
+		<MindmapFirstLevelShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapFirstLevelShape" Id="51f7c1db-004c-4f0d-bedd-6dbf1f588d7b" ZIndex="1" Position="-75;102" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="firstLevelItemLeft:0.4;0.5,firstLevelItemRight:0.6;0.5," QN="0" Text="Strengths" ShapeType="FirstLevelItem" MainColor="FF25a0da" IsVisible="true" AreChildrenVisible="true" UniqueId="FirstLevelItem-75,102StrengthsTrue" SelectedNumberIndex="1" SelectedIconsIndexes="0;">
+			<Background>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</Background>
+			<BorderBrush>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</BorderBrush>
+		</MindmapFirstLevelShape>
+		<MindmapFirstLevelShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapFirstLevelShape" Id="9e5a51ba-ac42-4779-9c4b-60a40fdcd2f4" ZIndex="1" Position="-89;341" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="firstLevelItemLeft:0.4;0.5,firstLevelItemRight:0.6;0.5," QN="0" Text="Opportunities" ShapeType="FirstLevelItem" MainColor="FF7e51a1" IsVisible="true" AreChildrenVisible="true" UniqueId="FirstLevelItem-89,341OpportunitiesTrue" SelectedNumberIndex="2" SelectedIconsIndexes="6;">
+			<Background>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</Background>
+			<BorderBrush>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</BorderBrush>
+		</MindmapFirstLevelShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="dae71a0b-3ec2-4cc1-acfd-89c56166594e" ZIndex="1" Position="-315;38" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Good Education" ShapeType="SubItem" MainColor="FF25a0da" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-315,38Good EducationTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="c79c1b47-5313-4051-ba9e-5d5c6f1bd6db" ZIndex="1" Position="-316;99" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Corporate Skills" ShapeType="SubItem" MainColor="FF25a0da" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-316,99Corporate SkillsTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="93fb5c52-14aa-49be-9faa-87af8ea9b7cf" ZIndex="1" Position="-316;164" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Good Inter Personal Skills" ShapeType="SubItem" MainColor="FF25a0da" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-316,164Good Inter Personal SkillsTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="70466783-9683-4851-a2f7-b51c5aca39d7" ZIndex="1" Position="-321;285" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Low Competition" ShapeType="SubItem" MainColor="FF7e51a1" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-321,285Low CompetitionTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="2c059b89-938d-4f17-a69a-ffbe0d84da63" ZIndex="1" Position="-323;347" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Strong Network" ShapeType="SubItem" MainColor="FF7e51a1" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-323,347Strong NetworkTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="152d57da-2b2d-4d38-9ad3-bc8e37dd09cb" ZIndex="1" Position="-323;410" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Industry Growth" ShapeType="SubItem" MainColor="FF7e51a1" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem-323,410Industry GrowthTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="bea2f924-7c66-4ec6-8a5a-54b926c04bb9" ZIndex="1" Position="545;48" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Lack Of Work Experience" ShapeType="SubItem" MainColor="FF309b46" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem545,48Lack Of Work ExperienceTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF309B46" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="fb39ff44-a83a-4bc7-ad5b-9435d86b46fe" ZIndex="1" Position="536;163" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Weak Technical Knowledge" ShapeType="SubItem" MainColor="FF309b46" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem536,163Weak Technical KnowledgeTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF309B46" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="bf46173b-a9e0-4ae1-ac76-d03295fdfd15" ZIndex="1" Position="502;272" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Competition From Better schools" ShapeType="SubItem" MainColor="FF15aca9" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem502,272Competition From Better schoolsTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="4c2ed03a-f2f8-4ed1-9270-3aec895db766" ZIndex="1" Position="630;405" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Obstacles" ShapeType="SubItem" MainColor="FF15aca9" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem630,405ObstaclesTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</BorderBrush>
+		</MindmapOuterShape>
+		<MindmapOuterShape Type="Telerik.Windows.Examples.Diagrams.MindMap.MindmapOuterShape" Id="82d2518d-998e-4812-84b1-ed91ab7f1c20" ZIndex="1" Position="496;332" Content="Telerik.Windows.Examples.Diagrams.MindMap.Node" Size="Auto;Auto" RotationAngle="0" Connectors="subItemItemLeft:0;1,subItemItemRight:1;1," QN="0" Text="Limited Professional Development" ShapeType="SubItem" MainColor="FF15aca9" IsVisible="true" AreChildrenVisible="true" UniqueId="SubItem496,332Limited Professional DevelopmentTrue" SelectedNumberIndex="0" SelectedIconsIndexes="">
+			<BorderBrush>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</BorderBrush>
+		</MindmapOuterShape>
+	</Shapes>
+	<Connections QNs="Telerik.Windows.Controls.Diagrams, Version=2012.2.604.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="d0b501d5-eb51-4104-9562-876fd721879d" ZIndex="0" Position="205.3;128" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="205.3;245.5" Source="35a51223-0af0-4b1c-854c-f15cc097ce54" EndPoint="356.6;128" Target="5fa152bb-7aca-4a08-9d29-2c9a153629c9" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="Root122.5,193Career PlanningTrue" TargetEmployeeId="FirstLevelItem281,101WeaknessesTrue" IsVisible="true" MainColor="FF309b46">
+			<Stroke>
+				<SolidColorBrush Color="#FF309B46" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="af509761-a8fc-433b-a67c-4ad2f199b743" ZIndex="0" Position="205.3;245.5" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="205.3;245.5" Source="35a51223-0af0-4b1c-854c-f15cc097ce54" EndPoint="348.2;367" Target="f494feb2-7e8d-4cc5-a6b7-bd7fade1c483" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="Root122.5,193Career PlanningTrue" TargetEmployeeId="FirstLevelItem283,340ThreatsTrue" IsVisible="true" MainColor="FF15aca9">
+			<Stroke>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="c74dfe50-6e62-4b28-bded-9c7177f8bac6" ZIndex="0" Position="30;129" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="177.7;245.5" Source="35a51223-0af0-4b1c-854c-f15cc097ce54" EndPoint="30;129" Target="51f7c1db-004c-4f0d-bedd-6dbf1f588d7b" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="Root122.5,193Career PlanningTrue" TargetEmployeeId="FirstLevelItem-75,102StrengthsTrue" IsVisible="true" MainColor="FF25a0da">
+			<Stroke>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="d8151b8d-1d82-4633-9288-8bf045a5a168" ZIndex="0" Position="27.4;245.5" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="177.7;245.5" Source="35a51223-0af0-4b1c-854c-f15cc097ce54" EndPoint="27.4;368" Target="9e5a51ba-ac42-4779-9c4b-60a40fdcd2f4" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="Root122.5,193Career PlanningTrue" TargetEmployeeId="FirstLevelItem-89,341OpportunitiesTrue" IsVisible="true" MainColor="FF7e51a1">
+			<Stroke>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="eca8c7fa-2e19-48cc-a5c6-dc594f0113bc" ZIndex="0" Position="-211;68" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-5;129" Source="51f7c1db-004c-4f0d-bedd-6dbf1f588d7b" EndPoint="-211;68" Target="dae71a0b-3ec2-4cc1-acfd-89c56166594e" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-75,102StrengthsTrue" TargetEmployeeId="SubItem-315,38Good EducationTrue" IsVisible="true" MainColor="FF25a0da">
+			<Stroke>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="f81184aa-10a2-4619-977a-f5ed55d1ef6f" ZIndex="0" Position="-211;129" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-5;129" Source="51f7c1db-004c-4f0d-bedd-6dbf1f588d7b" EndPoint="-211;129" Target="c79c1b47-5313-4051-ba9e-5d5c6f1bd6db" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-75,102StrengthsTrue" TargetEmployeeId="SubItem-316,99Corporate SkillsTrue" IsVisible="true" MainColor="FF25a0da">
+			<Stroke>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="9267098f-8ad2-48e2-8553-78e34aca210c" ZIndex="0" Position="-155;129" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-5;129" Source="51f7c1db-004c-4f0d-bedd-6dbf1f588d7b" EndPoint="-155;194" Target="93fb5c52-14aa-49be-9faa-87af8ea9b7cf" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-75,102StrengthsTrue" TargetEmployeeId="SubItem-316,164Good Inter Personal SkillsTrue" IsVisible="true" MainColor="FF25a0da">
+			<Stroke>
+				<SolidColorBrush Color="#FF25A0DA" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="39832df4-5078-47a9-9558-e2236c765b43" ZIndex="0" Position="-211;315" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-11.4;368" Source="9e5a51ba-ac42-4779-9c4b-60a40fdcd2f4" EndPoint="-211;315" Target="70466783-9683-4851-a2f7-b51c5aca39d7" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-89,341OpportunitiesTrue" TargetEmployeeId="SubItem-321,285Low CompetitionTrue" IsVisible="true" MainColor="FF7e51a1">
+			<Stroke>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="4c1484fa-c1c9-4c1f-9128-2edcfa51b242" ZIndex="0" Position="-219;368" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-11.4;368" Source="9e5a51ba-ac42-4779-9c4b-60a40fdcd2f4" EndPoint="-219;377" Target="2c059b89-938d-4f17-a69a-ffbe0d84da63" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-89,341OpportunitiesTrue" TargetEmployeeId="SubItem-323,347Strong NetworkTrue" IsVisible="true" MainColor="FF7e51a1">
+			<Stroke>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="f41f68c1-72c4-4320-af68-676d16ac3906" ZIndex="0" Position="-215;368" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="-11.4;368" Source="9e5a51ba-ac42-4779-9c4b-60a40fdcd2f4" EndPoint="-215;440" Target="152d57da-2b2d-4d38-9ad3-bc8e37dd09cb" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem-89,341OpportunitiesTrue" TargetEmployeeId="SubItem-323,410Industry GrowthTrue" IsVisible="true" MainColor="FF7e51a1">
+			<Stroke>
+				<SolidColorBrush Color="#FF7E51A1" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="2586838d-debb-47bf-b389-a90bbca0123a" ZIndex="0" Position="394.4;78" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="394.4;128" Source="5fa152bb-7aca-4a08-9d29-2c9a153629c9" EndPoint="545;78" Target="bea2f924-7c66-4ec6-8a5a-54b926c04bb9" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem281,101WeaknessesTrue" TargetEmployeeId="SubItem545,48Lack Of Work ExperienceTrue" IsVisible="true" MainColor="FF309b46">
+			<Stroke>
+				<SolidColorBrush Color="#FF309B46" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="ad9d4533-1979-4274-8e81-aa6748e1928c" ZIndex="0" Position="394.4;128" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="394.4;128" Source="5fa152bb-7aca-4a08-9d29-2c9a153629c9" EndPoint="536;193" Target="fb39ff44-a83a-4bc7-ad5b-9435d86b46fe" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem281,101WeaknessesTrue" TargetEmployeeId="SubItem536,163Weak Technical KnowledgeTrue" IsVisible="true" MainColor="FF309b46">
+			<Stroke>
+				<SolidColorBrush Color="#FF309B46" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="add48ff0-973c-4264-b55b-ad8b07a884b1" ZIndex="0" Position="380.8;302" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="380.8;367" Source="f494feb2-7e8d-4cc5-a6b7-bd7fade1c483" EndPoint="502;302" Target="bf46173b-a9e0-4ae1-ac76-d03295fdfd15" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem283,340ThreatsTrue" TargetEmployeeId="SubItem502,272Competition From Better schoolsTrue" IsVisible="true" MainColor="FF15aca9">
+			<Stroke>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="09dc6a5d-6941-4170-8624-894b00d31d64" ZIndex="0" Position="380.8;367" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="380.8;367" Source="f494feb2-7e8d-4cc5-a6b7-bd7fade1c483" EndPoint="630;435" Target="4c2ed03a-f2f8-4ed1-9270-3aec895db766" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem283,340ThreatsTrue" TargetEmployeeId="SubItem630,405ObstaclesTrue" IsVisible="true" MainColor="FF15aca9">
+			<Stroke>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</Stroke>
+		</RadDiagramConnection>
+		<RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="25ff53e8-f181-4fab-83bc-7e4d8915fb39" ZIndex="0" Position="380.8;362" Content="Telerik.Windows.Examples.Diagrams.MindMap.Link" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="None" TargetCapType="None" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="380.8;367" Source="f494feb2-7e8d-4cc5-a6b7-bd7fade1c483" EndPoint="496;362" Target="82d2518d-998e-4812-84b1-ed91ab7f1c20" ConnectionType="Bezier" BezierTension="0.800000011920929" QN="0" SourceEmployeeId="FirstLevelItem283,340ThreatsTrue" TargetEmployeeId="SubItem496,332Limited Professional DevelopmentTrue" IsVisible="true" MainColor="FF15aca9">
+			<Stroke>
+				<SolidColorBrush Color="#FF15ACA9" />
+			</Stroke>
+		</RadDiagramConnection>
+	</Connections>
+</RadDiagram>

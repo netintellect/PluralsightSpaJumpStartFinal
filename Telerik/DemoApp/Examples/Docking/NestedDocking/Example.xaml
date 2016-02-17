@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Docking.NestedDocking.Example"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush Color="#FFBBDC8D" x:Key="LightGreenBrush" />
+        <SolidColorBrush x:Key="AccentBrush" Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+    </UserControl.Resources>
+
+    <Grid>
+        <telerik:RadDocking x:Name="OuterDock">
+            <telerik:RadDocking.DocumentHost>
+                <telerik:RadSplitContainer>
+                    <telerik:RadPaneGroup>
+                        <telerik:RadPane Header="Outer Pane 2" CanUserPin="False">
+                            <telerik:RadDocking x:Name="InnerDock">
+                                <telerik:RadSplitContainer InitialPosition="DockedLeft">
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane Header="Inner Pane A">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                        <telerik:RadPane Header="Inner Pane B">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                </telerik:RadSplitContainer>
+
+                                <telerik:RadSplitContainer InitialPosition="DockedRight">
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane Header="Inner Pane C">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                </telerik:RadSplitContainer>
+
+                                <telerik:RadSplitContainer InitialPosition="DockedTop">
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane  Header="Inner Pane D" >
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane Header="Inner Pane E">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                </telerik:RadSplitContainer>
+
+                                <telerik:RadSplitContainer InitialPosition="DockedTop" Height="120">
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane Header="Inner Pane F">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                </telerik:RadSplitContainer>
+                                <telerik:RadSplitContainer InitialPosition="DockedBottom" Height="150">
+                                    <telerik:RadPaneGroup>
+                                        <telerik:RadPane Header="Inner Pane G">
+                                            <Border Background="{StaticResource AccentBrush}" Opacity="0.5" />
+                                        </telerik:RadPane>
+                                    </telerik:RadPaneGroup>
+                                </telerik:RadSplitContainer>
+                            </telerik:RadDocking>
+                        </telerik:RadPane>
+                    </telerik:RadPaneGroup>
+                </telerik:RadSplitContainer>
+            </telerik:RadDocking.DocumentHost>
+
+            <telerik:RadSplitContainer InitialPosition="DockedLeft">
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="Outer Pane 3" >
+                        <Border Background="{StaticResource LightGreenBrush}" />
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="Outer Pane 4">
+                        <Border Background="{StaticResource LightGreenBrush}" />
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+            <telerik:RadSplitContainer InitialPosition="DockedBottom">
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="Outer Pane 5">
+                        <Border Background="{StaticResource LightGreenBrush}" />
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="Outer Pane 6">
+                        <Border Background="{StaticResource LightGreenBrush}" />
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+        </telerik:RadDocking>
+    </Grid>
+</UserControl>

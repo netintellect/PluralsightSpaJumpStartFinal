@@ -1,0 +1,1 @@
+﻿Telerik TreeView control allows you to define <b>HierarchicalDataTemplates</b>, to which you can bind the nodes. Using the <b>ItemTemplateSelector</b> property you can set different templates for the TreeViewItems based on a custom condition.

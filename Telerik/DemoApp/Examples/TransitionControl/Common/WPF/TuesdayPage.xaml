@@ -1,0 +1,12 @@
+<Page
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+		mc:Ignorable="d" 
+		Title="Tuesday">
+    <Grid Height="298" Width="628">
+        <Image Source="/TransitionControl;component/Images/TransitionControl/SlideAndZoomTransition/WPF/Tuesday_screen.png" VerticalAlignment="Top" Stretch="None" />
+    </Grid>
+</Page>

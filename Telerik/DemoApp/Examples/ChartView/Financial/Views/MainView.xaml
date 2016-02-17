@@ -1,0 +1,75 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Financial.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ChartView;component/Financial/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <telerik:RadCartesianChart x:Name="chart" Palette="Windows8" >
+            <telerik:RadCartesianChart.TrackBallLineStyle>
+                <Style TargetType="Polyline">
+                    <Setter Property="Stroke" Value="{StaticResource infoBorderBrush}"/>
+                    <Setter Property="StrokeThickness" Value="1"/>
+                </Style>
+            </telerik:RadCartesianChart.TrackBallLineStyle>
+            <telerik:RadCartesianChart.Behaviors>
+                <telerik:ChartTrackBallBehavior />
+            </telerik:RadCartesianChart.Behaviors>
+            <telerik:RadCartesianChart.Series>
+                <telerik:CandlestickSeries ItemsSource="{Binding Data}"
+                                           OpenBinding="Open"
+                                           HighBinding="High"
+                                           LowBinding="Low"
+                                           CloseBinding="Close"
+                                           CategoryBinding="Date"
+                                           TrackBallInfoTemplate="{StaticResource trackBallInfoTemplate}">
+                </telerik:CandlestickSeries>
+            </telerik:RadCartesianChart.Series>
+            <telerik:RadCartesianChart.Indicators>
+                <telerik:MovingAverageIndicator ItemsSource="{Binding Data}"
+                                                ValueBinding="Close"
+                                                CategoryBinding="Date"
+                                                Stroke="Red"
+                                                StrokeThickness="1"
+                                                Period="8" >
+                    <telerik:MovingAverageIndicator.TrackBallInfoTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="White">
+                                <TextBlock Text="{Binding Path=DataPoint.Value, StringFormat={StaticResource maFormat}}"  Foreground="Red" Style="{StaticResource trackballItemStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:MovingAverageIndicator.TrackBallInfoTemplate>
+                </telerik:MovingAverageIndicator>
+            </telerik:RadCartesianChart.Indicators>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:DateTimeContinuousAxis  
+                    MajorStep="3"
+                    MajorStepUnit="Month"
+                    GapLength="0.8"
+                    PlotMode="OnTicksPadded" 
+                    LabelTemplate="{StaticResource axisLabelTemplate}">
+                </telerik:DateTimeContinuousAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis 
+                    Minimum="0"
+                    Maximum="250"
+                    MajorStep="50"
+                    LabelStyle="{StaticResource verticalAxisLabelStyleMain}" />
+            </telerik:RadCartesianChart.VerticalAxis>
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorXLinesRenderMode="All" MajorLinesVisibility="XY"/>
+            </telerik:RadCartesianChart.Grid>
+        </telerik:RadCartesianChart>
+    </Grid>
+</UserControl>

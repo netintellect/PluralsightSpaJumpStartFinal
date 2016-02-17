@@ -1,0 +1,1 @@
+﻿This example demonstrates how the RadGanttView control can be integrated with RadScheduleView for better task planning. Both controls are using the same data source and they are fully synchronized. 

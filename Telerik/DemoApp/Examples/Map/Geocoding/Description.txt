@@ -1,0 +1,2 @@
+﻿The RadMap control provides unified geocoding architecture which uses functionality of the different geocode services. This example demonstrates how the BingGeocodeProvider can be used to find address by location.
+Click location on the map you'd like to find address for. Then click "Geocode" button.

@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.TileList.ItemTemplateSelector.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+             xmlns:local="clr-namespace:Telerik.Windows.Examples.TileList.ItemTemplateSelector"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center"
+			 mc:Ignorable="d"
+			 d:DesignHeight="300"
+			 d:DesignWidth="400">
+    <UserControl.Resources>
+        <local:ViewModel x:Key="ViewModel" />
+        <Style TargetType="telerik:Tile" BasedOn="{StaticResource TileStyle}">
+            <Setter Property="Background" Value="#FF8FC442"/>
+        </Style>
+        <telerik:BinaryImageConverter x:Key="converter" />
+        <DataTemplate x:Key="GroupTemplate">
+            <TextBlock Text="{Binding}"
+                           FontSize="20"
+                           FontFamily="Segoe UI"
+                           Foreground="Gray"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"/>
+        </DataTemplate>
+        <local:TitleTemplateSelector x:Key="titleTemplateSelector">
+            <local:TitleTemplateSelector.ManagerTemplate>
+                <DataTemplate>
+                    <Border Background="#FFF59700" Margin="-5">
+                        <Grid VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" MinWidth="110" />
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Picture, Converter={StaticResource converter}}" Grid.RowSpan="5" UseLayoutRounding="True" Width="96" Stretch="None"/>
+                            <Grid Margin="10,0,0,0" Grid.Column="1" Grid.RowSpan="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" MinWidth="54"/>
+                                        <ColumnDefinition Width="auto" MinWidth="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" MinHeight="31"/>
+                                        <RowDefinition MinHeight="9"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+                                        <TextBlock Text="{Binding FirstName}" FontFamily="Segoe UI" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                                        <TextBlock Text="{Binding LastName}" Foreground="White" Margin="6,0,0,0" FontFamily="Segoe UI" FontWeight="Bold" FontSize="14"/>
+                                    </StackPanel>
+                                    <TextBlock Text="Address:" Grid.Row="2" Margin="0,4,0,0" FontFamily="Segoe UI" Height="70" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding Address}" Margin="4,4,0,0" Grid.Row="2" Grid.Column="1" Foreground="White" FontFamily="Segoe UI" FontSize="12"/>
+                                    <TextBlock Text="City:" Grid.Row="3" FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding City}" Grid.Row="3" Grid.Column="1" Margin="4,0,0,0" Foreground="White"  FontFamily="Segoe UI" FontSize="12"/>
+                                    <TextBlock Text="Phone:" FontFamily="Segoe UI" Grid.Row="4" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding HomePhone}" Grid.Row="4" Grid.Column="1" Margin="4,0,0,0" Foreground="White" FontFamily="Segoe UI" FontSize="12"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </local:TitleTemplateSelector.ManagerTemplate>
+            <local:TitleTemplateSelector.RepresentativeTemplate>
+                <DataTemplate>
+                    <Grid VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="110" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding Picture, Converter={StaticResource converter}}" Grid.RowSpan="5" UseLayoutRounding="True" Width="96" Stretch="None"/>
+                        <Grid Margin="10,0,0,0" Grid.Column="1" Grid.RowSpan="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="54"/>
+                                    <ColumnDefinition Width="auto" MinWidth="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" MinHeight="30"/>
+                                    <RowDefinition MinHeight="9"/>
+                                    <RowDefinition Height="*" MinHeight="32"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName}" FontFamily="Segoe UI" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding LastName}" Foreground="White" Margin="6,0,0,0" FontFamily="Segoe UI" FontWeight="Bold" FontSize="14"/>
+                                </StackPanel>
+                                <TextBlock Text="Address:" Grid.Row="2" FontFamily="Segoe UI" Height="70" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="{Binding Address}" Margin="4,0,0,0" Grid.Row="2" Grid.Column="1" Foreground="White" FontFamily="Segoe UI" FontSize="12"/>
+                                <TextBlock Text="City:" Grid.Row="3" FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="{Binding City}" Grid.Row="3" Grid.Column="1" Margin="4,0,0,0" Foreground="White"  FontFamily="Segoe UI" FontSize="12"/>
+                                <TextBlock Text="Phone:" FontFamily="Segoe UI" Grid.Row="4" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="{Binding HomePhone}" Grid.Row="4" Grid.Column="1" Margin="4,0,0,0" Foreground="White" FontFamily="Segoe UI" FontSize="12"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </local:TitleTemplateSelector.RepresentativeTemplate>
+        </local:TitleTemplateSelector>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Using ItemTemplateSelector"
+				   Margin="8"/>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot"
+		  Background="White"
+          DataContext="{StaticResource ViewModel}"
+		  HorizontalAlignment="Stretch"
+		  VerticalAlignment="Stretch">
+        <Grid.Resources>
+            <telerik:BinaryImageConverter x:Key="converter" />
+       
+        </Grid.Resources>
+
+        <telerik:RadTileList x:Name="RadTileList" 
+                             ItemsSource="{Binding Employees}"
+                             ItemTemplateSelector="{StaticResource titleTemplateSelector}"
+                             
+                             GroupMember="Country" 
+                             GroupTemplate="{StaticResource GroupTemplate}">       
+        </telerik:RadTileList>
+    </Grid>
+</UserControl>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E345EDE-98EA-497F-BFD2-1793511734E8}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Diagrams.Features</RootNamespace>
+    <AssemblyName>Telerik.Windows.Diagrams.Features</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <CodeAnalysisRuleSet>..\CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <NoXamlCop>true</NoXamlCop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>$(CARules)</CodeAnalysisRules>
+    <StyleCopEnabled>true</StyleCopEnabled>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU'">
+    <OutputPath>bin\ReleaseTrial\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE;WPF</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisLogFile>bin\Release\Telerik.Windows.Diagrams.Features.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Diagrams.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Diagrams.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\DiagramCommands.cs" />
+    <Compile Include="FileLocation.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="AttachedProperties.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ImageShape.cs" />
+    <Compile Include="Layout\HierarchicalGraphSourceConverter.cs" />
+    <Compile Include="Layout\ShapeExtensions.cs" />
+    <Compile Include="Layout\OrgLayoutAlgorithm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnimatedToolbox\Toolbox.cs" />
+    <Compile Include="AnimatedToolbox\ToolboxItem.cs" />
+    <Compile Include="ExpanderToolbox\DiagramToolbox.cs" />
+    <Compile Include="ExpanderToolbox\ToolboxGroup.cs" />
+    <Compile Include="ExpanderToolbox\ToolboxItem.cs" />
+    <Compile Include="RadGeometryButton.cs" />
+    <Compile Include="RadGeometryToggleButton.cs" />
+    <Compile Include="Resources\IsInShapeEditModelToColorListHeightConverter.cs" />
+    <Compile Include="SampleItem.cs" />
+    <Compile Include="SamplesFactory.cs" />
+    <Compile Include="Thumbnail\Thumbnail.cs" />
+    <Compile Include="ToolboxItemsSource\ShapesCollection.cs" />
+    <Compile Include="ToolboxItemsSource\Gallery.cs" />
+    <Compile Include="ToolboxItemsSource\GalleryItem.cs" />
+    <Compile Include="ToolboxItemsSource\HierarchicalItemsSourceCollection.cs" />
+    <Compile Include="ToolboxItemsSource\ToolboxCategoryNames.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModels\ColorStyle.cs" />
+    <Compile Include="ViewModels\HierarchicalNodeViewModel.cs" />
+    <Compile Include="ViewModels\SettingsPaneDataProvider.cs" />
+    <Compile Include="ViewModels\SettingsPaneViewModel.cs" />
+    <Compile Include="SettingsPane.xaml.cs">
+      <DependentUpon>SettingsPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ItemViewModelBase.cs" />
+    <Compile Include="ViewModels\GraphSourceBase.cs" />
+    <Compile Include="ViewModels\LinkViewModelBase.cs" />
+    <Compile Include="ViewModels\NodeViewModelBase.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\SettingsPaneDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\FontColorsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\SolidColorsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\GradientColorsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleDiagrams\FloorPlan.xml" />
+    <Resource Include="SampleDiagrams\Rolls.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\circle.jpg" />
+    <Resource Include="Images\floorplan.jpg" />
+    <Resource Include="Images\flow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rolls.jpg" />
+    <Resource Include="Images\simpleflow.jpg" />
+    <Resource Include="Images\stakeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SampleDiagrams\Cycle3.xml" />
+    <Resource Include="SampleDiagrams\Flow2.xml" />
+    <Resource Include="SampleDiagrams\SimpleFlow2.xml" />
+    <Resource Include="SampleDiagrams\Stakeholder.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

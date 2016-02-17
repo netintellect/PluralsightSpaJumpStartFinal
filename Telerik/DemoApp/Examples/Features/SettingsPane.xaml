@@ -1,0 +1,282 @@
+﻿<UserControl x:Class="Telerik.Windows.Diagrams.Features.SettingsPane"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls"
+		xmlns:features="clr-namespace:Telerik.Windows.Diagrams.Features"
+		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 -40 0"
+		MouseWheel="Root_MouseWheel">
+	<UserControl.Resources>
+		<ResourceDictionary Source="Resources/SettingsPaneDictionary.xaml" />
+	</UserControl.Resources>
+	<Canvas Width="30" Height="30">
+		<telerik:RadDropDownButton DropDownIndicatorVisibility="Collapsed"
+				IsOpen="{Binding IsContentVisible, Mode=TwoWay}"
+				DropDownOpened="SettingsPaneDropDownButton_DropDownOpened">
+			<telerik:RadDropDownButton.Content>
+				<Border CornerRadius="2" Width="30" Height="30" Background="#333" Margin="-3">
+					<Path
+							Data="F1M511.6665,467.2715C509.6575,468.2995,507.1905,467.5095,506.1635,465.5005C505.1325,463.4915,505.9265,461.0325,507.9355,460.0005C509.9445,458.9745,512.4095,459.7695,513.4375,461.7745C514.4695,463.7825,513.6775,466.2405,511.6665,467.2715 M518.5605,462.8565L517.8825,460.0155L515.3935,460.2825C515.1415,459.8585,514.8505,459.4725,514.5225,459.1275L515.4435,456.8975L512.9515,455.3645L511.3965,457.2925C510.8575,457.1515,510.3025,457.0815,509.7415,457.0775L508.7675,454.9135L505.9375,455.6715L506.2705,458.0665C505.8795,458.3075,505.5215,458.5835,505.2025,458.8835L503.0535,458.0005L501.5175,460.4875L503.3665,461.9795C503.2315,462.4865,503.1515,463.0135,503.1415,463.5435L501.0335,464.4175L501.7125,467.2605L504.0635,467.0085C504.3355,467.4795,504.6545,467.9065,505.0235,468.2815L504.1575,470.3765L506.6475,471.9095L508.1425,470.0605C508.6495,470.1855,509.1655,470.2555,509.6925,470.2615L510.5785,472.3905L513.4255,471.7135L513.1675,469.2965C513.6075,469.0285,514.0145,468.7215,514.3635,468.3765L516.5455,469.2745L518.0815,466.7855L516.1495,465.2305C516.2665,464.7565,516.3315,464.2705,516.3385,463.7805z"
+							Fill="White" Stretch="Fill" Margin="8" />
+				</Border>
+			</telerik:RadDropDownButton.Content>
+			<telerik:RadDropDownButton.DropDownContent>
+				<Grid x:Name="ContentHolder" Width="260" Height="340" MouseLeftButtonDown="Root_MouseLeftButtonDown">
+					<telerik:RadTabControl x:Name="Tabs" Padding="15 0"
+							Style="{StaticResource RadTabControlStyle}"
+							SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" BackgroundVisibility="Collapsed">
+
+						<telerik:RadTabItem x:Name="GeneralTab" Header="General"
+								IsEnabled="{Binding IsGeneralTabEnabled}" Style="{StaticResource RadTabItemStyle}">
+							<StackPanel HorizontalAlignment="Center">
+								<TextBlock Text="CLIPBOARD" Style="{StaticResource TextBlockTitle}" />
+								<StackPanel Orientation="Horizontal">
+									<features:RadGeometryButton Command="telerik:DiagramCommands.Paste"
+											Style="{StaticResource RadButtonStyle}" Content="Paste"
+											Geometry="M2.38,4.30 L2.38,15.70 L4.25,15.70 L4.25,11.90 L9.88,6.20 L9.88,11.90 L6.13,11.90 L6.13,17.60 L13.63,17.60 L13.63,8.10 L9.88,8.10 L9.88,6.20 L11.75,6.20 L11.75,4.30 L8.00,4.30 L6.13,4.30 z M6.30,0.50 L7.87,0.50 C9.23,0.72 9.88,1.35 9.88,2.40 L11.75,2.40 L12.69,2.40 L13.63,2.40 L13.63,6.20 L15.50,6.20 L15.50,7.15 L15.50,8.10 L15.50,19.50 L13.63,19.50 L6.13,19.50 L4.25,19.50 L4.25,17.60 L0.50,17.60 L0.50,16.65 L0.50,15.70 L0.50,4.30 L0.50,2.40 L2.38,2.40 L4.25,2.40 C4.25,1.35 5.33,0.68 6.30,0.50 z" />
+									<features:RadGeometryButton Command="telerik:DiagramCommands.Copy"
+											Style="{StaticResource RadButtonStyle}" Content="Copy"
+											Geometry="M9.91,5.25 L9.91,10.00 L5.21,10.00 L5.21,17.60 L14.62,17.60 L14.62,5.25 z M0.50,0.50 L1.44,0.50 L2.38,0.50 L11.79,0.50 L12.74,0.50 L13.68,0.50 L13.68,3.35 L11.79,3.35 L11.79,2.40 L2.38,2.40 L2.38,14.75 L3.32,14.75 L3.32,10.00 L9.91,3.35 L14.62,3.35 L16.50,3.35 L16.50,5.25 L16.50,17.60 L16.50,19.50 L14.62,19.50 L5.21,19.50 L3.32,19.50 L3.32,17.60 L3.32,16.65 L2.38,16.65 L0.50,16.65 L0.50,14.75 z" />
+									<features:RadGeometryButton Command="telerik:DiagramCommands.Cut"
+											Style="{StaticResource RadButtonStyle}" Content="Cut"
+											Geometry="M12.5,14.928352 C11.671574,14.928352 11.000001,15.599925 11.000001,16.428352 C11.000001,17.256779 11.671574,17.928352 12.5,17.928352 C13.328428,17.928352 14,17.256779 14,16.428352 C14,15.599925 13.328428,14.928352 12.5,14.928352 z M3.4999995,14.928352 C2.6715724,14.928352 1.9999996,15.599925 1.9999995,16.428352 C1.9999996,17.256779 2.6715724,17.928352 3.4999995,17.928352 C4.3284268,17.928352 4.9999995,17.256779 4.9999995,16.428352 C4.9999995,15.599925 4.3284268,14.928352 3.4999995,14.928352 z M11.690025,0 L13.422111,0.99997997 L9.1120167,8.464983 L11.737597,13.012623 L11.794629,12.99946 C12.02247,12.952837 12.258376,12.928352 12.500001,12.928352 C14.432998,12.928352 16,14.495356 16,16.428352 C16,18.361349 14.432998,19.928352 12.500001,19.928352 C10.567004,19.928352 9.000001,18.361349 9.000001,16.428352 C9.000001,15.522261 9.3443136,14.696587 9.9092369,14.075031 L9.9916067,13.988637 L7.9572473,10.465023 L5.9543843,13.933944 L5.974874,13.953479 C6.6082492,14.586854 7,15.461854 7,16.428352 C7,18.361349 5.4329967,19.928352 3.5,19.928352 C1.5670034,19.928352 -5.1723987E-08,18.361349 0,16.428352 C-5.1723987E-08,14.495356 1.5670034,12.928352 3.5,12.928352 C3.6812184,12.928352 3.8592203,12.942125 4.0330153,12.96868 L4.1864357,12.996078 L6.8025465,8.465023 L2.4927113,1.0001688 L4.2248311,0.00012874603 L7.9573164,6.464983 z" />
+									<features:RadGeometryButton Command="telerik:DiagramCommands.Delete"
+											Style="{StaticResource RadButtonStyle}" Content="Delete"
+											Geometry="M2.39,6.20 L4.28,6.20 L4.28,17.60 L6.17,17.60 L6.17,6.20 L8.06,6.20 L8.06,17.60 L9.94,17.60 L9.94,6.20 L11.83,6.20 L11.83,17.60 L13.72,17.60 L13.72,6.20 L15.61,6.20 L15.61,19.50 L2.39,19.50 z M4.28,0.50 L13.72,0.50 L13.72,2.40 L17.50,2.40 L17.50,4.30 L0.50,4.30 L0.50,2.40 L4.28,2.40 z" />
+								</StackPanel>
+
+								<TextBlock Text="ARRANGE" Style="{StaticResource TextBlockTitle}" />
+								<StackPanel Orientation="Horizontal">
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}"
+											Command="telerik:DiagramCommands.BringForward" Content="Bring Forward"
+											Geometry="M0,0 L14,0 L14,14 L10,14 L10,18 L18,18 L18,10 L14.000001,10 L14.000001,8 L20,8 L20,10 L20,18 L20,20 L18,20 L10,20 L9,20 L8,20 L8,14 L0,14 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}" Padding="3 7 3 3"
+											CommandParameter="Left" Command="telerik:DiagramCommands.Align"
+											Content="Align Left"
+											Geometry="M6,11 L21,11 L21,18 L6,18 z M6,0 L15,0 L15,7 L6,7 z M0,0 L2,0 L2,18 L0,18 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}"
+											CommandParameter="Center" Command="telerik:DiagramCommands.Align"
+											Content="Align Center"
+											Geometry="M8,0 L10,0 L10,1 L14,1 L14,8 L10,8 L10,12 L18,12 L18,19 L10,19 L10,20 L8,20 L8,19 L0,19 L0,12 L8,12 L8,8 L4,8 L4,1 L8,1 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}"
+											CommandParameter="Right" Command="telerik:DiagramCommands.Align"
+											Content="Align Right"
+											Geometry="M0,11 L15,11 L15,18 L0,18 z M19,0 L21,0 L21,18 L19,18 z M6,0 L15,0 L15,7 L6,7 z" />
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}" 
+											Command="telerik:DiagramCommands.SendBackward" Content="Send Backward"
+											Geometry="M10,10 L10,18 L18,18 L18,10 z M8,8 L18,8 L20,8 L20,10 L20,18 L20,20 L18,20 L10,20 L8,20 L8,18 L8,10 z M0,0 L7,0 L14,0 L14,7 L7,7 L7,14 L0,14 L0,7 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}" 
+											CommandParameter="Top" Command="telerik:DiagramCommands.Align"
+											Content="Align Top"
+											Geometry="M11,6 L18,6 L18,12 L11,12 z M0,6 L7,6 L7,18 L0,18 z M0,0 L18,0 L18,2 L0,2 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}"
+											CommandParameter="Middle" Command="telerik:DiagramCommands.Align"
+											Content="Align Middle"
+											Geometry="M1,0 L8,0 L8,8 L12,8 L12,4 L19,4 L19,8 L20,8 L20,10 L19,10 L19,14 L12,14 L12,10 L8,10 L8,18 L1,18 L1,10 L0,10 L0,8 L1,8 z" />
+									<features:RadGeometryButton Style="{StaticResource RadButtonStyle}"
+											CommandParameter="Bottom" Command="telerik:DiagramCommands.Align"
+											Content="Align Bottom"
+											Geometry="M0,16 L18,16 L18,18 L0,18 z M11,6 L18,6 L18,12 L11,12 z M0,0 L7,0 L7,12 L0,12 z" />
+								</StackPanel>
+							</StackPanel>
+						</telerik:RadTabItem>
+
+						<telerik:RadTabItem x:Name="SizeTab" Header="Size" IsEnabled="{Binding IsSizeTabEnabled}"
+								Style="{StaticResource RadTabItemStyle}">
+							<StackPanel>
+								<TextBlock Text="SIZE" Style="{StaticResource TextBlockTitle}" />
+								<StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+									<Border Style="{StaticResource BorderStylePath}">
+										<Path Data="M14.25299,0 L18.252991,3.9690003 L14.25299,7.9380007 L14.25299,4.8750005 L4,4.8750005 L4,7.9380007 L0,3.9690003 L4,2.7199076E-07 L4,2.8750002 L14.25299,2.8750002 z"
+												Style="{StaticResource PathStyle}" />
+									</Border>
+									<telerik:RadNumericUpDown x:Name="WidthInput" Width="200" Height="25"
+											Value="{Binding CurrentWidth, Mode=TwoWay}" NumberDecimalDigits="0"
+											ValueFormat="Numeric" Minimum="0" SmallChange="5" LargeChange="10" />
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Border Style="{StaticResource BorderStylePath}">
+										<Path Data="M13.938993,0 L17.938993,3.9815063 L13.938993,7.9630127 L13.938993,5.0435181 L4,5.0435181 L4,7.9620361 L0,3.9815361 L4,0.0010358333 L4,3.0435181 L13.938993,3.0435181 z"
+												Style="{StaticResource PathStyle}" RenderTransformOrigin="0.5,0.5">
+											<Path.RenderTransform>
+												<RotateTransform Angle="-90" />
+											</Path.RenderTransform>
+										</Path>
+									</Border>
+									<telerik:RadNumericUpDown x:Name="HeightInput" Width="200" Height="25"
+											Value="{Binding CurrentHeight, Mode=TwoWay}" NumberDecimalDigits="0"
+											ValueFormat="Numeric" Minimum="0" SmallChange="5" LargeChange="10" />
+								</StackPanel>
+
+								<TextBlock Text="POSITION" Style="{StaticResource TextBlockTitle}" />
+								<StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+									<Border Style="{StaticResource BorderStylePath}">
+										<TextBlock Text="X" FontSize="12" FontFamily="Segoe UI Semibold"
+												Foreground="#FFD6D4D4" VerticalAlignment="Center"
+												HorizontalAlignment="Center" />
+									</Border>
+									<telerik:RadNumericUpDown x:Name="PositionXInput" Width="200" Height="25"
+											Value="{Binding CurrentPositionX, Mode=TwoWay}" NumberDecimalDigits="0"
+											ValueFormat="Numeric" SmallChange="5" LargeChange="10" />
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Border Style="{StaticResource BorderStylePath}">
+										<TextBlock Text="Y" FontSize="12" FontFamily="Segoe UI Semibold"
+												Foreground="#FFD6D4D4" VerticalAlignment="Center"
+												HorizontalAlignment="Center" />
+									</Border>
+									<telerik:RadNumericUpDown x:Name="PositionYInput" Width="200" Height="25"
+											Value="{Binding CurrentPositionY, Mode=TwoWay}" NumberDecimalDigits="0"
+											ValueFormat="Numeric" SmallChange="5" LargeChange="10" />
+								</StackPanel>
+
+								<TextBlock Text="ROTATION" Style="{StaticResource TextBlockTitle}" />
+								<StackPanel Orientation="Horizontal">
+									<Border Style="{StaticResource BorderStylePath}">
+										<Path Data="M5.43,3.42C4.66,3.28,3.97,2.94,3.43,2.44L6.53,2.30L4.98,0.86L0.56,0.95L0.50,5.07L2.05,6.50L2.16,4.09C2.96,4.74,3.94,5.20,5.02,5.40C8.33,5.99,11.77,4.03,12.50,0.52L10.07,0.50C9.66,2.50,7.57,3.81,5.43,3.42"
+												RenderTransformOrigin="0.5,0.5" Style="{StaticResource PathStyle}">
+											<Path.RenderTransform>
+												<RotateTransform Angle="-180" />
+											</Path.RenderTransform>
+										</Path>
+									</Border>
+									<telerik:RadNumericUpDown x:Name="RotaionAngleInput" Width="200" Height="25"
+											Value="{Binding CurrentRotaionAngle, Mode=TwoWay}" NumberDecimalDigits="0"
+											ValueFormat="Numeric" SmallChange="5" LargeChange="10" />
+								</StackPanel>
+							</StackPanel>
+						</telerik:RadTabItem>
+
+						<telerik:RadTabItem x:Name="StyleTab" Header="Style" IsEnabled="{Binding IsStyleTabEnabled}"
+								Style="{StaticResource RadTabItemStyle}">
+							<StackPanel>
+								<!--Margin="0 10 0 15"-->
+								<TextBlock x:Name="CapTypesLabel" Text="LINE AND CAP STYLES"
+										Visibility="{Binding IsInConnectionEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+										Style="{StaticResource TextBlockTitle}" />
+
+								<Grid x:Name="CapTypesHolder" Margin="0 0 0 5"
+										Visibility="{Binding IsInConnectionEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition />
+										<ColumnDefinition Width="5" />
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+									<telerik:RadComboBox x:Name="SourceCapTypesCombo"
+											ItemsSource="{Binding CapTypes}"
+											SelectedItem="{Binding CurrentSourceCapType, Mode=TwoWay}"
+											ItemTemplate="{StaticResource SourceCapTypeItemTemplate}"
+											SelectionBoxTemplate="{StaticResource SourceCapTypeSelectedItemTemplate}" />
+
+									<telerik:RadComboBox x:Name="TargetCapTypesCombo" Grid.Column="2"
+											ItemsSource="{Binding CapTypes}"
+											SelectedItem="{Binding CurrentTargetCapType, Mode=TwoWay}"
+											ItemTemplate="{StaticResource TargetCapTypeItemTemplate}"
+											SelectionBoxTemplate="{StaticResource TargetCapTypeSelectedItemTemplate}" />
+								</Grid>
+
+								<TextBlock x:Name="StrokeLabel" Text="STROKE PROPERTIES"
+										Visibility="{Binding IsInShapeEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+										Style="{StaticResource TextBlockTitle}" />
+
+								<telerik:RadComboBox x:Name="StrokeThicknessesCombo" HorizontalAlignment="Stretch"
+										Margin="0 0 0 5" ItemsSource="{Binding StrokeThicknesses}"
+										SelectedItem="{Binding CurrentStrokeThickness, Mode=TwoWay}"
+										ItemTemplate="{StaticResource StrokeThicknessItemTemplate}" />
+
+								<telerik:RadComboBox x:Name="StrokeStylesCombo" HorizontalAlignment="Stretch"
+										Margin="0 0 0 5" ItemsSource="{Binding StrokeDashArrays}"
+										SelectedItem="{Binding CurrentStrokeDashArray, Mode=TwoWay}"
+										ItemTemplate="{StaticResource StrokeDashArrayItemTemplate}" />
+
+								<telerik:RadTabControl HorizontalAlignment="Stretch"
+										Style="{StaticResource RadTabControlStyle}">
+									<telerik:RadTabItem Header="COLOR STYLES" Style="{StaticResource RadTabItemStyle}">
+										<ListBox x:Name="ShapeSolidColorsList" Style="{StaticResource ListBoxStyle}"
+												Height="{Binding IsInShapeEditMode, Converter={StaticResource IsInShapeEditModelToColorListHeightConverter}}"
+												ItemsSource="{Binding SolidColorStyles}"
+												SelectedItem="{Binding CurrentSolidColorStyle, Mode=TwoWay}">
+											<ListBox.ItemTemplate>
+												<DataTemplate>
+													<Rectangle Width="16" Height="16" Margin="3"
+															HorizontalAlignment="Center" StrokeThickness="1"
+															Stroke="{Binding Path=Stroke}" Fill="{Binding Path=Fill}" />
+												</DataTemplate>
+											</ListBox.ItemTemplate>
+										</ListBox>
+									</telerik:RadTabItem>
+
+									<telerik:RadTabItem Header="GRADIENT STYLES"
+											Style="{StaticResource RadTabItemStyle}">
+										<ListBox x:Name="ShapeGradientColorsList" Style="{StaticResource ListBoxStyle}"
+												Height="{Binding IsInShapeEditMode, Converter={StaticResource IsInShapeEditModelToColorListHeightConverter}}"
+												ItemsSource="{Binding GradientColorStyles}"
+												SelectedItem="{Binding CurrentGradientColorStyle, Mode=TwoWay}">
+											<ListBox.ItemTemplate>
+												<DataTemplate>
+													<Rectangle Width="16" Height="16" Margin="3"
+															HorizontalAlignment="Center" StrokeThickness="1"
+															Stroke="{Binding Path=Stroke}" Fill="{Binding Path=Fill}" />
+												</DataTemplate>
+											</ListBox.ItemTemplate>
+										</ListBox>
+									</telerik:RadTabItem>
+								</telerik:RadTabControl>
+							</StackPanel>
+						</telerik:RadTabItem>
+
+						<telerik:RadTabItem x:Name="TextTab" Header="Text" IsEnabled="{Binding IsTextTabEnabled}"
+								Style="{StaticResource RadTabItemStyle}">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								<TextBlock Text="LABEL TEXT" Style="{StaticResource TextBlockTitle}" />
+								<TextBox x:Name="LabelTextBox" Grid.Row="1" Height="75" AcceptsReturn="True"
+										telerik:StyleManager.Theme="Metro" VerticalContentAlignment="Top"
+										TextWrapping="Wrap" FontFamily="{Binding CurrentFontFamily}"
+										FontSize="{Binding CurrentFontSize}"
+										Text="{Binding CurrentLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										LostFocus="LabelTextBox_LostFocus" />
+
+								<TextBlock Text="TEXT PROPERTIES" Grid.Row="2" Style="{StaticResource TextBlockTitle}" />
+								<telerik:RadComboBox x:Name="FontFamiliesCombo" Grid.Row="3" Margin="0 0 0 10"
+										ItemsSource="{Binding FontFamilies}"
+										SelectedItem="{Binding CurrentFontFamily, Mode=TwoWay}" />
+
+								<telerik:RadComboBox x:Name="FontSizesCombo" Grid.Row="4"
+										ItemsSource="{Binding FontSizes}"
+										SelectedItem="{Binding CurrentFontSize, Mode=TwoWay}" />
+
+								<ListBox x:Name="FontColorsList" Grid.Row="5" ItemsSource="{Binding FontColors}"
+										SelectedItem="{Binding CurrentFontColor, Mode=TwoWay}" BorderThickness="1"
+										Style="{StaticResource ListBoxStyle}" Margin="0 10 0 15">
+									<ListBox.ItemTemplate>
+										<DataTemplate>
+											<Rectangle Width="16" Height="16" Fill="{Binding Path=.}" Margin="3"
+													HorizontalAlignment="Center" />
+										</DataTemplate>
+									</ListBox.ItemTemplate>
+								</ListBox>
+							</Grid>
+						</telerik:RadTabItem>
+					</telerik:RadTabControl>
+
+					<ToggleButton x:Name="CloseButton" Margin="5 7" Style="{StaticResource CloseButtonStyle}"
+							HorizontalAlignment="Right" VerticalAlignment="Top"
+							IsChecked="{Binding IsContentVisible, Mode=TwoWay, Converter={StaticResource InvertedBooleanConverter}}" />
+				</Grid>
+			</telerik:RadDropDownButton.DropDownContent>
+		</telerik:RadDropDownButton>
+	</Canvas>
+</UserControl>
+		

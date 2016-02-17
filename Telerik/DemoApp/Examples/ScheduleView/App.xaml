@@ -1,0 +1,34 @@
+﻿<Application x:Class="ScheduleView.App"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Visibility x:Key="Telerik.Windows.Controls.Key">Collapsed</Visibility>
+            <LinearGradientBrush x:Key="WebDevelopementBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCCFF99" Offset="0" />
+                <GradientStop Color="#FF99CC66" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="WindowsAndFrameworksBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFAEC4DD" Offset="0" />
+                <GradientStop Color="#FF6C92BF" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="ArchitecturesBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE9D7EB" Offset="0" />
+                <GradientStop Color="#FFB687B8" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="LunchAndCoffeeBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFFF99" Offset="0" />
+                <GradientStop Color="#FFFFD351" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DataLayersBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF4CFAE" Offset="0" />
+                <GradientStop Color="#FFCB7A32" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="SharepointBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF7D4D2" Offset="0" />
+                <GradientStop Color="#FFE8807D" Offset="1" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

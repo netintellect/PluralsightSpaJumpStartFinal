@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B279146D-8E20-4622-AF7E-7D8DA3549184}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Menu</RootNamespace>
+    <AssemblyName>Menu</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Menu.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Menu.App</SilverlightAppEntry>
+    <TestPageFileName>Menu.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ViewModels\BooleanToOrientationConverter.cs" />
+    <Compile Include="Customization\PopularControl.cs" />
+    <Compile Include="Customization\SDKViewModel.cs" />
+    <Compile Include="Customization\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\TransitionSet.cs" />
+    <Compile Include="Customization\ViewModel.cs" />
+    <Compile Include="MultiColumnMenu\MenuItem.cs" />
+    <Compile Include="MultiColumnMenu\SimpleViewModel.cs" />
+    <Compile Include="TicTacToe\CheckAction.cs" />
+    <Compile Include="TicTacToe\FalseToVisibleConverter.cs" />
+    <Compile Include="TicTacToe\GameAction.cs" />
+    <Compile Include="TicTacToe\NullToCollapsedConverter.cs" />
+    <Compile Include="TicTacToe\ResetAction.cs" />
+    <Compile Include="TicTacToe\TicTacToeAI.cs" />
+    <Compile Include="TicTacToe\TicTacToeViewModel.cs" />
+    <Compile Include="TicTacToe\TileViewModel.cs" />
+    <Compile Include="TicTacToe\TrueToVisibleConverter.cs" />
+    <Compile Include="Common\ViewModels\MenuItem.cs" />
+    <Compile Include="Common\ViewModels\MenuItemsCollection.cs" />
+    <Compile Include="Common\ViewModels\MenuViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Silverlight\BoundaryDetection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\CheckableMenuItems\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\Configurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\DataBinding\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Silverlight\MultiColumnMenu\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToe\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Products\Big\Menu.png" />
+    <Resource Include="BoundaryDetection\Description.txt" />
+    <Resource Include="CheckableMenuItems\Description.txt" />
+    <Resource Include="Configurator\Description.txt" />
+    <Resource Include="DataBinding\Description.txt" />
+    <Resource Include="MultiColumnMenu\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Customization\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\BoundaryDetection\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\BoundaryDetection\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\CheckableMenuItems\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\CheckableMenuItems\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Configurator\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\Configurator\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\DataBinding\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\DataBinding\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Silverlight\MultiColumnMenu\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TicTacToe\Silverlight\BoardStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TicTacToe\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Customization\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\11new.png" />
+    <None Include="Images\Menu\12open.png" />
+    <None Include="Images\Menu\13Save.png" />
+    <None Include="Images\Menu\14SaveWeb.png" />
+    <None Include="Images\Menu\15printPreview.png" />
+    <None Include="Images\Menu\16print.png" />
+    <None Include="Images\Menu\19cut.png" />
+    <None Include="Images\Menu\1folder.png" />
+    <None Include="Images\Menu\20paste.png" />
+    <None Include="Images\Menu\21undo.png" />
+    <None Include="Images\Menu\22copy.png" />
+    <None Include="Images\Menu\23clipboard.png" />
+    <None Include="Images\Menu\24find.png" />
+    <None Include="Images\Menu\2about.png" />
+    <None Include="Images\Menu\31normal.png" />
+    <None Include="Images\Menu\32web.png" />
+    <None Include="Images\Menu\33print.png" />
+    <None Include="Images\Menu\34task.png" />
+    <None Include="Images\Menu\7delete.png" />
+    <Resource Include="Images\Menu\Gallery3D_1.png" />
+    <Resource Include="Images\Menu\Gallery3D_2.png" />
+    <Resource Include="Images\Menu\Integration_1.png" />
+    <Resource Include="Images\Menu\Integration_2.png" />
+    <Resource Include="Images\Menu\Integration_3.png" />
+    <Resource Include="Images\Menu\Integration_4.png" />
+    <Resource Include="Images\Menu\Themes1.png" />
+    <Resource Include="Images\Menu\Themes2.png" />
+    <Resource Include="Images\Menu\Themes3.png" />
+    <Resource Include="Images\Menu\Themes4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\first_look_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\MVVM\Redo.png" />
+    <None Include="Images\Menu\MVVM\Refresh.png" />
+    <None Include="Images\Menu\MVVM\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TicTacToe\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\free.png" />
+    <None Include="Images\Menu\used.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\FirstLookText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\LeftBorder.png" />
+    <None Include="Images\Menu\NotBorder.png" />
+    <None Include="Images\Menu\RightBorder.png" />
+    <None Include="Images\Menu\TopBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\AllBorder.png" />
+    <None Include="Images\Menu\arrows.png" />
+    <None Include="Images\Menu\OutsideBorder.png" />
+    <None Include="Images\Menu\BottomBorder.png" />
+    <None Include="Images\Menu\insert_icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\File_New.png" />
+    <None Include="Images\Menu\File_Open.png" />
+    <None Include="Images\Menu\File_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\File_Exit.png" />
+    <None Include="Images\Menu\File_Print.png" />
+    <None Include="Images\Menu\File_Send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Edit_Copy.png" />
+    <None Include="Images\Menu\Edit_EditColor.png" />
+    <None Include="Images\Menu\Edit_EditStyle.png" />
+    <None Include="Images\Menu\Edit_Find.png" />
+    <None Include="Images\Menu\Edit_FlipHorizontal.png" />
+    <None Include="Images\Menu\Edit_FlipVertical.png" />
+    <None Include="Images\Menu\Edit_Paste.png" />
+    <None Include="Images\Menu\Edit_Redo.png" />
+    <None Include="Images\Menu\Edit_Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Bold.png" />
+    <None Include="Images\Menu\Italic.png" />
+    <None Include="Images\Menu\Underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\1.png" />
+    <None Include="Images\Menu\10.png" />
+    <None Include="Images\Menu\2.png" />
+    <None Include="Images\Menu\3.png" />
+    <None Include="Images\Menu\4.png" />
+    <None Include="Images\Menu\5.png" />
+    <None Include="Images\Menu\6.png" />
+    <None Include="Images\Menu\7.png" />
+    <None Include="Images\Menu\8.png" />
+    <None Include="Images\Menu\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\11.png" />
+    <None Include="Images\Menu\12.png" />
+    <None Include="Images\Menu\13.png" />
+    <None Include="Images\Menu\14.png" />
+    <None Include="Images\Menu\15.png" />
+    <None Include="Images\Menu\16.png" />
+    <None Include="Images\Menu\17.png" />
+    <None Include="Images\Menu\18.png" />
+    <None Include="Images\Menu\19.png" />
+    <None Include="Images\Menu\20.png" />
+    <None Include="Images\Menu\21.png" />
+    <None Include="Images\Menu\22.png" />
+    <None Include="Images\Menu\23.png" />
+    <None Include="Images\Menu\24.png" />
+    <None Include="Images\Menu\25.png" />
+    <None Include="Images\Menu\26.png" />
+    <None Include="Images\Menu\27.png" />
+    <None Include="Images\Menu\28.png" />
+    <None Include="Images\Menu\29.png" />
+    <None Include="Images\Menu\30.png" />
+    <None Include="Images\Menu\31.png" />
+    <None Include="Images\Menu\32.png" />
+    <None Include="Images\Menu\33.png" />
+    <None Include="Images\Menu\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Screenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Arrows\1.png" />
+    <None Include="Images\Menu\Arrows\10.png" />
+    <None Include="Images\Menu\Arrows\11.png" />
+    <None Include="Images\Menu\Arrows\12.png" />
+    <None Include="Images\Menu\Arrows\13.png" />
+    <None Include="Images\Menu\Arrows\14.png" />
+    <None Include="Images\Menu\Arrows\15.png" />
+    <None Include="Images\Menu\Arrows\16.png" />
+    <None Include="Images\Menu\Arrows\17.png" />
+    <None Include="Images\Menu\Arrows\18.png" />
+    <None Include="Images\Menu\Arrows\19.png" />
+    <None Include="Images\Menu\Arrows\2.png" />
+    <None Include="Images\Menu\Arrows\20.png" />
+    <None Include="Images\Menu\Arrows\21.png" />
+    <None Include="Images\Menu\Arrows\3.png" />
+    <None Include="Images\Menu\Arrows\4.png" />
+    <None Include="Images\Menu\Arrows\5.png" />
+    <None Include="Images\Menu\Arrows\6.png" />
+    <None Include="Images\Menu\Arrows\7.png" />
+    <None Include="Images\Menu\Arrows\8.png" />
+    <None Include="Images\Menu\Arrows\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Menu_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\Lines\1.png" />
+    <None Include="Images\Menu\Lines\2.png" />
+    <None Include="Images\Menu\Lines\3.png" />
+    <None Include="Images\Menu\Lines\4.png" />
+    <None Include="Images\Menu\Lines\5.png" />
+    <None Include="Images\Menu\Shapes\1.png" />
+    <None Include="Images\Menu\Shapes\10.png" />
+    <None Include="Images\Menu\Shapes\11.png" />
+    <None Include="Images\Menu\Shapes\12.png" />
+    <None Include="Images\Menu\Shapes\13.png" />
+    <None Include="Images\Menu\Shapes\14.png" />
+    <None Include="Images\Menu\Shapes\15.png" />
+    <None Include="Images\Menu\Shapes\2.png" />
+    <None Include="Images\Menu\Shapes\3.png" />
+    <None Include="Images\Menu\Shapes\4.png" />
+    <None Include="Images\Menu\Shapes\5.png" />
+    <None Include="Images\Menu\Shapes\6.png" />
+    <None Include="Images\Menu\Shapes\7.png" />
+    <None Include="Images\Menu\Shapes\8.png" />
+    <None Include="Images\Menu\Shapes\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Menu\zoom_in.png" />
+    <None Include="Images\Menu\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Menu\Multicolumn\android.png" />
+    <Resource Include="Images\Menu\Multicolumn\blackberry.png" />
+    <Resource Include="Images\Menu\Multicolumn\Calculator.png" />
+    <Resource Include="Images\Menu\Multicolumn\camcoder.png" />
+    <Resource Include="Images\Menu\Multicolumn\camcoder_pro.png" />
+    <Resource Include="Images\Menu\Multicolumn\compact_camera.png" />
+    <Resource Include="Images\Menu\Multicolumn\hdd.png" />
+    <Resource Include="Images\Menu\Multicolumn\iphone.png" />
+    <Resource Include="Images\Menu\Multicolumn\keyboard.png" />
+    <Resource Include="Images\Menu\Multicolumn\monitor.png" />
+    <Resource Include="Images\Menu\Multicolumn\mouse.png" />
+    <Resource Include="Images\Menu\Multicolumn\phone.png" />
+    <Resource Include="Images\Menu\Multicolumn\scanner.png" />
+    <Resource Include="Images\Menu\Multicolumn\slr_camera.png" />
+    <Resource Include="Images\Menu\Multicolumn\slr_camera2.png" />
+    <Resource Include="Images\Menu\Multicolumn\video_projector.png" />
+    <Resource Include="Images\Menu\Multicolumn\webcam.png" />
+    <Resource Include="Images\Menu\Multicolumn\windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\icon1.png" />
+    <Resource Include="Images\Customization\icon2.png" />
+    <Resource Include="Images\Customization\icon3.png" />
+    <Resource Include="Images\Customization\icon4.png" />
+    <Resource Include="Images\Customization\Image1.png" />
+    <Resource Include="Images\Customization\Image3.png" />
+    <Resource Include="Images\Customization\Image4.png" />
+    <Resource Include="Images\Customization\Image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\Menu_Chart.png" />
+    <Resource Include="Images\Customization\Menu_ComboBox.png" />
+    <Resource Include="Images\Customization\Menu_Diagrams.png" />
+    <Resource Include="Images\Customization\Menu_Docking.png" />
+    <Resource Include="Images\Customization\Menu_Grid.png" />
+    <Resource Include="Images\Customization\Menu_Map.png" />
+    <Resource Include="Images\Customization\Menu_Pivot.png" />
+    <Resource Include="Images\Customization\Menu_RadialMenu.png" />
+    <Resource Include="Images\Customization\Menu_RTB.PNG" />
+    <Resource Include="Images\Customization\Menu_ScheduleView.png" />
+    <Resource Include="Images\Customization\Menu_Spreadsheet.png" />
+    <Resource Include="Images\Customization\Menu_ToolTip.png" />
+    <Resource Include="Images\Customization\Menu_WordsProcessing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Customization\CRM.PNG" />
+    <Resource Include="Images\Customization\Executive Dashboard.png" />
+    <Resource Include="Images\Customization\Menu_ThemesGenerator.png" />
+    <Resource Include="Images\Customization\SalesDashboard.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>

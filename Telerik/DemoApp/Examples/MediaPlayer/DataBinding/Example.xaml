@@ -1,0 +1,56 @@
+﻿<UserControl
+		x:Class="Telerik.Windows.Examples.MediaPlayer.DataBinding.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		VerticalAlignment="Center" HorizontalAlignment="Center">
+
+	<Grid x:Name="LayoutRoot" VerticalAlignment="Center" HorizontalAlignment="Center" Width="640" Height="360">
+		<Grid.Resources>
+
+			<Style TargetType="telerik:RadMediaItem" BasedOn="{StaticResource RadMediaItemStyle}">
+				<Setter Property="Margin" Value="8" />
+				<Setter Property="VerticalContentAlignment" Value="Center" />
+				<Setter Property="VideoStretch" Value="Fill" />
+			</Style>
+
+			<DataTemplate x:Name="chapterTemplate">
+				<telerik:ContainerBinding.ContainerBindings>
+					<telerik:ContainerBindingCollection>
+						<telerik:ContainerBinding PropertyName="Position" Binding="{Binding Position}" />
+						<telerik:ContainerBinding PropertyName="Content" Binding="{Binding Title}" />
+					</telerik:ContainerBindingCollection>
+				</telerik:ContainerBinding.ContainerBindings>
+				<TextBlock Text="{Binding}" />
+			</DataTemplate>
+		</Grid.Resources>
+
+		<telerik:RadMediaPlayer x:Name="player" IsAutoPlaylistAdvance="True" IsAutoReverse="True" SelectedIndex="0">
+
+			<telerik:RadMediaPlayer.ItemTemplate>
+				<DataTemplate>
+					<telerik:ContainerBinding.ContainerBindings>
+						<telerik:ContainerBindingCollection>
+							<telerik:ContainerBinding PropertyName="Source"
+									Binding="{Binding Source}" />
+							<telerik:ContainerBinding PropertyName="ItemsSource"
+									Binding="{Binding Chapters}" />
+							<telerik:ContainerBinding PropertyName="ItemTemplate"
+									Binding="{Binding ElementName=chapterTemplate}" />
+						</telerik:ContainerBindingCollection>
+					</telerik:ContainerBinding.ContainerBindings>
+					<StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Image Source="{Binding Image}" />
+						<TextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="4" />
+					</StackPanel>
+				</DataTemplate>
+			</telerik:RadMediaPlayer.ItemTemplate>
+
+		</telerik:RadMediaPlayer>
+
+	</Grid>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Getting Started Videos" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+</UserControl>

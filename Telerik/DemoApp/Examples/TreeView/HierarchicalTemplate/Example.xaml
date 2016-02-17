@@ -1,0 +1,52 @@
+<UserControl x:Class="Telerik.Windows.Examples.TreeView.HierarchicalTemplate.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TreeView.HierarchicalTemplate"
+        xmlns:project="clr-namespace:Telerik.Windows.Examples.TreeView"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Olympic Medals" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="5" MaxWidth="695" MaxHeight="450" MinHeight="350">
+
+		<Grid.DataContext>
+			<local:MainViewModel />
+		</Grid.DataContext>
+		
+		<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+		
+        <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+                    <TextBlock Text="Athletes" Style="{StaticResource TitleStyle}"/>
+                </Border>
+                <telerik:RadTreeView x:Name="xTreeView"
+						ItemsSource="{Binding Path=OlympicGames}"
+						ItemTemplateSelector="{StaticResource ItemDataTemplateSelector}"
+						IsExpandOnSingleClickEnabled="True"
+						BorderThickness="0" Grid.Row="1" Margin="5"
+						PreviewSelectionChanged="TreeView_PreviewSelectionChanged" />
+            </Grid>
+        </Border>
+
+		<project:ContentControlEx Grid.Column="2" TemplateSelector="{StaticResource DetailsTemplateSelector}" 
+				DataContext="{Binding Path=SelectedItem, ElementName=xTreeView}"
+				Content="{Binding}"/>        
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,7 @@
+﻿Radial <b>Bar</b> indicator can use colors of ranges. It uses the <b>IndicatorBackground</b> property of the range.
+The indicator uses the following properties for building the bar:
+
+1. <b>UseRangeColor</b> - enables using colors of ranges.
+2. <b>RangeColorMode</b> - is a mode of using colors of ranges.
+3. <b>IndicatorColorMixSensitivity</b> - is the property of the range that specifies a sensitivity of using colors from the current range and previous range.
+   The property is used for the <b>MixedColor</b> range color mode only.

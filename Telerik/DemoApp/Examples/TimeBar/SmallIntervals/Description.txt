@@ -1,0 +1,1 @@
+﻿This example demonstrates the small periods of RadTimeBar - MinuteInterval and SecondInterval, in combination with the IntervalSpans property, which enables an interval to display periods of more than one unit of time.

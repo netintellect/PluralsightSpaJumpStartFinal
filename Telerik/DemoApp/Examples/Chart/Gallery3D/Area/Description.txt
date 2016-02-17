@@ -1,0 +1,1 @@
+﻿This example shows Chart with Area series. There is a DataSeries with it's Definition property set to an instance of AreaSeriesDefinition.

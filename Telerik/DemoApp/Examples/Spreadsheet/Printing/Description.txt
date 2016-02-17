@@ -1,0 +1,1 @@
+﻿The printing feature of <b>RadSpreadsheet</b> lets you insert page breaks, specify page areas, choose among numerous printing options and print your workbooks on paper. Additionally, with the help of virtual printers, the feature also allows you to export your workbooks to different file formats effortlessly.

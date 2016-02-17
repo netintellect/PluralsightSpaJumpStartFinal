@@ -1,0 +1,1 @@
+﻿This example allows you to configure the most important properties - High Point indicator, Low Point indicator, First Point indicator, Last Point indicator, Negative Point indicators, Markers and Axis.

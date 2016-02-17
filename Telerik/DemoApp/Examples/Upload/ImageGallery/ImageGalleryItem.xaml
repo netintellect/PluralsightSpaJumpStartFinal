@@ -1,0 +1,47 @@
+﻿<UserControl
+	x:Class="Telerik.Windows.Examples.Upload.ImageGallery.ImageGalleryItem"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Width="210" Height="180" >
+	<UserControl.Resources>
+        <SolidColorBrush  x:Key="ImageGalleryItemBorder1"  Color="#d7d7d7"/>
+        <SolidColorBrush  x:Key="ImageGalleryItemBackground"  Color="#ffffff"/>
+        <Style TargetType="TextBlock" x:Key="TextBlockstyle">
+            <Setter Property="Foreground" Value="#333" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Margin" Value="0 0 5 0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" /> 
+        </Style>
+	</UserControl.Resources>
+	<Border x:Name="LayoutRoot" Margin="5" Padding="5" BorderThickness="1" 
+            BorderBrush="{StaticResource ImageGalleryItemBorder1}"
+            Background="{StaticResource ImageGalleryItemBackground}">
+	
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="22" />
+			</Grid.RowDefinitions>
+			
+			<Border x:Name="PictureHolder" Grid.Row="0" Margin="0 0 0 5"
+				VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+	
+			<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="6,3,6,3" >
+                <TextBlock x:Name="file_Name" Text="picture name" Style="{StaticResource TextBlockstyle}" />
+                <TextBlock x:Name="file_Size" Text="(size)"  Style="{StaticResource TextBlockstyle}" />
+			</StackPanel>
+			<Button x:Name="buttonClose" Grid.Row="1" Click="buttonClose_Click"
+				VerticalAlignment="Center" Cursor="Hand" HorizontalAlignment="Right" Margin="0,1,1,1" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Path Data="M1,1 L9,9 M1.0000687,9.0000982 L9.0000687,1.0000986" Stroke="#1fa3eb"
+							StrokeThickness="2" Width="10" Height="10" />
+                    </ControlTemplate>
+                </Button.Template>
+			</Button>
+		</Grid>
+	
+	</Border>
+</UserControl>

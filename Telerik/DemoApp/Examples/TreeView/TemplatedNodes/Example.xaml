@@ -1,0 +1,230 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.TreeView.TemplatedNodes.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"     
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">	
+	<UserControl.Resources>
+		
+		<ControlTemplate TargetType="telerik:RadTreeViewItem" x:Key="TreeViewItemDefaultTemplate">
+			<Grid  Height="Auto" VerticalAlignment="Top">
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="ExpandStates">
+						<VisualState x:Name="Expanded">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemsHost"
+											Storyboard.TargetProperty="Visibility" Duration="0">
+									<DiscreteObjectKeyFrame KeyTime="0">
+										<DiscreteObjectKeyFrame.Value>
+											<Visibility>Visible</Visibility>
+										</DiscreteObjectKeyFrame.Value>
+									</DiscreteObjectKeyFrame>
+								</ObjectAnimationUsingKeyFrames>
+								<DoubleAnimation Storyboard.TargetName="ItemsHost"
+											Storyboard.TargetProperty="Opacity" From="0.1" To="1.0"
+											Duration="0:0:0.2" />
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Collapsed">
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetName="ItemsHost"
+											Storyboard.TargetProperty="Opacity" From="1" To="0.1"
+											Duration="0:0:0.2" />
+								<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemsHost"
+											Storyboard.TargetProperty="Visibility" Duration="0"
+											BeginTime="0:0:0.2">
+									<DiscreteObjectKeyFrame KeyTime="0">
+										<DiscreteObjectKeyFrame.Value>
+											<Visibility>Collapsed</Visibility>
+										</DiscreteObjectKeyFrame.Value>
+									</DiscreteObjectKeyFrame>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<Border x:Name="HeaderRow" Grid.Row="0"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+					
+					<Grid  Height="55">
+                        <TextBlock Foreground="{TemplateBinding Foreground}"
+								Text="{TemplateBinding Header}" 
+								HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image x:Name="Image" HorizontalAlignment="Center"
+							    VerticalAlignment="Center" Stretch="None" Margin="5 0" />
+                    </Grid>
+				</Border>
+
+				<ItemsPresenter x:Name="ItemsHost" Grid.Row="1" Visibility="Collapsed" Margin="0 10 0 0"/>
+			</Grid>
+		</ControlTemplate>
+
+		<Style TargetType="telerik:RadTreeViewItem" x:Key="TreeViewItemStyle">
+			<Setter Property="IsExpanded" Value="True" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Background}" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Template" Value="{StaticResource TreeViewItemDefaultTemplate}" />
+			<Setter Property="ItemsPanel">
+				<Setter.Value>
+					<ItemsPanelTemplate>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" />
+					</ItemsPanelTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<SolidColorBrush Color="#d6d4d4" x:Key="BorderBrush" />
+
+        <SolidColorBrush x:Key="LakersBackground" Color="#FF8267aa "/>
+        <SolidColorBrush x:Key="UtahBackground" Color="#FF4c7bb5"/>
+        <SolidColorBrush x:Key="SpursBackground" Color="#FFb4b6b6 "/>
+        <SolidColorBrush x:Key="HornetsBackground" Color="#FF64bbe1"/>
+        <SolidColorBrush x:Key="BostonBackground" Color="#FF40a176 "/>
+        <SolidColorBrush x:Key="ClevelandBackground" Color="#b4b6b6"/>
+        <SolidColorBrush x:Key="DetroitBackground" Color="#FFee5466"/>
+        <SolidColorBrush x:Key="OrlandoBackground" Color="#c1c1c1"/>
+
+	</UserControl.Resources>
+	
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="US Basketball League" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Border VerticalAlignment="Stretch"
+			BorderThickness="1" BorderBrush="{StaticResource BorderBrush}"
+			telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+        
+        <StackPanel>
+            <Image Source="../Images/TreeView/IconTemplatedNodes/basketball_cup.png"
+                   HorizontalAlignment="Left" Margin="30 70 0 0" Stretch="None"/>
+		    <telerik:RadTreeView
+				    ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+				    IsExpandOnSingleClickEnabled="True"
+				    BorderThickness="0"
+				    VerticalAlignment="Top" Margin="0 50 0 0">
+			
+			    <telerik:RadTreeView.ItemsPanel>
+				    <ItemsPanelTemplate>
+					    <StackPanel Orientation="Horizontal"
+							    HorizontalAlignment="Center"
+							    VerticalAlignment="Top" />
+				    </ItemsPanelTemplate>
+			    </telerik:RadTreeView.ItemsPanel>
+
+                <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon3.png"
+					    Background="{StaticResource LakersBackground}"
+					    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+
+
+                    <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon3.png"
+						    Background="{StaticResource LakersBackground}"
+						    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+
+                        <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon3.png"
+							    Background="{StaticResource LakersBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon3.png"
+								    Background="{StaticResource LakersBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="4 : 2" Width="55"  IsEnabled="False" Margin="5 0"
+								    Foreground="{StaticResource LakersBackground}"
+								    BorderBrush="{StaticResource LakersBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon4.png"
+								    Background="{StaticResource UtahBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+					    </telerik:RadTreeViewItem>
+
+                        <telerik:RadTreeViewItem Header="4 : 3" Width="55"  IsEnabled="False" Margin="5 0"
+							    Foreground="{StaticResource LakersBackground}"
+							    BorderBrush="{StaticResource LakersBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                        <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon2.png"
+							    Background="{StaticResource SpursBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon1.png"
+								    Background="{StaticResource HornetsBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="3 : 4"  Width="55" IsEnabled="False" Margin="5 0"
+								    Foreground="{StaticResource SpursBackground}"
+								    BorderBrush="{StaticResource SpursBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon2.png"
+								    Background="{StaticResource SpursBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+					    </telerik:RadTreeViewItem>
+					
+				    </telerik:RadTreeViewItem>
+
+				    <telerik:RadTreeViewItem Header="4 : 2" Width="55" IsEnabled="False" Margin="5 0"
+							    Foreground="{StaticResource LakersBackground}"
+							    BorderBrush="{StaticResource LakersBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                    <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon5.png"
+						    Background="{StaticResource BostonBackground}"
+						    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+
+                        <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon5.png"
+							    Background="{StaticResource BostonBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon5.png"
+								    Background="{StaticResource BostonBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+						
+						    <telerik:RadTreeViewItem Header="4 : 3" Width="55" IsEnabled="False" Margin="5 0"
+								    Foreground="{StaticResource BostonBackground}"
+								    BorderBrush="{StaticResource BostonBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon6.png"
+								    Background="{StaticResource ClevelandBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+					    </telerik:RadTreeViewItem>
+
+					    <telerik:RadTreeViewItem Header="4 : 3" Width="55" IsEnabled="False" Margin="5 0"
+							    Foreground="{StaticResource BostonBackground}"
+							    BorderBrush="{StaticResource BostonBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                        <telerik:RadTreeViewItem Header="" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon7.png"
+							    Background="{StaticResource DetroitBackground}"
+							    ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon7.png"
+								    Background="{StaticResource DetroitBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+						
+						    <telerik:RadTreeViewItem Header="4 : 1" Width="55" IsEnabled="False" Margin="5 0"
+								    Foreground="{StaticResource DetroitBackground}"
+								    BorderBrush="{StaticResource DetroitBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+
+                            <telerik:RadTreeViewItem Header="" Width="75" DefaultImageSrc="../Images/TreeView/IconTemplatedNodes/icon8.png"
+								    Background="{StaticResource OrlandoBackground}"
+								    ItemContainerStyle="{StaticResource TreeViewItemStyle}" />
+					    </telerik:RadTreeViewItem>
+					
+				    </telerik:RadTreeViewItem>
+				
+			    </telerik:RadTreeViewItem>
+		    </telerik:RadTreeView>
+        </StackPanel>
+    </Border>
+</UserControl>
+

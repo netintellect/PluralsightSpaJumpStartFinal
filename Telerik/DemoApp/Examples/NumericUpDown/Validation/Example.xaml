@@ -1,0 +1,50 @@
+<UserControl x:Class="Telerik.Windows.Examples.NumericUpDown.Validation.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.NumericUpDown.Validation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		mc:Ignorable="d"
+		HorizontalAlignment="Center" VerticalAlignment="Center"
+		d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="WhiteFill" Color="#FFFFFFFF" />
+    </UserControl.Resources>
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Validation" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	
+	<UserControl.DataContext>
+		<local:ValidationViewModel />
+	</UserControl.DataContext>
+	
+	<Grid Width="327" Height="229">
+        <Grid HorizontalAlignment="Center" Height="65" VerticalAlignment="Top" Margin="8,6,10,10">           
+            <Rectangle Fill="#FF8EC441" Width="250" Height="65" />
+            <Grid HorizontalAlignment="Right" Width="48" Margin="0,9,10,8">
+                <Path Data="M47,24 C47,36.702549 36.702549,47 24,47 C11.297451,47 1,36.702549 1,24 C1,11.297451 11.297451,1 24,1 C36.702549,1 47,11.297451 47,24 z"
+                      Stretch="Fill" Stroke="{StaticResource WhiteFill}" StrokeThickness="2" />
+                <Path Data="M40.104931,6.4949942 L40.104931,51.115101 L14.456202,51.115101 L14.456202,59.763531 L49.013504,59.763531 L49.013504,8.7176323 z M8.6268568,5.1090584 L5.3630495,6.4971747 L5.3630495,45.170254 L8.6326561,47.063282 L12.004868,45.170254 L12.004868,6.4971747 z M4.2139926,0.5 L47.158081,0.5 L47.229294,3.3240128 L50.094105,5.4071083 L53.5,5.4350424 L53.5,63.5 L3.9077821,63.5 L1.1768882,61.354656 L0.5,58.183895 L0.5,5.1172771 L1.8080707,2.2619166 z" 
+                      Fill="{StaticResource WhiteFill}" Margin="12,10" Stretch="Fill" />
+            </Grid>
+            <TextBlock Margin="15 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="SELL ONLINE" FontFamily="Segoe UI" FontSize="18" Foreground="{StaticResource WhiteFill}" />
+        </Grid>
+		<StackPanel Margin="40,0" Height="149" VerticalAlignment="Bottom">
+			<telerik:Label Content="Starting price:" Padding="0 3" IsTabStop="False" />
+			<telerik:RadNumericUpDown Margin="0 0 0 8" 
+                                      Value="{Binding StartingPrice, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
+                                      UpdateValueToMatchTextOnLostFocus="True"
+                                      ValueFormat="Currency" Minimum="0" />
+			<telerik:Label Content="Buyout Price:" Padding="0 3" IsTabStop="False" />
+			<telerik:RadNumericUpDown Margin="0 0 0 8" NullValue="inactive" 
+                                      Value="{Binding BuyoutPrice, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
+                                      UpdateValueToMatchTextOnLostFocus="True"
+                                      ValueFormat="Currency" Minimum="0" />
+			<telerik:RadButton Margin="0 6" Content="Open Auction" MinWidth="84" Padding="16 3" HorizontalAlignment="Left" Command="{Binding OpenAuction}" />
+		</StackPanel>
+	</Grid>
+	
+</UserControl>

@@ -1,0 +1,4 @@
+This example illustrates the use of annotations with custom fields to achieve structured content editing scenario.
+
+A similar approach should be employed when there is a need to store semantic user data into the document. The information can be easily obtained, manipulated and saved through XamlFormatProvider or a custom format provider.
+This new feature can be combined with protected regions in order to allow modifications only in limited parts of the recipes.

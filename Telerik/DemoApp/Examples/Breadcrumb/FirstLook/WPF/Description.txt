@@ -1,0 +1,1 @@
+﻿Do you need to build complicated navigation systems that allow you to track the navigation history? With RadBreadcrumb you can achieve all of this and much more. With its powerful databinding mechanism, the control lets you display hierarchical structures, such as directories and relational data.

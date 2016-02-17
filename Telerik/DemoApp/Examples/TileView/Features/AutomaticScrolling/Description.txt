@@ -1,0 +1,1 @@
+﻿This example demonstrates the automatic scrolling feature implemented in the RadTileView control. You can drag an item near the end of the viewable area and stay there for a moment – the automatic scrolling will start immediately.

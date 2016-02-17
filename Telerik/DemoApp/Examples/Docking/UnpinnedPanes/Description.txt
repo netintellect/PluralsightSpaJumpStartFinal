@@ -1,0 +1,1 @@
+﻿With the Telerik <b>Docking</b> control you can start the panes in an unpinned state when the panes are first displayed. Thus, you can use the panes as sliding navigation bars to display content on demand - when the user hovers the  panes' headers in the <b>AutoHide</b> area.

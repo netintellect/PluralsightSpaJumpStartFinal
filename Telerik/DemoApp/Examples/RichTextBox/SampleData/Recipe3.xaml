@@ -1,0 +1,223 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" xmlns:r="clr-namespace:Telerik.Windows.Documents.Model.Revisions;assembly=Telerik.Windows.Documents" xmlns:n="clr-namespace:Telerik.Windows.Documents.Model.Notes;assembly=Telerik.Windows.Documents" xmlns:th="clr-namespace:Telerik.Windows.Documents.Model.Themes;assembly=Telerik.Windows.Documents" xmlns:custom1="clr-namespace:Telerik.Windows.Examples.RichTextBox.StructuredContentEditing;assembly=RichTextBox" version="1.3" LayoutMode="Flow" LineSpacing="1.14999997615814" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="13.3333330154419" ParagraphDefaultSpacingBefore="0" SectionDefaultPageSize="816,1056" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+    <t:RadDocument.Captions>
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Figure" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Table" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+    </t:RadDocument.Captions>
+    <t:RadDocument.Lists>
+        <t:ListSerializationData ID="1" StyleID="1" />
+        <t:ListSerializationData ID="2" StyleID="2" />
+    </t:RadDocument.Lists>
+    <t:RadDocument.ListStyles>
+        <t:ListStyle ID="1" IsDefault="False">
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Symbol" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="o" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Courier New" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="" NumberingFormat="Bullet" StartingIndex="1">
+                <t:ListLevelStyle.SpanStyle>
+                    <s:SpanProperties FontFamily="Wingdings" />
+                </t:ListLevelStyle.SpanStyle>
+            </t:ListLevelStyle>
+        </t:ListStyle>
+        <t:ListStyle ID="2" IsDefault="False">
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{0}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{1}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{2}." NumberingFormat="LowerRoman" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{3}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{4}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{5}." NumberingFormat="LowerRoman" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{6}." NumberingFormat="Decimal" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{7}." NumberingFormat="LowerLetter" StartingIndex="1" />
+            <t:ListLevelStyle HangingIndent="24" Indent="0" LevelText="{}{8}." NumberingFormat="LowerRoman" StartingIndex="1" />
+        </t:ListStyle>
+    </t:RadDocument.ListStyles>
+    <t:RadDocument.ProtectionSettings>
+        <t:DocumentProtectionSettings EnableDocumentProtection="True" Enforce="True" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+    </t:RadDocument.ProtectionSettings>
+    <t:RadDocument.Styles>
+        <s:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="True" Name="defaultDocumentStyle" Type="Default">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties LineSpacing="1.14999997615814" LineSpacingType="Auto" SpacingAfter="13.3333330154419" />
+            </s:StyleDefinition.ParagraphStyle>
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontSize="14.6666669845581" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Default Paragraph Font" IsCustom="False" IsDefault="True" IsPrimary="True" Name="DefaultParagraphFont" Type="Character" />
+        <s:StyleDefinition BasedOnName="Normal" DisplayName="heading 1" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading1Char" Name="Heading1" Type="Paragraph" UIPriority="9">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties SpacingAfter="0" SpacingBefore="32" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 1 Char" IsCustom="True" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading1" Name="Heading1Char" Type="Character" UIPriority="0">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontSize="18.6666660308838" FontWeight="Bold" ForeColor="#FF365F91" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition BasedOnName="Normal" DisplayName="heading 2" IsCustom="False" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading2Char" Name="Heading2" Type="Paragraph" UIPriority="9">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties SpacingAfter="0" SpacingBefore="13.3333330154419" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition BasedOnName="DefaultParagraphFont" DisplayName="Heading 2 Char" IsCustom="True" IsDefault="False" IsPrimary="True" LinkedStyleName="Heading2" Name="Heading2Char" Type="Character" UIPriority="0">
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontSize="17.3333339691162" FontWeight="Bold" ForeColor="#FF4F81BD" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition BasedOnName="Normal" DisplayName="List Paragraph" IsCustom="False" IsDefault="False" IsPrimary="True" Name="ListParagraph" Type="Paragraph">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties LeftIndent="48" />
+            </s:StyleDefinition.ParagraphStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="No List" IsCustom="False" IsDefault="True" IsPrimary="True" Name="NoList" Type="Numbering" />
+        <s:StyleDefinition DisplayName="Normal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="Normal" Type="Paragraph" UIPriority="0" />
+        <s:StyleDefinition DisplayName="Normal Table" IsCustom="False" IsDefault="True" IsPrimary="True" Name="TableNormal" Type="Table" UIPriority="59">
+            <s:StyleDefinition.TableStyle>
+                <s:TableProperties CellPadding="7,0,7,0">
+                    <s:TableProperties.TableLook>
+                        <t:TableLook />
+                    </s:TableProperties.TableLook>
+                </s:TableProperties>
+            </s:StyleDefinition.TableStyle>
+        </s:StyleDefinition>
+    </t:RadDocument.Styles>
+    <t:Section PageMargin="94,94,94,94">
+        <t:Paragraph LineSpacing="1" StyleName="Heading1">
+            <t:PermissionRangeStart AnnotationID="1">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <custom1:RecipeRangeStart AnnotationID="2" Name="fn" />
+            <t:Span FontSize="32" FontWeight="Normal" ForeColor="#FF92D050" Text="POMMES FRITES" />
+            <custom1:RecipeRangeEnd AnnotationID="2" />
+            <t:PermissionRangeEnd AnnotationID="1" />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <custom1:RecipeRangeStart AnnotationID="3" Name="summary" />
+            <t:PermissionRangeStart AnnotationID="4">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <t:Span FontSize="12" ForeColor="#FF632523" Text="Pommes frites originate in outer space. They are served hot." />
+            <t:Break BreakType="LineBreak" Text="¬" />
+            <t:PermissionRangeEnd AnnotationID="4" />
+            <custom1:RecipeRangeEnd AnnotationID="3" />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:Span Text="Author: " ForeColor="#FF838383" FontSize="11" FontWeight="Bold"/>
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <custom1:RecipeRangeStart AnnotationID="5" Name="author" />
+            <t:PermissionRangeStart AnnotationID="6">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <t:Span FontSize="13.33" Text="CJ Tom" />
+            <t:PermissionRangeEnd AnnotationID="6" />
+            <custom1:RecipeRangeEnd AnnotationID="5" />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:Span Text="Ingredients:" ForeColor="#FF838383" FontSize="11" FontWeight="Bold"/>
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" FontSize="13.33" LeftIndent="48" LineSpacing="1" ListId="1" StyleName="ListParagraph">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:PermissionRangeStart AnnotationID="7">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <custom1:RecipeRangeStart AnnotationID="8" Name="ingredient" />
+            <t:Span FontSize="13.33" Text="500 grams potatoes, hard cooking." />
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" FontSize="13.33" LeftIndent="48" LineSpacing="1" ListId="1" RightIndent="0" StyleName="ListParagraph">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontSize="13.33" Text="1 spoonful of salt." />
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" LeftIndent="48" LineSpacing="1" ListId="1" RightIndent="0" StyleName="ListParagraph">
+            <t:Span FontSize="13.33" Text="Ketchup and mayonnaise." />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:PermissionRangeEnd AnnotationID="7" />
+            <custom1:RecipeRangeEnd AnnotationID="8" />
+            <t:Span Text="Instructions:" ForeColor="#FF838383" FontSize="11" FontWeight="Bold"/>
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" FontSize="13.33" LeftIndent="48" LineSpacing="1" ListId="2" StyleName="ListParagraph">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:PermissionRangeStart AnnotationID="9">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <custom1:RecipeRangeStart AnnotationID="10" Name="instructions" />
+            <t:Span FontSize="13.33" Text="Wash the potatoes." />
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" FontSize="13.33" LeftIndent="48" LineSpacing="1" ListId="2" RightIndent="0" StyleName="ListParagraph">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontSize="13.33" Text="Slice and dice them and put them in boiling fat." />
+        </t:Paragraph>
+        <t:Paragraph FirstLineIndent="-24" LeftIndent="48" LineSpacing="1" ListId="2" RightIndent="0" StyleName="ListParagraph">
+            <t:Span FontSize="13.33" Text="After a few minutes take them out again." />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:PermissionRangeEnd AnnotationID="9" />
+            <custom1:RecipeRangeEnd AnnotationID="10" />
+            <t:Span Text="Further details:" ForeColor="#FF838383" FontSize="11" FontWeight="Bold"/>
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:PermissionRangeStart AnnotationID="11">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <custom1:RecipeRangeStart AnnotationID="12" Name="yield" />
+            <t:Span FontSize="13.33" Text="Enough for 12 children." />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1">
+            <t:PermissionRangeEnd AnnotationID="11" />
+            <custom1:RecipeRangeEnd AnnotationID="12" />
+            <t:Span Text="Preparation time: " ForeColor="#FF838383" FontSize="11" FontWeight="Bold"/>
+            <custom1:RecipeRangeStart AnnotationID="13" Name="duration" />
+            <t:PermissionRangeStart AnnotationID="14">
+                <t:PermissionRangeInfo Type="Everyone" />
+            </t:PermissionRangeStart>
+            <t:Span FontSize="13.33" Text="approximately 90 minutes." />
+            <t:PermissionRangeEnd AnnotationID="14" />
+            <custom1:RecipeRangeEnd AnnotationID="13" />
+        </t:Paragraph>
+    </t:Section>
+</t:RadDocument>

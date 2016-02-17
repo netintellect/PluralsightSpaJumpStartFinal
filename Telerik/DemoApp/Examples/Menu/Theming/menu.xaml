@@ -1,0 +1,187 @@
+﻿<menuModel:MenuItemsCollection xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:menuModel="clr-namespace:Examples.Menu.Common;assembly=Menu">
+
+	<menuModel:MenuItem Text="File">
+		<menuModel:MenuItem Text="New Tab" ImageUrl="../../Images/Menu/11new.png" />
+        <menuModel:MenuItem Text="New Window" ImageUrl="../../Images/Menu/11new.png" />
+        <menuModel:MenuItem Text="Open" ImageUrl="../../Images/Menu/12open.png" />
+		<menuModel:MenuItem Text="Edit with Microsoft Office Word" />
+		<menuModel:MenuItem Text="Save" />
+        <menuModel:MenuItem Text="Save As..." ImageUrl="../../Images/Menu/13Save.png" />
+		<menuModel:MenuItem Text="Close Tab" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Page Setup..." />
+		<menuModel:MenuItem Text="Print..." ImageUrl="../../Images/Menu/16print.png" />
+		<menuModel:MenuItem Text="Print Preview..." ImageUrl="../../Images/Menu/15printPreview.png" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Send" />
+		<menuModel:MenuItem Text="Import and Export...">
+			<menuModel:MenuItem Text="Page by E-mail..." />
+			<menuModel:MenuItem Text="Link by E-mail..." />
+			<menuModel:MenuItem Text="Shortcut to Desktop" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Properties" />
+		<menuModel:MenuItem Text="Work Offline" />
+		<menuModel:MenuItem Text="Exit" />
+	</menuModel:MenuItem>
+
+	<menuModel:MenuItem Text="Edit">
+		<menuModel:MenuItem Text="Cut" ImageUrl="../../Images/Menu/19cut.png" />
+		<menuModel:MenuItem Text="Copy" ImageUrl="../../Images/Menu/22copy.png" />
+		<menuModel:MenuItem Text="Paste" ImageUrl="../../Images/Menu/20paste.png" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Select All" />
+		<menuModel:MenuItem Text="Find on this Page..." ImageUrl="../../Images/Menu/24find.png" />
+	</menuModel:MenuItem>
+
+	<menuModel:MenuItem Text="View">
+		<menuModel:MenuItem Text="ToolBars">
+			<menuModel:MenuItem Text="Menu Bar" />
+			<menuModel:MenuItem Text="Links" />
+			<menuModel:MenuItem IsSeparator="true" />
+			<menuModel:MenuItem Text="Lock the Toolbars" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Status Bar" />
+		<menuModel:MenuItem Text="Quick Tabs" />
+		<menuModel:MenuItem Text="Explorer Bar">
+			<menuModel:MenuItem Text="Favourites" />
+			<menuModel:MenuItem Text="History" />
+			<menuModel:MenuItem Text="Feeds" />
+			<menuModel:MenuItem Text="Groove Folder Synchronization" />
+			<menuModel:MenuItem Text="Research" />
+			<menuModel:MenuItem IsSeparator="true" />
+			<menuModel:MenuItem Text="Discuss" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Go To">
+			<menuModel:MenuItem Text="Back" />
+			<menuModel:MenuItem Text="Forward" />
+			<menuModel:MenuItem Text="Home Page" />
+			<menuModel:MenuItem Text="Current Page" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Stop" />
+		<menuModel:MenuItem Text="Refresh" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Text Size">
+			<menuModel:MenuItem Text="Largest" />
+			<menuModel:MenuItem Text="Larger" />
+			<menuModel:MenuItem Text="Medium" />
+			<menuModel:MenuItem Text="Smaller" />
+			<menuModel:MenuItem Text="Smallest" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Encoding">
+			<menuModel:MenuItem Text="Auto-Select" />
+			<menuModel:MenuItem Text="Cyrillic (Windows)" />
+			<menuModel:MenuItem Text="Unicode (UTF-8)" />
+			<menuModel:MenuItem Text="More">
+				<menuModel:MenuItem Text="Arabic (ASMO 708)" />
+				<menuModel:MenuItem Text="Arabic (DOS)" />
+				<menuModel:MenuItem Text="Arabic (ISO)" />
+				<menuModel:MenuItem Text="Arabic (Windows)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Central European (Dos)" />
+				<menuModel:MenuItem Text="Central European (ISO)" />
+				<menuModel:MenuItem Text="Central European (Windows)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Chinese Simplified (GB18030)" />
+				<menuModel:MenuItem Text="Chinese Simplified (GB2312)" />
+				<menuModel:MenuItem Text="Chinese Simplified (Windows)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Cyrillic (DOS)" />
+				<menuModel:MenuItem Text="Cyrillic (ISO)" />
+				<menuModel:MenuItem Text="Cyrillic (KOI8-R)" />
+				<menuModel:MenuItem Text="Cyrillic (KOI8-U)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Hebrew (DOS)" />
+				<menuModel:MenuItem Text="Hebrew (ISO-Logical)" />
+				<menuModel:MenuItem Text="Hebrew (ISO-Visual)" />
+				<menuModel:MenuItem Text="Hebrew (Windows)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Japanese (Auto-Select)" />
+				<menuModel:MenuItem Text="Japanese (EUC)" />
+				<menuModel:MenuItem Text="Japanese (Shift-JIS)" />
+				<menuModel:MenuItem IsSeparator="true" />
+				<menuModel:MenuItem Text="Western European (ISO)" />
+				<menuModel:MenuItem Text="Western European (Windows)" />
+			</menuModel:MenuItem>
+			<menuModel:MenuItem IsSeparator="true" />
+			<menuModel:MenuItem Text="Left-To-Right-Document" />
+			<menuModel:MenuItem Text="Right-To-Left-Document" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="ImageUrl" />
+		<menuModel:MenuItem Text="Security Reports" />
+		<menuModel:MenuItem Text="Internal Website Address" />
+		<menuModel:MenuItem Text="Web Page Privacy Policy..." />
+		<menuModel:MenuItem Text="Full Screen" />
+	</menuModel:MenuItem>
+
+	<menuModel:MenuItem Text="Favourites">
+		<menuModel:MenuItem Text="Add to Favourites..." />
+		<menuModel:MenuItem Text="Add Tab Group to Favourites..." />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Organize Favourites" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Links" ImageUrl="../../Images/Menu/1folder.png" />
+		<menuModel:MenuItem Text="Customize Links" />
+		<menuModel:MenuItem Text="Microsoft Websites" ImageUrl="../../Images/Menu/1folder.png">
+			<menuModel:MenuItem Text="IE Add-ons website" />
+			<menuModel:MenuItem Text="Marketplace" />
+			<menuModel:MenuItem Text="Microsoft at Work" />
+			<menuModel:MenuItem Text="Microsoft at Home" />
+			<menuModel:MenuItem Text="Welcome to IE7" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="MSN Websites" ImageUrl="../../Images/Menu/1folder.png">
+			<menuModel:MenuItem Text="MSN" />
+			<menuModel:MenuItem Text="MSN Autos" />
+			<menuModel:MenuItem Text="MSN Entertainment" />
+			<menuModel:MenuItem Text="MSN Sports" />
+			<menuModel:MenuItem Text="MSN Money" />
+			<menuModel:MenuItem Text="MSNBC News" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Telerik UI for Silverlight" />
+		<menuModel:MenuItem Text="Documents and Guidelines" />
+	</menuModel:MenuItem>
+
+	<menuModel:MenuItem Text="Tools">
+		<menuModel:MenuItem Text="Delete Browsing History..." />
+		<menuModel:MenuItem Text="Diagnose Connection Problems..." />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Pop-up Blocker">
+			<menuModel:MenuItem Text="Block Pop-ups from this Site" />
+			<menuModel:MenuItem IsSeparator="true" />
+			<menuModel:MenuItem Text="Turn Off Pop-up Blocker" />
+			<menuModel:MenuItem Text="Pop-up Blocker Settings" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Phishing Filter">
+			<menuModel:MenuItem Text="Check this Website" />
+			<menuModel:MenuItem Text="Turn On Automatic Website Checking..." />
+			<menuModel:MenuItem Text="Report This WebSite" />
+			<menuModel:MenuItem Text="Psishing Filter Settings" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem Text="Manage Add-ons">
+			<menuModel:MenuItem Text="Enable or Disable Add-ons" />
+			<menuModel:MenuItem Text="Find more Add-ons" />
+		</menuModel:MenuItem>
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Subscribe to this Feed..." />
+		<menuModel:MenuItem Text="Feed Discovery" />
+		<menuModel:MenuItem Text="Windows Update" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Send to OneNote" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Internet Options" />
+	</menuModel:MenuItem>
+
+	<menuModel:MenuItem Text="Help">
+		<menuModel:MenuItem Text="Content and Index" ImageUrl="../../Images/Menu/3help.png" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="Internet Explorer Tour" />
+		<menuModel:MenuItem Text="Online Support" />
+		<menuModel:MenuItem Text="Send Feedback" />
+		<menuModel:MenuItem IsSeparator="true" />
+		<menuModel:MenuItem Text="About Internet Explorer" ImageUrl="../../Images/Menu/2about.png" />
+	</menuModel:MenuItem>
+</menuModel:MenuItemsCollection>

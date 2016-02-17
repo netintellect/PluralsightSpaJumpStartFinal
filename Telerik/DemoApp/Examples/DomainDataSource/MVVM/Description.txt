@@ -1,0 +1,1 @@
+﻿This sample demonstrates how you can use the QueryableDomainServiceCollectionView collection instead of the RadDomainDataSource control. Use this collection if you need a more MVVM-friendly architecture. As a matter of fact, the RadDomainDataSource controls uses this same collection internally and is just a thin wrapper over it. 

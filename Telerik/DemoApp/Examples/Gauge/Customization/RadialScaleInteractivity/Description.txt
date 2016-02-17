@@ -1,0 +1,1 @@
+﻿Setting the <b>IsInteractive</b> property to <b>true</b> enables setting the indicator’s value through mouse left-click. That also enables dragging the Needle, Marker or the Bar indicator along the scale.

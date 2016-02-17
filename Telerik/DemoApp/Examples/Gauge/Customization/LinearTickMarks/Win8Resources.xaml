@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{Binding Path=Palette.AccentColor, Source={StaticResource Windows8Colors}}" />
+    <Style TargetType="telerik:LinearScaleMarker" BasedOn="{StaticResource MarkerStyle}">
+        <Setter Property="telerik:ScaleObject.RelativeHeight" Value="0.03*" />
+        <Setter Property="telerik:ScaleObject.RelativeWidth" Value="0.08*" />
+    </Style>
+
+    <system:Double x:Key="imageWidth">14</system:Double>
+    <system:Double x:Key="imageHeight">16</system:Double>
+    <system:Double x:Key="fontSize">12</system:Double>
+</ResourceDictionary>

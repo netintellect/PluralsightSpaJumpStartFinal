@@ -1,0 +1,1 @@
+In this example you can see the RadCalendar styled in all Telerik themes. Just use the theme selector below.

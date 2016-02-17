@@ -1,0 +1,1 @@
+﻿The Slider control is fully customizable in terms of UI. Besides the rich configuration capabilities, you can also customize the UI of the control to make it fit your very custom design. This example shows how to build a color picker using the Slider's UI customization capabilities.

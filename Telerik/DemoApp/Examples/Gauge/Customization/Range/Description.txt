@@ -1,0 +1,3 @@
+﻿The Gauge’s Range elements represent a continuous set of values on a scale. Every <b>Range</b> has a maximum and a minimum value, and can fire event when indicator enters, leaves or stays in the range for a specified period of time. Range appearance can be changed using <b>StartWidth</b>, <b>EndWidth</b>, <b>Location</b> (range location around scale bar) and the brushes used to draw range bar.
+
+The gauge scale can be reversed to show values in the opposite sequence (maximum to minimum).

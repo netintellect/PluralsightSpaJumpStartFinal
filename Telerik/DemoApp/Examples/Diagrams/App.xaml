@@ -1,0 +1,24 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Diagrams.App"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:dashboard="clr-namespace:Telerik.Windows.Examples.Diagrams.Dashboard">
+	<Application.Resources>
+        <Style x:Key="RadDiagramConnectorStyle" TargetType="telerik:RadDiagramConnector" />
+        <Style x:Key="RadDiagramConnectionStyle" TargetType="telerik:RadDiagramConnection" />
+		<Style x:Key="RadGeometryButtonStyle" TargetType="telerik:RadGeometryButton" />
+		<Style x:Key="RadGeometryToggleButtonStyle" TargetType="telerik:RadGeometryToggleButton" />
+		<Style x:Key="RadDiagramStyle" TargetType="telerik:RadDiagram" />
+		<Style x:Key="RadTreeViewItemStyle" TargetType="telerik:RadTreeViewItem" />
+		<Style x:Key="RadDiagramShapeStyle" TargetType="telerik:RadDiagramShape" />
+        <Style x:Key="RadDiagramContainerShapeStyle" TargetType="telerik:RadDiagramContainerShape" />
+		<Style x:Key="RadListBoxItemStyle" TargetType="telerik:RadListBoxItem" />
+		<Style x:Key="RadPanelBarItemStyle" TargetType="telerik:RadPanelBarItem" />
+        <Style x:Key="RadMenuStyle" TargetType="telerik:RadMenu" />        
+        <Style x:Key="RadRadioButtonStyle" TargetType="telerik:RadRadioButton" />
+        <Style x:Key="RadButtonStyle" TargetType="telerik:RadButton" />
+		<Style x:Key="RadGeometryDropDownButtonStyle" TargetType="telerik:RadGeometryDropDownButton" />
+        <Style x:Key="RadWindowStyle" TargetType="telerik:RadWindow" />
+        <SolidColorBrush x:Key="AccentBrush" Color="Orange" />
+        <SolidColorBrush x:Key="BasicBrush" Color="DarkGray" />
+    </Application.Resources>
+</Application>

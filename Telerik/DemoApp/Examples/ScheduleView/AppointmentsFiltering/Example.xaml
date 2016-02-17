@@ -1,0 +1,53 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.AppointmentsFiltering.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.AppointmentsFiltering">
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel"
+				AppointmentsSource="/ScheduleView;component/DataSources/TvSchedule/Appointments.xaml" />
+	</UserControl.Resources>
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Appointments filtering" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Orientation="Vertical" DataContext="{StaticResource ViewModel}">
+
+			<TextBlock Text="Select programme: " />
+			<telerik:RadComboBox ItemsSource="{Binding ResourcesProgrammes}" 
+								 SelectedItem="{Binding SelectedProgramme, Mode=TwoWay}" 
+								 EmptyText="All"
+								 ClearSelectionButtonVisibility="Visible" 
+								 ClearSelectionButtonContent="Show all" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+
+		<scheduleView:RadScheduleView AppointmentsSource="{Binding Appointments}" 
+									  ResourceTypesSource="{Binding ResourceTypes}"
+									  FirstVisibleTime="6:00">
+			<scheduleView:RadScheduleView.GroupDescriptionsSource>
+				<scheduleView:GroupDescriptionCollection>
+					<scheduleView:DateGroupDescription />
+					<scheduleView:ResourceGroupDescription ResourceType="TV" />
+				</scheduleView:GroupDescriptionCollection>
+			</scheduleView:RadScheduleView.GroupDescriptionsSource>
+
+
+			<!-- TODO: Add different styles for the different resources and for the different importance levels. -->
+			<scheduleView:RadScheduleView.ViewDefinitions>
+				<scheduleView:DayViewDefinition AppointmentFilter="{Binding AppoitmentsFilter}" />
+				<scheduleView:WeekViewDefinition AppointmentFilter="{Binding AppoitmentsFilter}" />
+				<scheduleView:MonthViewDefinition AppointmentFilter="{Binding AppoitmentsFilter}" />
+				<scheduleView:TimelineViewDefinition AppointmentFilter="{Binding AppoitmentsFilter}" MinTimeRulerExtent="16800" />
+			</scheduleView:RadScheduleView.ViewDefinitions>
+		</scheduleView:RadScheduleView>
+	</Grid>
+</UserControl>

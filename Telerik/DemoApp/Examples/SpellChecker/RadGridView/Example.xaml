@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.SpellChecker.RadGridView.Example" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d"
+    d:DesignWidth="700" d:DesignHeight="400">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Margin="8" Text="Spell Checking RadGridView" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="This column demonstrates the approach of manual triggering of spell checking - perfect when there are complex cell edit templates." Margin="10" />
+        <TextBlock TextWrapping="Wrap" Text="This column demonstrates automatic spell checking when cell edit template contains single control that supports it." Margin="10" Grid.Column="1" />
+        <telerik:RadGridView telerik:RadGridViewSpellCheckHelper.IsSpellCheckingEnabled="True" x:Name="radGridView" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" ItemsSource="{Binding}" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Manual triggering of spell checking" Width="*" IsResizable="False">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <telerik:RadRichTextBox x:Name="radRichTextBox1" Background="Transparent" VerticalScrollBarVisibility="Hidden"
+                                                        Height="100" BorderThickness="0" IsReadOnly="True"
+                                                        IsSelectionEnabled="False" IsHitTestVisible="False" IsSpellCheckingEnabled="False"
+                                                        IsContextMenuEnabled="False" IsSelectionMiniToolBarEnabled="False"
+                                                        telerik:XamlDataProvider.Source="{Binding JobDescription, Mode=TwoWay}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.CellEditTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <telerik:RadRichTextBox Background="Transparent" IsSpellCheckingEnabled="False" Height="100" x:Name="radRichTextBox2"
+                                                        IsSelectionMiniToolBarEnabled="False" IsContextMenuEnabled="False"
+                                                        telerik:XamlDataProvider.Source="{Binding JobDescription, Mode=TwoWay}"/>
+                                <telerik:RadButton Grid.Row="1" Content="Check Spelling" Name="spellcheckRRTBButton" Click="spellcheckRRTBButton_Click" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellEditTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Automatic spell checking" Width="*" telerik:RadGridViewSpellCheckHelper.IsSpellCheckingEnabled="True">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding EmployeeDescription}" Height="100" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.CellEditTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding EmployeeDescription, Mode=TwoWay}" Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellEditTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

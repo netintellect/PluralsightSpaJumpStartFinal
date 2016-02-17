@@ -1,0 +1,1 @@
+﻿The Inverse Axes feature allows the axes values of RadChart to be inverted. In this example the <strong>IsInverse</strong> property of the AxisY is set to True.

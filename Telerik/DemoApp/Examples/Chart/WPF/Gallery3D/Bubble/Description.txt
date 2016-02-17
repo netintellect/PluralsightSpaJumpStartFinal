@@ -1,0 +1,7 @@
+﻿This example shows a 3D Bubble chart. You can customize the Bubble chart options via the properties of the Bubble3DSeriesDefinition object instance:
+
+Bubble3DSeriesDefinition.BubbleSizeRepresents - indicates whether the bubble size should be interpreted as the bubble diameter, the bubble area, or the bubble volume (linear, quadratic, or cubic dependence respectively).
+
+Bubble3DSeriesDefinition.BubbleSizeRelative - indicates whether the bubble size should be interpreted as relative to the available ChartArea, or as an absolute value in device-independent pixels.
+
+Bubble3DSeriesDefinition.CustomScaleFactor - indicates a custom scale factor that should be applied to the bubble dimensions.<br/>

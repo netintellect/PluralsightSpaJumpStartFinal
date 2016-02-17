@@ -1,0 +1,1 @@
+﻿This example demonstrates paging using the RadDataPager. In this example the Source property of the pager is bound to the Items property of the grid, which is an IPagedCollectionView. You can configure the pager by using the controls on the right.

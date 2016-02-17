@@ -1,0 +1,3 @@
+﻿Telerik MediaPlayer allows you to easily extend its functionality using the built-in <b>MediaCommands</b> and the Command pattern. The <b>MediaCommands</b> can be executed by different Buttons to create a custom video panel as demonstrated in this example.
+<br/>
+RadMediaPlayer is a part of the <b>Telerik.Windows.Controls.MediaPlayer</b> assembly.

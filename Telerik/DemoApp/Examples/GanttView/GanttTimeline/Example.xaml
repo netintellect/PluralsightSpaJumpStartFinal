@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.GanttTimeline.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  
+	xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.GanttTimeline"
+    xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    mc:Ignorable="d">
+	<UserControl.DataContext>
+		<local:ViewModel/>
+	</UserControl.DataContext>
+	<UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        
+        <SolidColorBrush x:Key="GreyBrush" Color="#FF767676" />
+		<SolidColorBrush x:Key="LightGreyBrush" Color="#FFD6D4D4" />
+
+		<DataTemplate x:Key="ToolTipTemplate">
+			<Grid MaxWidth="500" Background="White">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Border BorderBrush="{StaticResource LightGreyBrush}" BorderThickness="1" Grid.ColumnSpan="2" />
+					<Grid HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="8 9 0 0" Width="40" Height="40">
+						<Path Stroke="{StaticResource AccentBrush}" 
+							  Data="M23.5,12 C23.5,18.351274 18.351274,23.5 12,23.5 C5.6487255,23.5 0.5,18.351274 0.5,12 C0.5,5.6487255 5.6487255,0.5 12,0.5 C18.351274,0.5 23.5,5.6487255 23.5,12 z" 
+							  Stretch="Fill" StrokeThickness="1" />
+					<Path Data="{Binding GenreIcon}" Fill="{StaticResource AccentBrush}" RenderTransformOrigin="0.5 0.5" Stretch="Fill" 
+							  Width="{Binding GenreIconWidth}" 
+							  Height="{Binding GenreIconHeight}">
+						<Path.RenderTransform>
+							<RotateTransform Angle="{Binding GenreIconRotation}" />
+						</Path.RenderTransform>
+					</Path>
+				</Grid>
+				
+				<StackPanel Grid.Column="1" Margin="8 10 12 0">
+					<TextBlock Text="{Binding Title}" FontSize="23" FontFamily="Segoe UI Light" Foreground="{StaticResource AccentBrush}" />
+					<TextBlock Text="{Binding Genre}" FontSize="13" Margin="0 2" FontWeight="Bold" FontFamily="Segoe UI" Foreground="{StaticResource GreyBrush}" />
+					<TextBlock Text="{Binding Description}" FontSize="12" TextWrapping="Wrap" FontFamily="Segoe UI" Foreground="{StaticResource GreyBrush}" />
+					<StackPanel Orientation="Horizontal" Margin="0 3 0 10">
+						<TextBlock Text="Release Date - " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}"/>
+						<TextBlock Text="{Binding ReleaseDate, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GreyBrush}" />
+					</StackPanel>
+				</StackPanel>
+			</Grid>	
+		</DataTemplate>
+	</UserControl.Resources>
+	
+    <qsf:QuickStart.ExampleHeader>
+        <TextBlock Text="Gantt Timeline Example" Margin="8" />
+    </qsf:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="160"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<telerik:RadTimeline x:Name="timeLine"
+                PeriodStart="{Binding StartDate, Mode=TwoWay}"
+				PeriodEnd="{Binding EndDate, Mode=TwoWay}"
+                StartPath="StartFilmingDate"
+                DurationPath="FilmingDuration"
+                VisiblePeriodStart="{Binding StartDate, Mode=TwoWay}"
+				VisiblePeriodEnd="{Binding EndDate, Mode=TwoWay}" 
+                SelectionMode="Single"
+                ScrollMode="None"
+                IsSelectionEnabled="True"
+                ItemsSource="{Binding Movies}"
+                SelectionChanged="timeLine_SelectionChanged" 
+                SelectedItem="{Binding SelectedMovie, Mode=TwoWay}"
+                ToolTipTemplate="{StaticResource ToolTipTemplate}">
+			<telerik:RadTimeline.Intervals>
+				<telerik:DecadeInterval IntervalSpans="1"/>
+				<telerik:YearInterval IntervalSpans="3" />
+				<telerik:MonthInterval />
+				<telerik:WeekInterval />
+				<telerik:DayInterval />
+			</telerik:RadTimeline.Intervals>
+		</telerik:RadTimeline>
+		<telerik:RadGanttView x:Name="ganttView" TasksSource="{Binding Tasks}"
+                    BorderBrush="#FFD6D4D4" BorderThickness="1 0 1 1"          
+                    Grid.Row="1" Margin="8" SelectedItem="{Binding SelectedTask, Mode=TwoWay}"
+				    VisibleRange="{Binding VisibleRange}" PixelLength="00:40:00"
+					InitialExpandBehavior="Collapsed" Loaded="OnGanttLoaded">
+			<telerik:RadGanttView.Columns>
+				<telerik:TreeColumnDefinition MemberBinding="{Binding Title}" Header="Title" Width="160" IsFrozenColumn="True"/>
+				<telerik:ColumnDefinition Header="Start" MemberBinding="{Binding Start}" Width="140"/>
+			</telerik:RadGanttView.Columns>
+			<telerik:RadGanttView.TimeRulerLines>
+				<telerik:GroupTickLine>
+					<telerik:TickInterval Interval="OneWeek" FormatString="{}{0:MMM dd, yyyy}"/>
+                </telerik:GroupTickLine>
+				<telerik:MajorTickLine>
+					<telerik:TickInterval Interval="OneDay" FormatString="{}{0:ddd}"/>
+				</telerik:MajorTickLine>
+			</telerik:RadGanttView.TimeRulerLines>
+			<telerik:RadGanttView.ResizeBehavior>
+				<local:CustomResizeBehavior/>
+			</telerik:RadGanttView.ResizeBehavior>
+			<telerik:RadGanttView.DragDropBehavior>
+				<local:CustomDragDropBehavior/>
+			</telerik:RadGanttView.DragDropBehavior>
+		</telerik:RadGanttView>
+	</Grid>
+</UserControl>

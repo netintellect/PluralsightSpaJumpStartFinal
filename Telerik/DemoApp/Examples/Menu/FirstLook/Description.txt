@@ -1,0 +1,3 @@
+﻿Telerik Menu lets you build complicated site menu systems, while keeping it simple for the end user. The control is fully customizable, allowing you to create anything your imagination can conceive while keeping all advanced menu functionalities, such as: Hierarchical Data Binding, Rich Programming Model, Boundary Detection, Checkable Items, Vertical Orientation, Click To Open and many more.
+
+RadMenu is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

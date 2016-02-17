@@ -1,0 +1,1 @@
+﻿RadDataServiceDataSource allows you to consume OData feeds codelessly. This sample demonstrates the seamless integration between RadGridView, RadDataPager and RadDataServiceDataSource.

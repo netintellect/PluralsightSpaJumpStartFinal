@@ -1,0 +1,1 @@
+﻿Telerik RadScheduleView is easily globalized. The localization mechanism of RadScheduleView lets you adjust the control to any culture. To see it in action simply change the culture using the combobox in the configuration area on the right.

@@ -1,0 +1,1 @@
+﻿RadPropertyGrid enables the user to edit properties of other controls as well as the underlying data items. This example illustrates how you may update the RowDetails of a RadGridView by editing the corresponding values in the RadPropertyGrid.

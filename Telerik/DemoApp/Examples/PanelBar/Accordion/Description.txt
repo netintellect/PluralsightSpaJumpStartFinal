@@ -1,0 +1,1 @@
+﻿The advanced UI customization capabilities of Telerik PanelBar allow you to achieve an Accordion-like layout by setting a single property. Thus, the control provides an expandable and collapsible view of accordion panels. All you need to do to achieve this layout is set the RadPanelBar's <b>Orientation</b> property to <b>Horizontal</b>.

@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Buttons.FirstLook.UIControls.ActiveStepSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid x:Name="ActiveStep" Opacity="0">
+			<Ellipse Width="14" Height="14" Fill="White" />
+			<Ellipse Width="10" Height="10" Fill="{telerik:Windows8Resource ResourceKey=AccentBrush}" />
+		</Grid>
+		<Grid x:Name="NotActiveStep" Opacity="0">
+			<Ellipse Width="10" Height="10" Fill="White" />
+		</Grid>
+	</Grid>
+</UserControl>

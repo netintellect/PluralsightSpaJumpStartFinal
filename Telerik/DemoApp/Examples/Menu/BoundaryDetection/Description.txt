@@ -1,0 +1,1 @@
+﻿Telerik RadMenu detects the plugin boundaries and opens its child items in the opposite direction when the screen boundaries are to be crossed. When there is not enough space in all directions, the control will adjust its items' position to make them visible whenever possible.

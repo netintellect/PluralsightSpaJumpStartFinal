@@ -1,0 +1,3 @@
+﻿Telerik ContextMenu provides RadDropDownButton and RadSplitButton integration. You can use ContextMenu as a DropDownContent for both controls.<br/><br/>With RadMenuGroupItem and RadMenuSeparatorItem you can further customize your ContextMenu.<br/>Using Icon, IconColumnWidth and IconTemplate makes it easy to beautify your ContextMenu. <br/>Make your item set scrollable by using DropDownHeight.
+<br/><br/>
+RadContextMenu is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

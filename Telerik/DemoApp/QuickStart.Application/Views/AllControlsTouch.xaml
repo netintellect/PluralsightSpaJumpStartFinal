@@ -1,0 +1,174 @@
+﻿<local:ViewBase
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		x:Class="Telerik.Windows.QuickStart.AllControlsTouch"
+		mc:Ignorable="d"
+		d:DesignHeight="800" d:DesignWidth="1024"
+        x:Name="rootAllControls">
+
+    <local:ViewBase.Resources>
+        <DataTemplate x:Key="normalItemTemplate">
+            <Grid Width="210" Height="110">
+                <Rectangle Fill="{StaticResource Tile.Background}">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.4"  BlurRadius="5" Direction="285" ShadowDepth="2" />
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Rectangle Fill="{x:Null}" Stroke="White" StrokeThickness="1" Margin="1"  Opacity="0.2"/>
+                <TextBlock Text="{Binding TouchExamples.Count}"  Style="{StaticResource TileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,10" />
+                <TextBlock Text="{Binding Name}"  Style="{StaticResource TileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="12,0,0,10" />
+                <Image Width="46" VerticalAlignment="Top" Margin="0,20,0,0"  Height="46" Source="{Binding ConverterParameter=46x46, Converter={StaticResource ControlToIconConverter}}"/>
+
+                <ContentPresenter ContentTemplateSelector="{StaticResource TouchControlStatusTemplateSelector}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="newItemTemplate">
+            <Grid Width="210" Height="110">
+                <Rectangle Fill="{StaticResource Tile.Background}">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.4"  BlurRadius="5" Direction="285" ShadowDepth="2" />
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Rectangle Fill="{x:Null}" Stroke="White" StrokeThickness="1" Margin="1"  Opacity="0.2"/>
+                <TextBlock Text="{Binding TouchExamples.Count}"  Style="{StaticResource TileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,10" />
+                <TextBlock Text="{Binding Name}"  Style="{StaticResource TileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="12,0,0,10" />
+                <Image Width="46" VerticalAlignment="Top" Margin="0,20,0,0"  Height="46" Source="{Binding ConverterParameter=46x46, Converter={StaticResource ControlToIconConverter}}"/>
+
+                <ContentPresenter ContentTemplateSelector="{StaticResource TouchControlStatusTemplateSelector}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="radTileListItemTemplate">
+            <Grid Width="210" Height="110">
+                <Rectangle Fill="{StaticResource HighlightedTile.Background}">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.4"  BlurRadius="5" Direction="285" ShadowDepth="2" />
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Rectangle Fill="{x:Null}" Stroke="White" StrokeThickness="1" Margin="1"  Opacity="0.2"/>
+                <TextBlock Text="{Binding TouchExamples.Count}"  Style="{StaticResource HighlightedTileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,10" />
+                <TextBlock Text="{Binding Name}"  Style="{StaticResource HighlightedTileTitleTextStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="12,0,0,10" />
+                <Image Width="46" VerticalAlignment="Top" Margin="0,20,0,0"  Height="46" Source="{Binding ConverterParameter=46x46, Converter={StaticResource ControlToIconConverter}}"/>
+
+                <ContentPresenter ContentTemplateSelector="{StaticResource TouchControlStatusTemplateSelector}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="tileGroupDataTemplate">
+            <Grid VerticalAlignment="Top" Height="70" Margin="0 -70 0 0"  RenderTransformOrigin="0.5,0">
+                <TextBlock Style="{StaticResource TitleTextStyle}" VerticalAlignment="Top" Margin="3 0 0 0" 
+                           Text="{Binding Name, Converter={StaticResource ControlsMajorGroupHeaderConverter}}" FontSize="26" />
+                <TextBlock Style="{StaticResource TileListGroupHeaderTextStyle}" VerticalAlignment="Bottom" Foreground="White"  Margin="3,1,0,10" Text="{Binding Name}" RenderTransformOrigin="0.5,0.5" />
+                <TextBlock Style="{StaticResource TileListGroupHeaderTextStyle}" VerticalAlignment="Bottom"  Margin="3,0,0,10" Text="{Binding Name}" RenderTransformOrigin="0.5,0.5" />
+            </Grid>
+        </DataTemplate>
+        <local:HighlightedControlsTouchItemTemplateSelector x:Key="highlightedControlsTouchItemTemplateSelector"
+                                                            NewItemTemplate="{StaticResource newItemTemplate}"
+                                                            HighlightedItemTemplate="{StaticResource radTileListItemTemplate}"
+                                                            NormalTemplate="{StaticResource normalItemTemplate}" />
+        <DataTemplate x:Key="SampleAppTemplate">
+            <Grid Width="210" Height="110">
+                <Rectangle Fill="{StaticResource HighlightedTile.Background}">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.4"  BlurRadius="5" Direction="285" ShadowDepth="2" />
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Image Source="{Binding ImageTouch}" Stretch="None" Cursor="Hand" />
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="Black" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+
+    </local:ViewBase.Resources>
+    <local:ViewBase.Style>
+        <StaticResource ResourceKey="ViewBaseTouchStyle"/>
+    </local:ViewBase.Style>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListView ItemsSource="{Binding SampleApps}" 
+                  Grid.Column="0" Grid.RowSpan="2" 
+                  Style="{StaticResource ControlsListViewStyle}"
+                  ItemTemplate="{StaticResource SampleAppTemplate}"
+                  local:SelectorHelper.SelectionChangedCommand="{Binding NavigateCommand}"
+                  local:SelectorHelper.SelectionChangedCommandParameter="{Binding SelectedItem.Url, RelativeSource={RelativeSource Self}}">
+            <ListView.GroupStyle>
+                <GroupStyle HeaderTemplate="{StaticResource tileGroupDataTemplate}">
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <StackPanel x:Name="stackPanel" Margin="57 187 0 40" VerticalAlignment="Stretch" Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" Margin="-5 0 0 0" Height="{Binding ActualHeight, ElementName=stackPanel}" VerticalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Auto" x:Name="allControlsTileList"  Grid.Column="1" Grid.RowSpan="2"
+            ItemsSource="{Binding AllControls}" 
+            ItemTemplateSelector="{StaticResource highlightedControlsTouchItemTemplateSelector}"
+            Style="{StaticResource ControlsListViewStyle}"
+            local:SelectorHelper.SelectionChangedCommand="{Binding NavigateCommand}"
+            local:SelectorHelper.SelectionChangedCommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Self}}">
+            <ListView.GroupStyle>
+                <GroupStyle HeaderTemplate="{StaticResource tileGroupDataTemplate}">
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <StackPanel x:Name="stackPanel" Margin="20,187,20,40" VerticalAlignment="Stretch"  Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" Margin="-5,0,20,0"  Height="{Binding ActualHeight, ElementName=stackPanel}"  VerticalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Grid Height="80" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="60 0 0 -8" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <Button x:Name="Logo" VerticalAlignment="Bottom" ContentTemplate="{StaticResource TelerikLogoTemplate}" Style="{StaticResource BlankButtonStyle}" Command="{Binding NavigateCommand}" CommandParameter="Home" />
+                    <Button x:Name="ReleaseNotes" Style="{StaticResource RealeaseNotesButtonStyle}" Margin="0 -5 0 0"  Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/support/whats-new/wpf/release-history" HorizontalAlignment="Right" />
+                </StackPanel>
+                
+                <Button x:Name="AllProducts" Grid.Column="1" Margin="13 0 0 8"
+                        Style="{StaticResource AllControlsHomeButtonStyle}" 
+                        Content="ALL _TELERIK PRODUCTS" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                        Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/support/demos" />
+            </StackPanel>
+            <StackPanel Margin="0,0,60,-5" VerticalAlignment="Bottom" ClipToBounds="False" HorizontalAlignment="Right" Orientation="Horizontal">
+                <ContentControl Style="{StaticResource ToolBarTouchContentControlStyle}"/>
+                <Button Margin="20,0,0,0"  Style="{DynamicResource SwitchToMouseModeButtonStyle}"  Command="{Binding ToggleApplicationTouchModeCommand}" CommandParameter="AllControls" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</local:ViewBase>

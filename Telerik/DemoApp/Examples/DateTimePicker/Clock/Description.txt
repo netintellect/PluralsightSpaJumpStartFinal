@@ -1,0 +1,1 @@
+﻿RadDateTimePicker can be used with different data sources while retaining the AP/PM format.

@@ -1,0 +1,95 @@
+<UserControl x:Class="RibbonWindowExample.Installer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <UserControl.Resources>
+        <BitmapImage x:Key="BackgroundImageSource"
+			UriSource="Images/RibbonBar/background.jpg" />
+        <Style TargetType="Border" x:Key="OtherProductsLinksBorder">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF51535F"/>
+                        <GradientStop Color="#FF16181E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="#FF4B4B4B" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid  x:Name="LayoutRoot">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Installed">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InstallPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InstalledPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="NotInstalled">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InstallPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InstalledPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Stretch="Fill" Source="{StaticResource BackgroundImageSource}" Grid.RowSpan="2" />
+        <Border Grid.Row="0" Height="22"  VerticalAlignment="Top" Style="{StaticResource OtherProductsLinksBorder}" />
+
+        <Border Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180"
+				Height="51" BorderThickness="1,0,1,1" CornerRadius="0,0,3,3">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF727692"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FFCCFF00"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Image x:Name="LogoImage" Source="Images/RibbonBar/TelerikWhiteLogo.png" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Border>
+
+        <Border Height="200" Width="500" BorderBrush="White" Grid.Row="1" BorderThickness="1"  VerticalAlignment="Center" HorizontalAlignment="Center"
+							Background="#FFEDEDED" CornerRadius="8">
+            <Grid Width="300" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="13"/>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel x:Name="InstallPanel" >
+                    <TextBlock Text="Click to install the example" Margin="0 0 0 10" />
+                    <telerik:RadButton Content="Install" Width="150" Height="30" Click="Button_Click" Padding="10 0"/>
+                </StackPanel>
+                <Grid x:Name="InstalledPanel" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="The Application is already installed." />
+                        <TextBlock Text="Please run it from the installed shortcut." />
+                        <TextBlock Text="Uninstall/re-install if needed." />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

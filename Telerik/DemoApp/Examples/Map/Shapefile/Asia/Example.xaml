@@ -1,0 +1,49 @@
+<UserControl x:Class="Telerik.Windows.Examples.Map.Shapefile.Asia.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Map.Shapefile"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <UserControl.Resources>
+        <example:ShapefileViewModel x:Key="DataContext" Region="asia" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Map of Asia" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" Width="784" Height="484">
+
+        <telerik:RadMap x:Name="RadMap1"
+                    Background="#D9E1FF"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    UseDefaultLayout="False"
+                    MouseClickMode="None" 
+                    MouseDoubleClickMode="None"
+                    ZoomLevel="2"
+                    Center="56.2677582128211, 103.095702131169"
+                    MinZoomLevel="2" 
+                    MaxZoomLevel="3">
+            <telerik:RadMap.Provider>
+                <telerik:EmptyProvider />
+            </telerik:RadMap.Provider>
+            <telerik:VisualizationLayer x:Name="InformationLayer">
+                <telerik:VisualizationLayer.Reader>
+                    <telerik:AsyncShapeFileReader Source="{Binding Source={StaticResource DataContext}, Path=ShapefileSourceUri}" 
+                                            DataSource="{Binding Source={StaticResource DataContext}, Path=ShapefileDataSourceUri}"
+                                            ToolTipFormat="CNTRY_NAME" />
+                </telerik:VisualizationLayer.Reader>
+                <telerik:VisualizationLayer.ShapeFill>
+                    <telerik:MapShapeFill Fill="#FFF7DE" Stroke="#5A636B" StrokeThickness="1" />
+                </telerik:VisualizationLayer.ShapeFill>
+                <telerik:VisualizationLayer.HighlightFill>
+                    <telerik:MapShapeFill Fill="#F7E7BD" Stroke="#5A636B" StrokeThickness="1" />
+                </telerik:VisualizationLayer.HighlightFill>
+            </telerik:VisualizationLayer>
+        </telerik:RadMap>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,5 @@
+﻿This example demonstrates the selection mechanism of RadPropertyGrid. Users can choose between three types of selection:
+
+1) Single - The user can select only one PropertyDefinition at a time.
+2) Multiple - The user can select or deselect multiple PropertyDefinition-s without using modifier keys (CONTROL, SHIFT).
+3) Extended - The user can select multiple PropertyDefinition-s while holding down the SHIFT key. Additionally the user can use the CONTROL key to mark individual rows as selected or unselected.

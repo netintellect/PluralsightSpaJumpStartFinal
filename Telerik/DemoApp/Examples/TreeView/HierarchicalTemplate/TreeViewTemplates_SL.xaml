@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TreeView.HierarchicalTemplate">
+
+	<SolidColorBrush Color="#d6d4d4" x:Key="BorderBrush" />
+
+	<Style TargetType="TextBlock" x:Key="TitleStyle">
+		<Setter Property="Foreground" Value="#25a0da" />
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="FontFamily" Value="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light" />
+		<Setter Property="Margin" Value="10 5" />
+	</Style>
+
+	<Style TargetType="telerik:RadTreeViewItem" BasedOn="{StaticResource RadTreeViewItemStyle}">
+		<Setter Property="IsSelected" Value="{Binding IsSelected}" />
+		<Setter Property="IsExpanded" Value="{Binding IsExpanded}" />
+	</Style>
+
+	<DataTemplate x:Key="CountryTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Image Source="{Binding Image}" Margin=" 0,0,6,0" />
+			<TextBlock Text="{Binding Name}" />
+			<TextBlock Text="(" />
+			<TextBlock Text="{Binding MedalCount}" />
+			<TextBlock Text=")" />
+		</StackPanel>
+	</DataTemplate>
+
+	<telerik:HierarchicalDataTemplate x:Key="MedalDistributionTemplate" ItemsSource="{Binding CountryMedals}">
+		<StackPanel Orientation="Horizontal">
+			<Image Source="{Binding Image}" Margin=" 0,0,6,0" />
+			<TextBlock Text="{Binding Type}" FontWeight="Bold" />
+		</StackPanel>
+	</telerik:HierarchicalDataTemplate>
+
+	<telerik:HierarchicalDataTemplate x:Key="OlympicGameTemplate" ItemsSource="{Binding MedalsInfo}">
+		<StackPanel Orientation="Horizontal">
+			<Image Source="{Binding Image}" Margin=" 0,0,6,0" />
+			<TextBlock Text="{Binding Name}" FontWeight="Bold" />
+		</StackPanel>
+	</telerik:HierarchicalDataTemplate>
+
+	<local:OlympicGameTemplateSelector x:Key="ItemDataTemplateSelector" 
+                                           OlympicGameTemplate="{StaticResource OlympicGameTemplate}" 
+                                           MedalDistributionTemplate="{StaticResource MedalDistributionTemplate}"
+                                           CountryTemplate="{StaticResource CountryTemplate}" />
+	
+</ResourceDictionary>

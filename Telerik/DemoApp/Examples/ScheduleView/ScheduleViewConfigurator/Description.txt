@@ -1,0 +1,1 @@
+﻿This example demonstrates RadScheduleView's great capabilities to customize RadScheduleView's appearance and behaviour.

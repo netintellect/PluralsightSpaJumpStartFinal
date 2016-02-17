@@ -1,0 +1,220 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.ScheduleViewConfigurator.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.ScheduleViewConfigurator"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        xmlns:sys="clr-namespace:System.Windows.Controls;assembly=System.Windows">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Configurator" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<UserControl.Resources>
+		<local:ViewModel x:Key="ViewModel" AppointmentsSource="/ScheduleView;component/DataSources/DevReach/Appointments.xaml" />
+
+		<local:TickConverter x:Key="TickConverter" />
+
+		<local:ViewDefinitionToBooleanConverter x:Key="ViewDefinitionToBooleanConverter" />
+
+		<local:DateTimeToTimeSpanConverter x:Key="DateTimeToTimeSpanConverter" />
+
+        <LinearGradientBrush x:Key="LeftColumnBackground" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox"
+				StartPoint="0.5,0">
+			<GradientStop Color="#FF4B4B4B" Offset="1" />
+			<GradientStop Color="#FF6E6E6E" />
+		</LinearGradientBrush>
+
+	</UserControl.Resources>
+
+	<Grid DataContext="{StaticResource ViewModel}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="360" />
+			<ColumnDefinition Width="2" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		
+		<Border Grid.ColumnSpan="3" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" Margin="0 1 0 0" />
+
+		<qsf:HeaderedContentControl Grid.Column="0" Margin="2" Header="Settings">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<StackPanel>
+					
+					<TextBlock Text="Zoom: " VerticalAlignment="Center" Margin="8" />
+
+					<telerik:RadSlider Minimum="400" Maximum="5000" Margin="8 3 8 10"
+						VerticalAlignment="Center"
+						Value="{Binding ActiveViewDefinition.MinTimeRulerExtent, ElementName=ScheduleView, Mode=TwoWay}"
+						LargeChange="50"
+						 />
+
+					<TextBlock Text="Minor Tick Length: " VerticalAlignment="Center" Margin="8 10 8 8" />
+
+					<telerik:RadComboBox Margin="8 0 8 13" VerticalAlignment="Center" SelectedIndex="0"
+                                     SelectedItem="{Binding ActiveViewDefinition.MinorTickLength, ElementName=ScheduleView, Mode=TwoWay}"
+									 ItemsSource="{Binding MinorTickProviders}"  >
+						<telerik:RadComboBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding ., Converter={StaticResource TickConverter}}" />
+							</DataTemplate>
+						</telerik:RadComboBox.ItemTemplate>
+					</telerik:RadComboBox>
+
+					<TextBlock Text="Major Tick Length: " VerticalAlignment="Center" Margin="8" />
+
+					<telerik:RadComboBox Margin="8 0 8 8" VerticalAlignment="Center" SelectedIndex="0"
+									 SelectedItem="{Binding ActiveViewDefinition.MajorTickLength, ElementName=ScheduleView, Mode=TwoWay}"
+									 ItemsSource="{Binding MajorTickProviders}"
+									  >
+						<telerik:RadComboBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding ., Converter={StaticResource TickConverter}}" />
+							</DataTemplate>
+						</telerik:RadComboBox.ItemTemplate>
+					</telerik:RadComboBox>
+
+					<TextBlock Text="Day Start Time" Margin="8" />
+					<telerik:RadTimePicker  SelectedValue="{Binding ActiveViewDefinition.DayStartTime, ElementName=ScheduleView, Mode=TwoWay, Converter={StaticResource DateTimeToTimeSpanConverter}}" Margin="8 0 8 8"
+										IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView,
+										Converter={StaticResource ViewDefinitionToBooleanConverter},
+										ConverterParameter='MonthViewDefinition'}"
+										 />
+					<TextBlock Text="Day End Time" Margin="8" />
+					<telerik:RadTimePicker SelectedValue="{Binding ActiveViewDefinition.DayEndTime, ElementName=ScheduleView, Mode=TwoWay, Converter={StaticResource DateTimeToTimeSpanConverter}}" Margin="8 0 8 8"
+									   IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView,
+										Converter={StaticResource ViewDefinitionToBooleanConverter},
+										ConverterParameter='MonthViewDefinition'}"
+									    />
+					<TextBlock Text="Timeruler Group Tick Length" Margin="8" />
+					<telerik:RadComboBox Margin="8 0 8 8" VerticalAlignment="Center" SelectedIndex="0"
+                                     SelectedItem="{Binding ActiveViewDefinition.GroupTickLength, ElementName=ScheduleView, Mode=TwoWay}"
+									 ItemsSource="{Binding TimelineTickProviders}"
+									 IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView,
+										Converter={StaticResource ViewDefinitionToBooleanConverter},
+										ConverterParameter='DayViewDefinition,WeekViewDefinition,MonthViewDefinition'}"
+									  >
+						<telerik:RadComboBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding ., Converter={StaticResource TickConverter}}" />
+							</DataTemplate>
+						</telerik:RadComboBox.ItemTemplate>
+					</telerik:RadComboBox>
+
+                    <TextBlock Text="Next/Previous Button Visibility:" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8" />
+
+                    <telerik:RadComboBox Margin="8 0 8 8" VerticalAlignment="Center" 
+                                     SelectedItem="{Binding AppointmentNavigationButtonsVisibility, ElementName=ScheduleView, Mode=TwoWay}">
+                        <telerik:AppointmentNavigationButtonsVisibility>Always</telerik:AppointmentNavigationButtonsVisibility>
+                        <telerik:AppointmentNavigationButtonsVisibility>Auto</telerik:AppointmentNavigationButtonsVisibility>
+                        <telerik:AppointmentNavigationButtonsVisibility>Never</telerik:AppointmentNavigationButtonsVisibility>
+                    </telerik:RadComboBox>
+
+                </StackPanel>
+
+				<StackPanel Grid.Column="1">
+
+					<TextBlock Text="Orientation: " VerticalAlignment="Center" Margin="8" />
+
+					<telerik:RadComboBox Margin="8 0 8 8" VerticalAlignment="Center"
+						SelectedItem="{Binding ActiveViewDefinition.Orientation, ElementName=ScheduleView, Mode=TwoWay}"
+                        IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView,
+                            Converter={StaticResource ViewDefinitionToBooleanConverter},
+                            ConverterParameter='MonthViewDefinition'}">
+						<Orientation>Vertical</Orientation>
+						<Orientation>Horizontal</Orientation>
+					</telerik:RadComboBox>
+					
+					<TextBlock Text="Visible Days Count:" VerticalAlignment="Center" Margin="8 0 8 8" />
+
+					<telerik:RadNumericUpDown Margin="8 0 8 14" Minimum="1" Maximum="60" NumberDecimalDigits = "0"
+                                          Value="{Binding ActiveViewDefinition.VisibleDays, ElementName=ScheduleView, Mode=TwoWay}"
+										   />
+
+					<CheckBox Margin="8 0 8 14" VerticalAlignment="Center" Foreground="Black"
+							  IsChecked="{Binding SnapAppointments, ElementName=ScheduleView, Mode=TwoWay}"
+							  IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter},ConverterParameter='MonthViewDefinition'}"
+							  >
+						<telerik:Label Padding="0">
+							<TextBlock TextWrapping="Wrap" 
+									   Text="Snap Appointments" />
+						</telerik:Label>
+					</CheckBox>
+
+					<CheckBox Margin="8 0 8 14"  Foreground="Black"
+							  IsChecked="{Binding ActiveViewDefinition.ShowAllDayArea, ElementName=ScheduleView, Mode=TwoWay}"
+							  IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter}, ConverterParameter='MonthViewDefinition,TimelineViewDefinition'}"
+							  >
+						<telerik:Label Padding="0">
+							<TextBlock TextWrapping="Wrap" 
+									   Text="Show All Day Area" />
+						</telerik:Label>
+					</CheckBox>
+
+					<CheckBox Margin="8 0 8 14"  Foreground="Black"
+							  IsChecked="{Binding ActiveViewDefinition.EnableSmallAppointmentRendering, ElementName=ScheduleView, Mode=TwoWay}"
+							  IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter}, ConverterParameter='MonthViewDefinition,TimelineViewDefinition'}"
+							  >
+						<telerik:Label Padding="0">
+							<TextBlock TextWrapping="Wrap"
+									   Text="Enable Small Appointments Rendering"/>
+						</telerik:Label>
+					</CheckBox>
+
+					<CheckBox Margin="8 0 8 14" Foreground="Black"
+							  IsChecked="{Binding ShowCurrentTimeIndicator, ElementName=ScheduleView, Mode=TwoWay}"
+							  IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter},ConverterParameter='MonthViewDefinition'}"
+							  >
+						<telerik:Label Padding="0">
+							<TextBlock TextWrapping="Wrap"
+									   Text="Show Current Time Indicator"/>
+						</telerik:Label>
+
+					</CheckBox>
+
+					<CheckBox Margin="8 0 8 14"
+							  IsChecked="{Binding ActiveViewDefinition.ShowWeekGroupHeaders, ElementName=ScheduleView, Mode=TwoWay}"
+							  IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter}, ConverterParameter='MonthViewDefinition,TimelineViewDefinition'}"
+							  >
+
+						<telerik:Label Padding="0">
+							<TextBlock TextWrapping="Wrap"
+									   Text="Show Week Group Headers"/>
+						</telerik:Label>
+					</CheckBox>
+
+                    <CheckBox Margin="8 0 8 14"
+							  IsChecked="{Binding ShowAppointmentDeleteButton, ElementName=ScheduleView, Mode=TwoWay}">
+                        <telerik:Label Padding="0">
+                            <TextBlock TextWrapping="Wrap"
+									   Text="Show Appointment Delete Button"/>
+                        </telerik:Label>
+                    </CheckBox>
+
+                    <CheckBox Margin="8 0 8 14"
+							  IsChecked="{Binding ActiveViewDefinition.ApplyStartEndTimeToEachDay, ElementName=ScheduleView, Mode=TwoWay}"
+                              IsEnabled="{Binding ActiveViewDefinition, ElementName=ScheduleView, Converter={StaticResource ViewDefinitionToBooleanConverter}, ConverterParameter='MonthViewDefinition,DayViewDefinition,WeekViewDefinition'}">
+                        <telerik:Label Padding="0">
+                            <TextBlock TextWrapping="Wrap" Text="Apply Start/End Times To Each Day"/>
+                        </telerik:Label>
+                    </CheckBox>
+                </StackPanel>
+			</Grid>
+		</qsf:HeaderedContentControl>
+
+		<telerik:RadScheduleView x:Name="ScheduleView" Margin="2" Grid.Column="4" AppointmentsSource="{Binding Appointments}">
+            <telerik:RadScheduleView.ViewDefinitions>
+                <telerik:DayViewDefinition MinTimeRulerExtent="600"/>
+                <telerik:WeekViewDefinition MinTimeRulerExtent="600"/>
+                <telerik:MonthViewDefinition MinTimeRulerExtent="600"/>
+                <telerik:TimelineViewDefinition MinTimeRulerExtent="600"/>
+            </telerik:RadScheduleView.ViewDefinitions>
+        </telerik:RadScheduleView>
+
+		<Border Grid.Column="2" Margin="2 32 2 2" BorderBrush="#FFC8C6C6" BorderThickness="1 0 1 1" Grid.Row="1"  />
+    </Grid>
+</UserControl>

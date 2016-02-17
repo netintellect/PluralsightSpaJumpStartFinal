@@ -1,0 +1,1 @@
+﻿Telerik <b>RadWordsProcessing</b> provides easy to use API which allows code-only generation of documents. The current example demonstrates how you can generate a document from scratch and export it to one of the supported formats – Docx, Rtf, Html and Txt.

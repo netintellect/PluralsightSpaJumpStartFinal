@@ -1,0 +1,1 @@
+﻿This example shows Chart with 5 Stacked Bar /or Horizontal Stacked Bar/ series split in two groups. This is accomplished by setting the GroupName property of each StackedBarSeriesDefinition. Instances with the same value for GroupName will be stacked.

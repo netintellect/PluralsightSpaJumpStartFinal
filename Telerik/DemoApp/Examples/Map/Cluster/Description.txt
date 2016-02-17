@@ -1,0 +1,2 @@
+﻿This example demonstrates grouping of geographic locations using clustering functionality integrated into the visualization layer. 
+You can see how clusters are recreated when the zoom level changes. The locations in the example are consumed via Bing Search Service.

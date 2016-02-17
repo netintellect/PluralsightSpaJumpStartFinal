@@ -1,0 +1,3 @@
+﻿Telerik CoverFlow turns navigation through a media collection into a dazzling visual experience.
+
+RadCoverFlow is a part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

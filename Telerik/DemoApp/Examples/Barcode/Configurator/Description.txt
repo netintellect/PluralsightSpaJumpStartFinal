@@ -1,0 +1,1 @@
+﻿This example demonstrates a configurable QRCode control, which can be utilized to visualize many types of data.

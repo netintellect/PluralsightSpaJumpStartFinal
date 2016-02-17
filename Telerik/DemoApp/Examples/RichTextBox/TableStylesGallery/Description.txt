@@ -1,0 +1,1 @@
+﻿This example illustrates the use of table styles in RadRichTextBox. The document in this example shows the use of both built-in and custom table styles.

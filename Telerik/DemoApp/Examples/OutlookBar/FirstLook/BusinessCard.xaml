@@ -1,0 +1,134 @@
+<UserControl x:Class="Telerik.Windows.Examples.OutlookBar.FirstLook.BusinessCard"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.OutlookBar.FirstLook"
+		FontFamily="Segoe UI">
+    <UserControl.Resources>
+        <Style TargetType="Border" x:Key="separator_style">
+            <Setter Property="BorderBrush" Value="#FFFFFF"/>
+            <Setter Property="Background" Value="#FFe7e7e7"/>
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="Height" Value="2"/>
+            <Setter Property="Margin" Value="0 10"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="title_style" >
+            <Setter Property="Foreground" Value="#1a8abf" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0 0 0 10" />
+            <Setter Property="FontFamily" Value="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="lefttext_style" >
+            <Setter Property="Foreground" Value="#5c7084 " />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Margin" Value="0 0 0 5" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="righttext_style" >
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Margin" Value="0 0 0 5" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="FontWeight" Value="Light" />
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" >
+        <StackPanel Margin="15 13 15 15">
+            <TextBlock Text="Personal Details" Style="{StaticResource title_style}"  />
+            <Grid>
+                <Grid HorizontalAlignment="Left" Width="330">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Lasr Name:" Style="{StaticResource lefttext_style}" />
+                    <TextBlock x:Name="lastNameOld" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+
+                    <TextBlock Text="First Name:" Grid.Row="1" Style="{StaticResource lefttext_style}"/>
+                    <TextBlock x:Name="firstNameOld" Grid.Row="1" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+
+                    <TextBlock Text="Job:" Grid.Row="2" Style="{StaticResource lefttext_style}"/>
+                    <TextBlock x:Name="jobOld" Grid.Row="2" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+
+                    <TextBlock Text="City:" Grid.Row="3" Style="{StaticResource lefttext_style}"/>
+                    <TextBlock x:Name="cityOld" Grid.Row="3" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+
+                    <TextBlock Text="Country:" Grid.Row="4" Style="{StaticResource lefttext_style}"/>
+                    <TextBlock x:Name="countryOld" Grid.Row="4" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+
+                </Grid>
+                <Border Width="69" Height="69" HorizontalAlignment="Right" Margin="0 -31 0 0 "
+						VerticalAlignment="Top" BorderBrush="#d6d4d4" BorderThickness="1">
+					<Image x:Name="photo" Source="" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None" />
+				</Border>
+            </Grid>
+            
+            <Border Style="{StaticResource separator_style}" />
+           
+            <TextBlock Text="Internet" Style="{StaticResource title_style}"  />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Email:" Style="{StaticResource lefttext_style}"/>
+                <TextBlock x:Name="eMailOld" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+               
+            </Grid>
+            
+            <Border Style="{StaticResource separator_style}" />
+            
+            <TextBlock Text="Phone Numbers" Style="{StaticResource title_style}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Extension:" Style="{StaticResource lefttext_style}"/>
+                <TextBlock x:Name="extensionOld" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+                
+                <TextBlock Text="Home Phone:" Grid.Row="1" Style="{StaticResource lefttext_style}"/>
+                <TextBlock x:Name="homePhoneOld" Grid.Row="1" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+                
+            </Grid>
+          
+            <Border Style="{StaticResource separator_style}" />
+            
+            <TextBlock Text="Addresses" Style="{StaticResource title_style}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Home Address:" Style="{StaticResource lefttext_style}" />
+                <TextBlock x:Name="homeAddressOld" Grid.Column="1" Style="{StaticResource righttext_style}"/>
+                
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

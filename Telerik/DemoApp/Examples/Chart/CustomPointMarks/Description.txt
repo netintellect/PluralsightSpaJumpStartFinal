@@ -1,0 +1,2 @@
+﻿This example demonstrates how to use the chart API to customize the PointMarks appearance. <br />
+In addition, it shows the possible values for AxisY.LayoutMode property and how they affect the series appearance.

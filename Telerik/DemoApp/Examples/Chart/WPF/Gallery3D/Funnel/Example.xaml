@@ -1,0 +1,19 @@
+<UserControl x:Class="Telerik.Windows.Examples.Chart.Gallery3D.Funnel.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.Chart.Gallery.ViewModel"
+    xmlns:chart="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Charting"
+    xmlns:charting="clr-namespace:Telerik.Windows.Controls.Charting;assembly=Telerik.Windows.Controls.Charting"
+    Loaded="ExampleControl_Loaded">
+    <UserControl.DataContext>
+        <vm:RadialViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <charting:CameraExtension x:Key="camera" ZoomEnabled="True" SpinAxis="All" />
+    </UserControl.Resources>
+    <chart:RadChart x:Name="RadChart1" ItemsSource="{Binding Data}">
+        <chart:RadChart.DefaultSeriesDefinition>
+            <charting:Funnel3DSeriesDefinition />
+        </chart:RadChart.DefaultSeriesDefinition>
+    </chart:RadChart>
+</UserControl>

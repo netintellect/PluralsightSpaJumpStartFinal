@@ -1,0 +1,1 @@
+﻿Code 128 is a very high-density barcode symbology that is used for alphanumeric or numeric-only barcodes. 

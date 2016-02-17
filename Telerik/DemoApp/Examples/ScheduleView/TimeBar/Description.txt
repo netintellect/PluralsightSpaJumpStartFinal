@@ -1,0 +1,1 @@
+﻿This example demonstrates how the RadScheduleView control can be integrated with RadTimeBar for a better navigation experience. The RadTimeBar at the top can be used to navigate through the minimap of appointments while detailed view is available at the bottom.

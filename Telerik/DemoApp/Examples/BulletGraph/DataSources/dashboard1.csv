@@ -1,0 +1,494 @@
+actual,Late arrivals,11/1/2004,82
+actual,Late arrivals,12/1/2004,89
+actual,Late arrivals,1/1/2005,85
+actual,Late arrivals,2/1/2005,75
+actual,Late arrivals,3/1/2005,65
+actual,Late arrivals,4/1/2005,61
+actual,Late arrivals,5/1/2005,58
+actual,Late arrivals,6/1/2005,59
+actual,Late arrivals,7/1/2005,47
+actual,Late arrivals,8/1/2005,65
+actual,Late arrivals,9/1/2005,67
+actual,Late arrivals,10/1/2005,84
+actual,Late arrivals,11/1/2005,48
+target,Late arrivals,11/1/2004,45
+target,Late arrivals,12/1/2004,60
+target,Late arrivals,1/1/2005,45
+target,Late arrivals,2/1/2005,36
+target,Late arrivals,3/1/2005,30
+target,Late arrivals,4/1/2005,39
+target,Late arrivals,5/1/2005,30
+target,Late arrivals,6/1/2005,36
+target,Late arrivals,7/1/2005,36
+target,Late arrivals,8/1/2005,36
+target,Late arrivals,9/1/2005,30
+target,Late arrivals,10/1/2005,36
+target,Late arrivals,11/1/2005,45
+actual,Number of minutes late,11/1/2004,2263
+actual,Number of minutes late,12/1/2004,2237
+actual,Number of minutes late,1/1/2005,1738
+actual,Number of minutes late,2/1/2005,1693
+actual,Number of minutes late,3/1/2005,1239
+actual,Number of minutes late,4/1/2005,1539
+actual,Number of minutes late,5/1/2005,1093
+actual,Number of minutes late,6/1/2005,1382
+actual,Number of minutes late,7/1/2005,938
+actual,Number of minutes late,8/1/2005,1286
+actual,Number of minutes late,9/1/2005,1435
+actual,Number of minutes late,10/1/2005,1678
+actual,Number of minutes late,11/1/2005,1342
+target,Number of minutes late,11/1/2004,1000
+target,Number of minutes late,12/1/2004,1400
+target,Number of minutes late,1/1/2005,1000
+target,Number of minutes late,2/1/2005,720
+target,Number of minutes late,3/1/2005,600
+target,Number of minutes late,4/1/2005,780
+target,Number of minutes late,5/1/2005,600
+target,Number of minutes late,6/1/2005,720
+target,Number of minutes late,7/1/2005,720
+target,Number of minutes late,8/1/2005,720
+target,Number of minutes late,9/1/2005,600
+target,Number of minutes late,10/1/2005,720
+target,Number of minutes late,11/1/2005,1000
+actual,Cancelled flights,11/1/2004,12
+actual,Cancelled flights,12/1/2004,16
+actual,Cancelled flights,1/1/2005,16
+actual,Cancelled flights,2/1/2005,10
+actual,Cancelled flights,3/1/2005,6
+actual,Cancelled flights,4/1/2005,5
+actual,Cancelled flights,5/1/2005,12
+actual,Cancelled flights,6/1/2005,10
+actual,Cancelled flights,7/1/2005,11
+actual,Cancelled flights,8/1/2005,8
+actual,Cancelled flights,9/1/2005,9
+actual,Cancelled flights,10/1/2005,10
+actual,Cancelled flights,11/1/2005,7
+target,Cancelled flights,11/1/2004,15
+target,Cancelled flights,12/1/2004,20
+target,Cancelled flights,1/1/2005,15
+target,Cancelled flights,2/1/2005,12
+target,Cancelled flights,3/1/2005,10
+target,Cancelled flights,4/1/2005,10
+target,Cancelled flights,5/1/2005,10
+target,Cancelled flights,6/1/2005,12
+target,Cancelled flights,7/1/2005,12
+target,Cancelled flights,8/1/2005,12
+target,Cancelled flights,9/1/2005,10
+target,Cancelled flights,10/1/2005,12
+target,Cancelled flights,11/1/2005,15
+actual,Flight utilization,11/1/2004,0.86
+actual,Flight utilization,12/1/2004,0.98
+actual,Flight utilization,1/1/2005,0.93
+actual,Flight utilization,2/1/2005,0.94
+actual,Flight utilization,3/1/2005,0.9
+actual,Flight utilization,4/1/2005,0.89
+actual,Flight utilization,5/1/2005,0.88
+actual,Flight utilization,6/1/2005,0.92
+actual,Flight utilization,7/1/2005,0.9
+actual,Flight utilization,8/1/2005,0.9
+actual,Flight utilization,9/1/2005,0.89
+actual,Flight utilization,10/1/2005,0.92
+actual,Flight utilization,11/1/2005,0.94
+target,Flight utilization,11/1/2004,0.93
+target,Flight utilization,12/1/2004,0.96
+target,Flight utilization,1/1/2005,0.9
+target,Flight utilization,2/1/2005,0.9
+target,Flight utilization,3/1/2005,0.9
+target,Flight utilization,4/1/2005,0.9
+target,Flight utilization,5/1/2005,0.9
+target,Flight utilization,6/1/2005,0.9
+target,Flight utilization,7/1/2005,0.9
+target,Flight utilization,8/1/2005,0.9
+target,Flight utilization,9/1/2005,0.91
+target,Flight utilization,10/1/2005,0.92
+target,Flight utilization,11/1/2005,0.93
+actual,Average customer satisfaction,11/1/2004,4.53
+actual,Average customer satisfaction,12/1/2004,4.49
+actual,Average customer satisfaction,1/1/2005,4.51
+actual,Average customer satisfaction,2/1/2005,4.57
+actual,Average customer satisfaction,3/1/2005,4.62
+actual,Average customer satisfaction,4/1/2005,4.63
+actual,Average customer satisfaction,5/1/2005,4.52
+actual,Average customer satisfaction,6/1/2005,4.51
+actual,Average customer satisfaction,7/1/2005,4.55
+actual,Average customer satisfaction,8/1/2005,4.52
+actual,Average customer satisfaction,9/1/2005,4.51
+actual,Average customer satisfaction,10/1/2005,4.5
+actual,Average customer satisfaction,11/1/2005,4.51
+target,Average customer satisfaction,11/1/2004,4.6
+target,Average customer satisfaction,12/1/2004,4.6
+target,Average customer satisfaction,1/1/2005,4.7
+target,Average customer satisfaction,2/1/2005,4.71
+target,Average customer satisfaction,3/1/2005,4.72
+target,Average customer satisfaction,4/1/2005,4.73
+target,Average customer satisfaction,5/1/2005,4.74
+target,Average customer satisfaction,6/1/2005,4.75
+target,Average customer satisfaction,7/1/2005,4.76
+target,Average customer satisfaction,8/1/2005,4.77
+target,Average customer satisfaction,9/1/2005,4.78
+target,Average customer satisfaction,10/1/2005,4.79
+target,Average customer satisfaction,11/1/2005,4.8
+actual,Market Share,11/1/2004,0.42
+actual,Market Share,12/1/2004,0.43
+actual,Market Share,1/1/2005,0.42
+actual,Market Share,2/1/2005,0.42
+actual,Market Share,3/1/2005,0.42
+actual,Market Share,4/1/2005,0.42
+actual,Market Share,5/1/2005,0.42
+actual,Market Share,6/1/2005,0.43
+actual,Market Share,7/1/2005,0.43
+actual,Market Share,8/1/2005,0.43
+actual,Market Share,9/1/2005,0.47
+actual,Market Share,10/1/2005,0.47
+actual,Market Share,11/1/2005,0.47
+target,Market Share,11/1/2004,0.43
+target,Market Share,12/1/2004,0.45
+target,Market Share,1/1/2005,0.45
+target,Market Share,2/1/2005,0.45
+target,Market Share,3/1/2005,0.45
+target,Market Share,4/1/2005,0.45
+target,Market Share,5/1/2005,0.45
+target,Market Share,6/1/2005,0.46
+target,Market Share,7/1/2005,0.46
+target,Market Share,8/1/2005,0.46
+target,Market Share,9/1/2005,0.46
+target,Market Share,10/1/2005,0.46
+target,Market Share,11/1/2005,0.46
+actual,Revenues,11/1/2004,13983485
+actual,Revenues,12/1/2004,18363744
+actual,Revenues,1/1/2005,16028383
+actual,Revenues,2/1/2005,15384773
+actual,Revenues,3/1/2005,15028383
+actual,Revenues,4/1/2005,15738844
+actual,Revenues,5/1/2005,15388484
+actual,Revenues,6/1/2005,17388433
+actual,Revenues,7/1/2005,17436645
+actual,Revenues,8/1/2005,17584775
+actual,Revenues,9/1/2005,17455544
+actual,Revenues,10/1/2005,18366833
+actual,Revenues,11/1/2005,9377433
+target,Revenues,11/1/2004,15000000
+target,Revenues,12/1/2004,17500000
+target,Revenues,1/1/2005,15500000
+target,Revenues,2/1/2005,15250000
+target,Revenues,3/1/2005,15500000
+target,Revenues,4/1/2005,15750000
+target,Revenues,5/1/2005,16250000
+target,Revenues,6/1/2005,16750000
+target,Revenues,7/1/2005,17250000
+target,Revenues,8/1/2005,17750000
+target,Revenues,9/1/2005,17500000
+target,Revenues,10/1/2005,17750000
+target,Revenues,11/1/2005,18000000
+actual,Expenses,11/1/2004,9292568.25
+actual,Expenses,12/1/2004,11235684.8
+actual,Expenses,1/1/2005,10532772.35
+actual,Expenses,2/1/2005,9723147.85
+actual,Expenses,3/1/2005,9778772.35
+actual,Expenses,4/1/2005,9272479.8
+actual,Expenses,5/1/2005,10024817.8
+actual,Expenses,6/1/2005,10944794.85
+actual,Expenses,7/1/2005,12646490.25
+actual,Expenses,8/1/2005,12331348.75
+actual,Expenses,9/1/2005,10535334
+actual,Expenses,10/1/2005,11665484
+actual,Expenses,11/1/2005,6613844
+target,Expenses,11/1/2004,10500000
+target,Expenses,12/1/2004,12250000
+target,Expenses,1/1/2005,10850000
+target,Expenses,2/1/2005,10675000
+target,Expenses,3/1/2005,10850000
+target,Expenses,4/1/2005,11025000
+target,Expenses,5/1/2005,11375000
+target,Expenses,6/1/2005,11725000
+target,Expenses,7/1/2005,12075000
+target,Expenses,8/1/2005,12425000
+target,Expenses,9/1/2005,12250000
+target,Expenses,10/1/2005,12425000
+target,Expenses,11/1/2005,12600000
+actual,Profits,11/1/2004,4690916.75
+actual,Profits,12/1/2004,7128059.2
+actual,Profits,1/1/2005,5495610.65
+actual,Profits,2/1/2005,5661625.15
+actual,Profits,3/1/2005,5249610.65
+actual,Profits,4/1/2005,6466364.2
+actual,Profits,5/1/2005,5363666.2
+actual,Profits,6/1/2005,6443638.15
+actual,Profits,7/1/2005,4790154.75
+actual,Profits,8/1/2005,5253426.25
+actual,Profits,9/1/2005,6920210
+actual,Profits,10/1/2005,6701349
+actual,Profits,11/1/2005,2763589
+target,Profits,11/1/2004,4500000
+target,Profits,12/1/2004,5250000
+target,Profits,1/1/2005,4650000
+target,Profits,2/1/2005,4575000
+target,Profits,3/1/2005,4650000
+target,Profits,4/1/2005,4725000
+target,Profits,5/1/2005,4875000
+target,Profits,6/1/2005,5025000
+target,Profits,7/1/2005,5175000
+target,Profits,8/1/2005,5325000
+target,Profits,9/1/2005,5250000
+target,Profits,10/1/2005,5325000
+target,Profits,11/1/2005,5400000
+actual,Fuel Costs,11/1/2004,956250
+actual,Fuel Costs,12/1/2004,1226182
+actual,Fuel Costs,1/1/2005,1016152
+actual,Fuel Costs,2/1/2005,1049065
+actual,Fuel Costs,3/1/2005,1061122
+actual,Fuel Costs,4/1/2005,1188152
+actual,Fuel Costs,5/1/2005,1091449
+actual,Fuel Costs,6/1/2005,1272152
+actual,Fuel Costs,7/1/2005,1342152
+actual,Fuel Costs,8/1/2005,1345122
+actual,Fuel Costs,9/1/2005,1348740
+actual,Fuel Costs,10/1/2005,1356119
+actual,Fuel Costs,11/1/2005,690849
+target,Fuel Costs,11/1/2004,900000
+target,Fuel Costs,12/1/2004,1050000
+target,Fuel Costs,1/1/2005,930000
+target,Fuel Costs,2/1/2005,915000
+target,Fuel Costs,3/1/2005,930000
+target,Fuel Costs,4/1/2005,945000
+target,Fuel Costs,5/1/2005,975000
+target,Fuel Costs,6/1/2005,1005000
+target,Fuel Costs,7/1/2005,1035000
+target,Fuel Costs,8/1/2005,1065000
+target,Fuel Costs,9/1/2005,1050000
+target,Fuel Costs,10/1/2005,1065000
+target,Fuel Costs,11/1/2005,1080000
+actual,Revenue / passenger,11/1/2004,263.92
+actual,Revenue / passenger,12/1/2004,287.67
+actual,Revenue / passenger,2/1/2005,315.31
+actual,Revenue / passenger,2/1/2005,313.73
+actual,Revenue / passenger,3/1/2005,294.45
+actual,Revenue / passenger,4/1/2005,291.26
+actual,Revenue / passenger,5/1/2005,273.17
+actual,Revenue / passenger,6/1/2005,294.75
+actual,Revenue / passenger,8/1/2005,288.74
+actual,Revenue / passenger,8/1/2005,291.22
+actual,Revenue / passenger,9/1/2005,287.27
+actual,Revenue / passenger,10/1/2005,300.91
+actual,Revenue / passenger,11/1/2005,289.57
+target,Revenue / passenger,11/1/2004,300
+target,Revenue / passenger,12/1/2004,291.67
+target,Revenue / passenger,1/1/2005,310
+target,Revenue / passenger,2/1/2005,299.02
+target,Revenue / passenger,3/1/2005,298.08
+target,Revenue / passenger,4/1/2005,297.17
+target,Revenue / passenger,5/1/2005,295.45
+target,Revenue / passenger,6/1/2005,293.86
+target,Revenue / passenger,7/1/2005,292.37
+target,Revenue / passenger,8/1/2005,295.83
+target,Revenue / passenger,9/1/2005,286.89
+target,Revenue / passenger,10/1/2005,286.29
+target,Revenue / passenger,11/1/2005,276.92
+actual,Revenue / passenger mile,11/1/2004,0.55
+actual,Revenue / passenger mile,12/1/2004,0.55
+actual,Revenue / passenger mile,1/1/2005,0.62
+actual,Revenue / passenger mile,2/1/2005,0.56
+actual,Revenue / passenger mile,3/1/2005,0.54
+actual,Revenue / passenger mile,4/1/2005,0.54
+actual,Revenue / passenger mile,5/1/2005,0.52
+actual,Revenue / passenger mile,6/1/2005,0.54
+actual,Revenue / passenger mile,7/1/2005,0.56
+actual,Revenue / passenger mile,8/1/2005,0.56
+actual,Revenue / passenger mile,9/1/2005,0.56
+actual,Revenue / passenger mile,10/1/2005,0.57
+actual,Revenue / passenger mile,11/1/2005,0.64
+target,Revenue / passenger mile,11/1/2004,0.5
+target,Revenue / passenger mile,12/1/2004,0.5
+target,Revenue / passenger mile,1/1/2005,0.5
+target,Revenue / passenger mile,2/1/2005,0.5
+target,Revenue / passenger mile,3/1/2005,0.5
+target,Revenue / passenger mile,4/1/2005,0.5
+target,Revenue / passenger mile,5/1/2005,0.5
+target,Revenue / passenger mile,6/1/2005,0.5
+target,Revenue / passenger mile,7/1/2005,0.5
+target,Revenue / passenger mile,8/1/2005,0.5
+target,Revenue / passenger mile,9/1/2005,0.5
+target,Revenue / passenger mile,10/1/2005,0.5
+target,Revenue / passenger mile,11/1/2005,0.5
+actual,Profit / passenger mile,11/1/2004,0.18
+actual,Profit / passenger mile,12/1/2004,0.21
+actual,Profit / passenger mile,1/1/2005,0.21
+actual,Profit / passenger mile,2/1/2005,0.21
+actual,Profit / passenger mile,3/1/2005,0.19
+actual,Profit / passenger mile,4/1/2005,0.22
+actual,Profit / passenger mile,5/1/2005,0.18
+actual,Profit / passenger mile,6/1/2005,0.2
+actual,Profit / passenger mile,7/1/2005,0.15
+actual,Profit / passenger mile,8/1/2005,0.17
+actual,Profit / passenger mile,9/1/2005,0.22
+actual,Profit / passenger mile,10/1/2005,0.21
+actual,Profit / passenger mile,11/1/2005,0.19
+target,Profit / passenger mile,11/1/2004,0.15
+target,Profit / passenger mile,12/1/2004,0.15
+target,Profit / passenger mile,1/1/2005,0.15
+target,Profit / passenger mile,2/1/2005,0.15
+target,Profit / passenger mile,3/1/2005,0.15
+target,Profit / passenger mile,4/1/2005,0.15
+target,Profit / passenger mile,5/1/2005,0.15
+target,Profit / passenger mile,6/1/2005,0.15
+target,Profit / passenger mile,7/1/2005,0.15
+target,Profit / passenger mile,8/1/2005,0.15
+target,Profit / passenger mile,9/1/2005,0.15
+target,Profit / passenger mile,10/1/2005,0.15
+target,Profit / passenger mile,11/1/2005,0.15
+actual,Profit / mile,11/1/2004,14.72
+actual,Profit / mile,12/1/2004,18.99
+actual,Profit / mile,1/1/2005,18
+actual,Profit / mile,2/1/2005,17.9
+actual,Profit / mile,3/1/2005,16.39
+actual,Profit / mile,4/1/2005,19.63
+actual,Profit / mile,5/1/2005,16.23
+actual,Profit / mile,6/1/2005,18.03
+actual,Profit / mile,7/1/2005,13.79
+actual,Profit / mile,8/1/2005,15.08
+actual,Profit / mile,9/1/2005,19.8
+actual,Profit / mile,10/1/2005,19.4
+actual,Profit / mile,11/1/2005,16.99
+target,Profit / mile,11/1/2004,15
+target,Profit / mile,12/1/2004,15
+target,Profit / mile,1/1/2005,15
+target,Profit / mile,2/1/2005,15
+target,Profit / mile,3/1/2005,15
+target,Profit / mile,4/1/2005,15
+target,Profit / mile,5/1/2005,15
+target,Profit / mile,6/1/2005,15
+target,Profit / mile,7/1/2005,15
+target,Profit / mile,8/1/2005,15
+target,Profit / mile,9/1/2005,15
+target,Profit / mile,10/1/2005,15
+target,Profit / mile,11/1/2005,15
+actual,Fuel costs / mile,11/1/2004,3
+actual,Fuel costs / mile,12/1/2004,3.27
+actual,Fuel costs / mile,1/1/2005,3.33
+actual,Fuel costs / mile,2/1/2005,3.32
+actual,Fuel costs / mile,3/1/2005,3.31
+actual,Fuel costs / mile,4/1/2005,3.61
+actual,Fuel costs / mile,5/1/2005,3.3
+actual,Fuel costs / mile,6/1/2005,3.56
+actual,Fuel costs / mile,7/1/2005,3.86
+actual,Fuel costs / mile,8/1/2005,3.86
+actual,Fuel costs / mile,9/1/2005,3.86
+actual,Fuel costs / mile,10/1/2005,3.93
+actual,Fuel costs / mile,11/1/2005,4.25
+target,Fuel costs / mile,11/1/2004,3
+target,Fuel costs / mile,12/1/2004,3
+target,Fuel costs / mile,1/1/2005,3
+target,Fuel costs / mile,2/1/2005,3
+target,Fuel costs / mile,3/1/2005,3
+target,Fuel costs / mile,4/1/2005,3
+target,Fuel costs / mile,5/1/2005,3
+target,Fuel costs / mile,6/1/2005,3
+target,Fuel costs / mile,7/1/2005,3
+target,Fuel costs / mile,8/1/2005,3
+target,Fuel costs / mile,9/1/2005,3
+target,Fuel costs / mile,10/1/2005,3
+target,Fuel costs / mile,11/1/2005,3
+actual,Flights,11/1/2004,425
+actual,Flights,12/1/2004,498
+actual,Flights,1/1/2005,421
+actual,Flights,2/1/2005,424
+actual,Flights,3/1/2005,426
+actual,Flights,4/1/2005,425
+actual,Flights,5/1/2005,426
+actual,Flights,6/1/2005,450
+actual,Flights,7/1/2005,452
+actual,Flights,8/1/2005,451
+actual,Flights,9/1/2005,450
+actual,Flights,10/1/2005,446
+actual,Flights,11/1/2005,231
+target,Flights,11/1/2004,420
+target,Flights,12/1/2004,500
+target,Flights,1/1/2005,425
+target,Flights,2/1/2005,426
+target,Flights,3/1/2005,427
+target,Flights,4/1/2005,427
+target,Flights,5/1/2005,430
+target,Flights,6/1/2005,430
+target,Flights,7/1/2005,440
+target,Flights,8/1/2005,440
+target,Flights,9/1/2005,440
+target,Flights,10/1/2005,440
+target,Flights,11/1/2005,450
+actual,Passengers,11/1/2004,52983
+actual,Passengers,12/1/2004,63837
+actual,Passengers,1/1/2005,50834
+actual,Passengers,2/1/2005,49038
+actual,Passengers,3/1/2005,51038
+actual,Passengers,4/1/2005,54038
+actual,Passengers,5/1/2005,56334
+actual,Passengers,6/1/2005,58993
+actual,Passengers,7/1/2005,60388
+actual,Passengers,8/1/2005,60384
+actual,Passengers,9/1/2005,60763
+actual,Passengers,10/1/2005,61038
+actual,Passengers,11/1/2005,32384
+target,Passengers,11/1/2004,50000
+target,Passengers,12/1/2004,60000
+target,Passengers,1/1/2005,50000
+target,Passengers,2/1/2005,51000
+target,Passengers,3/1/2005,52000
+target,Passengers,4/1/2005,53000
+target,Passengers,5/1/2005,55000
+target,Passengers,6/1/2005,57000
+target,Passengers,7/1/2005,59000
+target,Passengers,8/1/2005,60000
+target,Passengers,9/1/2005,61000
+target,Passengers,10/1/2005,62000
+target,Passengers,11/1/2005,65000
+actual,Passenger miles,11/1/2004,25500535
+actual,Passenger miles,12/1/2004,33305865
+actual,Passenger miles,1/1/2005,25839567
+actual,Passenger miles,2/1/2005,27394345
+actual,Passenger miles,3/1/2005,28028975
+actual,Passenger miles,4/1/2005,29022828
+actual,Passenger miles,5/1/2005,29384423
+actual,Passenger miles,6/1/2005,32032901
+actual,Passenger miles,7/1/2005,31353532
+actual,Passenger miles,8/1/2005,31544077
+actual,Passenger miles,9/1/2005,30945527
+actual,Passenger miles,10/1/2005,31976622
+actual,Passenger miles,11/1/2005,14565353
+target,Passenger miles,11/1/2004,30000000
+target,Passenger miles,12/1/2004,35000000
+target,Passenger miles,1/1/2005,31000000
+target,Passenger miles,2/1/2005,30500000
+target,Passenger miles,3/1/2005,31000000
+target,Passenger miles,4/1/2005,31500000
+target,Passenger miles,5/1/2005,32500000
+target,Passenger miles,6/1/2005,33500000
+target,Passenger miles,7/1/2005,34500000
+target,Passenger miles,8/1/2005,35500000
+target,Passenger miles,9/1/2005,35000000
+target,Passenger miles,10/1/2005,35500000
+target,Passenger miles,11/1/2005,36000000
+actual,Miles,11/1/2004,318750
+actual,Miles,12/1/2004,375394
+actual,Miles,1/1/2005,305384
+actual,Miles,2/1/2005,316355
+actual,Miles,3/1/2005,320374
+actual,Miles,4/1/2005,329384
+actual,Miles,5/1/2005,330483
+actual,Miles,6/1/2005,357384
+actual,Miles,7/1/2005,347384
+actual,Miles,8/1/2005,348374
+actual,Miles,9/1/2005,349580
+actual,Miles,10/1/2005,345373
+actual,Miles,11/1/2005,162683
+target,Miles,11/1/2004,300000
+target,Miles,12/1/2004,350000
+target,Miles,1/1/2005,310000
+target,Miles,2/1/2005,305000
+target,Miles,3/1/2005,310000
+target,Miles,4/1/2005,315000
+target,Miles,5/1/2005,325000
+target,Miles,6/1/2005,335000
+target,Miles,7/1/2005,345000
+target,Miles,8/1/2005,355000
+target,Miles,9/1/2005,350000
+target,Miles,10/1/2005,355000
+target,Miles,11/1/2005,360000

@@ -1,0 +1,3 @@
+﻿Telerik TreeView fully supports Drag And Drop - to enable the feature you only need to set the <b>IsDragDropEnabled</b> property to true.
+TreeView allows custom logic to be executed in order to determine whether the drag or drop operation is supported in particular case.
+You can also disable the drop operation onto a node by simply setting the TreeViewItem's <b>IsDropEnabled</b> to false.

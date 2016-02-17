@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.TreeView.HierarchicalTemplate"
+        xmlns:project="clr-namespace:Telerik.Windows.Examples.TreeView">
+
+	<SolidColorBrush Color="#d6d4d4" x:Key="BorderBrush" />
+
+	<Style TargetType="TextBlock" x:Key="TitleStyle">
+		<Setter Property="Foreground" Value="#25a0da" />
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="FontFamily" Value="/Telerik.Windows.QuickStartUITheme;component/Fonts/MyriadPro-Light.otf#Myriad Pro Light" />
+		<Setter Property="Margin" Value="10 5" />
+	</Style>
+	
+	<DataTemplate x:Key="OlympicGameDetailsTemplate">
+		<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" MaxHeight="450" >
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0 0 0 1">
+					<TextBlock Text="Details" Style="{StaticResource TitleStyle}"/>
+				</Border>
+
+				<StackPanel Margin="10 25 10 0" Grid.Row="1" HorizontalAlignment="Center">
+					<TextBlock Text="{Binding Name}" FontSize="24" Margin="0 0 0 20" Style="{StaticResource TitleStyle}"/>
+					<TextBlock Text="{Binding Description}" TextWrapping="Wrap" Foreground="#333333" FontSize="12" />
+				</StackPanel>
+			</Grid>
+		</Border>
+	</DataTemplate>
+
+	<local:MasterDetailTemplateSelector OlympicGameTemplate="{StaticResource OlympicGameDetailsTemplate}" x:Key="DetailsTemplateSelector"/>
+	
+</ResourceDictionary>

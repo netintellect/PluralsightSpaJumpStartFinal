@@ -1,0 +1,9 @@
+﻿The thermometer is built using two ratable scales and <b>tick offset</b> feature. The <b>custom tick marks</b> were used to shape the gauge to thermometer style form.
+
+The interactive indicator can be repositioned. Once the temperature goes above the indicator, the green indicator turns red.
+
+The Celsius scale has its minimum and maximum values set to -30 and 40 respectively. 
+The Fahrenheit scale starts at -22 and uses 2 as <b>StartTickOffset</b> property to align the scales. 
+It raches up to 104, the <b>EndTickOffset</b> property value is -4 to setup major ticks and labels in the range -20 to 100. 
+The Celsius scale uses <b>CenterOutside</b> (to left side from center) tick marks location. 
+The Fahrenheit scale uses <b>Centerinside</b> (to right side from center) to show two scales as united gauge.

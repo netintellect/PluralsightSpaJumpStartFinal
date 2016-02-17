@@ -1,0 +1,1 @@
+﻿This example demonstrates customization of the appointment tooltip with a single style. You can easily display any information about the appointment in its tooltip with basic data bindings.

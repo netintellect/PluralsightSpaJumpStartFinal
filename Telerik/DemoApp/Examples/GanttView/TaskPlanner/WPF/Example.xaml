@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.GanttView.TaskPlanner.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+    xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+	xmlns:local="clr-namespace:Telerik.Windows.Examples.GanttView.TaskPlanner"
+    mc:Ignorable="d">
+	<qsf:QuickStart.ExampleHeader>
+		<TextBlock Text="Task Planner" Margin="8" />
+	</qsf:QuickStart.ExampleHeader>
+	<UserControl.DataContext>
+		<local:ViewModel/>
+	</UserControl.DataContext>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/GanttView;component/TaskPlanner/WPF/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="300" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<telerik:RadScheduleView AppointmentsSource="{Binding Appointments}"
+                                 GroupHeaderContentTemplateSelector="{StaticResource CustomSelector}"
+                                 x:Name="scheduleView" AppointmentCreating="OnAppointmentCreating"
+                                 Margin="8" BorderThickness="1" AppointmentSaving="OnAppointmentSaving"                      
+                                 BorderBrush="{StaticResource GrayBorderBrush}" ShowDialog="OnShowDialog"
+                                 EditAppointmentDialogStyle="{StaticResource EditAppointmentDialogStyle}"
+                                 AppointmentDeleted="OnAppointmentDeleted"
+                                 SelectedAppointment="{Binding SelectedItem,Mode=TwoWay}">
+			<telerik:RadScheduleView.ViewDefinitions>
+                <telerik:DayViewDefinition Orientation="Horizontal" EnableSmallAppointmentRendering="True" GroupHeaderDateStringFormat="{}{0:dd ddd}" MinTimeRulerExtent="800" MaxTimeRulerExtent="Infinity" MinorTickLength="1h" DayStartTime="08:00:00" DayEndTime="20:00:00"/>               
+			</telerik:RadScheduleView.ViewDefinitions>
+            <scheduleView:RadScheduleView.DragDropBehavior>
+                <local:ScheduleViewDragDropBehavior/>
+            </scheduleView:RadScheduleView.DragDropBehavior>
+                <scheduleView:RadScheduleView.GroupDescriptionsSource>
+				<scheduleView:GroupDescriptionCollection>
+					<scheduleView:DateGroupDescription />
+					<scheduleView:ResourceGroupDescription ResourceType="Employee" />
+				</scheduleView:GroupDescriptionCollection>
+			</scheduleView:RadScheduleView.GroupDescriptionsSource>
+
+			<scheduleView:RadScheduleView.ResourceTypesSource>
+				<scheduleView:ResourceTypeCollection>
+					<scheduleView:ResourceType Name="Employee">
+						<local:EmployeeResource ResourceName="Diego Roel" DisplayName="Diego Roel" Title="Software Developer" Photo="../../Images/GanttView/TaskPlanning/employee_1.png"/>
+                        <local:EmployeeResource ResourceName="Anabela Domingues" DisplayName="Anabela Domingues" Title="Frontend Developer" Photo="../../Images/GanttView/TaskPlanning/employee_3.png"/>
+                        <local:EmployeeResource ResourceName="Dominique Perrier" DisplayName="Dominique Perrier" Title="Software Developer" Photo="../../Images/GanttView/TaskPlanning/employee_5.png"/>
+                        <local:EmployeeResource ResourceName="Mary Baird" DisplayName="Mary Baird" Title="Frontend Developer" Photo="../../Images/GanttView/TaskPlanning/employee_4.png"/>
+                        <local:EmployeeResource ResourceName="Grace Becerra" DisplayName="Grace Becerra" Title="Software Developer" Photo="../../Images/GanttView/TaskPlanning/employee_2.png"/>
+                        <local:EmployeeResource ResourceName="Jaime Yorres" DisplayName="Jaime Yorres" Title="Designer" Photo="../../Images/GanttView/TaskPlanning/employee_6.png"/>
+					</scheduleView:ResourceType>
+				</scheduleView:ResourceTypeCollection>
+			</scheduleView:RadScheduleView.ResourceTypesSource>
+		</telerik:RadScheduleView>
+		
+		<telerik:RadGanttView x:Name="ganttView" TasksSource="{Binding Tasks}"
+                                                Grid.Row="1" Margin="8" BorderThickness="1"
+                                                BorderBrush="{StaticResource GrayBorderBrush}"   
+                                                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+				                                VisibleRange="{Binding VisibleRange}" PixelLength="00:02:00"
+                                                TaskEdited="OnTaskEdited">
+			<telerik:RadGanttView.Columns>
+				<telerik:TreeColumnDefinition Header="Tasks" MemberBinding="{Binding Title}" Width="196" IsFrozenColumn="True" />
+				<telerik:ColumnDefinition Header="Assigned to" MemberBinding="{Binding Member}" Width="130" IsFrozenColumn="True"/>
+			</telerik:RadGanttView.Columns>           
+			<telerik:RadGanttView.TimeRulerLines>
+				<telerik:MajorTickLine>
+					<telerik:TickInterval Interval="OneMonth" FormatString="{}{0:MMMM, yyyy}" />
+				</telerik:MajorTickLine>
+				<telerik:MajorTickLine>
+					<telerik:TickInterval Interval="OneDay" FormatString="{}{0:ddd}"  />
+					<telerik:TickInterval Interval="OneDay" MinLength="80" FormatString="{}{0:dddd}" />
+				</telerik:MajorTickLine>
+			</telerik:RadGanttView.TimeRulerLines>
+		</telerik:RadGanttView>
+	</Grid>
+</UserControl>

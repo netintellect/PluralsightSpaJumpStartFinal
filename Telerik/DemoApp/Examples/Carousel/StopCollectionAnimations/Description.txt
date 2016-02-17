@@ -1,0 +1,1 @@
+﻿This example demonstrates how users can animate the stop collections that control the scale, skew, and opacity effects.

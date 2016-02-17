@@ -1,0 +1,1 @@
+﻿PerspectiveTransition is using pixel shader that imitate plane projection to swap the old and new content. The transition is highly customizable through properties. You can see some variations of the same transition applied in this example.

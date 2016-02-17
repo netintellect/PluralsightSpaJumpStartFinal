@@ -1,0 +1,3 @@
+﻿RadPivotGrid allows you to connect to OLAP data sources like Microsoft® SQL Server® Analysis Services.<br/><br/>
+When coupled with our RadPivotFieldList control you can easily select and configure the data that you wish to display.<br/><br/>
+You can choose between our ADOMD or XMLA data providers.<br/><br/>

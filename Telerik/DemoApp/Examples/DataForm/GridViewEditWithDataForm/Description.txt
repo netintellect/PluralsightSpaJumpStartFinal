@@ -1,0 +1,1 @@
+﻿RadDataForm may be easily integrated with RadGirdView. This example demonstrates extended inline editing for RadGridView with RadDataForm placed in the row details section.

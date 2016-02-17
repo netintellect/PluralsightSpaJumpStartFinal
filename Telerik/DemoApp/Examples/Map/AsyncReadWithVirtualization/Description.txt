@@ -1,0 +1,1 @@
+﻿This example illustrates how a large shape file is loaded asynchronously, leaving the UI responsive. In addition, map shapes are virtualized i.e. only shapes that are shown are instanciated.

@@ -1,0 +1,1 @@
+﻿This example demonsrates the great performance of ChartView. When LineSeries is chosen, you can quickly add/remove series and pan/zoom four series with over 20 thousand items in each! In Scatter Series mode, there are six series with 15 000 points each.

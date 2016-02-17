@@ -1,0 +1,1 @@
+﻿Telerik ComboBox has several modes: <b>Editable</b>, <b>Non-Editable</b> and <b>Editable + Read-Only</b>. You could use the integrated text search in all modes.

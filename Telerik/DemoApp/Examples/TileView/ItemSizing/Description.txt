@@ -1,0 +1,1 @@
+﻿This example demonstrates the RadTileView flexibility and allows you to configure the sizes of its items, rows and columns.

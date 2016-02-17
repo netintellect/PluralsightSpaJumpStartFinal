@@ -1,0 +1,1 @@
+﻿This example demonstrates the flexibility of the built-in grouping functionality. By default, the DateGroupDescription will appear as the inner-most group. With simple reordering you can easily change the display of the groups and appearance of RadScheduleView.

@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.DataBar.FirstLook.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.DataBar.FirstLook">
+    <UserControl.Resources>
+        <vm:CompensationViewModel x:Key="compensationViewModel" />
+        <system:Double x:Key="BarHeightPercent">0.5</system:Double>
+
+        <Style TargetType="telerik:GridViewHeaderCell" BasedOn="{StaticResource GridViewHeaderCellStyle}">
+            <Setter Property="BorderBrush" Value="#FFD6D4D4" />
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1"/>
+        </Style>
+        <Style TargetType="telerik:GridViewHeaderRow" BasedOn="{StaticResource GridViewHeaderRowStyle}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="telerik:GridViewFooterRow" BasedOn="{StaticResource GridViewFooterRowStyle}">
+            <Setter Property="BorderBrush" Value="#FFD6D4D4" />
+            <Setter Property="BorderThickness" Value="0, 1, 0, 0"/>
+        </Style>
+        <ControlTemplate x:Key="GridViewCellTemplate" TargetType="telerik:GridViewCell">
+            <ContentPresenter x:Name="PART_ContentPresenter"
+						Margin="{TemplateBinding Padding}"
+						Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </ControlTemplate>
+
+        <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+            <Setter Property="Padding" Value="5 0 3 0" />
+            <Setter Property="Template" Value="{StaticResource GridViewCellTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Comparison of hourly compensation costs in manufacturing" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid x:Name="LayoutRoot" DataContext="{StaticResource compensationViewModel}" >
+        <telerik:RadGridView ItemsSource="{Binding Statistics}"
+							 Margin="10 10 10 30"
+							 UseLayoutRounding="True"
+							 EnableRowVirtualization="False"
+							 AutoGenerateColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 ShowColumnFooters="True"
+							 IsReadOnly="True"
+							 ShowGroupPanel="False"
+                             GroupRenderMode="Flat"
+							 CanUserFreezeColumns="False"
+							 CanUserSelect="False" >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Country" DataMemberBinding="{Binding CountryName}" IsSortable="False" IsFilterable="False" Width="10*" />
+                <telerik:GridViewDataColumn Width="20*" >
+                    <telerik:GridViewColumn.Header>
+                        <StackPanel>
+                            <TextBlock Text="Hourly compensation costs" />
+                            <TextBlock Text="(US $), 2010" />
+                        </StackPanel>
+                    </telerik:GridViewColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding HourlyCompensationCosts, StringFormat=N}" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" />
+                                <telerik:RadDataBar Grid.Column="1"
+                                    Value="{Binding HourlyCompensationCosts}" 
+                                    Maximum="{Binding MaxHourlyCompensationCosts, Source={StaticResource compensationViewModel}}" 
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    LabelVisibility="Collapsed" Height="18" Margin="0 0 13 0" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Maximum="{Binding MaxHourlyCompensationCosts, Source={StaticResource compensationViewModel}}" 
+                            Step="10" LabelStep="3" LabelsVisibility="All" Margin="50 0 13 0" />
+                    </telerik:GridViewDataColumn.Footer>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="20*" >
+                    <telerik:GridViewColumn.Header>
+                        <StackPanel>
+                            <TextBlock Text="% annual change in hourly compensation" />
+                            <TextBlock Text="(US $), 2009/2010" />
+                        </StackPanel>
+                    </telerik:GridViewColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding CompensationInDollarsComparedToLastYear, StringFormat=N2}" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" />
+                                <telerik:RadDataBar Grid.Column="1" AxisVisibility="Visible"
+                                    Value="{Binding CompensationInDollarsComparedToLastYear}" 
+                                    Minimum="{Binding MinCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                    Maximum="{Binding MaxCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    LabelVisibility="Collapsed" Height="18" Margin="0 0 13 0" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Minimum="{Binding MinCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                             Maximum="{Binding MaxCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                             Step="5"
+                                             LabelsVisibility="FirstLastAndOriginValueOnly" Margin="50 0 13 0" />
+                    </telerik:GridViewDataColumn.Footer>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="20*" >
+                    <telerik:GridViewColumn.Header>
+                        <StackPanel>
+                            <TextBlock Text="% annual change in hourly compensation" />
+                            <TextBlock Text="(National currency), 2009/2010" />
+                        </StackPanel>
+                    </telerik:GridViewColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding CompensationInNationalCurrencyComparedToLastYear, StringFormat=N}" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" />
+                                <telerik:RadDataBar Grid.Column="1" AxisVisibility="Visible"
+                                    Value="{Binding CompensationInNationalCurrencyComparedToLastYear}" 
+                                    Minimum="{Binding MinCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                    Maximum="{Binding MaxCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" 
+                                    LabelVisibility="Collapsed" Height="18" Margin="0 0 13 0" />
+                            </Grid>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Minimum="{Binding MinCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                             Maximum="{Binding MaxCompensationPercent, Source={StaticResource compensationViewModel}}"
+                                             Step="5"      
+                                             LabelsVisibility="FirstLastAndOriginValueOnly" Margin="50 0 13 0" />
+                    </telerik:GridViewDataColumn.Footer>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="20*">
+                    <telerik:GridViewColumn.Header>
+                        <StackPanel>
+                            <TextBlock Text="Benefit components of hourly" />
+                            <TextBlock Text="compensation costs (% of total), 2010" />
+                        </StackPanel>
+                    </telerik:GridViewColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadStackedDataBar ItemsSource="{Binding SalaryComponents}"
+                                    ValuePath="Value" ToolTipPath="ToolTip" ShowToolTips="True" 
+                                    Maximum="{Binding MaxHourlyCompensationCosts, Source={StaticResource compensationViewModel}}" 
+                                    BarHeightPercent="{StaticResource BarHeightPercent}" Height="22" Margin="0 0 5 0" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                    <telerik:GridViewDataColumn.Footer>
+                        <telerik:RadHorizontalDataAxis Maximum="{Binding MaxHourlyCompensationCosts, Source={StaticResource compensationViewModel}}" 
+                            Step="10" LabelStep="3" LabelsVisibility="All" Margin="0 0 7 0"  />
+                    </telerik:GridViewDataColumn.Footer>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <TextBlock Grid.Column="2" TextWrapping="NoWrap" Text="source: bureau of labor statistics" Foreground="#FFD6D4D4" FontFamily="Segoe UI"
+                    Margin="0,0,10,5" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>

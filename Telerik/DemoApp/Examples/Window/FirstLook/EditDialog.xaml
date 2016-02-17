@@ -1,0 +1,83 @@
+﻿<telerik:RadWindow x:Class="Telerik.Windows.Examples.Window.FirstLook.EditDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:common="clr-namespace:Telerik.Windows.Examples.Window.Common"
+	xmlns:local="clr-namespace:Telerik.Windows.Examples.Window.FirstLook"
+    mc:Ignorable="d" Width="315" Height="280"
+	Header="Edit Employee Entry"
+	WindowStartupLocation="CenterScreen"
+	x:Name="dialog">
+
+	<telerik:RadWindow.Style>
+		<Style BasedOn="{StaticResource RadWindowStyle}" TargetType="local:EditDialog" />
+	</telerik:RadWindow.Style>
+	
+	<telerik:RadWindow.Resources>
+
+		<Style TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI Semibold" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Foreground" Value="#FF7A7A7A" />
+		</Style>
+
+		<Style TargetType="TextBox">
+			<Setter Property="FontFamily" Value="Segoe UI Semibold" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Foreground" Value="#FF333333" />
+			<Setter Property="BorderBrush" Value="#FFD6D4D4" />
+		</Style>
+	</telerik:RadWindow.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0" Margin="10" DataContext="{Binding Employee}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.4*" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="First Name" />
+			<TextBlock Grid.Row="1" Text="Last Name" />
+			<TextBlock Grid.Row="2" Text="Occupation" />
+			<TextBlock Grid.Row="3" Text="Country" />
+			<TextBlock Grid.Row="4" Text="City" />
+			<TextBlock Grid.Row="5" Text="Address" />
+			<TextBlock Grid.Row="6" Text="Phone number" />
+
+			<TextBox Text="{Binding FirstName, Mode=TwoWay}" Grid.Column="1" />
+			<TextBox Text="{Binding LastName, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
+			<TextBox Text="{Binding Occupation, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
+			<TextBox Text="{Binding Country, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
+			<TextBox Text="{Binding City, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
+			<TextBox Text="{Binding Address, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" />
+			<TextBox Text="{Binding Phone, Mode=TwoWay}" Grid.Row="6" Grid.Column="1" />
+		</Grid>
+
+		<StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 0 10">
+				
+			<telerik:RadButton Content=" OK" Width="50" Margin="8 0" VerticalAlignment="Center"
+							   Command="{Binding OKCommand}" CommandParameter="{Binding Employee}" />
+
+			<telerik:RadButton Content="Cancel" Width="80" Margin="0 0 10 0" VerticalAlignment="Center"
+							   Command="{Binding CancelCommand}" CommandParameter="{Binding Employee}" />
+		</StackPanel>	
+
+	</Grid>
+</telerik:RadWindow>

@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86C14920-FC4B-4033-B7B1-07B0CB146EB2}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.ScheduleView</RootNamespace>
+    <AssemblyName>ScheduleView</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ScheduleView.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ScheduleView.App</SilverlightAppEntry>
+    <TestPageFileName>ScheduleView.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls, Version=2011.1.211.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2011.1.211.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2011.1.211.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ScheduleView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Expression_Dark">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Themes.Expression_Dark.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentsFiltering\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentsFiltering\ViewModel.cs" />
+    <Compile Include="Common\ViewModel\ExampleViewModel.cs" />
+    <Compile Include="Common\ProgrammeAppointment.cs" />
+    <Compile Include="Common\ProgrammeAppointmentsCollection.cs" />
+    <Compile Include="Common\ResourceAppointmentItemStyleSelector.cs" />
+    <Compile Include="Common\TVGroupHeaderStyleSelector.cs" />
+    <Compile Include="CustomAppointmentAndValidation\CustomAppointment.cs" />
+    <Compile Include="CustomAppointmentAndValidation\CustomAppointmentsCollection.cs" />
+    <Compile Include="CustomAppointmentAndValidation\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAppointmentAndValidation\ViewModel.cs" />
+    <Compile Include="CustomStyles\AppointmentStyle\AppointmentStyleSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomStyles\AppointmentStyle\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\AppointmentStyle\ViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomStyles\AppointmentTemplate\CustomAppointment.cs" />
+    <Compile Include="CustomStyles\AppointmentTemplate\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\CustomAppointmentHeight\AppointmentStyleSelector.cs" />
+    <Compile Include="CustomStyles\CustomAppointmentHeight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\CustomAppointmentHeight\ViewModel.cs" />
+    <Compile Include="CustomStyles\GroupHeaderTemplate\OrientedGroupHeaderContentTemplateSelector.cs" />
+    <Compile Include="CustomStyles\TimeRulerStyle\ViewModel.cs" />
+    <Compile Include="DragDrop\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RecurrenceRule.cs" />
+    <Compile Include="ContextMenu\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContextMenu\ViewModel.cs" />
+    <Compile Include="CustomDateFormats\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\CustomTooltip\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\CustomTooltip\ViewModel.cs" />
+    <Compile Include="CustomStyles\GroupHeaderTemplate\EmployeeResource.cs" />
+    <Compile Include="CustomStyles\GroupHeaderTemplate\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomStyles\GroupHeaderTemplate\ViewModel.cs" />
+    <Compile Include="CustomStyles\TimeRulerStyle\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragDrop\HRResource.cs" />
+    <Compile Include="DragDrop\OrientedGroupHeaderContentTemplateSelector.cs" />
+    <Compile Include="DragDrop\ScheduleViewDragDropBehavior.cs" />
+    <Compile Include="DragDrop\AppointmentConverter.cs" />
+    <Compile Include="DragDrop\ViewModel.cs" />
+    <Compile Include="FirstLook\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FirstLook\WorkWeekViewDefinition.cs" />
+    <Compile Include="FirstLook\ViewModel.cs" />
+    <Compile Include="Grouping\Basics\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\Basics\ViewModel.cs" />
+    <Compile Include="Grouping\CustomGrouping\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\CustomGrouping\ProgrammeViewDefinition.cs" />
+    <Compile Include="Grouping\CustomGrouping\TVsViewDefinition.cs" />
+    <Compile Include="Grouping\CustomGrouping\ViewModel.cs" />
+    <Compile Include="Grouping\Filtering\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\Filtering\ViewModel.cs" />
+    <Compile Include="Grouping\GroupingAndFiltering\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\GroupingAndFiltering\Speaker.cs" />
+    <Compile Include="Grouping\GroupingAndFiltering\ViewModel.cs" />
+    <Compile Include="Grouping\TimeZoneGrouping\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\TimeZoneGrouping\ViewModel.cs" />
+    <Compile Include="Ical\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ical\ViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoadOnDemand\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadOnDemand\ViewModel.cs" />
+    <Compile Include="Localization\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleViewConfigurator\DateTimeToTimeSpanConverter.cs" />
+    <Compile Include="ScheduleViewConfigurator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScheduleViewConfigurator\TickConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScheduleViewConfigurator\ViewDefinitionToBooleanConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScheduleViewConfigurator\ViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchedulingAssistant\CustomListBoxDragDropBehavior.cs" />
+    <Compile Include="SchedulingAssistant\DraggedAppointmentToSourceResourceConverter.cs" />
+    <Compile Include="SchedulingAssistant\Employee.cs" />
+    <Compile Include="SchedulingAssistant\ScheduleViewDragDropBehavior.cs" />
+    <Compile Include="SchedulingAssistant\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SchedulingAssistant\SupportMeetingAppointment.cs" />
+    <Compile Include="SchedulingAssistant\ViewModel.cs" />
+    <Compile Include="SpecialSlots\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialSlots\NonWorkingSlot.cs" />
+    <Compile Include="SpecialSlots\SpecialSlotStyleSelector.cs" />
+    <Compile Include="SpecialSlots\ViewModel.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theming\ViewModel.cs" />
+    <Compile Include="TimeBar\CategoryToIconConverter.cs" />
+    <Compile Include="TimeBar\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimeBar\GroupItemStyleSelector.cs" />
+    <Compile Include="TimeBar\OneYearTick.cs" />
+    <Compile Include="TimeBar\RandomGeneratorViewModel.cs" />
+    <Compile Include="TimeBar\SingleStyleSelector.cs" />
+    <Compile Include="TimeBar\TimeMarkerToIconConverter.cs" />
+    <Compile Include="TimeBar\VisibleDaysConverter.cs" />
+    <Compile Include="TVSchedule\Silverlight\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVSchedule\ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ContextMenu\Description.txt" />
+    <Resource Include="CustomStyles\CustomTooltip\Description.txt" />
+    <Resource Include="CustomStyles\GroupHeaderTemplate\Description.txt" />
+    <Resource Include="DragDrop\Description.txt" />
+    <Resource Include="Grouping\Basics\Description.txt" />
+    <Resource Include="Grouping\Filtering\Description.txt" />
+    <Resource Include="Grouping\GroupingAndFiltering\Description.txt" />
+    <Resource Include="Ical\Description.txt" />
+    <Resource Include="LoadOnDemand\Description.txt" />
+    <Resource Include="Localization\Description.txt" />
+    <Resource Include="Images\ScheduleView\about_16x16.png" />
+    <None Include="Images\ScheduleView\Common\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\12.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\13.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\14.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\16.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\17.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\18.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\19.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\20.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\21.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\22.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\23.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\Conference.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\devreach.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\DevreachLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\lunch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\Lunches.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\Meetings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\MyCalendar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\MyCalendar_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\Tasks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\TechnicalMeetings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Common\Travel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Alerts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Business.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Busy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_day_view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_view_day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_view_month.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_view_week.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\calendar_week_view.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Categorize.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\color_swatch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Free.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Important.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\NeedsPreparation.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\New_recurring.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\OutOfOffice.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Personal.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\ContextMenu\Tentative.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\Disco.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\DiscoAppointment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\Harmony.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\HarmonyAppointment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\Ocean.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\OceanAppointment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\Orange.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\OrangeAppointment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\Relax.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\Customization\RelaxAppointment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Images\ScheduleView\GroupingAndFiltering\architecture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ScheduleView\GroupingAndFiltering\best_practices.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ScheduleView\GroupingAndFiltering\business_layer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ScheduleView\GroupingAndFiltering\data_layer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ScheduleView\GroupingAndFiltering\presentation_layer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Images\ScheduleView\TwoWayDragAndDrop\cinema.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\TwoWayDragAndDrop\live.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\TwoWayDragAndDrop\theater.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ScheduleView\CustomStyles\clock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\SL_Styles\Metro\AppointmentItemVerticalStyleBase.xaml">
+      <Link>Common\AppointmentStyle\AppointmentItemVerticalStyleBase.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Common\AdditionalResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppointmentsFiltering\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContextMenu\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomAppointmentAndValidation\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomDateFormats\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomStyles\AppointmentStyle\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomStyles\AppointmentTemplate\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomStyles\CustomAppointmentHeight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomStyles\CustomTooltip\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomStyles\GroupHeaderTemplate\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomStyles\TimeRulerStyle\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataSources\CustomAppointment\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="DataSources\GroupingAndFiltering\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="DataSources\TvScheduleCustom\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\CustomGrouping\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\TimeZoneGrouping\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SchedulingAssistant\Silverlight\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="SchedulingAssistant\Silverlight\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="TimeBar\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TVSchedule\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="DataSources\TvSchedule\Appointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="DragDrop\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\Basics\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Grouping\Filtering\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="DataSources\Meetings\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="FirstLook\Silverlight\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Grouping\GroupingAndFiltering\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ical\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoadOnDemand\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Localization\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleViewConfigurator\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialSlots\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="DataSources\CustomStyles\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="DataSources\DragDrop\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="DataSources\ICal\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="DataSources\LoadApps\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="DataSources\DevReach\Appointments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ScheduleViewConfigurator\Description.txt" />
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SpecialSlots\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomDateFormats\Description.txt" />
+    <Resource Include="CustomStyles\TimeRulerStyle\Description.txt" />
+    <Resource Include="CustomStyles\AppointmentTemplate\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScheduleView\CustomStyles\image1.png" />
+    <Resource Include="Images\ScheduleView\CustomStyles\image2.png" />
+    <Resource Include="Images\ScheduleView\CustomStyles\image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ScheduleView\CustomAppointment\tv_schedule_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AppointmentsFiltering\Description.txt" />
+    <Resource Include="Images\ScheduleView\FirstLook\delete_appointment.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\print.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\save.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\undo.png" />
+    <None Include="Images\ScheduleView\FirstLook\back_arrow.png" />
+    <None Include="Images\ScheduleView\FirstLook\fw_arrow.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\month_view.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\special_readonly_slots.png" />
+    <None Include="Images\ScheduleView\FirstLook\calendar_groups.png" />
+    <Resource Include="Images\ScheduleView\FirstLook\day_view.png" />
+    <None Include="Images\ScheduleView\FirstLook\new_appointment.png" />
+    <None Include="Images\ScheduleView\FirstLook\next7days.png" />
+    <None Include="Images\ScheduleView\FirstLook\recurring_appointment.png" />
+    <None Include="Images\ScheduleView\FirstLook\timeline_view.png" />
+    <None Include="Images\ScheduleView\FirstLook\today.png" />
+    <None Include="Images\ScheduleView\FirstLook\week_view.png" />
+    <None Include="Images\ScheduleView\FirstLook\work_week.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScheduleView\TimeBar\Completed.png" />
+    <Resource Include="Images\ScheduleView\TimeBar\HighPriority.png" />
+    <Resource Include="Images\ScheduleView\TimeBar\InProgress.png" />
+    <Resource Include="Images\ScheduleView\TimeBar\Normal.png" />
+    <Resource Include="Images\ScheduleView\TimeBar\NotStarted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TimeBar\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScheduleView\DragDrop\buddy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TVSchedule\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Grouping\CustomGrouping\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomAppointmentAndValidation\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Grouping\TimeZoneGrouping\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\ScheduleView\AppointmentTemplate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomStyles\AppointmentStyle\Description.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{AE924DA1-0F99-4993-9861-7533B551665B}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\1.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\2.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\3.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\4.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\5.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\6.png" />
+    <Resource Include="Images\ScheduleView\SchedulingAssistant\7.png" />
+    <Resource Include="SchedulingAssistant\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomStyles\CustomAppointmentHeight\Description.txt" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+"$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

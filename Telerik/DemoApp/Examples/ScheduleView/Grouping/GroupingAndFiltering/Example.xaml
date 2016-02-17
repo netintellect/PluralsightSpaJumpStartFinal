@@ -1,0 +1,93 @@
+<UserControl x:Class="Telerik.Windows.Examples.ScheduleView.Grouping.GroupingAndFiltering.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ScheduleView.Grouping.GroupingAndFiltering" xmlns:qsf="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+    <qsf:QuickStart.ExampleHeader>
+        <TextBlock Text="Grouping and Filtering" Margin="8" />
+    </qsf:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+        <SolidColorBrush x:Key="AccentBrush"
+							 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.AccentColor}" />
+        
+		<local:ViewModel x:Key="ViewModel" AppointmentsSource="/ScheduleView;component/DataSources/GroupingAndFiltering/Appointments.xaml" />
+        <SolidColorBrush x:Key="White" Color="#FFFFFFFF"/>
+
+        <DataTemplate x:Key="GroupingListBoxTemplate">
+            <Border BorderThickness="0,0,0,1" VerticalAlignment="Center" Height="70" BorderBrush="#FFD2D2D2">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Path Data="M36.504005,42.951981 C36.504005,42.951981 55.169998,48.271976 55.169998,68.27198 L0,68.27198 C6.3386142E-07,47.271973 19.65299,43.139984 19.65299,43.139984 C19.65299,43.139984 23.665991,45.764984 28.203011,45.764984 C32.739998,45.764984 36.504005,42.951981 36.504005,42.951981 z M51.213894,34.082977 C51.213894,34.082977 68.100899,39.14098 68.100899,57.14098 L55.917908,57.14098 C51.344906,46.14098 41.111904,41.624989 38.170895,40.636982 C39.363888,39.485981 40.474911,37.478973 41.467892,36.041977 C42.182888,36.202972 42.935909,36.427979 43.703915,36.427982 C47.808895,36.427979 51.213894,34.082977 51.213894,34.082977 z M28.442957,5.5209961 C36.889977,5.5209961 43.737968,11.673002 43.737968,21.727993 C43.737968,31.783989 35.312981,41.935997 28.442957,41.935997 C21.961971,41.935997 13.146969,31.783989 13.146969,21.727993 C13.146969,11.673002 19.994961,5.5209961 28.442957,5.5209961 z M43.338932,0 C50.980927,0 57.175934,5.5650024 57.175934,14.662001 C57.175934,23.758999 49.553928,32.943001 43.338932,32.943001 C43.267948,32.943001 43.192936,32.924995 43.120945,32.921989 C44.964939,29.393991 46.098942,25.419001 46.098942,21.520992 C46.098942,12.761 41.283943,5.923996 34.04493,3.4720001 C36.50193,1.2360077 39.755959,0 43.338932,0 z" 
+                                  Fill="#FF767676" Margin="8 0 0 0" Stretch="Fill" UseLayoutRounding="False" HorizontalAlignment="Left" Width="24" Height="24"/>                    
+                    <StackPanel Width="120" Orientation="Vertical" VerticalAlignment="Center" Margin="15 0 0 0">
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Name}" FontFamily="Segoe UI Light" FontSize="17" Foreground="{StaticResource AccentBrush}" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Title}" 
+                                   FontFamily="Segoe UI" FontSize="10" Foreground="Black" HorizontalAlignment="Left" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid DataContext="{StaticResource ViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="222" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <qsf:HeaderedContentControl Grid.Column="0" Header="Select a speaker">
+            <Grid Grid.Column="0" Margin="1 0 1 1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Height="19" Background="#FFEBEBEB" Margin="0 1">
+                    <CheckBox Margin="16 0 0 0"  IsChecked="{Binding EnableGrouping, Mode=TwoWay}" Content="Enable Grouping" FontWeight="Normal" VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Row="1">
+                    <telerik:RadListBox x:Name="GroupingListBox" SelectionMode="Multiple" Loaded="OnGroupingListBoxLoaded"
+										Command="{Binding SelectionCommand}" CommandParameter="{Binding SelectedItems, RelativeSource={RelativeSource Self}}"
+										ItemTemplate="{StaticResource GroupingListBoxTemplate}" 
+										BorderThickness="0" ItemsSource="{Binding Speakers}" />
+                </StackPanel>
+
+                <Border Grid.Row="2" BorderThickness="0" BorderBrush="#FFD2D2D2" Background="{StaticResource White}" />
+            </Grid>
+        </qsf:HeaderedContentControl>
+
+        <scheduleView:RadScheduleView Grid.Column="2" SnapAppointments="True" AppointmentsSource="{Binding Appointments}" GroupDescriptionsSource="{Binding GroupDescriptions}" ActiveViewDefinitionIndex="1"
+									  FirstVisibleTime="13:00">
+
+            <scheduleView:RadScheduleView.ViewDefinitions>
+                <scheduleView:DayViewDefinition GroupFilter="{Binding GroupFilter}" Orientation="Horizontal" />
+                <scheduleView:WeekViewDefinition GroupFilter="{Binding GroupFilter}" Orientation="Horizontal" />
+                <scheduleView:MonthViewDefinition GroupFilter="{Binding GroupFilter}" />
+                <scheduleView:TimelineViewDefinition GroupFilter="{Binding GroupFilter}" />
+            </scheduleView:RadScheduleView.ViewDefinitions>
+
+            <scheduleView:RadScheduleView.ResourceTypesSource>
+                <scheduleView:ResourceTypeCollection>
+                    <scheduleView:ResourceType Name="Category">
+                        <scheduleView:Resource ResourceName="Sven Ottlieb" />
+                        <scheduleView:Resource ResourceName="Martine Rance" />
+                        <scheduleView:Resource ResourceName="Howard Snyder" />
+                        <scheduleView:Resource ResourceName="Daniel Tonini" />
+                        <scheduleView:Resource ResourceName="John Steel" />
+                    </scheduleView:ResourceType>
+                </scheduleView:ResourceTypeCollection>
+            </scheduleView:RadScheduleView.ResourceTypesSource>
+
+        </scheduleView:RadScheduleView>
+
+        <Border Grid.Column="2" Margin="0 30 0 0" BorderBrush="#FFC8C6C6" BorderThickness="1 0 1 1" Grid.Row="1" />
+
+    </Grid>
+
+</UserControl>

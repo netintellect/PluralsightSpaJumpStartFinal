@@ -1,0 +1,1 @@
+﻿This example demonstrates 2D RangeBar and HorizontalRangeBar chart. The ItemMappings for this type of chart should contain values for 'High' and 'Low' entries.

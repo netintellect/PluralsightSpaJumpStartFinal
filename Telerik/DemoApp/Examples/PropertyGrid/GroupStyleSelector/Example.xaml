@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PropertyGrid.GroupStyleSelector.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+			
+			 xmlns:example="clr-namespace:Telerik.Windows.Examples.PropertyGrid.GroupStyleSelector"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="GroupStyleSelector support"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot"
+		  Background="White"
+		  Width="405"
+		  Height="532">
+		<Grid.Resources>
+			<example:ConditionalStyleSelector x:Key="selector">
+				<example:ConditionalStyleSelector.WorkStyle>
+					<Style TargetType="telerik:RadToggleButton">
+						<Setter Property="Foreground" Value="#75A8BA"/>
+					</Style>
+				</example:ConditionalStyleSelector.WorkStyle>
+			</example:ConditionalStyleSelector>
+			<Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle}">
+				<Setter Property="Margin" Value="0 0 1 0"/>
+			</Style>
+		</Grid.Resources>
+		<telerik:RadPropertyGrid x:Name="propertyGrid1" LabelColumnWidth="180"
+                                 DescriptionPanelVisibility="Collapsed"
+                                 RenderMode="Flat"
+								 IsGrouped="True"
+                                 IsVirtualizing="True"
+							     GroupStyleSelector="{StaticResource selector}"	/>
+
+	</Grid>
+</UserControl>

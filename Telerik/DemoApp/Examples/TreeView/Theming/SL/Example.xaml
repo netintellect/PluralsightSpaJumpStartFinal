@@ -1,0 +1,48 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.TreeView.Theming.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Theming" Margin="8"/>
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="268" Height="490">
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+   
+            <telerik:RadTreeView x:Name="RadTreeView1" Margin="5" IsLineEnabled="True"
+                   telerik:TreeViewSettings.DragDropExecutionMode="New"             
+				SelectionMode="Multiple" IsEditable="True" IsDragDropEnabled="True">
+                <telerik:RadTreeViewItem Header="Personal Folders"
+					DefaultImageSrc="../../Images/TreeView/Outlook/1PersonalFolders.png" IsExpanded="True">
+                    <telerik:RadTreeViewItem Header="Deleted Items(6)"
+						DefaultImageSrc="../../Images/TreeView/Outlook/2DeletedItems.png" />
+                    <telerik:RadTreeViewItem Header="Drafts"
+						DefaultImageSrc="../../Images/TreeView/Outlook/3Drafts.png" />
+                    <telerik:RadTreeViewItem Header="Inbox(14)"
+						DefaultImageSrc="../../Images/TreeView/Outlook/4Inbox.png" IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="Folders"
+							DefaultImageSrc="../../Images/TreeView/Outlook/folder.png" />
+                    </telerik:RadTreeViewItem>
+                    <telerik:RadTreeViewItem Header="Junk E-mails"
+						DefaultImageSrc="../../Images/TreeView/Outlook/junk.png" />
+                    <telerik:RadTreeViewItem Header="Outbox"
+						DefaultImageSrc="../../Images/TreeView/Outlook/outbox.png" />
+                    <telerik:RadTreeViewItem Header="Sent Items"
+						DefaultImageSrc="../../Images/TreeView/Outlook/sent.png" />
+                    <telerik:RadTreeViewItem Header="Search Folder"
+						DefaultImageSrc="../../Images/TreeView/Outlook/searchFolder.png"
+						IsExpanded="True">
+                        <telerik:RadTreeViewItem Header="From Follow up"
+							DefaultImageSrc="../../Images/TreeView/Outlook/search.png" />
+                        <telerik:RadTreeViewItem Header="Large Mail"
+							DefaultImageSrc="../../Images/TreeView/Outlook/search.png" />
+                        <telerik:RadTreeViewItem Header="Unread Mail"
+							DefaultImageSrc="../../Images/TreeView/Outlook/search.png" />
+                    </telerik:RadTreeViewItem>
+                </telerik:RadTreeViewItem>
+            </telerik:RadTreeView>
+    </Grid>
+</UserControl>

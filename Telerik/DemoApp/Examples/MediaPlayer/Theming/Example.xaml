@@ -1,0 +1,31 @@
+<UserControl xmlns="http://schemas.microsoft.com/client/2007"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.MediaPlayer.Theming.Example"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<Grid x:Name="LayoutRoot">
+        <telerik:RadMediaPlayer x:Name="player" VerticalContentAlignment="Top"
+				HorizontalContentAlignment="Center"
+				Header="{Binding RelativeSource={RelativeSource Self}, Path=MediaElement}"
+				SelectedIndex="0" >
+            <telerik:RadMediaPlayer.HeaderTemplate>
+				<DataTemplate>
+					<Border CornerRadius="3" Background="White" Padding="15 5" Margin="0 10 0 0">
+						<StackPanel>
+							<StackPanel Orientation="Horizontal" Margin="4">
+								<TextBlock Text="Bitrate: " Foreground="Black" />
+								<TextBlock Text="{Binding ., StringFormat=n0}" Foreground="Black" />
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+            </telerik:RadMediaPlayer.HeaderTemplate>
+            <telerik:RadMediaItem IsStreamingSource="True" Header="Big Buck Bunny"
+					Source="http://video3.smoothhd.com.edgesuite.net/ondemand/Big Buck Bunny Adaptive.ism/Manifest"
+					StreamAttached="RadMediaItem_StreamAttached">
+                <telerik:RadMediaChapter Content="Chapter 1" Position="00:00:50" />
+                <telerik:RadMediaChapter Content="Chapter 2" Position="00:03:00" />
+            </telerik:RadMediaItem>
+        </telerik:RadMediaPlayer>
+	</Grid>
+</UserControl>

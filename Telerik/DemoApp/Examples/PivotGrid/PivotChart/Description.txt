@@ -1,0 +1,1 @@
+﻿RadChartView integrates perfectly with all RadPivotGrid data providers which enables you to visualize and analyze your data with charts.

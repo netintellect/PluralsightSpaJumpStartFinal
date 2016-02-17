@@ -1,0 +1,223 @@
+<UserControl x:Class="Telerik.Windows.Examples.Sparklines.Gallery.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.Sparklines.Gallery"
+    mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center"
+    d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <Style TargetType="telerik:GridViewHeaderCell" BasedOn="{StaticResource GridViewHeaderCellStyle}">
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="0, 0, 0, 1"/>
+            <Setter Property="Padding" Value="5 4 3 4" />
+        </Style>
+        <Style TargetType="telerik:GridViewHeaderRow" BasedOn="{StaticResource GridViewHeaderRowStyle}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <ControlTemplate x:Key="GridViewCellTemplate" TargetType="telerik:GridViewCell">
+            <ContentPresenter x:Name="PART_ContentPresenter"
+						Margin="{TemplateBinding Padding}"
+						Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </ControlTemplate>
+
+        <Style TargetType="telerik:GridViewCell" BasedOn="{StaticResource GridViewCellStyle}">
+            <Setter Property="Padding" Value="5 0 3 0" />
+            <Setter Property="Template" Value="{StaticResource GridViewCellTemplate}"/>
+        </Style>
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Exchange rates for 12 months" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadGridView Name="lineGridView" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupPanel="False"
+                             RowIndicatorVisibility="Collapsed" CanUserFreezeColumns="False" Margin="3" CanUserResizeColumns="False" 
+                             ItemsSource="{Binding Data}" GroupRenderMode="Flat">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Name" Width="110" />
+                <telerik:GridViewDataColumn Header="High" Width="100" DataMemberBinding="{Binding High}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Low" Width="100" DataMemberBinding="{Binding Low}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Line" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadLinearSparkline Margin="0,3" Width="98.5" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Line + Markers" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadLinearSparkline Margin="0,3" Width="90" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowMarkers="True" ShowNegativePointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Normal range" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadLinearSparkline Margin="0,3" Width="90" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" NormalRangeBottom="0" NormalRangeTop="0.3" ShowNormalRange="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Scatter" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadScatterSparkline Margin="0,3" Width="90" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="End Points" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadLinearSparkline Margin="0,3" Width="90" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowFirstPointIndicator="True" ShowLastPointIndicator="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="High/Low" Width="120">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadLinearSparkline Margin="0,3" Width="90" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowHighPointIndicators="True" ShowLowPointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+        <telerik:RadGridView Name="areaGridView" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupPanel="False"
+                             RowIndicatorVisibility="Collapsed" CanUserFreezeColumns="False" Margin="3" CanUserResizeColumns="False" 
+                             ItemsSource="{Binding Data}" GroupRenderMode="Flat">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Name" Width="110" />
+                <telerik:GridViewDataColumn Header="High" Width="100" DataMemberBinding="{Binding High}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Low" Width="100" DataMemberBinding="{Binding Low}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Area" Width="144">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadAreaSparkline Margin="0,3" Width="108" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Area + Markers" Width="144">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadAreaSparkline Margin="0,3" Width="108" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowMarkers="True" ShowNegativePointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="End Points" Width="144">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadAreaSparkline Margin="0,3" Width="108" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowFirstPointIndicator="True" ShowLastPointIndicator="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="High/Low" Width="144">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadAreaSparkline Margin="0,3" Width="108" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowHighPointIndicators="True" ShowLowPointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Ref line" Width="144">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadAreaSparkline Margin="0,3" Width="108" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowAxis="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+        <telerik:RadGridView Name="columnGridView" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupPanel="False"
+                             RowIndicatorVisibility="Collapsed" CanUserFreezeColumns="False" Margin="3" CanUserResizeColumns="False" 
+                             ItemsSource="{Binding Data}" GroupRenderMode="Flat">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Name" Width="110" />
+                <telerik:GridViewDataColumn Header="High" Width="100" DataMemberBinding="{Binding High}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Low" Width="100" DataMemberBinding="{Binding Low}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Columns" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadColumnSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="End Points" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadColumnSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowFirstPointIndicator="True" ShowLastPointIndicator="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="High/Low" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadColumnSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowHighPointIndicators="True" ShowLowPointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Ref line" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadColumnSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowAxis="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+
+        <telerik:RadGridView Name="winLossGridView" Grid.Row="3" AutoGenerateColumns="False" IsReadOnly="True" ShowGroupPanel="False"
+                             RowIndicatorVisibility="Collapsed" CanUserFreezeColumns="False" Margin="3" CanUserResizeColumns="False" 
+                             ItemsSource="{Binding Data}" GroupRenderMode="Flat">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Name" Width="110" />
+                <telerik:GridViewDataColumn Header="High" Width="100" DataMemberBinding="{Binding High}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Low" Width="100" DataMemberBinding="{Binding Low}" DataFormatString="{}{0:F4}" />
+                <telerik:GridViewDataColumn Header="Win/Loss" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadWinLossSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="End Points" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadWinLossSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowFirstPointIndicator="True" ShowLastPointIndicator="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="High/Low" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadWinLossSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowHighPointIndicators="True" ShowLowPointIndicators="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="Ref line" Width="180">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadWinLossSparkline Margin="0,3" Width="137" Height="33" ItemsSource="{Binding Data}" XValuePath="TimeStamp" YValuePath="Value" ShowAxis="True" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

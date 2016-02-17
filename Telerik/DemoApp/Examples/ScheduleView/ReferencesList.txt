@@ -1,0 +1,18 @@
+System.XAML
+System
+System.Data
+System.Windows.Forms
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls, Version=2010.1.422.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.DataVisualization, Version=2011.2.712.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Input, Version=2010.1.422.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Navigation, Version=2010.1.422.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.RibbonView
+Telerik.Windows.Controls.ScheduleView, Version=2010.1.423.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Data, Version=2010.1.422.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+WindowsBase
+PresentationCore
+PresentationFramework

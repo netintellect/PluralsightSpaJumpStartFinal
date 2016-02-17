@@ -1,0 +1,119 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Customization.Tooltips.Example"
+					  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:sys="clr-namespace:System;assembly=mscorlib"
+					  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                      xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+					  xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
+    
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Tooltips" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    <demo:DynamicBasePage.Resources>
+         
+        <Style x:Key="CustomTick" TargetType="Ellipse">
+            <Setter Property="Fill" Value="White" />
+            <Setter Property="Width" Value="6" />
+            <Setter Property="Height" Value="6" />
+            <Setter Property="telerik:ScaleObject.Location" Value="Outside" />
+            <Setter Property="telerik:ScaleObject.Offset" Value="0.01*" />
+            <Setter Property="Canvas.ZIndex" Value="101" />
+        </Style>
+    </demo:DynamicBasePage.Resources>
+
+	<Grid Width="740" Height="520">
+		<telerik:RadRadialGauge Width="220" Height="220">
+			<telerik:RadialScale Name="radialScale"
+								 IsInteractive="True"
+								 MiddleTickTooltipFormat="{Binding ElementName=middleTickTooltip, Path=SelectedItem.Content}"
+								 MajorTickTooltipFormat="{Binding ElementName=majorTickTooltip, Path=SelectedItem.Content}"
+                                 MajorTickOffset="{StaticResource ticksOffset}"
+                                 MiddleTicks="2" MiddleTickOffset="{StaticResource ticksOffset}"
+                                 MinorTicks="2" MinorTickOffset="{StaticResource ticksOffset}"
+                                 LabelOffset="{StaticResource labelOffset}"
+                                 RangeLocation="Outside"
+                                 RangeOffset="0.03*"
+                                 Radius="0.9">
+				<telerik:RadialScale.Ranges>
+					<telerik:GaugeRange Min="0" Max="15"
+										Background="#FFE50000" 
+                                        StartWidth="0.02"
+                                        EndWidth="0.02" />
+                    <telerik:GaugeRange Min="15" Max="80"
+                                        StartWidth="0.02"
+                                        EndWidth="0.02"
+										Background="Black" />
+                    <telerik:GaugeRange Min="80" Max="100"
+                                        StartWidth="0.02"
+                                        EndWidth="0.02"
+										Background="#FFA3A3A3" />
+				</telerik:RadialScale.Ranges>
+				<telerik:RadialScale.Indicators>
+					<telerik:RadialScaleMarker Name="marker"
+								               Value="25.4321"
+                                               telerik:ScaleObject.Offset="{StaticResource markerOffset}"
+									TooltipFormat="{Binding ElementName=markerTooltip, Path=SelectedItem.DataContext}" />
+					<telerik:Needle Name="needle"
+									Value="51.2345"
+									IsAnimated="False"
+									TooltipFormat="{Binding ElementName=needleTooltip, Path=SelectedItem.DataContext}" />
+                    <telerik:Pinpoint />
+				</telerik:RadialScale.Indicators>
+                <telerik:RadialScale.CustomItems>
+                    <Ellipse telerik:ScaleObject.Value="0" Style="{StaticResource CustomTick}" Stroke="#FFE50000" />
+                    <Ellipse telerik:ScaleObject.Value="15" Style="{StaticResource CustomTick}" Stroke="#FFE50000" />
+                    <Ellipse telerik:ScaleObject.Value="80" Style="{StaticResource CustomTick}" Stroke="Black" />
+                    <Ellipse telerik:ScaleObject.Value="100" Style="{StaticResource CustomTick}" Stroke="#FFA3A3A3" />
+                </telerik:RadialScale.CustomItems>
+			</telerik:RadialScale>
+		</telerik:RadRadialGauge>
+	</Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+            <TextBlock Text="Tooltips:" />
+
+            <TextBlock Text="Major tick tooltip format:" />
+            <telerik:RadComboBox Name="majorTickTooltip"
+                                 SelectedIndex="0"
+                                 Margin="0,2">
+                <telerik:RadComboBoxItem Content="Major tick value {Value|F0}" />
+                <telerik:RadComboBoxItem Content="Major tick value {Value|F1}" />
+                <telerik:RadComboBoxItem Content="Major tick value {Value|F2}" />
+                <telerik:RadComboBoxItem Content="Major tick value {Value|F4}" />
+            </telerik:RadComboBox>
+
+            <TextBlock Text="Middle tick tooltip format:"
+                       Margin="0,5,0,0" />
+			<telerik:RadComboBox Name="middleTickTooltip"
+                                 SelectedIndex="0"
+                                 Margin="0,2">
+				<telerik:RadComboBoxItem Content="Middle tick value {Value|F0}" />
+				<telerik:RadComboBoxItem Content="Middle tick value {Value|F1}" />
+				<telerik:RadComboBoxItem Content="Middle tick value {Value|F2}" />
+				<telerik:RadComboBoxItem Content="Middle tick value {Value|F4}" />
+			</telerik:RadComboBox>
+
+			<TextBlock Text="Needle tooltip format:" />
+			<telerik:RadComboBox Name="needleTooltip"
+                                 SelectedIndex="0"
+                                 Margin="0,2">
+				<telerik:RadComboBoxItem DataContext="Needle value: {Value|F0} Range: Min={Range.Min|F2} Max={Range.Max|F2}">{0:F0}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Needle value: {Value|F1} Range: Min={Range.Min|F2} Max={Range.Max|F2}">{0:F1}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Needle value: {Value|F2} Range: Min={Range.Min|F2} Max={Range.Max|F2}">{0:F2}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Needle value: {Value|F4} Range: Min={Range.Min|F2} Max={Range.Max|F2}">{0:F4}</telerik:RadComboBoxItem>
+			</telerik:RadComboBox>
+
+			<TextBlock Text="Marker tooltip format:" />
+			<telerik:RadComboBox Name="markerTooltip"
+                                 SelectedIndex="0"
+                                 Margin="0,2">
+				<telerik:RadComboBoxItem DataContext="Marker value {Value|F0}">{0:F0}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Marker value {Value|F1}">{0:F1}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Marker value {Value|F2}">{0:F2}</telerik:RadComboBoxItem>
+				<telerik:RadComboBoxItem DataContext="Marker value {Value|F4}">{0:F4}</telerik:RadComboBoxItem>
+			</telerik:RadComboBox>
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

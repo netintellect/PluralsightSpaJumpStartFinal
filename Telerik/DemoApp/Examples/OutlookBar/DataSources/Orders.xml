@@ -1,0 +1,1523 @@
+<?xml version="1.0" standalone="yes"?>
+<NWindDataSet>
+  <Orders>
+    <OrderID>10948</OrderID>
+    <CustomerID>GODOS</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-03-13T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-10T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-19T00:00:00+02:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>23.3900</Freight>
+    <ShipName>Godos Cocina Típica</ShipName>
+    <ShipAddress>C/ Romero, 33</ShipAddress>
+    <ShipCity>Sevilla</ShipCity>
+    <ShipPostalCode>41101</ShipPostalCode>
+    <ShipCountry>Spain</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10949</OrderID>
+    <CustomerID>BOTTM</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-03-13T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-10T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-17T00:00:00+02:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>74.4400</Freight>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10950</OrderID>
+    <CustomerID>MAGAA</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-03-16T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-13T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-23T00:00:00+02:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>2.5000</Freight>
+    <ShipName>Magazzini Alimentari Riuniti</ShipName>
+    <ShipAddress>Via Ludovico il Moro 22</ShipAddress>
+    <ShipCity>Bergamo</ShipCity>
+    <ShipPostalCode>24100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10951</OrderID>
+    <CustomerID>RICSU</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-03-16T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-27T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-07T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>30.8500</Freight>
+    <ShipName>Richter Supermarkt</ShipName>
+    <ShipAddress>Starenweg 5</ShipAddress>
+    <ShipCity>Genève</ShipCity>
+    <ShipPostalCode>1204</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10952</OrderID>
+    <CustomerID>ALFKI</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-03-16T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-27T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-24T00:00:00+02:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>40.4200</Freight>
+    <ShipName>Alfreds Futterkiste</ShipName>
+    <ShipAddress>Obere Str. 57</ShipAddress>
+    <ShipCity>Berlin</ShipCity>
+    <ShipPostalCode>12209</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10953</OrderID>
+    <CustomerID>AROUT</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-03-16T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-03-30T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-25T00:00:00+02:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>23.7200</Freight>
+    <ShipName>Around the Horn</ShipName>
+    <ShipAddress>Brook Farm
+Stratford St. Mary</ShipAddress>
+    <ShipCity>Colchester</ShipCity>
+    <ShipRegion>Essex</ShipRegion>
+    <ShipPostalCode>CO7 6JX</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10954</OrderID>
+    <CustomerID>LINOD</CustomerID>
+    <EmployeeID>5</EmployeeID>
+    <OrderDate>1998-03-17T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-20T00:00:00+02:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>27.9100</Freight>
+    <ShipName>LINO-Delicateses</ShipName>
+    <ShipAddress>Ave. 5 de Mayo Porlamar</ShipAddress>
+    <ShipCity>I. de Margarita</ShipCity>
+    <ShipRegion>Nueva Esparta</ShipRegion>
+    <ShipPostalCode>4980</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10955</OrderID>
+    <CustomerID>FOLKO</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-03-17T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-14T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-20T00:00:00+02:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>3.2600</Freight>
+    <ShipName>Folk och fä HB</ShipName>
+    <ShipAddress>Åkergatan 24</ShipAddress>
+    <ShipCity>Bräcke</ShipCity>
+    <ShipPostalCode>S-844 67</ShipPostalCode>
+    <ShipCountry>Sweden</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10956</OrderID>
+    <CustomerID>BLAUS</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-03-17T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-20T00:00:00+02:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>44.6500</Freight>
+    <ShipName>Blauer See Delikatessen</ShipName>
+    <ShipAddress>Forsterstr. 57</ShipAddress>
+    <ShipCity>Mannheim</ShipCity>
+    <ShipPostalCode>68306</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10957</OrderID>
+    <CustomerID>HILAA</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-03-18T00:00:00+02:00</OrderDate>
+    <RequiredDate>1998-04-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-03-27T00:00:00+02:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>105.3600</Freight>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10988</OrderID>
+    <CustomerID>RATTC</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-03-31T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>61.1400</Freight>
+    <ShipName>Rattlesnake Canyon Grocery</ShipName>
+    <ShipAddress>2817 Milton Dr.</ShipAddress>
+    <ShipCity>Albuquerque</ShipCity>
+    <ShipRegion>NM</ShipRegion>
+    <ShipPostalCode>87110</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10989</OrderID>
+    <CustomerID>QUEDE</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-03-31T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-02T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>34.7600</Freight>
+    <ShipName>Que Delícia</ShipName>
+    <ShipAddress>Rua da Panificadora, 12</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>02389-673</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10990</OrderID>
+    <CustomerID>ERNSH</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-13T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-07T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>117.6100</Freight>
+    <ShipName>Ernst Handel</ShipName>
+    <ShipAddress>Kirchgasse 6</ShipAddress>
+    <ShipCity>Graz</ShipCity>
+    <ShipPostalCode>8010</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10991</OrderID>
+    <CustomerID>QUICK</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-07T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>38.5100</Freight>
+    <ShipName>QUICK-Stop</ShipName>
+    <ShipAddress>Taucherstraße 10</ShipAddress>
+    <ShipCity>Cunewalde</ShipCity>
+    <ShipPostalCode>01307</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10992</OrderID>
+    <CustomerID>THEBI</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-03T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>4.2700</Freight>
+    <ShipName>The Big Cheese</ShipName>
+    <ShipAddress>89 Jefferson Way
+Suite 2</ShipAddress>
+    <ShipCity>Portland</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97201</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10993</OrderID>
+    <CustomerID>FOLKO</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>8.8100</Freight>
+    <ShipName>Folk och fä HB</ShipName>
+    <ShipAddress>Åkergatan 24</ShipAddress>
+    <ShipCity>Bräcke</ShipCity>
+    <ShipPostalCode>S-844 67</ShipPostalCode>
+    <ShipCountry>Sweden</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10994</OrderID>
+    <CustomerID>VAFFE</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-02T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-16T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-09T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>65.5300</Freight>
+    <ShipName>Vaffeljernet</ShipName>
+    <ShipAddress>Smagsløget 45</ShipAddress>
+    <ShipCity>Århus</ShipCity>
+    <ShipPostalCode>8200</ShipPostalCode>
+    <ShipCountry>Denmark</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10995</OrderID>
+    <CustomerID>PERIC</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-02T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-30T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-06T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>46.0000</Freight>
+    <ShipName>Pericles Comidas clásicas</ShipName>
+    <ShipAddress>Calle Dr. Jorge Cash 321</ShipAddress>
+    <ShipCity>México D.F.</ShipCity>
+    <ShipPostalCode>05033</ShipPostalCode>
+    <ShipCountry>Mexico</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10996</OrderID>
+    <CustomerID>QUICK</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-02T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-30T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>1.1200</Freight>
+    <ShipName>QUICK-Stop</ShipName>
+    <ShipAddress>Taucherstraße 10</ShipAddress>
+    <ShipCity>Cunewalde</ShipCity>
+    <ShipPostalCode>01307</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10997</OrderID>
+    <CustomerID>LILAS</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-03T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-13T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>73.9100</Freight>
+    <ShipName>LILA-Supermercado</ShipName>
+    <ShipAddress>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</ShipAddress>
+    <ShipCity>Barquisimeto</ShipCity>
+    <ShipRegion>Lara</ShipRegion>
+    <ShipPostalCode>3508</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10998</OrderID>
+    <CustomerID>WOLZA</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-03T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-17T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-17T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>20.3100</Freight>
+    <ShipName>Wolski Zajazd</ShipName>
+    <ShipAddress>ul. Filtrowa 68</ShipAddress>
+    <ShipCity>Warszawa</ShipCity>
+    <ShipPostalCode>01-012</ShipPostalCode>
+    <ShipCountry>Poland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>10999</OrderID>
+    <CustomerID>OTTIK</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-04-03T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-01T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>96.3500</Freight>
+    <ShipName>Ottilies Käseladen</ShipName>
+    <ShipAddress>Mehrheimerstr. 369</ShipAddress>
+    <ShipCity>Köln</ShipCity>
+    <ShipPostalCode>50739</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11000</OrderID>
+    <CustomerID>RATTC</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-04T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-14T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>55.1200</Freight>
+    <ShipName>Rattlesnake Canyon Grocery</ShipName>
+    <ShipAddress>2817 Milton Dr.</ShipAddress>
+    <ShipCity>Albuquerque</ShipCity>
+    <ShipRegion>NM</ShipRegion>
+    <ShipPostalCode>87110</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11001</OrderID>
+    <CustomerID>FOLKO</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-04T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-14T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>197.3000</Freight>
+    <ShipName>Folk och fä HB</ShipName>
+    <ShipAddress>Åkergatan 24</ShipAddress>
+    <ShipCity>Bräcke</ShipCity>
+    <ShipPostalCode>S-844 67</ShipPostalCode>
+    <ShipCountry>Sweden</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11002</OrderID>
+    <CustomerID>SAVEA</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-04T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-16T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>141.1600</Freight>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11003</OrderID>
+    <CustomerID>THECR</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-04T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-08T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>14.9100</Freight>
+    <ShipName>The Cracker Box</ShipName>
+    <ShipAddress>55 Grizzly Peak Rd.</ShipAddress>
+    <ShipCity>Butte</ShipCity>
+    <ShipRegion>MT</ShipRegion>
+    <ShipPostalCode>59801</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11004</OrderID>
+    <CustomerID>MAISD</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-07T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-05T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-20T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>44.8400</Freight>
+    <ShipName>Maison Dewey</ShipName>
+    <ShipAddress>Rue Joseph-Bens 532</ShipAddress>
+    <ShipCity>Bruxelles</ShipCity>
+    <ShipPostalCode>B-1180</ShipPostalCode>
+    <ShipCountry>Belgium</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11005</OrderID>
+    <CustomerID>WILMK</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-07T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-05T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>0.7500</Freight>
+    <ShipName>Wilman Kala</ShipName>
+    <ShipAddress>Keskuskatu 45</ShipAddress>
+    <ShipCity>Helsinki</ShipCity>
+    <ShipPostalCode>21240</ShipPostalCode>
+    <ShipCountry>Finland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11006</OrderID>
+    <CustomerID>GREAL</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-07T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-05T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-15T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>25.1900</Freight>
+    <ShipName>Great Lakes Food Market</ShipName>
+    <ShipAddress>2732 Baker Blvd.</ShipAddress>
+    <ShipCity>Eugene</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97403</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11007</OrderID>
+    <CustomerID>PRINI</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-08T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-06T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-13T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>202.2400</Freight>
+    <ShipName>Princesa Isabel Vinhos</ShipName>
+    <ShipAddress>Estrada da saúde n. 58</ShipAddress>
+    <ShipCity>Lisboa</ShipCity>
+    <ShipPostalCode>1756</ShipPostalCode>
+    <ShipCountry>Portugal</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11008</OrderID>
+    <CustomerID>ERNSH</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-08T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-06T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>79.4600</Freight>
+    <ShipName>Ernst Handel</ShipName>
+    <ShipAddress>Kirchgasse 6</ShipAddress>
+    <ShipCity>Graz</ShipCity>
+    <ShipPostalCode>8010</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11009</OrderID>
+    <CustomerID>GODOS</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-08T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-06T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>59.1100</Freight>
+    <ShipName>Godos Cocina Típica</ShipName>
+    <ShipAddress>C/ Romero, 33</ShipAddress>
+    <ShipCity>Sevilla</ShipCity>
+    <ShipPostalCode>41101</ShipPostalCode>
+    <ShipCountry>Spain</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11010</OrderID>
+    <CustomerID>REGGC</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-09T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-07T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-21T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>28.7100</Freight>
+    <ShipName>Reggiani Caseifici</ShipName>
+    <ShipAddress>Strada Provinciale 124</ShipAddress>
+    <ShipCity>Reggio Emilia</ShipCity>
+    <ShipPostalCode>42100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11011</OrderID>
+    <CustomerID>ALFKI</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-09T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-07T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-13T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>1.2100</Freight>
+    <ShipName>Alfreds Futterkiste</ShipName>
+    <ShipAddress>Obere Str. 57</ShipAddress>
+    <ShipCity>Berlin</ShipCity>
+    <ShipPostalCode>12209</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11012</OrderID>
+    <CustomerID>FRANK</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-09T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-23T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-17T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>242.9500</Freight>
+    <ShipName>Frankenversand</ShipName>
+    <ShipAddress>Berliner Platz 43</ShipAddress>
+    <ShipCity>München</ShipCity>
+    <ShipPostalCode>80805</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11013</OrderID>
+    <CustomerID>ROMEY</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-09T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-07T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-10T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>32.9900</Freight>
+    <ShipName>Romero y tomillo</ShipName>
+    <ShipAddress>Gran Vía, 1</ShipAddress>
+    <ShipCity>Madrid</ShipCity>
+    <ShipPostalCode>28001</ShipPostalCode>
+    <ShipCountry>Spain</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11014</OrderID>
+    <CustomerID>LINOD</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-10T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-08T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-15T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>23.6000</Freight>
+    <ShipName>LINO-Delicateses</ShipName>
+    <ShipAddress>Ave. 5 de Mayo Porlamar</ShipAddress>
+    <ShipCity>I. de Margarita</ShipCity>
+    <ShipRegion>Nueva Esparta</ShipRegion>
+    <ShipPostalCode>4980</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11015</OrderID>
+    <CustomerID>SANTG</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-10T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-24T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-20T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>4.6200</Freight>
+    <ShipName>Santé Gourmet</ShipName>
+    <ShipAddress>Erling Skakkes gate 78</ShipAddress>
+    <ShipCity>Stavern</ShipCity>
+    <ShipPostalCode>4110</ShipPostalCode>
+    <ShipCountry>Norway</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11016</OrderID>
+    <CustomerID>AROUT</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-04-10T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-08T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-13T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>33.8000</Freight>
+    <ShipName>Around the Horn</ShipName>
+    <ShipAddress>Brook Farm
+Stratford St. Mary</ShipAddress>
+    <ShipCity>Colchester</ShipCity>
+    <ShipRegion>Essex</ShipRegion>
+    <ShipPostalCode>CO7 6JX</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11017</OrderID>
+    <CustomerID>ERNSH</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-04-13T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-11T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-20T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>754.2600</Freight>
+    <ShipName>Ernst Handel</ShipName>
+    <ShipAddress>Kirchgasse 6</ShipAddress>
+    <ShipCity>Graz</ShipCity>
+    <ShipPostalCode>8010</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11018</OrderID>
+    <CustomerID>LONEP</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-13T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-11T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-16T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>11.6500</Freight>
+    <ShipName>Lonesome Pine Restaurant</ShipName>
+    <ShipAddress>89 Chiaroscuro Rd.</ShipAddress>
+    <ShipCity>Portland</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97219</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11019</OrderID>
+    <CustomerID>RANCH</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-04-13T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-11T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>3.1700</Freight>
+    <ShipName>Rancho grande</ShipName>
+    <ShipAddress>Av. del Libertador 900</ShipAddress>
+    <ShipCity>Buenos Aires</ShipCity>
+    <ShipPostalCode>1010</ShipPostalCode>
+    <ShipCountry>Argentina</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11020</OrderID>
+    <CustomerID>OTTIK</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-14T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-16T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>43.3000</Freight>
+    <ShipName>Ottilies Käseladen</ShipName>
+    <ShipAddress>Mehrheimerstr. 369</ShipAddress>
+    <ShipCity>Köln</ShipCity>
+    <ShipPostalCode>50739</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11021</OrderID>
+    <CustomerID>QUICK</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-14T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-21T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>297.1800</Freight>
+    <ShipName>QUICK-Stop</ShipName>
+    <ShipAddress>Taucherstraße 10</ShipAddress>
+    <ShipCity>Cunewalde</ShipCity>
+    <ShipPostalCode>01307</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11022</OrderID>
+    <CustomerID>HANAR</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-04-14T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>6.2700</Freight>
+    <ShipName>Hanari Carnes</ShipName>
+    <ShipAddress>Rua do Paço, 67</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>05454-876</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11023</OrderID>
+    <CustomerID>BSBEV</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-14T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>123.8300</Freight>
+    <ShipName>B's Beverages</ShipName>
+    <ShipAddress>Fauntleroy Circus</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>EC2 5NT</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11024</OrderID>
+    <CustomerID>EASTC</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-15T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-13T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-20T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>74.3600</Freight>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11025</OrderID>
+    <CustomerID>WARTH</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-04-15T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-13T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>29.1700</Freight>
+    <ShipName>Wartian Herkku</ShipName>
+    <ShipAddress>Torikatu 38</ShipAddress>
+    <ShipCity>Oulu</ShipCity>
+    <ShipPostalCode>90110</ShipPostalCode>
+    <ShipCountry>Finland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11026</OrderID>
+    <CustomerID>FRANS</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-15T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-13T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-28T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>47.0900</Freight>
+    <ShipName>Franchi S.p.A.</ShipName>
+    <ShipAddress>Via Monte Bianco 34</ShipAddress>
+    <ShipCity>Torino</ShipCity>
+    <ShipPostalCode>10100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11027</OrderID>
+    <CustomerID>BOTTM</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-16T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-14T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-20T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>52.5200</Freight>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11028</OrderID>
+    <CustomerID>KOENE</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-16T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-14T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-22T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>29.5900</Freight>
+    <ShipName>Königlich Essen</ShipName>
+    <ShipAddress>Maubelstr. 90</ShipAddress>
+    <ShipCity>Brandenburg</ShipCity>
+    <ShipPostalCode>14776</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11029</OrderID>
+    <CustomerID>CHOPS</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-16T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-14T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-27T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>47.8400</Freight>
+    <ShipName>Chop-suey Chinese</ShipName>
+    <ShipAddress>Hauptstr. 31</ShipAddress>
+    <ShipCity>Bern</ShipCity>
+    <ShipPostalCode>3012</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11030</OrderID>
+    <CustomerID>SAVEA</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-17T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-27T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>830.7500</Freight>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11031</OrderID>
+    <CustomerID>SAVEA</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-04-17T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>227.2200</Freight>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11032</OrderID>
+    <CustomerID>WHITC</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-17T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-23T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>606.1900</Freight>
+    <ShipName>White Clover Markets</ShipName>
+    <ShipAddress>1029 - 12th Ave. S.</ShipAddress>
+    <ShipCity>Seattle</ShipCity>
+    <ShipRegion>WA</ShipRegion>
+    <ShipPostalCode>98124</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11033</OrderID>
+    <CustomerID>RICSU</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-17T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-15T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-23T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>84.7400</Freight>
+    <ShipName>Richter Supermarkt</ShipName>
+    <ShipAddress>Starenweg 5</ShipAddress>
+    <ShipCity>Genève</ShipCity>
+    <ShipPostalCode>1204</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11034</OrderID>
+    <CustomerID>OLDWO</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-20T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-01T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-27T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>40.3200</Freight>
+    <ShipName>Old World Delicatessen</ShipName>
+    <ShipAddress>2743 Bering St.</ShipAddress>
+    <ShipCity>Anchorage</ShipCity>
+    <ShipRegion>AK</ShipRegion>
+    <ShipPostalCode>99508</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11035</OrderID>
+    <CustomerID>SUPRD</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-20T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-18T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>0.1700</Freight>
+    <ShipName>Suprêmes délices</ShipName>
+    <ShipAddress>Boulevard Tirou, 255</ShipAddress>
+    <ShipCity>Charleroi</ShipCity>
+    <ShipPostalCode>B-6000</ShipPostalCode>
+    <ShipCountry>Belgium</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11036</OrderID>
+    <CustomerID>DRACD</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-20T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-18T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-22T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>149.4700</Freight>
+    <ShipName>Drachenblut Delikatessen</ShipName>
+    <ShipAddress>Walserweg 21</ShipAddress>
+    <ShipCity>Aachen</ShipCity>
+    <ShipPostalCode>52066</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11037</OrderID>
+    <CustomerID>GODOS</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-21T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-19T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-27T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>3.2000</Freight>
+    <ShipName>Godos Cocina Típica</ShipName>
+    <ShipAddress>C/ Romero, 33</ShipAddress>
+    <ShipCity>Sevilla</ShipCity>
+    <ShipPostalCode>41101</ShipPostalCode>
+    <ShipCountry>Spain</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11038</OrderID>
+    <CustomerID>SUPRD</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-21T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-19T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-30T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>29.5900</Freight>
+    <ShipName>Suprêmes délices</ShipName>
+    <ShipAddress>Boulevard Tirou, 255</ShipAddress>
+    <ShipCity>Charleroi</ShipCity>
+    <ShipPostalCode>B-6000</ShipPostalCode>
+    <ShipCountry>Belgium</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11039</OrderID>
+    <CustomerID>LINOD</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-04-21T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-19T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>65.0000</Freight>
+    <ShipName>LINO-Delicateses</ShipName>
+    <ShipAddress>Ave. 5 de Mayo Porlamar</ShipAddress>
+    <ShipCity>I. de Margarita</ShipCity>
+    <ShipRegion>Nueva Esparta</ShipRegion>
+    <ShipPostalCode>4980</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11040</OrderID>
+    <CustomerID>GREAL</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-22T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-20T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>18.8400</Freight>
+    <ShipName>Great Lakes Food Market</ShipName>
+    <ShipAddress>2732 Baker Blvd.</ShipAddress>
+    <ShipCity>Eugene</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97403</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11041</OrderID>
+    <CustomerID>CHOPS</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-22T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-20T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-28T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>48.2200</Freight>
+    <ShipName>Chop-suey Chinese</ShipName>
+    <ShipAddress>Hauptstr. 31</ShipAddress>
+    <ShipCity>Bern</ShipCity>
+    <ShipPostalCode>3012</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11042</OrderID>
+    <CustomerID>COMMI</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-22T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-06T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>29.9900</Freight>
+    <ShipName>Comércio Mineiro</ShipName>
+    <ShipAddress>Av. dos Lusíadas, 23</ShipAddress>
+    <ShipCity>São Paulo</ShipCity>
+    <ShipRegion>SP</ShipRegion>
+    <ShipPostalCode>05432-043</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11043</OrderID>
+    <CustomerID>SPECD</CustomerID>
+    <EmployeeID>5</EmployeeID>
+    <OrderDate>1998-04-22T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-20T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-29T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>8.8000</Freight>
+    <ShipName>Spécialités du monde</ShipName>
+    <ShipAddress>25, rue Lauriston</ShipAddress>
+    <ShipCity>Paris</ShipCity>
+    <ShipPostalCode>75016</ShipPostalCode>
+    <ShipCountry>France</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11044</OrderID>
+    <CustomerID>WOLZA</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>8.7200</Freight>
+    <ShipName>Wolski Zajazd</ShipName>
+    <ShipAddress>ul. Filtrowa 68</ShipAddress>
+    <ShipCity>Warszawa</ShipCity>
+    <ShipPostalCode>01-012</ShipPostalCode>
+    <ShipCountry>Poland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11045</OrderID>
+    <CustomerID>BOTTM</CustomerID>
+    <EmployeeID>6</EmployeeID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>70.5800</Freight>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11046</OrderID>
+    <CustomerID>WANDK</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-23T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-21T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-24T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>71.6400</Freight>
+    <ShipName>Die Wandernde Kuh</ShipName>
+    <ShipAddress>Adenauerallee 900</ShipAddress>
+    <ShipCity>Stuttgart</ShipCity>
+    <ShipPostalCode>70563</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11047</OrderID>
+    <CustomerID>EASTC</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>46.6200</Freight>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11048</OrderID>
+    <CustomerID>BOTTM</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-30T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>24.1200</Freight>
+    <ShipName>Bottom-Dollar Markets</ShipName>
+    <ShipAddress>23 Tsawassen Blvd.</ShipAddress>
+    <ShipCity>Tsawassen</ShipCity>
+    <ShipRegion>BC</ShipRegion>
+    <ShipPostalCode>T2F 8M4</ShipPostalCode>
+    <ShipCountry>Canada</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11049</OrderID>
+    <CustomerID>GOURL</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-24T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-22T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>8.3400</Freight>
+    <ShipName>Gourmet Lanchonetes</ShipName>
+    <ShipAddress>Av. Brasil, 442</ShipAddress>
+    <ShipCity>Campinas</ShipCity>
+    <ShipRegion>SP</ShipRegion>
+    <ShipPostalCode>04876-786</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11050</OrderID>
+    <CustomerID>FOLKO</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>59.4100</Freight>
+    <ShipName>Folk och fä HB</ShipName>
+    <ShipAddress>Åkergatan 24</ShipAddress>
+    <ShipCity>Bräcke</ShipCity>
+    <ShipPostalCode>S-844 67</ShipPostalCode>
+    <ShipCountry>Sweden</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11051</OrderID>
+    <CustomerID>LAMAI</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>2.7900</Freight>
+    <ShipName>La maison d'Asie</ShipName>
+    <ShipAddress>1 rue Alsace-Lorraine</ShipAddress>
+    <ShipCity>Toulouse</ShipCity>
+    <ShipPostalCode>31000</ShipPostalCode>
+    <ShipCountry>France</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11052</OrderID>
+    <CustomerID>HANAR</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>67.2600</Freight>
+    <ShipName>Hanari Carnes</ShipName>
+    <ShipAddress>Rua do Paço, 67</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>05454-876</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11053</OrderID>
+    <CustomerID>PICCO</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-27T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-25T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-04-29T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>53.0500</Freight>
+    <ShipName>Piccolo und mehr</ShipName>
+    <ShipAddress>Geislweg 14</ShipAddress>
+    <ShipCity>Salzburg</ShipCity>
+    <ShipPostalCode>5020</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11054</OrderID>
+    <CustomerID>CACTU</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShipVia>1</ShipVia>
+    <Freight>0.3300</Freight>
+    <ShipName>Cactus Comidas para llevar</ShipName>
+    <ShipAddress>Cerrito 333</ShipAddress>
+    <ShipCity>Buenos Aires</ShipCity>
+    <ShipPostalCode>1010</ShipPostalCode>
+    <ShipCountry>Argentina</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11055</OrderID>
+    <CustomerID>HILAA</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-26T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-05T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>120.9200</Freight>
+    <ShipName>HILARIÓN-Abastos</ShipName>
+    <ShipAddress>Carrera 22 con Ave. Carlos Soublette #8-35</ShipAddress>
+    <ShipCity>San Cristóbal</ShipCity>
+    <ShipRegion>Táchira</ShipRegion>
+    <ShipPostalCode>5022</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11056</OrderID>
+    <CustomerID>EASTC</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-04-28T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-12T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>278.9600</Freight>
+    <ShipName>Eastern Connection</ShipName>
+    <ShipAddress>35 King George</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>WX3 6FW</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11057</OrderID>
+    <CustomerID>NORTS</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-01T00:00:00+03:00</ShippedDate>
+    <ShipVia>3</ShipVia>
+    <Freight>4.1300</Freight>
+    <ShipName>North/South</ShipName>
+    <ShipAddress>South House
+300 Queensbridge</ShipAddress>
+    <ShipCity>London</ShipCity>
+    <ShipPostalCode>SW7 1RZ</ShipPostalCode>
+    <ShipCountry>UK</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11058</OrderID>
+    <CustomerID>BLAUS</CustomerID>
+    <EmployeeID>9</EmployeeID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>31.1400</Freight>
+    <ShipName>Blauer See Delikatessen</ShipName>
+    <ShipAddress>Forsterstr. 57</ShipAddress>
+    <ShipCity>Mannheim</ShipCity>
+    <ShipPostalCode>68306</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11059</OrderID>
+    <CustomerID>RICAR</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-29T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-10T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>85.8000</Freight>
+    <ShipName>Ricardo Adocicados</ShipName>
+    <ShipAddress>Av. Copacabana, 267</ShipAddress>
+    <ShipCity>Rio de Janeiro</ShipCity>
+    <ShipRegion>RJ</ShipRegion>
+    <ShipPostalCode>02389-890</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11060</OrderID>
+    <CustomerID>FRANS</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>10.9800</Freight>
+    <ShipName>Franchi S.p.A.</ShipName>
+    <ShipAddress>Via Monte Bianco 34</ShipAddress>
+    <ShipCity>Torino</ShipCity>
+    <ShipPostalCode>10100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11061</OrderID>
+    <CustomerID>GREAL</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-11T00:00:00+03:00</RequiredDate>
+    <ShipVia>3</ShipVia>
+    <Freight>14.0100</Freight>
+    <ShipName>Great Lakes Food Market</ShipName>
+    <ShipAddress>2732 Baker Blvd.</ShipAddress>
+    <ShipCity>Eugene</ShipCity>
+    <ShipRegion>OR</ShipRegion>
+    <ShipPostalCode>97403</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11062</OrderID>
+    <CustomerID>REGGC</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>29.9300</Freight>
+    <ShipName>Reggiani Caseifici</ShipName>
+    <ShipAddress>Strada Provinciale 124</ShipAddress>
+    <ShipCity>Reggio Emilia</ShipCity>
+    <ShipPostalCode>42100</ShipPostalCode>
+    <ShipCountry>Italy</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11063</OrderID>
+    <CustomerID>HUNGO</CustomerID>
+    <EmployeeID>3</EmployeeID>
+    <OrderDate>1998-04-30T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-28T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>81.7300</Freight>
+    <ShipName>Hungry Owl All-Night Grocers</ShipName>
+    <ShipAddress>8 Johnstown Road</ShipAddress>
+    <ShipCity>Cork</ShipCity>
+    <ShipRegion>Co. Cork</ShipRegion>
+    <ShipCountry>Ireland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11064</OrderID>
+    <CustomerID>SAVEA</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <ShipVia>1</ShipVia>
+    <Freight>30.0900</Freight>
+    <ShipName>Save-a-lot Markets</ShipName>
+    <ShipAddress>187 Suffolk Ln.</ShipAddress>
+    <ShipCity>Boise</ShipCity>
+    <ShipRegion>ID</ShipRegion>
+    <ShipPostalCode>83720</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11065</OrderID>
+    <CustomerID>LILAS</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShipVia>1</ShipVia>
+    <Freight>12.9100</Freight>
+    <ShipName>LILA-Supermercado</ShipName>
+    <ShipAddress>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</ShipAddress>
+    <ShipCity>Barquisimeto</ShipCity>
+    <ShipRegion>Lara</ShipRegion>
+    <ShipPostalCode>3508</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11066</OrderID>
+    <CustomerID>WHITC</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-05-01T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-29T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-04T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>44.7200</Freight>
+    <ShipName>White Clover Markets</ShipName>
+    <ShipAddress>1029 - 12th Ave. S.</ShipAddress>
+    <ShipCity>Seattle</ShipCity>
+    <ShipRegion>WA</ShipRegion>
+    <ShipPostalCode>98124</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11067</OrderID>
+    <CustomerID>DRACD</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-05-04T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-05-18T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>7.9800</Freight>
+    <ShipName>Drachenblut Delikatessen</ShipName>
+    <ShipAddress>Walserweg 21</ShipAddress>
+    <ShipCity>Aachen</ShipCity>
+    <ShipPostalCode>52066</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11068</OrderID>
+    <CustomerID>QUEEN</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-05-04T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-01T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>81.7500</Freight>
+    <ShipName>Queen Cozinha</ShipName>
+    <ShipAddress>Alameda dos Canàrios, 891</ShipAddress>
+    <ShipCity>São Paulo</ShipCity>
+    <ShipRegion>SP</ShipRegion>
+    <ShipPostalCode>05487-020</ShipPostalCode>
+    <ShipCountry>Brazil</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11069</OrderID>
+    <CustomerID>TORTU</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-05-04T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-01T00:00:00+03:00</RequiredDate>
+    <ShippedDate>1998-05-06T00:00:00+03:00</ShippedDate>
+    <ShipVia>2</ShipVia>
+    <Freight>15.6700</Freight>
+    <ShipName>Tortuga Restaurante</ShipName>
+    <ShipAddress>Avda. Azteca 123</ShipAddress>
+    <ShipCity>México D.F.</ShipCity>
+    <ShipPostalCode>05033</ShipPostalCode>
+    <ShipCountry>Mexico</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11070</OrderID>
+    <CustomerID>LEHMS</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-05-05T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-02T00:00:00+03:00</RequiredDate>
+    <ShipVia>1</ShipVia>
+    <Freight>136.0000</Freight>
+    <ShipName>Lehmanns Marktstand</ShipName>
+    <ShipAddress>Magazinweg 7</ShipAddress>
+    <ShipCity>Frankfurt a.M. </ShipCity>
+    <ShipPostalCode>60528</ShipPostalCode>
+    <ShipCountry>Germany</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11071</OrderID>
+    <CustomerID>LILAS</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-05-05T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-02T00:00:00+03:00</RequiredDate>
+    <ShipVia>1</ShipVia>
+    <Freight>0.9300</Freight>
+    <ShipName>LILA-Supermercado</ShipName>
+    <ShipAddress>Carrera 52 con Ave. Bolívar #65-98 Llano Largo</ShipAddress>
+    <ShipCity>Barquisimeto</ShipCity>
+    <ShipRegion>Lara</ShipRegion>
+    <ShipPostalCode>3508</ShipPostalCode>
+    <ShipCountry>Venezuela</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11072</OrderID>
+    <CustomerID>ERNSH</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-05-05T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-02T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>258.6400</Freight>
+    <ShipName>Ernst Handel</ShipName>
+    <ShipAddress>Kirchgasse 6</ShipAddress>
+    <ShipCity>Graz</ShipCity>
+    <ShipPostalCode>8010</ShipPostalCode>
+    <ShipCountry>Austria</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11073</OrderID>
+    <CustomerID>PERIC</CustomerID>
+    <EmployeeID>2</EmployeeID>
+    <OrderDate>1998-05-05T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-02T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>24.9500</Freight>
+    <ShipName>Pericles Comidas clásicas</ShipName>
+    <ShipAddress>Calle Dr. Jorge Cash 321</ShipAddress>
+    <ShipCity>México D.F.</ShipCity>
+    <ShipPostalCode>05033</ShipPostalCode>
+    <ShipCountry>Mexico</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11074</OrderID>
+    <CustomerID>SIMOB</CustomerID>
+    <EmployeeID>7</EmployeeID>
+    <OrderDate>1998-05-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>18.4400</Freight>
+    <ShipName>Simons bistro</ShipName>
+    <ShipAddress>Vinbæltet 34</ShipAddress>
+    <ShipCity>København</ShipCity>
+    <ShipPostalCode>1734</ShipPostalCode>
+    <ShipCountry>Denmark</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11075</OrderID>
+    <CustomerID>RICSU</CustomerID>
+    <EmployeeID>8</EmployeeID>
+    <OrderDate>1998-05-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>6.1900</Freight>
+    <ShipName>Richter Supermarkt</ShipName>
+    <ShipAddress>Starenweg 5</ShipAddress>
+    <ShipCity>Genève</ShipCity>
+    <ShipPostalCode>1204</ShipPostalCode>
+    <ShipCountry>Switzerland</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11076</OrderID>
+    <CustomerID>BONAP</CustomerID>
+    <EmployeeID>4</EmployeeID>
+    <OrderDate>1998-05-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>38.2800</Freight>
+    <ShipName>Bon app'</ShipName>
+    <ShipAddress>12, rue des Bouchers</ShipAddress>
+    <ShipCity>Marseille</ShipCity>
+    <ShipPostalCode>13008</ShipPostalCode>
+    <ShipCountry>France</ShipCountry>
+  </Orders>
+  <Orders>
+    <OrderID>11077</OrderID>
+    <CustomerID>RATTC</CustomerID>
+    <EmployeeID>1</EmployeeID>
+    <OrderDate>1998-05-06T00:00:00+03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00+03:00</RequiredDate>
+    <ShipVia>2</ShipVia>
+    <Freight>8.5300</Freight>
+    <ShipName>Rattlesnake Canyon Grocery</ShipName>
+    <ShipAddress>2817 Milton Dr.</ShipAddress>
+    <ShipCity>Albuquerque</ShipCity>
+    <ShipRegion>NM</ShipRegion>
+    <ShipPostalCode>87110</ShipPostalCode>
+    <ShipCountry>USA</ShipCountry>
+  </Orders>
+</NWindDataSet>

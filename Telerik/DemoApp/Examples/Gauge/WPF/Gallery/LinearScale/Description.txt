@@ -1,0 +1,2 @@
+﻿If you are building business dashboards or you just need graphical indicators, you will find Telerik Gauge control indispensable. With the powerful customization capabilities of the linear gauges you are free to build the exact dynamic data visualization tool that you need.<br/>
+RadGauge is a part of the Telerik.Windows.Controls.Gauge assembly.<br/>

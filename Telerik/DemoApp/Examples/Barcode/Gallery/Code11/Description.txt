@@ -1,0 +1,1 @@
+﻿Code 11 is a high-density numeric-only symbology. The symbology is discrete and is able to encode the numbers 0 through 9, the dash symbol (-), and start/stop characters.

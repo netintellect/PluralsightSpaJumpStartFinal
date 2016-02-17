@@ -1,0 +1,39 @@
+<Examples:ExpressionEditorExample x:Class="Telerik.Windows.Examples.ExpressionEditor.FirstLook.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  VerticalAlignment="Center"
+								  HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Products"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.Resources>
+			<Style TargetType="telerik:GridViewHeaderCell" BasedOn="{StaticResource GridViewHeaderCellStyle}">
+			<Setter Property="Padding" Value="5,2,3,2"/>
+			</Style>
+		</Grid.Resources>
+		<telerik:RadGridView x:Name="GridView"
+							 ItemsSource="{Binding Products}"
+							 IsSynchronizedWithCurrentItem="True"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 Height="500"
+							 Width="748"
+							 ColumnWidth="*"
+							 ShowGroupPanel="False">
+			<telerik:RadGridView.Columns>
+				<telerik:GridViewExpressionColumn IsSortable="False" UniqueName="ExpressionColumn">
+					<telerik:GridViewExpressionColumn.Header>
+						<telerik:RadButton Content="Expression"
+										   Click="OnExpressionButtonClick" 
+                                           telerik:TouchManager.IsTouchHitTestVisible="False"/>
+					</telerik:GridViewExpressionColumn.Header>
+				</telerik:GridViewExpressionColumn>
+			</telerik:RadGridView.Columns>
+		</telerik:RadGridView>
+	</Grid>
+</Examples:ExpressionEditorExample>

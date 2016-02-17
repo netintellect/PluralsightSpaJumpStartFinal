@@ -1,0 +1,3 @@
+﻿This example demonstrates the demographics situation in Top 5 of the largest cities in Bulgaria.
+
+The example integrates RadMap and RadChart controls and uses the map Visualization Layer to geographically position the pie charts onto the map.

@@ -1,0 +1,1 @@
+﻿Telerik OutlookBar supports four main events – PositionChanged, Selected, ItemAdded and ItemRemoved. This Event model lets you entirely gain control over the OutookBar’s behavior.

@@ -1,0 +1,1 @@
+﻿RadTimeline allows grouping the timeline items using the GroupPath property. This example shows important events from World War 2, grouped into catogeries.

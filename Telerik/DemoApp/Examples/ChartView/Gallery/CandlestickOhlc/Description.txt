@@ -1,0 +1,1 @@
+﻿This example shows Candlestick and OHLC series in chart. Used for monitoring stock prices, candlestick and ohlc charts' items have four values: OpenBinding price, CloseBinding price, HighBinding and LowBinding prices. The white/green rectangle represents positive tendencies while black/red rectangle represents negative tendencies (OpenBinding > CloseBinding).

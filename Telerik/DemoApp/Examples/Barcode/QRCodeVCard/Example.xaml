@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Barcode.QRCodeVCard.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"
+    xmlns:Converters="clr-namespace:Telerik.Windows.Examples.Barcode.Gallery"       
+    HorizontalAlignment="Center" VerticalAlignment="Center"             
+    mc:Ignorable="d" >
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Business Card" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid x:Name="LayoutRoot"  Width="740" Height="520">
+
+        <Image x:Name="Image1" Source="..//Images/bcard_export.png" Width="465" Height="436"></Image>
+        <telerik:RadBarcodeQR x:Name="QRCode1" Width="150" Height="150" Margin="0, 120, 257, 0"></telerik:RadBarcodeQR>
+
+    </Grid>
+</UserControl>

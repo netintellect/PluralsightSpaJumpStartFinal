@@ -1,0 +1,1 @@
+﻿You can easily integrate ScheduleView with the RadContextMenu control. Various operations can be performed on RadScheduleView appointments and views through the ContextMenu.

@@ -1,0 +1,93 @@
+﻿<local:ViewBase x:Class="Telerik.Windows.QuickStart.SingleControlExamplesTouch"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:local="clr-namespace:Telerik.Windows.QuickStart"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		mc:Ignorable="d" Style="{StaticResource ViewBaseTouchStyle}"
+		d:DesignHeight="800" d:DesignWidth="1024"
+        x:Name="rootSingleControlExamplesTouch">
+
+    <local:ViewBase.Resources>
+
+        <local:SingleControlExamplesTemplateSelector x:Key="listViewItemTemplateSelector" 
+                                                     HighlightedItemTemplate="{StaticResource HighlightedExampleItemTemplate}" 
+                                                     GroupFirstHighlightedItemTemplate="{StaticResource HighlightedExampleHeaderItemTemplate}"
+                                                     GroupFirstNormalItemTemplate="{StaticResource ExampleHeaderItemTemplate}"
+                                                     NormalItemTemplate="{StaticResource ExampleItemTemplate}"/>
+    </local:ViewBase.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ListView Grid.RowSpan="2"  x:Name="ListView" ItemsSource="{Binding ControlInfo.TouchExamples}" Style="{StaticResource ExamplesListViewStyle}"
+                  local:SelectorHelper.SelectionChangedCommand="{Binding NavigateCommand}"
+                  local:SelectorHelper.SelectionChangedCommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Self}}"
+                  ItemContainerStyle="{StaticResource ExamplesListViewItemStyle}" 
+                  IsTabStop="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ItemTemplateSelector="{StaticResource listViewItemTemplateSelector}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch"  Margin="297,147,33,40"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+
+        <StackPanel Margin="60,20,0,0" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Text="{Binding ControlInfo.Text}" VerticalAlignment="Top" HorizontalAlignment="Left"  Style="{StaticResource ControlTitleTouchTextStyle}" MinWidth="220"/>
+            <StackPanel Margin="20,0,0,-10"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding HasNewExamples, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                <ContentPresenter ScrollViewer.CanContentScroll="True" ContentTemplate="{DynamicResource TileBadgeNew_Short}" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="New" Style="{DynamicResource TextStyle}" Foreground="{DynamicResource Status.New}" Margin="5,5,10,5"/>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,-10" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding HasUpdatedExamples, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                <ContentPresenter ScrollViewer.CanContentScroll="True" ContentTemplate="{DynamicResource TileBadgeUpdate_Short}" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="Updated" Style="{DynamicResource TextStyle}" Foreground="{DynamicResource Status.Update}" Margin="5,5,10,5"/>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,-10" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding HasCtpExamples, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                <ContentPresenter ScrollViewer.CanContentScroll="True" ContentTemplate="{DynamicResource TileBadgeCtp_Short}" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="Ctp" Style="{DynamicResource TextStyle}" Foreground="{DynamicResource Status.Ctp}" Margin="5,5,10,5"/>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,-10" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding HasBetaExamples, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                <ContentPresenter ScrollViewer.CanContentScroll="True" ContentTemplate="{DynamicResource TileBadgeBeta_Short}" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="Beta" Style="{DynamicResource TextStyle}" Foreground="{DynamicResource Status.Beta}" Margin="5,5,10,5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Grid HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="60 0 0 -13" VerticalAlignment="Bottom">
+                <Button  x:Name="Logo" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource TelerikLogoTemplate}" Style="{StaticResource BlankButtonStyle}" Command="{Binding NavigateCommand}" CommandParameter="Home" />
+                <Button x:Name="ReleaseNotes" Style="{StaticResource RealeaseNotesButtonStyle}" Margin="0 -5 0 0" HorizontalAlignment="Right" Command="{Binding NavigateCommand}" CommandParameter="http://www.telerik.com/support/whats-new/wpf/release-history" />
+            </StackPanel>
+            
+                <Button  x:Name="allControlls" Grid.Column="1" Margin="60,0,0,0" Command="{Binding NavigateCommand}" CommandParameter="AllControlsTouch" HorizontalAlignment="Left" VerticalAlignment="Bottom" Style="{StaticResource BlankButtonStyle}">
+                <StackPanel Height="24" Orientation="Horizontal">
+                    <WrapPanel Orientation="Vertical" Height="16" Margin="0,0,0,0">
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                        <Rectangle Width="6" Height="6" Margin="1" Fill="{DynamicResource ContentControl.StrongHighlight}" />
+                    </WrapPanel>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="10,0,0,0" Foreground="{DynamicResource Text.Header}" Text="All Controls"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <StackPanel Margin="0,0,60,-5" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="AllProducts" Height="21" Margin="15 0"  Style="{StaticResource AllControlsButtonStyle}" Content="ALL _TELERIK PRODUCTS" HorizontalAlignment="Left" VerticalAlignment="Center" Command="{Binding NavigateCommand}"  CommandParameter="http://www.telerik.com/support/demos"/>
+
+            <ContentControl Style="{StaticResource ToolBarTouchContentControlStyle}"/>
+            <Button Margin="20,0,0,0"  Style="{DynamicResource SwitchToMouseModeButtonStyle}"  Command="{Binding ToggleApplicationTouchModeCommand}" CommandParameter="{Binding ControlInfo}"/>
+        </StackPanel>
+    </Grid>
+</local:ViewBase>

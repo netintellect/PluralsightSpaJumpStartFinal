@@ -1,0 +1,12 @@
+﻿In many cases a hierarchical dataset will not be only ten to fifteen items, but rather span hundreds or even thousands of nodes.
+
+One option which you can utilize is the load-on-demand feature, which provides data virtualization by retrieving the data only when needed, thus
+improving initial start-up time.
+
+Moving beyond this, we have incorporated UI virtualization, which deals with container caching and generation.
+
+With this combination, the root level items are virtualized (allowing for peak performance with large lists),
+with child nodes being cached for a period of time.
+
+Utilizing these techniques allows for RadTreeView to provide seamless performance with large and small datasets,
+all the while not utilizing any more memory than necessary to get the rich functionality which is included in it.

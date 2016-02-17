@@ -1,0 +1,1 @@
+This example illustrates the Replace functionality in <b>RadWordsProcessing</b>. You can import a document of your choice, replace or highlight text in it, using regular expressions or strings and then export the document to view the result.

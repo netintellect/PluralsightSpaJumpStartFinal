@@ -1,0 +1,4 @@
+﻿RadMap provides support for a rich variety of scenarios through its support for custom ESRI shapefiles.
+
+This example demonstrates custom shapefile representation of a theatre hall and allows you to manage the seat selection interactively on the map. 
+Also, the new MapShape.CaptionTemplate/CaptionLocation properies are used to specify the seat shapes' number captions.

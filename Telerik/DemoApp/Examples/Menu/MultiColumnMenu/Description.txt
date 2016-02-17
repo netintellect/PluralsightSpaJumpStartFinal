@@ -1,0 +1,1 @@
+﻿This example demonstrates how to customize the RadMenuItem’s ItemsPanel template to create a multi-column menu. This feature is quite  useful when you want to display large amounts of items. Please hover the Options menu-item to see the multi-column menu.

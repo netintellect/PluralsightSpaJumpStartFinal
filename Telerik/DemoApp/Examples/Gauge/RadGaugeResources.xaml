@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:demo="clr-namespace:Telerik.Examples.Gauge">
+
+    <ControlTemplate x:Key="DefaultLinearMarkerTemplate" TargetType="telerik:Marker">
+        <Polygon Points="0,5.5 20,0 20,10" 
+                 Fill="{TemplateBinding Background}" 
+                 Stretch="Fill" 
+                 Stroke="{TemplateBinding BorderBrush}"
+				 StrokeThickness="1" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Stretch" />
+    </ControlTemplate>
+
+    <Style x:Key="DefaultLinearMarkerStyle" TargetType="telerik:Marker">
+        <Setter Property="telerik:ScaleObject.Location" Value="CenterInside" />
+        <Setter Property="telerik:ScaleObject.Offset" Value="0" />
+        <Setter Property="telerik:ScaleObject.RelativeHeight" Value="0.05" />
+        <Setter Property="telerik:ScaleObject.RelativeWidth" Value="0.1" />
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="Template" Value="{StaticResource DefaultLinearMarkerTemplate}" />
+    </Style> 
+
+	
+	
+
+</ResourceDictionary>

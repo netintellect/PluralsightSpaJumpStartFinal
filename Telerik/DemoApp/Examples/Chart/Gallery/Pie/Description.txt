@@ -1,0 +1,1 @@
+﻿This example shows a pie chart. The chart has one DataSeries. Its Definition property is set to an instance of PieSeriesDefinition. Chart automatically recognizes the radial series and adds items to the legend for each data item.

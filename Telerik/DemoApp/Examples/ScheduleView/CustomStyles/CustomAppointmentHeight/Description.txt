@@ -1,0 +1,5 @@
+﻿Now RadScheduleView provides you with another customization option - the possibility to set different height for the appointments displayed in the MonthViewDefinition. 
+By using a custom AppointmentStyleSelector you can easily apply different styles with the desired heights set inside.
+</br></br>The example demonstrates how to apply three different heights depending on the duration of the appointments. The appointments with duration shorter 
+than an hour are considered as <b>small appointments</b>, those with durtaion between an hour and two hours are considered as <b>regular appointments</b> and 
+the appointments with duration above two hours are considered as <b>big appointments</b>. All of these types have different size as well as background color applied.

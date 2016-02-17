@@ -1,0 +1,1 @@
+﻿The TreeMap control is used to visualize relatively big amount of data in a limited space. The tiles' size represents a measurable quantitative value, while their color might be related to the same or to another value. RadTreeMap expects a hierarchical collection and presents the data according to the TypeDefinitions.

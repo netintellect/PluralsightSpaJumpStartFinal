@@ -1,0 +1,3 @@
+﻿Telerik OutlookBar control lets you deliver Outlook’s navigational bar to your applications just as easy as adding a single control. It provides different DataTemplates, overflow menu, minimization, horizontal and vertical resizers. You can easily change an OutlookBarItem placement using the horizontal splitter to move it from the active area to the overflow menu.
+<br/><br/>
+Telerik OutlookBar is part of the <b>Telerik.Windows.Controls.Navigation</b> assembly.

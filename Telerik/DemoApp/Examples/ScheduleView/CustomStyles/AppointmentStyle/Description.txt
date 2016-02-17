@@ -1,0 +1,1 @@
+﻿The AppointmentStyleSelector provides an easy conventional way to use different styles for appointments. This new selector makes it easy to bring color and vividness into your instance of RadScheduleView and make it look unique.

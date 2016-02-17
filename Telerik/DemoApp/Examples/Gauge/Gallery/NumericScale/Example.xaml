@@ -1,0 +1,102 @@
+﻿<demo:DynamicBasePage x:Class="Telerik.Windows.Examples.Gauge.Gallery.NumericScale.Example"
+					  xmlns="http://schemas.microsoft.com/client/2007"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns:sys="clr-namespace:System;assembly=mscorlib"
+					  xmlns:demo="clr-namespace:Telerik.Examples.Gauge"
+					  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+					  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+					  Loaded="NumericTypeIndicator_Loaded" 
+					  HorizontalAlignment="Center" 
+					  VerticalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Numeric Gauge" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<demo:DynamicBasePage.Resources>
+		<demo:SolidBrushItemsSource x:Key="SolidBrushSource" />
+	</demo:DynamicBasePage.Resources>
+
+	<Grid Width="784" Height="484">
+		<telerik:NumericScale x:Name="numericScale" 
+							  Min="0" Max="1000" 
+							  Background="Transparent">
+			<telerik:NumericScale.Indicators>
+				<telerik:NumericIndicator x:Name="numericIndicator" 
+										  Format="{}{0:F2}"
+										  telerik:ScaleObject.RelativeX="0.125" 
+										  telerik:ScaleObject.RelativeY="0.08" 
+										  telerik:ScaleObject.RelativeWidth="0.75"
+										  telerik:ScaleObject.RelativeHeight="0.35"
+										  Background="Transparent" 
+										  BorderThickness="0">
+					<telerik:NumericIndicator.Positions>
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" />
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" />
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" />
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" telerik:ScaleObject.RelativeWidth="0.03" />
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" />
+						<telerik:HexagonalNumberPosition Background="Transparent" CornerRadius="0" />
+					</telerik:NumericIndicator.Positions>
+				</telerik:NumericIndicator>
+				<telerik:NumericIndicator x:Name="bottomNumericIndicator" 
+                                              Format="{}{0:F2}"
+							                  Foreground="White" 
+                                              telerik:ScaleObject.RelativeX="0.25" 
+                                              telerik:ScaleObject.RelativeY="0.5" 
+                                              telerik:ScaleObject.RelativeWidth="0.5"
+                                              telerik:ScaleObject.RelativeHeight="0.2"
+                                              Background="Transparent" 
+                                              BorderThickness="0">
+					<telerik:NumericIndicator.Positions>
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" />
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" />
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" />
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" telerik:ScaleObject.RelativeWidth="0.02" />
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" />
+						<telerik:FontNumberPosition FontSize="64" Background="Black" CornerRadius="0" />
+					</telerik:NumericIndicator.Positions>
+				</telerik:NumericIndicator>
+			</telerik:NumericScale.Indicators>
+		</telerik:NumericScale>
+	</Grid>
+
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+
+			<TextBlock Text="Seven Segs Indicator Properties" 
+                       TextWrapping="Wrap" />
+
+			<TextBlock Text="Foreground:" Margin="0,2" />
+			<telerik:RadComboBox Name="numericIndicatorForegroundCombo"
+								 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectionChanged="IndicatorForeground_SelectionChanged"
+								 Margin="0,2" />
+
+			<TextBlock Text="Position background:" />
+			<telerik:RadComboBox Name="numericIndicatorBackgroundCombo" 
+								 ItemsSource="{StaticResource SolidBrushSource}"
+								 SelectionChanged="IndicatorBackground_SelectionChanged"
+								 Margin="0,2" />
+
+			<TextBlock Text="Indicator style:" />
+			<telerik:RadComboBox Name="numericIndicatorStyle"
+								 SelectionChanged="IndicatorStyle_SelectionChanged"
+								 Margin="0,2" />
+
+			<TextBlock Margin="0,10,0,0" 
+                       Text="Font Style Indicator Properties" 
+                       TextWrapping="Wrap" />
+
+			<TextBlock Text="Font family:" Margin="0,2" />
+			<telerik:RadComboBox Name="fontFamilyCombo"
+                               SelectionChanged="FontFamilyComboBox_SelectionChanged" 
+                               Margin="0,2"/>
+
+			<TextBlock Text="Foreground:" />
+			<telerik:RadComboBox Name="foregroundCombo"
+                                 ItemsSource="{StaticResource SolidBrushSource}"
+                                 SelectionChanged="ComboBox_SelectionChanged"
+                                 Margin="0,2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</demo:DynamicBasePage>

@@ -1,0 +1,2 @@
+﻿This example demonstrates how you can import and export appointments. Using the power of AppointmentCalendarImporter class we are able to import appointments from external iCal formated source.
+<br/>

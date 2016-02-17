@@ -1,0 +1,143 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Gallery.ScatterPoint.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.Gallery.ScatterPoint"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.Gallery.ScatterPoint"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" x:Name="userControl">
+
+    <UserControl.DataContext>
+        <vm:ExampleViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate x:Key="horizontalMajorTickTemplate">
+            <Rectangle VerticalAlignment="Top" Height="3" Width="1" Stroke="Black" StrokeThickness="0.2" Fill="Black" />
+        </DataTemplate>
+        <DataTemplate x:Key="verticalMajorTickTemplate">
+            <Rectangle HorizontalAlignment="Right" Height="1" Width="3" Stroke="Black" StrokeThickness="0.2" Fill="Black" />
+        </DataTemplate>
+        <example:PaletteExtractorConverter x:Key="paletteExtractor" />
+        <example:SeriesTypeToLegendGeometryConverter x:Key="SeriesTypeToLegendGeometryConverter">
+            <example:SeriesTypeToLegendGeometryConverter.LineGeometry>
+                <RectangleGeometry Rect="1 5 10 2" />
+            </example:SeriesTypeToLegendGeometryConverter.LineGeometry>
+            <example:SeriesTypeToLegendGeometryConverter.AreaGeometry>
+                <PathGeometry>
+                    <PathFigure StartPoint="1 1">
+                        <LineSegment Point="6 6" />
+                        <LineSegment Point="11 3" />
+                        <LineSegment Point="11 11" />
+                        <LineSegment Point="1 11" />
+                        <LineSegment Point="1 1" />
+                    </PathFigure>
+                </PathGeometry>
+            </example:SeriesTypeToLegendGeometryConverter.AreaGeometry>
+            <example:SeriesTypeToLegendGeometryConverter.PointGeometry>
+                <EllipseGeometry Center="6 6" RadiusX="5" RadiusY="5" />
+            </example:SeriesTypeToLegendGeometryConverter.PointGeometry>
+        </example:SeriesTypeToLegendGeometryConverter>
+        <DataTemplate x:Key="LegendItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Path Fill="{Binding MarkerStroke}" Width="12" Height="12" Data="{Binding Presenter, Converter={StaticResource SeriesTypeToLegendGeometryConverter}}" />
+                <TextBlock Margin="2" Text="{Binding Title}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Mean hourly earnings in the UK public and private sector (aged 16-64)" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid Margin="15,10,15,10" x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <telerik:RadLegend HorizontalAlignment="Right" 
+                           Items="{Binding LegendItems, ElementName=chart1}" 
+                           ItemTemplate="{StaticResource LegendItemTemplate}">
+            <telerik:RadLegend.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </telerik:RadLegend.ItemsPanel>
+        </telerik:RadLegend>
+        <telerik:RadCartesianChart x:Name="chart1" Grid.Row="1" Palette="Windows8">
+            <telerik:RadCartesianChart.Resources>
+                <DataTemplate x:Key="PointTemplate1">
+                    <Ellipse Height="8" Width="8" Fill="#FF8EC441" />
+                </DataTemplate>
+                <DataTemplate x:Key="PointTemplate2">
+                    <Rectangle Height="8" Width="8" Fill="#FF1B9DDE" />
+                </DataTemplate>
+                <DataTemplate x:Key="scatterLinePointTemplate1">
+                    <example:CustomEllipse Width="7" Height="7" BorderBrush="#FF8EC441" Background="White" Foreground="#FF8EC441"/>
+                </DataTemplate>
+                <DataTemplate x:Key="scatterLinePointTemplate2">
+                    <example:CustomEllipse Width="7" Height="7" BorderBrush="#FF1B9DDE" Background="White" Foreground="#FF1B9DDE"/>
+                </DataTemplate>
+            </telerik:RadCartesianChart.Resources>
+            <telerik:RadCartesianChart.TooltipTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Path Data="M0,0 L110,0 L110,36 L11,36 L8,40 L5,36 L0,36 z"
+                              Stretch="Fill"
+                              Fill="{Binding Path=Presenter, Converter={StaticResource paletteExtractor}}"
+                              Stroke="White"
+                              StrokeThickness="1"/>
+                        <StackPanel Margin="5,3,5,3">
+                            <TextBlock Text="{Binding Path=DataItem.Age, StringFormat='Age: {0}'}"
+                                       Foreground="White" FontFamily="Segoe UI" FontSize="11"/>
+                            <TextBlock Text="{Binding Path=DataItem.Wage, StringFormat='Wage: {0:N2} GBP/hour'}"
+                                       Foreground="White" FontFamily="Segoe UI" FontSize="11"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </telerik:RadCartesianChart.TooltipTemplate>
+            <telerik:RadCartesianChart.Behaviors>
+                <telerik:ChartTooltipBehavior Placement="Top" HorizontalOffset="-6"/>
+            </telerik:RadCartesianChart.Behaviors>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:LinearAxis Title="Employee Age" MajorTickTemplate="{StaticResource horizontalMajorTickTemplate}">
+                    <telerik:LinearAxis.TitleTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="11" FontFamily="Segoe UI" />
+                        </DataTemplate>
+                    </telerik:LinearAxis.TitleTemplate>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis Title="Earnings (GBP/hour)" Minimum="2" Maximum="20" MajorStep="2" MajorTickTemplate="{StaticResource verticalMajorTickTemplate}">
+                    <telerik:LinearAxis.TitleTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="11" FontFamily="Segoe UI" Margin="0,0,0,5" />
+                        </DataTemplate>
+                    </telerik:LinearAxis.TitleTemplate>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.VerticalAxis>
+                    <telerik:RadCartesianChart.Grid>
+                        <telerik:CartesianChartGrid MajorLinesVisibility="XY" />
+                    </telerik:RadCartesianChart.Grid>
+            <example:SeriesTypeSwitch.SeriesType>
+                <Binding Path="SeriesType" />
+            </example:SeriesTypeSwitch.SeriesType>
+        </telerik:RadCartesianChart>
+    </Grid>
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="0,2">
+            <TextBlock Text="Chart Type:" />
+            <telerik:RadComboBox SelectedValue="{Binding SeriesType, Mode=TwoWay}" Margin="0,4" >
+                <sys:String>Scatter point</sys:String>
+                <sys:String>Scatter line</sys:String>
+                <sys:String>Scatter spline</sys:String>
+                <sys:String>Scatter area</sys:String>
+                <sys:String>Scatter spline area</sys:String>
+            </telerik:RadComboBox>
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

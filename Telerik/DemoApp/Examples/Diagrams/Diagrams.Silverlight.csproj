@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1025CAE-AE80-48EA-96D1-23FCC2785CEE}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.Examples.Diagrams</RootNamespace>
+    <AssemblyName>Diagrams</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Diagrams.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Diagrams.App</SilverlightAppEntry>
+    <TestPageFileName>Diagrams.SilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+     
+     
+     
+     
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DefineConstants>TRACE;SILVERLIGHT, WPF</DefineConstants>
+  </PropertyGroup>
+  <Import Project="..\..\SLConfigsAtStart.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams.Extensions">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Diagrams.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Diagrams.Core">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Diagrams.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf">
+      <HintPath>$(TELERIKSLDIR)\Binaries.NoXaml\Silverlight\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassDiagram\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassDiagram\ViewModels\AccessType.cs" />
+    <Compile Include="ClassDiagram\ViewModels\ClassDiagramGraphSource.cs" />
+    <Compile Include="ClassDiagram\ViewModels\ClassLinkViewModel.cs" />
+    <Compile Include="ClassDiagram\ViewModels\ClassViewModel.cs" />
+    <Compile Include="ClassDiagram\ViewModels\MainViewModel.cs" />
+    <Compile Include="ClassDiagram\ViewModels\MemberViewModel.cs" />
+    <Compile Include="ClassDiagram\ViewModels\NamespaceViewModel.cs" />
+    <Compile Include="Common\ExportToHTML\HTMLExportHelper.cs" />
+    <Compile Include="Common\ExtensionUtilities.cs" />
+    <Compile Include="Common\HierarchicalDataTemplate.cs" />
+    <Compile Include="Common\SampleItem.cs" />
+    <Compile Include="Common\SamplesFactory.cs" />
+    <Compile Include="Common\SamplesViewModel.cs" />
+    <Compile Include="OrgChart\Converters\InvertedNullToVisibilityConverter.cs" />
+    <Compile Include="OrgChart\Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="OrgChart\CustomControls\DropDialog.xaml.cs">
+      <DependentUpon>DropDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrgChart\CustomControls\EditingTextBox.cs" />
+    <Compile Include="OrgChart\CustomControls\OrgChartDiagram.cs" />
+    <Compile Include="OrgChart\CustomControls\OrgChartDragView.xaml.cs">
+      <DependentUpon>OrgChartDragView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrgChart\ViewModel\ActionDelayer.cs" />
+    <Compile Include="OrgChart\ViewModel\ConnectorDescription.cs" />
+    <Compile Include="OrgChart\ViewModel\DropDialogViewModel.cs" />
+    <Compile Include="OrgChart\ViewModel\TeamExpandCollapseChangeEventArgs.cs" />
+    <Compile Include="Swimlane\Services\CustomResizingService.cs" />
+    <Compile Include="Swimlane\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controls\GeometryControl.cs" />
+    <Compile Include="Dashboard\Controls\HyperlinkControl.cs" />
+    <Compile Include="Dashboard\Controls\ImageControl.cs" />
+    <Compile Include="Dashboard\Controls\ToolboxControl.xaml.cs">
+      <DependentUpon>ToolboxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Converters\AbsoluteValueConverter.cs" />
+    <Compile Include="Dashboard\Converters\StockChangeColorConverter.cs" />
+    <Compile Include="Dashboard\Data Engine\DataProvider.cs" />
+    <Compile Include="Dashboard\Data Engine\IDataProvider.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\AddressType.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\CaseType.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\DataAgent.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\DataGenerator.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\DataStore.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\DateIntervalType.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\DateTimeUtil.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\EquityDataAgent.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\FileExtensionType.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\Markov\MarkovChain.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\Markov\MarkovLink.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\Markov\MarkovNameGenerator.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\Markov\MarkovTextGenerator.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\PersonDataType.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\Quote.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\StochasticEngine.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\StochasticProvider.cs" />
+    <Compile Include="Dashboard\Data Engine\Stochastic\TextSamples.cs" />
+    <Compile Include="Dashboard\Enums\ApplicationState.cs" />
+    <Compile Include="Dashboard\Enums\ImageLocation.cs" />
+    <Compile Include="Dashboard\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Graphlets\ChartShape.cs" />
+    <Compile Include="Dashboard\Graphlets\FinancialShape.cs" />
+    <Compile Include="Dashboard\Graphlets\GaugeShape.cs" />
+    <Compile Include="Dashboard\Graphlets\GridShape.cs" />
+    <Compile Include="Dashboard\Graphlets\HyperlinkShape.cs" />
+    <Compile Include="Dashboard\Graphlets\ImageShape.cs" />
+    <Compile Include="Dashboard\Graphlets\NewsShape.cs" />
+    <Compile Include="Dashboard\Graphlets\SparkLineShape.cs" />
+    <Compile Include="Dashboard\Graphlets\StockSummaryShape.cs" />
+    <Compile Include="Dashboard\Graphlets\TextShape.cs" />
+    <Compile Include="Dashboard\PageManager\ApplicationManager.cs" />
+    <Compile Include="Dashboard\PageManager\FileManager.cs" />
+    <Compile Include="Dashboard\PageManager\Page.cs" />
+    <Compile Include="Dashboard\PageManager\PageManager.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\ChartToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\ProfileToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\GaugeToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\GeometryToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\GridToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\HyperlinkToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\ImageToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\IToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\NewsToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\ShapeToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\SparkLineToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\StockChartToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\StockSummaryToolboxItem.cs" />
+    <Compile Include="Dashboard\ToolBoxItems\TextToolboxItem.cs" />
+    <Compile Include="DesignToolbox\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignToolbox\MainViewModel.cs" />
+    <Compile Include="Drawing\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Drawing\ViewModels\FillRuleViewModel.cs" />
+    <Compile Include="Drawing\ViewModels\GalleryItemViewModel.cs" />
+    <Compile Include="Drawing\ViewModels\MainViewModel.cs" />
+    <Compile Include="Drawing\ViewModels\ShapeGalleryItemViewModel.cs" />
+    <Compile Include="Drawing\ViewModels\StrokeThicknessViewModel.cs" />
+    <Compile Include="FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLook\PercentageConverter.cs" />
+    <Compile Include="MindMap\Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="MindMap\Converters\MainColorToBackgroundConverter.cs" />
+    <Compile Include="MindMap\Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="MindMap\Data\ObservableGraphSource.cs" />
+    <Compile Include="MindMap\Data\ObservableGraphSource.Serialization.cs" />
+    <Compile Include="MindMap\Enums\ItemType.cs" />
+    <Compile Include="MindMap\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MindMap\Collections\IconsCollection.cs" />
+    <Compile Include="MindMap\Collections\NumbersCollection.cs" />
+    <Compile Include="MindMap\Selectors\MindmapStyleSelector.cs" />
+    <Compile Include="MindMap\SettingsPane.xaml.cs">
+      <DependentUpon>SettingsPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MindMap\Visuals\MindmapDiagram.cs" />
+    <Compile Include="MindMap\Visuals\MindmapFirstLevelShape.cs" />
+    <Compile Include="MindMap\Visuals\MindmapOuterShape.cs" />
+    <Compile Include="MindMap\Visuals\MindmapRootShape.cs" />
+    <Compile Include="MindMap\Visuals\MindmapShapeBase.cs" />
+    <Compile Include="MindMap\Models\BaseItem.cs" />
+    <Compile Include="MindMap\Models\IconItem.cs" />
+    <Compile Include="MindMap\Models\Link.cs" />
+    <Compile Include="MindMap\Models\Node.cs" />
+    <Compile Include="MindMap\Selectors\ShapeSelector.cs" />
+    <Compile Include="MindMap\ViewModels\MainViewModel.cs" />
+    <Compile Include="OrgChart\Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="OrgChart\Converters\LayoutTypeToRotateAngleConverter.cs" />
+    <Compile Include="OrgChart\Converters\LayoutTypeToVisibilityConverter.cs" />
+    <Compile Include="OrgChart\Converters\ShapeBackgroundSelector.cs" />
+    <Compile Include="OrgChart\Converters\TreeViewItemTemplateSelector.cs" />
+    <Compile Include="OrgChart\CustomControls\OrgChartTeamItemsControl.cs" />
+    <Compile Include="OrgChart\CustomControls\OrgChartTeamMember.cs" />
+    <Compile Include="OrgChart\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrgChart\Interfaces\IPathEnabled.cs" />
+    <Compile Include="OrgChart\Interfaces\ISelectable.cs" />
+    <Compile Include="OrgChart\OrgChartExample.xaml.cs">
+      <DependentUpon>OrgChartExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrgChart\ViewModel\Branch.cs" />
+    <Compile Include="OrgChart\ViewModel\GraphSource.cs" />
+    <Compile Include="OrgChart\ViewModel\Link.cs" />
+    <Compile Include="OrgChart\ViewModel\OrgRouterViewModel.cs" />
+    <Compile Include="OrgChart\ViewModel\OrgTeamMemberViewModel.cs" />
+    <Compile Include="OrgChart\ViewModel\OrgTeamViewModel.cs" />
+    <Compile Include="OrgChart\ViewModel\TreeLayoutViewModel.cs" />
+    <Compile Include="OrgChart\ViewModel\OrgChartViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Swimlane\SwimlaneCommands.cs" />
+    <Compile Include="Swimlane\Visuals\AdditionalContent.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\BaseShapes\CustomContainerBase.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\BaseShapes\MainContainerShapeBase.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\BaseShapes\SwimlaneShapeBase.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\HorizontalMainContainerShape.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\HorizontalSwimlaneShape.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\SwimlaneDiagram.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Swimlane\Visuals\Diagram\VerticalMainContainerShape.cs" />
+    <Compile Include="Swimlane\Visuals\Diagram\VerticalSwimlaneShape.cs" />
+    <Compile Include="Swimlane\Visuals\ResizeHandler.cs" />
+    <Compile Include="Swimlane\Visuals\CustomManipulationAdorner.cs" />
+    <Compile Include="TableShape\Declaratives\AttachedProperties.cs" />
+    <Compile Include="TableShape\Declaratives\DataType.cs" />
+    <Compile Include="TableShape\Declaratives\DataTypeExtension.cs" />
+    <Compile Include="TableShape\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableShape\Models\TablesGraphSource.cs" />
+    <Compile Include="TableShape\Models\RowModel.cs" />
+    <Compile Include="TableShape\Models\TableModel.cs" />
+    <Compile Include="TableShape\ShapeStyleSelector.cs" />
+    <Compile Include="TableShape\Visuals\TableAdditionalContent.cs" />
+    <Compile Include="TableShape\Visuals\RowShape.cs" />
+    <Compile Include="TableShape\Visuals\SqlDiagram.cs" />
+    <Compile Include="TableShape\Visuals\TableShape.cs" />
+    <Compile Include="Theming\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FirstLook\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ClassDiagram\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClassDiagram\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Resources\ToolboxTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrgChart\CustomControls\DropDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrgChart\CustomControls\OrgChartDragView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Swimlane\CommmonResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Swimlane\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Swimlane\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\Controls\ToolboxControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\GenericShapes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignToolbox\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Drawing\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Drawing\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstLook\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MindMap\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MindMap\SettingsPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MindMap\Resources\MindMapStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MindMap\Resources\MindMapTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrgChart\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrgChart\OrgChartExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Theming\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="OrgChart\Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableShape\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TableShape\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theming\Example.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Diagrams\FirstLook\32\exportHtml.png" />
+    <None Include="Images\Diagrams\Drawing\pic1.png" />
+    <None Include="Images\Diagrams\Drawing\pic2.png" />
+    <None Include="Images\Diagrams\Drawing\pic3.png" />
+    <Resource Include="Common\ExportToHTML\ExportStyles.html" />
+    <Resource Include="Drawing\Description.txt" />
+    <Resource Include="Images\Diagrams\Dashboard\yahooFinance.jpg" />
+    <None Include="Images\Diagrams\FirstLook\32\align1.png" />
+    <None Include="Images\Diagrams\FirstLook\32\align2.png" />
+    <None Include="Images\Diagrams\FirstLook\32\align3.png" />
+    <None Include="Images\Diagrams\FirstLook\32\align4.png" />
+    <None Include="Images\Diagrams\FirstLook\32\align5.png" />
+    <None Include="Images\Diagrams\FirstLook\32\align6.png" />
+    <None Include="Images\Diagrams\FirstLook\32\bring_backward.png" />
+    <None Include="Images\Diagrams\FirstLook\32\bring_Forward.png" />
+    <None Include="Images\Diagrams\FirstLook\32\bring_top.png" />
+    <None Include="Images\Diagrams\FirstLook\32\export.png" />
+    <None Include="Images\Diagrams\FirstLook\32\layout.png" />
+    <None Include="Images\Diagrams\FirstLook\32\print.png" />
+    <None Include="Images\Diagrams\FirstLook\32\send_back.png" />
+    <None Include="Images\Diagrams\FirstLook\AppIcon.png" />
+    <None Include="Images\Diagrams\FirstLook\bezier.jpg" />
+    <None Include="Images\Diagrams\FirstLook\bgColor.png" />
+    <None Include="Images\Diagrams\FirstLook\circle.jpg" />
+    <None Include="Images\Diagrams\FirstLook\copy.png" />
+    <None Include="Images\Diagrams\FirstLook\copy16.png" />
+    <None Include="Images\Diagrams\FirstLook\cursor.png" />
+    <None Include="Images\Diagrams\FirstLook\cut.png" />
+    <None Include="Images\Diagrams\FirstLook\delete_disable.png" />
+    <None Include="Images\Diagrams\FirstLook\export.png" />
+    <None Include="Images\Diagrams\FirstLook\floorplan.jpg" />
+    <None Include="Images\Diagrams\FirstLook\flow.jpg" />
+    <None Include="Images\Diagrams\FirstLook\GridColor.png" />
+    <None Include="Images\Diagrams\FirstLook\Group.png" />
+    <None Include="Images\Diagrams\FirstLook\logo.png" />
+    <None Include="Images\Diagrams\FirstLook\new.png" />
+    <None Include="Images\Diagrams\FirstLook\open.png" />
+    <None Include="Images\Diagrams\FirstLook\paste.png" />
+    <None Include="Images\Diagrams\FirstLook\paste16.png" />
+    <None Include="Images\Diagrams\FirstLook\print.png" />
+    <None Include="Images\Diagrams\FirstLook\Redo.png" />
+    <None Include="Images\Diagrams\FirstLook\rolls.jpg" />
+    <None Include="Images\Diagrams\FirstLook\Rotate_Enabled.png" />
+    <None Include="Images\Diagrams\FirstLook\save.png" />
+    <None Include="Images\Diagrams\FirstLook\save_as.png" />
+    <None Include="Images\Diagrams\FirstLook\showGrid.png" />
+    <None Include="Images\Diagrams\FirstLook\simpleflow.jpg" />
+    <None Include="Images\Diagrams\FirstLook\Snap_to_grid_big.png" />
+    <None Include="Images\Diagrams\FirstLook\Snap_to_items_big.png" />
+    <None Include="Images\Diagrams\FirstLook\stakeholder.jpg" />
+    <None Include="Images\Diagrams\FirstLook\Transform_Enabled.png" />
+    <None Include="Images\Diagrams\FirstLook\Undo.png" />
+    <None Include="Images\Diagrams\FirstLook\Ungroup.png" />
+    <None Include="Images\Diagrams\FirstLook\zoom_to_fit.png" />
+    <Resource Include="Dashboard\Description.txt" />
+    <Resource Include="Dashboard\Pages\Local\AAPL.xml" />
+    <Resource Include="Dashboard\Pages\Local\Info.xml" />
+    <Resource Include="Dashboard\Pages\Local\MSFT.xml" />
+    <Resource Include="Dashboard\Pages\Local\News.xml" />
+    <Resource Include="Dashboard\Pages\Local\XOM.xml" />
+    <Resource Include="Common\SampleDiagrams\Cycle3.xml" />
+    <Resource Include="Common\SampleDiagrams\FloorPlan.xml" />
+    <Resource Include="Common\SampleDiagrams\Flow2.xml" />
+    <Resource Include="Common\SampleDiagrams\Rolls.xml" />
+    <Resource Include="Common\SampleDiagrams\SimpleFlow.xml" />
+    <Resource Include="Common\SampleDiagrams\Stakeholder.xml" />
+    <Resource Include="MindMap\Resources\Career_planning.xml" />
+    <Resource Include="Common\SampleDiagrams\Supply.xml" />
+    <Resource Include="MindMap\Description.txt" />
+    <Resource Include="ClassDiagram\Description.txt" />
+    <Resource Include="DesignToolbox\Description.txt" />
+    <Resource Include="OrgChart\Description.txt" />
+    <Resource Include="OrgChart\XmlSource\Organization.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FilesList.xml" />
+    <Resource Include="ReferencesList.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Resource Include="Images\Diagrams\Dashboard\TelerikMSFTLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Common\ExportToHTML\RadDiagram.js" />
+    <Resource Include="Common\ExportToHTML\RadSVG.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Diagrams\FirstLook\Connection.png" />
+    <None Include="Images\Diagrams\FirstLook\Pointer.png" />
+    <None Include="Images\Diagrams\FirstLook\Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\QSF.Common\QuickStart.Common.Silverlight.csproj">
+      <Project>{ae924da1-0f99-4993-9861-7533b551665b}</Project>
+      <Name>QuickStart.Common.Silverlight</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Common\ExportToHTML\Loader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Diagrams\OrgChart\Ana Trujilo.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Andrew Fuller.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Brenda Smith.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Elizabeth Lincoln.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Georg Pipps.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Hanna Moos.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Janet Levering.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Janine Labrune.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Jason Roland.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Jeremy Boather.png" />
+    <Resource Include="Images\Diagrams\OrgChart\John Steel.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Karin Josephs.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Karl Jablonski.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Laura Callahan.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Margaret Peacock.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Marie Bertrand.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Martin Sommer.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Mary Saveley.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Nancy Davolio.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Paula Wilson.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Pedro Alfonso.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Robert King.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Steven Buchanan.png" />
+    <Resource Include="Images\Diagrams\OrgChart\Viktoria Ashworth.png" />
+    <Resource Include="Swimlane\Description.txt" />
+    <Resource Include="TableShape\Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Common\SampleDiagrams\tableShape.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Common\SampleDiagrams\SwimlaneDiagram.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Diagrams\Dashboard\TelerikLogo.png" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+      <Resource Include="**\*.vb" />
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+      "$(ProjectDir)..\..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ProjectDir:'$(ProjectDir)' /OutputFileName:FilesList.xml /FileExtensions:cs,vb,xaml,txt,xml
+      "$(MSBuildToolsPath)\MSBuild.exe" "$(SolutionDir)ProjectReferencesListGenerator.proj" /target:WriteReferencesToFile /property:References="@(Reference)";ProjectDir="$(ProjectDir)\"
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+      xcopy "$(TargetDir)*.xaml" "$(ProjectDir)..\..\Examples.Web\Examples\$(TargetName)" /s /y /i /r
+      xcopy "$(ProjectDir)*.jpg" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+      xcopy "$(ProjectDir)*.png" "$(ProjectDir)..\..\Examples.Web\Examples\" /s /y /i /r
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

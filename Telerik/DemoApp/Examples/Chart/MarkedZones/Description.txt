@@ -1,0 +1,1 @@
+﻿RadChart offers different types of annotations. In this example you can find three marked zones, which differentiate three areas on the chart and show specific data ranges.

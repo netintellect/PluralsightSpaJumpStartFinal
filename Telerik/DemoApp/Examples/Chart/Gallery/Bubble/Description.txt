@@ -1,0 +1,7 @@
+﻿This example shows a 2D Bubble chart. The Bubble chart can be customized via the properties of the BubbleSeriesDefinition object instance:
+
+BubbleSeriesDefinition.BubbleSizeRepresents - indicates whether the bubble size should be interpreted as the bubble diameter or the bubble area. Negative values are supported in a Microsoft Excel-like fashion (displaying transparent bubbles by default).
+
+BubbleSeriesDefinition.BubbleSizeRelative - indicates whether the bubble size should be interpreted as relative to the available ChartArea, or as an absolute value in pixels.
+
+BubbleSeriesDefinition.CustomScaleFactor - indicates a custom scale factor that should be applied to the bubble dimensions.

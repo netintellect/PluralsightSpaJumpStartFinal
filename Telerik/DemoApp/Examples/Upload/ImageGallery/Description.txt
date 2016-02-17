@@ -1,0 +1,1 @@
+﻿With Telerik Upload control you can easily build an Image Gallery to display images from the server. With the Upload control, defined in this example, you can automatically upload multiple files of type .gif, .jpg, .jpeg or .png as the <b>Automatic Upload</b> and <b>Multiple Files Upload</b> features are enabled.

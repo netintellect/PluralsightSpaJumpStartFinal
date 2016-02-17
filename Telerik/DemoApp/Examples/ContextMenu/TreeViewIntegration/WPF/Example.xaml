@@ -1,0 +1,42 @@
+<UserControl x:Class="Telerik.Windows.Examples.ContextMenu.TreeViewIntegration.Example" HorizontalAlignment="Center" VerticalAlignment="Center" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Telerik.Windows.Examples.ContextMenu.TreeViewIntegration" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:telerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation" xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Right Click a Node" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	
+	<UserControl.Resources>
+		<Style x:Key="TreeViewItemStyle" TargetType="telerikNavigation:RadTreeViewItem" BasedOn="{StaticResource RadTreeViewItemStyle}">
+			<Setter Property="IsExpanded" Value="{Binding IsExpanded}" />
+			<Setter Property="DefaultImageSrc" Value="{Binding ImageUrl}" />
+		</Style>
+		<HierarchicalDataTemplate x:Key="TreeViewItemTemplate" ItemsSource="{Binding Items}">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="{Binding ImageUrl}" />
+				<TextBlock Text="{Binding Text}" Margin="5 0 0 0" />
+			</StackPanel>
+		</HierarchicalDataTemplate>
+		<DataTemplate x:Key="EditTreeViewTemplate">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="{Binding ImageUrl}" />
+				<TextBox Text="{Binding Text, Mode=TwoWay}" Margin="5 0 0 0" />
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.Resources>
+	
+	<UserControl.DataContext>
+		<local:DataViewModel />
+	</UserControl.DataContext>
+	
+	<telerikNavigation:RadTreeView Width="350" Height="450" IsEditable="True" ItemContainerStyle="{StaticResource TreeViewItemStyle}" ItemsSource="{Binding Items}" ItemTemplate="{StaticResource TreeViewItemTemplate}" ItemEditTemplate="{StaticResource EditTreeViewTemplate}" IsExpandOnSingleClickEnabled="True" telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True">
+		<telerikNavigation:RadContextMenu.ContextMenu>
+			<telerikNavigation:RadContextMenu x:Name="ContextMenu" ItemClick="ContextMenuClick" Opened="ContextMenuOpened">
+				<telerikNavigation:RadMenuItem Header="New Child" />
+				<telerikNavigation:RadMenuItem Header="New Sibling" />
+				<telerikNavigation:RadMenuItem IsSeparator="True" />
+				<telerikNavigation:RadMenuItem Header="Edit" />
+				<telerikNavigation:RadMenuItem Header="Delete" />
+				<telerikNavigation:RadMenuItem IsSeparator="True" />
+				<telerikNavigation:RadMenuItem Header="Select" />
+			</telerikNavigation:RadContextMenu>
+		</telerikNavigation:RadContextMenu.ContextMenu>
+	</telerikNavigation:RadTreeView>
+</UserControl>

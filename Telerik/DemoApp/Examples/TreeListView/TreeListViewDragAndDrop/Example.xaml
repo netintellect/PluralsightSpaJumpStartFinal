@@ -1,0 +1,181 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:local="clr-namespace:Telerik.Windows.Examples.TreeListView.TreeListViewDragAndDrop"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d"
+			 x:Class="Telerik.Windows.Examples.TreeListView.TreeListViewDragAndDrop.Example"
+			 VerticalAlignment="Center"
+			 HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Media Organizer"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<UserControl.Resources>
+		<local:Folders x:Key="Folders" />
+		<DataTemplate x:Key="FirstColumnCellTemplate">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="/TreeListView;component/TreeListViewDragAndDrop/Folder.png" />
+				<TextBlock Text="{Binding Name}"
+						   Margin="5" />
+			</StackPanel>
+		</DataTemplate>
+        <telerik:Windows8Colors x:Key="Windows8Colors" />
+		<SolidColorBrush x:Key="MainBrush"
+						 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.MainColor}" />
+		<SolidColorBrush x:Key="BasicBrush"
+						 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.BasicColor}" />
+		<SolidColorBrush x:Key="StrongBrush"
+						 Color="{Binding Source={StaticResource Windows8Colors}, Path=Palette.StrongColor}" />
+        <Style TargetType="telerik:TreeListViewRow" BasedOn="{StaticResource TreeListViewRowStyle}">
+            <Setter Property="telerik:DragDropManager.TouchDragTrigger" Value="TapAndHold"/>
+        </Style>
+	</UserControl.Resources>
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<telerik:RadTreeListView  IsDragDropEnabled="True"
+								  IsDragTooltipEnabled="False"
+								  DragCueItemTemplate="{StaticResource FirstColumnCellTemplate}"
+								  x:Name="treeListView"
+								  ItemsSource="{Binding SampleFolders, Source={StaticResource Folders}}"
+								  AutoGenerateColumns="False"
+								  HorizontalAlignment="Stretch"
+								  VerticalAlignment="Stretch"
+								  Margin="5"
+								  CanUserFreezeColumns="False"
+								  CanUserReorderColumns="False"
+								  Width="450"
+								  MinHeight="300"
+								  MaxHeight="500"
+								  RowIndicatorVisibility="Collapsed"
+								  local:TreeViewDragDropBehavior.IsEnabled="True">
+			<telerik:RadTreeListView.ChildTableDefinitions>
+				<telerik:TreeListViewTableDefinition  ItemsSource="{Binding SubFolders}" />
+			</telerik:RadTreeListView.ChildTableDefinitions>
+			<telerik:RadTreeListView.Columns>
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Name}"
+											CellTemplate="{StaticResource FirstColumnCellTemplate}"
+											IsReadOnly="True"
+											Width="*" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding Type}"
+											IsReadOnly="True"
+											Width="150" />
+				<telerik:GridViewDataColumn DataMemberBinding="{Binding LastModified}"
+											IsReadOnly="True"
+											Width="150" />
+			</telerik:RadTreeListView.Columns>
+		</telerik:RadTreeListView>
+		<Border VerticalAlignment="Stretch"
+				BorderThickness="1"
+				BorderBrush="{StaticResource BasicBrush}"
+				Background="{StaticResource MainBrush}"
+				Grid.ColumnSpan="2"
+				Grid.Row="1"
+				Grid.Column="0"
+				Margin="5" />
+		<Grid Margin="5"
+			  Grid.Row="1"
+			  MinHeight="86"
+			  Width="450">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="10" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Border x:Name="favoritesDropTarget"
+					BorderBrush="{StaticResource BasicBrush}"
+					Background="{StaticResource MainBrush}"
+					Grid.Column="0"
+					Margin="5">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Width="64"
+						   Height="64"
+						   Source="/TreeListView;component/TreeListViewDragAndDrop/star.png"
+						   Stretch="Fill"
+						   Grid.Column="0"
+						   Margin="5,0" />
+					<StackPanel Orientation="Vertical"
+								VerticalAlignment="Center"
+								Grid.Column="1">
+						<TextBlock Text="Add to Favorites"
+								   Foreground="{StaticResource StrongBrush}"
+								   FontWeight="Bold" />
+						<TextBlock Text=""
+								   Foreground="{StaticResource StrongBrush}"
+								   x:Name="txtAdd" />
+					</StackPanel>
+					<Border x:Name="brdCounter"
+							BorderThickness="1"
+							Width="18"
+							Height="18"
+							CornerRadius="10"
+							Background="#FF1497DF"
+							HorizontalAlignment="Right"
+							Margin="0,0,17,20"
+							VerticalAlignment="Bottom"
+							Visibility="Collapsed">
+						<TextBlock x:Name="txtCounter"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center" />
+					</Border>
+				</Grid>
+			</Border>
+			<Border Grid.Column="1"
+					Width="1"
+					Background="{StaticResource BasicBrush}"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Center"
+					Margin="0,10" />
+			<Border x:Name="deleteDropTarget"
+					BorderBrush="{StaticResource BasicBrush}"
+					Background="{StaticResource MainBrush}"
+					Grid.Column="2"
+					Margin="5">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image x:Name="imgRecycleEmpty"
+						   Width="64"
+						   Height="64"
+						   Source="/TreeListView;component/TreeListViewDragAndDrop/Recycle_1.png"
+						   Stretch="Fill"
+						   Grid.Column="0"
+						   Margin="5,0" />
+					<Image x:Name="imgRecycleFull"
+						   Width="64"
+						   Height="64"
+						   Source="/TreeListView;component/TreeListViewDragAndDrop/Recycle_2.png"
+						   Stretch="Fill"
+						   Grid.Column="0"
+						   Visibility="Collapsed"
+						   Margin="5,0" />
+					<StackPanel Orientation="Vertical"
+								VerticalAlignment="Center"
+								Grid.Column="1">
+						<TextBlock Text="Delete"
+								   Foreground="{StaticResource StrongBrush}"
+								   FontWeight="Bold" />
+						<TextBlock Text=""
+								   Foreground="{StaticResource StrongBrush}"
+								   x:Name="txtDelete" />
+					</StackPanel>
+				</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+</UserControl>

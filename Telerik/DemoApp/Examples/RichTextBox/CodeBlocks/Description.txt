@@ -1,0 +1,2 @@
+﻿This example illustrates document <b>Code Blocks</b>.
+<br/>You can insert and edit code blocks from the Format Code Block dialog. Formatting for <b>C#</b>, <b>JavaScript</b>, <b>PHP</b> and <b>XML</b> is supported out of the box. However, the suggested formatting can be easily customized, and the functionality can be further extended to include more languages.

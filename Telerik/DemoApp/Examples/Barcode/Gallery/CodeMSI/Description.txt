@@ -1,0 +1,1 @@
+﻿MSI is a continuous, non-self-checking symbology. The length of an MSI bar code is variable.

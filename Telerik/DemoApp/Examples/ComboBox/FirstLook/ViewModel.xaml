@@ -1,0 +1,322 @@
+<ResourceDictionary
+		xml:lang="EN-US"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.ComboBox.FirstLook">
+	
+	<local:Store x:Key="ViewModel">
+		<local:Store.Technologies>
+			<local:Technology ID="0" DisplayName="Silverlight">
+				<local:Technology.Categories>
+					<local:Category ID="0" DisplayName="Training Kit" />
+					<local:Category ID="1" DisplayName="Best Practices" />
+					<local:Category ID="2" DisplayName="Windows Phone 7" />
+				</local:Technology.Categories>
+			</local:Technology>
+			<local:Technology ID="1" DisplayName="WPF">
+				<local:Technology.Categories>
+					<local:Category ID="0" DisplayName="Training Kit" />
+					<local:Category ID="1" DisplayName="Best Practices" />
+					<local:Category ID="3" DisplayName="Control Development" />
+				</local:Technology.Categories>
+			</local:Technology>
+			<local:Technology ID="2" DisplayName="ASP.NET">
+				<local:Technology.Categories>
+					<local:Category ID="0" DisplayName="Training Kit" />
+					<local:Category ID="4" DisplayName="MVC" />
+					<local:Category ID="5" DisplayName="User Experience" />
+					<local:Category ID="6" DisplayName="Design Patterns" />
+				</local:Technology.Categories>
+			</local:Technology>
+			<local:Technology ID="3" DisplayName="WinForms">
+				<local:Technology.Categories>
+					<local:Category ID="1" DisplayName="Best Practices" />
+					<local:Category ID="7" DisplayName="C#" />
+					<local:Category ID="8" DisplayName="VB" />
+				</local:Technology.Categories>
+			</local:Technology>
+		</local:Store.Technologies>
+		<local:Store.Categories>
+			<local:Category ID="0" DisplayName="Training Kit" />
+			<local:Category ID="1" DisplayName="Best Practices" />
+			<local:Category ID="2" DisplayName="Windows Phone 7" />
+			<local:Category ID="3" DisplayName="Control Development" />
+			<local:Category ID="4" DisplayName="MVC" />
+			<local:Category ID="5" DisplayName="User Experience" />
+			<local:Category ID="6" DisplayName="Design Patterns" />
+			<local:Category ID="7" DisplayName="C#" />
+			<local:Category ID="8" DisplayName="VB" />
+		</local:Store.Categories>
+		<local:Store.Books>
+			<local:Book Price="39.30" PublishDate="11/7/2007" Rating="4" DisplayName="Silverlight Essential Training" Image="/ComboBox;component/Images/ComboBox/Books/SL4/TrainingKit/MCTSSelf-PacedTrainingKit.png" Author="Mike Harsh">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="43.50" PublishDate="7/19/2008" Rating="4" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/SL4/TrainingKit/Silverlight Essential Training.png" Author="Matthew A. Stoecker">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="39.90" PublishDate="4/8/2009" Rating="3" DisplayName="Pro Silverlight for the Enterprise" Image="/ComboBox;component/Images/ComboBox/Books/SL4/BestPractices/ProSilverlight_fortheEnterprise.png" Author="Ashish Ghoda">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="43.51" PublishDate="8/24/2010" Rating="4" DisplayName="Silverlight 4 User Interface Cookbook" Image="/ComboBox;component/Images/ComboBox/Books/SL4/BestPractices/Silverlight4UserInterfaceCookbook.png" Author="Vibor Cipan">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="29.99" PublishDate="6/21/2010" Rating="5" DisplayName="Silverlight Recipes: A Problem-Solution Approach" Image="/ComboBox;component/Images/ComboBox/Books/SL4/BestPractices/SilverlightRecipes.png" Author="Jit Gho">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="29.09" PublishDate="2/1/2011" Rating="3" DisplayName="Windows Phone 7 Developer Guide" Image="/ComboBox;component/Images/ComboBox/Books/SL4/WindowsPhone7/WindowsPhone7DeveloperGuide.png" Author="Dominic Betts, Federico Boerr, Scott Densmore, Jose Gallardo Salazar, Alex Homer">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="2" DisplayName="Windows Phone 7" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="19.04" PublishDate="9/11/2010" Rating="3"  DisplayName="Professional Windows Phone 7 Application Development" Image="/ComboBox;component/Images/ComboBox/Books/SL4/WindowsPhone7/ProfessionalWindowsPhone7ApplicationDevelopment.png" Author="">
+				<local:Book.Technology>
+					<local:Technology ID="0" DisplayName="Silverlight" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="2" DisplayName="Windows Phone 7" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="43.50" PublishDate="6/19/2008" Rating="4" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/TrainingKit/MCTS Self-PacedTrainingKit_2.png" Author="Matthew A. Stoecker">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="41.91" PublishDate="2/7/2011" Rating="3" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/TrainingKit/MCTSSelf-PacedTrainingKit.png" Author="Matthew Stoecker">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="28.68" PublishDate="6/14/2010" Rating="5" DisplayName="WPF 4 Unleashed" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/BestPractices/WPF4Unleashed.png" Author="Adam Nathan">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="33.65" PublishDate="4/18/2010" Rating="4" DisplayName="Programming WPF" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/BestPractices/ProgrammingWPF.png" Author="Chris Sells, Ian Griffiths">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="30.22" PublishDate="8/06/2009" Rating="4" DisplayName="WPF in Action with Visual Studio 2008" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/BestPractices/WPFinActionwithVisualStudio2008.png" Author="Arlen Feldman">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="35.99" PublishDate="4/22/2010" Rating="3" DisplayName="WPF Control Development Unleashed" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/ControlDevelopment/WPF ControlDevelopmentUnleashed.png" Author="Pavan Podila, Kevin Hoffman">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="3" DisplayName="Control Development" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="33.45" PublishDate="7/12/2011" Rating="5" DisplayName="Windows Presentation Foundation in .NET 4" Image="/ComboBox;component/Images/ComboBox/Books/WPF4/ControlDevelopment/ProWPF inCSharp 2010.png" Author="Matthew MacDonald">
+				<local:Book.Technology>
+					<local:Technology ID="1" DisplayName="WPF" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="3" DisplayName="Control Development" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="44.45" PublishDate="11/24/2010" Rating="3" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/TrainingKit/MCTSSelf-PacedTrainingKit .png" Author="Tony Northrup, Mike Snell">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="41.90" PublishDate="8/19/2011" Rating="4" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/TrainingKit/MCTSSelf-PacedTrainingKit2.png" Author="Tony Northrup">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="38.13" PublishDate="3/22/2010" Rating="3" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/TrainingKit/MCTSSelf-PacedTrainingKit3.png" Author="Shawn Wildermuth, Jim Wightman, Mark Blomsma">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="0" DisplayName="Training Kit" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="33.10" PublishDate="3/12/2010" Rating="3" DisplayName="Pro ASP.NET MVC 2 Framework" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/MVC/ProASP.NETMVC2Framework .png" Author="Steven Sanderson, Hamish Sanderson">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="4" DisplayName="MVC" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="28.10" PublishDate="11/22/2009" Rating="5" DisplayName="Pro ASP.NET MVC Framework" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/MVC/ProASP.NETMVCFramework.png" Author="Steven Sanderson">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="4" DisplayName="MVC" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="45.99" PublishDate="4/18/2008" Rating="4" DisplayName="ASP.NET MVC 2 in Action" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/MVC/ASP.NETMVC2inAction.png" Author="Jeffrey Palermo, Ben Scheirman, Jimmy Bogard, Eric Hexter, Matt Hinze">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="4" DisplayName="MVC" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="42.50" PublishDate="6/12/2009" Rating="3" DisplayName="ASP.NET 3.5 Website Programming" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/UserExperience/ASP.NETDesignSolution.png" Author="Wrox Problem">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="5" DisplayName="User Experience" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="38.50" PublishDate="3/19/2010" Rating="4" DisplayName="ASP.NET Bible" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/UserExperience/ASP.NETBible.png" Author="">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="5" DisplayName="User Experience" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="39.45" PublishDate="5/12/2010" Rating="3" DisplayName="ASP.NET AJAX Programming Tricks" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/UserExperience/ASP.NETAJAXProgrammingTricks.png" Author="Matthew Ellis">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="5" DisplayName="User Experience" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="35.54" PublishDate="8/19/2009" Rating="4" DisplayName="Professional ASP.NET Design Patterns" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/DesignPatterns/ProfessionalASP.NETDesignPatterns.png" Author="Scott Millett">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="6" DisplayName="Design Patterns" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="45.32" PublishDate="11/4/2009" Rating="5" DisplayName="Professional Enterprise .NET" Image="/ComboBox;component/Images/ComboBox/Books/ASP.NET/DesignPatterns/ProfessionalEnterprise.NET.png" Author="Jon Arking, Scott Millett">
+				<local:Book.Technology>
+					<local:Technology ID="2" DisplayName="ASP.NET" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="6" DisplayName="Design Patterns" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="30.25" PublishDate="6/15/2010" Rating="4" DisplayName="MCTS Self-Paced Training Kit" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/BestPractices/MCTSSelf-PacedTrainingKit.png" Author="Matthew Stoecker">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="39.90" PublishDate="3/2/2011" Rating="4" DisplayName="Windows Forms 2.0 Programming" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/BestPractices/WindowsForms2.0Programming.png" Author="Chriss Sells">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="35.40" PublishDate="7/8/2009" Rating="4" DisplayName="Data Binding with Windows Forms 2.0" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/BestPractices/DataBinding_withWindowsForms2.0.png" Author="Brian Noyes">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="1" DisplayName="Best Practices" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="39.20" PublishDate="9/22/2011" Rating="3" DisplayName="Learning C# 3.0" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/CSharp/LearningCSharp3.0.png" Author="Jesse Liberty, Brian MacDonald">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="7" DisplayName="C#" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="33.20" PublishDate="8/27/2011" Rating="4" DisplayName="C# Black Book" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/CSharp/CSharpBlackBook.png" Author="Matthew Telles">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="7" DisplayName="C#" />
+				</local:Book.Category>
+			</local:Book>
+
+			<local:Book Price="34.40" PublishDate="6/18/2009" Rating="3" DisplayName="Professional Visual Basic 2008" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/VB/ProfessionalVisualBasic2008.png" Author="Bill Evjen, Billy S. Hollis, Bill Sheldon">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="8" DisplayName="VB" />
+				</local:Book.Category>
+			</local:Book>
+			<local:Book Price="37.10" PublishDate="3/19/2011" Rating="3" DisplayName="Programming Visual Basic .NET" Image="/ComboBox;component/Images/ComboBox/Books/WinForms/VB/ProgrammingVisual Basic.NET,2ndEdition.png" Author="Jesse Liberty">
+				<local:Book.Technology>
+					<local:Technology ID="3" DisplayName="WinForms" />
+				</local:Book.Technology>
+				<local:Book.Category>
+					<local:Category ID="8" DisplayName="VB" />
+				</local:Book.Category>
+			</local:Book>
+		</local:Store.Books>
+	</local:Store>
+	
+</ResourceDictionary>

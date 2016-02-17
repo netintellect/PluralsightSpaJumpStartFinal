@@ -1,0 +1,260 @@
+<UserControl x:Class="Telerik.Windows.Examples.ChartView.Selection.Example"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:example="clr-namespace:Telerik.Windows.Examples.ChartView.Selection"
+			 xmlns:vm="clr-namespace:Telerik.Windows.Examples.ChartView.Selection.ViewModels"
+			 xmlns:converters="clr-namespace:Telerik.Windows.Examples.ChartView.Selection.Converters"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<UserControl.Resources>
+		<vm:ExampleViewModel x:Key="ExampleViewModel" />
+		<Color x:Key="CountryBorderColor">White</Color>
+		<Color x:Key="DefaultCountryColor">#FFAAAAAA</Color>
+		<Color x:Key="SelectedCountryColor">#494949</Color>
+		<Color x:Key="UnitedKingdomColor">#349835</Color>
+		<Color x:Key="GermanyColor">#8FC442</Color>
+		<Color x:Key="FranceColor">#1B9DDE</Color>
+		<Color x:Key="SpainColor">#F59700</Color>
+		<Color x:Key="ItalyColor">#DC5B21</Color>
+		<SolidColorBrush x:Key="CountryBorderBrush" Color="{StaticResource CountryBorderColor}" />
+		<SolidColorBrush x:Key="UnitedKingdomBrush" Color="{StaticResource UnitedKingdomColor}" />
+		<SolidColorBrush x:Key="GermanyBrush" Color="{StaticResource GermanyColor}" />
+		<SolidColorBrush x:Key="FranceBrush" Color="{StaticResource FranceColor}" />
+		<SolidColorBrush x:Key="SpainBrush" Color="{StaticResource SpainColor}" />
+		<SolidColorBrush x:Key="ItalyBrush" Color="{StaticResource ItalyColor}" />
+		<converters:CountryNameToBrushConverter x:Key="CountryNameToBrushConverter" />
+		<Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI Light" />
+			<Setter Property="Foreground" Value="Gray" />
+			<Setter Property="FontSize" Value="14" />
+		</Style>
+		<Style x:Key="RegularTextBlockStyle" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI" />
+		</Style>
+		<Style x:Key="VerticalAxisTextBlockStyle" 
+			   TargetType="TextBlock" 
+			   BasedOn="{StaticResource RegularTextBlockStyle}">
+			<Setter Property="Width" Value="100" />
+			<Setter Property="TextAlignment" Value="Right" />
+			<Setter Property="Margin" Value="0 0 4 0" />
+		</Style>
+	</UserControl.Resources>
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Selection" Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".6*" />
+			<RowDefinition Height=".4*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width=".4*" />
+			<ColumnDefinition Width=".6*" />
+		</Grid.ColumnDefinitions>
+
+		<Grid>
+			<telerik:RadMap MouseLocationIndicatorVisibility="Collapsed" 
+							NavigationVisibility="Collapsed"
+							CommandBarVisibility="Collapsed"
+							ZoomBarVisibility="Collapsed"
+							ScaleVisibility="Collapsed"
+							MouseClickMode="None"
+							MouseDoubleClickMode="None"
+							MouseDragMode="None"
+							ZoomLevel="3"
+							Center="50.0, 9.5"
+							MinZoomLevel="3" 
+							MaxZoomLevel="3"
+							Background="Transparent"
+							BorderBrush="#FF848484"
+							BorderThickness="1"
+							MiniMapExpanderVisibility="Collapsed"
+							Margin="0 25 0 0">
+				<telerik:RadMap.Provider>
+					<telerik:EmptyProvider />
+				</telerik:RadMap.Provider>
+				<telerik:InformationLayer x:Name="InformationLayer">
+					<telerik:InformationLayer.Reader>
+						<telerik:MapShapeReader Source="{Binding Source={StaticResource ExampleViewModel}, Path=ShapeSourceUri}"
+												DataSource="{Binding Source={StaticResource ExampleViewModel}, Path=ShapeDataSourceUri}"
+												PreviewReadCompleted="ReaderPreviewReadCompleted" />
+					</telerik:InformationLayer.Reader>
+					<telerik:InformationLayer.ShapeFill>
+						<telerik:MapShapeFill Stroke="{StaticResource CountryBorderBrush}" 
+											  StrokeThickness="1">
+							<telerik:MapShapeFill.Fill>
+								<SolidColorBrush Color="{StaticResource DefaultCountryColor}" />
+							</telerik:MapShapeFill.Fill>
+						</telerik:MapShapeFill>
+					</telerik:InformationLayer.ShapeFill>
+				</telerik:InformationLayer>
+			</telerik:RadMap>
+			<TextBlock Text="Select a country" 
+					   HorizontalAlignment="Center" 
+					   VerticalAlignment="Top" 
+					   Style="{StaticResource HeaderTextBlockStyle}"/>
+		</Grid>
+
+		<Grid Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<telerik:RadCartesianChart x:Name="lineChart"
+									   Margin="20 50 20 20">
+				<telerik:RadCartesianChart.HorizontalAxis>
+					<telerik:CategoricalAxis LabelStyle="{StaticResource RegularTextBlockStyle}" />
+				</telerik:RadCartesianChart.HorizontalAxis>
+				<telerik:RadCartesianChart.VerticalAxis>
+					<telerik:LinearAxis LabelFormat="### ### ###"
+										LabelStyle="{StaticResource VerticalAxisTextBlockStyle}" />
+				</telerik:RadCartesianChart.VerticalAxis>
+				<telerik:RadCartesianChart.Grid>
+					<telerik:CartesianChartGrid MajorLinesVisibility="X"
+												StripLinesVisibility="Y">
+						<telerik:CartesianChartGrid.YStripeBrushes>
+							<SolidColorBrush Color="Transparent" />
+							<SolidColorBrush Color="#FFD7D7D7"
+											 Opacity="0.3" />
+						</telerik:CartesianChartGrid.YStripeBrushes>
+					</telerik:CartesianChartGrid>
+				</telerik:RadCartesianChart.Grid>
+                <telerik:LineSeries CategoryBinding="Year"
+									ValueBinding="GDP"
+									ItemsSource="{Binding GDPData[0], Source={StaticResource ExampleViewModel}}" 
+									DataBindingComplete="LineSeries_DataBindingComplete" 
+									StrokeThickness="3">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="Germany" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+                    <telerik:LineSeries CategoryBinding="Year"
+									ValueBinding="GDP" 
+									ItemsSource="{Binding GDPData[1], Source={StaticResource ExampleViewModel}}" 
+									DataBindingComplete="LineSeries_DataBindingComplete"
+									StrokeThickness="3">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="France" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+				<telerik:LineSeries CategoryBinding="Year"
+									ValueBinding="GDP" 
+									ItemsSource="{Binding GDPData[2], Source={StaticResource ExampleViewModel}}" 
+									DataBindingComplete="LineSeries_DataBindingComplete"
+									StrokeThickness="3">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="UK" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+				<telerik:LineSeries CategoryBinding="Year" 
+									ValueBinding="GDP" 
+									ItemsSource="{Binding GDPData[3], Source={StaticResource ExampleViewModel}}" 
+									DataBindingComplete="LineSeries_DataBindingComplete" 
+									StrokeThickness="3">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="Italy" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+				<telerik:LineSeries CategoryBinding="Year" 
+									ValueBinding="GDP" 
+									ItemsSource="{Binding GDPData[4], Source={StaticResource ExampleViewModel}}" 
+									DataBindingComplete="LineSeries_DataBindingComplete"
+									StrokeThickness="3">
+                    <telerik:LineSeries.LegendSettings>
+                        <telerik:SeriesLegendSettings Title="Spain" />
+                    </telerik:LineSeries.LegendSettings>
+                </telerik:LineSeries>
+			</telerik:RadCartesianChart>
+			<telerik:RadLegend Items="{Binding LegendItems, ElementName=lineChart}"
+							   FontFamily="Segoe UI"
+							   Grid.Column="1"
+							   Margin="2 52 30 20"/>
+			<TextBlock Text="GDP for the last 6 years" 
+					   HorizontalAlignment="Center" 
+					   VerticalAlignment="Top"
+					   Grid.ColumnSpan="2"
+					   Style="{StaticResource HeaderTextBlockStyle}" />
+		</Grid>
+
+		<Grid Grid.Row="1">
+			<telerik:RadPieChart x:Name="pieChart">
+				<telerik:PieSeries ValueBinding="GDP" 
+								   RadiusFactor="0.5"
+								   IsHitTestVisible="True">
+					<telerik:PieSeries.LabelDefinitions>
+						<telerik:ChartSeriesLabelDefinition Margin="-4 0 0 0"
+															DefaultVisualStyle="{StaticResource RegularTextBlockStyle}">
+							<telerik:ChartSeriesLabelDefinition.Template>
+								<DataTemplate>
+									<StackPanel>
+										<TextBlock Text="{Binding DataItem.Name}" 
+												   HorizontalAlignment="Center"
+												   Style="{StaticResource RegularTextBlockStyle}" />
+										<TextBlock Text="{Binding DataItem.GDP, StringFormat=##\,#}" 
+												   HorizontalAlignment="Center"
+												   Style="{StaticResource RegularTextBlockStyle}"  />
+									</StackPanel>
+								</DataTemplate>
+							</telerik:ChartSeriesLabelDefinition.Template>
+						</telerik:ChartSeriesLabelDefinition>
+					</telerik:PieSeries.LabelDefinitions>
+				</telerik:PieSeries>
+				<telerik:RadPieChart.Behaviors>
+					<telerik:ChartSelectionBehavior DataPointSelectionMode="Multiple" 
+													SelectionChanged="PieChartSelectionBehavior_SelectionChanged" />
+				</telerik:RadPieChart.Behaviors>
+			</telerik:RadPieChart>
+			<TextBlock Text="GDP for 2012 in millions" 
+					   HorizontalAlignment="Center" 
+					   VerticalAlignment="Top" 
+					   Style="{StaticResource HeaderTextBlockStyle}" />
+		</Grid>
+
+		<Grid Grid.Row="1"
+			  Grid.Column="1">
+			<telerik:RadCartesianChart x:Name="barChart"
+									   Margin="20 50 20 20">
+				<telerik:RadCartesianChart.HorizontalAxis>
+					<telerik:LinearAxis LabelFormat="#,#,,"
+										LabelStyle="{StaticResource RegularTextBlockStyle}"/>
+				</telerik:RadCartesianChart.HorizontalAxis>
+				<telerik:RadCartesianChart.VerticalAxis>
+					<telerik:CategoricalAxis GapLength="0.5" 
+											 LabelStyle="{StaticResource VerticalAxisTextBlockStyle}" 
+											 PlotMode="OnTicksPadded" />
+				</telerik:RadCartesianChart.VerticalAxis>
+				<telerik:BarSeries CategoryBinding="Name" 
+								   ValueBinding="Population" 
+								   ItemsSource="{Binding PopulationData, Source={StaticResource ExampleViewModel}}"
+								   IsHitTestVisible="True">
+					<telerik:BarSeries.PointTemplate>
+						<DataTemplate>
+							<Border Background="{Binding DataItem.Name, Converter={StaticResource CountryNameToBrushConverter}}"
+									MouseEnter="uiElement_MouseEnter"
+									MouseLeave="uiElement_MouseLeave"/>
+						</DataTemplate>
+					</telerik:BarSeries.PointTemplate>
+				</telerik:BarSeries>
+				<telerik:RadCartesianChart.Behaviors>
+					<telerik:ChartSelectionBehavior DataPointSelectionMode="Multiple" 
+													SelectionChanged="BarChartSelectionBehavior_SelectionChanged" />
+				</telerik:RadCartesianChart.Behaviors>
+			</telerik:RadCartesianChart>
+			<TextBlock Text="Population in millions" 
+					   HorizontalAlignment="Center" 
+					   VerticalAlignment="Top"
+					   Style="{StaticResource HeaderTextBlockStyle}" />
+		</Grid>
+
+		<TextBlock Grid.RowSpan="2" 
+				   Grid.ColumnSpan="2" 
+				   VerticalAlignment="Bottom" 
+				   HorizontalAlignment="Right" 
+				   Margin="10 0 19 5" 
+				   Text="source: wikipedia.org" 
+				   Foreground="#FFD6D4D4" />
+	</Grid>
+</UserControl>

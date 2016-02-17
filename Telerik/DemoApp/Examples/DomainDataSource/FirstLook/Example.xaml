@@ -1,0 +1,58 @@
+<Examples:DomainDataSourceExample x:Class="Telerik.Windows.Examples.DomainDataSource.FirstLook.Example"
+								  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+								  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								  xmlns:Examples="clr-namespace:Telerik.Windows.Examples"
+								  xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+								  xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+								  xmlns:e="clr-namespace:Examples.Web"
+								  VerticalAlignment="Center"
+								  HorizontalAlignment="Center">
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<TextBlock Text="Client Accounts"
+				   Margin="8" />
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<telerik:RadDomainDataSource x:Name="customersDataSource"
+									 AutoLoad="True"
+									 QueryName="GetCustomers"
+									 PageSize="10"
+									 LoadingData="OnCustomersDataSourceLoadingData"
+									 LoadedData="OnCustomersDataSourceLoadedData">
+			<telerik:RadDomainDataSource.DomainContext>
+				<e:NorthwindDomainContext />
+			</telerik:RadDomainDataSource.DomainContext>
+		</telerik:RadDomainDataSource>
+		<telerik:RadGridView x:Name="radGridView"
+							 Grid.Row="0"
+							 MinHeight="386"
+							 MaxHeight="500"
+							 Width="700"
+							 CanUserFreezeColumns="False"
+							 RowIndicatorVisibility="Collapsed"
+							 ItemsSource="{Binding DataView, ElementName=customersDataSource}"
+							 IsBusy="{Binding IsBusy, ElementName=customersDataSource}"
+							 AutoGeneratingColumn="OnRadGridViewAutoGeneratingColumn"
+							 ShowGroupPanel="False"
+							 IsReadOnly="True" />
+		<telerik:RadDataPager x:Name="radDataPager"
+							  Grid.Row="1"
+							  Source="{Binding DataView, ElementName=customersDataSource}"
+							  DisplayMode="All"
+							  IsTotalItemCountFixed="True" />
+		<TextBox x:Name="debugTextBox"
+				 Grid.Row="2"
+				 Width="700"
+				 IsReadOnly="True"
+				 VerticalAlignment="Stretch"
+				 Margin="0,10,0,0"
+				 FontFamily="Courier New"
+				 Height="65"
+				 VerticalContentAlignment="Top"
+				 HorizontalScrollBarVisibility="Auto" />
+	</Grid>
+</Examples:DomainDataSourceExample>

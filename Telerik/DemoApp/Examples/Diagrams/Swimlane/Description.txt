@@ -1,0 +1,7 @@
+﻿The Swimlane example shows how RadDiagram could be used to create swim lane process flow diagram.
+The example supports following features:
+</br>- Expand or collapse a process
+</br>- Resizing process or lane
+</br>- Add or remove a lane
+</br>- Reorder lanes via drag drop
+</br>- Drag and drop of vertical and horizontal swimlanes from the toolbox

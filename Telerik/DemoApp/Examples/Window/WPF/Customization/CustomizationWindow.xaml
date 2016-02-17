@@ -1,0 +1,118 @@
+﻿<telerik:RadWindow x:Class="Telerik.Windows.Examples.Window.Customization.CustomizationWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" MinWidth="230" MinHeight="160"
+             d:DesignHeight="356" d:DesignWidth="486">
+
+	<telerik:RadWindow.Resources>
+		<SolidColorBrush x:Key="ImportantForegroundBrush" Color="#FFD20000" />
+		
+		<Storyboard x:Key="ReminderAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border2">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.7" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border1">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="border1">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.5" Value="0.4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border1">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:1.5" Value="0.4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="border1">
+				<SplineDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="border1">
+				<SplineDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="border1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.3" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="border2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.3" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.7" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="ShowDetailsAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="border">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-120"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		
+	</telerik:RadWindow.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Image Source="../../Images/Window/window_customization.jpg" Width="486" Height="322" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+		<Border x:Name="border" Background="#EDFFFFFF" MinHeight="100" MaxHeight="300" VerticalAlignment="Bottom" Opacity="0" 
+		Margin="10 10 10 -110" RenderTransformOrigin="0.5,0.5">
+			<Border.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Border.RenderTransform>
+			
+			<Grid Margin="12">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition MinHeight="48" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+
+				<TextBlock Text="Football Focus" Foreground="{StaticResource ImportantForegroundBrush}"
+						   TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="30"/>
+				<TextBlock Grid.Column="1" Text="17:00" Foreground="{StaticResource ImportantForegroundBrush}"
+						   TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="30" />
+				<StackPanel Orientation="Horizontal" Grid.Row="1">
+					<TextBlock Text="Game of the Day - " TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="16"  />
+					<TextBlock Text="Saturday, August 6" TextWrapping="Wrap" FontFamily="Segoe UI Light" FontSize="16"
+							    Foreground="{StaticResource ImportantForegroundBrush}"/>
+				</StackPanel>
+
+				<telerik:RadButton Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Reminder"
+								   Background="#FFFFF500" Width="76" Click="ReminderButton_Click"/>
+			</Grid>
+		</Border>
+
+		<Border x:Name="border2" Background="#B2FFFFFF" Opacity="0" Visibility="Collapsed" />
+		<Border x:Name="border1" Background="#F4FFFFFF" BorderBrush="#FF7A7A7A" BorderThickness="1" 
+				VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 10 10 40"
+				Opacity="0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+			<Border.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="0.4" ScaleY="0.4"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Border.RenderTransform>
+			<TextBlock Text="Reminder was set." FontFamily="Segoe UI Light" FontSize="16"
+					   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8"/>
+		</Border>
+	</Grid>
+</telerik:RadWindow>

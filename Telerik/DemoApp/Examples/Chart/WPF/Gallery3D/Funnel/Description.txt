@@ -1,0 +1,1 @@
+﻿This example shows a 3D funnel chart with one DataSeries. Its Definition property is set to an instance of Funnel3DSeriesDefinition. The legend automatically generates an item for each data item in the series.<br/>

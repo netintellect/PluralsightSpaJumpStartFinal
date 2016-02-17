@@ -1,0 +1,1091 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{189202E7-E182-4548-AF57-B4F1E7E65DD3}</ProjectGuid>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telerik.Windows.QuickStart</RootNamespace>
+    <AssemblyName>Application</AssemblyName>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+     
+     
+     
+     
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Examples/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C1DE5D7924226EBE690410F58AC4C730F96B114F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v3.5' ">
+    <Reference Include="System.XAML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2015.2.814.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.CodeEditor">
+      <HintPath>..\lib\WPF40\Telerik.Windows.Controls.CodeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2011.2.712.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Code">
+      <HintPath>..\lib\WPF40\Telerik.Windows.Documents.Code.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TELERIKWPFDIR)\Binaries.NoXaml\WPF40\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationModule.cs" />
+    <Compile Include="ApplicationOptions.cs" />
+    <Compile Include="AssemblyHelper.cs" />
+    <Compile Include="Behaviors\ExamplesListScrollHelper.cs" />
+    <Compile Include="Behaviors\SearchBoxBehaviors.cs" />
+    <Compile Include="Behaviors\SelectorHelper.cs" />
+    <Compile Include="CompilerOptimizationFixer.cs" />
+    <Compile Include="Controls\CodeViewer.cs" />
+    <Compile Include="Controls\AnimatedScrollPanel.cs" />
+    <Compile Include="Controls\DialogOverlay.cs" />
+    <Compile Include="Controls\DropDownButtonCommands.cs" />
+    <Compile Include="Controls\RelativeAlignmentPanel.cs" />
+    <Compile Include="Controls\ResourceBox.cs" />
+    <Compile Include="Controls\ResultBoxItem.cs" />
+    <Compile Include="Controls\ResultBox.cs" />
+    <Compile Include="Controls\SearchBox.cs" />
+    <Compile Include="Controls\SearchFilterEventArgs.cs" />
+    <Compile Include="Controls\SearchFilterEventHandler.cs" />
+    <Compile Include="Controls\SearchSelectionEventArgs.cs" />
+    <Compile Include="Controls\SearchSelectionEventHandler.cs" />
+    <Compile Include="Controls\DropDownButton.cs" />
+    <Compile Include="Converters\BooleanToInvertedBooleanConverter.cs" />
+    <Compile Include="Converters\ContentToVisibilityConverter.cs" />
+    <Compile Include="Converters\ControlOverviewOpacityConverter.cs" />
+    <Compile Include="Converters\ControlsMajorGroupHeaderConverter.cs" />
+    <Compile Include="Converters\ControlToIconConverter.cs" />
+    <Compile Include="Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Converters\ExampleModeToVisibilityConverter.cs" />
+    <Compile Include="Converters\FriendlyExampleNameConverter.cs" />
+    <Compile Include="Behaviors\HardCoverMatrixTransform.cs" />
+    <Compile Include="Controls\LayoutClipBox.cs" />
+    <Compile Include="Controls\QSFTouchScrollViewer.cs" />
+    <Compile Include="Model\ReleaseVersionInfo.cs" />
+    <Compile Include="Model\SampleAppInfo.cs" />
+    <Compile Include="Selectors\HighlightedControlsTouchItemTemplateSelector.cs" />
+    <Compile Include="Converters\HtmlFontConverter.cs" />
+    <Compile Include="Converters\ThemingToVisibleConverter.cs" />
+    <Compile Include="DeployManager.cs" />
+    <Compile Include="ExampleLoader.cs" />
+    <Compile Include="Model\ControlInfo.cs" />
+    <Compile Include="Model\ExampleFile.cs" />
+    <Compile Include="Model\ExampleGroupInfo.cs" />
+    <Compile Include="Model\ExampleInfo.cs" />
+    <Compile Include="Model\HighlightInfo.cs" />
+    <Compile Include="Model\ModelExtensions.cs" />
+    <Compile Include="Model\QuickStartData.cs" />
+    <Compile Include="Parsers\CSharpTagger.cs" />
+    <Compile Include="Parsers\SimpleWordTaggerBase.cs" />
+    <Compile Include="Parsers\VisualBasicTagger.cs" />
+    <Compile Include="Parsers\XamlSyntaxHighlightingHelper.cs" />
+    <Compile Include="Parsers\XamlTagger.cs" />
+    <Compile Include="Selectors\SingleControlExamplesTemplateSelector.cs" />
+    <Compile Include="Selectors\StatusDataTemplateSelector.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HighlightedControls.xaml.cs">
+      <DependentUpon>HighlightedControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\HighlightedHomeControls.xaml.cs">
+      <DependentUpon>HighlightedHomeControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NonHighlightedControls.xaml.cs">
+      <DependentUpon>NonHighlightedControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuickNavigation.xaml.cs">
+      <DependentUpon>QuickNavigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AllControlsTouchViewModel.cs" />
+    <Compile Include="ViewModel\ExampleInstantiatedEventArgs.cs" />
+    <Compile Include="HomePageState.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\INotifyUser.cs" />
+    <Compile Include="ViewModel\QuickStartViewModelBase.cs" />
+    <Compile Include="ViewModel\SingleControlExamplesViewModel.cs" />
+    <Compile Include="ViewModel\SingleExampleViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\AllControls.xaml.cs">
+      <DependentUpon>AllControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllControlsTouch.xaml.cs">
+      <DependentUpon>AllControlsTouch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SingleControlExamplesTouch.xaml.cs">
+      <DependentUpon>SingleControlExamplesTouch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SingleExampleTouch.xaml.cs">
+      <DependentUpon>SingleExampleTouch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\SingleExample.xaml.cs">
+      <DependentUpon>SingleExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\HighlightedControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HighlightedHomeControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NonHighlightedControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\QuickNavigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AllControlsTouch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SingleControlExamplesTouch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SingleExampleTouch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SingleExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QSF.Common\QuickStart.Common.WPF.csproj">
+      <Project>{865415DB-E612-4692-BD5C-12A7E01361C9}</Project>
+      <Name>QuickStart.Common.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickStart.Core\QuickStart.Core.csproj">
+      <Project>{909003CC-3FFD-4B96-B39D-EEDD81CA31BC}</Project>
+      <Name>QuickStart.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadPersistenceFramework_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadPersistenceFramework_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadPersistenceFramework_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadPersistenceFramework_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadRibbonView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadRibbonView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadRibbonView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadRibbonView_WPF.png" />
+    <Resource Include="Resources\Images\Slide01.png" />
+    <Resource Include="Resources\Images\Slide02.png" />
+    <Resource Include="Resources\Images\Slide03.png" />
+    <Resource Include="Resources\Images\Slide04.png" />
+    <Resource Include="Resources\Icons\46x46\RadDataServiceDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDataServiceDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDataServiceDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDataServiceDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadMaskedInput_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadMaskedInput_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadMaskedInput_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadMaskedInput_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadScheduleView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadScheduleView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadScheduleView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadScheduleView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadAnimation_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadBook_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadBulletGraph_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadBusyIndicator_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadButtons_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadCalendar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadCaptcha_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadChartView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadColorPicker_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadComboBox_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadContextMenu_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadCarousel_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadCube_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDataFilter_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDataForm_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDataPager_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDatePicker_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDateTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDocking_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDomainDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDragAndDrop_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDropDownButton_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadRichTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadExpander_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadExpressionEditor_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadFrameContainer_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadGauge_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadGridView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadHtmlEditor_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadHTMLPlaceHolder_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadListBox_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadMap_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadMaskedTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadMediaPlayer_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadMenu_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadNavigation_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadNumericUpDown_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadOutlookBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadPanelBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadProgressBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadRadEditor_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadRating_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadRibbonBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadScheduler_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadSlider_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadSparklines_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadSplitButton_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTabControl_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTextBoxRibbonUI_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTileView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTimeBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadToolBar_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTransitionControl_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTreeListView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadTreeView_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadUpload_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadDataVirtualization_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadWindow_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadAnimation_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadBook_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadBulletGraph_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadBusyIndicator_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadButtons_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadCalendar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadCaptcha_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadChartView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadColorPicker_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadComboBox_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadContextMenu_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadCarousel_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadCube_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDataFilter_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDataForm_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDataPager_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDatePicker_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDateTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDocking_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDomainDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDragAndDrop_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDropDownButton_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadRichTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadExpander_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadExpressionEditor_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadFrameContainer_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadGauge_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadGridView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadHtmlEditor_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadHTMLPlaceHolder_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadListBox_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadMap_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadMaskedTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadMediaPlayer_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadMenu_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadNavigation_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadNumericUpDown_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadOutlookBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadPanelBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadProgressBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadRadEditor_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadRating_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadRibbonBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadScheduler_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadSlider_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadSparklines_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadSplitButton_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTabControl_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTextBoxRibbonUI_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTileView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTimeBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadToolBar_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTransitionControl_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTreeListView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadTreeView_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadUpload_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadDataVirtualization_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadWindow_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadAnimation_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadBook_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadBulletGraph_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadBusyIndicator_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadButtons_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadCalendar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadCaptcha_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadChartView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadColorPicker_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadComboBox_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadContextMenu_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadCarousel_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadCube_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDataFilter_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDataForm_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDataPager_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDatePicker_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDateTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDocking_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDomainDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDragAndDrop_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDropDownButton_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadRichTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadExpander_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadExpressionEditor_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadFrameContainer_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadGauge_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadGridView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadHtmlEditor_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadHTMLPlaceHolder_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadListBox_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadMap_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadMaskedTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadMediaPlayer_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadMenu_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadNavigation_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadNumericUpDown_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadOutlookBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadPanelBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadProgressBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadRadEditor_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadRating_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadRibbonBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadScheduler_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadSlider_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadSparklines_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadSplitButton_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTabControl_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTextBoxRibbonUI_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTileView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTimeBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadToolBar_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTransitionControl_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTreelist_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadTreeListView_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadUpload_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadDataVirtualization_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadWindow_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadAnimation_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadBook_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadBulletGraph_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadBusyIndicator_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadButtons_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadCalendar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadCaptcha_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadChartView_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadColorPicker_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadComboBox_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadContextMenu_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadCarousel_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadCube_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDataFilter_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDataForm_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDataPager_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDatePicker_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDateTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDocking_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDomainDataSource_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDragAndDrop_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDropDownButton_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadRichTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadExpander_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadExpressionEditor_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadFrameContainer_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadGauge_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadGridView_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadHtmlEditor_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadHTMLPlaceHolder_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadListBox_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadMap_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadMaskedTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadMediaPlayer_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadMenu_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadNavigation_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadNumericUpDown_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadOutlookBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadPanelBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadProgressBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadRadEditor_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadRating_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadRibbonBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadScheduler_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadSlider_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadSparklines_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadSplitButton_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTabControl_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTextBoxRibbonUI_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTextBox_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTileView_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTimeBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTimePicker_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadToolBar_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTransitionControl_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTreeListView_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadTreeView_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadUpload_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadDataVirtualization_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadWindow_WPF.png" />
+    <Resource Include="Resources\Images\Highlights3.png" />
+    <Resource Include="Resources\Images\Highlights1.png" />
+    <Resource Include="Resources\Images\Highlights2.png" />
+    <Resource Include="Resources\Images\Sales1.png" />
+    <Resource Include="Resources\Images\Sales2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ExamplesSchema.xsd">
+      <Link>ExamplesSchema.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config" />
+    <Resource Include="Resources\Fonts\MyriadPro-Semibold.OTF" />
+    <Resource Include="Resources\Fonts\MyriadPro-Regular.OTF" />
+    <None Include="Service References\ServiceReference1\ConvertService.wsdl" />
+    <None Include="Service References\ServiceReference1\Telerik.Windows.QuickStart.ServiceReference1.ConvertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Telerik.Windows.QuickStart.ServiceReference1.ConvertSnippetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Telerik.Windows.QuickStart.ServiceReference1.PerformConversionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Resource Include="Resources\Fonts\MyriadPro-Light.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadPropertyGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadPropertyGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadPropertyGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadPropertyGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadTreeMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Background01.jpg" />
+    <Resource Include="Resources\Images\Background02.jpg" />
+    <Resource Include="Resources\Images\Background03.jpg" />
+    <Resource Include="Resources\Images\Background04.jpg" />
+    <Resource Include="Resources\Images\Background05.jpg" />
+    <Resource Include="Resources\Images\Background06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadTreeMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadTreeMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadTreeMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadImageEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadImageEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadImageEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadImageEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadZipLibrary_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadZipLibrary_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadZipLibrary_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadZipLibrary_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadBreadCrumb_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadBreadCrumb_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadBreadCrumb_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadBreadCrumb_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadChart_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadChart_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadChart_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadChart_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadEntityFrameworkDataSource_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadEntityFrameworkDataSource_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadEntityFrameworkDataSource_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadEntityFrameworkDataSource_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadBarcode_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadBarcode_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadBarcode_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadBarcode_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadVirtualizingWrapPanel_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadVirtualizingWrapPanel_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadVirtualizingWrapPanel_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadVirtualizingWrapPanel_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadColorEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadColorEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadColorEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadColorEditor_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadSpellChecker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadSpellChecker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadSpellChecker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadSpellChecker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadCalculator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadCalculator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadCalculator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadCalculator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadPdfViewer_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadPdfViewer_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadPdfViewer_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadPdfViewer_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\ConvertService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadGanttView_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadGanttView_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadGanttView_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadGanttView_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadDiagrams_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadDiagrams_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadDiagrams_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadDiagrams_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadWatermarkTextBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadWatermarkTextBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadWatermarkTextBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadWatermarkTextBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadTimeline_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadTimeline_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadTimeline_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadTimeline_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ExecutiveDashBoard.png" />
+    <Resource Include="Resources\Images\SalesManagerDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadDataBar_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadDataBar_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadDataBar_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadDataBar_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Examples.xml">
+      <Link>Examples.xml</Link>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadCollectionNavigator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadCollectionNavigator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadCollectionNavigator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadCollectionNavigator_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadHeatMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadHeatMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadHeatMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadHeatMap_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadPivotGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadPivotGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadPivotGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadPivotGrid_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadAutocompleteBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadAutocompleteBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadAutocompleteBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadAutocompleteBox_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadTileList_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadTileList_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadTileList_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadTileList_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadSpreadsheet_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadSpreadsheet_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadSpreadsheet_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadSpreadsheet_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ExampleTileShadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TelerikUIlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadSpreadProcessing_WPF.png" />
+    <Resource Include="Resources\Icons\16x16\RadWordsProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadSpreadProcessing_WPF.png" />
+    <Resource Include="Resources\Icons\24x24\RadWordsProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadSpreadProcessing_WPF.png" />
+    <Resource Include="Resources\Icons\32x32\RadWordsProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadSpreadProcessing_WPF.png" />
+    <Resource Include="Resources\Icons\46x46\RadWordsProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadPdfProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadPdfProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadPdfProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadPdfProcessing_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadCloudUpload_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadCloudUpload_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadCloudUpload_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadCloudUpload_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadRadialMenu_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadRadialMenu_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadRadialMenu_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadRadialMenu_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadToolTip_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadToolTip_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadToolTip_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadToolTip_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CRMDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadWizard_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadWizard_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadWizard_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadWizard_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadDesktopAlert_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadDesktopAlert_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadDesktopAlert_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadDesktopAlert_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\OutlookInspiredApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadTimeSpanPicker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadTimeSpanPicker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadTimeSpanPicker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadTimeSpanPicker_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Desktop\ColorThemeGenerator.png" />
+    <Resource Include="Resources\Images\Desktop\CRM.png" />
+    <Resource Include="Resources\Images\Desktop\OutlookInspiredApp.png" />
+    <Resource Include="Resources\Images\Desktop\SalesDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Desktop\ExecutiveDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Touch\CRM.png" />
+    <Resource Include="Resources\Images\Touch\ColorThemeGenerator.png" />
+    <Resource Include="Resources\Images\Touch\ExecutiveDashboard.png" />
+    <Resource Include="Resources\Images\Touch\OutlookInspiredApp.png" />
+    <Resource Include="Resources\Images\Touch\SalesDashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\32x32\RadTouchManager_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\46x46\RadTouchManager_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\24x24\RadTouchManager_WPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\16x16\RadTouchManager_WPF.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)..\ProjectFilesListGenerator\Compiled\ProjectFilesListGenerator.exe" /ValidatesXmlFile /XmlFilePath:$(ProjectDir)..\Examples.xml /XmlSchemaFilePath:$(ProjectDir)..\ExamplesSchema.xsd</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

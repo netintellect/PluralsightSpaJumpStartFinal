@@ -1,0 +1,20 @@
+System.XAML
+System
+System.Data
+System.Xml
+System.Core
+System.Xml.Linq
+System.Data.DataSetExtensions
+Telerik.Windows.Controls, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Docking, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.GridView, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Input, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.Navigation, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Controls.RibbonView, Version=2011.2.711.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Data, Version=2011.2.613.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.PersistenceFramework, Version=2011.2.610.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL
+Telerik.Windows.Zip
+UIAutomationTypes
+WindowsBase
+PresentationCore
+PresentationFramework

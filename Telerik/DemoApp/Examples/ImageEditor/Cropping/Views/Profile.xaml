@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ImageEditor.Cropping.Views.Profile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="Stroke" Color="#FFD6D4D4"/>
+
+        <Style TargetType="telerik:RadListBoxItem" BasedOn="{StaticResource RadListBoxItemStyle}">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe UI Light" Text="Choose a Picture" FontSize="24" Margin="0 0 0 5"/>
+        <Rectangle Fill="#FFD4D4D4" Height="1" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
+
+        <telerik:RadListBox Grid.Row="1" ItemsSource="{Binding Contacts}" Margin="0 20" SelectedItem="{Binding SelectedContact, Mode=TwoWay}" 
+                 Padding="0" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <telerik:RadListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="96" Height="135" Margin="5"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            BorderBrush="{telerik:Windows8Resource ResourceKey=AccentBrush}" BorderThickness="1">
+                        <Image Source="{Binding Image}" Stretch="Fill"/>
+                    </Border>
+                </DataTemplate>
+            </telerik:RadListBox.ItemTemplate>
+            <telerik:RadListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <telerik:RadWrapPanel Orientation="Horizontal" ItemWidth="116" ItemHeight="151"/>
+                </ItemsPanelTemplate>
+            </telerik:RadListBox.ItemsPanel>
+        </telerik:RadListBox>
+
+        <TextBlock Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe UI Light" Text="Edit Information" FontSize="24" Margin="0 0 0 5"/>
+        <Rectangle Grid.Row="2" Fill="#FFD4D4D4" Height="1" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
+
+        <Grid Grid.Row="3" VerticalAlignment="Top" DataContext="{Binding SelectedContact}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Name" FontSize="12" FontFamily="Segoe UI" Margin="0 20 0 0"/>
+            <TextBlock Grid.Row="1" Text="Location" FontSize="12" FontFamily="Segoe UI" Margin="0 23 0 0"/>
+            <TextBlock Grid.Row="2" Text="Email" FontSize="12" FontFamily="Segoe UI" Margin="0 23 0 0"/>
+            <TextBlock Grid.Row="3" Text="Office Phone" FontSize="12" FontFamily="Segoe UI" Margin="0 23 0 0"/>
+            <TextBlock Grid.Row="4" Text="Room Number" FontSize="12" FontFamily="Segoe UI" Margin="0 23 0 0"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" MaxLength="20" FontSize="12" FontFamily="Segoe UI" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderBrush="{StaticResource Stroke}" BorderThickness="1" Margin="0 20 0 0" TextChanged="TextBox_TextChanged"/>
+            <TextBox Grid.Row="1" Grid.Column="1" MaxLength="14" FontSize="12" FontFamily="Segoe UI" Text="{Binding Location, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderBrush="{StaticResource Stroke}" BorderThickness="1" Margin="0 20 0 0" TextChanged="TextBox_TextChanged"/>
+            <TextBox Grid.Row="2" Grid.Column="1" MaxLength="30" FontSize="12" FontFamily="Segoe UI" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderBrush="{StaticResource Stroke}" BorderThickness="1" Foreground="{telerik:Windows8Resource ResourceKey=AccentBrush}" Margin="0 20 0 0" TextChanged="TextBox_TextChanged"/>
+            <TextBox Grid.Row="3" Grid.Column="1" MaxLength="10" FontSize="12" FontFamily="Segoe UI" Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderBrush="{StaticResource Stroke}" BorderThickness="1" Margin="0 20 0 0" TextChanged="TextBox_TextChanged"/>
+            <TextBox Grid.Row="4" Grid.Column="1" MaxLength="5" FontSize="12" FontFamily="Segoe UI" Text="{Binding Room, Mode=TwoWay, UpdateSourceTrigger=Explicit}" BorderBrush="{StaticResource Stroke}" BorderThickness="1" Margin="0 20 0 0" TextChanged="TextBox_TextChanged"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,2 @@
+﻿RadScheduleView is a radically different scheduling component, going beyond the standard Microsoft Outlook-style control. 
+The ScheduleView empowers end users with total control over the display of views and appointments. Features such as multi-level grouping, powerful filtering of appointments and ultimate flexibility in integration with other controls is what makes RadScheduleView a highly adaptable scheduling control. Support for commands makes the integration process simple and easy, while sustaining blazing fast scrolling.

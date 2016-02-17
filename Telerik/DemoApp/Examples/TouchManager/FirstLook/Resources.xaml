@@ -1,0 +1,27 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <LinearGradientBrush x:Key="touchDeviceFrame" StartPoint="0,1" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="Black"/>
+            <GradientStop Offset="0.6" Color="Black"/>
+            <GradientStop Offset="1.0" Color="#FF555555"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="touchDeviceFrameStroke" StartPoint="1,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="Black"/>
+            <GradientStop Offset="1.0" Color="#FF333333"/>
+            <GradientStop Offset="1.0" Color="#FF333333"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="homeButtonBackground" StartPoint="1,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset="1.0" Color="#FF333333"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+</ResourceDictionary>

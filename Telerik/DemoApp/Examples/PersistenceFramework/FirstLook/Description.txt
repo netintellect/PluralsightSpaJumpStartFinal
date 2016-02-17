@@ -1,0 +1,2 @@
+﻿Telerik Persistence Framework allows you to save the properties of UI elements and restore them back to their previous state.
+It provides the ability to select which properties should be included or excluded by the Persistence Framework.</br>The persisted information can be saved in a stream or in the IsolatedStorage. If you use IsolatedStorage the persistence information about each control is saved in a separate file and its name is determined by the PersistenceManager.StorageId attached property.

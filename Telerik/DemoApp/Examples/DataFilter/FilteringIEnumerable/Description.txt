@@ -1,0 +1,1 @@
+﻿This example demonstrates filtering using the RadDataFilter. In this example the source is IEnumerable, but thanks to RadDataFilter filtering is now possible. The Source property of the filter is bound to a simple IEnumerable and the grid uses the FilteredSource property of the pager as its ItemsSource. With this functionality you can filter any possible collection.

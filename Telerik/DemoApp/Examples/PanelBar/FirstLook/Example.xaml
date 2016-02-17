@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.PanelBar.FirstLook.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:interactions="http://schemas.microsoft.com/expression/2010/interactions"
+		xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+		xmlns:local="clr-namespace:Telerik.Windows.Examples.PanelBar.FirstLook"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+    <UserControl.Resources>
+        <local:MainPageViewModel x:Key="myViewModel" />
+    </UserControl.Resources>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <Grid>
+            <TextBlock Text="Mail" Margin="8" />
+        </Grid>
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <Grid>
+        <Grid x:Name="LayoutRoot"  Width="766" Height="360" HorizontalAlignment="Center" VerticalAlignment="Center"
+				Background="White" DataContext="{StaticResource myViewModel}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <telerik:RadPanelBar x:Name="radPanelBar" VerticalAlignment="Stretch"
+					BorderBrush="#FFCBD8E8" BorderThickness="1 1 0 1"
+					SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+					SelectionChanged="radPanelBar_SelectionChanged">
+                <telerik:RadPanelBarItem IsExpanded="True">
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock Text="Academic Staff" Margin="5 3" />
+                    </telerik:RadPanelBarItem.Header>
+                    <ListBox ItemsSource="{Binding Employees}" BorderThickness="0" BorderBrush="Transparent"
+							SelectedItem="{Binding SelectedEmployee, Mode=TwoWay}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                    <Border Margin="10 5 15 5" BorderBrush="#FFA1A1A1"
+											BorderThickness="1">
+                                        <Image Source="{Binding SmallImagePath}" Stretch="None" />
+                                    </Border>
+                                    <TextBlock VerticalAlignment="Center" FontFamily="Segoe UI"
+											Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </telerik:RadPanelBarItem>
+                <telerik:RadPanelBarItem>
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock Text="Programs" Margin="5 3" />
+                    </telerik:RadPanelBarItem.Header>
+                    <ListBox ItemsSource="{Binding WeekDays}" BorderThickness="0" BorderBrush="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="10 5 5 5"
+										Command="{Binding DayCheckedCommand, Source={StaticResource myViewModel}}"
+										Content="{Binding Header}"
+										IsChecked="{Binding IsChecked, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </telerik:RadPanelBarItem>
+                <telerik:RadPanelBarItem >
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock Text="Selected Publications" Margin="5 3" />
+                    </telerik:RadPanelBarItem.Header>
+                    <ListBox ItemsSource="{Binding PublicationPeriods}" BorderThickness="0" BorderBrush="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="10 5 5 5"
+										Command="{Binding PublicationCheckedCommand, Source={StaticResource myViewModel}}"
+										Content="{Binding Header}"
+										IsChecked="{Binding IsChecked, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </telerik:RadPanelBarItem>
+                <telerik:RadPanelBarItem>
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock Text="Contact Information" Margin="5 3" />
+                    </telerik:RadPanelBarItem.Header>
+                </telerik:RadPanelBarItem>
+            </telerik:RadPanelBar>
+            <Border Grid.Column="1" BorderBrush="#FFCBD8E8"
+					BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Margin="10" Background="#FFF9F9F9">
+                        <Grid Margin="15 10" DataContext="{Binding SelectedEmployee}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid Margin="0 0 0 5">
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+										FontFamily="Segoe UI" FontSize="16" FontWeight="Bold"
+										Foreground="#FF1E395B" Text="{Binding Department}" />
+                                <Image HorizontalAlignment="Right"
+										Source="Images/PanelBar/Printer.png" Stretch="None" />
+                            </Grid>
+                            <Border Height="1" VerticalAlignment="Bottom" Background="#FFA0AFC3">
+                                <Border.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                        <GradientStop Offset="1" />
+                                        <GradientStop Offset="0.5" Color="White" />
+                                    </LinearGradientBrush>
+                                </Border.OpacityMask>
+                            </Border>
+
+                            <Grid Grid.Row="1" Margin="0 10 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Border Grid.RowSpan="3" Margin="10 5 15 5" BorderBrush="#FFA1A1A1"
+										BorderThickness="1">
+                                    <Image Source="{Binding LargeImagePath}" Stretch="None" />
+                                </Border>
+                                <TextBlock Grid.Column="1" Margin="10 3 20 10"
+										HorizontalAlignment="Left" FontFamily="Segoe UI"
+										Text="Name:" TextAlignment="Right" />
+                                <TextBlock Grid.Column="2" HorizontalAlignment="Left"
+										FontFamily="Segoe UI" FontSize="16" Foreground="#FF1E395B"
+										Text="{Binding Name}" />
+                                <TextBlock Grid.Row="1" Grid.Column="1" Margin="10 3 20 10"
+										HorizontalAlignment="Left" FontFamily="Segoe UI"
+										Text="Position:" TextAlignment="Right" />
+                                <StackPanel Grid.Row="1" Grid.Column="2" Margin="0 0 0 10">
+                                    <TextBlock HorizontalAlignment="Left" FontFamily="Segoe UI"
+											FontSize="13.333" FontWeight="Bold"
+											Foreground="#FF4C607A" Text="{Binding Position}" />
+                                    <TextBlock Width="309" Margin="0 10 0 0"
+											HorizontalAlignment="Left" FontFamily="Segoe UI"
+											FontSize="12" Text="{Binding PositionAdditionalInfo}"
+											TextWrapping="Wrap" />
+                                </StackPanel>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Margin="10 2 20 0"
+										HorizontalAlignment="Left" FontFamily="Segoe UI"
+										Text="Office:" TextAlignment="Right" />
+                                <TextBlock Grid.Row="2" Grid.Column="2" Width="309"
+										HorizontalAlignment="Left" FontFamily="Segoe UI"
+										FontSize="12" Text="{Binding Office}" TextWrapping="Wrap" />
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+                    <StackPanel Grid.Row="1" Margin="25 10">
+                        <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left"
+								FontFamily="Segoe UI" FontSize="13" FontWeight="Bold"
+								Foreground="#FF1E395B" Text="{Binding AdditionalInfoType}" />
+                        <TextBlock FontFamily="Segoe UI" Text="{Binding AdditionalInfo}"
+								TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel Margin="3">
+            <RadioButton Margin="0 2" Checked="OnRadioButtonClick" Content="Single ExpandMode"
+					IsChecked="true" Unchecked="OnRadioButtonClick" />
+            <RadioButton Margin="0 2" Content="Multiple ExpandMode" />
+        </StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.Breadcrumb.Theming.WPF.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+			 HorizontalAlignment="Center" VerticalAlignment="Center">
+	<Grid Width="550" Height="200">
+		<Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" />
+
+		<telerik:RadBreadcrumb x:Name="explorerBreadcrumb" MinHeight="24" MaxHeight="36"
+							   Header="{Binding Root}"
+							   HeaderMemberPath="Header"
+							   VerticalAlignment="Top"
+							   HierarchicalItemsSource="Children"
+							   HierarchicalMemberPath="Header"
+							   ImagePath="Image"
+							   Path="Desktop\Computer\Local Disk (C:)\Personal Folders"
+							   IsIconVisible="True"
+							   ItemsSource="{Binding Root.Children}"
+							   TextModePath="Header" />
+		
+	</Grid>
+</UserControl>

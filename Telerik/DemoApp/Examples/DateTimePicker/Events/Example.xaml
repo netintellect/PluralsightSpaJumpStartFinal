@@ -1,0 +1,43 @@
+<UserControl x:Class="Telerik.Windows.Examples.DateTimePicker.Events.Example"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" d:DesignHeight="300"
+        d:DesignWidth="800"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+
+    <telerikQuickStart:QuickStart.ConfigurationPanel>
+        <StackPanel>
+						
+			<TextBlock Text="Events log:" />
+			<ListBox x:Name="EventsLog" VerticalAlignment="Stretch" Height="300">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="{Binding EventName}" FontWeight="SemiBold" />
+							<TextBlock Text="{Binding Text}" FontWeight="Light" />
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+
+		</StackPanel>
+    </telerikQuickStart:QuickStart.ConfigurationPanel>
+
+    <telerikQuickStart:HeaderedContentControl Header="Events" Margin="0 0 0 35" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="20 20 20 0" Text="SelectedValue:" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding SelectedValue, ElementName=dateTimePicker}" Foreground="#FF3575A0" Margin="20 0 20 10" />
+
+			<telerik:RadDateTimePicker x:Name="dateTimePicker" Width="400" Margin="20 0 20 25" 
+									   SelectionChanged="dateTimePicker_SelectionChanged"
+									   ParseDateTimeValue="dateTimePicker_ParseDateTimeValue"
+									   DropDownOpened="dateTimePicker_DropDownOpened"
+									   DropDownClosed="dateTimePicker_DropDownClosed" />
+		</StackPanel>
+    </telerikQuickStart:HeaderedContentControl>
+    
+
+</UserControl>

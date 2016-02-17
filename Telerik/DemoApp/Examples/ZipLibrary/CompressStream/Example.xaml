@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Telerik.Windows.Examples.ZipLibrary.CompressStream.Example"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+		xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+		HorizontalAlignment="Center" VerticalAlignment="Center">
+
+	<telerikQuickStart:QuickStart.ExampleHeader>
+		<Grid>
+			<TextBlock Text="Compress Stream" Margin="8" />
+		</Grid>
+	</telerikQuickStart:QuickStart.ExampleHeader>
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBox x:Name="UncompressedText" TextWrapping="Wrap" MinHeight="115" MaxHeight="200" Width="400" Margin="0 2"
+				VerticalScrollBarVisibility="Auto" />
+		<Grid Margin="0 5" Grid.Row="1">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+				<TextBlock Text="Uncompressed size: " />
+				<TextBlock Text="{Binding Text.Length, ElementName=UncompressedText}" />
+			</StackPanel>
+			<telerik:RadButton Content="Compress" MinHeight="24" Click="RadButton_Click" HorizontalAlignment="Right" />
+		</Grid>
+		<TextBox x:Name="CompressedText" Grid.Row="2" TextWrapping="Wrap" MinHeight="115" MaxHeight="200" Width="400" Margin="0 2"
+				VerticalScrollBarVisibility="Auto" />
+		<StackPanel Margin="0 2" Orientation="Horizontal" Grid.Row="3">
+			<TextBlock Text="Compressed size: " />
+			<TextBlock Text="{Binding Text.Length, ElementName=CompressedText}" />
+		</StackPanel>
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+			<telerik:RadComboBox x:Name="CompressionMethods" SelectedIndex="0" Margin="0 2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>

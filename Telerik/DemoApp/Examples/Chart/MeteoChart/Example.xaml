@@ -1,0 +1,153 @@
+<UserControl x:Class="Telerik.Windows.Examples.Chart.MeteoChart.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:example="clr-namespace:Telerik.Windows.Examples.Chart.MeteoChart"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"
+    xmlns:chart="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Charting"
+    xmlns:charting="clr-namespace:Telerik.Windows.Controls.Charting;assembly=Telerik.Windows.Controls.Charting">
+
+    <UserControl.DataContext>
+        <example:ExampleViewModel />
+    </UserControl.DataContext>
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Meteogram for Sofia (Bulgaria) - next 12 hours" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+
+    <UserControl.Resources>
+        <example:LabelVisibilityConverter x:Key="LabelVisibilityConverter1" />
+
+        <Style x:Key="SplineLabelStyle" TargetType="charting:SeriesItemLabel">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="charting:SeriesItemLabel">
+                        <Canvas>
+                            <Border x:Name="PART_TextContainer">
+                                <Image x:Name="PART_Image" 
+                                      Source="{Binding DataItem.WeatherImageSource}" />
+                            </Border>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="BarLabelStyle" TargetType="charting:SeriesItemLabel">
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="charting:SeriesItemLabel">
+                        <Canvas>
+                            <Border x:Name="PART_TextContainer">
+                                <TextBlock 
+                                      Visibility="{Binding Converter={StaticResource LabelVisibilityConverter1}}"                              
+                                      Text="{TemplateBinding Content}"/>
+                            </Border>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomSplineStyle" TargetType="charting:Spline">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="charting:Spline">
+                        <Canvas >
+                            <Path x:Name="PART_LineGeometry" 
+									  Fill="Transparent"
+									  Stroke="Transparent"
+									  Style="{TemplateBinding ItemStyle}">
+                                <Path.Data>
+                                    <PathGeometry x:Name="PART_DefiningGeometry">
+                                        <PathFigure IsClosed="false" >
+                                            <PolyLineSegment />
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomBarStyle" TargetType="charting:Bar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="charting:Bar">
+                        <Canvas>
+                            <Rectangle x:Name="PART_DefiningGeometry" 
+									 Height="{TemplateBinding ItemActualHeight}"
+									 Width="{TemplateBinding ItemActualWidth}"
+									 Style="{TemplateBinding ItemStyle}"
+                                     RadiusX="2" RadiusY="2" />
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Border telerikQuickStart:ThemeAwareBackgroundBehavior.IsEnabled="True" >
+            <chart:RadChart x:Name="RadChart1" ItemsSource="{Binding Data}">
+                <chart:RadChart.SeriesMappings>
+                    <charting:SeriesMapping>
+                        <charting:SeriesMapping.SeriesDefinition>
+                            <charting:BarSeriesDefinition AxisName="Tertiary"
+                                                         ItemStyle="{StaticResource CustomBarStyle}"
+                                                         SeriesItemLabelStyle="{StaticResource BarLabelStyle}">
+                                <charting:BarSeriesDefinition.Appearance>
+                                    <charting:SeriesAppearanceSettings Fill="#7F00C6FF" Foreground="Blue" />
+                                </charting:BarSeriesDefinition.Appearance>
+                            </charting:BarSeriesDefinition>
+                        </charting:SeriesMapping.SeriesDefinition>
+
+                        <charting:ItemMapping FieldName="Time" DataPointMember="XValue" />
+                        <charting:ItemMapping FieldName="Rainfall" DataPointMember="YValue" />
+                    </charting:SeriesMapping>
+                    <charting:SeriesMapping>
+                        <charting:SeriesMapping.SeriesDefinition>
+                            <charting:SplineSeriesDefinition ShowPointMarks="False" 
+                                                            ItemStyle="{StaticResource CustomSplineStyle}" 
+                                                            SeriesItemLabelStyle="{StaticResource SplineLabelStyle}">
+                                <charting:SplineSeriesDefinition.Appearance>
+                                    <charting:SeriesAppearanceSettings Stroke="Red" />
+                                </charting:SplineSeriesDefinition.Appearance>
+                            </charting:SplineSeriesDefinition>
+                        </charting:SeriesMapping.SeriesDefinition>
+
+                        <charting:ItemMapping FieldName="Time" DataPointMember="XValue" />
+                        <charting:ItemMapping FieldName="Temperature" DataPointMember="YValue" />
+                    </charting:SeriesMapping>
+                </chart:RadChart.SeriesMappings>
+                <chart:RadChart.DefaultView>
+                    <charting:ChartDefaultView>
+                        <charting:ChartDefaultView.ChartArea>
+                            <charting:ChartArea SmartLabelsEnabled="False" ItemWidthPercent="300">
+                                <charting:ChartArea.AxisX>
+                                    <charting:AxisX MajorGridLinesVisibility="Visible" LayoutMode="Between" IsDateTime="True" DefaultLabelFormat="hh:mm tt"
+                                                   AutoRange="False"
+                                                   MinValue="{Binding AxisXMinValue}"
+                                                   MaxValue="{Binding AxisXMaxValue}"
+                                                   Step="{Binding AxisXStep}" />
+                                </charting:ChartArea.AxisX>
+                                <charting:ChartArea.AxisY>
+                                    <charting:AxisY MajorGridLinesVisibility="Visible" MinorGridLinesVisibility="Visible" StripLinesVisibility="Collapsed"
+                                                   DefaultLabelFormat="#VAL&#176;" Title="Temperatures" AutoRange="False"
+                                                   MinValue="-20" MaxValue="40" Step="5" />
+                                </charting:ChartArea.AxisY>
+                                <charting:ChartArea.AdditionalYAxes>
+                                    <charting:AxisY AxisName="Secondary" Title="Temperatures" DefaultLabelFormat="#VAL&#176;" 
+                                                   AutoRange="False" MinValue="-20" MaxValue="40" Step="5" />
+                                    <charting:AxisY AxisName="Tertiary" Visibility="Collapsed" AutoRange="False" MinValue="0" MaxValue="30" />
+                                </charting:ChartArea.AdditionalYAxes>
+                            </charting:ChartArea>
+                        </charting:ChartDefaultView.ChartArea>
+                        <charting:ChartDefaultView.ChartLegend>
+                            <charting:ChartLegend Visibility="Collapsed" />
+                        </charting:ChartDefaultView.ChartLegend>
+                    </charting:ChartDefaultView>
+                </chart:RadChart.DefaultView>
+            </chart:RadChart>
+        </Border>
+    </Grid>
+</UserControl>

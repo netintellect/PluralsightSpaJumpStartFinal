@@ -1,0 +1,84 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="Telerik.Windows.Examples.OutlookBar.ItemPosition.Example"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common">
+	<Grid Width="450" Height="400">
+		<StackPanel Orientation="Horizontal">
+			<telerik:RadOutlookBar x:Name="outlookBar" Width="200" MaxWidth="430"
+					ItemPositionChanged="OutlookBar_ItemPositionChanged">
+				<telerik:RadOutlookBarItem Header="Item 0" />
+				<telerik:RadOutlookBarItem Header="Item 1" />
+				<telerik:RadOutlookBarItem Header="Item 2" />
+				<telerik:RadOutlookBarItem Header="Item 3" />
+				<telerik:RadOutlookBarItem Header="Item 4" />
+			</telerik:RadOutlookBar>
+			<Grid Width="250">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Border BorderBrush="#FF6593CF" BorderThickness="1">
+					<Border.Background>
+						<LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+							<GradientStop Offset="0" Color="#E3EFFF" />
+							<GradientStop Offset="1" Color="#AFD2FF" />
+						</LinearGradientBrush>
+					</Border.Background>
+					<Border BorderBrush="White" BorderThickness="1,1,0,0">
+						<TextBlock Text="Item's Position Log" FontWeight="Bold" FontSize="14"
+								HorizontalAlignment="Left" Margin="5 2 5 2"
+								VerticalAlignment="Center" Foreground="#FF15428B" />
+					</Border>
+				</Border>
+				<Border Grid.Row="1" BorderBrush="#FF6593CF" BorderThickness="1,0,1,1">
+					<ScrollViewer>
+						<ListBox x:Name="log" BorderBrush="{x:Null}" BorderThickness="0"
+								ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+								ScrollViewer.VerticalScrollBarVisibility="Hidden">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Grid Margin="10">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="Auto" />
+											<ColumnDefinition Width="*" />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+										<TextBlock Text="Time: " Grid.Row="0" Grid.Column="0" />
+										<TextBlock Text="{Binding TimeStamp}" Grid.Row="0"
+												Grid.Column="1" />
+										<TextBlock Text="Header: " Grid.Row="1" Grid.Column="0" />
+										<TextBlock Text="{Binding Header}" FontWeight="Bold"
+												FontSize="11" Grid.Row="1" Grid.Column="1" />
+										<TextBlock Text="New Position: " Grid.Row="2"
+												Grid.Column="0" />
+										<TextBlock Text="{Binding NewPosition}" FontWeight="Bold"
+												Foreground="#5074AE" Grid.Row="2" Grid.Column="1" />
+										<TextBlock Text="Old Position: " Grid.Row="3"
+												Grid.Column="0" />
+										<TextBlock Text="{Binding OldPosition}" FontWeight="Bold"
+												Foreground="#E59730" Grid.Row="3" Grid.Column="1" />
+									</Grid>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</ScrollViewer>
+				</Border>
+			</Grid>
+		</StackPanel>
+	</Grid>
+	<telerikQuickStart:QuickStart.ConfigurationPanel>
+		<StackPanel Margin="3">
+            <Button Click="ButtonAdd_Click" Content="Add" Margin="0 0 0 2" />
+            <Button Click="ButtonRemove_Click" Content="Remove" Margin="0 0 0 2" />
+            <Button Click="ButtonClearOutlookBar_Click" Content="Clear OutlookBar" Margin="0 0 0 2" />
+            <Button Click="ButtonClearLog_Click" Content="Clear Log" Margin="0 0 0 2" />
+		</StackPanel>
+	</telerikQuickStart:QuickStart.ConfigurationPanel>
+</UserControl>
+

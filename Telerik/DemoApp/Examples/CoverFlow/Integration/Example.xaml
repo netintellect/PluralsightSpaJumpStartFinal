@@ -1,0 +1,130 @@
+<UserControl x:Class="Telerik.Windows.Examples.CoverFlow.Integration.Example"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:telerikQuickStart="clr-namespace:Telerik.Windows.Controls.QuickStart;assembly=QuickStart.Common"            
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400" d:DesignWidth="600">
+
+    <telerikQuickStart:QuickStart.ExampleHeader>
+        <TextBlock Text="Integration" Margin="8" />
+    </telerikQuickStart:QuickStart.ExampleHeader>
+    
+    <UserControl.Resources>
+		<LinearGradientBrush x:Key="CoverFlowItemBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+			<LinearGradientBrush.GradientStops>
+				<GradientStopCollection>
+					<GradientStop Color="#FFd1d1d1" Offset="0" />
+					<GradientStop Color="#FFd1d1d1" Offset="0.02" />
+					<GradientStop Color="#FF7a7a7a" Offset="0.24" />
+					<GradientStop Color="#FF999999" Offset="0.53" />
+					<GradientStop Color="#FFBABABA" Offset="0.98" />
+					<GradientStop Color="#FFbbbbbb" Offset="0.99" />
+				</GradientStopCollection>
+			</LinearGradientBrush.GradientStops>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="CoverFlowItemBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#CCE0E0E0"/>
+			<GradientStop Color="#CCDEDEDE" Offset="1"/>
+		</LinearGradientBrush> 
+
+		<Style x:Key="RadCoverFlowItemContainerStyle" TargetType="ListBoxItem">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="telerik:RadCoverFlowItem">
+						<Border Background="{StaticResource CoverFlowItemBackground}" BorderBrush="{StaticResource CoverFlowItemBorderBrush}" 
+									BorderThickness="1"  CornerRadius="3" telerik:RadCoverFlow.EnableLoadNotification="True">
+							<Image Source="{Binding ImageSource}" Stretch="None" Width="316" Height="223" Margin="9" />
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="ListBoxStyle" TargetType="ListBox">
+			<Setter Property="ItemTemplate">
+				<Setter.Value>
+					<DataTemplate>
+						<Grid Margin="3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Image Source="{Binding ImageSource}" Grid.Column="0" Margin="0 5 5 5" Width="63" Height="41" HorizontalAlignment="Center">
+								<Image.Effect>
+									<DropShadowEffect BlurRadius="3" ShadowDepth="3" Opacity="0.365" Direction="328"/>
+								</Image.Effect>
+							</Image>
+							<StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
+								<TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="13" TextWrapping="Wrap" HorizontalAlignment="Left" />
+								<TextBlock Text="{Binding Country}" FontWeight="Bold" FontSize="13" TextWrapping="Wrap" HorizontalAlignment="Left" />
+							</StackPanel>
+							<TextBlock Text="{Binding Description}" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" />
+						</Grid>
+					</DataTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="ItemContainerStyle">
+				<Setter.Value>
+					<Style TargetType="ListBoxItem" telerik:StyleManager.BasedOn="Metro">
+						<Setter Property="Width" Value="223" />
+					</Style>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBox">
+						<ScrollViewer BorderThickness="0" Padding="0 8" telerik:StyleManager.Theme="Metro">
+							<ItemsPresenter />
+						</ScrollViewer>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+			
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+        <!--Decoration borders-->
+        <Border BorderBrush="#FFCBD8E8" BorderThickness="1" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF3F3F3" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="0.181"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Rectangle HorizontalAlignment="Stretch" Height="31" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#50CCCCCC" Offset="0"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.429"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <telerikQuickStart:HeaderedContentControl Margin="10" Header="Top 10 cities" telerik:StyleManager.Theme="Metro">
+			<ListBox x:Name="cityList" Style="{StaticResource ListBoxStyle}" ItemsSource="{Binding}" SelectedIndex="{Binding SelectedIndex, ElementName=coverFlow, Mode=TwoWay}" Width="250" />
+        </telerikQuickStart:HeaderedContentControl>
+        
+        <telerik:RadCoverFlow x:Name="coverFlow" OffsetY="100" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding}"
+									CameraViewpoint="Center" ItemScale="0.5" RotationY="60" ReflectionHeight="0.2" ReflectionOpacity="2"
+									DistanceBetweenItems="35" DistanceFromSelectedItem="-30" IsVirtualizing="True" Margin="0 0 15 0"
+									ItemContainerStyle="{StaticResource RadCoverFlowItemContainerStyle}">
+		</telerik:RadCoverFlow>			
+	</Grid>
+</UserControl>

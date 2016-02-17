@@ -1,0 +1,13 @@
+<schedule:ObservableAppointmentCollection xml:lang="EN-US"
+		xmlns:common="clr-namespace:Telerik.Windows.Examples.ScheduleView.Common"
+		xmlns:schedule="clr-namespace:Telerik.Windows.Controls.ScheduleView;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:scheduleView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.ScheduleView"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+	
+	<schedule:Appointment Start="10/10/2010 7:00AM" End="10/10/2010 8:00AM" Subject="Dentist visit." />
+	<schedule:Appointment Start="10/10/2010 10:00AM" End="10/10/2010 11:17AM" Subject="Data access conference." />
+	<schedule:Appointment Start="10/12/2010 9:00AM" End="10/12/2010 9:30AM" Subject="Meeting with Mr. Smith." />
+	<schedule:Appointment Start="10/13/2010 3:00PM" End="10/13/2010 4:00PM" Subject="Interview candidate for janitor." />
+	<schedule:Appointment Start="10/20/2010 1:00PM" End="10/20/2010 2:00PM" Subject="Lunch with Lucy." />
+
+</schedule:ObservableAppointmentCollection>

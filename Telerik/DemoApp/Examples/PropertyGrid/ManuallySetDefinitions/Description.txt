@@ -1,0 +1,1 @@
+﻿With RadPropertyGrid users would be able to visualize and modify data, using a limitless variety of custom editors. 

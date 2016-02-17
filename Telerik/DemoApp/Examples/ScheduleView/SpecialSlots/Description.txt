@@ -1,0 +1,2 @@
+﻿The SpecialSlotStyleSelector is a new powerful way to provide a separate Style for time slots which you wish to mark as special. Just prepare your styles for the selector and create a collection of special slots which you will assign to the SpecialSlotsSource property, and you are good to go. You can use your imagination and use this feature for business hours, days off, holidays, etc.
+You can also disable any slots from the SpecialSlotsSource collection by setting their IsReadOnly property to True

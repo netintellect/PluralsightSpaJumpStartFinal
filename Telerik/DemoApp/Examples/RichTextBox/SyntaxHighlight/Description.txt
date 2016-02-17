@@ -1,0 +1,3 @@
+﻿Telerik <b>RadRichTextBox</b> control provides a flexible API for accessing and modifying the document structure.
+
+The above example shows how document can be built through code, using <b>Section</b>, <b>Paragraph</b> and <b>Span</b> classes.

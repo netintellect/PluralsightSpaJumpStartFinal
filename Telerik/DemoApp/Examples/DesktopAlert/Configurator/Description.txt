@@ -1,0 +1,4 @@
+﻿This example demonstrates the customizing capabilities of <b>RadDesktopAlert</b> and <b>RadDesktopAlertManager</b>.
+<br/>
+<br/>
+<i>Note that the settings for <b>RadDesktopAlert</b> in this example are only applied initially.</i>

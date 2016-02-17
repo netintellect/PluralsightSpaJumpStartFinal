@@ -1,0 +1,197 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents" xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents" xmlns:r="clr-namespace:Telerik.Windows.Documents.Model.Revisions;assembly=Telerik.Windows.Documents" xmlns:n="clr-namespace:Telerik.Windows.Documents.Model.Notes;assembly=Telerik.Windows.Documents" xmlns:th="clr-namespace:Telerik.Windows.Documents.Model.Themes;assembly=Telerik.Windows.Documents" version="1.3" LayoutMode="Paged" LineSpacing="1.15" LineSpacingType="Auto" ParagraphDefaultSpacingAfter="10" ParagraphDefaultSpacingBefore="0" SectionDefaultPageMargin="95,95,95,95" SectionDefaultPageSize="793,1123" SelectedBibliographicStyleName="\APA.XSL" StyleName="defaultDocumentStyle">
+    <t:RadDocument.Captions>
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Figure" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+        <t:CaptionDefinition IsDefault="True" IsLinkedToHeading="False" Label="Table" LinkedHeadingLevel="0" NumberingFormat="Arabic" SeparatorType="Hyphen" />
+    </t:RadDocument.Captions>
+    <t:RadDocument.ProtectionSettings>
+        <t:DocumentProtectionSettings EnableDocumentProtection="False" Enforce="False" HashingAlgorithm="None" HashingSpinCount="0" ProtectionMode="ReadOnly" />
+    </t:RadDocument.ProtectionSettings>
+    <t:RadDocument.Styles>
+        <s:StyleDefinition DisplayName="Document Default Style" IsCustom="False" IsDefault="False" IsPrimary="False" Name="defaultDocumentStyle" Type="Default">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties SpacingAfter="10" />
+            </s:StyleDefinition.ParagraphStyle>
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Portable User Interface" FontSize="11" FontStyle="Normal" FontWeight="Normal" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition DisplayName="Normal" IsCustom="False" IsDefault="True" IsPrimary="True" Name="Normal" Type="Paragraph" UIPriority="0" />
+        <s:StyleDefinition DisplayName="Table Normal" IsCustom="False" IsDefault="True" IsPrimary="False" Name="TableNormal" Type="Table" UIPriority="59">
+            <s:StyleDefinition.TableStyle>
+                <s:TableProperties CellPadding="5,0,5,0">
+                    <s:TableProperties.TableLook>
+                        <t:TableLook />
+                    </s:TableProperties.TableLook>
+                </s:TableProperties>
+            </s:StyleDefinition.TableStyle>
+        </s:StyleDefinition>
+    </t:RadDocument.Styles>
+    <t:Section HeaderTopMargin="15" PageMargin="96,96,96,96">
+        <t:Paragraph AutomaticSpacingAfter="False" AutomaticSpacingBefore="False" Background="#FF319B47" FirstLineIndent="0" FontSize="13" LineSpacing="1" LineSpacingType="Auto" RightIndent="0" 
+                     SpacingAfter="10" SpacingBefore="10" TextAlignment="Left" LeftIndent="0">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="13.3299999237061" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="14" ForeColor="#FFFFFFFF" Text="&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;TELERIK NEWSLETTER" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Break BreakType="LineBreak" Text="¬" />
+            <t:FieldRangeStart AnnotationID="1">
+                <t:IncludePictureField DisplayMode="Code">
+                    <t:IncludePictureField.FieldPropertySetters>
+                        <t:FieldPropertySetter PropertyName="ImageUri">
+                            <t:FieldPropertySetter.NestedFieldValue>
+                                <t:MergeField DateTimeFormatting="" DisplayMode="Code" GeneralFormatting="" NumericFormatting="" PropertyPath="RecipientPhoto" />
+                            </t:FieldPropertySetter.NestedFieldValue>
+                        </t:FieldPropertySetter>
+                    </t:IncludePictureField.FieldPropertySetters>
+                </t:IncludePictureField>
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{INCLUDEPICTURE " />
+            <t:FieldRangeStart AnnotationID="2">
+                <t:MergeField DateTimeFormatting="" DisplayMode="Code" GeneralFormatting="" NumericFormatting="" PropertyPath="RecipientPhoto" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{MERGEFIELD RecipientPhoto}" />
+            <t:FieldRangeEnd AnnotationID="2" />
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="}" />
+            <t:FieldRangeEnd AnnotationID="1" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="13.33" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="12" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="12" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" ForeColor="#FF00B050" Text="Dear " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="3">
+                <t:MergeField DisplayMode="Code" PropertyPath="RecipientFirstName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontStyle="Normal" FontWeight="Bold" ForeColor="#FF00B050" Text="{}{ MERGEFIELD RecipientFirstName }" />
+            <t:FieldRangeEnd AnnotationID="3" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontStyle="Normal" FontWeight="Bold" ForeColor="#FF00B050" Text=" " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="4">
+                <t:MergeField DisplayMode="Code" PropertyPath="RecipientLastName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontStyle="Normal" FontWeight="Bold" ForeColor="#FF00B050" Text="{}{ MERGEFIELD RecipientLastName }" />
+            <t:FieldRangeEnd AnnotationID="4" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF00B050" Text="," UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="12" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="12" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text="At" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" Text=" " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" FontWeight="Normal" Text="Telerik Corporation" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text=", we realize that customer feedback is becoming more and more critical to doing business efficiently. That&apos;s why I&apos;m writing to inform you that we are creating a new community web site for the following control packages:" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="16" LeftIndent="40" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="16" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="16" FontWeight="Normal" ForeColor="#FF00B0F0" Text="Silverlight controls" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="16" LeftIndent="40" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="16" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="16" FontWeight="Normal" ForeColor="#FF7030A0" Text="WPF controls" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="16" LeftIndent="40" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="16" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="16" FontWeight="Normal" ForeColor="#FF002060" Text="WinForms" UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="12" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="12" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text="There will be several support officers who will gather feedback about the products during the 6 month trial of the site. Your assigned support officer is " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="5">
+                <t:MergeField DisplayMode="Code" PropertyPath="SupportOfficerFirstName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text="{}{ MERGEFIELD SupportOfficerFirstName }" />
+            <t:FieldRangeEnd AnnotationID="5" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text=" " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="6">
+                <t:MergeField DisplayMode="Code" PropertyPath="SupportOfficerLastName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text="{}{ MERGEFIELD SupportOfficerLastName }" />
+            <t:FieldRangeEnd AnnotationID="6" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text=". Feel free to send him mail with any questions or suggestions." UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="12" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="12" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text="Your feedback will really give our business a clear idea of how to best serve our customers and become more reliable. Our support officer " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="7">
+                <t:MergeField DisplayMode="Code" PropertyPath="SupportOfficerFirstName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text="{}{ MERGEFIELD SupportOfficerFirstName }" />
+            <t:FieldRangeEnd AnnotationID="7" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text=" " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="8">
+                <t:MergeField DisplayMode="Code" PropertyPath="SupportOfficerLastName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="12" ForeColor="#FF767676" Text="{}{ MERGEFIELD SupportOfficerLastName }" />
+            <t:FieldRangeEnd AnnotationID="8" />
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text=" will send a mail to talk over the matter further and see if you accept our test site account and will participate in this clients program. Thank you for your attention." UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="12" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="12" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" FontSize="13.33" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" FontSize="13.33" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:Span FontFamily="Segoe UI" FontSize="12" Text="Kind regards," UnderlineColor="#FF000000" UnderlineDecoration="None" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:FieldRangeStart AnnotationID="9">
+                <t:MergeField DisplayMode="Code" PropertyPath="SenderFirstName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{ MERGEFIELD SenderFirstName }" />
+            <t:FieldRangeEnd AnnotationID="9" />
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text=" " UnderlineColor="#FF000000" UnderlineDecoration="None" />
+            <t:FieldRangeStart AnnotationID="10">
+                <t:MergeField DisplayMode="Code" PropertyPath="SenderLastName" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{ MERGEFIELD SenderLastName }" />
+            <t:FieldRangeEnd AnnotationID="10" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:FieldRangeStart AnnotationID="11">
+                <t:MergeField DisplayMode="Code" PropertyPath="SenderJobTitle" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{ MERGEFIELD SenderJobTitle }" />
+            <t:FieldRangeEnd AnnotationID="11" />
+        </t:Paragraph>
+        <t:Paragraph Background="#00FFFFFF" LeftIndent="24" LineSpacing="1" SpacingAfter="2.66666674613953">
+            <t:Paragraph.ParagraphSymbolPropertiesStyle>
+                <s:SpanProperties FontFamily="Segoe UI" />
+            </t:Paragraph.ParagraphSymbolPropertiesStyle>
+            <t:FieldRangeStart AnnotationID="12">
+                <t:MergeField DisplayMode="Code" PropertyPath="SenderAdress" />
+            </t:FieldRangeStart>
+            <t:Span FontFamily="Segoe UI" FontSize="13.33" ForeColor="#FF767676" Text="{}{ MERGEFIELD SenderAdress }" />
+            <t:FieldRangeEnd AnnotationID="12" />
+        </t:Paragraph>
+        <t:Paragraph LineSpacing="1" SpacingAfter="20" />
+    </t:Section>
+</t:RadDocument>

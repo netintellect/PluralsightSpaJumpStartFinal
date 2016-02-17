@@ -1,0 +1,1 @@
+﻿RadPropertyGrid supports DataAnnotations attributes like ReadOnly, Browsable, AutoGenerateField, Category, Description, Order. The example illustrates how you can categories different properties into separate groups, set some of them as read-only, define description for each of them and set their display order.

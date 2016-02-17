@@ -1,0 +1,1 @@
+﻿RadCalculator can be easily extended by defining custom operations that are needed in one's specific scenario.
